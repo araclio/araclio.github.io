@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Araclio — Ücretsiz Online Hesaplama ve Pratik Araçlar</title>
+  <meta name="description" content="KDV, kâr marjı, zam, indirim, yüzde, desi, taksit ve metin hesaplamaları için ücretsiz ve hızlı online araçlar.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://araclio.github.io/">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+    <h1>Günlük hesaplarını saniyeler içinde yap.</h1>
+    <p>KDV, kâr, indirim, zam, yüzde, desi, taksit ve metin araçları. Veriler tarayıcında hesaplanır.</p>
+  </section>
+
+  <section>
+    <h2>Hesaplama Araçları</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>KDV Hesaplama</h3>
+        <label>Tutar (₺)<input id="kdvTutar" type="number" min="0" step="0.01" placeholder="1000"></label>
+        <label>KDV oranı (%)<input id="kdvOran" type="number" min="0" step="0.01" value="20"></label>
+        <div class="buttons"><button onclick="kdvEkle()">KDV Ekle</button><button class="secondary" onclick="kdvCikar()">KDV Ayır</button></div>
+        <div id="kdvSonuc" class="result">Sonuç burada görünecek.</div>
+      </article>
+
+      <article class="card">
+        <h3>Kâr Marjı / Satış Fiyatı</h3>
+        <label>Maliyet (₺)<input id="maliyet" type="number" min="0" step="0.01" placeholder="500"></label>
+        <label>Hedef kâr (%)<input id="karOran" type="number" step="0.01" placeholder="30"></label>
+        <button onclick="karHesapla()">Hesapla</button>
+        <div id="karSonuc" class="result">Satış fiyatını ve kârı hesapla.</div>
+      </article>
+
+      <article class="card">
+        <h3>İndirim Hesaplama</h3>
+        <label>Etiket fiyatı (₺)<input id="indFiyat" type="number" min="0" step="0.01" placeholder="1000"></label>
+        <label>İndirim (%)<input id="indOran" type="number" min="0" max="100" step="0.01" placeholder="20"></label>
+        <button onclick="indirim()">Hesapla</button>
+        <div id="indSonuc" class="result">İndirimli fiyatı hesapla.</div>
+      </article>
+
+      <article class="card">
+        <h3>Zam Hesaplama</h3>
+        <label>Mevcut tutar (₺)<input id="zamFiyat" type="number" min="0" step="0.01" placeholder="1000"></label>
+        <label>Zam (%)<input id="zamOran" type="number" step="0.01" placeholder="25"></label>
+        <button onclick="zam()">Hesapla</button>
+        <div id="zamSonuc" class="result">Yeni tutarı hesapla.</div>
+      </article>
+
+      <article class="card">
+        <h3>Yüzde Hesaplama</h3>
+        <label>Sayı<input id="yuzdeSayi" type="number" step="0.01" placeholder="1500"></label>
+        <label>Yüzde (%)<input id="yuzdeOran" type="number" step="0.01" placeholder="15"></label>
+        <button onclick="yuzde()">Hesapla</button>
+        <div id="yuzdeSonuc" class="result">Bir sayının yüzdesini bul.</div>
+      </article>
+
+      <article class="card">
+        <h3>Desi Hesaplama</h3>
+        <label>En (cm)<input id="en" type="number" min="0" step="0.1"></label>
+        <label>Boy (cm)<input id="boy" type="number" min="0" step="0.1"></label>
+        <label>Yükseklik (cm)<input id="yuk" type="number" min="0" step="0.1"></label>
+        <button onclick="desi()">Hesapla</button>
+        <div id="desiSonuc" class="result">Standart 3000 böleniyle hesaplanır.</div>
+      </article>
+
+      <article class="card">
+        <h3>Basit Taksit Hesaplama</h3>
+        <label>Toplam tutar (₺)<input id="taksitTutar" type="number" min="0" step="0.01"></label>
+        <label>Taksit sayısı<input id="taksitSay" type="number" min="1" step="1" value="6"></label>
+        <button onclick="taksit()">Hesapla</button>
+        <div id="taksitSonuc" class="result">Faiz/komisyon hariç eşit bölme.</div>
+      </article>
+
+      <article class="card">
+        <h3>Kelime & Karakter Sayacı</h3>
+        <label>Metin<textarea id="metin" rows="5" placeholder="Metninizi buraya yazın..." oninput="say()"></textarea></label>
+        <div id="metinSonuc" class="result">0 kelime • 0 karakter</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="info">
+    <h2>Araclio nedir?</h2>
+    <p>Araclio, sık kullanılan hesaplamaları ve pratik işlemleri tek yerde sunmak için hazırlanmış ücretsiz araç platformudur. Hesaplamalar bilgilendirme amaçlıdır; finansal veya hukuki danışmanlık niteliği taşımaz.</p>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="year"></span> Araclio • Ücretsiz Online Araçlar</div></footer>
+<script src="app.js"></script>
+</body>
+</html>
