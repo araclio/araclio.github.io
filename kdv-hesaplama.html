@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>KDV Hesaplama 2026 | KDV Dahil ve Hariç Hesapla - Araclio</title>
+
+  <meta name="description" content="Ücretsiz KDV hesaplama aracı. KDV dahil veya KDV hariç tutarı %1, %10 ve %20 oranlarıyla saniyeler içinde hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/kdv-hesaplama.html">
+  <link rel="stylesheet" href="stil.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+    <h1>KDV Hesaplama</h1>
+    <p>KDV dahil ve KDV hariç tutarları saniyeler içinde hesaplayın.</p>
+  </section>
+
+  <section class="card">
+    <h2>KDV Hesaplama Aracı</h2>
+
+    <label for="tutar">Tutar (TL)</label>
+    <input type="number" id="tutar" placeholder="Örneğin: 1000">
+
+    <label for="oran">KDV Oranı</label>
+    <select id="oran">
+      <option value="1">%1</option>
+      <option value="10">%10</option>
+      <option value="20" selected>%20</option>
+    </select>
+
+    <label for="tur">Hesaplama Türü</label>
+    <select id="tur">
+      <option value="haric">KDV Hariç Tutardan Hesapla</option>
+      <option value="dahil">KDV Dahil Tutardan Hesapla</option>
+    </select>
+
+    <button onclick="kdvHesapla()">Hesapla</button>
+
+    <div id="sonuc"></div>
+  </section>
+
+  <section class="card">
+    <h2>KDV Nasıl Hesaplanır?</h2>
+
+    <p>
+      KDV hariç bir tutara KDV eklemek için tutar, KDV oranıyla çarpılır.
+      Örneğin 1.000 TL tutara %20 KDV uygulandığında KDV tutarı 200 TL,
+      KDV dahil toplam ise 1.200 TL olur.
+    </p>
+
+    <p>
+      KDV dahil bir fiyatın içindeki KDV'yi bulmak için ise toplam tutar
+      ilgili KDV oranına göre ayrıştırılır. Araclio KDV hesaplama aracı
+      her iki işlemi de otomatik olarak yapar.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>Diğer Ücretsiz Araçlar</h2>
+    <p>
+      <a href="/">Kâr marjı, indirim, zam, yüzde, desi, taksit ve diğer hesaplama araçlarına göz atın.</a>
+    </p>
+  </section>
+
+</main>
+
+<script>
+function kdvHesapla() {
+  const tutar = parseFloat(document.getElementById("tutar").value);
+  const oran = parseFloat(document.getElementById("oran").value);
+  const tur = document.getElementById("tur").value;
+  const sonuc = document.getElementById("sonuc");
+
+  if (isNaN(tutar) || tutar < 0) {
+    sonuc.innerHTML = "<p>Lütfen geçerli bir tutar girin.</p>";
+    return;
+  }
+
+  let matrah;
+  let kdv;
+  let toplam;
+
+  if (tur === "haric") {
+    matrah = tutar;
+    kdv = tutar * oran / 100;
+    toplam = tutar + kdv;
+  } else {
+    toplam = tutar;
+    matrah = tutar / (1 + oran / 100);
+    kdv = toplam - matrah;
+  }
+
+  const para = new Intl.NumberFormat("tr-TR", {
+    style: "currency",
+    currency: "TRY"
+  });
+
+  sonuc.innerHTML =
+    "<h3>Sonuç</h3>" +
+    "<p>KDV Hariç Tutar: <strong>" + para.format(matrah) + "</strong></p>" +
+    "<p>KDV Tutarı: <strong>" + para.format(kdv) + "</strong></p>" +
+    "<p>KDV Dahil Tutar: <strong>" + para.format(toplam) + "</strong></p>";
+}
+</script>
+
+</body>
+</html>
