@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Yüzde Hesaplama 2026 | Yüzde Artış ve Azalış Hesapla - Araclio</title>
+
+  <meta name="description" content="Ücretsiz yüzde hesaplama aracı. Bir sayının yüzdesini, yüzde artış ve yüzde azalış işlemlerini saniyeler içinde hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/yuzde-hesaplama.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+    <h1>Yüzde Hesaplama</h1>
+    <p>Yüzde, yüzde artış ve yüzde azalış işlemlerini saniyeler içinde hesaplayın.</p>
+  </section>
+
+  <section class="card">
+    <h2>Yüzde Hesaplama Aracı</h2>
+
+    <label>
+      Sayı
+      <input id="sayi" type="number" step="0.01" placeholder="Örnek: 1000">
+    </label>
+
+    <label>
+      Yüzde (%)
+      <input id="yuzde" type="number" step="0.01" placeholder="Örnek: 20">
+    </label>
+
+    <label>
+      Hesaplama Türü
+      <select id="tur">
+        <option value="yuzdesi">Sayının yüzdesini hesapla</option>
+        <option value="artis">Yüzde artış uygula</option>
+        <option value="azalis">Yüzde azalış uygula</option>
+      </select>
+    </label>
+
+    <div class="buttons">
+      <button onclick="hesapla()">Hesapla</button>
+    </div>
+
+    <div id="sonuc" class="result">Sonuç burada görünecek.</div>
+  </section>
+
+  <section class="card">
+    <h2>Yüzde Hesaplama Nasıl Yapılır?</h2>
+    <p>
+      Bir sayının belirli bir yüzdesini bulmak için sayı, yüzde oranıyla
+      çarpılır ve sonuç 100'e bölünür.
+    </p>
+
+    <p>
+      Örneğin 1.000 TL'nin %20'si 200 TL'dir.
+      %20 artış uygulandığında sonuç 1.200 TL,
+      %20 azalış uygulandığında ise 800 TL olur.
+    </p>
+  </section>
+
+</main>
+
+<script>
+function hesapla() {
+  const sayi = parseFloat(document.getElementById("sayi").value);
+  const yuzde = parseFloat(document.getElementById("yuzde").value);
+  const tur = document.getElementById("tur").value;
+  const sonucAlani = document.getElementById("sonuc");
+
+  if (isNaN(sayi) || isNaN(yuzde)) {
+    sonucAlani.innerHTML = "Lütfen sayı ve yüzde alanlarını doldurun.";
+    return;
+  }
+
+  let sonuc;
+
+  if (tur === "yuzdesi") {
+    sonuc = sayi * yuzde / 100;
+    sonucAlani.innerHTML =
+      sayi.toLocaleString("tr-TR") + " sayısının %" +
+      yuzde.toLocaleString("tr-TR") + " değeri: <strong>" +
+      sonuc.toLocaleString("tr-TR", {maximumFractionDigits: 2}) +
+      "</strong>";
+  }
+
+  if (tur === "artis") {
+    sonuc = sayi + (sayi * yuzde / 100);
+    sonucAlani.innerHTML =
+      "%" + yuzde.toLocaleString("tr-TR") +
+      " artış sonrası sonuç: <strong>" +
+      sonuc.toLocaleString("tr-TR", {maximumFractionDigits: 2}) +
+      "</strong>";
+  }
+
+  if (tur === "azalis") {
+    sonuc = sayi - (sayi * yuzde / 100);
+    sonucAlani.innerHTML =
+      "%" + yuzde.toLocaleString("tr-TR") +
+      " azalış sonrası sonuç: <strong>" +
+      sonuc.toLocaleString("tr-TR", {maximumFractionDigits: 2}) +
+      "</strong>";
+  }
+}
+</script>
+
+</body>
+</html>
