@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+  <title>Kira Artış Hesaplama 2026 | Yeni Kira Hesapla - Araclio</title>
+
+  <meta name="description" content="Kira artış hesaplama aracı ile mevcut kira tutarınızı ve artış oranını girerek yeni kira bedelini, aylık farkı ve yıllık toplam farkı hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/kira-artis-hesaplama.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .result-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .result-box{
+      background:#f5f5f5;
+      padding:16px;
+      border-radius:10px;
+    }
+
+    .result-box strong{
+      display:block;
+      margin-bottom:7px;
+    }
+
+    .big-result{
+      font-size:1.4rem;
+      font-weight:700;
+    }
+
+    .rate-box{
+      padding:16px;
+      margin:15px 0;
+      background:#f5f5f5;
+      border-radius:10px;
+      line-height:1.7;
+    }
+
+    .info-box{
+      padding:16px;
+      margin:15px 0;
+      background:#f5f5f5;
+      border-radius:10px;
+      line-height:1.8;
+    }
+
+    @media(max-width:650px){
+      .result-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+
+    <p class="eyebrow">KİRA • ARTIŞ • HESAPLAMA</p>
+
+    <h1>Kira Artış Hesaplama 2026</h1>
+
+    <p>
+      Mevcut kira tutarınızı ve uygulanacak artış oranını girerek
+      kira artış tutarını, yeni aylık kirayı, yıllık toplam kira
+      bedelini ve yıllık farkı saniyeler içinde hesaplayın.
+    </p>
+
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Yeni Kira Bedelini Hesapla</h2>
+
+      <div class="rate-box">
+        <strong>Ağustos 2026 TÜFE 12 aylık ortalama değişimi:</strong>
+        %31,79
+        <br>
+        <small>
+          TÜİK tarafından 3 Eylül 2026 tarihinde açıklanan genel TÜFE
+          verisidir. Sözleşmenize uygulanacak oran farklıysa aşağıdaki
+          oran alanını değiştirebilirsiniz.
+        </small>
+      </div>
+
+      <label>
+        Mevcut aylık kira (TL)
+        <input
+          id="kira"
+          type="number"
+          min="0"
+          step="0.01"
+          placeholder="20000"
+        >
+      </label>
+
+      <label>
+        Artış oranı (%)
+        <input
+          id="oran"
+          type="number"
+          min="0"
+          step="0.01"
+          value="31.79"
+        >
+      </label>
+
+      <button type="button" onclick="hesapla()">
+        Yeni Kirayı Hesapla
+      </button>
+
+      <div id="uyari" class="result">
+        Mevcut kira tutarını girip hesaplama butonuna basın.
+      </div>
+
+      <div id="sonuclar" class="result-grid" style="display:none;">
+
+        <div class="result-box">
+          <strong>Yeni Aylık Kira</strong>
+          <span id="yeniKira" class="big-result">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Aylık Artış Tutarı</strong>
+          <span id="aylikFark" class="big-result">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Eski Yıllık Kira</strong>
+          <span id="eskiYillik">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Yeni Yıllık Kira</strong>
+          <span id="yeniYillik">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Yıllık Toplam Fark</strong>
+          <span id="yillikFark">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Uygulanan Artış</strong>
+          <span id="uygulananOran">%0</span>
+        </div>
+
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>Kira Artışı Nasıl Hesaplanır?</h2>
+
+    <p>
+      Kira artış hesabında mevcut aylık kira bedeli ile uygulanacak
+      artış oranı kullanılır.
+    </p>
+
+    <div class="info-box">
+      <strong>Kira artış tutarı:</strong><br>
+      Mevcut Kira × Artış Oranı ÷ 100
+      <br><br>
+
+      <strong>Yeni kira:</strong><br>
+      Mevcut Kira + Kira Artış Tutarı
+    </div>
+
+    <h2>20.000 TL Kira İçin Örnek Hesaplama</h2>
+
+    <p>
+      Mevcut kira 20.000 TL ve artış oranı %31,79 olarak girilirse
+      aylık artış 6.358 TL olur. Yeni aylık kira ise 26.358 TL olarak
+      hesaplanır.
+    </p>
+
+    <h2>2026 Kira Artış Oranı</h2>
+
+    <p>
+      TÜİK'in Ağustos 2026 Tüketici Fiyat Endeksi verisine göre
+      genel TÜFE'nin on iki aylık ortalamalara göre değişimi
+      %31,79 olarak açıklanmıştır.
+    </p>
+
+    <p>
+      TÜFE verileri aylık olarak değiştiği için kira yenileme
+      döneminizde geçerli güncel verinin ve sözleşmenize uygulanacak
+      hukuki koşulların ayrıca kontrol edilmesi gerekir.
+    </p>
+
+    <h2>Kira Artışında Aylık ve Yıllık Fark</h2>
+
+    <p>
+      Araclio yalnızca yeni aylık kira bedelini değil, eski ve yeni
+      kira arasındaki aylık farkı ve bu farkın 12 aylık toplamını da
+      gösterir. Böylece artışın yıllık bütçenize yaklaşık etkisini
+      görebilirsiniz.
+    </p>
+
+    <h2>Diğer Hesaplama Araçları</h2>
+
+    <p>
+      <a href="/yuzde-hesaplama.html">Yüzde Hesaplama</a>
+      •
+      <a href="/yuzde-degisim-hesaplama.html">Yüzde Değişim Hesaplama</a>
+      •
+      <a href="/zam-hesaplama.html">Zam Hesaplama</a>
+      •
+      <a href="/kredi-hesaplama.html">Kredi Hesaplama</a>
+      •
+      <a href="/e-ticaret-kar-hesaplama.html">E-Ticaret Kâr Hesaplama</a>
+    </p>
+
+    <p>
+      <strong>Önemli:</strong>
+      Bu araç yalnızca matematiksel hesaplama ve genel bilgilendirme
+      amacıyla hazırlanmıştır. Kira sözleşmesinin türü, yenileme tarihi,
+      tarafların anlaşması ve yürürlükteki mevzuat sonucu etkileyebilir.
+      Hukuki danışmanlık yerine geçmez.
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+function para(sayi){
+  return new Intl.NumberFormat("tr-TR",{
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  }).format(sayi) + " TL";
+}
+
+function hesapla(){
+
+  const kira =
+    Number(document.getElementById("kira").value);
+
+  const oran =
+    Number(document.getElementById("oran").value);
+
+  const uyari =
+    document.getElementById("uyari");
+
+  const sonuclar =
+    document.getElementById("sonuclar");
+
+  if(!Number.isFinite(kira) || kira <= 0){
+
+    uyari.textContent =
+      "Lütfen sıfırdan büyük bir mevcut kira tutarı girin.";
+
+    sonuclar.style.display = "none";
+    return;
+  }
+
+  if(!Number.isFinite(oran) || oran < 0){
+
+    uyari.textContent =
+      "Lütfen geçerli bir artış oranı girin.";
+
+    sonuclar.style.display = "none";
+    return;
+  }
+
+  const aylikFark =
+    kira * (oran / 100);
+
+  const yeniKira =
+    kira + aylikFark;
+
+  const eskiYillik =
+    kira * 12;
+
+  const yeniYillik =
+    yeniKira * 12;
+
+  const yillikFark =
+    aylikFark * 12;
+
+  document.getElementById("yeniKira").textContent =
+    para(yeniKira);
+
+  document.getElementById("aylikFark").textContent =
+    para(aylikFark);
+
+  document.getElementById("eskiYillik").textContent =
+    para(eskiYillik);
+
+  document.getElementById("yeniYillik").textContent =
+    para(yeniYillik);
+
+  document.getElementById("yillikFark").textContent =
+    para(yillikFark);
+
+  document.getElementById("uygulananOran").textContent =
+    "%" + oran.toLocaleString("tr-TR",{
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
+    });
+
+  uyari.innerHTML =
+    "<strong>Sonuç:</strong> " +
+    para(kira) +
+    " olan aylık kira, %" +
+    oran.toLocaleString("tr-TR") +
+    " artışla yaklaşık <strong>" +
+    para(yeniKira) +
+    "</strong> olur.";
+
+  sonuclar.style.display = "grid";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
