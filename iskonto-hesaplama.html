@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>İskonto Hesaplama | Tek ve Çoklu İskonto - Araclio</title>
+
+  <meta name="description" content="İskonto hesaplama aracı ile liste fiyatı üzerinden tek veya ardışık çoklu iskonto hesaplayın. İskonto tutarını, net fiyatı ve toplam indirim oranını öğrenin.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/iskonto-hesaplama.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .info-box {
+      margin-top:18px;
+      padding:16px;
+      border-radius:10px;
+      background:#f5f5f5;
+    }
+
+    .result-detail {
+      margin-top:12px;
+      line-height:1.8;
+    }
+
+    .small-note {
+      font-size:14px;
+      margin-top:10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>İskonto Hesaplama</h1>
+
+    <p>
+      Liste fiyatına uygulanan tek veya ardışık çoklu iskonto
+      oranlarını hesaplayın. İskonto sonrası net fiyatı,
+      toplam indirim tutarını ve efektif iskonto oranını öğrenin.
+    </p>
+
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>İskonto Hesapla</h2>
+
+      <label>
+        Liste Fiyatı (TL)
+        <input
+          id="fiyat"
+          type="number"
+          min="0.01"
+          step="0.01"
+          placeholder="10000">
+      </label>
+
+      <label>
+        1. İskonto (%)
+        <input
+          id="iskonto1"
+          type="number"
+          min="0"
+          max="100"
+          step="0.01"
+          placeholder="20">
+      </label>
+
+      <label>
+        2. İskonto (%) — İsteğe Bağlı
+        <input
+          id="iskonto2"
+          type="number"
+          min="0"
+          max="100"
+          step="0.01"
+          placeholder="10">
+      </label>
+
+      <label>
+        3. İskonto (%) — İsteğe Bağlı
+        <input
+          id="iskonto3"
+          type="number"
+          min="0"
+          max="100"
+          step="0.01"
+          placeholder="5">
+      </label>
+
+      <button onclick="hesapla()">İskonto Hesapla</button>
+
+      <div id="sonuc" class="result">
+        Liste fiyatı ve en az bir iskonto oranı girin.
+      </div>
+
+      <p class="small-note">
+        Çoklu iskontolar birbirine eklenmez. Her iskonto,
+        bir önceki indirim uygulanmış tutar üzerinden hesaplanır.
+      </p>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>İskonto Nedir?</h2>
+
+    <p>
+      İskonto, bir ürün veya hizmetin liste fiyatı üzerinden
+      belirli bir oranda yapılan fiyat indirimi anlamına gelir.
+      Ticari satışlarda tek bir iskonto uygulanabileceği gibi
+      birden fazla iskonto da art arda uygulanabilir.
+    </p>
+
+    <h2>Tek İskonto Nasıl Hesaplanır?</h2>
+
+    <div class="info-box">
+      <strong>İskonto Tutarı = Liste Fiyatı × İskonto Oranı ÷ 100</strong>
+      <br><br>
+      <strong>Net Fiyat = Liste Fiyatı − İskonto Tutarı</strong>
+    </div>
+
+    <p>
+      Örneğin liste fiyatı 10.000 TL olan bir ürüne %20
+      iskonto uygulanırsa:
+    </p>
+
+    <div class="info-box">
+      İskonto tutarı: 2.000 TL
+      <br>
+      Net fiyat: 8.000 TL
+    </div>
+
+    <h2>Çoklu İskonto Nasıl Hesaplanır?</h2>
+
+    <p>
+      Birden fazla iskonto varsa oranlar doğrudan toplanmaz.
+      İkinci iskonto, ilk iskonto uygulandıktan sonra kalan
+      fiyat üzerinden hesaplanır.
+    </p>
+
+    <div class="info-box">
+      <strong>Örnek: 10.000 TL ve %20 + %10 iskonto</strong>
+      <br><br>
+
+      İlk iskonto:
+      <br>
+      10.000 × %20 = 2.000 TL
+      <br>
+      Kalan = 8.000 TL
+      <br><br>
+
+      İkinci iskonto:
+      <br>
+      8.000 × %10 = 800 TL
+      <br><br>
+
+      Net fiyat = 7.200 TL
+      <br>
+      Toplam iskonto = 2.800 TL
+      <br>
+      Efektif iskonto oranı = %28
+    </div>
+
+    <h2>%20 + %10 İskonto Neden %30 Değildir?</h2>
+
+    <p>
+      Çünkü ikinci %10 iskonto ilk liste fiyatına değil,
+      ilk iskonto sonrasında kalan tutara uygulanır.
+      Bu nedenle %20 ve ardından %10 iskonto uygulanması
+      toplamda %28 efektif indirime karşılık gelir.
+    </p>
+
+    <h2>Üçlü İskonto Nasıl Hesaplanır?</h2>
+
+    <p>
+      Üç iskonto oranı da aynı yöntemle sırayla uygulanır.
+      Örneğin %20 + %10 + %5 iskonto, doğrudan %35 iskonto
+      anlamına gelmez.
+    </p>
+
+    <div class="info-box">
+      10.000 TL için:
+      <br><br>
+      %20 sonrası = 8.000 TL
+      <br>
+      %10 sonrası = 7.200 TL
+      <br>
+      %5 sonrası = 6.840 TL
+      <br><br>
+      Toplam iskonto = 3.160 TL
+      <br>
+      Efektif iskonto oranı = %31,60
+    </div>
+
+    <h2>İskonto ile İndirim Arasındaki Fark Nedir?</h2>
+
+    <p>
+      Günlük kullanımda iki ifade benzer anlamda kullanılabilir.
+      “İskonto” terimi özellikle ticari satış, toptan satış,
+      bayi fiyatlandırması ve fatura işlemlerinde sık kullanılır.
+      Çoklu iskonto uygulamalarında oranların sırayla
+      hesaplanması önemlidir.
+    </p>
+
+    <h2>Diğer Ticari Hesaplama Araçları</h2>
+
+    <p>
+      <a href="/kar-zarar-hesaplama.html">Kâr Zarar Hesaplama</a>
+      •
+      <a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama</a>
+      •
+      <a href="/vade-farki-hesaplama.html">Vade Farkı Hesaplama</a>
+      •
+      <a href="/indirim-hesaplama.html">İndirim Hesaplama</a>
+      •
+      <a href="/kdv-hesaplama.html">KDV Hesaplama</a>
+    </p>
+
+    <div class="info-box">
+      <strong>Not:</strong>
+      Bu araç matematiksel iskonto hesabı yapar. KDV,
+      komisyon, vade farkı, vergi veya sözleşmeye bağlı
+      diğer ticari kalemler otomatik olarak hesaba katılmaz.
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+
+</footer>
+
+<script>
+
+function para(sayi) {
+  return new Intl.NumberFormat(
+    "tr-TR",
+    {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }
+  ).format(sayi) + " TL";
+}
+
+function yuzde(sayi) {
+  return new Intl.NumberFormat(
+    "tr-TR",
+    {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }
+  ).format(sayi);
+}
+
+function oranOku(id) {
+
+  const input = document.getElementById(id);
+
+  if (input.value.trim() === "") {
+    return null;
+  }
+
+  const deger = Number(input.value);
+
+  if (
+    !Number.isFinite(deger) ||
+    deger < 0 ||
+    deger > 100
+  ) {
+    return "hata";
+  }
+
+  return deger;
+}
+
+function hesapla() {
+
+  const fiyatInput =
+    document.getElementById("fiyat");
+
+  const sonuc =
+    document.getElementById("sonuc");
+
+  const fiyat =
+    Number(fiyatInput.value);
+
+  const oran1 =
+    oranOku("iskonto1");
+
+  const oran2 =
+    oranOku("iskonto2");
+
+  const oran3 =
+    oranOku("iskonto3");
+
+  if (
+    fiyatInput.value === "" ||
+    !Number.isFinite(fiyat) ||
+    fiyat <= 0
+  ) {
+
+    sonuc.innerHTML =
+      "Lütfen geçerli bir liste fiyatı girin.";
+
+    return;
+  }
+
+  if (
+    oran1 === "hata" ||
+    oran2 === "hata" ||
+    oran3 === "hata"
+  ) {
+
+    sonuc.innerHTML =
+      "İskonto oranları %0 ile %100 arasında olmalıdır.";
+
+    return;
+  }
+
+  if (oran1 === null) {
+
+    sonuc.innerHTML =
+      "Lütfen en az 1. iskonto oranını girin.";
+
+    return;
+  }
+
+  const oranlar = [oran1];
+
+  if (oran2 !== null) {
+    oranlar.push(oran2);
+  }
+
+  if (oran3 !== null) {
+    oranlar.push(oran3);
+  }
+
+  let netFiyat = fiyat;
+
+  let detay = "";
+
+  oranlar.forEach(function(oran, index) {
+
+    const oncekiTutar = netFiyat;
+
+    const indirim =
+      oncekiTutar * oran / 100;
+
+    netFiyat =
+      oncekiTutar - indirim;
+
+    detay +=
+      (index + 1) +
+      ". iskonto (%" +
+      yuzde(oran) +
+      "): " +
+      para(indirim) +
+      "<br>";
+  });
+
+  const toplamIskonto =
+    fiyat - netFiyat;
+
+  const efektifOran =
+    (toplamIskonto / fiyat) * 100;
+
+  sonuc.innerHTML =
+
+    "<strong>Net Fiyat: " +
+    para(netFiyat) +
+    "</strong>" +
+
+    "<div class='result-detail'>" +
+
+    "Liste fiyatı: " +
+    para(fiyat) +
+
+    "<br><br>" +
+
+    detay +
+
+    "<br>" +
+
+    "Toplam iskonto tutarı: " +
+    para(toplamIskonto) +
+
+    "<br>" +
+
+    "Efektif toplam iskonto: %" +
+    yuzde(efektifOran) +
+
+    "</div>";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
