@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Kâr Zarar Hesaplama | Kâr ve Zarar Yüzdesi - Araclio</title>
+
+  <meta name="description" content="Alış fiyatı ve satış fiyatını girerek kaç TL kâr veya zarar ettiğinizi ve kâr zarar yüzdesini ücretsiz hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/kar-zarar-hesaplama.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .info-box {
+      margin-top:18px;
+      padding:16px;
+      border-radius:10px;
+      background:#f5f5f5;
+    }
+
+    .result-detail {
+      margin-top:12px;
+      line-height:1.8;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>Kâr Zarar Hesaplama</h1>
+
+    <p>
+      Alış fiyatı ile satış fiyatını girerek işleminizde
+      kaç TL kâr veya zarar oluştuğunu ve bunun alış
+      maliyetine göre yüzde oranını hesaplayın.
+    </p>
+
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Kâr / Zarar Hesapla</h2>
+
+      <label>
+        Alış Fiyatı / Maliyet (TL)
+        <input
+          id="alis"
+          type="number"
+          min="0.01"
+          step="0.01"
+          placeholder="500">
+      </label>
+
+      <label>
+        Satış Fiyatı (TL)
+        <input
+          id="satis"
+          type="number"
+          min="0"
+          step="0.01"
+          placeholder="650">
+      </label>
+
+      <button onclick="hesapla()">Hesapla</button>
+
+      <div id="sonuc" class="result">
+        Alış ve satış fiyatını girin.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>Kâr Nasıl Hesaplanır?</h2>
+
+    <p>
+      Satış fiyatı alış maliyetinden yüksekse aradaki fark
+      kârdır.
+    </p>
+
+    <div class="info-box">
+      <strong>Kâr = Satış Fiyatı − Alış Fiyatı</strong>
+      <br><br>
+      Örneğin 500 TL'ye alınan bir ürün 650 TL'ye satılırsa:
+      <br><br>
+      650 − 500 = 150 TL kâr
+    </div>
+
+    <h2>Kâr Yüzdesi Nasıl Hesaplanır?</h2>
+
+    <p>
+      Bu araç kâr veya zarar yüzdesini alış maliyetine göre
+      hesaplar.
+    </p>
+
+    <div class="info-box">
+      <strong>Formül:</strong>
+      <br><br>
+      Kâr Yüzdesi =
+      (Kâr ÷ Alış Fiyatı) × 100
+      <br><br>
+      500 TL maliyet ve 150 TL kâr için:
+      <br><br>
+      (150 ÷ 500) × 100 = %30
+    </div>
+
+    <h2>Zarar Nasıl Hesaplanır?</h2>
+
+    <p>
+      Satış fiyatı alış maliyetinden düşükse işlemde zarar
+      oluşur.
+    </p>
+
+    <div class="info-box">
+      <strong>Örnek:</strong>
+      <br><br>
+      Alış fiyatı: 1.000 TL
+      <br>
+      Satış fiyatı: 800 TL
+      <br><br>
+      Zarar: 200 TL
+      <br>
+      Zarar oranı: %20
+    </div>
+
+    <h2>Kâr Yüzdesi ile Kâr Marjı Aynı mı?</h2>
+
+    <p>
+      Hayır. Bu araçtaki kâr yüzdesi maliyet üzerinden
+      hesaplanır. Kâr marjı ise kârın satış fiyatına oranını
+      ifade eder.
+    </p>
+
+    <div class="info-box">
+      500 TL maliyetli ürün 650 TL'ye satılırsa:
+      <br><br>
+      Kâr = 150 TL
+      <br>
+      Maliyet üzerinden kâr oranı = %30
+      <br>
+      Satış fiyatı üzerinden kâr marjı ≈ %23,08
+    </div>
+
+    <h2>Başabaş Noktası Nedir?</h2>
+
+    <p>
+      Satış fiyatı alış maliyetine eşitse kâr veya zarar
+      oluşmaz. Bu durumda sonuç %0'dır.
+    </p>
+
+    <h2>Diğer Ticaret Araçları</h2>
+
+    <p>
+      <a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama</a>
+      •
+      <a href="/vade-farki-hesaplama.html">Vade Farkı Hesaplama</a>
+      •
+      <a href="/yuzde-degisim-hesaplama.html">Yüzde Değişim Hesaplama</a>
+      •
+      <a href="/kdv-hesaplama.html">KDV Hesaplama</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+
+</footer>
+
+<script>
+
+function para(sayi) {
+  return new Intl.NumberFormat(
+    "tr-TR",
+    {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }
+  ).format(sayi) + " TL";
+}
+
+function oranFormatla(sayi) {
+  return new Intl.NumberFormat(
+    "tr-TR",
+    {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }
+  ).format(sayi);
+}
+
+function hesapla() {
+
+  const alisInput =
+    document.getElementById("alis");
+
+  const satisInput =
+    document.getElementById("satis");
+
+  const sonuc =
+    document.getElementById("sonuc");
+
+  const alis =
+    Number(alisInput.value);
+
+  const satis =
+    Number(satisInput.value);
+
+  if (
+    alisInput.value === "" ||
+    satisInput.value === "" ||
+    !Number.isFinite(alis) ||
+    !Number.isFinite(satis) ||
+    alis <= 0 ||
+    satis < 0
+  ) {
+
+    sonuc.innerHTML =
+      "Lütfen geçerli alış ve satış fiyatı girin.";
+
+    return;
+  }
+
+  const fark =
+    satis - alis;
+
+  const maliyetOrani =
+    (fark / alis) * 100;
+
+  let marj = null;
+
+  if (satis > 0) {
+    marj = (fark / satis) * 100;
+  }
+
+  if (fark > 0) {
+
+    sonuc.innerHTML =
+
+      "<strong>Kâr: " +
+      para(fark) +
+      "</strong>" +
+
+      "<div class='result-detail'>" +
+
+      "Alış maliyeti: " +
+      para(alis) +
+
+      "<br>" +
+
+      "Satış fiyatı: " +
+      para(satis) +
+
+      "<br>" +
+
+      "Maliyet üzerinden kâr oranı: %" +
+      oranFormatla(maliyetOrani) +
+
+      "<br>" +
+
+      "Satış fiyatı üzerinden kâr marjı: %" +
+      oranFormatla(marj) +
+
+      "</div>";
+
+    return;
+  }
+
+  if (fark < 0) {
+
+    const zarar =
+      Math.abs(fark);
+
+    const zararOrani =
+      Math.abs(maliyetOrani);
+
+    sonuc.innerHTML =
+
+      "<strong>Zarar: " +
+      para(zarar) +
+      "</strong>" +
+
+      "<div class='result-detail'>" +
+
+      "Alış maliyeti: " +
+      para(alis) +
+
+      "<br>" +
+
+      "Satış fiyatı: " +
+      para(satis) +
+
+      "<br>" +
+
+      "Maliyet üzerinden zarar oranı: %" +
+      oranFormatla(zararOrani) +
+
+      "</div>";
+
+    return;
+  }
+
+  sonuc.innerHTML =
+
+    "<strong>Başabaş: Kâr veya zarar yok.</strong>" +
+
+    "<div class='result-detail'>" +
+
+    "Alış maliyeti: " +
+    para(alis) +
+
+    "<br>" +
+
+    "Satış fiyatı: " +
+    para(satis) +
+
+    "<br>" +
+
+    "Kâr / zarar oranı: %0,00" +
+
+    "</div>";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
