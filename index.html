@@ -6,9 +6,9 @@
 
   <meta name="google-adsense-account" content="ca-pub-7634654090472031">
 
-  <title>Online Hesaplama, E-Ticaret ve Dönüştürme Araçları | Araclio</title>
+  <title>Online Hesaplama Araçları | Finans, Maaş, Ticaret ve Dönüştürme - Araclio</title>
 
-  <meta name="description" content="Ücretsiz online hesaplama araçları: e-ticaret kârı, bileşik faiz, tapu harcı, kira artışı, maaş zammı, kıdem, ihbar, fazla mesai, kredi, KDV, yüzde ve daha fazlası.">
+  <meta name="description" content="Ücretsiz online hesaplama araçları. E-ticaret kârı, tapu harcı, maaş zammı, kira artışı, kıdem, ihbar, fazla mesai, kredi, faiz, KDV, yüzde ve dönüştürme araçları.">
 
   <meta name="robots" content="index,follow">
 
@@ -19,6 +19,119 @@
   <link rel="alternate" hreflang="x-default" href="https://araclio.com/en/">
 
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    .search-area{
+      max-width:760px;
+      margin:28px auto 10px;
+    }
+
+    .search-box{
+      position:relative;
+    }
+
+    .search-box input{
+      width:100%;
+      box-sizing:border-box;
+      padding:17px 52px 17px 18px;
+      border:1px solid #d7dce5;
+      border-radius:14px;
+      font-size:17px;
+      background:#fff;
+    }
+
+    .search-box input:focus{
+      outline:2px solid #c8d8ff;
+      border-color:#6d91e8;
+    }
+
+    .search-icon{
+      position:absolute;
+      right:17px;
+      top:50%;
+      transform:translateY(-50%);
+      font-size:21px;
+      pointer-events:none;
+    }
+
+    .search-note{
+      text-align:center;
+      font-size:14px;
+      opacity:.75;
+      margin-top:8px;
+    }
+
+    #searchEmpty{
+      display:none;
+      text-align:center;
+      padding:25px;
+      margin:20px 0;
+      border-radius:12px;
+      background:#f5f6f8;
+    }
+
+    .section-head{
+      margin-top:45px;
+      margin-bottom:18px;
+    }
+
+    .section-head h2{
+      margin-bottom:7px;
+    }
+
+    .section-head p{
+      margin-top:0;
+      opacity:.8;
+    }
+
+    .tool-card{
+      position:relative;
+    }
+
+    .tool-card a{
+      font-weight:600;
+    }
+
+    .featured-card{
+      border:1px solid #d8e1f5;
+    }
+
+    .badge{
+      display:inline-block;
+      font-size:12px;
+      font-weight:700;
+      padding:5px 9px;
+      border-radius:20px;
+      background:#eef3ff;
+      margin-bottom:10px;
+    }
+
+    .category-hidden{
+      display:none !important;
+    }
+
+    .quick-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:20px;
+    }
+
+    .quick-links a{
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:20px;
+      background:#f1f3f6;
+      font-size:14px;
+    }
+
+    .trust-box{
+      margin-top:45px;
+      padding:24px;
+      border-radius:14px;
+      background:#f7f8fa;
+    }
+  </style>
 </head>
 
 <body>
@@ -33,315 +146,462 @@
 <main class="wrap">
 
   <section class="hero">
+
     <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
 
-    <h1>Ücretsiz Online Hesaplama ve Dönüştürme Araçları</h1>
+    <h1>İhtiyacın Olan Hesaplama Aracını Bul</h1>
 
     <p>
-      E-ticaret kârı, bileşik faiz, tapu harcı, kira artışı,
-      maaş zammı, kıdem, ihbar, fazla mesai, komisyon, kredi,
-      KDV, yüzde ve günlük hesaplamaları ücretsiz yapın.
+      Finans, maaş, çalışma hayatı, e-ticaret, gayrimenkul,
+      günlük hesaplamalar ve birim dönüşümleri için ücretsiz
+      online araçlar.
     </p>
 
-    <p><a href="/en/">English Version →</a></p>
+    <div class="search-area">
+
+      <div class="search-box">
+        <input
+          id="toolSearch"
+          type="search"
+          placeholder="Araç ara: tapu, maaş, kredi, KDV..."
+          autocomplete="off"
+          aria-label="Hesaplama aracı ara"
+        >
+        <span class="search-icon">⌕</span>
+      </div>
+
+      <div class="search-note">
+        Araç adını veya yapmak istediğin hesabı yaz.
+      </div>
+
+    </div>
+
+    <div class="quick-links">
+      <a href="/tapu-harci-hesaplama.html">Tapu Harcı</a>
+      <a href="/maas-zam-hesaplama.html">Maaş Zammı</a>
+      <a href="/kira-artis-hesaplama.html">Kira Artışı</a>
+      <a href="/kredi-hesaplama.html">Kredi</a>
+      <a href="/e-ticaret-kar-hesaplama.html">E-Ticaret Kârı</a>
+      <a href="/kidem-tazminati-hesaplama.html">Kıdem</a>
+    </div>
+
+    <p style="margin-top:18px;">
+      <a href="/en/">English Version →</a>
+    </p>
+
   </section>
 
-  <section>
+  <div id="searchEmpty">
+    <strong>Bu aramaya uygun araç bulunamadı.</strong>
+    <p>Başka bir kelimeyle tekrar arayabilirsin.</p>
+  </div>
 
-    <h2>Hesaplama Araçları</h2>
+
+  <!-- POPÜLER -->
+
+  <section class="tool-section">
+
+    <div class="section-head">
+      <h2>Popüler Hesaplama Araçları</h2>
+      <p>Finans, gelir, çalışma ve ticari hesaplamalar için öne çıkan araçlar.</p>
+    </div>
 
     <div class="grid">
 
-      <article class="card">
+      <article class="card tool-card featured-card"
+        data-search="e ticaret kar net kar komisyon roi satış pazaryeri maliyet">
+        <span class="badge">Ticaret</span>
         <h3>E-Ticaret Kâr Hesaplama</h3>
-        <p>Ürün maliyeti, komisyon, kargo, reklam ve diğer giderlerden net kâr, kâr marjı ve ROI hesaplayın.</p>
+        <p>Ürün maliyeti, komisyon, kargo ve reklam giderlerinden gerçek satış kârınızı hesaplayın.</p>
         <p><a href="/e-ticaret-kar-hesaplama.html">E-Ticaret Kârını Hesapla →</a></p>
       </article>
 
-      <article class="card">
-        <h3>Bileşik Faiz Hesaplama</h3>
-        <p>Başlangıç tutarı, faiz oranı ve süreye göre tahmini bileşik getiriyi hesaplayın.</p>
-        <p><a href="/bilesik-faiz-hesaplama.html">Bileşik Faiz Hesapla →</a></p>
-      </article>
-
-      <article class="card">
+      <article class="card tool-card featured-card"
+        data-search="tapu harcı ev konut gayrimenkul alıcı satıcı tapu masrafı">
+        <span class="badge">Gayrimenkul</span>
         <h3>Tapu Harcı Hesaplama</h3>
         <p>Gayrimenkul satış bedeline göre alıcı, satıcı ve toplam tapu harcını hesaplayın.</p>
         <p><a href="/tapu-harci-hesaplama.html">Tapu Harcı Hesapla →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card featured-card"
+        data-search="maaş zam ücret zamlı maaş gelir">
+        <span class="badge">Maaş</span>
         <h3>Maaş Zam Hesaplama</h3>
-        <p>Mevcut maaş ve zam oranından yeni maaşı, zam tutarını ve yıllık gelir farkını hesaplayın.</p>
+        <p>Zam oranından yeni maaşınızı, aylık artışı ve yıllık gelir farkını hesaplayın.</p>
         <p><a href="/maas-zam-hesaplama.html">Zamlı Maaşı Hesapla →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card featured-card"
+        data-search="kira artış zam kiracı ev sahibi tüfe">
+        <span class="badge">Gayrimenkul</span>
         <h3>Kira Artış Hesaplama</h3>
-        <p>Mevcut kira ve artış oranından yeni aylık kira bedelini ve yıllık farkı hesaplayın.</p>
+        <p>Mevcut kira ve artış oranından yeni kira bedelini ve yıllık farkı hesaplayın.</p>
         <p><a href="/kira-artis-hesaplama.html">Kira Artışını Hesapla →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card featured-card"
+        data-search="kıdem tazminatı işçi işten ayrılma çalışma">
+        <span class="badge">Çalışma</span>
         <h3>Kıdem Tazminatı Hesaplama</h3>
         <p>Brüt ücret ve çalışma süresinden tahmini kıdem tazminatını hesaplayın.</p>
         <p><a href="/kidem-tazminati-hesaplama.html">Kıdem Tazminatı Hesapla →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card featured-card"
+        data-search="ihbar tazminatı işten çıkarma bildirim süresi işçi">
+        <span class="badge">Çalışma</span>
         <h3>İhbar Tazminatı Hesaplama</h3>
         <p>Çalışma süresi ve brüt ücret üzerinden yaklaşık ihbar tazminatını hesaplayın.</p>
         <p><a href="/ihbar-tazminati-hesaplama.html">İhbar Tazminatı Hesapla →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card featured-card"
+        data-search="fazla mesai ücret saatlik çalışma mesai">
+        <span class="badge">Çalışma</span>
         <h3>Fazla Mesai Hesaplama</h3>
         <p>Brüt ücret ve fazla çalışma saatinden tahmini fazla mesai ücretini hesaplayın.</p>
         <p><a href="/fazla-mesai-hesaplama.html">Fazla Mesai Hesapla →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card featured-card"
+        data-search="kredi faiz taksit banka borç ödeme">
+        <span class="badge">Finans</span>
+        <h3>Kredi Hesaplama</h3>
+        <p>Kredi tutarı, aylık faiz ve vadeye göre aylık taksit tutarını hesaplayın.</p>
+        <p><a href="/kredi-hesaplama.html">Kredi Hesapla →</a></p>
+      </article>
+
+      <article class="card tool-card featured-card"
+        data-search="bileşik faiz yatırım getiri birikim faiz">
+        <span class="badge">Finans</span>
+        <h3>Bileşik Faiz Hesaplama</h3>
+        <p>Başlangıç tutarı, oran ve süreye göre tahmini bileşik getiriyi hesaplayın.</p>
+        <p><a href="/bilesik-faiz-hesaplama.html">Bileşik Faiz Hesapla →</a></p>
+      </article>
+
+      <article class="card tool-card featured-card"
+        data-search="brüt net maaş ücret kesinti sgk vergi">
+        <span class="badge">Maaş</span>
         <h3>Brüt Net Maaş Hesaplama</h3>
         <p>Brüt maaştan tahmini net maaşı ve kesintileri hesaplayın.</p>
         <p><a href="/brut-net-maas-hesaplama.html">Brüt Net Maaş Hesapla →</a></p>
       </article>
 
-      <article class="card">
-        <h3>Saatlik, Günlük ve Aylık Maaş Hesaplama</h3>
-        <p>Saatlik, günlük, haftalık, aylık veya yıllık kazancı dönüştürün.</p>
-        <p><a href="/saatlik-gunluk-maas-hesaplama.html">Maaş Dönüştür →</a></p>
-      </article>
-
-      <article class="card">
-        <h3>Kredi Hesaplama</h3>
-        <p>Kredi tutarı, aylık faiz ve vadeden aylık taksit tutarını hesaplayın.</p>
-        <p><a href="/kredi-hesaplama.html">Kredi Hesapla →</a></p>
-      </article>
-
-      <article class="card">
+      <article class="card tool-card featured-card"
+        data-search="mevduat faiz banka para getiri vade">
+        <span class="badge">Finans</span>
         <h3>Mevduat Faizi Hesaplama</h3>
         <p>Anapara, faiz, vade ve stopajdan tahmini mevduat getirisini hesaplayın.</p>
         <p><a href="/mevduat-faizi-hesaplama.html">Mevduat Faizi Hesapla →</a></p>
       </article>
 
-      <article class="card">
-        <h3>Kredi Kartı Asgari Ödeme Hesaplama</h3>
+      <article class="card tool-card featured-card"
+        data-search="kredi kartı asgari ödeme borç kart banka">
+        <span class="badge">Finans</span>
+        <h3>Kredi Kartı Asgari Ödeme</h3>
         <p>Kart limiti ve dönem borcundan tahmini asgari ödeme tutarını hesaplayın.</p>
         <p><a href="/kredi-karti-asgari-odeme-hesaplama.html">Asgari Ödeme Hesapla →</a></p>
       </article>
 
-      <article class="card">
+    </div>
+
+  </section>
+
+
+  <!-- FİNANS VE TİCARET -->
+
+  <section class="tool-section">
+
+    <div class="section-head">
+      <h2>Finans ve Ticaret Araçları</h2>
+      <p>Satış, maliyet, fiyatlandırma, faiz ve ödeme hesaplamaları.</p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card tool-card" data-search="vade farkı vadeli fiyat satış">
         <h3>Vade Farkı Hesaplama</h3>
         <p>Peşin fiyat, oran ve vadeden vadeli satış fiyatını hesaplayın.</p>
         <p><a href="/vade-farki-hesaplama.html">Vade Farkı Hesapla →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card" data-search="komisyon kesinti net tutar yüzde">
         <h3>Komisyon Hesaplama</h3>
         <p>İşlem tutarı ve komisyon oranından kesinti ve net tutarı hesaplayın.</p>
         <p><a href="/komisyon-hesaplama.html">Komisyon Hesapla →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card" data-search="kar zarar alış satış ticaret">
         <h3>Kâr / Zarar Hesaplama</h3>
         <p>Alış maliyeti ve satış fiyatından kâr veya zarar tutarını hesaplayın.</p>
         <p><a href="/kar-zarar-hesaplama.html">Kâr / Zarar Hesapla →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card" data-search="kar marjı maliyet satış fiyatı">
         <h3>Kâr Marjı Hesaplama</h3>
-        <p>Maliyet ve hedef kâr oranına göre satış fiyatı ve kâr tutarını hesaplayın.</p>
+        <p>Maliyet ve hedef kâr oranına göre satış fiyatını hesaplayın.</p>
         <p><a href="/kar-marji-hesaplama.html">Kâr Marjı Hesapla →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card" data-search="iskonto indirim fiyat ticaret">
         <h3>İskonto Hesaplama</h3>
-        <p>Tek veya art arda birden fazla iskonto uygulayarak net fiyatı hesaplayın.</p>
+        <p>Tek veya birden fazla iskonto uygulayarak net fiyatı hesaplayın.</p>
         <p><a href="/iskonto-hesaplama.html">İskonto Hesapla →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card" data-search="birim fiyat ürün adet kilogram litre">
         <h3>Birim Fiyat Hesaplama</h3>
         <p>Toplam fiyat ve miktardan birim başına fiyatı hesaplayın.</p>
         <p><a href="/birim-fiyat-hesaplama.html">Birim Fiyat Hesapla →</a></p>
       </article>
 
-      <article class="card">
-        <h3>Yüzde Değişim Hesaplama</h3>
-        <p>Eski ve yeni değerden yüzde artış veya azalışı hesaplayın.</p>
-        <p><a href="/yuzde-degisim-hesaplama.html">Yüzde Değişimi Hesapla →</a></p>
-      </article>
-
-      <article class="card">
-        <h3>Oran Orantı Hesaplama</h3>
-        <p>Doğru ve ters orantıda bilinmeyen değeri hesaplayın.</p>
-        <p><a href="/oran-oranti-hesaplama.html">Oran Orantı Hesapla →</a></p>
-      </article>
-
-      <article class="card">
-        <h3>Yakıt Tüketimi ve Yol Masrafı</h3>
-        <p>Mesafe ve yakıt bilgilerinden tüketimi ve toplam yol masrafını hesaplayın.</p>
-        <p><a href="/yakit-tuketimi-hesaplama.html">Yakıt Tüketimini Hesapla →</a></p>
-      </article>
-
-      <article class="card">
-        <h3>Metrekare Hesaplama</h3>
-        <p>Oda, duvar, zemin veya bahçe alanını metrekare olarak hesaplayın.</p>
-        <p><a href="/metrekare-hesaplama.html">Metrekare Hesapla →</a></p>
-      </article>
-
-      <article class="card">
-        <h3>Desi Hesaplama</h3>
-        <p>Paket ölçülerinden kargo desisini hesaplayın.</p>
-        <p><a href="/desi-hesaplama.html">Desi Hesapla →</a></p>
-      </article>
-
-      <article class="card">
-        <h3>Yüzde Hesaplama</h3>
-        <p>Bir sayının belirli bir yüzdesini hızlıca hesaplayın.</p>
-        <p><a href="/yuzde-hesaplama.html">Yüzde Hesapla →</a></p>
-      </article>
-
-      <article class="card">
-        <h3>İndirim Hesaplama</h3>
-        <p>Etiket fiyatından indirim tutarını ve indirimli fiyatı hesaplayın.</p>
-        <p><a href="/indirim-hesaplama.html">İndirim Hesapla →</a></p>
-      </article>
-
-      <article class="card">
-        <h3>Zam Hesaplama</h3>
-        <p>Bir tutara uygulanacak zam miktarını ve yeni tutarı hesaplayın.</p>
-        <p><a href="/zam-hesaplama.html">Zam Hesapla →</a></p>
-      </article>
-
-      <article class="card">
+      <article class="card tool-card" data-search="kdv vergi dahil hariç">
         <h3>KDV Hesaplama</h3>
         <p>KDV hariç veya KDV dahil tutarlar üzerinden KDV hesabı yapın.</p>
         <p><a href="/kdv-hesaplama.html">KDV Hesapla →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card" data-search="indirim yüzde fiyat">
+        <h3>İndirim Hesaplama</h3>
+        <p>Etiket fiyatından indirim tutarını ve indirimli fiyatı hesaplayın.</p>
+        <p><a href="/indirim-hesaplama.html">İndirim Hesapla →</a></p>
+      </article>
+
+      <article class="card tool-card" data-search="zam artış yüzde fiyat">
+        <h3>Zam Hesaplama</h3>
+        <p>Bir tutara uygulanacak zam miktarını ve yeni tutarı hesaplayın.</p>
+        <p><a href="/zam-hesaplama.html">Zam Hesapla →</a></p>
+      </article>
+
+      <article class="card tool-card" data-search="taksit bölme ödeme">
         <h3>Basit Taksit Hesaplama</h3>
         <p>Toplam tutarı belirlediğiniz taksit sayısına eşit olarak bölün.</p>
         <p><a href="/basit-taksit-hesaplama.html">Taksit Hesapla →</a></p>
       </article>
 
-      <article class="card">
-        <h3>IBAN Doğrulama</h3>
-        <p>Türkiye IBAN numarasının biçimini ve kontrol basamaklarını doğrulayın.</p>
-        <p><a href="/iban-dogrulama.html">IBAN Kontrol Et →</a></p>
+    </div>
+
+  </section>
+
+
+  <!-- MAAŞ VE ÇALIŞMA -->
+
+  <section class="tool-section">
+
+    <div class="section-head">
+      <h2>Maaş ve Çalışma Araçları</h2>
+      <p>Maaş, çalışma süresi ve gelir hesaplamaları.</p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card tool-card" data-search="saatlik günlük aylık maaş ücret">
+        <h3>Saatlik, Günlük ve Aylık Maaş</h3>
+        <p>Saatlik, günlük, haftalık, aylık veya yıllık kazancı dönüştürün.</p>
+        <p><a href="/saatlik-gunluk-maas-hesaplama.html">Maaş Dönüştür →</a></p>
       </article>
 
-      <article class="card">
-        <h3>Yaş Hesaplama</h3>
-        <p>Doğum tarihinizden yaşınızı yıl, ay ve gün olarak hesaplayın.</p>
-        <p><a href="/yas-hesaplama.html">Yaş Hesapla →</a></p>
+    </div>
+
+  </section>
+
+
+  <!-- GÜNLÜK -->
+
+  <section class="tool-section">
+
+    <div class="section-head">
+      <h2>Günlük Hesaplama Araçları</h2>
+      <p>Yüzde, tarih, yol, ölçüm ve günlük kullanım araçları.</p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card tool-card" data-search="yüzde hesaplama oran">
+        <h3>Yüzde Hesaplama</h3>
+        <p>Bir sayının belirli bir yüzdesini hızlıca hesaplayın.</p>
+        <p><a href="/yuzde-hesaplama.html">Yüzde Hesapla →</a></p>
       </article>
 
-      <article class="card">
-        <h3>İki Tarih Arası Gün Hesaplama</h3>
-        <p>İki tarih arasında kaç gün ve kaç hafta olduğunu hesaplayın.</p>
-        <p><a href="/iki-tarih-arasi-gun-hesaplama.html">Tarih Farkını Hesapla →</a></p>
+      <article class="card tool-card" data-search="yüzde değişim artış azalış eski yeni">
+        <h3>Yüzde Değişim Hesaplama</h3>
+        <p>Eski ve yeni değerden yüzde artış veya azalışı hesaplayın.</p>
+        <p><a href="/yuzde-degisim-hesaplama.html">Yüzde Değişimini Hesapla →</a></p>
       </article>
 
-      <article class="card">
-        <h3>Tarihe Gün Ekleme / Çıkarma</h3>
-        <p>Bir tarihten belirli sayıda gün sonrasını veya öncesini hesaplayın.</p>
-        <p><a href="/gun-ekleme-cikarma.html">Gün Ekle / Çıkar →</a></p>
+      <article class="card tool-card" data-search="oran orantı matematik">
+        <h3>Oran Orantı Hesaplama</h3>
+        <p>Doğru ve ters orantıda bilinmeyen değeri hesaplayın.</p>
+        <p><a href="/oran-oranti-hesaplama.html">Oran Orantı Hesapla →</a></p>
       </article>
 
-      <article class="card">
-        <h3>Hız, Mesafe ve Zaman Hesaplama</h3>
-        <p>Hız, mesafe ve seyahat süresi arasındaki hesaplamaları yapın.</p>
-        <p><a href="/hiz-mesafe-zaman-hesaplama.html">Hız, Mesafe ve Zaman Hesapla →</a></p>
-      </article>
-
-      <article class="card">
+      <article class="card tool-card" data-search="ağırlıklı ortalama not hesaplama">
         <h3>Ağırlıklı Ortalama Hesaplama</h3>
         <p>Değerleri ve ağırlıklarını girerek ağırlıklı ortalamayı hesaplayın.</p>
         <p><a href="/agirlikli-ortalama-hesaplama.html">Ağırlıklı Ortalama Hesapla →</a></p>
       </article>
 
-      <article class="card">
-        <h3>Gebelik Hesaplama</h3>
-        <p>Son adet tarihinden yaklaşık gebelik haftası ve doğum tarihini hesaplayın.</p>
-        <p><a href="/gebelik-hesaplama.html">Gebelik Hesapla →</a></p>
+      <article class="card tool-card" data-search="yakıt tüketimi benzin mazot yol masrafı">
+        <h3>Yakıt Tüketimi ve Yol Masrafı</h3>
+        <p>Mesafe ve yakıt bilgilerinden tüketimi ve yol masrafını hesaplayın.</p>
+        <p><a href="/yakit-tuketimi-hesaplama.html">Yakıt Hesapla →</a></p>
       </article>
 
-      <article class="card">
-        <h3>Yumurtlama ve Ovulasyon Hesaplama</h3>
-        <p>Son adet tarihi ve döngü süresinden tahmini yumurtlama tarihini hesaplayın.</p>
-        <p><a href="/yumurtlama-ovulasyon-hesaplama.html">Yumurtlama Hesapla →</a></p>
+      <article class="card tool-card" data-search="hız mesafe zaman yol süre">
+        <h3>Hız, Mesafe ve Zaman</h3>
+        <p>Hız, mesafe ve seyahat süresi arasındaki hesaplamaları yapın.</p>
+        <p><a href="/hiz-mesafe-zaman-hesaplama.html">Hesapla →</a></p>
       </article>
 
-      <article class="card">
-        <h3>Bazal Metabolizma ve Günlük Kalori</h3>
-        <p>Yaş, boy, kilo ve aktiviteden tahmini enerji ihtiyacınızı hesaplayın.</p>
-        <p><a href="/bazal-metabolizma-hesaplama.html">BMR Hesapla →</a></p>
+      <article class="card tool-card" data-search="metrekare alan oda duvar zemin">
+        <h3>Metrekare Hesaplama</h3>
+        <p>Oda, duvar, zemin veya bahçe alanını metrekare olarak hesaplayın.</p>
+        <p><a href="/metrekare-hesaplama.html">Metrekare Hesapla →</a></p>
       </article>
 
-      <article class="card">
-        <h3>Vücut Kitle İndeksi (VKİ)</h3>
-        <p>Boy ve kilo bilgilerinizden vücut kitle indeksinizi hesaplayın.</p>
-        <p><a href="/vucut-kitle-indeksi-hesaplama.html">VKİ Hesapla →</a></p>
+      <article class="card tool-card" data-search="desi kargo paket ölçü">
+        <h3>Desi Hesaplama</h3>
+        <p>Paket ölçülerinden kargo desisini hesaplayın.</p>
+        <p><a href="/desi-hesaplama.html">Desi Hesapla →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card" data-search="yaş doğum tarihi kaç yaş">
+        <h3>Yaş Hesaplama</h3>
+        <p>Doğum tarihinizden yaşınızı yıl, ay ve gün olarak hesaplayın.</p>
+        <p><a href="/yas-hesaplama.html">Yaş Hesapla →</a></p>
+      </article>
+
+      <article class="card tool-card" data-search="iki tarih arası gün tarih farkı">
+        <h3>İki Tarih Arası Gün</h3>
+        <p>İki tarih arasında kaç gün ve kaç hafta olduğunu hesaplayın.</p>
+        <p><a href="/iki-tarih-arasi-gun-hesaplama.html">Tarih Farkını Hesapla →</a></p>
+      </article>
+
+      <article class="card tool-card" data-search="tarihe gün ekleme çıkarma tarih">
+        <h3>Tarihe Gün Ekleme / Çıkarma</h3>
+        <p>Bir tarihten belirli sayıda gün sonrasını veya öncesini hesaplayın.</p>
+        <p><a href="/gun-ekleme-cikarma.html">Gün Ekle / Çıkar →</a></p>
+      </article>
+
+      <article class="card tool-card" data-search="iban doğrulama banka hesap kontrol">
+        <h3>IBAN Doğrulama</h3>
+        <p>Türkiye IBAN numarasının biçimini ve kontrol basamaklarını doğrulayın.</p>
+        <p><a href="/iban-dogrulama.html">IBAN Kontrol Et →</a></p>
+      </article>
+
+      <article class="card tool-card" data-search="kelime karakter sayacı metin">
         <h3>Kelime &amp; Karakter Sayacı</h3>
         <p>Metninizdeki kelime ve karakter sayısını anında öğrenin.</p>
         <p><a href="/kelime-karakter-sayaci.html">Kelime &amp; Karakter Say →</a></p>
       </article>
 
-      <article class="card">
+    </div>
+
+  </section>
+
+
+  <!-- SAĞLIK -->
+
+  <section class="tool-section">
+
+    <div class="section-head">
+      <h2>Sağlık ve Yaşam Araçları</h2>
+      <p>Genel bilgilendirme amaçlı sağlık ve yaşam hesaplamaları.</p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card tool-card" data-search="vücut kitle indeksi vki bmi kilo boy">
+        <h3>Vücut Kitle İndeksi (VKİ)</h3>
+        <p>Boy ve kilo bilgilerinizden vücut kitle indeksinizi hesaplayın.</p>
+        <p><a href="/vucut-kitle-indeksi-hesaplama.html">VKİ Hesapla →</a></p>
+      </article>
+
+      <article class="card tool-card" data-search="bazal metabolizma bmr kalori enerji">
+        <h3>Bazal Metabolizma ve Kalori</h3>
+        <p>Yaş, boy, kilo ve aktiviteden tahmini enerji ihtiyacınızı hesaplayın.</p>
+        <p><a href="/bazal-metabolizma-hesaplama.html">BMR Hesapla →</a></p>
+      </article>
+
+      <article class="card tool-card" data-search="gebelik hamilelik doğum tarihi hafta">
+        <h3>Gebelik Hesaplama</h3>
+        <p>Son adet tarihinden yaklaşık gebelik haftası ve doğum tarihini hesaplayın.</p>
+        <p><a href="/gebelik-hesaplama.html">Gebelik Hesapla →</a></p>
+      </article>
+
+      <article class="card tool-card" data-search="yumurtlama ovulasyon adet doğurganlık">
+        <h3>Yumurtlama ve Ovulasyon</h3>
+        <p>Son adet tarihi ve döngü süresinden tahmini yumurtlama tarihini hesaplayın.</p>
+        <p><a href="/yumurtlama-ovulasyon-hesaplama.html">Yumurtlama Hesapla →</a></p>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- DÖNÜŞTÜRÜCÜLER -->
+
+  <section class="tool-section">
+
+    <div class="section-head">
+      <h2>Birim Dönüştürücüler</h2>
+      <p>Günlük ve teknik birimleri hızlıca birbirine dönüştürün.</p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card tool-card" data-search="güç watt kilowatt megawatt hp ps">
         <h3>Güç Dönüştürücü</h3>
         <p>Watt, kilowatt, megawatt, HP ve PS birimlerini dönüştürün.</p>
         <p><a href="/guc-donusturucu.html">Güç Dönüştür →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card" data-search="enerji joule enerji dönüştürme">
         <h3>Enerji Dönüştürücü</h3>
         <p>Farklı enerji birimleri arasında hızlı dönüşüm yapın.</p>
         <p><a href="/enerji-donusturucu.html">Enerji Dönüştür →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card" data-search="hacim litre mililitre metreküp">
         <h3>Hacim Dönüştürücü</h3>
         <p>Farklı hacim birimleri arasında hızlı dönüşüm yapın.</p>
         <p><a href="/hacim-donusturucu.html">Hacim Dönüştür →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card" data-search="alan metrekare dönüm hektar acre">
         <h3>Alan Dönüştürücü</h3>
         <p>Metrekare, kilometrekare, dönüm, hektar ve acre birimlerini dönüştürün.</p>
         <p><a href="/alan-donusturucu.html">Alan Dönüştür →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card" data-search="ağırlık kilogram gram ton pound ons">
         <h3>Ağırlık Dönüştürücü</h3>
         <p>Miligram, gram, kilogram, ton, pound ve ons birimlerini dönüştürün.</p>
         <p><a href="/agirlik-donusturucu.html">Ağırlık Dönüştür →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card" data-search="sıcaklık celsius fahrenheit kelvin derece">
         <h3>Sıcaklık Dönüştürücü</h3>
         <p>Celsius, Fahrenheit ve Kelvin arasında dönüşüm yapın.</p>
         <p><a href="/sicaklik-donusturucu.html">Sıcaklık Dönüştür →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card" data-search="uzunluk metre santimetre kilometre inç feet">
         <h3>Uzunluk Dönüştürücü</h3>
         <p>Milimetre, santimetre, metre, kilometre, inç ve feet dönüştürün.</p>
         <p><a href="/uzunluk-donusturucu.html">Uzunluk Dönüştür →</a></p>
       </article>
 
-      <article class="card">
+      <article class="card tool-card" data-search="mb gb tb kb veri depolama">
         <h3>MB, GB ve TB Dönüştürücü</h3>
         <p>KB, MB, GB ve TB değerlerini birbirine dönüştürün.</p>
         <p><a href="/mb-gb-tb-donusturucu.html">Veri Birimi Dönüştür →</a></p>
       </article>
 
-      <article class="card">
-        <h3>Saat, Dakika ve Saniye Dönüştürücü</h3>
+      <article class="card tool-card" data-search="zaman saat dakika saniye">
+        <h3>Saat, Dakika ve Saniye</h3>
         <p>Saat, dakika ve saniye arasında hızlı dönüşüm yapın.</p>
         <p><a href="/zaman-donusturucu.html">Zaman Dönüştür →</a></p>
       </article>
@@ -350,30 +610,32 @@
 
   </section>
 
-  <section class="info">
+
+  <section class="trust-box">
 
     <h2>Araclio Nedir?</h2>
 
     <p>
-      Araclio; finans, e-ticaret, maaş, çalışma hayatı,
+      Araclio; finans, ticaret, maaş, çalışma hayatı,
       gayrimenkul, günlük hesaplamalar ve birim dönüşümleri
       için ücretsiz online araçlar sunar.
     </p>
 
     <p>
-      Hesaplama araçlarını kullanmak için üyelik oluşturmanız gerekmez.
+      Araçları kullanmak için üyelik gerekmez.
+      Hesaplamalar tarayıcı üzerinden hızlıca yapılabilir.
     </p>
 
     <p>
-      Araclio üzerindeki hesaplamalar genel bilgilendirme amaçlıdır.
-      Finansal, hukuki veya tıbbi danışmanlık niteliği taşımaz.
-      Mevzuata bağlı hesaplamalarda güncel resmî bilgilerin ayrıca
-      kontrol edilmesi gerekir.
+      Finansal, hukuki ve sağlıkla ilgili araçların sonuçları
+      genel bilgilendirme amaçlıdır. Resmî işlem veya kişisel
+      karar öncesinde güncel resmî bilgiler kontrol edilmelidir.
     </p>
 
   </section>
 
 </main>
+
 
 <footer>
   <div class="wrap">
@@ -397,7 +659,120 @@
   </div>
 </footer>
 
-<script src="app.js"></script>
+
+<script>
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+
+const searchInput =
+  document.getElementById("toolSearch");
+
+const cards =
+  document.querySelectorAll(".tool-card");
+
+const sections =
+  document.querySelectorAll(".tool-section");
+
+const empty =
+  document.getElementById("searchEmpty");
+
+
+function normalizeText(text){
+
+  return text
+    .toLocaleLowerCase("tr-TR")
+    .replace(/ı/g,"i")
+    .replace(/ğ/g,"g")
+    .replace(/ü/g,"u")
+    .replace(/ş/g,"s")
+    .replace(/ö/g,"o")
+    .replace(/ç/g,"c");
+
+}
+
+
+searchInput.addEventListener("input", function(){
+
+  const query =
+    normalizeText(this.value.trim());
+
+  let totalVisible = 0;
+
+
+  cards.forEach(function(card){
+
+    const text =
+      normalizeText(
+        card.innerText + " " +
+        (card.dataset.search || "")
+      );
+
+    const show =
+      query === "" || text.includes(query);
+
+    card.style.display =
+      show ? "" : "none";
+
+    if(show){
+      totalVisible++;
+    }
+
+  });
+
+
+  sections.forEach(function(section){
+
+    const visibleCards =
+      Array.from(
+        section.querySelectorAll(".tool-card")
+      ).filter(function(card){
+        return card.style.display !== "none";
+      });
+
+    if(query !== "" && visibleCards.length === 0){
+      section.classList.add("category-hidden");
+    }else{
+      section.classList.remove("category-hidden");
+    }
+
+  });
+
+
+  empty.style.display =
+    query !== "" && totalVisible === 0
+      ? "block"
+      : "none";
+
+});
+
+
+searchInput.addEventListener("keydown", function(event){
+
+  if(event.key !== "Enter"){
+    return;
+  }
+
+  const visibleCards =
+    Array.from(cards).filter(function(card){
+      return card.style.display !== "none";
+    });
+
+  if(visibleCards.length === 1){
+
+    const link =
+      visibleCards[0].querySelector("a");
+
+    if(link){
+      window.location.href = link.href;
+    }
+
+  }
+
+});
+
+</script>
 
 </body>
 </html>
