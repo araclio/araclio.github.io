@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kâr Marjı Hesaplama 2026 | Satış Fiyatı Hesapla - Araclio</title>
+
+  <meta name="description" content="Ücretsiz kâr marjı ve satış fiyatı hesaplama aracı. Maliyet ve hedef kâr oranını girerek satış fiyatınızı ve kâr tutarınızı kolayca hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/kar-marji-hesaplama.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+    <h1>Kâr Marjı / Satış Fiyatı Hesaplama</h1>
+    <p>Maliyetinizi ve hedef kâr oranınızı girerek satış fiyatınızı saniyeler içinde hesaplayın.</p>
+  </section>
+
+  <section class="card">
+    <h2>Kâr Marjı Hesaplama Aracı</h2>
+
+    <label>
+      Maliyet (₺)
+      <input id="maliyet" type="number" min="0" step="0.01" placeholder="Örnek: 500">
+    </label>
+
+    <label>
+      Hedef Kâr (%)
+      <input id="karOrani" type="number" step="0.01" placeholder="Örnek: 30">
+    </label>
+
+    <div class="buttons">
+      <button onclick="hesapla()">Hesapla</button>
+    </div>
+
+    <div id="sonuc" class="result">Sonuç burada görünecek.</div>
+  </section>
+
+  <section class="card">
+    <h2>Kâr ve Satış Fiyatı Nasıl Hesaplanır?</h2>
+
+    <p>
+      Maliyet üzerinden belirli bir kâr oranı eklemek için maliyet,
+      kâr yüzdesiyle çarpılır. Bulunan kâr tutarı maliyete eklenerek
+      satış fiyatı hesaplanır.
+    </p>
+
+    <p>
+      Örneğin maliyeti 500 TL olan bir ürüne %30 kâr eklendiğinde
+      kâr tutarı 150 TL, satış fiyatı ise 650 TL olur.
+    </p>
+  </section>
+
+</main>
+
+<script>
+function hesapla() {
+  const maliyet = parseFloat(document.getElementById("maliyet").value);
+  const karOrani = parseFloat(document.getElementById("karOrani").value);
+  const sonuc = document.getElementById("sonuc");
+
+  if (isNaN(maliyet) || isNaN(karOrani) || maliyet < 0) {
+    sonuc.innerHTML = "Lütfen geçerli bir maliyet ve kâr oranı girin.";
+    return;
+  }
+
+  const karTutari = maliyet * karOrani / 100;
+  const satisFiyati = maliyet + karTutari;
+
+  const para = new Intl.NumberFormat("tr-TR", {
+    style: "currency",
+    currency: "TRY"
+  });
+
+  sonuc.innerHTML =
+    "Kâr tutarı: <strong>" + para.format(karTutari) + "</strong><br>" +
+    "Satış fiyatı: <strong>" + para.format(satisFiyati) + "</strong>";
+}
+</script>
+
+</body>
+</html>
