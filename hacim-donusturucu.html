@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+  <title>Hacim Dönüştürücü | Litre mL m³ Galon - Araclio</title>
+
+  <meta name="description" content="Ücretsiz hacim dönüştürücü. Litre, mililitre, metreküp, santimetreküp, galon ve sıvı ons arasında dönüşüm yapın. 1 litre kaç ml veya galon anında hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/hacim-donusturucu.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .converter-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .result-list {
+      margin-top: 14px;
+      line-height: 1.9;
+    }
+
+    .info-box {
+      margin-top: 16px;
+      padding: 16px;
+      background: #f5f5f5;
+      border-radius: 10px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 600px) {
+      .converter-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>Hacim Dönüştürücü</h1>
+
+    <p>
+      Litre, mililitre, metreküp, santimetreküp,
+      ABD galonu ve sıvı ons birimlerini birbirine dönüştürün.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Hacim Birimi Dönüştür</h2>
+
+      <div class="converter-grid">
+
+        <label>
+          Değer
+          <input
+            id="deger"
+            type="number"
+            min="0"
+            step="any"
+            placeholder="1">
+        </label>
+
+        <label>
+          Birim
+          <select id="birim">
+            <option value="ml">Mililitre (mL)</option>
+            <option value="litre" selected>Litre (L)</option>
+            <option value="cm3">Santimetreküp (cm³)</option>
+            <option value="m3">Metreküp (m³)</option>
+            <option value="galon">ABD Galonu (US gal)</option>
+            <option value="floz">ABD Sıvı Ons (fl oz)</option>
+          </select>
+        </label>
+
+      </div>
+
+      <button type="button" onclick="hesapla()">
+        Dönüştür
+      </button>
+
+      <div id="sonuc" class="result">
+        Bir değer girip hacim birimini seçin.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>1 Litre Kaç Mililitre?</h2>
+
+    <p>
+      1 litre tam olarak 1000 mililitreye eşittir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 litre = 1000 mL</strong><br>
+      0,5 litre = 500 mL<br>
+      2 litre = 2000 mL<br>
+      5 litre = 5000 mL
+    </div>
+
+    <h2>1 Metreküp Kaç Litre?</h2>
+
+    <p>
+      1 metreküp tam olarak 1000 litreye eşittir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 m³ = 1000 litre</strong><br>
+      0,5 m³ = 500 litre<br>
+      2 m³ = 2000 litre<br>
+      10 m³ = 10.000 litre
+    </div>
+
+    <h2>1 Litre Kaç Santimetreküp?</h2>
+
+    <p>
+      1 litre 1000 santimetreküpe eşittir.
+      Ayrıca 1 mililitre ile 1 santimetreküp aynı hacmi ifade eder.
+    </p>
+
+    <div class="info-box">
+      <strong>1 litre = 1000 cm³</strong><br>
+      1 mL = 1 cm³<br>
+      500 mL = 500 cm³
+    </div>
+
+    <h2>1 ABD Galonu Kaç Litre?</h2>
+
+    <p>
+      Bu araçta galon dönüşümleri için ABD sıvı galonu
+      kullanılmaktadır.
+    </p>
+
+    <div class="info-box">
+      <strong>1 US gal = 3,785411784 litre</strong><br>
+      5 US gal ≈ 18,9271 litre<br>
+      10 US gal ≈ 37,8541 litre
+    </div>
+
+    <h2>1 Litre Kaç ABD Galonu?</h2>
+
+    <p>
+      1 litre yaklaşık 0,264172 ABD galonuna eşittir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 litre ≈ 0,264172 US gal</strong><br>
+      10 litre ≈ 2,64172 US gal<br>
+      100 litre ≈ 26,4172 US gal
+    </div>
+
+    <h2>1 ABD Sıvı Ons Kaç Mililitre?</h2>
+
+    <p>
+      ABD sıvı onsu (US fl oz) yaklaşık
+      29,5735 mililitreye eşittir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 US fl oz ≈ 29,5735 mL</strong><br>
+      8 US fl oz ≈ 236,588 mL<br>
+      16 US fl oz ≈ 473,176 mL
+    </div>
+
+    <h2>Hacim Dönüştürücü Nasıl Kullanılır?</h2>
+
+    <p>
+      Dönüştürmek istediğiniz değeri girin ve mevcut hacim
+      birimini seçin. Araç litre, mililitre, santimetreküp,
+      metreküp, ABD galonu ve ABD sıvı onsu karşılıklarını
+      aynı anda hesaplar.
+    </p>
+
+    <h2>Diğer Dönüştürme Araçları</h2>
+
+    <p>
+      <a href="/alan-donusturucu.html">Alan Dönüştürücü</a>
+      •
+      <a href="/agirlik-donusturucu.html">Ağırlık Dönüştürücü</a>
+      •
+      <a href="/sicaklik-donusturucu.html">Sıcaklık Dönüştürücü</a>
+      •
+      <a href="/uzunluk-donusturucu.html">Uzunluk Dönüştürücü</a>
+      •
+      <a href="/zaman-donusturucu.html">Zaman Dönüştürücü</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+function formatla(sayi) {
+  if (Math.abs(sayi) < 0.000000000001) {
+    sayi = 0;
+  }
+
+  return new Intl.NumberFormat("tr-TR", {
+    maximumFractionDigits: 10
+  }).format(sayi);
+}
+
+function hesapla() {
+  const alan = document.getElementById("deger");
+  const birim = document.getElementById("birim").value;
+  const sonuc = document.getElementById("sonuc");
+
+  if (alan.value === "") {
+    sonuc.innerHTML = "Lütfen bir değer girin.";
+    return;
+  }
+
+  const deger = Number(alan.value);
+
+  if (!Number.isFinite(deger) || deger < 0) {
+    sonuc.innerHTML =
+      "Lütfen sıfır veya sıfırdan büyük geçerli bir değer girin.";
+    return;
+  }
+
+  /*
+    Bütün birimleri litreye çeviriyoruz.
+    US gallon ve US fluid ounce kullanılır.
+  */
+
+  const litreKarsiligi = {
+    ml: 0.001,
+    litre: 1,
+    cm3: 0.001,
+    m3: 1000,
+    galon: 3.785411784,
+    floz: 0.0295735295625
+  };
+
+  const litre = deger * litreKarsiligi[birim];
+
+  const ml = litre / 0.001;
+  const cm3 = litre / 0.001;
+  const m3 = litre / 1000;
+  const galon = litre / 3.785411784;
+  const floz = litre / 0.0295735295625;
+
+  sonuc.innerHTML =
+    "<strong>Dönüşüm Sonucu</strong>" +
+    "<div class='result-list'>" +
+    formatla(ml) + " mL<br>" +
+    formatla(litre) + " litre<br>" +
+    formatla(cm3) + " cm³<br>" +
+    formatla(m3) + " m³<br>" +
+    formatla(galon) + " US gal<br>" +
+    formatla(floz) + " US fl oz" +
+    "</div>";
+}
+
+document.getElementById("deger").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    hesapla();
+  }
+});
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
