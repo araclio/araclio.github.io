@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+  <title>Alan Dönüştürücü | m² Dönüm Hektar Acre - Araclio</title>
+
+  <meta name="description" content="Ücretsiz alan dönüştürücü. Metrekare, kilometrekare, santimetrekare, hektar, dönüm ve acre arasında dönüşüm yapın. 1 dönüm kaç m2 anında hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/alan-donusturucu.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .converter-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .result-list {
+      margin-top:14px;
+      line-height:1.9;
+    }
+
+    .info-box {
+      margin-top:16px;
+      padding:16px;
+      background:#f5f5f5;
+      border-radius:10px;
+      line-height:1.8;
+    }
+
+    @media(max-width:600px){
+      .converter-grid {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>Alan Dönüştürücü</h1>
+
+    <p>
+      Metrekare, santimetrekare, kilometrekare, hektar,
+      dönüm ve acre birimlerini birbirine dönüştürün.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Alan Birimi Dönüştür</h2>
+
+      <div class="converter-grid">
+
+        <label>
+          Değer
+          <input
+            id="deger"
+            type="number"
+            min="0"
+            step="any"
+            placeholder="1">
+        </label>
+
+        <label>
+          Birim
+          <select id="birim">
+            <option value="cm2">Santimetrekare (cm²)</option>
+            <option value="m2" selected>Metrekare (m²)</option>
+            <option value="km2">Kilometrekare (km²)</option>
+            <option value="donum">Dönüm</option>
+            <option value="hektar">Hektar (ha)</option>
+            <option value="acre">Acre</option>
+          </select>
+        </label>
+
+      </div>
+
+      <button type="button" onclick="hesapla()">Dönüştür</button>
+
+      <div id="sonuc" class="result">
+        Bir değer girip alan birimini seçin.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>1 Dönüm Kaç Metrekare?</h2>
+
+    <p>
+      Günümüzde kullanılan metrik dönüm birimine göre
+      1 dönüm 1000 metrekareye eşittir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 dönüm = 1000 m²</strong><br>
+      2 dönüm = 2000 m²<br>
+      5 dönüm = 5000 m²<br>
+      10 dönüm = 10.000 m²
+    </div>
+
+    <h2>1 Hektar Kaç Metrekare?</h2>
+
+    <p>
+      1 hektar 10.000 metrekaredir. Aynı zamanda
+      1 hektar 10 dönüme eşittir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 hektar = 10.000 m²</strong><br>
+      1 hektar = 10 dönüm<br>
+      10 hektar = 100.000 m²
+    </div>
+
+    <h2>1 Kilometrekare Kaç Metrekare?</h2>
+
+    <p>
+      1 kilometrekare 1.000.000 metrekareye eşittir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 km² = 1.000.000 m²</strong><br>
+      1 km² = 100 hektar<br>
+      1 km² = 1000 dönüm
+    </div>
+
+    <h2>1 Acre Kaç Metrekare?</h2>
+
+    <p>
+      Acre özellikle ABD ve Birleşik Krallık gibi ülkelerde
+      kullanılan bir alan birimidir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 acre = 4046,8564224 m²</strong><br>
+      1 acre ≈ 4,04686 dönüm<br>
+      1 acre ≈ 0,404686 hektar
+    </div>
+
+    <h2>Alan Dönüştürücü Nasıl Kullanılır?</h2>
+
+    <p>
+      Dönüştürmek istediğiniz sayıyı yazın ve mevcut alan
+      birimini seçin. Araç diğer alan birimlerindeki karşılıkları
+      otomatik olarak hesaplar.
+    </p>
+
+    <h2>Metrekare Hesaplamak mı İstiyorsunuz?</h2>
+
+    <p>
+      Bir odanın, arazinin veya dikdörtgen alanın en ve boy
+      ölçülerinden alanını bulmak için
+      <a href="/metrekare-hesaplama.html">Metrekare Hesaplama</a>
+      aracını kullanabilirsiniz.
+    </p>
+
+    <h2>Diğer Dönüştürme Araçları</h2>
+
+    <p>
+      <a href="/agirlik-donusturucu.html">Ağırlık Dönüştürücü</a>
+      •
+      <a href="/sicaklik-donusturucu.html">Sıcaklık Dönüştürücü</a>
+      •
+      <a href="/uzunluk-donusturucu.html">Uzunluk Dönüştürücü</a>
+      •
+      <a href="/mb-gb-tb-donusturucu.html">MB, GB ve TB Dönüştürücü</a>
+      •
+      <a href="/zaman-donusturucu.html">Zaman Dönüştürücü</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+function formatla(sayi) {
+  if (Math.abs(sayi) < 0.000000000001) {
+    sayi = 0;
+  }
+
+  return new Intl.NumberFormat("tr-TR", {
+    maximumFractionDigits: 10
+  }).format(sayi);
+}
+
+function hesapla() {
+  const alan = document.getElementById("deger");
+  const birim = document.getElementById("birim").value;
+  const sonuc = document.getElementById("sonuc");
+
+  if (alan.value === "") {
+    sonuc.innerHTML = "Lütfen bir değer girin.";
+    return;
+  }
+
+  const deger = Number(alan.value);
+
+  if (!Number.isFinite(deger) || deger < 0) {
+    sonuc.innerHTML =
+      "Lütfen sıfır veya sıfırdan büyük geçerli bir değer girin.";
+    return;
+  }
+
+  const m2Karsiligi = {
+    cm2: 0.0001,
+    m2: 1,
+    km2: 1000000,
+    donum: 1000,
+    hektar: 10000,
+    acre: 4046.8564224
+  };
+
+  const m2 = deger * m2Karsiligi[birim];
+
+  const cm2 = m2 / 0.0001;
+  const km2 = m2 / 1000000;
+  const donum = m2 / 1000;
+  const hektar = m2 / 10000;
+  const acre = m2 / 4046.8564224;
+
+  sonuc.innerHTML =
+    "<strong>Dönüşüm Sonucu</strong>" +
+    "<div class='result-list'>" +
+    formatla(cm2) + " cm²<br>" +
+    formatla(m2) + " m²<br>" +
+    formatla(km2) + " km²<br>" +
+    formatla(donum) + " dönüm<br>" +
+    formatla(hektar) + " hektar<br>" +
+    formatla(acre) + " acre" +
+    "</div>";
+}
+
+document.getElementById("deger").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    hesapla();
+  }
+});
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
