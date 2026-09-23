@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Kelime ve Karakter Sayacı | Online Kelime Sayma - Araclio</title>
+
+  <meta name="description" content="Ücretsiz kelime ve karakter sayacı. Metninizi yazarak kelime, boşluklu karakter ve boşluksuz karakter sayısını anında öğrenin.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/kelime-karakter-sayaci.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+    <h1>Kelime ve Karakter Sayacı</h1>
+    <p>Metninizi yazın veya yapıştırın; kelime ve karakter sayısını anında öğrenin.</p>
+  </section>
+
+  <section class="card">
+    <h2>Kelime &amp; Karakter Sayma Aracı</h2>
+
+    <label>
+      Metin
+      <textarea
+        id="metin"
+        rows="10"
+        placeholder="Metninizi buraya yazın veya yapıştırın..."
+        oninput="metinSay()"></textarea>
+    </label>
+
+    <div id="sonuc" class="result">
+      Kelime: 0<br>
+      Karakter: 0<br>
+      Boşluksuz karakter: 0
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Kelime ve Karakter Sayacı Ne İşe Yarar?</h2>
+
+    <p>
+      Kelime ve karakter sayacı; yazı, ödev, makale, açıklama ve diğer
+      metinlerde bulunan kelime ve karakter miktarını hızlı şekilde
+      öğrenmenizi sağlar.
+    </p>
+
+    <p>
+      Metninizi yukarıdaki alana yazdığınız anda sonuçlar otomatik olarak
+      güncellenir. Hesaplama için ayrıca bir butona basmanız gerekmez.
+    </p>
+
+    <p>
+      Karakter sayısı boşlukları da içerir. Boşluksuz karakter sayısında
+      ise boşluk karakterleri hesaba katılmaz.
+    </p>
+  </section>
+
+</main>
+
+<script>
+function metinSay() {
+  const metin = document.getElementById("metin").value;
+  const temizMetin = metin.trim();
+
+  const kelimeSayisi =
+    temizMetin === ""
+      ? 0
+      : temizMetin.split(/\s+/).length;
+
+  const karakterSayisi = metin.length;
+  const bosluksuzKarakter = metin.replace(/\s/g, "").length;
+
+  document.getElementById("sonuc").innerHTML =
+    "Kelime: <strong>" + kelimeSayisi + "</strong><br>" +
+    "Karakter: <strong>" + karakterSayisi + "</strong><br>" +
+    "Boşluksuz karakter: <strong>" + bosluksuzKarakter + "</strong>";
+}
+</script>
+
+</body>
+</html>
