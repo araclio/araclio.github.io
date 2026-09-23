@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>İki Tarih Arası Gün Hesaplama | Kaç Gün Var? - Araclio</title>
+
+  <meta name="description" content="İki tarih arasında kaç gün, hafta ve ay olduğunu ücretsiz hesaplayın. Başlangıç ve bitiş tarihini seçerek iki tarih arasındaki süreyi öğrenin.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/iki-tarih-arasi-gun-hesaplama.html">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>İki Tarih Arası Gün Hesaplama</h1>
+
+    <p>
+      İki tarih arasında kaç gün olduğunu saniyeler içinde hesaplayın.
+      Başlangıç ve bitiş tarihini seçerek aradaki toplam gün ve hafta
+      sayısını öğrenin.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>İki Tarih Arasında Kaç Gün Var?</h2>
+
+      <label>
+        Başlangıç Tarihi
+        <input id="baslangic" type="date">
+      </label>
+
+      <label>
+        Bitiş Tarihi
+        <input id="bitis" type="date">
+      </label>
+
+      <button onclick="tarihHesapla()">Hesapla</button>
+
+      <div id="tarihSonuc" class="result">
+        Başlangıç ve bitiş tarihini seçin.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>İki Tarih Arasındaki Gün Sayısı Nasıl Hesaplanır?</h2>
+
+    <p>
+      İki tarih arasındaki gün sayısı, başlangıç tarihi ile bitiş
+      tarihi arasındaki zaman farkının gün cinsine çevrilmesiyle
+      hesaplanır.
+    </p>
+
+    <p>
+      Araclio İki Tarih Arası Gün Hesaplama aracı, seçtiğiniz iki
+      tarih arasındaki toplam süreyi gün ve hafta olarak gösterir.
+    </p>
+
+    <h2>Başlangıç ve Bitiş Günleri Hesaba Dahil mi?</h2>
+
+    <p>
+      Standart sonuç, iki tarih arasındaki geçen süreyi gösterir.
+      Örneğin 1 Ekim ile 2 Ekim arasındaki fark 1 gündür.
+      Her iki tarihi de takvim günü olarak dahil etmek isterseniz,
+      sonuç bölümünde dahil edilen gün sayısını ayrıca görebilirsiniz.
+    </p>
+
+    <h2>Kaç Hafta Olduğunu da Hesaplayabilirsiniz</h2>
+
+    <p>
+      Sonuç bölümünde toplam gün sayısının yanında sürenin kaç tam
+      hafta ve kaç gün olduğu da gösterilir. Örneğin 17 günlük bir
+      süre, 2 hafta 3 gün olarak görüntülenir.
+    </p>
+
+    <h2>Hangi İşlemlerde Kullanılabilir?</h2>
+
+    <p>
+      Tatil, seyahat, etkinlik, proje, teslim tarihi, sınav veya
+      herhangi iki tarih arasındaki süreyi öğrenmek için bu aracı
+      kullanabilirsiniz.
+    </p>
+
+    <h2>Diğer Tarih ve Hesaplama Araçları</h2>
+
+    <p>
+      <a href="/yas-hesaplama.html">Yaş Hesaplama</a>
+      •
+      <a href="/yuzde-hesaplama.html">Yüzde Hesaplama</a>
+      •
+      <a href="/kdv-hesaplama.html">KDV Hesaplama</a>
+      •
+      <a href="/indirim-hesaplama.html">İndirim Hesaplama</a>
+    </p>
+
+    <p>
+      Araclio üzerindeki hesaplamalar bilgilendirme amaçlıdır.
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+function tarihOku(deger) {
+  const parca = deger.split("-");
+
+  return Date.UTC(
+    Number(parca[0]),
+    Number(parca[1]) - 1,
+    Number(parca[2])
+  );
+}
+
+function tarihHesapla() {
+  const baslangicDeger = document.getElementById("baslangic").value;
+  const bitisDeger = document.getElementById("bitis").value;
+  const sonuc = document.getElementById("tarihSonuc");
+
+  if (!baslangicDeger || !bitisDeger) {
+    sonuc.innerHTML = "Lütfen iki tarihi de seçin.";
+    return;
+  }
+
+  const baslangic = tarihOku(baslangicDeger);
+  const bitis = tarihOku(bitisDeger);
+
+  const birGun = 1000 * 60 * 60 * 24;
+
+  const farkGun = Math.round(
+    Math.abs(bitis - baslangic) / birGun
+  );
+
+  const hafta = Math.floor(farkGun / 7);
+  const kalanGun = farkGun % 7;
+
+  const dahilGun = farkGun + 1;
+
+  let siralamaMesaji = "";
+
+  if (baslangic > bitis) {
+    siralamaMesaji =
+      "<br><br><small>Not: Başlangıç tarihi bitiş tarihinden sonra olduğu için mutlak tarih farkı hesaplandı.</small>";
+  }
+
+  sonuc.innerHTML =
+    "İki tarih arasında <strong>" +
+    farkGun.toLocaleString("tr-TR") +
+    " gün</strong> var.<br><br>" +
+
+    "Bu süre: <strong>" +
+    hafta.toLocaleString("tr-TR") +
+    " hafta " +
+    kalanGun +
+    " gün</strong><br>" +
+
+    "Her iki tarih de dahil edilirse: <strong>" +
+    dahilGun.toLocaleString("tr-TR") +
+    " takvim günü</strong>" +
+
+    siralamaMesaji;
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
