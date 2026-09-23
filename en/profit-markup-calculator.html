@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Profit Markup Calculator | Selling Price Calculator - Araclio</title>
+
+  <meta name="description" content="Free profit markup calculator. Enter your cost and markup percentage to calculate profit amount and selling price instantly.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/en/profit-markup-calculator.html">
+
+  <link rel="alternate" hreflang="en" href="https://araclio.com/en/profit-markup-calculator.html">
+  <link rel="alternate" hreflang="tr" href="https://araclio.com/kar-marji-hesaplama.html">
+  <link rel="alternate" hreflang="x-default" href="https://araclio.com/en/profit-markup-calculator.html">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/en/">Araclio</a>
+    <span class="tag">Free Online Tools</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">FAST • FREE • NO SIGN-UP</p>
+
+    <h1>Profit Markup Calculator</h1>
+
+    <p>
+      Enter your product cost and desired markup percentage
+      to calculate your profit amount and selling price instantly.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Calculate Profit and Selling Price</h2>
+
+    <label>
+      Cost
+      <input
+        id="cost"
+        type="number"
+        min="0"
+        step="0.01"
+        placeholder="Example: 500">
+    </label>
+
+    <label>
+      Markup (%)
+      <input
+        id="markup"
+        type="number"
+        min="0"
+        step="0.01"
+        placeholder="Example: 30">
+    </label>
+
+    <div class="buttons">
+      <button onclick="calculateMarkup()">Calculate</button>
+    </div>
+
+    <div id="result" class="result">
+      Your result will appear here.
+    </div>
+  </section>
+
+
+  <section class="card">
+    <h2>How Is Markup Calculated?</h2>
+
+    <p>
+      Markup is the amount added to the cost of a product to determine
+      its selling price. This calculator applies the percentage you
+      enter to the original cost.
+    </p>
+
+    <p>
+      <strong>Profit amount:</strong><br>
+      Cost × Markup Percentage ÷ 100
+    </p>
+
+    <p>
+      <strong>Selling price:</strong><br>
+      Cost + Profit Amount
+    </p>
+
+    <p>
+      For example, if a product costs 500 and you apply a 30% markup,
+      the profit amount is 150 and the selling price is 650.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Markup Calculation Examples</h2>
+
+    <p>
+      <strong>Cost 500 + 30% markup:</strong><br>
+      Profit: 150<br>
+      Selling price: 650
+    </p>
+
+    <p>
+      <strong>Cost 1,000 + 20% markup:</strong><br>
+      Profit: 200<br>
+      Selling price: 1,200
+    </p>
+
+    <p>
+      <strong>Cost 2,000 + 25% markup:</strong><br>
+      Profit: 500<br>
+      Selling price: 2,500
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Markup vs. Profit Margin</h2>
+
+    <p>
+      Markup and profit margin are related, but they are not the same
+      calculation. Markup is calculated as a percentage of cost, while
+      profit margin is generally calculated as a percentage of the
+      selling price.
+    </p>
+
+    <p>
+      This calculator uses <strong>markup based on cost</strong>.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>More Free Online Tools</h2>
+
+    <p><a href="/en/percentage-calculator.html">Percentage Calculator →</a></p>
+    <p><a href="/en/discount-calculator.html">Discount Calculator →</a></p>
+    <p><a href="/en/word-counter.html">Word Counter →</a></p>
+    <p><a href="/en/character-counter.html">Character Counter →</a></p>
+    <p><a href="/en/">All Online Tools →</a></p>
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> Araclio • Free Online Tools
+  </div>
+</footer>
+
+
+<script>
+function formatNumber(value) {
+  return value.toLocaleString("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+}
+
+function calculateMarkup() {
+  const cost = parseFloat(
+    document.getElementById("cost").value
+  );
+
+  const markup = parseFloat(
+    document.getElementById("markup").value
+  );
+
+  const resultArea = document.getElementById("result");
+
+  if (
+    isNaN(cost) ||
+    isNaN(markup) ||
+    cost < 0 ||
+    markup < 0
+  ) {
+    resultArea.innerHTML =
+      "Please enter a valid cost and markup percentage.";
+    return;
+  }
+
+  const profit = cost * markup / 100;
+  const sellingPrice = cost + profit;
+
+  resultArea.innerHTML =
+    "Cost: <strong>" +
+    formatNumber(cost) +
+    "</strong><br>" +
+    "Profit: <strong>" +
+    formatNumber(profit) +
+    "</strong><br>" +
+    "Selling price: <strong>" +
+    formatNumber(sellingPrice) +
+    "</strong>";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
