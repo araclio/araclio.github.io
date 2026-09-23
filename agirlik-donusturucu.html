@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+  <title>Ağırlık Dönüştürücü | Gram KG Ton Pound Ons - Araclio</title>
+
+  <meta name="description" content="Ücretsiz ağırlık dönüştürücü. Miligram, gram, kilogram, ton, pound ve ons birimlerini birbirine çevirin. 1 kg kaç gram veya pound anında hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/agirlik-donusturucu.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .converter-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .result-list {
+      margin-top:14px;
+      line-height:1.9;
+    }
+
+    .info-box {
+      margin-top:16px;
+      padding:16px;
+      background:#f5f5f5;
+      border-radius:10px;
+      line-height:1.8;
+    }
+
+    @media(max-width:600px){
+      .converter-grid {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>Ağırlık Dönüştürücü</h1>
+
+    <p>
+      Miligram, gram, kilogram, ton, pound ve ons
+      birimlerini saniyeler içinde birbirine dönüştürün.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Ağırlık Birimi Dönüştür</h2>
+
+      <div class="converter-grid">
+
+        <label>
+          Değer
+          <input
+            id="deger"
+            type="number"
+            min="0"
+            step="any"
+            placeholder="1">
+        </label>
+
+        <label>
+          Birim
+          <select id="birim">
+            <option value="mg">Miligram (mg)</option>
+            <option value="g">Gram (g)</option>
+            <option value="kg" selected>Kilogram (kg)</option>
+            <option value="ton">Ton (t)</option>
+            <option value="lb">Pound (lb)</option>
+            <option value="oz">Ons (oz)</option>
+          </select>
+        </label>
+
+      </div>
+
+      <button type="button" onclick="hesapla()">
+        Dönüştür
+      </button>
+
+      <div id="sonuc" class="result">
+        Bir değer girip ağırlık birimini seçin.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>1 Kilogram Kaç Gram?</h2>
+
+    <p>
+      1 kilogram tam olarak 1000 grama eşittir.
+      Kilogram ve gram günlük hayatta en sık kullanılan
+      metrik kütle birimlerindendir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 kg = 1000 gram</strong><br>
+      2 kg = 2000 gram<br>
+      5 kg = 5000 gram<br>
+      10 kg = 10.000 gram
+    </div>
+
+    <h2>1 Ton Kaç Kilogram?</h2>
+
+    <p>
+      Metrik sistemde 1 ton 1000 kilograma eşittir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 ton = 1000 kg</strong><br>
+      2 ton = 2000 kg<br>
+      5 ton = 5000 kg<br>
+      10 ton = 10.000 kg
+    </div>
+
+    <h2>1 Kilogram Kaç Pound?</h2>
+
+    <p>
+      1 kilogram yaklaşık 2,20462 pound değerine eşittir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 kg ≈ 2,20462 lb</strong><br>
+      5 kg ≈ 11,0231 lb<br>
+      10 kg ≈ 22,0462 lb<br>
+      100 kg ≈ 220,462 lb
+    </div>
+
+    <h2>1 Pound Kaç Kilogram?</h2>
+
+    <p>
+      1 pound tam olarak 0,45359237 kilogramdır.
+    </p>
+
+    <div class="info-box">
+      <strong>1 lb = 0,45359237 kg</strong><br>
+      10 lb ≈ 4,53592 kg<br>
+      50 lb ≈ 22,67962 kg<br>
+      100 lb ≈ 45,35924 kg
+    </div>
+
+    <h2>1 Ons Kaç Gram?</h2>
+
+    <p>
+      Burada kullanılan avoirdupois ons birimi yaklaşık
+      28,3495 grama eşittir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 oz ≈ 28,3495 gram</strong><br>
+      10 oz ≈ 283,495 gram<br>
+      16 oz ≈ 453,592 gram
+    </div>
+
+    <h2>Ağırlık Dönüştürücü Nasıl Kullanılır?</h2>
+
+    <p>
+      Dönüştürmek istediğiniz değeri yazın ve mevcut birimini seçin.
+      Araç miligram, gram, kilogram, ton, pound ve ons karşılıklarını
+      aynı anda hesaplar.
+    </p>
+
+    <h2>Diğer Dönüştürme Araçları</h2>
+
+    <p>
+      <a href="/sicaklik-donusturucu.html">Sıcaklık Dönüştürücü</a>
+      •
+      <a href="/uzunluk-donusturucu.html">Uzunluk Dönüştürücü</a>
+      •
+      <a href="/mb-gb-tb-donusturucu.html">MB, GB ve TB Dönüştürücü</a>
+      •
+      <a href="/zaman-donusturucu.html">Zaman Dönüştürücü</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+
+function formatla(sayi) {
+  if (Math.abs(sayi) < 0.000000000001) {
+    sayi = 0;
+  }
+
+  return new Intl.NumberFormat("tr-TR", {
+    maximumFractionDigits: 10
+  }).format(sayi);
+}
+
+function hesapla() {
+
+  const alan = document.getElementById("deger");
+  const birim = document.getElementById("birim").value;
+  const sonuc = document.getElementById("sonuc");
+
+  if (alan.value === "") {
+    sonuc.innerHTML = "Lütfen bir değer girin.";
+    return;
+  }
+
+  const deger = Number(alan.value);
+
+  if (!Number.isFinite(deger) || deger < 0) {
+    sonuc.innerHTML =
+      "Lütfen sıfır veya sıfırdan büyük geçerli bir değer girin.";
+    return;
+  }
+
+  const kilogramKarsiligi = {
+    mg: 0.000001,
+    g: 0.001,
+    kg: 1,
+    ton: 1000,
+    lb: 0.45359237,
+    oz: 0.028349523125
+  };
+
+  const kg = deger * kilogramKarsiligi[birim];
+
+  const mg = kg / 0.000001;
+  const gram = kg / 0.001;
+  const ton = kg / 1000;
+  const pound = kg / 0.45359237;
+  const ons = kg / 0.028349523125;
+
+  sonuc.innerHTML =
+    "<strong>Dönüşüm Sonucu</strong>" +
+    "<div class='result-list'>" +
+    formatla(mg) + " mg<br>" +
+    formatla(gram) + " gram<br>" +
+    formatla(kg) + " kg<br>" +
+    formatla(ton) + " ton<br>" +
+    formatla(pound) + " lb<br>" +
+    formatla(ons) + " oz" +
+    "</div>";
+}
+
+document.getElementById("deger").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    hesapla();
+  }
+});
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
