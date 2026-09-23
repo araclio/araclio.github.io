@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+  <title>İhbar Tazminatı Hesaplama 2026 | Araclio</title>
+
+  <meta name="description" content="İhbar tazminatı hesaplama aracı ile çalışma süresi ve giydirilmiş brüt ücretinize göre 2, 4, 6 veya 8 haftalık tahmini ihbar tazminatını hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/ihbar-tazminati-hesaplama.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .result-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .result-box{
+      background:#f5f5f5;
+      padding:16px;
+      border-radius:10px;
+    }
+
+    .result-box strong{
+      display:block;
+      margin-bottom:7px;
+    }
+
+    .big-result{
+      font-size:1.4rem;
+      font-weight:700;
+    }
+
+    .legal-warning{
+      padding:17px;
+      margin:18px 0;
+      background:#fff8e1;
+      border:1px solid #e7d28b;
+      border-radius:10px;
+      line-height:1.75;
+    }
+
+    .info-box{
+      padding:16px;
+      margin:15px 0;
+      background:#f5f5f5;
+      border-radius:10px;
+      line-height:1.8;
+    }
+
+    @media(max-width:650px){
+      .result-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+
+    <p class="eyebrow">ÇALIŞMA • ÜCRET • TAZMİNAT</p>
+
+    <h1>İhbar Tazminatı Hesaplama 2026</h1>
+
+    <p>
+      İşe giriş ve işten ayrılış tarihiniz ile giydirilmiş brüt
+      aylık ücretinizi girerek kanuni bildirim süresini ve
+      yaklaşık brüt ihbar tazminatını hesaplayın.
+    </p>
+
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>İhbar Tazminatını Hesapla</h2>
+
+      <div class="legal-warning">
+        <strong>Önemli hukuki uyarı:</strong><br>
+        Bu araç yalnızca genel bilgilendirme ve yaklaşık matematiksel
+        hesaplama amacıyla hazırlanmıştır.
+        <br><br>
+        İş sözleşmesinin türü, fesheden taraf, fesih nedeni,
+        haklı nedenle fesih bulunup bulunmadığı, deneme süresi,
+        sözleşmeyle belirlenmiş farklı bildirim süreleri ve somut
+        olayın diğer özellikleri ihbar tazminatı hakkını değiştirebilir.
+        <br><br>
+        <strong>
+          Hesaplama sonucu, kullanıcının ihbar tazminatına hak
+          kazandığı veya karşı tarafa ihbar tazminatı borcu bulunduğu
+          anlamına gelmez.
+        </strong>
+        Kesin hukuki değerlendirme için güncel mevzuat ve kişiye özel
+        koşullar yetkili bir hukuk uzmanıyla kontrol edilmelidir.
+      </div>
+
+      <label>
+        İşe giriş tarihi
+        <input id="baslangic" type="date">
+      </label>
+
+      <label>
+        İşten ayrılış tarihi
+        <input id="bitis" type="date">
+      </label>
+
+      <label>
+        Son giydirilmiş brüt aylık ücret (TL)
+        <input
+          id="brut"
+          type="number"
+          min="0"
+          step="0.01"
+          placeholder="40000"
+        >
+      </label>
+
+      <p>
+        <small>
+          Hesaplamada kullanılacak ücretin kapsamı somut çalışma
+          koşullarına göre değişebilir. Düzenli para ve para ile
+          ölçülebilen bazı menfaatlerin hesaba dahil edilmesi
+          gerekebilir.
+        </small>
+      </p>
+
+      <button type="button" onclick="hesapla()">
+        İhbar Tazminatını Hesapla
+      </button>
+
+      <div id="uyari" class="result">
+        Bilgileri girip hesaplama butonuna basın.
+      </div>
+
+      <div id="sonuclar" class="result-grid" style="display:none;">
+
+        <div class="result-box">
+          <strong>Tahmini Brüt İhbar Tazminatı</strong>
+          <span id="brutIhbar" class="big-result">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Kanuni Bildirim Süresi</strong>
+          <span id="ihbarSuresi" class="big-result">-</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Hizmet Süresi</strong>
+          <span id="hizmet">-</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Günlük Brüt Ücret</strong>
+          <span id="gunluk">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Bildirim Süresi (Gün)</strong>
+          <span id="gunSayisi">0 gün</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Hesaplamaya Esas Ücret</strong>
+          <span id="esasUcret">0 TL</span>
+        </div>
+
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>İhbar Süresi Kaç Haftadır?</h2>
+
+    <p>
+      4857 sayılı İş Kanunu'nun 17'nci maddesinde belirsiz süreli
+      iş sözleşmelerinin feshi için çalışma süresine göre asgari
+      bildirim süreleri düzenlenmiştir.
+    </p>
+
+    <div class="info-box">
+
+      <strong>6 aydan az çalışma:</strong>
+      2 hafta
+      <br><br>
+
+      <strong>6 ay – 1,5 yıl çalışma:</strong>
+      4 hafta
+      <br><br>
+
+      <strong>1,5 yıl – 3 yıl çalışma:</strong>
+      6 hafta
+      <br><br>
+
+      <strong>3 yıldan fazla çalışma:</strong>
+      8 hafta
+
+    </div>
+
+    <p>
+      Bu süreler kanuni asgari sürelerdir. İş sözleşmesi veya
+      toplu iş sözleşmesi kapsamında farklı ve daha uzun süreler
+      söz konusu olabilir.
+    </p>
+
+    <h2>İhbar Tazminatı Nasıl Hesaplanır?</h2>
+
+    <p>
+      Basitleştirilmiş hesaplamada aylık giydirilmiş brüt ücret
+      30'a bölünerek günlük brüt ücret bulunur. Günlük ücret,
+      uygulanacak bildirim süresinin gün sayısıyla çarpılır.
+    </p>
+
+    <div class="info-box">
+      <strong>Günlük brüt ücret:</strong><br>
+      Aylık Giydirilmiş Brüt Ücret ÷ 30
+      <br><br>
+
+      <strong>Yaklaşık brüt ihbar tazminatı:</strong><br>
+      Günlük Brüt Ücret × Bildirim Süresi (Gün)
+    </div>
+
+    <h2>Örnek İhbar Tazminatı Hesabı</h2>
+
+    <p>
+      Üç yıldan uzun süredir çalışan ve giydirilmiş brüt aylık
+      ücreti 30.000 TL olan bir kişi için bu aracın kullandığı
+      basitleştirilmiş hesapta günlük brüt ücret 1.000 TL'dir.
+      Sekiz haftalık bildirim süresi 56 gün olduğundan tahmini
+      brüt tutar 56.000 TL olur.
+    </p>
+
+    <h2>İhbar Tazminatını Kim Öder?</h2>
+
+    <p>
+      İhbar tazminatı yalnızca işverenin işçiye ödediği bir ödeme
+      olarak değerlendirilmemelidir. Bildirim süresine uymaksızın
+      ve haklı bir neden olmadan sözleşmeyi sona erdiren tarafın
+      durumuna göre işçi veya işveren açısından ihbar tazminatı
+      yükümlülüğü gündeme gelebilir.
+    </p>
+
+    <h2>Her İşten Ayrılmada İhbar Tazminatı Var mı?</h2>
+
+    <p>
+      Hayır. İş sözleşmesinin türü ve sona erme nedeni önemlidir.
+      Örneğin belirli süreli iş sözleşmeleri, deneme süresi,
+      haklı nedenle derhal fesih veya farklı fesih halleri
+      açısından aynı sonuç doğmayabilir.
+    </p>
+
+    <div class="legal-warning">
+      <strong>Sorumluluk ve kullanım uyarısı:</strong><br>
+      Araclio herhangi bir kullanıcının ihbar tazminatına hak
+      kazanıp kazanmadığını belirlemez. Gösterilen sonuç, girilen
+      bilgilere ve genel hesaplama yöntemine dayanan yaklaşık bir
+      matematiksel sonuçtur.
+      <br><br>
+      Bu sayfadaki bilgiler hukuki danışmanlık, avukat görüşü,
+      bilirkişi hesabı, mahkeme kararı, bordro veya resmî kurum
+      hesaplaması değildir.
+      <br><br>
+      İşçilik alacağı talebinde bulunmadan, ödeme yapmadan,
+      iş sözleşmesini feshetmeden veya hukuki işlem gerçekleştirmeden
+      önce kişiye özel durumun güncel mevzuat kapsamında yetkili bir
+      uzman tarafından değerlendirilmesi önerilir.
+    </div>
+
+    <h2>Diğer Çalışma ve Maaş Araçları</h2>
+
+    <p>
+      <a href="/kidem-tazminati-hesaplama.html">Kıdem Tazminatı Hesaplama</a>
+      •
+      <a href="/brut-net-maas-hesaplama.html">Brüt Net Maaş Hesaplama</a>
+      •
+      <a href="/saatlik-gunluk-maas-hesaplama.html">Saatlik Günlük Maaş</a>
+      •
+      <a href="/kira-artis-hesaplama.html">Kira Artış Hesaplama</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+
+function para(sayi){
+  return new Intl.NumberFormat("tr-TR",{
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  }).format(sayi) + " TL";
+}
+
+function tarihUTC(deger){
+  const p = deger.split("-");
+  return Date.UTC(
+    Number(p[0]),
+    Number(p[1]) - 1,
+    Number(p[2])
+  );
+}
+
+function hizmetMetni(baslangicDeger, bitisDeger){
+
+  const bas = new Date(baslangicDeger + "T00:00:00");
+  const bit = new Date(bitisDeger + "T00:00:00");
+
+  let yil = bit.getFullYear() - bas.getFullYear();
+  let ay = bit.getMonth() - bas.getMonth();
+  let gun = bit.getDate() - bas.getDate();
+
+  if(gun < 0){
+
+    ay--;
+
+    const oncekiAyGun =
+      new Date(
+        bit.getFullYear(),
+        bit.getMonth(),
+        0
+      ).getDate();
+
+    gun += oncekiAyGun;
+  }
+
+  if(ay < 0){
+    yil--;
+    ay += 12;
+  }
+
+  return yil + " yıl " + ay + " ay " + gun + " gün";
+}
+
+function hesapla(){
+
+  const baslangicDeger =
+    document.getElementById("baslangic").value;
+
+  const bitisDeger =
+    document.getElementById("bitis").value;
+
+  const brut =
+    Number(document.getElementById("brut").value);
+
+  const uyari =
+    document.getElementById("uyari");
+
+  const sonuclar =
+    document.getElementById("sonuclar");
+
+  if(!baslangicDeger || !bitisDeger){
+
+    uyari.textContent =
+      "Lütfen işe giriş ve işten ayrılış tarihlerini girin.";
+
+    sonuclar.style.display = "none";
+    return;
+  }
+
+  const baslangic =
+    tarihUTC(baslangicDeger);
+
+  const bitis =
+    tarihUTC(bitisDeger);
+
+  if(bitis <= baslangic){
+
+    uyari.textContent =
+      "İşten ayrılış tarihi işe giriş tarihinden sonra olmalıdır.";
+
+    sonuclar.style.display = "none";
+    return;
+  }
+
+  if(!Number.isFinite(brut) || brut <= 0){
+
+    uyari.textContent =
+      "Lütfen sıfırdan büyük geçerli bir brüt ücret girin.";
+
+    sonuclar.style.display = "none";
+    return;
+  }
+
+  const gunFarki =
+    (bitis - baslangic) / 86400000;
+
+  const yaklasikAy =
+    gunFarki / 30.436875;
+
+  let hafta;
+  let bildirimGun;
+
+  if(yaklasikAy < 6){
+    hafta = 2;
+    bildirimGun = 14;
+  }
+  else if(yaklasikAy < 18){
+    hafta = 4;
+    bildirimGun = 28;
+  }
+  else if(yaklasikAy <= 36){
+    hafta = 6;
+    bildirimGun = 42;
+  }
+  else{
+    hafta = 8;
+    bildirimGun = 56;
+  }
+
+  const gunlukBrut =
+    brut / 30;
+
+  const brutIhbar =
+    gunlukBrut * bildirimGun;
+
+  document.getElementById("brutIhbar").textContent =
+    para(brutIhbar);
+
+  document.getElementById("ihbarSuresi").textContent =
+    hafta + " hafta";
+
+  document.getElementById("hizmet").textContent =
+    hizmetMetni(baslangicDeger, bitisDeger);
+
+  document.getElementById("gunluk").textContent =
+    para(gunlukBrut);
+
+  document.getElementById("gunSayisi").textContent =
+    bildirimGun + " gün";
+
+  document.getElementById("esasUcret").textContent =
+    para(brut);
+
+  uyari.innerHTML =
+    "<strong>Yaklaşık sonuç:</strong> Kanuni asgari bildirim süresi " +
+    "<strong>" + hafta + " hafta (" + bildirimGun + " gün)</strong>. " +
+    "Bu süre üzerinden tahmini brüt ihbar tazminatı " +
+    "<strong>" + para(brutIhbar) + "</strong>. " +
+    "Bu sonuç ihbar tazminatına hak kazanıldığını göstermez.";
+
+  sonuclar.style.display = "grid";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
