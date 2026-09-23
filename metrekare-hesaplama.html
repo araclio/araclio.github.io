@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Metrekare Hesaplama | Oda, Duvar, Zemin m² - Araclio</title>
+
+  <meta name="description" content="Ücretsiz metrekare hesaplama aracı. En ve boy ölçülerinden oda, duvar, zemin, halı ve bahçe alanını m² olarak hesaplayın. Paket ve fire hesabı yapın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/metrekare-hesaplama.html">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>Metrekare (m²) Hesaplama</h1>
+
+    <p>
+      Oda, duvar, zemin, halı, bahçe veya benzeri dikdörtgen
+      alanların metrekaresini en ve boy ölçülerini girerek hesaplayın.
+      İsterseniz gerekli paket miktarını ve fire payını da öğrenin.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Metrekare Hesapla</h2>
+
+      <label>
+        En (metre)
+        <input
+          id="alanEn"
+          type="number"
+          min="0"
+          step="0.01"
+          placeholder="4">
+      </label>
+
+      <label>
+        Boy (metre)
+        <input
+          id="alanBoy"
+          type="number"
+          min="0"
+          step="0.01"
+          placeholder="5">
+      </label>
+
+      <button onclick="alanHesapla()">Metrekare Hesapla</button>
+
+      <div id="alanSonuc" class="result">
+        En ve boy ölçülerini metre olarak girin.
+      </div>
+
+    </article>
+
+    <article class="card">
+
+      <h2>Fayans / Parke / Laminat Paket Hesaplama</h2>
+
+      <p>
+        Kaplanacak toplam alanı ve bir paketin kaç m² kapladığını
+        girerek yaklaşık kaç paket gerektiğini hesaplayın.
+      </p>
+
+      <label>
+        Kaplanacak Alan (m²)
+        <input
+          id="toplamAlan"
+          type="number"
+          min="0"
+          step="0.01"
+          placeholder="20">
+      </label>
+
+      <label>
+        Bir Paket Kaç m² Kaplıyor?
+        <input
+          id="paketAlan"
+          type="number"
+          min="0"
+          step="0.01"
+          placeholder="1.5">
+      </label>
+
+      <label>
+        Fire Payı (%)
+        <input
+          id="fireOran"
+          type="number"
+          min="0"
+          step="0.01"
+          value="10">
+      </label>
+
+      <button onclick="paketHesapla()">Paket Hesapla</button>
+
+      <div id="paketSonuc" class="result">
+        Alan ve paket bilgilerini girin.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>Metrekare Nasıl Hesaplanır?</h2>
+
+    <p>
+      Dikdörtgen bir alanın metrekaresi, alanın eni ile boyunun
+      çarpılmasıyla hesaplanır.
+    </p>
+
+    <p>
+      <strong>Formül:</strong> En × Boy = Alan (m²)
+    </p>
+
+    <p>
+      Örneğin eni 4 metre ve boyu 5 metre olan bir odanın alanı
+      20 m²'dir.
+    </p>
+
+    <h2>Odanın Metrekaresi Nasıl Hesaplanır?</h2>
+
+    <p>
+      Odanın genişliğini ve uzunluğunu metre cinsinden ölçün.
+      İki değeri çarptığınızda odanın yaklaşık zemin alanını
+      metrekare olarak bulabilirsiniz.
+    </p>
+
+    <h2>Duvar Metrekaresi Nasıl Hesaplanır?</h2>
+
+    <p>
+      Bir duvarın genişliğini ve yüksekliğini metre cinsinden
+      çarparak duvarın yüzey alanını hesaplayabilirsiniz.
+      Birden fazla duvar varsa her duvarı ayrı hesaplayıp
+      sonuçları toplayabilirsiniz.
+    </p>
+
+    <h2>Kaç Paket Parke veya Laminat Gerekir?</h2>
+
+    <p>
+      Kaplanacak toplam alan, bir paketin kapladığı metrekareye
+      bölünerek yaklaşık paket sayısı bulunabilir. Kesim ve uygulama
+      sırasında oluşabilecek kayıplar nedeniyle isteğe bağlı fire
+      payı da hesaba eklenebilir.
+    </p>
+
+    <h2>Diğer Hesaplama Araçları</h2>
+
+    <p>
+      <a href="/desi-hesaplama.html">Desi Hesaplama</a>
+      •
+      <a href="/yakit-tuketimi-hesaplama.html">Yakıt Tüketimi Hesaplama</a>
+      •
+      <a href="/yuzde-hesaplama.html">Yüzde Hesaplama</a>
+      •
+      <a href="/indirim-hesaplama.html">İndirim Hesaplama</a>
+    </p>
+
+    <p>
+      Hesaplanan değerler bilgilendirme amaçlıdır. Uygulama yapılacak
+      yüzeyin şekli, kesimler ve malzeme özellikleri gerçek ihtiyacı
+      değiştirebilir.
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+
+function gecerliSayi(id) {
+  const deger = document.getElementById(id).value;
+
+  if (deger === "") {
+    return null;
+  }
+
+  const sayi = Number(deger);
+
+  if (!Number.isFinite(sayi) || sayi <= 0) {
+    return null;
+  }
+
+  return sayi;
+}
+
+function sayiYaz(sayi) {
+  return sayi.toLocaleString("tr-TR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+}
+
+function alanHesapla() {
+
+  const en = gecerliSayi("alanEn");
+  const boy = gecerliSayi("alanBoy");
+
+  const sonuc = document.getElementById("alanSonuc");
+
+  if (en === null || boy === null) {
+    sonuc.innerHTML =
+      "Lütfen en ve boy için 0'dan büyük geçerli değerler girin.";
+    return;
+  }
+
+  const alan = en * boy;
+  const cevre = (en + boy) * 2;
+
+  sonuc.innerHTML =
+    "<strong>Alan:</strong> " +
+    sayiYaz(alan) +
+    " m²<br><br>" +
+
+    "<strong>Çevre:</strong> " +
+    sayiYaz(cevre) +
+    " metre";
+}
+
+function paketHesapla() {
+
+  const alan = gecerliSayi("toplamAlan");
+  const paket = gecerliSayi("paketAlan");
+
+  const fireDeger =
+    Number(document.getElementById("fireOran").value);
+
+  const sonuc = document.getElementById("paketSonuc");
+
+  if (
+    alan === null ||
+    paket === null ||
+    !Number.isFinite(fireDeger) ||
+    fireDeger < 0
+  ) {
+    sonuc.innerHTML =
+      "Lütfen geçerli alan, paket ve fire bilgileri girin.";
+    return;
+  }
+
+  const fireMiktari = alan * (fireDeger / 100);
+  const fireliAlan = alan + fireMiktari;
+  const paketSayisi = Math.ceil(fireliAlan / paket);
+  const satinAlinanAlan = paketSayisi * paket;
+
+  sonuc.innerHTML =
+    "<strong>Net alan:</strong> " +
+    sayiYaz(alan) +
+    " m²<br>" +
+
+    "<strong>Fire dahil alan:</strong> " +
+    sayiYaz(fireliAlan) +
+    " m²<br><br>" +
+
+    "<strong>Gerekli paket:</strong> " +
+    paketSayisi +
+    " paket<br>" +
+
+    "<strong>Paketlerin toplam kaplama alanı:</strong> " +
+    sayiYaz(satinAlinanAlan) +
+    " m²";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
