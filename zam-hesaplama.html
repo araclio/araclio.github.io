@@ -6,7 +6,7 @@
 
   <title>Zam Hesaplama 2026 | Zamlı Fiyat Hesapla - Araclio</title>
 
-  <meta name="description" content="Ücretsiz zam hesaplama aracı. Mevcut tutarı ve zam oranını girerek zam miktarını ve zam sonrası yeni tutarı saniyeler içinde hesaplayın.">
+  <meta name="description" content="Ücretsiz zam hesaplama aracı. Mevcut tutarı ve zam oranını girerek zam miktarını ve zam sonrası yeni fiyatı hemen hesaplayın.">
 
   <meta name="robots" content="index,follow">
 
@@ -27,21 +27,37 @@
 
   <section class="hero">
     <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
     <h1>Zam Hesaplama</h1>
-    <p>Mevcut tutarı ve zam oranını girerek zam miktarını ve yeni tutarı hemen hesaplayın.</p>
+
+    <p>
+      Mevcut tutarı ve zam oranını girerek zam miktarını ve
+      zam sonrası yeni tutarı saniyeler içinde hesaplayın.
+    </p>
   </section>
+
 
   <section class="card">
     <h2>Zam Hesaplama Aracı</h2>
 
     <label>
       Mevcut Tutar (TL)
-      <input id="tutar" type="number" min="0" step="0.01" placeholder="Örnek: 1000">
+      <input
+        id="tutar"
+        type="number"
+        min="0"
+        step="0.01"
+        placeholder="Örnek: 1000">
     </label>
 
     <label>
       Zam Oranı (%)
-      <input id="oran" type="number" min="0" step="0.01" placeholder="Örnek: 25">
+      <input
+        id="oran"
+        type="number"
+        min="0"
+        step="0.01"
+        placeholder="Örnek: 25">
     </label>
 
     <div class="buttons">
@@ -53,30 +69,117 @@
     </div>
   </section>
 
+
   <section class="card">
     <h2>Zam Nasıl Hesaplanır?</h2>
 
     <p>
-      Zam miktarını hesaplamak için mevcut tutar zam oranıyla çarpılır
-      ve sonuç 100'e bölünür. Bulunan zam miktarı mevcut tutara
-      eklenerek yeni tutar hesaplanır.
+      Zam miktarını bulmak için mevcut tutar zam oranıyla çarpılır
+      ve sonuç 100'e bölünür.
     </p>
 
     <p>
-      Örneğin 1.000 TL tutarındaki bir ürüne %25 zam uygulanırsa
-      zam miktarı 250 TL, zam sonrası yeni tutar ise 1.250 TL olur.
+      <strong>Zam miktarı formülü:</strong><br>
+      Mevcut Tutar × Zam Oranı ÷ 100
     </p>
+
+    <p>
+      Bulunan zam miktarı mevcut tutara eklenerek yeni tutar hesaplanır.
+    </p>
+
+    <p>
+      <strong>Zamlı fiyat formülü:</strong><br>
+      Mevcut Tutar + Zam Miktarı
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Zam Hesaplama Örnekleri</h2>
+
+    <p>
+      <strong>1.000 TL'ye %25 zam:</strong><br>
+      Zam miktarı: 250 TL<br>
+      Yeni tutar: 1.250 TL
+    </p>
+
+    <p>
+      <strong>500 TL'ye %20 zam:</strong><br>
+      Zam miktarı: 100 TL<br>
+      Yeni tutar: 600 TL
+    </p>
+
+    <p>
+      <strong>2.000 TL'ye %10 zam:</strong><br>
+      Zam miktarı: 200 TL<br>
+      Yeni tutar: 2.200 TL
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Zam Hesaplama Nerelerde Kullanılır?</h2>
+
+    <p>
+      Zam hesabı; ürün ve hizmet fiyatlarındaki artışları, ücret
+      değişikliklerini, kira veya bütçe kalemlerindeki yüzdesel artışları
+      hesaplamak için kullanılabilir.
+    </p>
+
+    <p>
+      Bu araç yalnızca girdiğiniz mevcut tutar ve yüzde oranına göre
+      matematiksel artış hesabı yapar.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Diğer Ücretsiz Araçlar</h2>
+
+    <p><a href="/kdv-hesaplama.html">KDV Hesaplama →</a></p>
+
+    <p><a href="/yuzde-hesaplama.html">Yüzde Hesaplama →</a></p>
+
+    <p><a href="/kar-marji-hesaplama.html">Kâr Hesaplama →</a></p>
+
+    <p><a href="/indirim-hesaplama.html">İndirim Hesaplama →</a></p>
+
+    <p><a href="/desi-hesaplama.html">Desi Hesaplama →</a></p>
+
+    <p><a href="/basit-taksit-hesaplama.html">Taksit Hesaplama →</a></p>
+
+    <p><a href="/kelime-karakter-sayaci.html">Kelime &amp; Karakter Sayacı →</a></p>
   </section>
 
 </main>
 
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+  </div>
+</footer>
+
+
 <script>
+function formatTL(deger) {
+  return deger.toLocaleString("tr-TR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }) + " TL";
+}
+
 function zamHesapla() {
   const tutar = parseFloat(document.getElementById("tutar").value);
   const oran = parseFloat(document.getElementById("oran").value);
   const sonucAlani = document.getElementById("sonuc");
 
-  if (isNaN(tutar) || isNaN(oran) || tutar < 0 || oran < 0) {
+  if (
+    isNaN(tutar) ||
+    isNaN(oran) ||
+    tutar < 0 ||
+    oran < 0
+  ) {
     sonucAlani.innerHTML =
       "Lütfen geçerli bir tutar ve zam oranı girin.";
     return;
@@ -85,14 +188,8 @@ function zamHesapla() {
   const zamTutari = tutar * oran / 100;
   const yeniTutar = tutar + zamTutari;
 
-  function formatTL(deger) {
-    return deger.toLocaleString("tr-TR", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    }) + " TL";
-  }
-
   sonucAlani.innerHTML =
+    "Mevcut tutar: <strong>" + formatTL(tutar) + "</strong><br>" +
     "Zam miktarı: <strong>" + formatTL(zamTutari) + "</strong><br>" +
     "Yeni tutar: <strong>" + formatTL(yeniTutar) + "</strong>";
 }
