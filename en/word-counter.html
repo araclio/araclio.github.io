@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Word Counter | Free Online Word Count Tool - Araclio</title>
+
+  <meta name="description" content="Free online word counter. Paste or type your text to instantly count words and characters. Fast, simple and no sign-up required.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/en/word-counter.html">
+
+  <link rel="alternate" hreflang="en" href="https://araclio.com/en/word-counter.html">
+  <link rel="alternate" hreflang="tr" href="https://araclio.com/kelime-karakter-sayaci.html">
+  <link rel="alternate" hreflang="x-default" href="https://araclio.com/en/word-counter.html">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/en/">Araclio</a>
+    <span class="tag">Free Online Tools</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">FAST • FREE • NO SIGN-UP</p>
+
+    <h1>Word Counter</h1>
+
+    <p>
+      Type or paste your text below to instantly count the number
+      of words and characters.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Free Online Word Counter</h2>
+
+    <label>
+      Your Text
+      <textarea
+        id="text"
+        rows="12"
+        placeholder="Type or paste your text here..."
+        oninput="countText()"></textarea>
+    </label>
+
+    <div id="result" class="result">
+      Words: 0<br>
+      Characters: 0<br>
+      Characters without spaces: 0
+    </div>
+  </section>
+
+
+  <section class="card">
+    <h2>How to Use the Word Counter</h2>
+
+    <p>
+      Enter or paste your text into the box above. The word and
+      character counts update automatically as you type.
+    </p>
+
+    <p>
+      You do not need to press a button, create an account or
+      install any software.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>What Does the Word Counter Measure?</h2>
+
+    <p>
+      The tool displays the total number of words in your text,
+      the total number of characters and the number of characters
+      excluding whitespace.
+    </p>
+
+    <p>
+      Words are separated using whitespace such as spaces and
+      line breaks.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>What Can a Word Counter Be Used For?</h2>
+
+    <p>
+      A word counter can be useful when writing articles, essays,
+      assignments, product descriptions, social media posts,
+      website content and other text with length requirements.
+    </p>
+
+    <p>
+      The calculation runs directly in your browser and updates
+      instantly while you type.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>More Free Online Tools</h2>
+
+    <p><a href="/en/percentage-calculator.html">Percentage Calculator →</a></p>
+    <p><a href="/en/discount-calculator.html">Discount Calculator →</a></p>
+    <p><a href="/en/profit-markup-calculator.html">Profit Markup Calculator →</a></p>
+    <p><a href="/en/character-counter.html">Character Counter →</a></p>
+    <p><a href="/en/">All Online Tools →</a></p>
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> Araclio • Free Online Tools
+  </div>
+</footer>
+
+
+<script>
+function countText() {
+  const text = document.getElementById("text").value;
+  const resultArea = document.getElementById("result");
+
+  const trimmedText = text.trim();
+
+  const words =
+    trimmedText === ""
+      ? 0
+      : trimmedText.split(/\s+/).length;
+
+  const characters = text.length;
+
+  const charactersWithoutSpaces =
+    text.replace(/\s/g, "").length;
+
+  resultArea.innerHTML =
+    "Words: <strong>" + words + "</strong><br>" +
+    "Characters: <strong>" + characters + "</strong><br>" +
+    "Characters without spaces: <strong>" +
+    charactersWithoutSpaces +
+    "</strong>";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
