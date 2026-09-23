@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+  <title>Fazla Mesai Hesaplama 2026 | Mesai Ücreti - Araclio</title>
+
+  <meta name="description" content="Fazla mesai hesaplama aracı ile brüt aylık ücret ve fazla çalışma saatinden tahmini fazla mesai ücretinizi hesaplayın. %50 ve %25 zamlı çalışma hesabı.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/fazla-mesai-hesaplama.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .result-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .result-box{
+      background:#f5f5f5;
+      padding:16px;
+      border-radius:10px;
+    }
+
+    .result-box strong{
+      display:block;
+      margin-bottom:7px;
+    }
+
+    .big-result{
+      font-size:1.4rem;
+      font-weight:700;
+    }
+
+    .info-box{
+      padding:16px;
+      margin:15px 0;
+      background:#f5f5f5;
+      border-radius:10px;
+      line-height:1.8;
+    }
+
+    .warning-box{
+      padding:16px;
+      margin:18px 0;
+      background:#fff8e1;
+      border:1px solid #e7d28b;
+      border-radius:10px;
+      line-height:1.75;
+    }
+
+    @media(max-width:650px){
+      .result-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">MAAŞ • ÇALIŞMA • MESAİ</p>
+
+    <h1>Fazla Mesai Hesaplama 2026</h1>
+
+    <p>
+      Brüt aylık ücretinizi ve fazla çalışma sürenizi girerek
+      tahmini saatlik ücretinizi ve fazla mesai karşılığınızı
+      hesaplayın.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Fazla Mesai Ücretini Hesapla</h2>
+
+      <div class="warning-box">
+        <strong>Önemli hukuki uyarı:</strong><br>
+        Bu araç yalnızca genel bilgilendirme ve yaklaşık matematiksel
+        hesaplama amacıyla hazırlanmıştır.
+        <br><br>
+        İşçinin tabi olduğu kanun, iş sözleşmesi, toplu iş sözleşmesi,
+        çalışma düzeni, denkleştirme uygulaması, ücretin kapsamı,
+        çalışma yapılan gün ve işin niteliği gerçek hesaplamayı
+        değiştirebilir.
+        <br><br>
+        Bu araç fazla çalışma alacağına hak kazanıldığını belirlemez
+        ve hukuki görüş veya resmî bordro niteliğinde değildir.
+      </div>
+
+      <label>
+        Brüt aylık ücret (TL)
+        <input
+          id="brut"
+          type="number"
+          min="0"
+          step="0.01"
+          placeholder="30000"
+        >
+      </label>
+
+      <label>
+        Çalışma türü
+        <select id="tur">
+          <option value="1.5">
+            Fazla çalışma — %50 zamlı
+          </option>
+
+          <option value="1.25">
+            Fazla sürelerle çalışma — %25 zamlı
+          </option>
+        </select>
+      </label>
+
+      <label>
+        Fazla çalışma süresi (saat)
+        <input
+          id="saat"
+          type="number"
+          min="0"
+          step="0.5"
+          placeholder="10"
+        >
+      </label>
+
+      <button type="button" onclick="hesapla()">
+        Fazla Mesaiyi Hesapla
+      </button>
+
+      <div id="uyari" class="result">
+        Bilgileri girip hesaplama butonuna basın.
+      </div>
+
+      <div id="sonuclar" class="result-grid" style="display:none;">
+
+        <div class="result-box">
+          <strong>Tahmini Fazla Mesai Ücreti</strong>
+          <span id="mesaiToplam" class="big-result">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Normal Saatlik Brüt Ücret</strong>
+          <span id="normalSaatlik">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Zamlı Saatlik Ücret</strong>
+          <span id="zamliSaatlik">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Fazla Çalışma Süresi</strong>
+          <span id="toplamSaat">0 saat</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Uygulanan Artış</strong>
+          <span id="uygulananOran">%0</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Serbest Zaman Karşılığı</strong>
+          <span id="serbestZaman">0 saat</span>
+        </div>
+
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>Fazla Mesai Nasıl Hesaplanır?</h2>
+
+    <p>
+      4857 sayılı İş Kanunu kapsamındaki genel uygulamada haftalık
+      45 saati aşan çalışmalar fazla çalışma olarak değerlendirilir.
+      Her bir fazla çalışma saatinin ücreti normal saatlik ücretin
+      yüzde 50 artırılmasıyla hesaplanır.
+    </p>
+
+    <div class="info-box">
+      <strong>Bu aracın kullandığı temel hesap:</strong><br><br>
+
+      Normal saatlik brüt ücret =
+      Aylık brüt ücret ÷ 225
+      <br><br>
+
+      %50 zamlı fazla çalışma =
+      Saatlik ücret × 1,50 × fazla çalışma saati
+    </div>
+
+    <h2>Fazla Sürelerle Çalışma Nedir?</h2>
+
+    <p>
+      Haftalık çalışma süresinin sözleşmeyle 45 saatin altında
+      belirlendiği durumlarda, sözleşmedeki haftalık süreyi aşan
+      ancak 45 saate kadar olan çalışmalar fazla sürelerle çalışma
+      olarak değerlendirilebilir.
+    </p>
+
+    <p>
+      Bu çalışmalar için genel kanuni hesapta normal saatlik ücret
+      yüzde 25 artırılır.
+    </p>
+
+    <div class="info-box">
+      <strong>%25 zamlı hesap:</strong><br><br>
+
+      Saatlik ücret × 1,25 × fazla sürelerle çalışma saati
+    </div>
+
+    <h2>Örnek Fazla Mesai Hesabı</h2>
+
+    <p>
+      Brüt aylık ücreti 30.000 TL olan bir çalışanın normal
+      saatlik brüt ücreti bu aracın kullandığı 225 saatlik
+      aylık hesap üzerinden yaklaşık 133,33 TL olur.
+    </p>
+
+    <p>
+      10 saat %50 zamlı fazla çalışma için zamlı saatlik tutar
+      yaklaşık 200 TL, toplam tahmini brüt fazla çalışma ücreti
+      ise 2.000 TL olur.
+    </p>
+
+    <h2>Serbest Zaman Kullanılabilir mi?</h2>
+
+    <p>
+      İlgili düzenleme kapsamında işçi, şartları oluştuğunda zamlı
+      ücret yerine serbest zaman kullanmayı talep edebilir.
+      Fazla çalışılan her saat için 1 saat 30 dakika; fazla
+      sürelerle çalışılan her saat için 1 saat 15 dakika serbest
+      zaman öngörülmektedir.
+    </p>
+
+    <h2>Yıllık Fazla Mesai Sınırı Kaç Saat?</h2>
+
+    <p>
+      İş Kanununa İlişkin Fazla Çalışma ve Fazla Sürelerle Çalışma
+      Yönetmeliğinde genel fazla çalışma süresinin toplamının
+      yılda 270 saati aşamayacağı belirtilmektedir.
+    </p>
+
+    <p>
+      Bununla birlikte çalışma alanı, özel kanunlar ve işin niteliği
+      farklı kurallara tabi olabilir.
+    </p>
+
+    <h2>45 Saatin Altında Çalışanlar</h2>
+
+    <p>
+      Örneğin sözleşmede haftalık çalışma süresi 40 saat olarak
+      belirlenmişse, genel kurallar kapsamında 40 saati aşan ve
+      45 saate kadar olan bölüm fazla sürelerle çalışma kapsamında
+      değerlendirilebilir. Bu bölüm için kanundaki genel artış
+      yüzde 25'tir.
+    </p>
+
+    <h2>Her Fazla Çalışma Aynı Şekilde mi Hesaplanır?</h2>
+
+    <p>
+      Hayır. Hafta tatili, ulusal bayram ve genel tatil çalışmaları,
+      gece çalışmaları, özel çalışma rejimleri, sözleşme hükümleri,
+      denkleştirme ve farklı kanunlara tabi çalışanlar açısından
+      farklı hükümler uygulanabilir.
+    </p>
+
+    <div class="warning-box">
+      <strong>Sorumluluk ve kullanım uyarısı:</strong><br>
+      Araclio, girilen bilgilerin doğruluğunu veya kullanıcının
+      fazla çalışma alacağına hak kazanıp kazanmadığını doğrulamaz.
+      Gösterilen sonuç genel hesaplama varsayımlarına dayanan
+      yaklaşık brüt tutardır.
+      <br><br>
+      Vergi, SGK, bordro kesintileri ve somut olaya özgü hukuki
+      unsurlar sonuçta yer almayabilir.
+      <br><br>
+      İşçilik alacağı talebinde bulunmadan, ödeme yapmadan veya
+      hukuki işlem başlatmadan önce güncel mevzuatın ve kişiye özel
+      durumun yetkili bir uzman tarafından değerlendirilmesi gerekir.
+    </div>
+
+    <h2>Diğer Çalışma ve Maaş Araçları</h2>
+
+    <p>
+      <a href="/kidem-tazminati-hesaplama.html">Kıdem Tazminatı Hesaplama</a>
+      •
+      <a href="/ihbar-tazminati-hesaplama.html">İhbar Tazminatı Hesaplama</a>
+      •
+      <a href="/brut-net-maas-hesaplama.html">Brüt Net Maaş Hesaplama</a>
+      •
+      <a href="/saatlik-gunluk-maas-hesaplama.html">Saatlik Günlük Maaş Hesaplama</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+
+function para(sayi){
+  return new Intl.NumberFormat("tr-TR",{
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  }).format(sayi) + " TL";
+}
+
+function sayiFormat(sayi){
+  return new Intl.NumberFormat("tr-TR",{
+    minimumFractionDigits:0,
+    maximumFractionDigits:2
+  }).format(sayi);
+}
+
+function hesapla(){
+
+  const brut =
+    Number(document.getElementById("brut").value);
+
+  const katsayi =
+    Number(document.getElementById("tur").value);
+
+  const saat =
+    Number(document.getElementById("saat").value);
+
+  const uyari =
+    document.getElementById("uyari");
+
+  const sonuclar =
+    document.getElementById("sonuclar");
+
+  if(!Number.isFinite(brut) || brut <= 0){
+
+    uyari.textContent =
+      "Lütfen sıfırdan büyük geçerli bir brüt aylık ücret girin.";
+
+    sonuclar.style.display = "none";
+    return;
+  }
+
+  if(!Number.isFinite(saat) || saat <= 0){
+
+    uyari.textContent =
+      "Lütfen sıfırdan büyük geçerli bir çalışma süresi girin.";
+
+    sonuclar.style.display = "none";
+    return;
+  }
+
+  const normalSaatlik =
+    brut / 225;
+
+  const zamliSaatlik =
+    normalSaatlik * katsayi;
+
+  const mesaiToplam =
+    zamliSaatlik * saat;
+
+  const oran =
+    katsayi === 1.5 ? 50 : 25;
+
+  const serbestKatsayi =
+    katsayi === 1.5 ? 1.5 : 1.25;
+
+  const serbest =
+    saat * serbestKatsayi;
+
+  document.getElementById("mesaiToplam").textContent =
+    para(mesaiToplam);
+
+  document.getElementById("normalSaatlik").textContent =
+    para(normalSaatlik);
+
+  document.getElementById("zamliSaatlik").textContent =
+    para(zamliSaatlik);
+
+  document.getElementById("toplamSaat").textContent =
+    sayiFormat(saat) + " saat";
+
+  document.getElementById("uygulananOran").textContent =
+    "%" + oran;
+
+  document.getElementById("serbestZaman").textContent =
+    sayiFormat(serbest) + " saat";
+
+  uyari.innerHTML =
+    "<strong>Yaklaşık sonuç:</strong> " +
+    sayiFormat(saat) +
+    " saat için tahmini brüt fazla çalışma karşılığı <strong>" +
+    para(mesaiToplam) +
+    "</strong>. Bu sonuç hukuki hak sahipliğini veya kesin bordro tutarını göstermez.";
+
+  sonuclar.style.display = "grid";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
