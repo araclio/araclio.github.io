@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Yüzde Değişim Hesaplama | Artış ve Azalış Yüzdesi - Araclio</title>
+
+  <meta name="description" content="Eski ve yeni değeri girerek yüzde değişimi hesaplayın. Bir değerin yüzde kaç arttığını veya azaldığını ücretsiz ve hızlı şekilde öğrenin.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/yuzde-degisim-hesaplama.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .info-box {
+      margin-top:18px;
+      padding:16px;
+      border-radius:10px;
+      background:#f5f5f5;
+    }
+
+    .result-detail {
+      margin-top:10px;
+      line-height:1.8;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>Yüzde Değişim Hesaplama</h1>
+
+    <p>
+      Eski ve yeni değeri girerek bir fiyatın, sayının veya
+      başka bir değerin yüzde kaç arttığını ya da azaldığını
+      anında hesaplayın.
+    </p>
+
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Yüzde Artış / Azalış Hesapla</h2>
+
+      <label>
+        Eski Değer
+        <input
+          id="eski"
+          type="number"
+          step="any"
+          placeholder="800">
+      </label>
+
+      <label>
+        Yeni Değer
+        <input
+          id="yeni"
+          type="number"
+          step="any"
+          placeholder="1000">
+      </label>
+
+      <button onclick="hesapla()">Hesapla</button>
+
+      <div id="sonuc" class="result">
+        Eski ve yeni değeri girin.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>Yüzde Değişim Nasıl Hesaplanır?</h2>
+
+    <p>
+      Yüzde değişim, eski değer ile yeni değer arasındaki
+      farkın eski değere oranlanmasıyla hesaplanır.
+    </p>
+
+    <div class="info-box">
+      <strong>Formül:</strong>
+      <br><br>
+
+      Yüzde Değişim =
+      ((Yeni Değer − Eski Değer) ÷ Eski Değer) × 100
+    </div>
+
+    <h2>Yüzde Artış Nasıl Hesaplanır?</h2>
+
+    <p>
+      Yeni değer eski değerden büyükse sonuç yüzde artış olarak
+      gösterilir.
+    </p>
+
+    <div class="info-box">
+      <strong>Örnek:</strong>
+      <br><br>
+
+      Eski değer: 800
+      <br>
+      Yeni değer: 1.000
+      <br><br>
+
+      Fark: 200
+      <br><br>
+
+      (200 ÷ 800) × 100 = %25
+      <br><br>
+
+      Sonuç: Değer %25 artmıştır.
+    </div>
+
+    <h2>Yüzde Azalış Nasıl Hesaplanır?</h2>
+
+    <p>
+      Yeni değer eski değerden küçükse sonuç yüzde azalış olarak
+      gösterilir.
+    </p>
+
+    <div class="info-box">
+      <strong>Örnek:</strong>
+      <br><br>
+
+      Eski değer: 1.000
+      <br>
+      Yeni değer: 750
+      <br><br>
+
+      Fark: -250
+      <br><br>
+
+      (-250 ÷ 1.000) × 100 = -%25
+      <br><br>
+
+      Sonuç: Değer %25 azalmıştır.
+    </div>
+
+    <h2>Yüzde Değişim Nerelerde Kullanılır?</h2>
+
+    <p>
+      Yüzde değişim hesabı; fiyat değişimleri, satış rakamları,
+      gelir ve gider karşılaştırmaları, ürün maliyetleri,
+      istatistikler ve dönemsel değişimleri karşılaştırmak için
+      kullanılabilir.
+    </p>
+
+    <h2>Eski Değer 0 İse Ne Olur?</h2>
+
+    <p>
+      Standart yüzde değişim formülünde eski değer paydaya
+      yazıldığı için eski değer 0 olduğunda yüzde değişim
+      tanımlı değildir. Bu nedenle araç eski değer 0 olduğunda
+      yüzde değişim sonucu üretmez.
+    </p>
+
+    <h2>Diğer Yüzde Araçları</h2>
+
+    <p>
+      <a href="/yuzde-hesaplama.html">Yüzde Hesaplama</a>
+      •
+      <a href="/zam-hesaplama.html">Zam Hesaplama</a>
+      •
+      <a href="/indirim-hesaplama.html">İndirim Hesaplama</a>
+      •
+      <a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+
+</footer>
+
+<script>
+
+function sayiFormatla(sayi) {
+  return new Intl.NumberFormat(
+    "tr-TR",
+    {
+      maximumFractionDigits: 2
+    }
+  ).format(sayi);
+}
+
+function hesapla() {
+
+  const eski =
+    Number(document.getElementById("eski").value);
+
+  const yeni =
+    Number(document.getElementById("yeni").value);
+
+  const sonuc =
+    document.getElementById("sonuc");
+
+  if (
+    document.getElementById("eski").value === "" ||
+    document.getElementById("yeni").value === "" ||
+    !Number.isFinite(eski) ||
+    !Number.isFinite(yeni)
+  ) {
+
+    sonuc.innerHTML =
+      "Lütfen eski ve yeni değeri eksiksiz girin.";
+
+    return;
+  }
+
+  if (eski === 0) {
+
+    sonuc.innerHTML =
+      "<strong>Yüzde değişim hesaplanamaz.</strong>" +
+      "<br><br>" +
+      "Eski değer 0 olduğunda standart yüzde değişim formülünde " +
+      "0'a bölme oluştuğu için sonuç tanımlı değildir.";
+
+    return;
+  }
+
+  const fark =
+    yeni - eski;
+
+  const yuzde =
+    (fark / Math.abs(eski)) * 100;
+
+  let durum = "";
+
+  if (fark > 0) {
+    durum = "artış";
+  } else if (fark < 0) {
+    durum = "azalış";
+  } else {
+    durum = "değişim yok";
+  }
+
+  if (fark === 0) {
+
+    sonuc.innerHTML =
+      "<strong>Değişim: %0</strong>" +
+      "<div class='result-detail'>" +
+      "Eski değer: " + sayiFormatla(eski) +
+      "<br>" +
+      "Yeni değer: " + sayiFormatla(yeni) +
+      "<br>" +
+      "Fark: 0" +
+      "<br><br>" +
+      "İki değer birbirine eşittir." +
+      "</div>";
+
+    return;
+  }
+
+  sonuc.innerHTML =
+    "<strong>%" +
+    sayiFormatla(Math.abs(yuzde)) +
+    " " +
+    durum +
+    "</strong>" +
+
+    "<div class='result-detail'>" +
+
+    "Eski değer: " +
+    sayiFormatla(eski) +
+
+    "<br>" +
+
+    "Yeni değer: " +
+    sayiFormatla(yeni) +
+
+    "<br>" +
+
+    "Değişim miktarı: " +
+    sayiFormatla(fark) +
+
+    "<br>" +
+
+    "Yüzde değişim: " +
+    (yuzde > 0 ? "+" : "") +
+    "%" +
+    sayiFormatla(yuzde) +
+
+    "</div>";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
