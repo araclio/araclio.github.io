@@ -35,7 +35,7 @@
     <h2>Kâr Marjı Hesaplama Aracı</h2>
 
     <label>
-      Maliyet (₺)
+      Maliyet (TL)
       <input id="maliyet" type="number" min="0" step="0.01" placeholder="Örnek: 500">
     </label>
 
@@ -72,24 +72,26 @@
 function hesapla() {
   const maliyet = parseFloat(document.getElementById("maliyet").value);
   const karOrani = parseFloat(document.getElementById("karOrani").value);
-  const sonuc = document.getElementById("sonuc");
+  const sonucAlani = document.getElementById("sonuc");
 
   if (isNaN(maliyet) || isNaN(karOrani) || maliyet < 0) {
-    sonuc.innerHTML = "Lütfen geçerli bir maliyet ve kâr oranı girin.";
+    sonucAlani.innerHTML = "Lütfen geçerli bir maliyet ve kâr oranı girin.";
     return;
   }
 
   const karTutari = maliyet * karOrani / 100;
   const satisFiyati = maliyet + karTutari;
 
-  const para = new Intl.NumberFormat("tr-TR", {
-    style: "currency",
-    currency: "TRY"
-  });
+  function formatTL(deger) {
+    return deger.toLocaleString("tr-TR", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }) + " TL";
+  }
 
-  sonuc.innerHTML =
-    "Kâr tutarı: <strong>" + para.format(karTutari) + "</strong><br>" +
-    "Satış fiyatı: <strong>" + para.format(satisFiyati) + "</strong>";
+  sonucAlani.innerHTML =
+    "Kâr tutarı: <strong>" + formatTL(karTutari) + "</strong><br>" +
+    "Satış fiyatı: <strong>" + formatTL(satisFiyati) + "</strong>";
 }
 </script>
 
