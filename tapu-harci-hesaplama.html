@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+  <title>Tapu Harcı Hesaplama | Alıcı ve Satıcı Tapu Masrafı - Araclio</title>
+
+  <meta name="description" content="Tapu harcı hesaplama aracı ile gayrimenkul satış bedeline göre alıcı tapu harcı, satıcı tapu harcı ve toplam tapu harcını hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/tapu-harci-hesaplama.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .result-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .result-box{
+      background:#f5f5f5;
+      padding:16px;
+      border-radius:10px;
+    }
+
+    .result-box strong{
+      display:block;
+      margin-bottom:7px;
+    }
+
+    .big-result{
+      font-size:1.35rem;
+      font-weight:700;
+    }
+
+    .info-box{
+      padding:16px;
+      margin:16px 0;
+      background:#f5f5f5;
+      border-radius:10px;
+      line-height:1.8;
+    }
+
+    @media(max-width:650px){
+      .result-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">TAPU • GAYRİMENKUL • HARÇ</p>
+
+    <h1>Tapu Harcı Hesaplama</h1>
+
+    <p>
+      Gayrimenkul satış bedelini girerek alıcı ve satıcı için
+      hesaplanan tapu harcını ve toplam harç tutarını öğrenin.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Tapu Harcını Hesapla</h2>
+
+      <label>
+        Gayrimenkul satış bedeli (TL)
+        <input
+          id="bedel"
+          type="number"
+          min="0"
+          step="0.01"
+          placeholder="3000000"
+        >
+      </label>
+
+      <button type="button" onclick="hesapla()">
+        Tapu Harcını Hesapla
+      </button>
+
+      <div id="uyari" class="result">
+        Satış bedelini girip hesaplama butonuna basın.
+      </div>
+
+      <div id="sonuclar" class="result-grid" style="display:none;">
+
+        <div class="result-box">
+          <strong>Alıcı Tapu Harcı</strong>
+          <span id="alici" class="big-result">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Satıcı Tapu Harcı</strong>
+          <span id="satici" class="big-result">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Toplam Tapu Harcı</strong>
+          <span id="toplam">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Alıcı Harç Oranı</strong>
+          <span>%2 (binde 20)</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Satıcı Harç Oranı</strong>
+          <span>%2 (binde 20)</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Toplam Oran</strong>
+          <span>%4</span>
+        </div>
+
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>Tapu Harcı Nasıl Hesaplanır?</h2>
+
+    <p>
+      Gayrimenkul alım-satım işlemlerinde tapu harcı,
+      ilgili mevzuat kapsamında alıcı ve satıcı için ayrı ayrı
+      hesaplanır.
+    </p>
+
+    <div class="info-box">
+
+      <strong>Genel hesaplama:</strong><br><br>
+
+      Alıcı tapu harcı = Satış bedeli × %2
+      <br><br>
+
+      Satıcı tapu harcı = Satış bedeli × %2
+      <br><br>
+
+      Toplam tapu harcı = Satış bedeli × %4
+
+    </div>
+
+    <h2>3 Milyon TL Ev İçin Tapu Harcı Ne Kadar?</h2>
+
+    <p>
+      3.000.000 TL satış bedeli üzerinden hesaplandığında
+      alıcının tapu harcı 60.000 TL, satıcının tapu harcı
+      60.000 TL ve iki taraf için hesaplanan toplam tapu harcı
+      120.000 TL olur.
+    </p>
+
+    <h2>5 Milyon TL Ev İçin Tapu Harcı Ne Kadar?</h2>
+
+    <p>
+      5.000.000 TL satış bedeli üzerinden alıcı için
+      100.000 TL, satıcı için 100.000 TL olmak üzere toplam
+      200.000 TL tapu harcı hesaplanır.
+    </p>
+
+    <h2>Tapu Harcını Kim Öder?</h2>
+
+    <p>
+      Gelir İdaresi Başkanlığının açıklamasına göre
+      gayrimenkul alım-satımında tapu harcı taşınmazı
+      devreden ve devralandan ayrı ayrı alınır.
+    </p>
+
+    <h2>Tapu Harcı Hangi Tutar Üzerinden Hesaplanır?</h2>
+
+    <p>
+      Tapu harcında beyan edilen gerçek devir ve iktisap
+      bedeli esas alınır. Bu bedelin mevzuatta esas alınan
+      emlak vergisi değerinden düşük olmaması gerekir.
+    </p>
+
+    <div class="info-box">
+
+      <strong>Önemli:</strong><br>
+
+      Bu hesaplayıcı yalnızca genel tapu harcı hesabı yapar.
+      Döner sermaye bedeli, ek hizmet bedelleri, istisna veya
+      özel işlem türleri bu hesaplamaya dahil değildir.
+
+      <br><br>
+
+      Mevzuat ve oranlar değişebileceğinden işlem öncesinde
+      Tapu ve Kadastro Genel Müdürlüğü ile Gelir İdaresi
+      Başkanlığının güncel bilgileri kontrol edilmelidir.
+
+      <br><br>
+
+      Bu araç genel bilgilendirme amaçlıdır ve resmî harç
+      tahakkuku veya hukuki danışmanlık niteliğinde değildir.
+
+    </div>
+
+    <h2>Diğer Hesaplama Araçları</h2>
+
+    <p>
+      <a href="/kira-artis-hesaplama.html">Kira Artış Hesaplama</a>
+      •
+      <a href="/kredi-hesaplama.html">Kredi Hesaplama</a>
+      •
+      <a href="/yuzde-hesaplama.html">Yüzde Hesaplama</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+
+function para(sayi){
+  return new Intl.NumberFormat("tr-TR",{
+    minimumFractionDigits:2,
+    maximumFractionDigits:2
+  }).format(sayi) + " TL";
+}
+
+function hesapla(){
+
+  const bedel =
+    Number(document.getElementById("bedel").value);
+
+  const uyari =
+    document.getElementById("uyari");
+
+  const sonuclar =
+    document.getElementById("sonuclar");
+
+  if(!Number.isFinite(bedel) || bedel <= 0){
+
+    uyari.textContent =
+      "Lütfen sıfırdan büyük geçerli bir satış bedeli girin.";
+
+    sonuclar.style.display = "none";
+    return;
+  }
+
+  const alici = bedel * 0.02;
+  const satici = bedel * 0.02;
+  const toplam = alici + satici;
+
+  document.getElementById("alici").textContent =
+    para(alici);
+
+  document.getElementById("satici").textContent =
+    para(satici);
+
+  document.getElementById("toplam").textContent =
+    para(toplam);
+
+  uyari.innerHTML =
+    "<strong>Sonuç:</strong> " +
+    para(bedel) +
+    " satış bedeli için alıcı ve satıcı adına ayrı ayrı " +
+    "<strong>" +
+    para(alici) +
+    "</strong> tapu harcı hesaplanır.";
+
+  sonuclar.style.display = "grid";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
