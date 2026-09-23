@@ -2,6 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <url><loc>https://araclio.com/</loc></url>
+
   <url><loc>https://araclio.com/kdv-hesaplama.html</loc></url>
   <url><loc>https://araclio.com/yuzde-hesaplama.html</loc></url>
   <url><loc>https://araclio.com/kar-marji-hesaplama.html</loc></url>
@@ -10,8 +11,10 @@
   <url><loc>https://araclio.com/desi-hesaplama.html</loc></url>
   <url><loc>https://araclio.com/basit-taksit-hesaplama.html</loc></url>
   <url><loc>https://araclio.com/kelime-karakter-sayaci.html</loc></url>
+
   <url><loc>https://araclio.com/yas-hesaplama.html</loc></url>
   <url><loc>https://araclio.com/iki-tarih-arasi-gun-hesaplama.html</loc></url>
+  <url><loc>https://araclio.com/gun-ekleme-cikarma.html</loc></url>
 
   <url><loc>https://araclio.com/about.html</loc></url>
   <url><loc>https://araclio.com/contact.html</loc></url>
