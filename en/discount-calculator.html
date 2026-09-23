@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Discount Calculator | Calculate Sale Price Online - Araclio</title>
+
+  <meta name="description" content="Free online discount calculator. Enter the original price and discount percentage to calculate your savings and final sale price instantly.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/en/discount-calculator.html">
+
+  <link rel="alternate" hreflang="en" href="https://araclio.com/en/discount-calculator.html">
+  <link rel="alternate" hreflang="tr" href="https://araclio.com/indirim-hesaplama.html">
+  <link rel="alternate" hreflang="x-default" href="https://araclio.com/en/discount-calculator.html">
+
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/en/">Araclio</a>
+    <span class="tag">Free Online Tools</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">FAST • FREE • NO SIGN-UP</p>
+
+    <h1>Discount Calculator</h1>
+
+    <p>
+      Enter the original price and discount percentage to calculate
+      how much you save and the final price you pay.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Calculate a Discount</h2>
+
+    <label>
+      Original Price
+      <input
+        id="price"
+        type="number"
+        min="0"
+        step="0.01"
+        placeholder="Example: 100">
+    </label>
+
+    <label>
+      Discount (%)
+      <input
+        id="discount"
+        type="number"
+        min="0"
+        max="100"
+        step="0.01"
+        placeholder="Example: 20">
+    </label>
+
+    <div class="buttons">
+      <button onclick="calculateDiscount()">Calculate</button>
+    </div>
+
+    <div id="result" class="result">
+      Your result will appear here.
+    </div>
+  </section>
+
+
+  <section class="card">
+    <h2>How to Calculate a Discount</h2>
+
+    <p>
+      Multiply the original price by the discount percentage
+      and divide by 100 to find the amount you save.
+    </p>
+
+    <p>
+      <strong>Discount amount:</strong><br>
+      Original Price × Discount Percentage ÷ 100
+    </p>
+
+    <p>
+      Subtract the discount amount from the original price
+      to calculate the final sale price.
+    </p>
+
+    <p>
+      <strong>Final price:</strong><br>
+      Original Price − Discount Amount
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Discount Examples</h2>
+
+    <p>
+      <strong>20% off 100:</strong><br>
+      You save: 20<br>
+      Final price: 80
+    </p>
+
+    <p>
+      <strong>25% off 200:</strong><br>
+      You save: 50<br>
+      Final price: 150
+    </p>
+
+    <p>
+      <strong>10% off 500:</strong><br>
+      You save: 50<br>
+      Final price: 450
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>What Is a Discount Calculator Used For?</h2>
+
+    <p>
+      A discount calculator can help you quickly compare sale prices,
+      shopping offers and promotional discounts without calculating
+      the percentage manually.
+    </p>
+
+    <p>
+      The calculator works with any currency because the calculation
+      is based only on the price and percentage you enter.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>More Free Online Tools</h2>
+
+    <p><a href="/en/percentage-calculator.html">Percentage Calculator →</a></p>
+    <p><a href="/en/profit-markup-calculator.html">Profit Markup Calculator →</a></p>
+    <p><a href="/en/word-counter.html">Word Counter →</a></p>
+    <p><a href="/en/character-counter.html">Character Counter →</a></p>
+    <p><a href="/en/">All Online Tools →</a></p>
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> Araclio • Free Online Tools
+  </div>
+</footer>
+
+
+<script>
+function formatNumber(value) {
+  return value.toLocaleString("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+}
+
+function calculateDiscount() {
+  const price = parseFloat(
+    document.getElementById("price").value
+  );
+
+  const discount = parseFloat(
+    document.getElementById("discount").value
+  );
+
+  const resultArea = document.getElementById("result");
+
+  if (
+    isNaN(price) ||
+    isNaN(discount) ||
+    price < 0 ||
+    discount < 0 ||
+    discount > 100
+  ) {
+    resultArea.innerHTML =
+      "Please enter a valid price and a discount between 0 and 100.";
+    return;
+  }
+
+  const savings = price * discount / 100;
+  const finalPrice = price - savings;
+
+  resultArea.innerHTML =
+    "Original price: <strong>" +
+    formatNumber(price) +
+    "</strong><br>" +
+    "You save: <strong>" +
+    formatNumber(savings) +
+    "</strong><br>" +
+    "Final price: <strong>" +
+    formatNumber(finalPrice) +
+    "</strong>";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
