@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Yumurtlama ve Ovulasyon Hesaplama | Verimli Günler - Araclio</title>
+
+  <meta name="description" content="Son adet tarihinizi ve adet döngüsü sürenizi girerek tahmini yumurtlama tarihini, olası yumurtlama dönemini, verimli günleri ve sonraki adet tarihini hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/yumurtlama-ovulasyon-hesaplama.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .health-warning {
+      margin-top:24px;
+      padding:18px;
+      border:2px solid #b42318;
+      border-radius:10px;
+      background:#fff4f2;
+      color:#7a271a;
+    }
+
+    .health-warning strong {
+      display:block;
+      margin-bottom:8px;
+      font-size:18px;
+    }
+
+    .info-box {
+      margin-top:18px;
+      padding:16px;
+      border-radius:10px;
+      background:#f5f5f5;
+    }
+
+    .date-highlight {
+      font-size:20px;
+      font-weight:700;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>Yumurtlama ve Ovulasyon Hesaplama</h1>
+
+    <p>
+      Son adet tarihinizin ilk gününü ve ortalama adet döngüsü
+      sürenizi girerek tahmini yumurtlama tarihini, olası yumurtlama
+      dönemini, tahmini verimli günleri ve sonraki adet tarihinizi
+      hesaplayın.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Yumurtlama Tarihi Hesapla</h2>
+
+      <label>
+        Son Adet Tarihinin İlk Günü
+        <input id="sonAdet" type="date">
+      </label>
+
+      <label>
+        Ortalama Adet Döngüsü Süresi (Gün)
+        <input
+          id="dongu"
+          type="number"
+          min="21"
+          max="35"
+          step="1"
+          value="28">
+      </label>
+
+      <button onclick="hesapla()">Hesapla</button>
+
+      <div id="sonuc" class="result">
+        Son adet tarihinizi ve ortalama döngü sürenizi girin.
+      </div>
+
+      <div class="health-warning">
+        <strong>⚠️ ÖNEMLİ SAĞLIK UYARISI</strong>
+
+        Bu hesaplama yalnızca genel bilgilendirme ve tahmin
+        amacıyla hazırlanmıştır. Yumurtlamanın kesin olarak hangi
+        gün gerçekleştiğini göstermez.
+
+        <br><br>
+
+        Adet döngüsü düzenli olsa bile yumurtlama zamanı
+        döngüden döngüye değişebilir. Düzensiz adet gören
+        kişilerde takvim yöntemi daha da yanıltıcı olabilir.
+
+        <br><br>
+
+        <strong>Bu araç gebelikten korunma yöntemi olarak kullanılmamalıdır.</strong>
+
+        Gebelik planlama, doğum kontrolü, adet düzensizliği veya
+        doğurganlıkla ilgili kişisel değerlendirme için doktor veya
+        uygun bir sağlık profesyoneline başvurun.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>Yumurtlama (Ovulasyon) Nedir?</h2>
+
+    <p>
+      Yumurtlama, yumurtalıklardan bir yumurtanın salınmasıdır.
+      Yumurtlama zamanı kişiden kişiye ve aynı kişide farklı
+      döngüler arasında değişebilir.
+    </p>
+
+    <h2>Yumurtlama Günü Nasıl Tahmin Edilir?</h2>
+
+    <p>
+      Takvim temelli hesaplamalarda bir sonraki adet tarihinden
+      geriye doğru yaklaşık 14 gün sayılması yaygın bir tahmin
+      yöntemidir. Ancak bu tarih kesin değildir.
+    </p>
+
+    <p>
+      Sağlık kaynaklarına göre yumurtlama çoğu kişide bir sonraki
+      adet başlamadan yaklaşık 10 ila 16 gün önce gerçekleşebilir.
+      Bu nedenle Araclio, tek bir tahmini tarihin yanında daha geniş
+      bir olası yumurtlama dönemi de gösterir.
+    </p>
+
+    <h2>Verimli Günler Nasıl Hesaplanır?</h2>
+
+    <p>
+      Gebelik olasılığı yalnızca tahmini yumurtlama günüyle sınırlı
+      değildir. Sperm üreme sisteminde birkaç gün canlı kalabildiği
+      için yumurtlamadan önceki günler de gebelik açısından önem
+      taşıyabilir.
+    </p>
+
+    <p>
+      Bu araç tahmini yumurtlama tarihinden önceki 5 günü,
+      tahmini yumurtlama gününü ve sonraki 1 günü kapsayan
+      yaklaşık bir verimli dönem gösterir. Bu dönem kişisel
+      biyolojik farklılıklar nedeniyle kesin değildir.
+    </p>
+
+    <h2>28 Günlük Döngüde Yumurtlama Ne Zaman Olur?</h2>
+
+    <p>
+      28 günlük düzenli bir döngüde takvim hesabı yaklaşık olarak
+      14. günü gösterebilir. Ancak her 28 günlük döngüde
+      yumurtlamanın mutlaka 14. günde gerçekleştiği söylenemez.
+    </p>
+
+    <h2>Döngü Süresi Nasıl Hesaplanır?</h2>
+
+    <p>
+      Adet döngüsü, bir adetin ilk gününden sonraki adetin
+      başlamasından önceki güne kadar olan süredir. Döngünüz
+      aydan aya değişiyorsa birkaç döngünün ortalamasını
+      kullanabilirsiniz.
+    </p>
+
+    <h2>Gebelik Hesaplama</h2>
+
+    <p>
+      Gebelik oluştuysa tahmini gebelik haftası ve doğum tarihi
+      için Araclio'nun diğer aracını kullanabilirsiniz:
+    </p>
+
+    <p>
+      <a href="/gebelik-hesaplama.html">Gebelik Hesaplama →</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+
+function tarihOku(deger) {
+  const parca = deger.split("-");
+
+  return new Date(
+    Date.UTC(
+      Number(parca[0]),
+      Number(parca[1]) - 1,
+      Number(parca[2])
+    )
+  );
+}
+
+function gunEkle(tarih, gun) {
+  const yeni = new Date(tarih.getTime());
+  yeni.setUTCDate(yeni.getUTCDate() + gun);
+  return yeni;
+}
+
+function tarihYaz(tarih) {
+  return new Intl.DateTimeFormat(
+    "tr-TR",
+    {
+      timeZone: "UTC",
+      day: "numeric",
+      month: "long",
+      year: "numeric"
+    }
+  ).format(tarih);
+}
+
+function hesapla() {
+
+  const sonAdetDeger =
+    document.getElementById("sonAdet").value;
+
+  const dongu =
+    Number(document.getElementById("dongu").value);
+
+  const sonuc =
+    document.getElementById("sonuc");
+
+  if (!sonAdetDeger) {
+    sonuc.innerHTML =
+      "Lütfen son adet tarihinizin ilk gününü seçin.";
+    return;
+  }
+
+  if (
+    !Number.isInteger(dongu) ||
+    dongu < 21 ||
+    dongu > 35
+  ) {
+    sonuc.innerHTML =
+      "Lütfen 21 ile 35 gün arasında geçerli bir döngü süresi girin.";
+    return;
+  }
+
+  const sonAdet =
+    tarihOku(sonAdetDeger);
+
+  const sonrakiAdet =
+    gunEkle(sonAdet, dongu);
+
+  /*
+    Takvim tahmini:
+    Bir sonraki beklenen adetten yaklaşık
+    14 gün önce tahmini ovulasyon.
+  */
+  const tahminiOvulasyon =
+    gunEkle(sonrakiAdet, -14);
+
+  /*
+    Daha geniş olası ovulasyon dönemi:
+    Sonraki adetten 16 ila 10 gün önce.
+  */
+  const olasiOvulasyonBaslangic =
+    gunEkle(sonrakiAdet, -16);
+
+  const olasiOvulasyonBitis =
+    gunEkle(sonrakiAdet, -10);
+
+  /*
+    Kullanıcıya pratik bir yaklaşık verimli
+    pencere göstermek için:
+    tahmini ovulasyondan 5 gün önce
+    ile 1 gün sonrası.
+  */
+  const verimliBaslangic =
+    gunEkle(tahminiOvulasyon, -5);
+
+  const verimliBitis =
+    gunEkle(tahminiOvulasyon, 1);
+
+  const donguGunu =
+    Math.round(
+      (tahminiOvulasyon.getTime() -
+       sonAdet.getTime()) /
+      86400000
+    ) + 1;
+
+  sonuc.innerHTML =
+
+    "<span class='date-highlight'>" +
+    "Tahmini yumurtlama tarihi: " +
+    tarihYaz(tahminiOvulasyon) +
+    "</span>" +
+
+    "<br><br>" +
+
+    "<strong>Tahmini döngü günü:</strong> " +
+    donguGunu +
+    ". gün" +
+
+    "<br><br>" +
+
+    "<strong>Olası yumurtlama dönemi:</strong><br>" +
+    tarihYaz(olasiOvulasyonBaslangic) +
+    " – " +
+    tarihYaz(olasiOvulasyonBitis) +
+
+    "<br><br>" +
+
+    "<strong>Tahmini verimli günler:</strong><br>" +
+    tarihYaz(verimliBaslangic) +
+    " – " +
+    tarihYaz(verimliBitis) +
+
+    "<br><br>" +
+
+    "<strong>Tahmini sonraki adet tarihi:</strong><br>" +
+    tarihYaz(sonrakiAdet) +
+
+    "<br><br>" +
+
+    "<small>" +
+    "Bu tarihler takvim temelli yaklaşık tahminlerdir; " +
+    "yumurtlamanın gerçekleştiğini doğrulamaz." +
+    "</small>";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
