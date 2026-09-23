@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+  <title>E-Ticaret Kâr Hesaplama | Net Kâr, Komisyon ve ROI - Araclio</title>
+
+  <meta name="description" content="E-ticaret net kârınızı hesaplayın. Ürün maliyeti, pazaryeri komisyonu, kargo, reklam, paketleme ve iade giderlerini ekleyin; net kâr, marj, ROI ve başabaş fiyatını görün.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/e-ticaret-kar-hesaplama.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .form-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .result-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:12px;
+      margin-top:18px;
+    }
+
+    .result-box{
+      padding:15px;
+      background:#f5f5f5;
+      border-radius:10px;
+    }
+
+    .result-box strong{
+      display:block;
+      margin-bottom:6px;
+    }
+
+    .big-result{
+      font-size:1.35rem;
+      font-weight:700;
+    }
+
+    .info-box{
+      margin-top:16px;
+      padding:16px;
+      background:#f5f5f5;
+      border-radius:10px;
+      line-height:1.8;
+    }
+
+    @media(max-width:650px){
+      .form-grid,
+      .result-grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">E-TİCARET • KÂR • MALİYET</p>
+
+    <h1>E-Ticaret Kâr Hesaplama</h1>
+
+    <p>
+      Ürünün satış fiyatını ve tüm giderlerini girin.
+      Satış başına gerçek kârınızı, kâr marjınızı,
+      ROI oranınızı ve zarar etmemek için gereken yaklaşık
+      başabaş satış fiyatını hesaplayın.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Net E-Ticaret Kârını Hesapla</h2>
+
+      <div class="form-grid">
+
+        <label>
+          Satış fiyatı (TL)
+          <input id="satis" type="number" min="0" step="0.01" placeholder="750">
+        </label>
+
+        <label>
+          Ürün maliyeti (TL)
+          <input id="maliyet" type="number" min="0" step="0.01" placeholder="300">
+        </label>
+
+        <label>
+          Pazaryeri komisyonu (%)
+          <input id="komisyon" type="number" min="0" max="100" step="0.01" placeholder="20">
+        </label>
+
+        <label>
+          Kargo maliyeti (TL)
+          <input id="kargo" type="number" min="0" step="0.01" value="0">
+        </label>
+
+        <label>
+          Reklam gideri / satış (TL)
+          <input id="reklam" type="number" min="0" step="0.01" value="0">
+        </label>
+
+        <label>
+          Paketleme / hizmet gideri (TL)
+          <input id="paket" type="number" min="0" step="0.01" value="0">
+        </label>
+
+        <label>
+          Diğer giderler / satış (TL)
+          <input id="diger" type="number" min="0" step="0.01" value="0">
+        </label>
+
+        <label>
+          Tahmini iade oranı (%)
+          <input id="iade" type="number" min="0" max="100" step="0.01" value="0">
+        </label>
+
+        <label>
+          İade başına tahmini maliyet (TL)
+          <input id="iadeMaliyet" type="number" min="0" step="0.01" value="0">
+        </label>
+
+        <label>
+          Aylık satış adedi
+          <input id="adet" type="number" min="1" step="1" value="100">
+        </label>
+
+      </div>
+
+      <button type="button" onclick="hesapla()">Kârımı Hesapla</button>
+
+      <div id="uyari" class="result">
+        Bilgileri girip hesaplama butonuna basın.
+      </div>
+
+      <div id="sonuclar" class="result-grid" style="display:none;">
+
+        <div class="result-box">
+          <strong>Birim Net Kâr / Zarar</strong>
+          <span id="netKar" class="big-result">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Net Kâr Marjı</strong>
+          <span id="marj" class="big-result">%0</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Komisyon Tutarı</strong>
+          <span id="komisyonTutar">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Beklenen İade Maliyeti</strong>
+          <span id="iadeGider">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Toplam Gider</strong>
+          <span id="toplamGider">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>ROI</strong>
+          <span id="roi">%0</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Başabaş Satış Fiyatı</strong>
+          <span id="basabas">0 TL</span>
+        </div>
+
+        <div class="result-box">
+          <strong>Aylık Tahmini Net Kâr</strong>
+          <span id="aylikKar">0 TL</span>
+        </div>
+
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>E-Ticarette Gerçek Kâr Nasıl Hesaplanır?</h2>
+
+    <p>
+      Bir ürünün satış fiyatından yalnızca alış maliyetini çıkarmak
+      gerçek kârı göstermez. Pazaryeri komisyonu, kargo, reklam,
+      paketleme, hizmet bedelleri ve iadeler de satışın maliyetini
+      etkileyebilir.
+    </p>
+
+    <div class="info-box">
+      <strong>Basitleştirilmiş formül:</strong><br>
+      Net Kâr = Satış Fiyatı − Ürün Maliyeti − Komisyon − Kargo
+      − Reklam − Paketleme − Diğer Giderler − Beklenen İade Maliyeti
+    </div>
+
+    <h2>Kâr Marjı Nedir?</h2>
+
+    <p>
+      Kâr marjı, satış fiyatınızın ne kadarının kâr olarak
+      kaldığını gösterir.
+    </p>
+
+    <div class="info-box">
+      <strong>Kâr Marjı (%) = Net Kâr ÷ Satış Fiyatı × 100</strong>
+    </div>
+
+    <h2>ROI Nedir?</h2>
+
+    <p>
+      ROI, ürüne ve satış operasyonuna yatırdığınız paraya karşılık
+      ne kadar kazanç elde ettiğinizi görmenize yardımcı olur.
+    </p>
+
+    <div class="info-box">
+      <strong>ROI (%) = Net Kâr ÷ Toplam Gider × 100</strong>
+    </div>
+
+    <h2>Başabaş Satış Fiyatı Nedir?</h2>
+
+    <p>
+      Başabaş fiyatı, mevcut maliyet ve komisyon oranınızla
+      kâr veya zarar etmeden satmanız gereken yaklaşık minimum
+      satış fiyatını gösterir.
+    </p>
+
+    <h2>İade Oranı Neden Önemli?</h2>
+
+    <p>
+      Özellikle yüksek iade oranına sahip kategorilerde iadeler
+      kârlılığı ciddi biçimde azaltabilir. Bu araçta iade oranı ile
+      iade başına tahmini maliyeti ayrı ayrı girebilirsiniz.
+    </p>
+
+    <h2>Pazaryeri Komisyonu Nasıl Girilmeli?</h2>
+
+    <p>
+      Pazaryerlerinin komisyon oranları platforma, ürün kategorisine,
+      kampanyaya ve satıcı sözleşmesine göre değişebilir.
+      Bu nedenle kendi satıcı panelinizde görünen güncel komisyon
+      oranını girmeniz daha doğru sonuç verir.
+    </p>
+
+    <h2>Örnek E-Ticaret Kâr Hesabı</h2>
+
+    <p>
+      750 TL satış fiyatı, 300 TL ürün maliyeti, %20 komisyon,
+      60 TL kargo, 25 TL reklam ve 10 TL paketleme gideri olan
+      bir üründe araç bütün giderleri tek tek düşerek satış başına
+      kalan tahmini net kârı gösterir.
+    </p>
+
+    <h2>Diğer Ticaret Araçları</h2>
+
+    <p>
+      <a href="/komisyon-hesaplama.html">Komisyon Hesaplama</a>
+      •
+      <a href="/kar-zarar-hesaplama.html">Kâr / Zarar Hesaplama</a>
+      •
+      <a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama</a>
+      •
+      <a href="/iskonto-hesaplama.html">İskonto Hesaplama</a>
+      •
+      <a href="/birim-fiyat-hesaplama.html">Birim Fiyat Hesaplama</a>
+      •
+      <a href="/desi-hesaplama.html">Desi Hesaplama</a>
+    </p>
+
+    <p>
+      <strong>Not:</strong> Bu araç ticari planlama için yaklaşık
+      hesaplama yapar. Vergi, KDV, stopaj, pazaryeri faturaları ve
+      diğer yasal/muhasebesel kalemler işletmeye ve işleme göre
+      değişebilir. Resmî muhasebe hesabı yerine geçmez.
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+function para(sayi) {
+  return new Intl.NumberFormat("tr-TR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }).format(sayi) + " TL";
+}
+
+function yuzde(sayi) {
+  return "%" + new Intl.NumberFormat("tr-TR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }).format(sayi);
+}
+
+function deger(id) {
+  const x = Number(document.getElementById(id).value);
+  return Number.isFinite(x) ? x : 0;
+}
+
+function hesapla() {
+  const satis = deger("satis");
+  const maliyet = deger("maliyet");
+  const komisyonOran = deger("komisyon");
+  const kargo = deger("kargo");
+  const reklam = deger("reklam");
+  const paket = deger("paket");
+  const diger = deger("diger");
+  const iadeOran = deger("iade");
+  const iadeMaliyet = deger("iadeMaliyet");
+  const adet = deger("adet");
+
+  const uyari = document.getElementById("uyari");
+  const sonuclar = document.getElementById("sonuclar");
+
+  if (satis <= 0) {
+    uyari.innerHTML = "Lütfen sıfırdan büyük bir satış fiyatı girin.";
+    sonuclar.style.display = "none";
+    return;
+  }
+
+  if (
+    maliyet < 0 ||
+    komisyonOran < 0 ||
+    komisyonOran >= 100 ||
+    kargo < 0 ||
+    reklam < 0 ||
+    paket < 0 ||
+    diger < 0 ||
+    iadeOran < 0 ||
+    iadeOran > 100 ||
+    iadeMaliyet < 0 ||
+    adet < 1
+  ) {
+    uyari.innerHTML = "Lütfen girdiğiniz değerleri kontrol edin.";
+    sonuclar.style.display = "none";
+    return;
+  }
+
+  const komisyonTutar = satis * (komisyonOran / 100);
+
+  const beklenenIade =
+    iadeMaliyet * (iadeOran / 100);
+
+  const sabitGider =
+    maliyet +
+    kargo +
+    reklam +
+    paket +
+    diger +
+    beklenenIade;
+
+  const toplamGider =
+    sabitGider + komisyonTutar;
+
+  const netKar =
+    satis - toplamGider;
+
+  const marj =
+    (netKar / satis) * 100;
+
+  const roi =
+    toplamGider > 0
+      ? (netKar / toplamGider) * 100
+      : 0;
+
+  const komisyonPay =
+    komisyonOran / 100;
+
+  const basabas =
+    komisyonPay < 1
+      ? sabitGider / (1 - komisyonPay)
+      : 0;
+
+  const aylikKar =
+    netKar * adet;
+
+  document.getElementById("netKar").textContent =
+    para(netKar);
+
+  document.getElementById("marj").textContent =
+    yuzde(marj);
+
+  document.getElementById("komisyonTutar").textContent =
+    para(komisyonTutar);
+
+  document.getElementById("iadeGider").textContent =
+    para(beklenenIade);
+
+  document.getElementById("toplamGider").textContent =
+    para(toplamGider);
+
+  document.getElementById("roi").textContent =
+    yuzde(roi);
+
+  document.getElementById("basabas").textContent =
+    para(basabas);
+
+  document.getElementById("aylikKar").textContent =
+    para(aylikKar);
+
+  if (netKar > 0) {
+    uyari.innerHTML =
+      "<strong>Sonuç:</strong> Bu değerlerle satış başına yaklaşık " +
+      para(netKar) +
+      " kâr görünmektedir.";
+  } else if (netKar < 0) {
+    uyari.innerHTML =
+      "<strong>Sonuç:</strong> Bu değerlerle satış başına yaklaşık " +
+      para(Math.abs(netKar)) +
+      " zarar görünmektedir.";
+  } else {
+    uyari.innerHTML =
+      "<strong>Sonuç:</strong> Bu satış yaklaşık başabaş noktasındadır.";
+  }
+
+  sonuclar.style.display = "grid";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
