@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Yüzde Hesaplama 2026 | Yüzde Artış ve Azalış Hesapla - Araclio</title>
+  <title>Yüzde Hesaplama 2026 | Online Yüzde Hesapla - Araclio</title>
 
-  <meta name="description" content="Ücretsiz yüzde hesaplama aracı. Bir sayının yüzdesini, yüzde artış ve yüzde azalış işlemlerini saniyeler içinde hesaplayın.">
+  <meta name="description" content="Ücretsiz yüzde hesaplama aracı. Bir sayının belirli yüzdesini hızlıca hesaplayın. Yüzde hesaplama formülü ve örnekleri Araclio'da.">
 
   <meta name="robots" content="index,follow">
 
@@ -27,95 +27,160 @@
 
   <section class="hero">
     <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
     <h1>Yüzde Hesaplama</h1>
-    <p>Yüzde, yüzde artış ve yüzde azalış işlemlerini saniyeler içinde hesaplayın.</p>
+
+    <p>
+      Bir sayının belirli bir yüzdesinin kaç olduğunu saniyeler içinde
+      ücretsiz hesaplayın.
+    </p>
   </section>
+
 
   <section class="card">
     <h2>Yüzde Hesaplama Aracı</h2>
 
     <label>
       Sayı
-      <input id="sayi" type="number" step="0.01" placeholder="Örnek: 1000">
+      <input
+        id="sayi"
+        type="number"
+        step="0.01"
+        placeholder="Örnek: 1500">
     </label>
 
     <label>
-      Yüzde (%)
-      <input id="yuzde" type="number" step="0.01" placeholder="Örnek: 20">
-    </label>
-
-    <label>
-      Hesaplama Türü
-      <select id="tur">
-        <option value="yuzdesi">Sayının yüzdesini hesapla</option>
-        <option value="artis">Yüzde artış uygula</option>
-        <option value="azalis">Yüzde azalış uygula</option>
-      </select>
+      Yüzde Oranı (%)
+      <input
+        id="oran"
+        type="number"
+        step="0.01"
+        placeholder="Örnek: 20">
     </label>
 
     <div class="buttons">
-      <button onclick="hesapla()">Hesapla</button>
+      <button onclick="yuzdeHesapla()">Hesapla</button>
     </div>
 
-    <div id="sonuc" class="result">Sonuç burada görünecek.</div>
+    <div id="sonuc" class="result">
+      Sonuç burada görünecek.
+    </div>
   </section>
 
+
   <section class="card">
-    <h2>Yüzde Hesaplama Nasıl Yapılır?</h2>
+    <h2>Yüzde Nasıl Hesaplanır?</h2>
+
     <p>
-      Bir sayının belirli bir yüzdesini bulmak için sayı, yüzde oranıyla
-      çarpılır ve sonuç 100'e bölünür.
+      Bir sayının belirli bir yüzdesini hesaplamak için sayı ile yüzde
+      oranı çarpılır ve sonuç 100'e bölünür.
     </p>
 
     <p>
-      Örneğin 1.000 TL'nin %20'si 200 TL'dir.
-      %20 artış uygulandığında sonuç 1.200 TL,
-      %20 azalış uygulandığında ise 800 TL olur.
+      <strong>Formül:</strong><br>
+      Sonuç = Sayı × Yüzde Oranı ÷ 100
     </p>
+
+    <p>
+      Örneğin 1.000 sayısının %20'sini bulmak için
+      1.000 × 20 ÷ 100 işlemi yapılır. Sonuç 200'dür.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Yüzde Hesaplama Örnekleri</h2>
+
+    <p>
+      <strong>1.000'in %20'si:</strong><br>
+      200
+    </p>
+
+    <p>
+      <strong>500'ün %10'u:</strong><br>
+      50
+    </p>
+
+    <p>
+      <strong>1.500'ün %15'i:</strong><br>
+      225
+    </p>
+
+    <p>
+      <strong>2.000'in %25'i:</strong><br>
+      500
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Yüzde Hesaplama Nerelerde Kullanılır?</h2>
+
+    <p>
+      Yüzde hesabı; indirim, zam, kâr oranı, vergi, fiyat değişimleri,
+      bütçe hesaplamaları ve günlük birçok işlemde kullanılabilir.
+    </p>
+
+    <p>
+      Araclio yüzde hesaplama aracında sayı ve yüzde oranını girmeniz
+      yeterlidir. Sonuç tarayıcınızda anında hesaplanır.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Diğer Ücretsiz Araçlar</h2>
+
+    <p><a href="/kdv-hesaplama.html">KDV Hesaplama →</a></p>
+
+    <p><a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama →</a></p>
+
+    <p><a href="/indirim-hesaplama.html">İndirim Hesaplama →</a></p>
+
+    <p><a href="/zam-hesaplama.html">Zam Hesaplama →</a></p>
+
+    <p><a href="/desi-hesaplama.html">Desi Hesaplama →</a></p>
+
+    <p><a href="/basit-taksit-hesaplama.html">Taksit Hesaplama →</a></p>
+
+    <p><a href="/kelime-karakter-sayaci.html">Kelime &amp; Karakter Sayacı →</a></p>
   </section>
 
 </main>
 
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+  </div>
+</footer>
+
+
 <script>
-function hesapla() {
+function yuzdeHesapla() {
   const sayi = parseFloat(document.getElementById("sayi").value);
-  const yuzde = parseFloat(document.getElementById("yuzde").value);
-  const tur = document.getElementById("tur").value;
+  const oran = parseFloat(document.getElementById("oran").value);
   const sonucAlani = document.getElementById("sonuc");
 
-  if (isNaN(sayi) || isNaN(yuzde)) {
-    sonucAlani.innerHTML = "Lütfen sayı ve yüzde alanlarını doldurun.";
+  if (isNaN(sayi) || isNaN(oran)) {
+    sonucAlani.innerHTML =
+      "Lütfen geçerli bir sayı ve yüzde oranı girin.";
     return;
   }
 
-  let sonuc;
+  const sonuc = sayi * oran / 100;
 
-  if (tur === "yuzdesi") {
-    sonuc = sayi * yuzde / 100;
-    sonucAlani.innerHTML =
-      sayi.toLocaleString("tr-TR") + " sayısının %" +
-      yuzde.toLocaleString("tr-TR") + " değeri: <strong>" +
-      sonuc.toLocaleString("tr-TR", {maximumFractionDigits: 2}) +
-      "</strong>";
-  }
-
-  if (tur === "artis") {
-    sonuc = sayi + (sayi * yuzde / 100);
-    sonucAlani.innerHTML =
-      "%" + yuzde.toLocaleString("tr-TR") +
-      " artış sonrası sonuç: <strong>" +
-      sonuc.toLocaleString("tr-TR", {maximumFractionDigits: 2}) +
-      "</strong>";
-  }
-
-  if (tur === "azalis") {
-    sonuc = sayi - (sayi * yuzde / 100);
-    sonucAlani.innerHTML =
-      "%" + yuzde.toLocaleString("tr-TR") +
-      " azalış sonrası sonuç: <strong>" +
-      sonuc.toLocaleString("tr-TR", {maximumFractionDigits: 2}) +
-      "</strong>";
-  }
+  sonucAlani.innerHTML =
+    "<strong>" +
+    sayi.toLocaleString("tr-TR") +
+    "</strong> sayısının <strong>%" +
+    oran.toLocaleString("tr-TR") +
+    "</strong>'si = <strong>" +
+    sonuc.toLocaleString("tr-TR", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }) +
+    "</strong>";
 }
 </script>
 
