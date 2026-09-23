@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+  <title>Sıcaklık Dönüştürücü | Celsius Fahrenheit Kelvin - Araclio</title>
+
+  <meta name="description" content="Ücretsiz sıcaklık dönüştürücü. Celsius, Fahrenheit ve Kelvin arasında dönüşüm yapın. 1 Celsius kaç Fahrenheit, Fahrenheit kaç Celsius anında hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/sicaklik-donusturucu.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .converter-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .result-list {
+      margin-top:14px;
+      line-height:1.9;
+    }
+
+    .info-box {
+      margin-top:16px;
+      padding:16px;
+      background:#f5f5f5;
+      border-radius:10px;
+      line-height:1.8;
+    }
+
+    @media(max-width:600px){
+      .converter-grid {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>Sıcaklık Dönüştürücü</h1>
+
+    <p>
+      Celsius (°C), Fahrenheit (°F) ve Kelvin (K)
+      sıcaklık birimlerini saniyeler içinde birbirine dönüştürün.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Sıcaklık Birimi Dönüştür</h2>
+
+      <div class="converter-grid">
+
+        <label>
+          Sıcaklık Değeri
+          <input
+            id="deger"
+            type="number"
+            step="any"
+            placeholder="25">
+        </label>
+
+        <label>
+          Birim
+          <select id="birim">
+            <option value="c" selected>Celsius (°C)</option>
+            <option value="f">Fahrenheit (°F)</option>
+            <option value="k">Kelvin (K)</option>
+          </select>
+        </label>
+
+      </div>
+
+      <button type="button" onclick="hesapla()">
+        Dönüştür
+      </button>
+
+      <div id="sonuc" class="result">
+        Bir sıcaklık değeri girip birimini seçin.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>Celsius Fahrenheit Dönüşümü</h2>
+
+    <p>
+      Celsius değerini Fahrenheit'a çevirmek için
+      °F = (°C × 9/5) + 32 formülü kullanılır.
+    </p>
+
+    <div class="info-box">
+      <strong>0 °C = 32 °F</strong><br>
+      10 °C = 50 °F<br>
+      20 °C = 68 °F<br>
+      25 °C = 77 °F<br>
+      30 °C = 86 °F<br>
+      100 °C = 212 °F
+    </div>
+
+    <h2>Fahrenheit Celsius Dönüşümü</h2>
+
+    <p>
+      Fahrenheit değerini Celsius'a çevirmek için
+      °C = (°F − 32) × 5/9 formülü kullanılır.
+    </p>
+
+    <div class="info-box">
+      <strong>32 °F = 0 °C</strong><br>
+      50 °F = 10 °C<br>
+      68 °F = 20 °C<br>
+      77 °F = 25 °C<br>
+      86 °F = 30 °C<br>
+      212 °F = 100 °C
+    </div>
+
+    <h2>Celsius Kelvin Dönüşümü</h2>
+
+    <p>
+      Celsius değerinden Kelvin değerine geçmek için
+      Celsius sıcaklığına 273,15 eklenir.
+    </p>
+
+    <div class="info-box">
+      <strong>0 °C = 273,15 K</strong><br>
+      25 °C = 298,15 K<br>
+      100 °C = 373,15 K
+    </div>
+
+    <h2>Mutlak Sıfır Nedir?</h2>
+
+    <p>
+      Kelvin ölçeğinde 0 K mutlak sıfırdır.
+      Bu değer −273,15 °C veya −459,67 °F sıcaklığa eşittir.
+      Kelvin cinsinden sıcaklık 0 K değerinin altında olamaz.
+    </p>
+
+    <h2>Sıcaklık Dönüştürücü Nasıl Kullanılır?</h2>
+
+    <p>
+      Dönüştürmek istediğiniz sıcaklık değerini girin ve
+      Celsius, Fahrenheit veya Kelvin birimini seçin.
+      Araç üç sıcaklık ölçeğindeki karşılıkları birlikte gösterir.
+    </p>
+
+    <h2>Diğer Dönüştürme Araçları</h2>
+
+    <p>
+      <a href="/uzunluk-donusturucu.html">Uzunluk Dönüştürücü</a>
+      •
+      <a href="/mb-gb-tb-donusturucu.html">MB, GB ve TB Dönüştürücü</a>
+      •
+      <a href="/zaman-donusturucu.html">Saat Dakika Saniye Dönüştürücü</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+
+function formatla(sayi) {
+  if (Math.abs(sayi) < 0.0000000001) {
+    sayi = 0;
+  }
+
+  return new Intl.NumberFormat("tr-TR", {
+    maximumFractionDigits: 6
+  }).format(sayi);
+}
+
+function hesapla() {
+
+  const alan = document.getElementById("deger");
+  const birim = document.getElementById("birim").value;
+  const sonuc = document.getElementById("sonuc");
+
+  if (alan.value === "") {
+    sonuc.innerHTML = "Lütfen bir sıcaklık değeri girin.";
+    return;
+  }
+
+  const deger = Number(alan.value);
+
+  if (!Number.isFinite(deger)) {
+    sonuc.innerHTML = "Lütfen geçerli bir sayı girin.";
+    return;
+  }
+
+  let celsius;
+
+  if (birim === "c") {
+    celsius = deger;
+  }
+
+  if (birim === "f") {
+    celsius = (deger - 32) * 5 / 9;
+  }
+
+  if (birim === "k") {
+    celsius = deger - 273.15;
+  }
+
+  const kelvin = celsius + 273.15;
+
+  if (kelvin < -0.0000001) {
+    sonuc.innerHTML =
+      "Bu değer mutlak sıfırın altındadır. Fiziksel sıcaklık ölçeğinde 0 K değerinin altı kullanılamaz.";
+    return;
+  }
+
+  const fahrenheit = (celsius * 9 / 5) + 32;
+
+  sonuc.innerHTML =
+    "<strong>Dönüşüm Sonucu</strong>" +
+    "<div class='result-list'>" +
+    formatla(celsius) + " °C<br>" +
+    formatla(fahrenheit) + " °F<br>" +
+    formatla(kelvin) + " K" +
+    "</div>";
+}
+
+document.getElementById("deger").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    hesapla();
+  }
+});
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
