@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+  <title>Güç Dönüştürücü | Watt kW MW HP PS - Araclio</title>
+
+  <meta name="description" content="Ücretsiz güç dönüştürücü. Watt, kilowatt, megawatt, mekanik beygir gücü HP ve metrik beygir gücü PS arasında dönüşüm yapın. 1 kW kaç HP anında hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/guc-donusturucu.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .converter-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .result-list {
+      margin-top: 14px;
+      line-height: 1.9;
+    }
+
+    .info-box {
+      margin-top: 16px;
+      padding: 16px;
+      background: #f5f5f5;
+      border-radius: 10px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 600px) {
+      .converter-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>Güç Dönüştürücü</h1>
+
+    <p>
+      Watt, kilowatt, megawatt, mekanik beygir gücü (HP)
+      ve metrik beygir gücü (PS) birimlerini birbirine dönüştürün.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Güç Birimi Dönüştür</h2>
+
+      <div class="converter-grid">
+
+        <label>
+          Değer
+          <input
+            id="deger"
+            type="number"
+            min="0"
+            step="any"
+            placeholder="1">
+        </label>
+
+        <label>
+          Birim
+          <select id="birim">
+            <option value="w">Watt (W)</option>
+            <option value="kw" selected>Kilowatt (kW)</option>
+            <option value="mw">Megawatt (MW)</option>
+            <option value="hp">Mekanik Beygir Gücü (HP)</option>
+            <option value="ps">Metrik Beygir Gücü (PS)</option>
+          </select>
+        </label>
+
+      </div>
+
+      <button type="button" onclick="hesapla()">
+        Dönüştür
+      </button>
+
+      <div id="sonuc" class="result">
+        Bir değer girip güç birimini seçin.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>1 Kilowatt Kaç Watt?</h2>
+
+    <p>
+      1 kilowatt tam olarak 1000 watt güce eşittir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 kW = 1000 W</strong><br>
+      5 kW = 5000 W<br>
+      10 kW = 10.000 W
+    </div>
+
+    <h2>1 Megawatt Kaç Kilowatt?</h2>
+
+    <p>
+      1 megawatt 1000 kilowatt veya
+      1.000.000 watt güce eşittir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 MW = 1000 kW</strong><br>
+      1 MW = 1.000.000 W<br>
+      10 MW = 10.000 kW
+    </div>
+
+    <h2>1 kW Kaç HP?</h2>
+
+    <p>
+      Mekanik beygir gücü (HP) kullanıldığında
+      1 kilowatt yaklaşık 1,34102 HP değerine eşittir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 kW ≈ 1,34102 HP</strong><br>
+      10 kW ≈ 13,4102 HP<br>
+      100 kW ≈ 134,102 HP
+    </div>
+
+    <h2>1 HP Kaç kW?</h2>
+
+    <p>
+      Mekanik horsepower (HP) yaklaşık
+      745,699872 watt güce eşittir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 HP ≈ 0,7457 kW</strong><br>
+      100 HP ≈ 74,57 kW<br>
+      150 HP ≈ 111,855 kW
+    </div>
+
+    <h2>1 PS Kaç kW?</h2>
+
+    <p>
+      Metrik beygir gücü olarak kullanılan PS,
+      mekanik HP ile tam olarak aynı birim değildir.
+      1 PS yaklaşık 735,49875 watt değerindedir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 PS ≈ 0,735499 kW</strong><br>
+      100 PS ≈ 73,5499 kW<br>
+      150 PS ≈ 110,3248 kW
+    </div>
+
+    <h2>HP ile PS Aynı mı?</h2>
+
+    <p>
+      Hayır. HP ve PS birbirine yakın değerler olsa da
+      aynı güç birimi değildir. Mekanik HP yaklaşık
+      745,7 watt, metrik PS ise yaklaşık 735,5 watt değerindedir.
+      Bu nedenle araç gücü karşılaştırırken kullanılan birimin
+      HP mi yoksa PS mi olduğuna dikkat edilmelidir.
+    </p>
+
+    <h2>Güç Dönüştürücü Nasıl Kullanılır?</h2>
+
+    <p>
+      Dönüştürmek istediğiniz güç değerini yazın ve mevcut
+      birimini seçin. Araç watt, kilowatt, megawatt,
+      mekanik HP ve metrik PS karşılıklarını aynı anda hesaplar.
+    </p>
+
+    <h2>Diğer Dönüştürme Araçları</h2>
+
+    <p>
+      <a href="/enerji-donusturucu.html">Enerji Dönüştürücü</a>
+      •
+      <a href="/hacim-donusturucu.html">Hacim Dönüştürücü</a>
+      •
+      <a href="/alan-donusturucu.html">Alan Dönüştürücü</a>
+      •
+      <a href="/agirlik-donusturucu.html">Ağırlık Dönüştürücü</a>
+      •
+      <a href="/uzunluk-donusturucu.html">Uzunluk Dönüştürücü</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+function formatla(sayi) {
+  if (Math.abs(sayi) < 0.000000000001) {
+    sayi = 0;
+  }
+
+  return new Intl.NumberFormat("tr-TR", {
+    maximumFractionDigits: 10
+  }).format(sayi);
+}
+
+function hesapla() {
+  const alan = document.getElementById("deger");
+  const birim = document.getElementById("birim").value;
+  const sonuc = document.getElementById("sonuc");
+
+  if (alan.value === "") {
+    sonuc.innerHTML = "Lütfen bir değer girin.";
+    return;
+  }
+
+  const deger = Number(alan.value);
+
+  if (!Number.isFinite(deger) || deger < 0) {
+    sonuc.innerHTML =
+      "Lütfen sıfır veya sıfırdan büyük geçerli bir değer girin.";
+    return;
+  }
+
+  /*
+    Bütün değerler önce Watt birimine çevrilir.
+
+    1 kW = 1000 W
+    1 MW = 1.000.000 W
+    1 mechanical HP = 745.6998715822702 W
+    1 metric PS = 735.49875 W
+  */
+
+  const wattKarsiligi = {
+    w: 1,
+    kw: 1000,
+    mw: 1000000,
+    hp: 745.6998715822702,
+    ps: 735.49875
+  };
+
+  const watt = deger * wattKarsiligi[birim];
+
+  const kw = watt / 1000;
+  const mw = watt / 1000000;
+  const hp = watt / 745.6998715822702;
+  const ps = watt / 735.49875;
+
+  sonuc.innerHTML =
+    "<strong>Dönüşüm Sonucu</strong>" +
+    "<div class='result-list'>" +
+    formatla(watt) + " W<br>" +
+    formatla(kw) + " kW<br>" +
+    formatla(mw) + " MW<br>" +
+    formatla(hp) + " HP<br>" +
+    formatla(ps) + " PS" +
+    "</div>";
+}
+
+document.getElementById("deger").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    hesapla();
+  }
+});
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
