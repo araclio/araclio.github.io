@@ -6,7 +6,7 @@
 
   <title>Kâr Marjı Hesaplama 2026 | Satış Fiyatı Hesapla - Araclio</title>
 
-  <meta name="description" content="Ücretsiz kâr marjı ve satış fiyatı hesaplama aracı. Maliyet ve hedef kâr oranını girerek satış fiyatınızı ve kâr tutarınızı kolayca hesaplayın.">
+  <meta name="description" content="Ücretsiz kâr marjı ve satış fiyatı hesaplama aracı. Maliyet ve hedef kâr oranını girerek kâr tutarını ve satış fiyatını hızlıca hesaplayın.">
 
   <meta name="robots" content="index,follow">
 
@@ -27,69 +27,170 @@
 
   <section class="hero">
     <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
-    <h1>Kâr Marjı / Satış Fiyatı Hesaplama</h1>
-    <p>Maliyetinizi ve hedef kâr oranınızı girerek satış fiyatınızı saniyeler içinde hesaplayın.</p>
+
+    <h1>Kâr Marjı ve Satış Fiyatı Hesaplama</h1>
+
+    <p>
+      Ürünün maliyetini ve hedeflediğiniz kâr oranını girerek
+      kâr tutarını ve satış fiyatını saniyeler içinde hesaplayın.
+    </p>
   </section>
 
+
   <section class="card">
-    <h2>Kâr Marjı Hesaplama Aracı</h2>
+    <h2>Kâr Hesaplama Aracı</h2>
 
     <label>
       Maliyet (TL)
-      <input id="maliyet" type="number" min="0" step="0.01" placeholder="Örnek: 500">
+      <input
+        id="maliyet"
+        type="number"
+        min="0"
+        step="0.01"
+        placeholder="Örnek: 500">
     </label>
 
     <label>
-      Hedef Kâr (%)
-      <input id="karOrani" type="number" step="0.01" placeholder="Örnek: 30">
+      Hedef Kâr Oranı (%)
+      <input
+        id="oran"
+        type="number"
+        min="0"
+        step="0.01"
+        placeholder="Örnek: 30">
     </label>
 
     <div class="buttons">
-      <button onclick="hesapla()">Hesapla</button>
+      <button onclick="karHesapla()">Hesapla</button>
     </div>
 
-    <div id="sonuc" class="result">Sonuç burada görünecek.</div>
+    <div id="sonuc" class="result">
+      Sonuç burada görünecek.
+    </div>
   </section>
 
+
   <section class="card">
-    <h2>Kâr ve Satış Fiyatı Nasıl Hesaplanır?</h2>
+    <h2>Kâr Nasıl Hesaplanır?</h2>
 
     <p>
-      Maliyet üzerinden belirli bir kâr oranı eklemek için maliyet,
-      kâr yüzdesiyle çarpılır. Bulunan kâr tutarı maliyete eklenerek
-      satış fiyatı hesaplanır.
+      Bu araç, girdiğiniz maliyetin üzerine belirlediğiniz yüzde oranında
+      kâr ekleyerek kâr tutarını ve satış fiyatını hesaplar.
     </p>
 
     <p>
-      Örneğin maliyeti 500 TL olan bir ürüne %30 kâr eklendiğinde
-      kâr tutarı 150 TL, satış fiyatı ise 650 TL olur.
+      <strong>Kâr tutarı formülü:</strong><br>
+      Kâr Tutarı = Maliyet × Kâr Oranı ÷ 100
     </p>
+
+    <p>
+      <strong>Satış fiyatı formülü:</strong><br>
+      Satış Fiyatı = Maliyet + Kâr Tutarı
+    </p>
+
+    <p>
+      Örneğin maliyeti 500 TL olan bir ürüne maliyet üzerinden %30 kâr
+      eklenirse kâr tutarı 150 TL, satış fiyatı ise 650 TL olur.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Örnek Kâr Hesaplamaları</h2>
+
+    <p>
+      <strong>500 TL maliyet + %30:</strong><br>
+      Kâr tutarı: 150 TL<br>
+      Satış fiyatı: 650 TL
+    </p>
+
+    <p>
+      <strong>1.000 TL maliyet + %20:</strong><br>
+      Kâr tutarı: 200 TL<br>
+      Satış fiyatı: 1.200 TL
+    </p>
+
+    <p>
+      <strong>2.000 TL maliyet + %25:</strong><br>
+      Kâr tutarı: 500 TL<br>
+      Satış fiyatı: 2.500 TL
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Kâr Oranı ve Kâr Marjı Aynı Şey mi?</h2>
+
+    <p>
+      Günlük kullanımda bu ifadeler birbirinin yerine kullanılabilse de
+      teknik olarak maliyet üzerinden eklenen kâr oranı ile satış fiyatı
+      üzerinden hesaplanan kâr marjı farklı hesaplamalardır.
+    </p>
+
+    <p>
+      Bu araç, <strong>maliyet üzerinden belirlediğiniz kâr oranını</strong>
+      kullanarak satış fiyatını hesaplar.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Diğer Ücretsiz Araçlar</h2>
+
+    <p><a href="/kdv-hesaplama.html">KDV Hesaplama →</a></p>
+
+    <p><a href="/yuzde-hesaplama.html">Yüzde Hesaplama →</a></p>
+
+    <p><a href="/indirim-hesaplama.html">İndirim Hesaplama →</a></p>
+
+    <p><a href="/zam-hesaplama.html">Zam Hesaplama →</a></p>
+
+    <p><a href="/desi-hesaplama.html">Desi Hesaplama →</a></p>
+
+    <p><a href="/basit-taksit-hesaplama.html">Taksit Hesaplama →</a></p>
+
+    <p><a href="/kelime-karakter-sayaci.html">Kelime &amp; Karakter Sayacı →</a></p>
   </section>
 
 </main>
 
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+  </div>
+</footer>
+
+
 <script>
-function hesapla() {
+function formatTL(deger) {
+  return deger.toLocaleString("tr-TR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }) + " TL";
+}
+
+function karHesapla() {
   const maliyet = parseFloat(document.getElementById("maliyet").value);
-  const karOrani = parseFloat(document.getElementById("karOrani").value);
+  const oran = parseFloat(document.getElementById("oran").value);
   const sonucAlani = document.getElementById("sonuc");
 
-  if (isNaN(maliyet) || isNaN(karOrani) || maliyet < 0) {
-    sonucAlani.innerHTML = "Lütfen geçerli bir maliyet ve kâr oranı girin.";
+  if (
+    isNaN(maliyet) ||
+    isNaN(oran) ||
+    maliyet < 0 ||
+    oran < 0
+  ) {
+    sonucAlani.innerHTML =
+      "Lütfen geçerli bir maliyet ve kâr oranı girin.";
     return;
   }
 
-  const karTutari = maliyet * karOrani / 100;
+  const karTutari = maliyet * oran / 100;
   const satisFiyati = maliyet + karTutari;
 
-  function formatTL(deger) {
-    return deger.toLocaleString("tr-TR", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    }) + " TL";
-  }
-
   sonucAlani.innerHTML =
+    "Maliyet: <strong>" + formatTL(maliyet) + "</strong><br>" +
     "Kâr tutarı: <strong>" + formatTL(karTutari) + "</strong><br>" +
     "Satış fiyatı: <strong>" + formatTL(satisFiyati) + "</strong>";
 }
