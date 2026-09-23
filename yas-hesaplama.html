@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Yaş Hesaplama 2026 | Kaç Yaşındayım? - Araclio</title>
+
+  <meta name="description" content="Doğum tarihinizi girerek yaşınızı yıl, ay ve gün olarak hesaplayın. Toplam yaşadığınız gün sayısını ve bir sonraki doğum gününüze kalan süreyi öğrenin.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/yas-hesaplama.html">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>Yaş Hesaplama</h1>
+
+    <p>
+      Doğum tarihinizi girerek kaç yaşında olduğunuzu yıl, ay ve gün
+      olarak hesaplayın. Ayrıca toplam yaşadığınız gün sayısını ve
+      bir sonraki doğum gününüze kalan süreyi öğrenin.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Kaç Yaşındayım?</h2>
+
+      <label>
+        Doğum Tarihiniz
+        <input id="dogumTarihi" type="date">
+      </label>
+
+      <button onclick="yasHesapla()">Yaşımı Hesapla</button>
+
+      <div id="yasSonuc" class="result">
+        Doğum tarihinizi seçin ve hesapla butonuna basın.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>Yaş Nasıl Hesaplanır?</h2>
+
+    <p>
+      Yaş hesaplaması, doğum tarihi ile bugünün tarihi arasındaki
+      süre dikkate alınarak yapılır. Araclio Yaş Hesaplama aracı,
+      tamamlanan yıl sayısının yanında ay ve gün bilgisini de
+      gösterir.
+    </p>
+
+    <h2>Doğum Gününe Kaç Gün Kaldı?</h2>
+
+    <p>
+      Araç, bir sonraki doğum gününüzün tarihini belirleyerek
+      doğum gününüze yaklaşık kaç gün kaldığını da hesaplar.
+      Doğum gününüz bugün ise bunu ayrıca belirtir.
+    </p>
+
+    <h2>Toplam Kaç Gün Yaşadım?</h2>
+
+    <p>
+      Doğum tarihiniz ile bugünün tarihi arasındaki toplam gün
+      sayısı da sonuç bölümünde gösterilir. Artık yıllar hesaplamaya
+      otomatik olarak dahil edilir.
+    </p>
+
+    <h2>Diğer Hesaplama Araçları</h2>
+
+    <p>
+      <a href="/yuzde-hesaplama.html">Yüzde Hesaplama</a>
+      •
+      <a href="/kdv-hesaplama.html">KDV Hesaplama</a>
+      •
+      <a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama</a>
+      •
+      <a href="/indirim-hesaplama.html">İndirim Hesaplama</a>
+    </p>
+
+    <p>
+      Araclio üzerindeki hesaplamalar bilgilendirme amaçlıdır.
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+function yasHesapla() {
+  const input = document.getElementById("dogumTarihi").value;
+  const sonuc = document.getElementById("yasSonuc");
+
+  if (!input) {
+    sonuc.innerHTML = "Lütfen doğum tarihinizi seçin.";
+    return;
+  }
+
+  const parcalar = input.split("-");
+  const dogum = new Date(
+    Number(parcalar[0]),
+    Number(parcalar[1]) - 1,
+    Number(parcalar[2])
+  );
+
+  const bugun = new Date();
+  bugun.setHours(0, 0, 0, 0);
+
+  if (dogum > bugun) {
+    sonuc.innerHTML = "Doğum tarihi gelecekte olamaz.";
+    return;
+  }
+
+  let yil = bugun.getFullYear() - dogum.getFullYear();
+  let ay = bugun.getMonth() - dogum.getMonth();
+  let gun = bugun.getDate() - dogum.getDate();
+
+  if (gun < 0) {
+    ay--;
+
+    const oncekiAyGun =
+      new Date(bugun.getFullYear(), bugun.getMonth(), 0).getDate();
+
+    gun += oncekiAyGun;
+  }
+
+  if (ay < 0) {
+    yil--;
+    ay += 12;
+  }
+
+  const birGun = 1000 * 60 * 60 * 24;
+
+  const toplamGun = Math.floor(
+    (bugun.getTime() - dogum.getTime()) / birGun
+  );
+
+  let sonrakiDogum = new Date(
+    bugun.getFullYear(),
+    dogum.getMonth(),
+    dogum.getDate()
+  );
+
+  if (sonrakiDogum < bugun) {
+    sonrakiDogum.setFullYear(bugun.getFullYear() + 1);
+  }
+
+  const kalanGun = Math.round(
+    (sonrakiDogum.getTime() - bugun.getTime()) / birGun
+  );
+
+  let dogumMesaji;
+
+  if (kalanGun === 0) {
+    dogumMesaji = "Bugün doğum gününüz! 🎉";
+  } else {
+    dogumMesaji =
+      "Bir sonraki doğum gününüze yaklaşık <strong>" +
+      kalanGun +
+      " gün</strong> kaldı.";
+  }
+
+  sonuc.innerHTML =
+    "<strong>" + yil + " yaşındasınız.</strong><br><br>" +
+    "Tam yaşınız: <strong>" +
+    yil + " yıl, " +
+    ay + " ay, " +
+    gun + " gün</strong><br>" +
+    "Toplam yaşadığınız süre: yaklaşık <strong>" +
+    toplamGun.toLocaleString("tr-TR") +
+    " gün</strong><br>" +
+    dogumMesaji;
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
