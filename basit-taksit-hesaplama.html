@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Taksit Hesaplama 2026 | Basit Taksit Hesaplama - Araclio</title>
+
+  <meta name="description" content="Ücretsiz basit taksit hesaplama aracı. Toplam tutarı ve taksit sayısını girerek aylık taksit tutarını saniyeler içinde hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/basit-taksit-hesaplama.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+    <h1>Basit Taksit Hesaplama</h1>
+    <p>Toplam tutarı ve taksit sayısını girerek her taksitte ödenecek tutarı hemen hesaplayın.</p>
+  </section>
+
+  <section class="card">
+    <h2>Taksit Hesaplama Aracı</h2>
+
+    <label>
+      Toplam Tutar (TL)
+      <input id="tutar" type="number" min="0" step="0.01" placeholder="Örnek: 12000">
+    </label>
+
+    <label>
+      Taksit Sayısı
+      <input id="taksitSayisi" type="number" min="1" step="1" placeholder="Örnek: 6">
+    </label>
+
+    <div class="buttons">
+      <button onclick="taksitHesapla()">Hesapla</button>
+    </div>
+
+    <div id="sonuc" class="result">
+      Sonuç burada görünecek.
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Taksit Nasıl Hesaplanır?</h2>
+
+    <p>
+      Basit taksit hesabında toplam tutar, seçilen taksit sayısına bölünür.
+      Böylece her taksitte ödenecek eşit tutar bulunur.
+    </p>
+
+    <p>
+      Örneğin 12.000 TL tutarındaki bir ödeme 6 eşit taksite bölünürse,
+      her taksit 2.000 TL olur.
+    </p>
+
+    <p>
+      Bu araç faiz ve ek komisyon içermeyen basit eşit bölme hesabı yapar.
+      Banka veya ödeme kuruluşlarının uyguladığı faiz, komisyon ve diğer
+      ücretler gerçek ödeme tutarını değiştirebilir.
+    </p>
+  </section>
+
+</main>
+
+<script>
+function taksitHesapla() {
+  const tutar = parseFloat(document.getElementById("tutar").value);
+  const taksitSayisi = parseInt(document.getElementById("taksitSayisi").value);
+  const sonucAlani = document.getElementById("sonuc");
+
+  if (
+    isNaN(tutar) ||
+    isNaN(taksitSayisi) ||
+    tutar <= 0 ||
+    taksitSayisi < 1
+  ) {
+    sonucAlani.innerHTML =
+      "Lütfen geçerli bir toplam tutar ve taksit sayısı girin.";
+    return;
+  }
+
+  const taksitTutari = tutar / taksitSayisi;
+
+  function formatTL(deger) {
+    return deger.toLocaleString("tr-TR", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }) + " TL";
+  }
+
+  sonucAlani.innerHTML =
+    "Taksit sayısı: <strong>" + taksitSayisi + "</strong><br>" +
+    "Her taksit: <strong>" + formatTL(taksitTutari) + "</strong><br>" +
+    "Toplam tutar: <strong>" + formatTL(tutar) + "</strong>";
+}
+</script>
+
+</body>
+</html>
