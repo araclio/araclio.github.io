@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>IBAN Doğrulama ve Kontrol | Türkiye IBAN Kontrol - Araclio</title>
+
+  <meta name="description" content="Türkiye IBAN numaranızı ücretsiz kontrol edin. 26 karakter uzunluk, TR ülke kodu, rezerv alan ve MOD 97-10 kontrol basamaklarını anında doğrulayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/iban-dogrulama.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .iban-input {
+      text-transform: uppercase;
+      font-family: monospace;
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    .success-box {
+      margin-top: 18px;
+      padding: 18px;
+      border: 2px solid #198754;
+      border-radius: 10px;
+      background: #f0fff6;
+      color: #12633d;
+    }
+
+    .error-box {
+      margin-top: 18px;
+      padding: 18px;
+      border: 2px solid #b42318;
+      border-radius: 10px;
+      background: #fff4f2;
+      color: #7a271a;
+    }
+
+    .warning-box {
+      margin-top: 24px;
+      padding: 18px;
+      border: 2px solid #b26a00;
+      border-radius: 10px;
+      background: #fff8e8;
+      color: #6b4300;
+    }
+
+    .warning-box strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .iban-example {
+      overflow-wrap: anywhere;
+      font-family: monospace;
+      font-size: 17px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>IBAN Doğrulama ve Kontrol</h1>
+
+    <p>
+      Türkiye IBAN numarasının biçimini ve kontrol basamaklarını
+      saniyeler içinde kontrol edin. IBAN bilgisi yalnızca
+      tarayıcınızda doğrulanır.
+    </p>
+
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>IBAN Kontrol Et</h2>
+
+      <label>
+        Türkiye IBAN Numarası
+
+        <input
+          id="iban"
+          class="iban-input"
+          type="text"
+          maxlength="34"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="TR47 0000 1001 0000 0350 9300 01"
+          oninput="formatla()">
+      </label>
+
+      <button onclick="ibanKontrol()">IBAN Doğrula</button>
+
+      <div id="sonuc" class="result">
+        Kontrol etmek istediğiniz Türkiye IBAN numarasını girin.
+      </div>
+
+      <div class="warning-box">
+
+        <strong>⚠️ ÖNEMLİ BİLGİLENDİRME</strong>
+
+        Bu araç yalnızca girilen IBAN'ın teknik biçimini ve
+        kontrol basamaklarını doğrular.
+
+        <br><br>
+
+        IBAN'ın geçerli görünmesi; hesabın aktif olduğunu,
+        hesabın belirli bir kişiye ait olduğunu veya para
+        göndereceğiniz kişinin gerçekten hesap sahibi olduğunu
+        göstermez.
+
+        <br><br>
+
+        Para göndermeden önce alıcı adı ve hesap bilgilerini
+        bankanız üzerinden ayrıca kontrol edin.
+
+        <br><br>
+
+        Araclio bu sayfada girilen IBAN bilgisini bir sunucuya
+        göndermeden tarayıcı içinde kontrol edecek şekilde
+        çalışır.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>IBAN Nedir?</h2>
+
+    <p>
+      IBAN, Uluslararası Banka Hesap Numarası anlamına gelir.
+      Para transferlerinde hesapların standart bir biçimde
+      tanımlanmasını sağlar.
+    </p>
+
+    <h2>Türkiye IBAN'ı Kaç Hanelidir?</h2>
+
+    <p>
+      Türkiye'de kullanılan IBAN toplam 26 alfabetik ve sayısal
+      karakterden oluşur ve TR ülke koduyla başlar.
+    </p>
+
+    <div class="warning-box">
+
+      <strong>Türkiye IBAN Yapısı</strong>
+
+      TR + 2 kontrol basamağı + 5 haneli ödeme hizmeti
+      sağlayıcısı kodu + 1 haneli rezerv alan +
+      16 karakterlik hesap numarası alanı.
+
+    </div>
+
+    <h2>IBAN Nasıl Kontrol Edilir?</h2>
+
+    <p>
+      IBAN içerisindeki kontrol basamaklarının doğrulanmasında
+      ISO 7064 standardındaki MOD 97-10 yöntemi kullanılır.
+      Geçerli bir IBAN için algoritmanın oluşturduğu kalan
+      değerinin 1 olması gerekir.
+    </p>
+
+    <h2>Bu Araç Neleri Kontrol Ediyor?</h2>
+
+    <p>
+      Araclio Türkiye IBAN kontrol aracı; IBAN'ın TR ile
+      başlayıp başlamadığını, toplam uzunluğunu, izin verilen
+      karakterleri, Türkiye IBAN yapısını, rezerv alanını ve
+      MOD 97-10 kontrol basamaklarını kontrol eder.
+    </p>
+
+    <h2>IBAN Doğruysa Hesap Kesin Olarak Var mı?</h2>
+
+    <p>
+      Hayır. Matematiksel olarak geçerli bir IBAN, ilgili
+      hesabın aktif olduğunu veya belirli bir kişiye ait
+      olduğunu kanıtlamaz. Hesap sahibinin doğrulanması için
+      bankanızın sunduğu bilgiler esas alınmalıdır.
+    </p>
+
+    <h2>Örnek Türkiye IBAN'ı</h2>
+
+    <p class="iban-example">
+      TR47 0000 1001 0000 0350 9300 01
+    </p>
+
+    <p>
+      Bu örnek TCMB'nin IBAN kontrol algoritmasını açıklarken
+      kullandığı örnek yapıya dayanmaktadır.
+    </p>
+
+    <h2>Diğer Finans Araçları</h2>
+
+    <p>
+      <a href="/kredi-hesaplama.html">Kredi Hesaplama</a>
+      •
+      <a href="/kredi-karti-asgari-odeme-hesaplama.html">Kredi Kartı Asgari Ödeme</a>
+      •
+      <a href="/mevduat-faizi-hesaplama.html">Mevduat Faizi Hesaplama</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+
+</footer>
+
+<script>
+
+function temizleIBAN(deger) {
+  return deger
+    .toUpperCase()
+    .replace(/[^A-Z0-9]/g, "");
+}
+
+function formatla() {
+
+  const input = document.getElementById("iban");
+
+  const temiz = temizleIBAN(input.value).slice(0, 26);
+
+  input.value =
+    temiz.match(/.{1,4}/g)?.join(" ") || "";
+}
+
+function mod97(iban) {
+
+  const tasinan =
+    iban.slice(4) + iban.slice(0, 4);
+
+  let sayisal = "";
+
+  for (const karakter of tasinan) {
+
+    if (karakter >= "A" && karakter <= "Z") {
+
+      sayisal +=
+        (karakter.charCodeAt(0) - 55).toString();
+
+    } else {
+
+      sayisal += karakter;
+
+    }
+  }
+
+  let kalan = 0;
+
+  for (const rakam of sayisal) {
+
+    kalan =
+      (kalan * 10 + Number(rakam)) % 97;
+  }
+
+  return kalan;
+}
+
+function ibanKontrol() {
+
+  const sonuc =
+    document.getElementById("sonuc");
+
+  const iban =
+    temizleIBAN(
+      document.getElementById("iban").value
+    );
+
+  if (!iban) {
+
+    sonuc.className = "error-box";
+
+    sonuc.innerHTML =
+      "<strong>IBAN girilmedi.</strong><br>" +
+      "Lütfen kontrol etmek istediğiniz IBAN numarasını yazın.";
+
+    return;
+  }
+
+  if (iban.length !== 26) {
+
+    sonuc.className = "error-box";
+
+    sonuc.innerHTML =
+      "<strong>IBAN uzunluğu geçersiz.</strong><br>" +
+      "Türkiye IBAN'ı 26 karakter olmalıdır. " +
+      "Girdiğiniz IBAN " +
+      iban.length +
+      " karakter.";
+
+    return;
+  }
+
+  if (!iban.startsWith("TR")) {
+
+    sonuc.className = "error-box";
+
+    sonuc.innerHTML =
+      "<strong>Ülke kodu geçersiz.</strong><br>" +
+      "Bu araç Türkiye IBAN'larını kontrol eder ve " +
+      "IBAN'ın TR ile başlaması gerekir.";
+
+    return;
+  }
+
+  if (!/^TR[0-9]{8}[A-Z0-9]{16}$/.test(iban)) {
+
+    sonuc.className = "error-box";
+
+    sonuc.innerHTML =
+      "<strong>IBAN biçimi geçersiz.</strong><br>" +
+      "Türkiye IBAN yapısına uygun olmayan karakterler " +
+      "veya alanlar bulundu.";
+
+    return;
+  }
+
+  const kontrolBasamaklari =
+    iban.slice(2, 4);
+
+  const kurumKodu =
+    iban.slice(4, 9);
+
+  const rezervAlan =
+    iban.slice(9, 10);
+
+  const hesapAlani =
+    iban.slice(10);
+
+  if (rezervAlan !== "0") {
+
+    sonuc.className = "error-box";
+
+    sonuc.innerHTML =
+      "<strong>Rezerv alan geçersiz.</strong><br>" +
+      "Türkiye IBAN yapısında rezerv alanın 0 olması gerekir.";
+
+    return;
+  }
+
+  const kalan = mod97(iban);
+
+  if (kalan !== 1) {
+
+    sonuc.className = "error-box";
+
+    sonuc.innerHTML =
+      "<strong>IBAN doğrulanamadı.</strong><br><br>" +
+      "IBAN'ın MOD 97-10 kontrol basamakları geçerli değil. " +
+      "Numarayı tekrar kontrol edin.";
+
+    return;
+  }
+
+  const bicimli =
+    iban.match(/.{1,4}/g).join(" ");
+
+  sonuc.className = "success-box";
+
+  sonuc.innerHTML =
+
+    "<strong>✓ IBAN teknik olarak geçerli görünüyor.</strong>" +
+
+    "<br><br>" +
+
+    "<strong>IBAN:</strong><br>" +
+    bicimli +
+
+    "<br><br>" +
+
+    "<strong>Ülke:</strong> Türkiye (TR)" +
+
+    "<br>" +
+
+    "<strong>Kontrol basamakları:</strong> " +
+    kontrolBasamaklari +
+
+    "<br>" +
+
+    "<strong>Ödeme hizmeti sağlayıcısı kodu:</strong> " +
+    kurumKodu +
+
+    "<br>" +
+
+    "<strong>Rezerv alan:</strong> " +
+    rezervAlan +
+
+    "<br>" +
+
+    "<strong>Hesap numarası alanı:</strong> " +
+    hesapAlani +
+
+    "<br><br>" +
+
+    "<small>" +
+    "Bu sonuç yalnızca IBAN'ın teknik olarak doğrulandığını " +
+    "gösterir; hesabın aktifliğini veya hesap sahibini doğrulamaz." +
+    "</small>";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
