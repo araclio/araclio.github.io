@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>2026 Brüt Net Maaş Hesaplama | Araclio</title>
+
+  <meta name="description" content="2026 brüt maaştan net maaş hesaplama aracı. SGK, işsizlik sigortası ve gelir vergisi kesintilerini ay bazında hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/brut-net-maas-hesaplama.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .warning-box {
+      margin-top:24px;
+      padding:18px;
+      border:2px solid #c62828;
+      border-radius:10px;
+      background:#fff4f4;
+      color:#7f0000;
+    }
+
+    .warning-box strong {
+      display:block;
+      margin-bottom:8px;
+      font-size:18px;
+    }
+
+    .info-box {
+      margin-top:18px;
+      padding:15px;
+      border-radius:8px;
+      background:#f5f5f5;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">2026 • HIZLI • ÜCRETSİZ</p>
+
+    <h1>2026 Brüt Net Maaş Hesaplama</h1>
+
+    <p>
+      Brüt maaşınızı ve hesaplama ayını seçerek tahmini net
+      maaşınızı, SGK ve işsizlik sigortası kesintilerini ve
+      gelir vergisini hesaplayın.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Brütten Nete Maaş Hesapla</h2>
+
+      <label>
+        Aylık Brüt Maaş (TL)
+        <input
+          id="brut"
+          type="number"
+          min="33030"
+          step="0.01"
+          placeholder="50000">
+      </label>
+
+      <label>
+        Hesaplama Ayı
+        <select id="ay">
+          <option value="1">Ocak</option>
+          <option value="2">Şubat</option>
+          <option value="3">Mart</option>
+          <option value="4">Nisan</option>
+          <option value="5">Mayıs</option>
+          <option value="6">Haziran</option>
+          <option value="7">Temmuz</option>
+          <option value="8">Ağustos</option>
+          <option value="9">Eylül</option>
+          <option value="10">Ekim</option>
+          <option value="11">Kasım</option>
+          <option value="12">Aralık</option>
+        </select>
+      </label>
+
+      <button onclick="maasHesapla()">Net Maaşı Hesapla</button>
+
+      <div id="sonuc" class="result">
+        Brüt maaşınızı girin ve ayı seçin.
+      </div>
+
+      <div class="warning-box">
+        <strong>⚠️ ÖNEMLİ</strong>
+
+        Bu hesaplama 2026 yılı için standart 4/a kapsamında çalışan
+        bir ücretli için yaklaşık bilgi vermek amacıyla hazırlanmıştır.
+
+        <br><br>
+
+        BES, engellilik indirimi, özel sigorta, prim, ikramiye,
+        yemek ve yol ödemeleri, teşvikler, birden fazla işveren,
+        eksik çalışma ve kişiye özel diğer bordro unsurları
+        hesaplamayı değiştirebilir.
+
+        <br><br>
+
+        Kesin maaş ve bordro hesabında işvereninizin bordrosunu,
+        mali müşavirinizi ve güncel resmi mevzuatı esas alın.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>2026 Maaş Hesaplamasında Kullanılan Temel Değerler</h2>
+
+    <div class="info-box">
+      <strong>2026 Brüt Asgari Ücret:</strong> 33.030,00 TL
+      <br><br>
+      <strong>2026 Net Asgari Ücret:</strong> 28.075,50 TL
+      <br><br>
+      <strong>Çalışan SGK Payı:</strong> %14
+      <br><br>
+      <strong>Çalışan İşsizlik Sigortası:</strong> %1
+    </div>
+
+    <h2>2026 Gelir Vergisi Dilimleri</h2>
+
+    <p>
+      Ücret gelirlerinde 2026 yılı için gelir vergisi tarifesi
+      kümülatif vergi matrahına göre uygulanır.
+    </p>
+
+    <div class="info-box">
+      190.000 TL'ye kadar: <strong>%15</strong><br><br>
+      190.000 - 400.000 TL arası: <strong>%20</strong><br><br>
+      400.000 - 1.500.000 TL arası: <strong>%27</strong><br><br>
+      1.500.000 - 5.300.000 TL arası: <strong>%35</strong><br><br>
+      5.300.000 TL üzeri: <strong>%40</strong>
+    </div>
+
+    <h2>Brüt Maaş Nedir?</h2>
+
+    <p>
+      Brüt maaş, çalışanın SGK primi, işsizlik sigortası primi,
+      gelir vergisi ve uygulanabilecek diğer yasal kesintiler
+      yapılmadan önceki ücretidir.
+    </p>
+
+    <h2>Net Maaş Nedir?</h2>
+
+    <p>
+      Net maaş, brüt ücretten çalışana ait yasal kesintiler
+      çıkarıldıktan sonra kalan yaklaşık ödeme tutarıdır.
+    </p>
+
+    <h2>Net Maaş Neden Aylara Göre Değişebilir?</h2>
+
+    <p>
+      Gelir vergisi kümülatif vergi matrahı üzerinden
+      hesaplandığından, aynı brüt maaşı alan bir çalışanın
+      yıl ilerledikçe daha yüksek vergi dilimine geçmesi mümkündür.
+      Bu nedenle net maaş bazı durumlarda aylara göre değişebilir.
+    </p>
+
+    <h2>Diğer Finansal Araçlar</h2>
+
+    <p>
+      <a href="/kredi-hesaplama.html">Kredi Hesaplama</a>
+      •
+      <a href="/mevduat-faizi-hesaplama.html">Mevduat Faizi Hesaplama</a>
+      •
+      <a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama</a>
+      •
+      <a href="/yuzde-hesaplama.html">Yüzde Hesaplama</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+
+const ASGARI_BRUT = 33030;
+const SGK_UST_SINIR = 297270;
+const DAMGA_ORANI = 0.00759;
+
+function paraYaz(deger) {
+  return deger.toLocaleString("tr-TR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+}
+
+function gelirVergisi(mat) {
+
+  if (mat <= 0) return 0;
+
+  if (mat <= 190000)
+    return mat * 0.15;
+
+  if (mat <= 400000)
+    return 28500 + (mat - 190000) * 0.20;
+
+  if (mat <= 1500000)
+    return 70500 + (mat - 400000) * 0.27;
+
+  if (mat <= 5300000)
+    return 367500 + (mat - 1500000) * 0.35;
+
+  return 1697500 + (mat - 5300000) * 0.40;
+}
+
+function aylikVergi(mat, ay) {
+
+  const oncekiMatrah = mat * (ay - 1);
+  const yeniMatrah = mat * ay;
+
+  return gelirVergisi(yeniMatrah) -
+         gelirVergisi(oncekiMatrah);
+}
+
+function maasHesapla() {
+
+  const brut =
+    Number(document.getElementById("brut").value);
+
+  const ay =
+    Number(document.getElementById("ay").value);
+
+  const sonuc =
+    document.getElementById("sonuc");
+
+  if (
+    !Number.isFinite(brut) ||
+    brut < ASGARI_BRUT ||
+    !Number.isInteger(ay) ||
+    ay < 1 ||
+    ay > 12
+  ) {
+    sonuc.innerHTML =
+      "Lütfen 33.030 TL veya üzerinde geçerli bir brüt maaş girin.";
+    return;
+  }
+
+  const primeEsasKazanc =
+    Math.min(brut, SGK_UST_SINIR);
+
+  const sgk =
+    primeEsasKazanc * 0.14;
+
+  const issizlik =
+    primeEsasKazanc * 0.01;
+
+  const vergiMatrahi =
+    Math.max(0, brut - sgk - issizlik);
+
+  const brutGelirVergisi =
+    aylikVergi(vergiMatrahi, ay);
+
+  const asgariMatrah =
+    ASGARI_BRUT * 0.85;
+
+  const asgariVergiIstisnasi =
+    aylikVergi(asgariMatrah, ay);
+
+  const gelirVergisi =
+    Math.max(
+      0,
+      brutGelirVergisi - asgariVergiIstisnasi
+    );
+
+  const brutDamga =
+    brut * DAMGA_ORANI;
+
+  const damgaIstisnasi =
+    ASGARI_BRUT * DAMGA_ORANI;
+
+  const damgaVergisi =
+    Math.max(
+      0,
+      brutDamga - damgaIstisnasi
+    );
+
+  const toplamKesinti =
+    sgk +
+    issizlik +
+    gelirVergisi +
+    damgaVergisi;
+
+  const net =
+    brut - toplamKesinti;
+
+  sonuc.innerHTML =
+    "<strong>Brüt maaş:</strong> " +
+    paraYaz(brut) +
+    " TL<br><br>" +
+
+    "<strong>SGK işçi payı (%14):</strong> " +
+    paraYaz(sgk) +
+    " TL<br><br>" +
+
+    "<strong>İşsizlik sigortası (%1):</strong> " +
+    paraYaz(issizlik) +
+    " TL<br><br>" +
+
+    "<strong>Gelir vergisi:</strong> " +
+    paraYaz(gelirVergisi) +
+    " TL<br><br>" +
+
+    "<strong>Damga vergisi:</strong> " +
+    paraYaz(damgaVergisi) +
+    " TL<br><br>" +
+
+    "<strong>Toplam kesinti:</strong> " +
+    paraYaz(toplamKesinti) +
+    " TL<br><br>" +
+
+    "<strong>Tahmini net maaş:</strong> " +
+    paraYaz(net) +
+    " TL";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
