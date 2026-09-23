@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+  <title>Saat Dakika Saniye Dönüştürücü | Zaman Çevirme - Araclio</title>
+
+  <meta name="description" content="Saat, dakika ve saniye dönüştürme aracı. Saati dakikaya, dakikayı saate, saniyeyi dakikaya ve farklı zaman birimlerini ücretsiz dönüştürün.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/zaman-donusturucu.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .donustur-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .zaman-detay {
+      margin-top:14px;
+      line-height:1.8;
+    }
+
+    .ornek {
+      margin-top:18px;
+      padding:16px;
+      background:#f5f5f5;
+      border-radius:10px;
+      line-height:1.7;
+    }
+
+    @media (max-width:600px) {
+      .donustur-grid {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>Saat, Dakika ve Saniye Dönüştürücü</h1>
+
+    <p>
+      Saat, dakika ve saniye arasında hızlı dönüşüm yapın.
+      Girdiğiniz zaman değerinin diğer zaman birimlerindeki
+      karşılığını anında hesaplayın.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Zaman Dönüştürme</h2>
+
+      <div class="donustur-grid">
+
+        <label>
+          Değer
+          <input
+            id="deger"
+            type="number"
+            min="0"
+            step="any"
+            placeholder="2.5">
+        </label>
+
+        <label>
+          Birim
+          <select id="birim">
+            <option value="saat">Saat</option>
+            <option value="dakika">Dakika</option>
+            <option value="saniye">Saniye</option>
+          </select>
+        </label>
+
+      </div>
+
+      <button type="button" onclick="donustur()">
+        Dönüştür
+      </button>
+
+      <div id="sonuc" class="result">
+        Bir değer girip zaman birimini seçin.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>Saat Dakika Saniye Nasıl Dönüştürülür?</h2>
+
+    <p>
+      Zaman birimleri arasında dönüşüm yapılırken bir saatin
+      60 dakika, bir dakikanın 60 saniye ve bir saatin
+      3600 saniye olduğu temel alınır.
+    </p>
+
+    <div class="ornek">
+      <strong>1 saat = 60 dakika</strong><br>
+      <strong>1 dakika = 60 saniye</strong><br>
+      <strong>1 saat = 3600 saniye</strong>
+    </div>
+
+    <h2>Saat Dakikaya Nasıl Çevrilir?</h2>
+
+    <p>
+      Saat değerini dakikaya çevirmek için saat sayısı
+      60 ile çarpılır.
+    </p>
+
+    <div class="ornek">
+      2 saat × 60 = <strong>120 dakika</strong>
+    </div>
+
+    <h2>Dakika Saate Nasıl Çevrilir?</h2>
+
+    <p>
+      Dakika değerini saate çevirmek için dakika sayısı
+      60'a bölünür.
+    </p>
+
+    <div class="ornek">
+      150 dakika ÷ 60 = <strong>2,5 saat</strong>
+    </div>
+
+    <h2>Saniye Dakikaya Nasıl Çevrilir?</h2>
+
+    <p>
+      Saniyeyi dakikaya çevirmek için saniye değeri
+      60'a bölünür.
+    </p>
+
+    <div class="ornek">
+      300 saniye ÷ 60 = <strong>5 dakika</strong>
+    </div>
+
+    <h2>Saat Saniyeye Nasıl Çevrilir?</h2>
+
+    <p>
+      Saat değerini saniyeye çevirmek için saat sayısı
+      3600 ile çarpılır.
+    </p>
+
+    <div class="ornek">
+      2 saat × 3600 = <strong>7200 saniye</strong>
+    </div>
+
+    <h2>Ondalıklı Saat Kaç Saat Kaç Dakikadır?</h2>
+
+    <p>
+      Araç, ondalıklı saat değerlerini de saat, dakika
+      ve saniye biçiminde gösterir. Örneğin 2,5 saat;
+      2 saat 30 dakikaya eşittir.
+    </p>
+
+    <h2>Diğer Araçlar</h2>
+
+    <p>
+      <a href="/hiz-mesafe-zaman-hesaplama.html">Hız Mesafe Zaman Hesaplama</a>
+      •
+      <a href="/iki-tarih-arasi-gun-hesaplama.html">İki Tarih Arası Gün Hesaplama</a>
+      •
+      <a href="/gun-ekleme-cikarma.html">Tarihe Gün Ekleme / Çıkarma</a>
+      •
+      <a href="/yas-hesaplama.html">Yaş Hesaplama</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+
+function formatla(sayi) {
+  return new Intl.NumberFormat("tr-TR", {
+    maximumFractionDigits: 6
+  }).format(sayi);
+}
+
+function donustur() {
+
+  const deger =
+    Number(document.getElementById("deger").value);
+
+  const birim =
+    document.getElementById("birim").value;
+
+  const sonuc =
+    document.getElementById("sonuc");
+
+  if (
+    !Number.isFinite(deger) ||
+    deger < 0 ||
+    document.getElementById("deger").value === ""
+  ) {
+    sonuc.innerHTML =
+      "Lütfen sıfır veya sıfırdan büyük geçerli bir değer girin.";
+    return;
+  }
+
+  let toplamSaniye;
+
+  if (birim === "saat") {
+    toplamSaniye = deger * 3600;
+  }
+
+  if (birim === "dakika") {
+    toplamSaniye = deger * 60;
+  }
+
+  if (birim === "saniye") {
+    toplamSaniye = deger;
+  }
+
+  const saat = toplamSaniye / 3600;
+  const dakika = toplamSaniye / 60;
+  const saniye = toplamSaniye;
+
+  const tamSaat =
+    Math.floor(toplamSaniye / 3600);
+
+  const kalanSaniye =
+    toplamSaniye - (tamSaat * 3600);
+
+  const tamDakika =
+    Math.floor(kalanSaniye / 60);
+
+  const sonSaniye =
+    kalanSaniye - (tamDakika * 60);
+
+  sonuc.innerHTML =
+    "<strong>" +
+    formatla(saat) +
+    " saat</strong>" +
+
+    "<div class='zaman-detay'>" +
+
+    formatla(dakika) +
+    " dakika" +
+
+    "<br>" +
+
+    formatla(saniye) +
+    " saniye" +
+
+    "<br><br>" +
+
+    "<strong>Zaman biçimi:</strong> " +
+    tamSaat +
+    " saat " +
+    tamDakika +
+    " dakika " +
+    formatla(sonSaniye) +
+    " saniye" +
+
+    "</div>";
+}
+
+document.getElementById("deger")
+  .addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+      donustur();
+    }
+  });
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
