@@ -6,7 +6,7 @@
 
   <title>Taksit Hesaplama 2026 | Basit Taksit Hesaplama - Araclio</title>
 
-  <meta name="description" content="Ücretsiz basit taksit hesaplama aracı. Toplam tutarı ve taksit sayısını girerek aylık taksit tutarını saniyeler içinde hesaplayın.">
+  <meta name="description" content="Ücretsiz taksit hesaplama aracı. Toplam tutarı ve taksit sayısını girerek faizsiz eşit taksit tutarını hızlıca hesaplayın.">
 
   <meta name="robots" content="index,follow">
 
@@ -27,21 +27,37 @@
 
   <section class="hero">
     <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
     <h1>Basit Taksit Hesaplama</h1>
-    <p>Toplam tutarı ve taksit sayısını girerek her taksitte ödenecek tutarı hemen hesaplayın.</p>
+
+    <p>
+      Toplam tutarı ve taksit sayısını girerek her taksitte
+      ödenecek eşit tutarı saniyeler içinde hesaplayın.
+    </p>
   </section>
+
 
   <section class="card">
     <h2>Taksit Hesaplama Aracı</h2>
 
     <label>
       Toplam Tutar (TL)
-      <input id="tutar" type="number" min="0" step="0.01" placeholder="Örnek: 12000">
+      <input
+        id="tutar"
+        type="number"
+        min="0"
+        step="0.01"
+        placeholder="Örnek: 12000">
     </label>
 
     <label>
       Taksit Sayısı
-      <input id="taksitSayisi" type="number" min="1" step="1" placeholder="Örnek: 6">
+      <input
+        id="taksitSayisi"
+        type="number"
+        min="1"
+        step="1"
+        placeholder="Örnek: 6">
     </label>
 
     <div class="buttons">
@@ -53,29 +69,92 @@
     </div>
   </section>
 
+
   <section class="card">
     <h2>Taksit Nasıl Hesaplanır?</h2>
 
     <p>
-      Basit taksit hesabında toplam tutar, seçilen taksit sayısına bölünür.
-      Böylece her taksitte ödenecek eşit tutar bulunur.
+      Basit taksit hesabında toplam tutar seçilen taksit sayısına
+      bölünür ve her ödeme için eşit taksit tutarı bulunur.
     </p>
 
     <p>
-      Örneğin 12.000 TL tutarındaki bir ödeme 6 eşit taksite bölünürse,
-      her taksit 2.000 TL olur.
+      <strong>Formül:</strong><br>
+      Taksit Tutarı = Toplam Tutar ÷ Taksit Sayısı
     </p>
 
     <p>
-      Bu araç faiz ve ek komisyon içermeyen basit eşit bölme hesabı yapar.
-      Banka veya ödeme kuruluşlarının uyguladığı faiz, komisyon ve diğer
-      ücretler gerçek ödeme tutarını değiştirebilir.
+      Örneğin 12.000 TL tutarındaki bir ödeme 6 eşit taksite
+      bölünürse her taksit 2.000 TL olur.
     </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Taksit Hesaplama Örnekleri</h2>
+
+    <p>
+      <strong>12.000 TL / 6 taksit:</strong><br>
+      Her taksit: 2.000 TL
+    </p>
+
+    <p>
+      <strong>10.000 TL / 5 taksit:</strong><br>
+      Her taksit: 2.000 TL
+    </p>
+
+    <p>
+      <strong>9.000 TL / 3 taksit:</strong><br>
+      Her taksit: 3.000 TL
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Bu Hesaplamaya Faiz Dahil mi?</h2>
+
+    <p>
+      Hayır. Bu araç toplam tutarı seçilen taksit sayısına eşit şekilde
+      bölen basit bir hesaplama yapar.
+    </p>
+
+    <p>
+      Banka, kredi kartı veya ödeme kuruluşlarının uygulayabileceği faiz,
+      komisyon ve diğer ücretler bu hesaplamaya dahil değildir.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Diğer Ücretsiz Araçlar</h2>
+
+    <p><a href="/kdv-hesaplama.html">KDV Hesaplama →</a></p>
+    <p><a href="/yuzde-hesaplama.html">Yüzde Hesaplama →</a></p>
+    <p><a href="/kar-marji-hesaplama.html">Kâr Hesaplama →</a></p>
+    <p><a href="/indirim-hesaplama.html">İndirim Hesaplama →</a></p>
+    <p><a href="/zam-hesaplama.html">Zam Hesaplama →</a></p>
+    <p><a href="/desi-hesaplama.html">Desi Hesaplama →</a></p>
+    <p><a href="/kelime-karakter-sayaci.html">Kelime &amp; Karakter Sayacı →</a></p>
   </section>
 
 </main>
 
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+  </div>
+</footer>
+
+
 <script>
+function formatTL(deger) {
+  return deger.toLocaleString("tr-TR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }) + " TL";
+}
+
 function taksitHesapla() {
   const tutar = parseFloat(document.getElementById("tutar").value);
   const taksitSayisi = parseInt(document.getElementById("taksitSayisi").value);
@@ -94,17 +173,10 @@ function taksitHesapla() {
 
   const taksitTutari = tutar / taksitSayisi;
 
-  function formatTL(deger) {
-    return deger.toLocaleString("tr-TR", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    }) + " TL";
-  }
-
   sonucAlani.innerHTML =
+    "Toplam tutar: <strong>" + formatTL(tutar) + "</strong><br>" +
     "Taksit sayısı: <strong>" + taksitSayisi + "</strong><br>" +
-    "Her taksit: <strong>" + formatTL(taksitTutari) + "</strong><br>" +
-    "Toplam tutar: <strong>" + formatTL(tutar) + "</strong>";
+    "Her taksit: <strong>" + formatTL(taksitTutari) + "</strong>";
 }
 </script>
 
