@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Tarihe Gün Ekleme ve Çıkarma | Kaç Gün Sonra? - Araclio</title>
+
+  <meta name="description" content="Bir tarihe gün ekleyin veya tarihten gün çıkarın. 30, 45, 90 veya istediğiniz kadar gün sonrası ya da öncesinin hangi tarih olduğunu ücretsiz hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/gun-ekleme-cikarma.html">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>Tarihe Gün Ekleme ve Çıkarma</h1>
+
+    <p>
+      Bir tarihten belirli sayıda gün sonrasını veya öncesini
+      hesaplayın. Başlangıç tarihini ve gün sayısını girerek
+      sonuç tarihini anında öğrenin.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Gün Ekleme / Çıkarma Hesaplama</h2>
+
+      <label>
+        Başlangıç Tarihi
+        <input id="tarih" type="date">
+      </label>
+
+      <label>
+        Gün Sayısı
+        <input
+          id="gun"
+          type="number"
+          min="0"
+          step="1"
+          placeholder="30">
+      </label>
+
+      <div class="buttons">
+        <button onclick="gunEkle()">Gün Ekle</button>
+        <button class="secondary" onclick="gunCikar()">Gün Çıkar</button>
+      </div>
+
+      <div id="sonuc" class="result">
+        Başlangıç tarihini ve gün sayısını girin.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>Tarihe Gün Nasıl Eklenir?</h2>
+
+    <p>
+      Başlangıç tarihini seçin ve eklemek istediğiniz gün sayısını
+      yazın. Gün Ekle butonuna bastığınızda Araclio, belirtilen süre
+      sonrasındaki tarihi hesaplar.
+    </p>
+
+    <p>
+      Örneğin 1 Ekim tarihine 30 gün eklemek istediğinizde sonuç
+      31 Ekim olarak hesaplanır.
+    </p>
+
+    <h2>Tarihten Gün Nasıl Çıkarılır?</h2>
+
+    <p>
+      Geçmişteki bir tarihi bulmak için başlangıç tarihini ve
+      çıkarılacak gün sayısını girerek Gün Çıkar butonunu
+      kullanabilirsiniz.
+    </p>
+
+    <h2>30, 45, 90 veya 100 Gün Sonrası</h2>
+
+    <p>
+      Araçta belirli bir gün sınırı yoktur. 7 gün, 30 gün, 45 gün,
+      90 gün, 100 gün veya ihtiyacınız olan farklı bir gün sayısını
+      kullanabilirsiniz.
+    </p>
+
+    <h2>Hangi İşlemlerde Kullanılabilir?</h2>
+
+    <p>
+      Teslim tarihleri, proje süreleri, seyahat planları, etkinlikler,
+      randevular ve belirli bir tarihten kaç gün sonrası veya öncesinin
+      hangi güne denk geldiğini öğrenmek istediğiniz işlemlerde
+      kullanılabilir.
+    </p>
+
+    <h2>Diğer Tarih Hesaplama Araçları</h2>
+
+    <p>
+      <a href="/iki-tarih-arasi-gun-hesaplama.html">İki Tarih Arası Gün Hesaplama</a>
+      •
+      <a href="/yas-hesaplama.html">Yaş Hesaplama</a>
+      •
+      <a href="/yuzde-hesaplama.html">Yüzde Hesaplama</a>
+    </p>
+
+    <p>
+      Araclio üzerindeki hesaplamalar bilgilendirme amaçlıdır.
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+function bilgileriAl() {
+  const tarihDegeri = document.getElementById("tarih").value;
+  const gunDegeri = document.getElementById("gun").value;
+  const sonuc = document.getElementById("sonuc");
+
+  if (!tarihDegeri || gunDegeri === "") {
+    sonuc.innerHTML = "Lütfen başlangıç tarihini ve gün sayısını girin.";
+    return null;
+  }
+
+  const gunSayisi = Number(gunDegeri);
+
+  if (!Number.isInteger(gunSayisi) || gunSayisi < 0) {
+    sonuc.innerHTML = "Gün sayısı 0 veya daha büyük bir tam sayı olmalıdır.";
+    return null;
+  }
+
+  const parca = tarihDegeri.split("-");
+
+  const tarih = new Date(
+    Number(parca[0]),
+    Number(parca[1]) - 1,
+    Number(parca[2]),
+    12,
+    0,
+    0
+  );
+
+  return {
+    tarih: tarih,
+    gun: gunSayisi,
+    sonuc: sonuc
+  };
+}
+
+function tarihiYaz(tarih) {
+  return tarih.toLocaleDateString("tr-TR", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+    weekday: "long"
+  });
+}
+
+function gunEkle() {
+  const veri = bilgileriAl();
+
+  if (!veri) return;
+
+  const yeniTarih = new Date(veri.tarih);
+  yeniTarih.setDate(yeniTarih.getDate() + veri.gun);
+
+  veri.sonuc.innerHTML =
+    "<strong>" +
+    veri.gun.toLocaleString("tr-TR") +
+    " gün sonrası:</strong><br><br>" +
+    tarihiYaz(yeniTarih);
+}
+
+function gunCikar() {
+  const veri = bilgileriAl();
+
+  if (!veri) return;
+
+  const yeniTarih = new Date(veri.tarih);
+  yeniTarih.setDate(yeniTarih.getDate() - veri.gun);
+
+  veri.sonuc.innerHTML =
+    "<strong>" +
+    veri.gun.toLocaleString("tr-TR") +
+    " gün öncesi:</strong><br><br>" +
+    tarihiYaz(yeniTarih);
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
