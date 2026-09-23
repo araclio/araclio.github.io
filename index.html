@@ -8,7 +8,7 @@
 
   <title>Online Hesaplama ve Dönüştürme Araçları | Araclio</title>
 
-  <meta name="description" content="Ücretsiz online araçlar: hacim, alan, ağırlık, sıcaklık, uzunluk, MB GB TB ve zaman dönüştürme, yüzde, kredi, KDV, maaş ve daha fazlası.">
+  <meta name="description" content="Ücretsiz online araçlar: enerji, hacim, alan, ağırlık, sıcaklık, uzunluk, MB GB TB ve zaman dönüştürme, yüzde, kredi, KDV, maaş ve daha fazlası.">
 
   <meta name="robots" content="index,follow">
 
@@ -38,10 +38,11 @@
     <h1>Ücretsiz Online Hesaplama ve Dönüştürme Araçları</h1>
 
     <p>
-      Hacim, alan, ağırlık, sıcaklık, uzunluk, veri depolama ve zaman
-      dönüştürme; ağırlıklı ortalama, hız mesafe zaman, oran orantı,
-      birim fiyat, komisyon, iskonto, kâr zarar, yüzde, kredi,
-      KDV, maaş, tarih ve daha birçok işlemi saniyeler içinde yapın.
+      Enerji, hacim, alan, ağırlık, sıcaklık, uzunluk, veri depolama
+      ve zaman dönüştürme; ağırlıklı ortalama, hız mesafe zaman,
+      oran orantı, birim fiyat, komisyon, iskonto, kâr zarar,
+      yüzde, kredi, KDV, maaş, tarih ve daha birçok işlemi
+      saniyeler içinde yapın.
     </p>
 
     <p><a href="/en/">English Version →</a></p>
@@ -52,6 +53,17 @@
     <h2>Hesaplama Araçları</h2>
 
     <div class="grid">
+
+      <article class="card">
+        <h3>Enerji Dönüştürücü</h3>
+        <p>
+          Joule, kilojoule, kalori, kilokalori ve
+          kilowatt-saat enerji birimlerini birbirine dönüştürün.
+        </p>
+        <p>
+          <a href="/enerji-donusturucu.html">Enerji Dönüştür →</a>
+        </p>
+      </article>
 
       <article class="card">
         <h3>Hacim Dönüştürücü</h3>
@@ -490,20 +502,9 @@
         <h3>Desi Hesaplama</h3>
         <p>Paket ölçülerinden kargo desisini hesaplayın.</p>
 
-        <label>
-          En (cm)
-          <input id="en" type="number" min="0" step="0.1">
-        </label>
-
-        <label>
-          Boy (cm)
-          <input id="boy" type="number" min="0" step="0.1">
-        </label>
-
-        <label>
-          Yükseklik (cm)
-          <input id="yuk" type="number" min="0" step="0.1">
-        </label>
+        <label>En (cm)<input id="en" type="number" min="0" step="0.1"></label>
+        <label>Boy (cm)<input id="boy" type="number" min="0" step="0.1"></label>
+        <label>Yükseklik (cm)<input id="yuk" type="number" min="0" step="0.1"></label>
 
         <button onclick="desi()">Hesapla</button>
 
@@ -539,11 +540,7 @@
 
         <label>
           Metin
-          <textarea
-            id="metin"
-            rows="5"
-            placeholder="Metninizi buraya yazın..."
-            oninput="say()"></textarea>
+          <textarea id="metin" rows="5" placeholder="Metninizi buraya yazın..." oninput="say()"></textarea>
         </label>
 
         <div id="metinSonuc" class="result">0 kelime • 0 karakter</div>
@@ -570,8 +567,8 @@
     </p>
 
     <p>
-      Hacim, alan, ağırlık, sıcaklık, uzunluk ve veri birimleri,
-      zaman dönüşümü, ağırlıklı ortalama, hız, mesafe,
+      Enerji, hacim, alan, ağırlık, sıcaklık, uzunluk ve veri
+      birimleri, zaman dönüşümü, ağırlıklı ortalama, hız, mesafe,
       oran orantı, birim fiyat, komisyon, iskonto, kâr zarar,
       yüzde, IBAN, maaş, kredi, KDV, tarih ve yakıt işlemlerini
       tarayıcınız üzerinden hızlıca yapabilirsiniz.
