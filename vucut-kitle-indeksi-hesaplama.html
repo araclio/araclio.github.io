@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Vücut Kitle İndeksi Hesaplama | VKİ Hesapla - Araclio</title>
+
+  <meta name="description" content="Ücretsiz vücut kitle indeksi hesaplama aracı. Boy ve kilonuzu girerek VKİ (BMI) değerinizi ve yetişkinler için referans sınıflandırmasını öğrenin.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/vucut-kitle-indeksi-hesaplama.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .health-warning {
+      margin-top: 24px;
+      padding: 18px;
+      border: 2px solid #c62828;
+      border-radius: 10px;
+      background: #fff4f4;
+      color: #7f0000;
+    }
+
+    .health-warning strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+    }
+
+    .bmi-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+    }
+
+    .bmi-table th,
+    .bmi-table td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>Vücut Kitle İndeksi (VKİ) Hesaplama</h1>
+
+    <p>
+      Boy ve kilo bilgilerinizi girerek Vücut Kitle İndeksi
+      (VKİ / BMI) değerinizi hesaplayın ve yetişkinler için
+      referans sınıflandırmasındaki aralığınızı görün.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>VKİ Hesapla</h2>
+
+      <label>
+        Boy (cm)
+        <input
+          id="boy"
+          type="number"
+          min="50"
+          max="250"
+          step="0.1"
+          placeholder="175">
+      </label>
+
+      <label>
+        Kilo (kg)
+        <input
+          id="kilo"
+          type="number"
+          min="10"
+          max="500"
+          step="0.1"
+          placeholder="75">
+      </label>
+
+      <button onclick="vkiHesapla()">VKİ Hesapla</button>
+
+      <div id="vkiSonuc" class="result">
+        Boy ve kilo bilgilerinizi girin.
+      </div>
+
+      <div class="health-warning">
+        <strong>⚠️ SAĞLIK UYARISI</strong>
+
+        Bu araç yalnızca genel bilgilendirme amacıyla hazırlanmıştır.
+        VKİ tek başına kişinin sağlık durumunu, vücut yağ oranını veya
+        hastalık riskini belirlemez ve tıbbi tanı yerine geçmez.
+
+        <br><br>
+
+        Bu sayfadaki sınıflandırma yetişkinlere yöneliktir.
+        Çocuk ve ergenlerde değerlendirme yaş ve cinsiyete göre
+        farklı yöntemlerle yapılır.
+
+        <br><br>
+
+        Sağlığınız veya kilonuzla ilgili kişisel değerlendirme için
+        hekim veya diyetisyen gibi yetkili bir sağlık profesyoneline
+        başvurun.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>Vücut Kitle İndeksi Nedir?</h2>
+
+    <p>
+      Vücut Kitle İndeksi (VKİ), kişinin kilogram cinsinden vücut
+      ağırlığının metre cinsinden boy uzunluğunun karesine
+      bölünmesiyle hesaplanan bir değerdir.
+    </p>
+
+    <p>
+      <strong>VKİ = Kilo (kg) / Boy² (m)</strong>
+    </p>
+
+    <p>
+      Örneğin 75 kg ağırlığında ve 1,75 metre boyundaki bir kişinin
+      VKİ değeri yaklaşık 24,49'dur.
+    </p>
+
+    <h2>Yetişkinlerde VKİ Değerleri</h2>
+
+    <table class="bmi-table">
+      <thead>
+        <tr>
+          <th>VKİ</th>
+          <th>Yetişkin Sınıflandırması</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>18,50 altı</td>
+          <td>Zayıf</td>
+        </tr>
+
+        <tr>
+          <td>18,50 – 24,99</td>
+          <td>Normal</td>
+        </tr>
+
+        <tr>
+          <td>25,00 – 29,99</td>
+          <td>Fazla kilolu</td>
+        </tr>
+
+        <tr>
+          <td>30,00 – 34,99</td>
+          <td>I. derece obezite</td>
+        </tr>
+
+        <tr>
+          <td>35,00 – 39,99</td>
+          <td>II. derece obezite</td>
+        </tr>
+
+        <tr>
+          <td>40,00 ve üzeri</td>
+          <td>III. derece obezite</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>VKİ Tek Başına Yeterli mi?</h2>
+
+    <p>
+      Hayır. VKİ boy ve vücut ağırlığına dayalı pratik bir
+      göstergedir ancak vücuttaki yağ dağılımını doğrudan göstermez.
+      Kas kütlesi ve vücut yapısı gibi özellikleri de tek başına
+      değerlendiremez.
+    </p>
+
+    <h2>Çocuklarda VKİ Nasıl Değerlendirilir?</h2>
+
+    <p>
+      Çocuk ve ergenlerde yetişkinler için kullanılan sabit VKİ
+      aralıkları doğrudan kullanılmaz. Değerlendirme yaş ve
+      cinsiyete göre uygun büyüme referansları kullanılarak yapılır.
+      Bu nedenle bu hesaplayıcının sonuç sınıflandırması yetişkinlere
+      yöneliktir.
+    </p>
+
+    <h2>Diğer Hesaplama Araçları</h2>
+
+    <p>
+      <a href="/yas-hesaplama.html">Yaş Hesaplama</a>
+      •
+      <a href="/yuzde-hesaplama.html">Yüzde Hesaplama</a>
+      •
+      <a href="/metrekare-hesaplama.html">Metrekare Hesaplama</a>
+      •
+      <a href="/yakit-tuketimi-hesaplama.html">Yakıt Tüketimi Hesaplama</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+
+function vkiHesapla() {
+
+  const boyCm = Number(document.getElementById("boy").value);
+  const kilo = Number(document.getElementById("kilo").value);
+  const sonuc = document.getElementById("vkiSonuc");
+
+  if (
+    !Number.isFinite(boyCm) ||
+    !Number.isFinite(kilo) ||
+    boyCm < 50 ||
+    boyCm > 250 ||
+    kilo < 10 ||
+    kilo > 500
+  ) {
+    sonuc.innerHTML =
+      "Lütfen geçerli boy ve kilo bilgileri girin.";
+    return;
+  }
+
+  const boyMetre = boyCm / 100;
+  const vki = kilo / (boyMetre * boyMetre);
+
+  let durum = "";
+
+  if (vki < 18.5) {
+    durum = "Zayıf";
+  } else if (vki < 25) {
+    durum = "Normal";
+  } else if (vki < 30) {
+    durum = "Fazla kilolu";
+  } else if (vki < 35) {
+    durum = "I. derece obezite";
+  } else if (vki < 40) {
+    durum = "II. derece obezite";
+  } else {
+    durum = "III. derece obezite";
+  }
+
+  sonuc.innerHTML =
+    "<strong>VKİ değeriniz:</strong> " +
+    vki.toLocaleString("tr-TR", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }) +
+    " kg/m²<br><br>" +
+
+    "<strong>Yetişkin referans sınıfı:</strong> " +
+    durum +
+    "<br><br>" +
+
+    "<small>Bu sonuç tıbbi tanı değildir. Yetişkinler için genel VKİ sınıflandırmasını gösterir.</small>";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
