@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+  <title>MB GB TB Dönüştürücü | GB Kaç MB? - Araclio</title>
+
+  <meta name="description" content="MB, GB ve TB dönüştürme aracı. GB kaç MB, TB kaç GB, MB kaç GB hesaplayın. Veri depolama birimlerini ücretsiz dönüştürün.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/mb-gb-tb-donusturucu.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .converter-grid {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .detail {
+      margin-top:14px;
+      line-height:1.8;
+    }
+
+    .info-box {
+      margin-top:18px;
+      padding:16px;
+      background:#f5f5f5;
+      border-radius:10px;
+      line-height:1.8;
+    }
+
+    @media(max-width:600px){
+      .converter-grid {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>MB, GB ve TB Dönüştürücü</h1>
+
+    <p>
+      KB, MB, GB ve TB değerlerini birbirine dönüştürün.
+      Dosya boyutu ve depolama kapasitesi dönüşümlerini
+      saniyeler içinde hesaplayın.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Veri Birimi Dönüştür</h2>
+
+      <div class="converter-grid">
+
+        <label>
+          Değer
+          <input
+            id="deger"
+            type="number"
+            min="0"
+            step="any"
+            placeholder="5">
+        </label>
+
+        <label>
+          Birim
+          <select id="birim">
+            <option value="KB">KB</option>
+            <option value="MB">MB</option>
+            <option value="GB" selected>GB</option>
+            <option value="TB">TB</option>
+          </select>
+        </label>
+
+      </div>
+
+      <button type="button" onclick="hesapla()">
+        Dönüştür
+      </button>
+
+      <div id="sonuc" class="result">
+        Bir değer girip veri birimini seçin.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>GB Kaç MB?</h2>
+
+    <p>
+      Bu hesaplayıcı ikili tabanlı dönüşüm kullanır.
+      Buna göre 1 GB, 1024 MB olarak hesaplanır.
+    </p>
+
+    <div class="info-box">
+      <strong>1 GB = 1024 MB</strong><br>
+      2 GB = 2048 MB<br>
+      5 GB = 5120 MB<br>
+      10 GB = 10240 MB
+    </div>
+
+    <h2>1 TB Kaç GB?</h2>
+
+    <p>
+      İkili tabanlı hesaplamada 1 TB, 1024 GB değerine eşittir.
+    </p>
+
+    <div class="info-box">
+      <strong>1 TB = 1024 GB</strong><br>
+      2 TB = 2048 GB<br>
+      5 TB = 5120 GB
+    </div>
+
+    <h2>1 MB Kaç KB?</h2>
+
+    <div class="info-box">
+      <strong>1 MB = 1024 KB</strong><br>
+      10 MB = 10240 KB<br>
+      100 MB = 102400 KB
+    </div>
+
+    <h2>Ondalık ve İkili Depolama Birimleri</h2>
+
+    <p>
+      Bilgisayarlarda veri boyutları bazı durumlarda 1024 tabanlı,
+      depolama üreticilerinde ise 1000 tabanlı gösterilebilir.
+      Bu nedenle cihazınızda görünen kapasite ile ürün üzerinde
+      yazan kapasite arasında fark oluşabilir.
+    </p>
+
+    <p>
+      Bu araç pratik dönüşüm amacıyla 1024 tabanlı hesaplama yapar.
+    </p>
+
+    <h2>Diğer Araçlar</h2>
+
+    <p>
+      <a href="/zaman-donusturucu.html">Saat Dakika Saniye Dönüştürücü</a>
+      •
+      <a href="/agirlikli-ortalama-hesaplama.html">Ağırlıklı Ortalama</a>
+      •
+      <a href="/oran-oranti-hesaplama.html">Oran Orantı</a>
+      •
+      <a href="/birim-fiyat-hesaplama.html">Birim Fiyat</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+
+function formatla(sayi) {
+  return new Intl.NumberFormat("tr-TR", {
+    maximumFractionDigits: 8
+  }).format(sayi);
+}
+
+function hesapla() {
+
+  const alan = document.getElementById("deger");
+  const birim = document.getElementById("birim").value;
+  const sonuc = document.getElementById("sonuc");
+
+  if (alan.value === "") {
+    sonuc.innerHTML = "Lütfen bir değer girin.";
+    return;
+  }
+
+  const deger = Number(alan.value);
+
+  if (!Number.isFinite(deger) || deger < 0) {
+    sonuc.innerHTML = "Lütfen sıfır veya sıfırdan büyük geçerli bir değer girin.";
+    return;
+  }
+
+  const katsayilar = {
+    KB: 1,
+    MB: 1024,
+    GB: 1024 * 1024,
+    TB: 1024 * 1024 * 1024
+  };
+
+  const toplamKB = deger * katsayilar[birim];
+
+  const kb = toplamKB;
+  const mb = toplamKB / 1024;
+  const gb = toplamKB / (1024 * 1024);
+  const tb = toplamKB / (1024 * 1024 * 1024);
+
+  sonuc.innerHTML =
+    "<strong>" + formatla(deger) + " " + birim + "</strong>" +
+    "<div class='detail'>" +
+    formatla(kb) + " KB<br>" +
+    formatla(mb) + " MB<br>" +
+    formatla(gb) + " GB<br>" +
+    formatla(tb) + " TB" +
+    "</div>";
+}
+
+document.getElementById("deger").addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    hesapla();
+  }
+});
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
