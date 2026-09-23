@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Desi Hesaplama 2026 | Kargo Desi Hesaplama - Araclio</title>
+
+  <meta name="description" content="Ücretsiz desi hesaplama aracı. Kargonuzun en, boy ve yükseklik ölçülerini girerek desi değerini saniyeler içinde hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/desi-hesaplama.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+    <h1>Desi Hesaplama</h1>
+    <p>Kargonuzun en, boy ve yükseklik ölçülerini girerek desi değerini hemen hesaplayın.</p>
+  </section>
+
+  <section class="card">
+    <h2>Kargo Desi Hesaplama Aracı</h2>
+
+    <label>
+      En (cm)
+      <input id="en" type="number" min="0" step="0.1" placeholder="Örnek: 30">
+    </label>
+
+    <label>
+      Boy (cm)
+      <input id="boy" type="number" min="0" step="0.1" placeholder="Örnek: 40">
+    </label>
+
+    <label>
+      Yükseklik (cm)
+      <input id="yukseklik" type="number" min="0" step="0.1" placeholder="Örnek: 20">
+    </label>
+
+    <div class="buttons">
+      <button onclick="desiHesapla()">Hesapla</button>
+    </div>
+
+    <div id="sonuc" class="result">
+      Sonuç burada görünecek.
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Desi Nasıl Hesaplanır?</h2>
+
+    <p>
+      Kargo gönderilerinde desi hesabı için paketin en, boy ve yükseklik
+      ölçüleri santimetre cinsinden birbiriyle çarpılır ve sonuç 3000'e bölünür.
+    </p>
+
+    <p>
+      Formül: En × Boy × Yükseklik ÷ 3000.
+    </p>
+
+    <p>
+      Örneğin 30 × 40 × 20 cm ölçülerindeki bir paket için hesaplama
+      30 × 40 × 20 ÷ 3000 şeklindedir ve sonuç 8 desidir.
+    </p>
+
+    <p>
+      Kargo firmalarının ücretlendirme ve yuvarlama kuralları farklılık
+      gösterebilir. Son ücret için ilgili kargo firmasının güncel koşullarını
+      kontrol edin.
+    </p>
+  </section>
+
+</main>
+
+<script>
+function desiHesapla() {
+  const en = parseFloat(document.getElementById("en").value);
+  const boy = parseFloat(document.getElementById("boy").value);
+  const yukseklik = parseFloat(document.getElementById("yukseklik").value);
+  const sonucAlani = document.getElementById("sonuc");
+
+  if (
+    isNaN(en) ||
+    isNaN(boy) ||
+    isNaN(yukseklik) ||
+    en <= 0 ||
+    boy <= 0 ||
+    yukseklik <= 0
+  ) {
+    sonucAlani.innerHTML = "Lütfen geçerli paket ölçülerini girin.";
+    return;
+  }
+
+  const desi = (en * boy * yukseklik) / 3000;
+
+  sonucAlani.innerHTML =
+    "Hesaplanan desi: <strong>" +
+    desi.toLocaleString("tr-TR", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }) +
+    " desi</strong>";
+}
+</script>
+
+</body>
+</html>
