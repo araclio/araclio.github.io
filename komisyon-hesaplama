@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Komisyon Hesaplama | Komisyon Oranı ve Net Tutar - Araclio</title>
+
+  <meta name="description" content="Komisyon hesaplama aracı ile satış tutarı ve komisyon oranından komisyon kesintisini ve elinize kalacak net tutarı hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/komisyon-hesaplama.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .info-box {
+      margin-top:18px;
+      padding:16px;
+      border-radius:10px;
+      background:#f5f5f5;
+    }
+
+    .result-detail {
+      margin-top:12px;
+      line-height:1.8;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>Komisyon Hesaplama</h1>
+
+    <p>
+      Satış tutarı ve komisyon oranını girerek kesilecek
+      komisyon tutarını ve komisyon sonrası elinizde
+      kalacak net tutarı hesaplayın.
+    </p>
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Komisyon Hesapla</h2>
+
+      <label>
+        Satış / İşlem Tutarı (TL)
+        <input
+          id="tutar"
+          type="number"
+          min="0.01"
+          step="0.01"
+          placeholder="10000">
+      </label>
+
+      <label>
+        Komisyon Oranı (%)
+        <input
+          id="oran"
+          type="number"
+          min="0"
+          max="100"
+          step="0.01"
+          placeholder="15">
+      </label>
+
+      <button onclick="hesapla()">Hesapla</button>
+
+      <div id="sonuc" class="result">
+        Tutar ve komisyon oranını girin.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>Komisyon Nasıl Hesaplanır?</h2>
+
+    <p>
+      Komisyon tutarı, işlem veya satış tutarının belirlenen
+      komisyon oranıyla çarpılmasıyla hesaplanır.
+    </p>
+
+    <div class="info-box">
+      <strong>Komisyon = Tutar × Komisyon Oranı ÷ 100</strong>
+      <br><br>
+      <strong>Net Tutar = Tutar − Komisyon</strong>
+    </div>
+
+    <h2>Komisyon Hesaplama Örneği</h2>
+
+    <p>
+      10.000 TL tutarındaki bir satıştan %15 komisyon
+      kesildiğini düşünelim.
+    </p>
+
+    <div class="info-box">
+      Satış tutarı: 10.000 TL
+      <br>
+      Komisyon oranı: %15
+      <br>
+      Komisyon: 1.500 TL
+      <br>
+      Net kalan: 8.500 TL
+    </div>
+
+    <h2>Pazaryeri Komisyonu Nasıl Hesaplanır?</h2>
+
+    <p>
+      Pazaryerlerinde ürün satış fiyatı üzerinden belirli bir
+      komisyon oranı uygulanabilir. Örneğin 2.000 TL'lik bir
+      satışta komisyon oranı %20 ise yalnızca bu oran üzerinden
+      yapılan matematiksel hesapta komisyon 400 TL, kalan tutar
+      ise 1.600 TL olur.
+    </p>
+
+    <p>
+      Gerçek pazaryeri ödemelerinde hizmet bedeli, kargo,
+      reklam, vergi veya başka kesintiler bulunabileceğinden
+      hesabınıza geçen gerçek tutar farklı olabilir.
+    </p>
+
+    <h2>POS Komisyonu Nasıl Hesaplanır?</h2>
+
+    <p>
+      Aynı hesaplama yöntemi POS veya ödeme hizmetlerinde
+      yüzde bazlı komisyonu görmek için de kullanılabilir.
+      Ancak banka veya ödeme kuruluşunun sabit ücretleri,
+      vergi ve diğer masrafları varsa bunların ayrıca
+      değerlendirilmesi gerekir.
+    </p>
+
+    <h2>%10 Komisyon Ne Kadar?</h2>
+
+    <div class="info-box">
+      1.000 TL için = 100 TL
+      <br>
+      5.000 TL için = 500 TL
+      <br>
+      10.000 TL için = 1.000 TL
+      <br>
+      50.000 TL için = 5.000 TL
+    </div>
+
+    <h2>Diğer Ticari Hesaplama Araçları</h2>
+
+    <p>
+      <a href="/kar-zarar-hesaplama.html">Kâr Zarar Hesaplama</a>
+      •
+      <a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama</a>
+      •
+      <a href="/iskonto-hesaplama.html">İskonto Hesaplama</a>
+      •
+      <a href="/vade-farki-hesaplama.html">Vade Farkı Hesaplama</a>
+      •
+      <a href="/kdv-hesaplama.html">KDV Hesaplama</a>
+    </p>
+
+    <div class="info-box">
+      <strong>Not:</strong>
+      Bu araç yalnızca girilen yüzde üzerinden matematiksel
+      komisyon hesabı yapar. Vergi, KDV, kargo, hizmet bedeli,
+      sabit ücret veya platforma özel diğer kesintiler otomatik
+      olarak hesaba katılmaz.
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+</footer>
+
+<script>
+
+function para(sayi) {
+  return new Intl.NumberFormat(
+    "tr-TR",
+    {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }
+  ).format(sayi) + " TL";
+}
+
+function yuzde(sayi) {
+  return new Intl.NumberFormat(
+    "tr-TR",
+    {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }
+  ).format(sayi);
+}
+
+function hesapla() {
+
+  const tutarInput =
+    document.getElementById("tutar");
+
+  const oranInput =
+    document.getElementById("oran");
+
+  const sonuc =
+    document.getElementById("sonuc");
+
+  const tutar =
+    Number(tutarInput.value);
+
+  const oran =
+    Number(oranInput.value);
+
+  if (
+    tutarInput.value === "" ||
+    oranInput.value === "" ||
+    !Number.isFinite(tutar) ||
+    !Number.isFinite(oran) ||
+    tutar <= 0 ||
+    oran < 0 ||
+    oran > 100
+  ) {
+
+    sonuc.innerHTML =
+      "Lütfen geçerli bir tutar ve %0 ile %100 arasında komisyon oranı girin.";
+
+    return;
+  }
+
+  const komisyon =
+    tutar * oran / 100;
+
+  const net =
+    tutar - komisyon;
+
+  sonuc.innerHTML =
+
+    "<strong>Net Kalan: " +
+    para(net) +
+    "</strong>" +
+
+    "<div class='result-detail'>" +
+
+    "İşlem tutarı: " +
+    para(tutar) +
+
+    "<br>" +
+
+    "Komisyon oranı: %" +
+    yuzde(oran) +
+
+    "<br>" +
+
+    "Komisyon tutarı: " +
+    para(komisyon) +
+
+    "<br>" +
+
+    "Komisyon sonrası net tutar: " +
+    para(net) +
+
+    "</div>";
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
