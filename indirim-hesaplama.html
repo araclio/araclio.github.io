@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>İndirim Hesaplama 2026 | İndirimli Fiyat Hesapla - Araclio</title>
+
+  <meta name="description" content="Ücretsiz indirim hesaplama aracı. Etiket fiyatı ve indirim oranını girerek indirim tutarını ve indirimli satış fiyatını saniyeler içinde hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/indirim-hesaplama.html">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+    <h1>İndirim Hesaplama</h1>
+    <p>Etiket fiyatını ve indirim oranını girerek indirim tutarını ve ödeyeceğiniz fiyatı hemen hesaplayın.</p>
+  </section>
+
+  <section class="card">
+    <h2>İndirim Hesaplama Aracı</h2>
+
+    <label>
+      Etiket Fiyatı (TL)
+      <input id="fiyat" type="number" min="0" step="0.01" placeholder="Örnek: 1000">
+    </label>
+
+    <label>
+      İndirim Oranı (%)
+      <input id="oran" type="number" min="0" max="100" step="0.01" placeholder="Örnek: 20">
+    </label>
+
+    <div class="buttons">
+      <button onclick="indirimHesapla()">Hesapla</button>
+    </div>
+
+    <div id="sonuc" class="result">
+      Sonuç burada görünecek.
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>İndirim Nasıl Hesaplanır?</h2>
+
+    <p>
+      İndirim tutarını bulmak için ürünün etiket fiyatı indirim oranıyla
+      çarpılır ve sonuç 100'e bölünür. Bulunan indirim tutarı etiket
+      fiyatından çıkarılarak indirimli fiyat hesaplanır.
+    </p>
+
+    <p>
+      Örneğin 1.000 TL fiyatındaki bir ürüne %20 indirim uygulanırsa
+      indirim tutarı 200 TL, ödenecek fiyat ise 800 TL olur.
+    </p>
+  </section>
+
+</main>
+
+<script>
+function indirimHesapla() {
+  const fiyat = parseFloat(document.getElementById("fiyat").value);
+  const oran = parseFloat(document.getElementById("oran").value);
+  const sonucAlani = document.getElementById("sonuc");
+
+  if (
+    isNaN(fiyat) ||
+    isNaN(oran) ||
+    fiyat < 0 ||
+    oran < 0 ||
+    oran > 100
+  ) {
+    sonucAlani.innerHTML =
+      "Lütfen geçerli bir fiyat ve 0 ile 100 arasında indirim oranı girin.";
+    return;
+  }
+
+  const indirimTutari = fiyat * oran / 100;
+  const indirimliFiyat = fiyat - indirimTutari;
+
+  function formatTL(deger) {
+    return deger.toLocaleString("tr-TR", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    }) + " TL";
+  }
+
+  sonucAlani.innerHTML =
+    "İndirim tutarı: <strong>" + formatTL(indirimTutari) + "</strong><br>" +
+    "İndirimli fiyat: <strong>" + formatTL(indirimliFiyat) + "</strong>";
+}
+</script>
+
+</body>
+</html>
