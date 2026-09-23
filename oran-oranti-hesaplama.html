@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <title>Oran Orantı Hesaplama | Doğru ve Ters Orantı - Araclio</title>
+
+  <meta name="description" content="Ücretsiz oran orantı hesaplama aracı. Doğru orantı ve ters orantı işlemlerinde bilinmeyen değeri saniyeler içinde hesaplayın.">
+
+  <meta name="robots" content="index,follow">
+
+  <link rel="canonical" href="https://araclio.com/oran-oranti-hesaplama.html">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    .info-box {
+      margin-top:18px;
+      padding:16px;
+      border-radius:10px;
+      background:#f5f5f5;
+    }
+
+    .result-detail {
+      margin-top:12px;
+      line-height:1.8;
+    }
+
+    .oranti-row {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    @media (max-width:600px) {
+      .oranti-row {
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+
+    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+
+    <h1>Oran Orantı Hesaplama</h1>
+
+    <p>
+      Doğru veya ters orantı işlemlerinde üç bilinen değeri
+      girerek bilinmeyen X değerini kolayca hesaplayın.
+    </p>
+
+  </section>
+
+  <section>
+
+    <article class="card">
+
+      <h2>Orantı Türünü Seçin</h2>
+
+      <label>
+        Orantı Türü
+        <select id="tur">
+          <option value="dogru">Doğru Orantı</option>
+          <option value="ters">Ters Orantı</option>
+        </select>
+      </label>
+
+      <div class="oranti-row">
+
+        <label>
+          A Değeri
+          <input
+            id="a"
+            type="number"
+            step="any"
+            placeholder="2">
+        </label>
+
+        <label>
+          B Değeri
+          <input
+            id="b"
+            type="number"
+            step="any"
+            placeholder="10">
+        </label>
+
+        <label>
+          C Değeri
+          <input
+            id="c"
+            type="number"
+            step="any"
+            placeholder="5">
+        </label>
+
+        <label>
+          X
+          <input
+            type="text"
+            value="Hesaplanacak"
+            disabled>
+        </label>
+
+      </div>
+
+      <button onclick="hesapla()">X Değerini Hesapla</button>
+
+      <div id="sonuc" class="result">
+        A, B ve C değerlerini girin.
+      </div>
+
+    </article>
+
+  </section>
+
+  <section class="info">
+
+    <h2>Oran Orantı Nedir?</h2>
+
+    <p>
+      Orantı, iki oranın birbirine eşit olmasıdır.
+      Bilinen üç değer kullanılarak dördüncü bilinmeyen
+      değer hesaplanabilir.
+    </p>
+
+    <h2>Doğru Orantı Nasıl Hesaplanır?</h2>
+
+    <p>
+      Bir değer artarken diğer değer de aynı oranda artıyorsa
+      doğru orantı söz konusudur.
+    </p>
+
+    <div class="info-box">
+      <strong>A / B = C / X</strong>
+      <br><br>
+      <strong>X = B × C ÷ A</strong>
+    </div>
+
+    <p>
+      Örneğin 2 ürün 10 TL ise aynı birim fiyatla
+      5 ürünün fiyatı:
+    </p>
+
+    <div class="info-box">
+      A = 2
+      <br>
+      B = 10
+      <br>
+      C = 5
+      <br><br>
+      X = 10 × 5 ÷ 2
+      <br>
+      <strong>X = 25</strong>
+    </div>
+
+    <h2>Ters Orantı Nasıl Hesaplanır?</h2>
+
+    <p>
+      Bir değer artarken diğer değer aynı oranda azalıyorsa
+      ters orantı kullanılır.
+    </p>
+
+    <div class="info-box">
+      <strong>A × B = C × X</strong>
+      <br><br>
+      <strong>X = A × B ÷ C</strong>
+    </div>
+
+    <p>
+      Örneğin bir işi 4 kişi 12 günde tamamlıyorsa,
+      aynı çalışma hızında 6 kişinin kaç günde
+      tamamlayacağını hesaplayabiliriz.
+    </p>
+
+    <div class="info-box">
+      A = 4 kişi
+      <br>
+      B = 12 gün
+      <br>
+      C = 6 kişi
+      <br><br>
+      X = 4 × 12 ÷ 6
+      <br>
+      <strong>X = 8 gün</strong>
+    </div>
+
+    <h2>Oran Orantı Nerelerde Kullanılır?</h2>
+
+    <p>
+      Fiyat ve miktar hesaplarında, alışverişte, üretimde,
+      tariflerde, iş gücü ve süre hesaplarında, mesafe ve
+      hız problemlerinde ve günlük birçok matematiksel
+      işlemde oran-orantı kullanılabilir.
+    </p>
+
+    <h2>Diğer Hesaplama Araçları</h2>
+
+    <p>
+      <a href="/yuzde-hesaplama.html">Yüzde Hesaplama</a>
+      •
+      <a href="/yuzde-degisim-hesaplama.html">Yüzde Değişim</a>
+      •
+      <a href="/birim-fiyat-hesaplama.html">Birim Fiyat Hesaplama</a>
+      •
+      <a href="/indirim-hesaplama.html">İndirim Hesaplama</a>
+      •
+      <a href="/komisyon-hesaplama.html">Komisyon Hesaplama</a>
+    </p>
+
+  </section>
+
+</main>
+
+<footer>
+
+  <div class="wrap">
+
+    <p>
+      <a href="/about.html">Hakkımızda</a>
+      •
+      <a href="/contact.html">İletişim</a>
+      •
+      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      •
+      <a href="/terms.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+
+</footer>
+
+<script>
+
+function formatla(sayi) {
+  return new Intl.NumberFormat(
+    "tr-TR",
+    {
+      maximumFractionDigits: 6
+    }
+  ).format(sayi);
+}
+
+function hesapla() {
+
+  const aInput = document.getElementById("a");
+  const bInput = document.getElementById("b");
+  const cInput = document.getElementById("c");
+
+  const tur = document.getElementById("tur").value;
+  const sonuc = document.getElementById("sonuc");
+
+  const a = Number(aInput.value);
+  const b = Number(bInput.value);
+  const c = Number(cInput.value);
+
+  if (
+    aInput.value === "" ||
+    bInput.value === "" ||
+    cInput.value === "" ||
+    !Number.isFinite(a) ||
+    !Number.isFinite(b) ||
+    !Number.isFinite(c)
+  ) {
+
+    sonuc.innerHTML =
+      "Lütfen A, B ve C değerlerinin tamamını girin.";
+
+    return;
+  }
+
+  let x;
+
+  if (tur === "dogru") {
+
+    if (a === 0) {
+      sonuc.innerHTML =
+        "Doğru orantıda A değeri sıfır olamaz.";
+      return;
+    }
+
+    x = (b * c) / a;
+
+    sonuc.innerHTML =
+      "<strong>X = " + formatla(x) + "</strong>" +
+      "<div class='result-detail'>" +
+      "Doğru orantı kullanıldı." +
+      "<br>" +
+      formatla(b) + " × " +
+      formatla(c) + " ÷ " +
+      formatla(a) +
+      " = " + formatla(x) +
+      "</div>";
+
+  } else {
+
+    if (c === 0) {
+      sonuc.innerHTML =
+        "Ters orantıda C değeri sıfır olamaz.";
+      return;
+    }
+
+    x = (a * b) / c;
+
+    sonuc.innerHTML =
+      "<strong>X = " + formatla(x) + "</strong>" +
+      "<div class='result-detail'>" +
+      "Ters orantı kullanıldı." +
+      "<br>" +
+      formatla(a) + " × " +
+      formatla(b) + " ÷ " +
+      formatla(c) +
+      " = " + formatla(x) +
+      "</div>";
+  }
+}
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
