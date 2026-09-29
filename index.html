@@ -8,7 +8,7 @@
 
 <title>Online Hesaplama Araçları | Finans, Maaş, Ticaret ve Dönüştürme - Araclio</title>
 
-<meta name="description" content="Ücretsiz online hesaplama araçları. Gelir vergisi, işsizlik maaşı, yıllık izin ücreti, e-ticaret kârı, tapu harcı, maaş, kira, kıdem, ihbar, kredi, faiz, KDV, yüzde ve dönüştürme araçları.">
+<meta name="description" content="Ücretsiz online hesaplama araçları. Emekli maaşı zammı, gelir vergisi, işsizlik maaşı, yıllık izin ücreti, e-ticaret kârı, tapu harcı, maaş, kıdem, kredi, KDV ve yüzde hesaplama.">
 
 <meta name="robots" content="index,follow">
 
@@ -20,7 +20,6 @@
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-
 body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
@@ -29,167 +28,30 @@ body{
   color:#fff;
   min-height:100vh;
 }
-
 a{color:inherit}
-
-.wrap{
-  width:min(1120px,calc(100% - 32px));
-  margin:auto;
-}
-
-header{
-  position:sticky;
-  top:0;
-  z-index:50;
-  background:rgba(3,14,27,.94);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.nav{
-  height:76px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
-
-.brand{
-  text-decoration:none;
-  font-size:38px;
-  font-weight:900;
-  letter-spacing:-2px;
-  color:#fff;
-}
-
+.wrap{width:min(1120px,calc(100% - 32px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(3,14,27,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.brand{text-decoration:none;font-size:38px;font-weight:900;letter-spacing:-2px;color:#fff}
 .brand span{color:#ffd400}
-
-.tag{
-  color:#9db2c8;
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.5px;
-}
-
-.hero{
-  padding:48px 0 22px;
-  text-align:center;
-}
-
-.eyebrow{
-  display:inline-block;
-  margin:0 0 15px;
-  color:#ffd400;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:2px;
-}
-
-.hero h1{
-  max-width:760px;
-  margin:0 auto;
-  font-size:clamp(34px,7vw,58px);
-  line-height:1.02;
-  letter-spacing:-2px;
-}
-
+.tag{color:#9db2c8;font-size:13px;font-weight:700;letter-spacing:.5px}
+.hero{padding:48px 0 22px;text-align:center}
+.eyebrow{display:inline-block;margin:0 0 15px;color:#ffd400;font-size:12px;font-weight:900;letter-spacing:2px}
+.hero h1{max-width:760px;margin:0 auto;font-size:clamp(34px,7vw,58px);line-height:1.02;letter-spacing:-2px}
 .hero h1 span{color:#ffd400}
-
-.hero>p:not(.eyebrow){
-  max-width:690px;
-  margin:18px auto 0;
-  color:#b7c7d8;
-  line-height:1.65;
-  font-size:17px;
-}
-
-.search-area{
-  max-width:720px;
-  margin:30px auto 0;
-}
-
+.hero>p:not(.eyebrow){max-width:690px;margin:18px auto 0;color:#b7c7d8;line-height:1.65;font-size:17px}
+.search-area{max-width:720px;margin:30px auto 0}
 .search-box{position:relative}
-
-.search-box input{
-  width:100%;
-  border:0;
-  outline:none;
-  border-radius:17px;
-  padding:18px 58px 18px 20px;
-  background:#fff;
-  color:#17202b;
-  font-size:16px;
-  box-shadow:
-    0 8px 35px rgba(0,0,0,.3),
-    0 0 0 1px rgba(255,255,255,.1);
-}
-
-.search-box input:focus{
-  box-shadow:
-    0 0 0 3px rgba(39,159,255,.35),
-    0 10px 35px rgba(0,0,0,.35);
-}
-
-.search-icon{
-  position:absolute;
-  right:19px;
-  top:50%;
-  transform:translateY(-50%);
-  color:#0b2a4b;
-  font-size:25px;
-}
-
-.search-note{
-  margin-top:9px;
-  color:#8299af;
-  font-size:13px;
-}
-
+.search-box input{width:100%;border:0;outline:none;border-radius:17px;padding:18px 58px 18px 20px;background:#fff;color:#17202b;font-size:16px;box-shadow:0 8px 35px rgba(0,0,0,.3),0 0 0 1px rgba(255,255,255,.1)}
+.search-box input:focus{box-shadow:0 0 0 3px rgba(39,159,255,.35),0 10px 35px rgba(0,0,0,.35)}
+.search-icon{position:absolute;right:19px;top:50%;transform:translateY(-50%);color:#0b2a4b;font-size:25px}
+.search-note{margin-top:9px;color:#8299af;font-size:13px}
 .categories{padding:25px 0 20px}
-
-.categories-title{
-  margin:0 0 17px;
-  font-size:20px;
-}
-
-.category-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:12px;
-}
-
-.category{
-  min-height:125px;
-  padding:18px 10px;
-  border:1px solid rgba(255,255,255,.10);
-  border-radius:16px;
-  background:linear-gradient(145deg,#102b47,#091c31);
-  text-decoration:none;
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 8px 25px rgba(0,0,0,.18);
-  transition:.2s ease;
-}
-
-.category:hover{
-  transform:translateY(-3px);
-  border-color:rgba(255,255,255,.25);
-}
-
-.cat-icon{
-  width:52px;
-  height:52px;
-  border-radius:14px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-bottom:10px;
-  font-size:28px;
-  font-weight:900;
-}
-
+.categories-title{margin:0 0 17px;font-size:20px}
+.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.category{min-height:125px;padding:18px 10px;border:1px solid rgba(255,255,255,.10);border-radius:16px;background:linear-gradient(145deg,#102b47,#091c31);text-decoration:none;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 25px rgba(0,0,0,.18);transition:.2s ease}
+.category:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.25)}
+.cat-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:28px;font-weight:900}
 .green{background:#123f38;color:#38e99b}
 .blue{background:#102f4c;color:#37aaff}
 .purple{background:#332650;color:#bd7cff}
@@ -199,246 +61,60 @@ header{
 .yellow{background:#493e13;color:#ffd83e}
 .red{background:#472129;color:#ff6274}
 .gray{background:#263445;color:#b7c7d8}
-
-.category strong{
-  font-size:14px;
-  line-height:1.25;
-}
-
-.category small{
-  display:block;
-  color:#8fa5ba;
-  font-size:11px;
-  margin-top:5px;
-}
-
+.category strong{font-size:14px;line-height:1.25}
+.category small{display:block;color:#8fa5ba;font-size:11px;margin-top:5px}
 .tool-section{margin-top:35px}
-
-.section-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  gap:15px;
-  margin-bottom:16px;
-}
-
-.section-head h2{
-  margin:0;
-  font-size:25px;
-}
-
-.section-head p{
-  margin:5px 0 0;
-  color:#93a8bc;
-  font-size:14px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-}
-
-.card{
-  background:linear-gradient(145deg,#102a44,#081a2d);
-  border:1px solid rgba(255,255,255,.09);
-  border-radius:17px;
-  padding:20px;
-  box-shadow:0 9px 28px rgba(0,0,0,.18);
-}
-
-.card h3{
-  margin:0 0 8px;
-  font-size:17px;
-}
-
-.card p{
-  color:#9eb0c2;
-  line-height:1.5;
-  font-size:14px;
-  margin:8px 0;
-}
-
-.card a{
-  display:inline-block;
-  margin-top:5px;
-  color:#52b7ff;
-  font-weight:800;
-  text-decoration:none;
-}
-
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:16px}
+.section-head h2{margin:0;font-size:25px}
+.section-head p{margin:5px 0 0;color:#93a8bc;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:linear-gradient(145deg,#102a44,#081a2d);border:1px solid rgba(255,255,255,.09);border-radius:17px;padding:20px;box-shadow:0 9px 28px rgba(0,0,0,.18)}
+.card h3{margin:0 0 8px;font-size:17px}
+.card p{color:#9eb0c2;line-height:1.5;font-size:14px;margin:8px 0}
+.card a{display:inline-block;margin-top:5px;color:#52b7ff;font-weight:800;text-decoration:none}
 .card a:hover{color:#ffd400}
-
-.badge{
-  display:inline-block;
-  margin-bottom:11px;
-  padding:5px 9px;
-  border-radius:20px;
-  color:#081727;
-  background:#ffd400;
-  font-size:10px;
-  font-weight:900;
-  text-transform:uppercase;
-}
-
-.popular-panel{
-  margin-top:28px;
-  padding:25px;
-  background:#f5f8fc;
-  color:#101923;
-  border-radius:22px;
-  box-shadow:0 20px 55px rgba(0,0,0,.3);
-}
-
-.popular-title{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-bottom:17px;
-}
-
-.popular-title h2{
-  margin:0;
-  font-size:24px;
-}
-
-.popular-title span{
-  color:#168de2;
-  font-size:13px;
-  font-weight:700;
-}
-
-.popular-list{
-  display:grid;
-  gap:10px;
-}
-
-.popular-item{
-  display:flex;
-  align-items:center;
-  gap:13px;
-  padding:14px;
-  background:#fff;
-  border-radius:14px;
-  text-decoration:none;
-  box-shadow:0 3px 12px rgba(15,35,55,.08);
-}
-
-.popular-icon{
-  flex:0 0 48px;
-  height:48px;
-  border-radius:12px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:24px;
-}
-
+.badge{display:inline-block;margin-bottom:11px;padding:5px 9px;border-radius:20px;color:#081727;background:#ffd400;font-size:10px;font-weight:900;text-transform:uppercase}
+.popular-panel{margin-top:28px;padding:25px;background:#f5f8fc;color:#101923;border-radius:22px;box-shadow:0 20px 55px rgba(0,0,0,.3)}
+.popular-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px}
+.popular-title h2{margin:0;font-size:24px}
+.popular-title span{color:#168de2;font-size:13px;font-weight:700}
+.popular-list{display:grid;gap:10px}
+.popular-item{display:flex;align-items:center;gap:13px;padding:14px;background:#fff;border-radius:14px;text-decoration:none;box-shadow:0 3px 12px rgba(15,35,55,.08)}
+.popular-icon{flex:0 0 48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px}
 .popular-text{flex:1}
-
-.popular-text strong{
-  display:block;
-  font-size:15px;
-}
-
-.popular-text small{
-  display:block;
-  color:#687787;
-  margin-top:4px;
-  line-height:1.3;
-}
-
-.arrow{
-  color:#174a78;
-  font-size:25px;
-  font-weight:700;
-}
-
-#searchEmpty{
-  display:none;
-  margin:25px 0;
-  padding:25px;
-  border-radius:16px;
-  text-align:center;
-  background:#10263e;
-}
-
-.trust-box{
-  margin:45px 0;
-  padding:28px;
-  border:1px solid rgba(255,255,255,.08);
-  border-radius:20px;
-  background:#081a2c;
-}
-
+.popular-text strong{display:block;font-size:15px}
+.popular-text small{display:block;color:#687787;margin-top:4px;line-height:1.3}
+.arrow{color:#174a78;font-size:25px;font-weight:700}
+#searchEmpty{display:none;margin:25px 0;padding:25px;border-radius:16px;text-align:center;background:#10263e}
+.trust-box{margin:45px 0;padding:28px;border:1px solid rgba(255,255,255,.08);border-radius:20px;background:#081a2c}
 .trust-box h2{margin-top:0}
-
-.trust-box p{
-  color:#9eb1c3;
-  line-height:1.65;
-}
-
-footer{
-  margin-top:50px;
-  padding:35px 0;
-  border-top:1px solid rgba(255,255,255,.08);
-  background:#020a13;
-  color:#8397aa;
-  text-align:center;
-  font-size:13px;
-}
-
-footer a{
-  color:#a8bdd0;
-  text-decoration:none;
-  margin:4px;
-}
-
+.trust-box p{color:#9eb1c3;line-height:1.65}
+footer{margin-top:50px;padding:35px 0;border-top:1px solid rgba(255,255,255,.08);background:#020a13;color:#8397aa;text-align:center;font-size:13px}
+footer a{color:#a8bdd0;text-decoration:none;margin:4px}
 .category-hidden{display:none!important}
 
 @media(max-width:760px){
-  .wrap{width:min(100% - 22px,1120px)}
-  .nav{height:65px}
-  .brand{font-size:31px}
-  .tag{font-size:10px}
-  .hero{padding-top:32px}
-  .hero h1{font-size:38px}
-  .hero>p:not(.eyebrow){font-size:15px}
-
-  .category-grid{
-    grid-template-columns:repeat(3,1fr);
-    gap:8px;
-  }
-
-  .category{
-    min-height:112px;
-    padding:13px 6px;
-    border-radius:13px;
-  }
-
-  .cat-icon{
-    width:43px;
-    height:43px;
-    font-size:23px;
-    border-radius:11px;
-  }
-
-  .category strong{font-size:12px}
-  .category small{display:none}
-  .grid{grid-template-columns:1fr}
-  .section-head{display:block}
-
-  .popular-panel{
-    padding:16px;
-    border-radius:18px;
-  }
-
-  .popular-title h2{font-size:20px}
+.wrap{width:min(100% - 22px,1120px)}
+.nav{height:65px}
+.brand{font-size:31px}
+.tag{font-size:10px}
+.hero{padding-top:32px}
+.hero h1{font-size:38px}
+.hero>p:not(.eyebrow){font-size:15px}
+.category-grid{grid-template-columns:repeat(3,1fr);gap:8px}
+.category{min-height:112px;padding:13px 6px;border-radius:13px}
+.cat-icon{width:43px;height:43px;font-size:23px;border-radius:11px}
+.category strong{font-size:12px}
+.category small{display:none}
+.grid{grid-template-columns:1fr}
+.section-head{display:block}
+.popular-panel{padding:16px;border-radius:18px}
+.popular-title h2{font-size:20px}
 }
 
 @media(max-width:390px){
-  .hero h1{font-size:34px}
-  .category strong{font-size:11px}
+.hero h1{font-size:34px}
+.category strong{font-size:11px}
 }
 </style>
 </head>
@@ -457,30 +133,18 @@ footer a{
 <section class="hero">
 <p class="eyebrow">60+ PRATİK ARAÇ • ÜCRETSİZ • ÜYELİKSİZ</p>
 <h1>Hesaplamak artık daha <span>kolay.</span></h1>
-
-<p>
-İhtiyacınız olan hesaplama araçları, pratik bilgiler ve
-faydalı araçlar Araclio'da sizi bekliyor.
-</p>
+<p>İhtiyacınız olan hesaplama araçları, pratik bilgiler ve faydalı araçlar Araclio'da sizi bekliyor.</p>
 
 <div class="search-area">
 <div class="search-box">
-<input id="toolSearch"
-type="search"
-placeholder="Hangi aracı arıyorsunuz?"
-autocomplete="off"
-aria-label="Hesaplama aracı ara">
+<input id="toolSearch" type="search" placeholder="Hangi aracı arıyorsunuz?" autocomplete="off" aria-label="Hesaplama aracı ara">
 <span class="search-icon">⌕</span>
 </div>
-
-<div class="search-note">
-Örn: yıllık izin, işsizlik maaşı, gelir vergisi, kıdem, kredi, KDV...
-</div>
+<div class="search-note">Örn: emekli maaşı, işsizlik, yıllık izin, gelir vergisi, kıdem, kredi...</div>
 </div>
 </section>
 
 <section class="categories">
-
 <h2 class="categories-title">Araç Kategorileri</h2>
 
 <div class="category-grid">
@@ -722,11 +386,18 @@ aria-label="Hesaplama aracı ara">
 <div class="section-head">
 <div>
 <h2>💼 Maaş ve Çalışma</h2>
-<p>Maaş, işsizlik ödeneği, yıllık izin, tazminat ve çalışma hayatı hesaplamaları.</p>
+<p>Emekli maaşı, işsizlik ödeneği, yıllık izin, maaş ve tazminat hesaplamaları.</p>
 </div>
 </div>
 
 <div class="grid">
+
+<article class="card tool-card" data-search="emekli maaşı zam 2026 ssk bağkur bağ-kur memur emeklisi">
+<span class="badge">2026</span>
+<h3>Emekli Maaşı Zam Hesaplama</h3>
+<p>SSK, Bağ-Kur ve memur emeklileri için zamlı aylığınızı hesaplayın.</p>
+<a href="/emekli-maasi-zam-hesaplama.html">Hesapla →</a>
+</article>
 
 <article class="card tool-card" data-search="işsizlik maaşı 2026 işsizlik ödeneği işkur işsiz prim günü">
 <span class="badge">2026</span>
@@ -1000,25 +671,13 @@ aria-label="Hesaplama aracı ara">
 
 <h2>Araclio Nedir?</h2>
 
-<p>
-Araclio; finans, ticaret, vergi, maaş, çalışma hayatı, gayrimenkul,
-günlük hesaplamalar, sağlık ve birim dönüşümleri için ücretsiz
-online araçlar sunar.
-</p>
+<p>Araclio; finans, ticaret, vergi, maaş, çalışma hayatı, gayrimenkul, günlük hesaplamalar, sağlık ve birim dönüşümleri için ücretsiz online araçlar sunar.</p>
 
-<p>
-Üyelik gerekmez. Araçlar doğrudan tarayıcı üzerinden kullanılabilir.
-</p>
+<p>Üyelik gerekmez. Araçlar doğrudan tarayıcı üzerinden kullanılabilir.</p>
 
-<p>
-Finansal, hukuki, vergi ve sağlıkla ilgili sonuçlar genel bilgilendirme
-amaçlıdır. Resmî işlem veya kişisel karar öncesinde güncel resmî
-bilgiler kontrol edilmelidir.
-</p>
+<p>Finansal, hukuki, vergi ve sağlıkla ilgili sonuçlar genel bilgilendirme amaçlıdır. Resmî işlem veya kişisel karar öncesinde güncel resmî bilgiler kontrol edilmelidir.</p>
 
-<p>
-<a href="/en/" style="color:#ffd400;font-weight:bold;">English Version →</a>
-</p>
+<p><a href="/en/" style="color:#ffd400;font-weight:bold;">English Version →</a></p>
 
 </section>
 
@@ -1041,108 +700,91 @@ bilgiler kontrol edilmelidir.
 </footer>
 
 <script>
+document.getElementById("year").textContent=new Date().getFullYear();
 
-document.getElementById("year").textContent =
-new Date().getFullYear();
-
-const searchInput =
-document.getElementById("toolSearch");
-
-const cards =
-document.querySelectorAll(".tool-card");
-
-const sections =
-document.querySelectorAll(".tool-section");
-
-const empty =
-document.getElementById("searchEmpty");
+const searchInput=document.getElementById("toolSearch");
+const cards=document.querySelectorAll(".tool-card");
+const sections=document.querySelectorAll(".tool-section");
+const empty=document.getElementById("searchEmpty");
 
 function normalizeText(text){
-  return text
-    .toLocaleLowerCase("tr-TR")
-    .replace(/ı/g,"i")
-    .replace(/ğ/g,"g")
-    .replace(/ü/g,"u")
-    .replace(/ş/g,"s")
-    .replace(/ö/g,"o")
-    .replace(/ç/g,"c");
+return text
+.toLocaleLowerCase("tr-TR")
+.replace(/ı/g,"i")
+.replace(/ğ/g,"g")
+.replace(/ü/g,"u")
+.replace(/ş/g,"s")
+.replace(/ö/g,"o")
+.replace(/ç/g,"c");
 }
 
 searchInput.addEventListener("input",function(){
 
-  const query =
-  normalizeText(this.value.trim());
+const query=normalizeText(this.value.trim());
+let totalVisible=0;
 
-  let totalVisible=0;
+cards.forEach(function(card){
 
-  cards.forEach(function(card){
+const text=normalizeText(
+card.innerText+" "+(card.dataset.search||"")
+);
 
-    const text =
-    normalizeText(
-      card.innerText+" "+
-      (card.dataset.search||"")
-    );
+const show=query===""||text.includes(query);
 
-    const show =
-    query==="" || text.includes(query);
+card.style.display=show?"":"none";
 
-    card.style.display =
-    show ? "" : "none";
+if(show){
+totalVisible++;
+}
 
-    if(show){
-      totalVisible++;
-    }
+});
 
-  });
+sections.forEach(function(section){
 
-  sections.forEach(function(section){
+const visibleCards=
+Array.from(section.querySelectorAll(".tool-card"))
+.filter(function(card){
+return card.style.display!=="none";
+});
 
-    const visibleCards =
-    Array.from(
-      section.querySelectorAll(".tool-card")
-    ).filter(function(card){
-      return card.style.display!=="none";
-    });
+if(query!==""&&visibleCards.length===0){
+section.classList.add("category-hidden");
+}else{
+section.classList.remove("category-hidden");
+}
 
-    if(query!=="" && visibleCards.length===0){
-      section.classList.add("category-hidden");
-    }else{
-      section.classList.remove("category-hidden");
-    }
+});
 
-  });
-
-  empty.style.display =
-  query!=="" && totalVisible===0
-  ? "block"
-  : "none";
+empty.style.display=
+query!==""&&totalVisible===0
+?"block"
+:"none";
 
 });
 
 searchInput.addEventListener("keydown",function(event){
 
-  if(event.key!=="Enter"){
-    return;
-  }
+if(event.key!=="Enter"){
+return;
+}
 
-  const visibleCards =
-  Array.from(cards).filter(function(card){
-    return card.style.display!=="none";
-  });
-
-  if(visibleCards.length===1){
-
-    const link =
-    visibleCards[0].querySelector("a");
-
-    if(link){
-      window.location.href=link.href;
-    }
-
-  }
-
+const visibleCards=
+Array.from(cards).filter(function(card){
+return card.style.display!=="none";
 });
 
+if(visibleCards.length===1){
+
+const link=
+visibleCards[0].querySelector("a");
+
+if(link){
+window.location.href=link.href;
+}
+
+}
+
+});
 </script>
 
 </body>
