@@ -4,14 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Kâr Marjı Hesaplama 2026 | Satış Fiyatı Hesapla - Araclio</title>
+  <title>Kâr Marjı Hesaplama 2026 | Kâr Oranı ve Satış Fiyatı - Araclio</title>
 
-  <meta name="description" content="Ücretsiz kâr marjı ve satış fiyatı hesaplama aracı. Maliyet ve hedef kâr oranını girerek kâr tutarını ve satış fiyatını hızlıca hesaplayın.">
+  <meta name="description" content="Kâr marjı hesaplama aracı ile maliyet, kâr oranı, kâr tutarı ve satış fiyatını ücretsiz hesaplayın. Kâr marjı nasıl hesaplanır? Formül ve örneklerle öğrenin.">
 
   <meta name="robots" content="index,follow">
 
   <link rel="canonical" href="https://araclio.com/kar-marji-hesaplama.html">
   <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Kâr Marjı ve Kâr Oranı Hesaplama",
+    "url": "https://araclio.com/kar-marji-hesaplama.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "description": "Maliyet ve hedef kâr oranına göre kâr tutarı, satış fiyatı ve satış fiyatı üzerinden gerçek kâr marjını hesaplayan ücretsiz online araç.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "TRY"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -28,17 +45,18 @@
   <section class="hero">
     <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
 
-    <h1>Kâr Marjı ve Satış Fiyatı Hesaplama</h1>
+    <h1>Kâr Marjı, Kâr Oranı ve Satış Fiyatı Hesaplama</h1>
 
     <p>
-      Ürünün maliyetini ve hedeflediğiniz kâr oranını girerek
-      kâr tutarını ve satış fiyatını saniyeler içinde hesaplayın.
+      Maliyetinizi ve hedeflediğiniz kâr oranını girin;
+      kâr tutarını, satış fiyatını ve satış fiyatı üzerinden
+      gerçek kâr marjını saniyeler içinde hesaplayın.
     </p>
   </section>
 
 
   <section class="card">
-    <h2>Kâr Hesaplama Aracı</h2>
+    <h2>Kâr Marjı Hesaplama Aracı</h2>
 
     <label>
       Maliyet (TL)
@@ -47,35 +65,38 @@
         type="number"
         min="0"
         step="0.01"
+        inputmode="decimal"
         placeholder="Örnek: 500">
     </label>
 
     <label>
-      Hedef Kâr Oranı (%)
+      Maliyet Üzerinden Kâr Oranı (%)
       <input
         id="oran"
         type="number"
         min="0"
         step="0.01"
+        inputmode="decimal"
         placeholder="Örnek: 30">
     </label>
 
     <div class="buttons">
-      <button onclick="karHesapla()">Hesapla</button>
+      <button type="button" onclick="karHesapla()">Hesapla</button>
     </div>
 
-    <div id="sonuc" class="result">
+    <div id="sonuc" class="result" aria-live="polite">
       Sonuç burada görünecek.
     </div>
   </section>
 
 
   <section class="card">
-    <h2>Kâr Nasıl Hesaplanır?</h2>
+    <h2>Kâr Marjı Nasıl Hesaplanır?</h2>
 
     <p>
-      Bu araç, girdiğiniz maliyetin üzerine belirlediğiniz yüzde oranında
-      kâr ekleyerek kâr tutarını ve satış fiyatını hesaplar.
+      Kâr marjı, elde edilen kârın satış fiyatına oranını gösterir.
+      Kâr oranı ise kârın maliyete oranını ifade eder. Bu nedenle
+      <strong>kâr marjı ile maliyet üzerine eklenen kâr oranı aynı şey değildir.</strong>
     </p>
 
     <p>
@@ -89,8 +110,38 @@
     </p>
 
     <p>
-      Örneğin maliyeti 500 TL olan bir ürüne maliyet üzerinden %30 kâr
-      eklenirse kâr tutarı 150 TL, satış fiyatı ise 650 TL olur.
+      <strong>Kâr marjı formülü:</strong><br>
+      Kâr Marjı (%) = Kâr Tutarı ÷ Satış Fiyatı × 100
+    </p>
+
+    <p>
+      Örneğin maliyeti 500 TL olan bir ürüne maliyet üzerinden %30
+      kâr eklerseniz kâr tutarı 150 TL ve satış fiyatı 650 TL olur.
+      Bu durumda satış fiyatı üzerinden gerçek kâr marjı yaklaşık
+      %23,08'dir.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Kâr Oranı Nasıl Hesaplanır?</h2>
+
+    <p>
+      Bir ürünün alış veya üretim maliyeti ile satış fiyatı biliniyorsa
+      kâr tutarı, satış fiyatından maliyet çıkarılarak bulunur.
+    </p>
+
+    <p>
+      <strong>Kâr Tutarı = Satış Fiyatı − Maliyet</strong>
+    </p>
+
+    <p>
+      Maliyet üzerinden kâr oranını bulmak için ise kâr tutarı
+      maliyete bölünür ve sonuç 100 ile çarpılır.
+    </p>
+
+    <p>
+      <strong>Kâr Oranı (%) = (Satış Fiyatı − Maliyet) ÷ Maliyet × 100</strong>
     </p>
   </section>
 
@@ -99,43 +150,107 @@
     <h2>Örnek Kâr Hesaplamaları</h2>
 
     <p>
-      <strong>500 TL maliyet + %30:</strong><br>
+      <strong>500 TL maliyet + %30 kâr oranı:</strong><br>
       Kâr tutarı: 150 TL<br>
-      Satış fiyatı: 650 TL
+      Satış fiyatı: 650 TL<br>
+      Kâr marjı: %23,08
     </p>
 
     <p>
-      <strong>1.000 TL maliyet + %20:</strong><br>
+      <strong>1.000 TL maliyet + %20 kâr oranı:</strong><br>
       Kâr tutarı: 200 TL<br>
-      Satış fiyatı: 1.200 TL
+      Satış fiyatı: 1.200 TL<br>
+      Kâr marjı: %16,67
     </p>
 
     <p>
-      <strong>2.000 TL maliyet + %25:</strong><br>
+      <strong>2.000 TL maliyet + %25 kâr oranı:</strong><br>
       Kâr tutarı: 500 TL<br>
-      Satış fiyatı: 2.500 TL
+      Satış fiyatı: 2.500 TL<br>
+      Kâr marjı: %20
     </p>
   </section>
 
 
   <section class="card">
-    <h2>Kâr Oranı ve Kâr Marjı Aynı Şey mi?</h2>
+    <h2>Kâr Oranı ve Kâr Marjı Arasındaki Fark Nedir?</h2>
 
     <p>
-      Günlük kullanımda bu ifadeler birbirinin yerine kullanılabilse de
-      teknik olarak maliyet üzerinden eklenen kâr oranı ile satış fiyatı
-      üzerinden hesaplanan kâr marjı farklı hesaplamalardır.
+      Kâr oranı ve kâr marjı günlük kullanımda sık sık birbirinin
+      yerine kullanılır. Ancak hesaplama yöntemleri farklıdır.
     </p>
 
     <p>
-      Bu araç, <strong>maliyet üzerinden belirlediğiniz kâr oranını</strong>
-      kullanarak satış fiyatını hesaplar.
+      <strong>Kâr oranı</strong>, elde edilen kârın maliyete oranıdır.
+      <strong>Kâr marjı</strong> ise elde edilen kârın satış fiyatına oranıdır.
+    </p>
+
+    <p>
+      Örneğin 100 TL maliyetli bir ürünü 150 TL'ye satarsanız
+      50 TL kâr elde edersiniz. Maliyet üzerinden kâr oranınız %50,
+      satış fiyatı üzerinden kâr marjınız ise yaklaşık %33,33 olur.
     </p>
   </section>
 
 
   <section class="card">
-    <h2>Diğer Ücretsiz Araçlar</h2>
+    <h2>Satış Fiyatı Nasıl Hesaplanır?</h2>
+
+    <p>
+      Maliyet üzerine belirli bir kâr oranı ekleyerek satış fiyatı
+      belirlemek istiyorsanız maliyeti kâr oranıyla çarpıp bulunan
+      kâr tutarını maliyete ekleyebilirsiniz.
+    </p>
+
+    <p>
+      Örneğin maliyeti 800 TL olan bir üründe maliyet üzerinden
+      %25 kâr hedefleniyorsa kâr tutarı 200 TL olur.
+      Buna göre satış fiyatı 1.000 TL olarak hesaplanır.
+    </p>
+
+    <p>
+      Bu hesaplamaya KDV, komisyon, kargo, pazaryeri kesintileri
+      veya diğer işletme giderleri dahil değildir. Satış fiyatınızı
+      belirlerken varsa bu giderleri ayrıca dikkate almalısınız.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Sık Sorulan Sorular</h2>
+
+    <h3>%20 kâr marjı nasıl hesaplanır?</h3>
+    <p>
+      Kâr marjı satış fiyatı üzerinden hesaplanır. Satış fiyatının
+      %20'sinin kâr olması hedefleniyorsa maliyet ve hedef marj
+      birlikte değerlendirilmelidir. Maliyet üzerine doğrudan %20
+      eklemek, %20 kâr marjı anlamına gelmez.
+    </p>
+
+    <h3>%30 kâr eklemek ne demektir?</h3>
+    <p>
+      Maliyet üzerine %30 kâr eklemek, maliyetin %30'u kadar kâr
+      tutarı eklemek anlamına gelir. 500 TL maliyette bu tutar
+      150 TL'dir ve satış fiyatı 650 TL olur.
+    </p>
+
+    <h3>Kâr marjı ile kâr oranı neden farklıdır?</h3>
+    <p>
+      Çünkü kâr oranında kâr tutarı maliyete, kâr marjında ise
+      satış fiyatına bölünür. Hesaplamanın paydası farklı olduğu
+      için iki yüzde de farklı çıkar.
+    </p>
+
+    <h3>Bu kâr hesaplama aracı ücretsiz mi?</h3>
+    <p>
+      Evet. Araclio kâr hesaplama aracını ücretsiz ve üyelik
+      gerektirmeden kullanabilirsiniz.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Diğer Ücretsiz Hesaplama Araçları</h2>
 
     <p><a href="/kdv-hesaplama.html">KDV Hesaplama →</a></p>
 
@@ -170,6 +285,13 @@ function formatTL(deger) {
   }) + " TL";
 }
 
+function formatYuzde(deger) {
+  return deger.toLocaleString("tr-TR", {
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2
+  }) + "%";
+}
+
 function karHesapla() {
   const maliyet = parseFloat(document.getElementById("maliyet").value);
   const oran = parseFloat(document.getElementById("oran").value);
@@ -189,11 +311,30 @@ function karHesapla() {
   const karTutari = maliyet * oran / 100;
   const satisFiyati = maliyet + karTutari;
 
+  let karMarji = 0;
+
+  if (satisFiyati > 0) {
+    karMarji = (karTutari / satisFiyati) * 100;
+  }
+
   sonucAlani.innerHTML =
     "Maliyet: <strong>" + formatTL(maliyet) + "</strong><br>" +
+    "Kâr oranı: <strong>" + formatYuzde(oran) + "</strong><br>" +
     "Kâr tutarı: <strong>" + formatTL(karTutari) + "</strong><br>" +
-    "Satış fiyatı: <strong>" + formatTL(satisFiyati) + "</strong>";
+    "Satış fiyatı: <strong>" + formatTL(satisFiyati) + "</strong><br>" +
+    "Satış fiyatı üzerinden kâr marjı: <strong>" +
+    formatYuzde(karMarji) + "</strong>";
 }
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.getElementById("maliyet").addEventListener("keydown", function(e) {
+  if (e.key === "Enter") karHesapla();
+});
+
+document.getElementById("oran").addEventListener("keydown", function(e) {
+  if (e.key === "Enter") karHesapla();
+});
 </script>
 
 </body>
