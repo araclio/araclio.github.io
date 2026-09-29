@@ -4,14 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Yüzde Hesaplama 2026 | Online Yüzde Hesapla - Araclio</title>
+  <title>Yüzde Hesaplama 2026 | Yüzde Hesaplama Aracı - Araclio</title>
 
-  <meta name="description" content="Ücretsiz yüzde hesaplama aracı. Bir sayının belirli yüzdesini hızlıca hesaplayın. Yüzde hesaplama formülü ve örnekleri Araclio'da.">
+  <meta name="description" content="Yüzde hesaplama aracı ile bir sayının yüzdesini ve bir sayının diğer sayının yüzde kaçı olduğunu ücretsiz hesaplayın. Formüller ve örnekler.">
 
   <meta name="robots" content="index,follow">
 
   <link rel="canonical" href="https://araclio.com/yuzde-hesaplama.html">
   <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Yüzde Hesaplama",
+    "url": "https://araclio.com/yuzde-hesaplama.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "Bir sayının belirli yüzdesini ve bir sayının başka bir sayının yüzde kaçı olduğunu hesaplayan ücretsiz online araç.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "TRY"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -31,21 +48,27 @@
     <h1>Yüzde Hesaplama</h1>
 
     <p>
-      Bir sayının belirli bir yüzdesinin kaç olduğunu saniyeler içinde
-      ücretsiz hesaplayın.
+      Bir sayının belirli bir yüzdesini veya bir sayının başka bir
+      sayının yüzde kaçı olduğunu saniyeler içinde hesaplayın.
     </p>
   </section>
 
 
   <section class="card">
-    <h2>Yüzde Hesaplama Aracı</h2>
+    <h2>Bir Sayının Yüzdesini Hesaplama</h2>
+
+    <p>
+      Örneğin “1.500'ün %20'si kaç?” sorusunun cevabını
+      aşağıdaki araçla hesaplayabilirsiniz.
+    </p>
 
     <label>
       Sayı
       <input
         id="sayi"
         type="number"
-        step="0.01"
+        step="any"
+        inputmode="decimal"
         placeholder="Örnek: 1500">
     </label>
 
@@ -54,15 +77,54 @@
       <input
         id="oran"
         type="number"
-        step="0.01"
+        step="any"
+        inputmode="decimal"
         placeholder="Örnek: 20">
     </label>
 
     <div class="buttons">
-      <button onclick="yuzdeHesapla()">Hesapla</button>
+      <button type="button" onclick="yuzdeHesapla()">Yüzdeyi Hesapla</button>
     </div>
 
-    <div id="sonuc" class="result">
+    <div id="sonuc" class="result" aria-live="polite">
+      Sonuç burada görünecek.
+    </div>
+  </section>
+
+
+  <section class="card">
+    <h2>Bir Sayı Diğer Sayının Yüzde Kaçı?</h2>
+
+    <p>
+      Örneğin “200, 800'ün yüzde kaçı?” sorusunu
+      aşağıdaki araçla hesaplayabilirsiniz.
+    </p>
+
+    <label>
+      İlk Sayı
+      <input
+        id="parca"
+        type="number"
+        step="any"
+        inputmode="decimal"
+        placeholder="Örnek: 200">
+    </label>
+
+    <label>
+      Toplam Sayı
+      <input
+        id="toplam"
+        type="number"
+        step="any"
+        inputmode="decimal"
+        placeholder="Örnek: 800">
+    </label>
+
+    <div class="buttons">
+      <button type="button" onclick="oranHesapla()">Yüzde Oranını Hesapla</button>
+    </div>
+
+    <div id="oranSonuc" class="result" aria-live="polite">
       Sonuç burada görünecek.
     </div>
   </section>
@@ -72,8 +134,8 @@
     <h2>Yüzde Nasıl Hesaplanır?</h2>
 
     <p>
-      Bir sayının belirli bir yüzdesini hesaplamak için sayı ile yüzde
-      oranı çarpılır ve sonuç 100'e bölünür.
+      Bir sayının belirli bir yüzdesini hesaplamak için sayı ile
+      yüzde oranı çarpılır ve sonuç 100'e bölünür.
     </p>
 
     <p>
@@ -82,8 +144,115 @@
     </p>
 
     <p>
-      Örneğin 1.000 sayısının %20'sini bulmak için
-      1.000 × 20 ÷ 100 işlemi yapılır. Sonuç 200'dür.
+      Örneğin 1.000'in %20'sini hesaplamak için:
+    </p>
+
+    <p>
+      <strong>1.000 × 20 ÷ 100 = 200</strong>
+    </p>
+
+    <p>
+      Yani 1.000'in %20'si 200'dür.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Bir Sayının Yüzde Kaçı Olduğu Nasıl Hesaplanır?</h2>
+
+    <p>
+      Bir sayının başka bir sayının yüzde kaçı olduğunu bulmak için
+      ilk sayı toplam sayıya bölünür ve sonuç 100 ile çarpılır.
+    </p>
+
+    <p>
+      <strong>Formül:</strong><br>
+      Yüzde Oranı = (İlk Sayı ÷ Toplam Sayı) × 100
+    </p>
+
+    <p>
+      Örneğin 200 sayısının 800'ün yüzde kaçı olduğunu bulmak için:
+    </p>
+
+    <p>
+      <strong>200 ÷ 800 × 100 = %25</strong>
+    </p>
+
+    <p>
+      Yani 200, 800'ün %25'idir.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>%10 Nasıl Hesaplanır?</h2>
+
+    <p>
+      Bir sayının %10'unu bulmak için sayıyı 10 ile çarpıp
+      100'e bölebilirsiniz.
+    </p>
+
+    <p>
+      Örneğin 1.000'in %10'u:
+      <strong>100</strong>'dür.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>%20 Nasıl Hesaplanır?</h2>
+
+    <p>
+      Bir sayının %20'sini hesaplamak için sayı 20 ile
+      çarpılır ve 100'e bölünür.
+    </p>
+
+    <p>
+      Örneğin:
+      <strong>1.000 × 20 ÷ 100 = 200</strong>
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>%25 Nasıl Hesaplanır?</h2>
+
+    <p>
+      %25, bir sayının dörtte birine eşittir.
+    </p>
+
+    <p>
+      Örneğin 2.000'in %25'i:
+      <strong>500</strong>'dür.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>%30 Nasıl Hesaplanır?</h2>
+
+    <p>
+      Bir sayının %30'unu hesaplamak için sayı 30 ile
+      çarpılıp 100'e bölünür.
+    </p>
+
+    <p>
+      Örneğin 1.500'ün %30'u:
+      <strong>450</strong>'dir.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>%50 Nasıl Hesaplanır?</h2>
+
+    <p>
+      %50 bir sayının yarısıdır.
+    </p>
+
+    <p>
+      Örneğin 800'ün %50'si:
+      <strong>400</strong>'dür.
     </p>
   </section>
 
@@ -92,13 +261,18 @@
     <h2>Yüzde Hesaplama Örnekleri</h2>
 
     <p>
+      <strong>1.000'in %10'u:</strong><br>
+      100
+    </p>
+
+    <p>
       <strong>1.000'in %20'si:</strong><br>
       200
     </p>
 
     <p>
-      <strong>500'ün %10'u:</strong><br>
-      50
+      <strong>500'ün %30'u:</strong><br>
+      150
     </p>
 
     <p>
@@ -110,6 +284,36 @@
       <strong>2.000'in %25'i:</strong><br>
       500
     </p>
+
+    <p>
+      <strong>800'ün %50'si:</strong><br>
+      400
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Yüzde Artış ve Azalış Nasıl Hesaplanır?</h2>
+
+    <p>
+      Bir değerin eski değerine göre yüzde kaç arttığını veya
+      azaldığını hesaplamak farklı bir yüzde işlemidir.
+    </p>
+
+    <p>
+      Örneğin bir fiyatın 800 TL'den 1.000 TL'ye çıkması
+      %25 artış anlamına gelir.
+    </p>
+
+    <p>
+      Bunun için Araclio'nun yüzde değişim aracını kullanabilirsiniz.
+    </p>
+
+    <p>
+      <a href="/yuzde-degisim-hesaplama.html">
+        Yüzde Değişim Hesaplama →
+      </a>
+    </p>
   </section>
 
 
@@ -117,19 +321,67 @@
     <h2>Yüzde Hesaplama Nerelerde Kullanılır?</h2>
 
     <p>
-      Yüzde hesabı; indirim, zam, kâr oranı, vergi, fiyat değişimleri,
-      bütçe hesaplamaları ve günlük birçok işlemde kullanılabilir.
+      Yüzde hesabı; indirim, zam, kâr oranı, vergi, fiyat
+      karşılaştırmaları, bütçe hesaplamaları, sınav sonuçları,
+      istatistikler ve günlük birçok matematiksel işlemde kullanılabilir.
     </p>
 
     <p>
-      Araclio yüzde hesaplama aracında sayı ve yüzde oranını girmeniz
-      yeterlidir. Sonuç tarayıcınızda anında hesaplanır.
+      Araclio yüzde hesaplama aracında gerekli sayıları girmeniz
+      yeterlidir. Hesaplama doğrudan tarayıcınızda yapılır.
     </p>
   </section>
 
 
   <section class="card">
-    <h2>Diğer Ücretsiz Araçlar</h2>
+    <h2>Sık Sorulan Sorular</h2>
+
+    <h3>Bir sayının yüzdesi nasıl hesaplanır?</h3>
+    <p>
+      Sayı yüzde oranıyla çarpılır ve sonuç 100'e bölünür.
+    </p>
+
+    <h3>1.000'in %20'si kaçtır?</h3>
+    <p>
+      1.000 × 20 ÷ 100 işlemi sonucunda 200 bulunur.
+    </p>
+
+    <h3>500'ün %10'u kaçtır?</h3>
+    <p>
+      500'ün %10'u 50'dir.
+    </p>
+
+    <h3>200, 800'ün yüzde kaçıdır?</h3>
+    <p>
+      200 ÷ 800 × 100 işlemi sonucunda %25 bulunur.
+    </p>
+
+    <h3>Bir sayının %25'i nasıl bulunur?</h3>
+    <p>
+      Sayı 25 ile çarpılıp 100'e bölünebilir.
+      %25 aynı zamanda sayının dörtte biridir.
+    </p>
+
+    <h3>Yüzde artış nasıl hesaplanır?</h3>
+    <p>
+      Yeni ve eski değer arasındaki fark eski değere bölünür ve
+      sonuç 100 ile çarpılır. Bunun için
+      <a href="/yuzde-degisim-hesaplama.html">Yüzde Değişim Hesaplama</a>
+      aracını kullanabilirsiniz.
+    </p>
+
+    <h3>Yüzde hesaplama aracı ücretsiz mi?</h3>
+    <p>
+      Evet. Araclio yüzde hesaplama aracını ücretsiz ve
+      üyelik gerektirmeden kullanabilirsiniz.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Diğer Ücretsiz Hesaplama Araçları</h2>
+
+    <p><a href="/yuzde-degisim-hesaplama.html">Yüzde Değişim Hesaplama →</a></p>
 
     <p><a href="/kdv-hesaplama.html">KDV Hesaplama →</a></p>
 
@@ -157,12 +409,28 @@
 
 
 <script>
+function formatSayi(deger) {
+  return deger.toLocaleString("tr-TR", {
+    maximumFractionDigits: 4
+  });
+}
+
+
 function yuzdeHesapla() {
-  const sayi = parseFloat(document.getElementById("sayi").value);
-  const oran = parseFloat(document.getElementById("oran").value);
+  const sayiInput = document.getElementById("sayi");
+  const oranInput = document.getElementById("oran");
+
+  const sayi = Number(sayiInput.value);
+  const oran = Number(oranInput.value);
+
   const sonucAlani = document.getElementById("sonuc");
 
-  if (isNaN(sayi) || isNaN(oran)) {
+  if (
+    sayiInput.value === "" ||
+    oranInput.value === "" ||
+    !Number.isFinite(sayi) ||
+    !Number.isFinite(oran)
+  ) {
     sonucAlani.innerHTML =
       "Lütfen geçerli bir sayı ve yüzde oranı girin.";
     return;
@@ -172,16 +440,74 @@ function yuzdeHesapla() {
 
   sonucAlani.innerHTML =
     "<strong>" +
-    sayi.toLocaleString("tr-TR") +
+    formatSayi(sayi) +
     "</strong> sayısının <strong>%" +
-    oran.toLocaleString("tr-TR") +
+    formatSayi(oran) +
     "</strong>'si = <strong>" +
-    sonuc.toLocaleString("tr-TR", {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    }) +
+    formatSayi(sonuc) +
     "</strong>";
 }
+
+
+function oranHesapla() {
+  const parcaInput = document.getElementById("parca");
+  const toplamInput = document.getElementById("toplam");
+
+  const parca = Number(parcaInput.value);
+  const toplam = Number(toplamInput.value);
+
+  const sonucAlani = document.getElementById("oranSonuc");
+
+  if (
+    parcaInput.value === "" ||
+    toplamInput.value === "" ||
+    !Number.isFinite(parca) ||
+    !Number.isFinite(toplam)
+  ) {
+    sonucAlani.innerHTML =
+      "Lütfen iki sayıyı da eksiksiz girin.";
+    return;
+  }
+
+  if (toplam === 0) {
+    sonucAlani.innerHTML =
+      "Toplam sayı 0 olduğunda yüzde oranı hesaplanamaz.";
+    return;
+  }
+
+  const oran = (parca / toplam) * 100;
+
+  sonucAlani.innerHTML =
+    "<strong>" +
+    formatSayi(parca) +
+    "</strong>, <strong>" +
+    formatSayi(toplam) +
+    "</strong> sayısının <strong>%" +
+    formatSayi(oran) +
+    "</strong>'idir.";
+}
+
+
+["sayi", "oran"].forEach(function(id) {
+  document.getElementById(id).addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+      yuzdeHesapla();
+    }
+  });
+});
+
+
+["parca", "toplam"].forEach(function(id) {
+  document.getElementById(id).addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+      oranHesapla();
+    }
+  });
+});
+
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 </script>
 
 </body>
