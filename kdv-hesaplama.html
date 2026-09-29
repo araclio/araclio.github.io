@@ -6,12 +6,29 @@
 
   <title>KDV Hesaplama 2026 | KDV Dahil ve Hariç Hesapla - Araclio</title>
 
-  <meta name="description" content="Ücretsiz KDV hesaplama aracı. KDV hariç tutara KDV ekleyin veya KDV dahil fiyattan KDV tutarını ayırın. Hızlı ve kolay online hesaplama.">
+  <meta name="description" content="KDV hesaplama aracı ile KDV dahil ve KDV hariç tutarı hesaplayın. KDV ekleme, KDV ayırma ve KDV tutarı hesaplama işlemlerini ücretsiz yapın.">
 
   <meta name="robots" content="index,follow">
 
   <link rel="canonical" href="https://araclio.com/kdv-hesaplama.html">
   <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "KDV Hesaplama",
+    "url": "https://araclio.com/kdv-hesaplama.html",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "description": "KDV dahil ve KDV hariç tutarları hesaplamak için ücretsiz online KDV hesaplama aracı.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "TRY"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -28,11 +45,11 @@
   <section class="hero">
     <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
 
-    <h1>KDV Hesaplama</h1>
+    <h1>KDV Hesaplama - KDV Dahil ve Hariç Hesapla</h1>
 
     <p>
-      KDV hariç bir tutara KDV ekleyin veya KDV dahil fiyatın içerisindeki
-      KDV tutarını saniyeler içinde hesaplayın.
+      Tutarı ve KDV oranını girerek KDV ekleyin veya KDV dahil
+      fiyatın içerisindeki KDV tutarını saniyeler içinde ayırın.
     </p>
   </section>
 
@@ -47,6 +64,7 @@
         type="number"
         min="0"
         step="0.01"
+        inputmode="decimal"
         placeholder="Örnek: 1000">
     </label>
 
@@ -57,17 +75,24 @@
         type="number"
         min="0"
         step="0.01"
+        inputmode="decimal"
         value="20">
     </label>
 
     <div class="buttons">
-      <button onclick="kdvEkle()">KDV Ekle</button>
-      <button class="secondary" onclick="kdvAyir()">KDV Ayır</button>
+      <button type="button" onclick="kdvEkle()">KDV Ekle</button>
+      <button type="button" class="secondary" onclick="kdvAyir()">KDV Ayır</button>
     </div>
 
-    <div id="sonuc" class="result">
+    <div id="sonuc" class="result" aria-live="polite">
       Sonuç burada görünecek.
     </div>
+
+    <p>
+      <small>
+        KDV oranını yapmak istediğiniz hesaba göre değiştirebilirsiniz.
+      </small>
+    </p>
   </section>
 
 
@@ -75,19 +100,26 @@
     <h2>KDV Nasıl Hesaplanır?</h2>
 
     <p>
-      KDV hariç bir fiyata KDV eklemek için tutar, KDV oranıyla çarpılır
-      ve sonuç 100'e bölünür. Bulunan KDV tutarı başlangıç fiyatına
-      eklenerek KDV dahil fiyat bulunur.
+      KDV hariç bir tutara KDV eklemek için başlangıç tutarı
+      KDV oranıyla çarpılır ve sonuç 100'e bölünür.
+      Bulunan KDV tutarı başlangıç fiyatına eklenerek
+      KDV dahil toplam bulunur.
     </p>
 
     <p>
-      Örneğin KDV hariç 1.000 TL olan bir tutara %20 KDV uygulanırsa,
-      KDV tutarı 200 TL ve KDV dahil toplam 1.200 TL olur.
+      <strong>KDV tutarı formülü:</strong><br>
+      KDV Tutarı = KDV Hariç Tutar × KDV Oranı ÷ 100
     </p>
 
     <p>
-      <strong>KDV ekleme formülü:</strong><br>
-      KDV Tutarı = Tutar × KDV Oranı ÷ 100
+      <strong>KDV dahil fiyat formülü:</strong><br>
+      KDV Dahil Fiyat = KDV Hariç Tutar + KDV Tutarı
+    </p>
+
+    <p>
+      Örneğin 1.000 TL KDV hariç tutar üzerinden %20 oranıyla
+      hesaplama yapılırsa KDV tutarı 200 TL, KDV dahil sonuç
+      ise 1.200 TL olur.
     </p>
   </section>
 
@@ -96,18 +128,57 @@
     <h2>KDV Dahil Fiyattan KDV Nasıl Ayrılır?</h2>
 
     <p>
-      KDV dahil toplam fiyatı KDV hariç tutara çevirmek için toplam tutar,
-      1 + KDV oranı / 100 değerine bölünür.
+      Elinizde KDV dahil toplam tutar varsa bu fiyatın içerisindeki
+      KDV'yi ayırmak için toplam tutar
+      <strong>1 + KDV oranı ÷ 100</strong> değerine bölünür.
     </p>
 
     <p>
-      Örneğin %20 KDV dahil fiyat 1.200 TL ise KDV hariç tutar
-      1.000 TL, KDV tutarı ise 200 TL'dir.
-    </p>
-
-    <p>
-      <strong>KDV hariç fiyat formülü:</strong><br>
+      <strong>KDV hariç tutar formülü:</strong><br>
       KDV Hariç Tutar = KDV Dahil Tutar ÷ (1 + KDV Oranı ÷ 100)
+    </p>
+
+    <p>
+      <strong>KDV tutarı:</strong><br>
+      KDV Tutarı = KDV Dahil Tutar − KDV Hariç Tutar
+    </p>
+
+    <p>
+      Örneğin %20 oranıyla hesaplanmış KDV dahil 1.200 TL'lik
+      bir tutarın KDV hariç değeri 1.000 TL, içerisindeki
+      KDV tutarı ise 200 TL'dir.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>KDV Dahil Ne Demek?</h2>
+
+    <p>
+      KDV dahil fiyat, hesaplanan KDV tutarının ürün veya hizmet
+      bedeline eklenmiş olduğu toplam tutarı ifade eder.
+    </p>
+
+    <p>
+      Örneğin KDV hariç bedel 500 TL ve hesaplamada kullanılan
+      oran %20 ise 100 TL KDV eklenir ve KDV dahil toplam
+      600 TL olur.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>KDV Hariç Ne Demek?</h2>
+
+    <p>
+      KDV hariç tutar, hesaplamada KDV eklenmeden önceki
+      temel bedeldir.
+    </p>
+
+    <p>
+      KDV dahil bir fiyatın yalnızca KDV oranı kadarını doğrudan
+      çıkarmak her zaman doğru sonucu vermez. KDV dahil tutardan
+      verginin ayrılması için yukarıdaki KDV ayırma formülü kullanılır.
     </p>
   </section>
 
@@ -116,27 +187,86 @@
     <h2>Örnek KDV Hesaplamaları</h2>
 
     <p>
-      <strong>1.000 TL + %20 KDV</strong><br>
+      <strong>1.000 TL + %20:</strong><br>
       KDV tutarı: 200 TL<br>
       KDV dahil fiyat: 1.200 TL
     </p>
 
     <p>
-      <strong>500 TL + %10 KDV</strong><br>
+      <strong>500 TL + %10:</strong><br>
       KDV tutarı: 50 TL<br>
       KDV dahil fiyat: 550 TL
     </p>
 
     <p>
-      <strong>2.000 TL + %20 KDV</strong><br>
+      <strong>2.000 TL + %20:</strong><br>
       KDV tutarı: 400 TL<br>
       KDV dahil fiyat: 2.400 TL
+    </p>
+
+    <p>
+      <strong>1.200 TL KDV dahil tutardan %20 KDV ayırma:</strong><br>
+      KDV hariç tutar: 1.000 TL<br>
+      KDV tutarı: 200 TL
     </p>
   </section>
 
 
   <section class="card">
-    <h2>Diğer Ücretsiz Araçlar</h2>
+    <h2>KDV Ekleme ve KDV Ayırma Arasındaki Fark</h2>
+
+    <p>
+      <strong>KDV Ekle</strong> seçeneği, girdiğiniz tutarı KDV hariç
+      kabul eder ve seçtiğiniz oranı tutarın üzerine ekler.
+    </p>
+
+    <p>
+      <strong>KDV Ayır</strong> seçeneği ise girdiğiniz tutarı
+      KDV dahil kabul eder ve bu toplamın içerisindeki KDV hariç
+      bedeli ve KDV tutarını ayrı ayrı hesaplar.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Sık Sorulan Sorular</h2>
+
+    <h3>1.000 TL'nin %20 KDV'si nasıl hesaplanır?</h3>
+    <p>
+      1.000 × 20 ÷ 100 işlemiyle KDV tutarı 200 TL bulunur.
+      KDV dahil toplam 1.200 TL olur.
+    </p>
+
+    <h3>KDV dahil fiyattan KDV nasıl çıkarılır?</h3>
+    <p>
+      KDV dahil tutar, 1 + KDV oranı ÷ 100 değerine bölünür.
+      Böylece KDV hariç bedel bulunur. Aradaki fark ise
+      KDV tutarıdır.
+    </p>
+
+    <h3>KDV dahil tutardan doğrudan yüzde çıkarmak doğru mu?</h3>
+    <p>
+      Hayır. KDV dahil fiyatın içerisindeki vergiyi ayırırken
+      KDV dahil tutardan doğrudan aynı yüzdeyi çıkarmak
+      farklı bir sonuç verir. KDV ayırma formülü kullanılmalıdır.
+    </p>
+
+    <h3>KDV oranını değiştirebilir miyim?</h3>
+    <p>
+      Evet. Hesaplama aracındaki KDV oranı alanına yapmak
+      istediğiniz işleme uygun yüzdeyi girebilirsiniz.
+    </p>
+
+    <h3>KDV hesaplama aracı ücretsiz mi?</h3>
+    <p>
+      Evet. Araclio KDV hesaplama aracını ücretsiz ve
+      üyelik gerektirmeden kullanabilirsiniz.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Diğer Ücretsiz Hesaplama Araçları</h2>
 
     <p><a href="/yuzde-hesaplama.html">Yüzde Hesaplama →</a></p>
 
@@ -171,7 +301,6 @@ function formatTL(deger) {
   }) + " TL";
 }
 
-
 function kdvEkle() {
   const tutar = parseFloat(document.getElementById("tutar").value);
   const oran = parseFloat(document.getElementById("oran").value);
@@ -192,10 +321,13 @@ function kdvEkle() {
   const toplam = tutar + kdvTutari;
 
   sonucAlani.innerHTML =
+    "KDV hariç tutar: <strong>" + formatTL(tutar) + "</strong><br>" +
+    "KDV oranı: <strong>%" +
+    oran.toLocaleString("tr-TR", { maximumFractionDigits: 2 }) +
+    "</strong><br>" +
     "KDV tutarı: <strong>" + formatTL(kdvTutari) + "</strong><br>" +
     "KDV dahil toplam: <strong>" + formatTL(toplam) + "</strong>";
 }
-
 
 function kdvAyir() {
   const tutar = parseFloat(document.getElementById("tutar").value);
@@ -217,10 +349,23 @@ function kdvAyir() {
   const kdvTutari = tutar - kdvHaric;
 
   sonucAlani.innerHTML =
+    "KDV dahil toplam: <strong>" + formatTL(tutar) + "</strong><br>" +
+    "KDV oranı: <strong>%" +
+    oran.toLocaleString("tr-TR", { maximumFractionDigits: 2 }) +
+    "</strong><br>" +
     "KDV hariç tutar: <strong>" + formatTL(kdvHaric) + "</strong><br>" +
-    "KDV tutarı: <strong>" + formatTL(kdvTutari) + "</strong><br>" +
-    "KDV dahil toplam: <strong>" + formatTL(tutar) + "</strong>";
+    "KDV tutarı: <strong>" + formatTL(kdvTutari) + "</strong>";
 }
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+["tutar", "oran"].forEach(function(id) {
+  document.getElementById(id).addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+      kdvEkle();
+    }
+  });
+});
 </script>
 
 </body>
