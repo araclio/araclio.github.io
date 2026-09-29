@@ -6,12 +6,29 @@
 
   <title>Desi Hesaplama 2026 | Kargo Desi Hesaplama - Araclio</title>
 
-  <meta name="description" content="Ücretsiz kargo desi hesaplama aracı. Paketinizin en, boy ve yükseklik ölçülerini girerek desi değerini hızlıca hesaplayın.">
+  <meta name="description" content="Desi hesaplama aracı ile kargo paketinizin en, boy ve yükseklik ölçülerini girerek desi değerini ücretsiz hesaplayın. Desi nasıl hesaplanır, 1 desi ne kadar?">
 
   <meta name="robots" content="index,follow">
 
   <link rel="canonical" href="https://araclio.com/desi-hesaplama.html">
   <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Kargo Desi Hesaplama",
+    "url": "https://araclio.com/desi-hesaplama.html",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "description": "Paket ölçülerine göre desi değerini hesaplayan ücretsiz online kargo desi hesaplama aracı.",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "TRY"
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -28,17 +45,17 @@
   <section class="hero">
     <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
 
-    <h1>Desi Hesaplama</h1>
+    <h1>Desi Hesaplama - Kargo Desi Hesaplama</h1>
 
     <p>
-      Paketinizin en, boy ve yükseklik ölçülerini girerek
-      kargo desi değerini saniyeler içinde hesaplayın.
+      Paketinizin en, boy ve yükseklik ölçülerini santimetre
+      cinsinden girerek desi değerini saniyeler içinde hesaplayın.
     </p>
   </section>
 
 
   <section class="card">
-    <h2>Kargo Desi Hesaplama Aracı</h2>
+    <h2>Desi Hesaplama Aracı</h2>
 
     <label>
       En (cm)
@@ -47,6 +64,7 @@
         type="number"
         min="0"
         step="0.1"
+        inputmode="decimal"
         placeholder="Örnek: 30">
     </label>
 
@@ -57,6 +75,7 @@
         type="number"
         min="0"
         step="0.1"
+        inputmode="decimal"
         placeholder="Örnek: 40">
     </label>
 
@@ -67,14 +86,15 @@
         type="number"
         min="0"
         step="0.1"
+        inputmode="decimal"
         placeholder="Örnek: 20">
     </label>
 
     <div class="buttons">
-      <button onclick="desiHesapla()">Hesapla</button>
+      <button type="button" onclick="desiHesapla()">Desi Hesapla</button>
     </div>
 
-    <div id="sonuc" class="result">
+    <div id="sonuc" class="result" aria-live="polite">
       Sonuç burada görünecek.
     </div>
   </section>
@@ -84,21 +104,61 @@
     <h2>Desi Nasıl Hesaplanır?</h2>
 
     <p>
-      Bu araç desi değerini hesaplamak için paketin en, boy ve yükseklik
-      ölçülerini santimetre cinsinden çarpar ve sonucu 3000'e böler.
+      Desi hesabında paketin santimetre cinsinden en, boy ve yükseklik
+      değerleri birbiriyle çarpılır. Elde edilen hacim değeri kullanılan
+      desi bölenine bölünür.
     </p>
 
     <p>
-      <strong>Desi formülü:</strong><br>
+      Bu hesaplayıcı <strong>3000 böleni</strong> kullanır.
+    </p>
+
+    <p>
+      <strong>Desi hesaplama formülü:</strong><br>
       En × Boy × Yükseklik ÷ 3000
     </p>
 
     <p>
-      Örneğin 30 cm en, 40 cm boy ve 20 cm yüksekliğe sahip bir paket:
+      Örneğin 30 cm en, 40 cm boy ve 20 cm yüksekliğindeki bir paket için:
     </p>
 
     <p>
-      30 × 40 × 20 ÷ 3000 = <strong>8 desi</strong>
+      <strong>30 × 40 × 20 ÷ 3000 = 8 desi</strong>
+    </p>
+
+    <p>
+      Paket ölçülerini yukarıdaki desi hesaplama aracına girerek
+      işlemi otomatik olarak yapabilirsiniz.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>1 Desi Ne Kadar?</h2>
+
+    <p>
+      Desi doğrudan kilogram veya santimetre gibi tek bir uzunluk ya da
+      ağırlık ölçüsü değildir. Paketlerin kapladığı hacmi ifade etmek için
+      kullanılan hesaplama değeridir.
+    </p>
+
+    <p>
+      Bu sayfadaki 3000 bölenli hesaplamaya göre
+      <strong>3.000 cm³ hacim 1 desi</strong> sonucunu verir.
+    </p>
+
+    <p>
+      Örneğin 10 × 10 × 30 cm ölçülerindeki bir paketin hacmi
+      3.000 cm³'tür:
+    </p>
+
+    <p>
+      <strong>10 × 10 × 30 ÷ 3000 = 1 desi</strong>
+    </p>
+
+    <p>
+      Ancak desi, kargonun kesin ağırlığı veya kesin gönderim fiyatı
+      anlamına gelmez.
     </p>
   </section>
 
@@ -107,8 +167,8 @@
     <h2>Desi Hesaplama Örnekleri</h2>
 
     <p>
-      <strong>30 × 40 × 20 cm:</strong><br>
-      8 desi
+      <strong>10 × 10 × 30 cm:</strong><br>
+      1 desi
     </p>
 
     <p>
@@ -117,8 +177,42 @@
     </p>
 
     <p>
+      <strong>30 × 40 × 20 cm:</strong><br>
+      8 desi
+    </p>
+
+    <p>
       <strong>50 × 40 × 30 cm:</strong><br>
       20 desi
+    </p>
+
+    <p>
+      <strong>60 × 50 × 30 cm:</strong><br>
+      30 desi
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>30 Desi Nasıl Hesaplanır?</h2>
+
+    <p>
+      Paketin ölçülerinin çarpımı 90.000 cm³ ise, 3000 böleni
+      kullanıldığında sonuç 30 desi olur.
+    </p>
+
+    <p>
+      Örneğin:
+    </p>
+
+    <p>
+      <strong>60 × 50 × 30 = 90.000 cm³</strong><br>
+      <strong>90.000 ÷ 3000 = 30 desi</strong>
+    </p>
+
+    <p>
+      Farklı en, boy ve yükseklik kombinasyonları da aynı hacme
+      ulaşarak 30 desi sonucunu verebilir.
     </p>
   </section>
 
@@ -127,28 +221,88 @@
     <h2>Kargoda Desi Neden Önemlidir?</h2>
 
     <p>
-      Paketlerin kapladığı hacim, kargo ücretlendirmesinde dikkate alınabilen
-      unsurlardan biridir. Desi hesabı paketin ölçülerinden hacimsel bir
-      değer elde edilmesini sağlar.
+      Bir paket hafif olmasına rağmen büyük hacim kaplayabilir.
+      Bu nedenle kargo taşımacılığında yalnızca paketin fiziksel
+      ağırlığı değil, kapladığı alanı ifade eden hacimsel değerler
+      de dikkate alınabilir.
     </p>
 
     <p>
-      Bu araç 3000 böleniyle matematiksel desi hesabı yapar. Kargo
-      şirketlerinin kullandığı hesaplama, yuvarlama ve ücretlendirme
-      kuralları farklı olabilir. Gönderinizin kesin ücretini ilgili
-      taşıyıcının güncel koşullarından kontrol edin.
+      Desi hesabı özellikle e-ticaret gönderilerinde paket boyutunu
+      önceden değerlendirmek için kullanılabilir.
+    </p>
+
+    <p>
+      Kargo şirketlerinin desi hesaplama yöntemi, kullandıkları bölen,
+      yuvarlama yöntemi ve fiyatlandırma kuralları değişebilir.
+      Bu nedenle Araclio'da hesaplanan değer matematiksel bir sonuçtur;
+      kesin kargo ücreti için ilgili taşıyıcının güncel kurallarını
+      kontrol etmelisiniz.
     </p>
   </section>
 
 
   <section class="card">
-    <h2>Diğer Ücretsiz Araçlar</h2>
+    <h2>Desi ile Kilogram Aynı Şey mi?</h2>
+
+    <p>
+      Hayır. Kilogram fiziksel ağırlığı, desi ise paket ölçülerinden
+      hesaplanan hacimsel değeri ifade eder.
+    </p>
+
+    <p>
+      Örneğin büyük fakat çok hafif bir kutunun fiziksel ağırlığı düşük
+      olsa bile kapladığı hacim nedeniyle desi değeri daha yüksek olabilir.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Sık Sorulan Sorular</h2>
+
+    <h3>Desi hesaplama formülü nedir?</h3>
+    <p>
+      Bu araçta kullanılan formül En × Boy × Yükseklik ÷ 3000 şeklindedir.
+      Ölçüler santimetre cinsinden girilir.
+    </p>
+
+    <h3>1 desi kaç cm³ eder?</h3>
+    <p>
+      3000 böleni kullanılan bu hesaplama yönteminde 1 desi,
+      3.000 cm³ paket hacmine karşılık gelir.
+    </p>
+
+    <h3>30 desi kaç kilogramdır?</h3>
+    <p>
+      Desi ile kilogram farklı kavramlardır. Bu nedenle 30 desinin
+      doğrudan sabit bir kilogram karşılığı yoktur. Biri hacimsel
+      hesaplama değerini, diğeri fiziksel ağırlığı ifade eder.
+    </p>
+
+    <h3>Kargo desi hesabında neden 3000'e bölünüyor?</h3>
+    <p>
+      3000 bu hesaplayıcının kullandığı hacimsel dönüşüm bölenidir.
+      Taşıyıcıların kullandığı güncel bölen ve ücretlendirme yöntemi
+      farklı olabileceğinden kesin gönderim hesabı için kargo şirketinin
+      kuralları ayrıca kontrol edilmelidir.
+    </p>
+
+    <h3>Desi hesaplama aracı ücretsiz mi?</h3>
+    <p>
+      Evet. Araclio desi hesaplama aracını ücretsiz ve üyelik
+      gerektirmeden kullanabilirsiniz.
+    </p>
+  </section>
+
+
+  <section class="card">
+    <h2>Diğer Ücretsiz Hesaplama Araçları</h2>
 
     <p><a href="/kdv-hesaplama.html">KDV Hesaplama →</a></p>
 
     <p><a href="/yuzde-hesaplama.html">Yüzde Hesaplama →</a></p>
 
-    <p><a href="/kar-marji-hesaplama.html">Kâr Hesaplama →</a></p>
+    <p><a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama →</a></p>
 
     <p><a href="/indirim-hesaplama.html">İndirim Hesaplama →</a></p>
 
@@ -185,11 +339,12 @@ function desiHesapla() {
     yukseklik <= 0
   ) {
     sonucAlani.innerHTML =
-      "Lütfen geçerli paket ölçülerini girin.";
+      "Lütfen 0'dan büyük geçerli paket ölçüleri girin.";
     return;
   }
 
-  const desi = (en * boy * yukseklik) / 3000;
+  const hacim = en * boy * yukseklik;
+  const desi = hacim / 3000;
 
   sonucAlani.innerHTML =
     "Paket ölçüsü: <strong>" +
@@ -197,6 +352,11 @@ function desiHesapla() {
     boy.toLocaleString("tr-TR") + " × " +
     yukseklik.toLocaleString("tr-TR") +
     " cm</strong><br>" +
+    "Paket hacmi: <strong>" +
+    hacim.toLocaleString("tr-TR", {
+      maximumFractionDigits: 2
+    }) +
+    " cm³</strong><br>" +
     "Hesaplanan desi: <strong>" +
     desi.toLocaleString("tr-TR", {
       minimumFractionDigits: 2,
@@ -204,6 +364,16 @@ function desiHesapla() {
     }) +
     " desi</strong>";
 }
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+["en", "boy", "yukseklik"].forEach(function(id) {
+  document.getElementById(id).addEventListener("keydown", function(e) {
+    if (e.key === "Enter") {
+      desiHesapla();
+    }
+  });
+});
 </script>
 
 </body>
