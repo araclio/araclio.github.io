@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+<title>Kira Stopajı Hesaplama 2026 | Net ve Brüt İşyeri Kirası - Araclio</title>
+
+<meta name="description" content="Kira stopajı hesaplama 2026. Net veya brüt işyeri kirasından %20 stopaj tutarını, brüt kira bedelini ve mal sahibine ödenecek net kirayı hesaplayın.">
+
+<meta name="robots" content="index,follow">
+
+<link rel="canonical" href="https://araclio.com/kira-stopaji-hesaplama.html">
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Kira Stopajı Hesaplama 2026",
+  "url":"https://araclio.com/kira-stopaji-hesaplama.html",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"Any",
+  "description":"Net veya brüt işyeri kira bedelinden kira stopajını hesaplayan ücretsiz araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Kira stopajı nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Stopaja tabi işyeri kira ödemelerinde gelir vergisi kesintisi brüt kira tutarı üzerinden yüzde 20 oranında hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Net kiradan brüt kira nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yüzde 20 stopaj uygulanan durumda net kira 0,80'e bölünerek brüt kira bulunur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"10.000 TL net kira için stopaj ne kadar?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yüzde 20 stopaj uygulanan durumda 10.000 TL net kira 12.500 TL brüte karşılık gelir ve stopaj 2.500 TL olur."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+<div class="wrap nav">
+<a class="brand" href="/">Araclio</a>
+<span class="tag">Ücretsiz Online Araçlar</span>
+</div>
+</header>
+
+<main class="wrap">
+
+<section class="hero">
+
+<p class="eyebrow">2026 • HIZLI • ÜCRETSİZ</p>
+
+<h1>Kira Stopajı Hesaplama</h1>
+
+<p>
+Net veya brüt işyeri kira bedelini girerek
+%20 stopaj tutarını, brüt kira bedelini ve
+mal sahibine ödenecek net kira tutarını hesaplayın.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kira Stopajı Hesaplama Aracı</h2>
+
+<label>
+Hesaplama Türü
+
+<select id="tur">
+<option value="netten">Net Kiradan Hesapla</option>
+<option value="brutten">Brüt Kiradan Hesapla</option>
+</select>
+</label>
+
+
+<label>
+Kira Tutarı (TL)
+
+<input
+id="kira"
+type="number"
+min="0"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 20000">
+</label>
+
+
+<label>
+Stopaj Oranı (%)
+
+<input
+id="oran"
+type="number"
+min="0"
+max="99.99"
+step="0.01"
+inputmode="decimal"
+value="20">
+</label>
+
+
+<div class="buttons">
+
+<button type="button" onclick="hesapla()">
+Kira Stopajını Hesapla
+</button>
+
+</div>
+
+
+<div id="sonuc" class="result" aria-live="polite">
+Sonuç burada görünecek.
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kira Stopajı Nasıl Hesaplanır?</h2>
+
+<p>
+Stopaja tabi işyeri kira ödemelerinde gelir vergisi
+kesintisi brüt kira bedeli üzerinden hesaplanır.
+</p>
+
+<p>
+Güncel genel oran %20 olduğunda:
+</p>
+
+<p>
+<strong>Stopaj = Brüt Kira × %20</strong>
+</p>
+
+<p>
+<strong>Net Kira = Brüt Kira − Stopaj</strong>
+</p>
+
+<p>
+Örneğin brüt kira 25.000 TL ise:
+</p>
+
+<p>
+25.000 × %20 =
+<strong>5.000 TL stopaj</strong>
+</p>
+
+<p>
+25.000 − 5.000 =
+<strong>20.000 TL net kira</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Net Kiradan Stopaj Nasıl Hesaplanır?</h2>
+
+<p>
+Kira sözleşmesindeki tutar net olarak belirlenmişse
+önce brüt kira tutarının bulunması gerekir.
+</p>
+
+<p>
+%20 stopaj oranında:
+</p>
+
+<p>
+<strong>
+Brüt Kira = Net Kira ÷ 0,80
+</strong>
+</p>
+
+<p>
+Ardından:
+</p>
+
+<p>
+<strong>
+Stopaj = Brüt Kira − Net Kira
+</strong>
+</p>
+
+<p>
+Örneğin net kira 20.000 TL ise:
+</p>
+
+<p>
+20.000 ÷ 0,80 =
+<strong>25.000 TL brüt kira</strong>
+</p>
+
+<p>
+25.000 − 20.000 =
+<strong>5.000 TL stopaj</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Brüt Kiradan Stopaj Nasıl Hesaplanır?</h2>
+
+<p>
+Brüt kira tutarı biliniyorsa hesaplama daha doğrudandır.
+</p>
+
+<p>
+<strong>
+Stopaj = Brüt Kira × Stopaj Oranı
+</strong>
+</p>
+
+<p>
+<strong>
+Net Kira = Brüt Kira − Stopaj
+</strong>
+</p>
+
+<p>
+Örneğin 30.000 TL brüt kira ve %20 stopaj oranında:
+</p>
+
+<p>
+30.000 × %20 =
+<strong>6.000 TL stopaj</strong>
+</p>
+
+<p>
+30.000 − 6.000 =
+<strong>24.000 TL net kira</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>10.000 TL Kiranın Stopajı Ne Kadar?</h2>
+
+<p>
+Burada tutarın <strong>net mi yoksa brüt mü</strong>
+olduğu önemlidir.
+</p>
+
+<p>
+<strong>10.000 TL brüt kira</strong> için %20 stopaj:
+</p>
+
+<p>
+10.000 × %20 =
+<strong>2.000 TL</strong>
+</p>
+
+<p>
+Mal sahibine kalan net tutar:
+<strong>8.000 TL</strong>
+</p>
+
+<p>
+Ancak <strong>10.000 TL net kira</strong> üzerinden hesaplama
+yapılıyorsa:
+</p>
+
+<p>
+Brüt kira:
+<strong>12.500 TL</strong>
+</p>
+
+<p>
+Stopaj:
+<strong>2.500 TL</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>20.000 TL Net Kiranın Stopajı Ne Kadar?</h2>
+
+<p>
+%20 stopaj oranında:
+</p>
+
+<p>
+20.000 ÷ 0,80 =
+<strong>25.000 TL brüt kira</strong>
+</p>
+
+<p>
+25.000 × %20 =
+<strong>5.000 TL stopaj</strong>
+</p>
+
+<p>
+Bu durumda:
+</p>
+
+<p>
+Net kira:
+<strong>20.000 TL</strong>
+</p>
+
+<p>
+Stopaj:
+<strong>5.000 TL</strong>
+</p>
+
+<p>
+Brüt kira:
+<strong>25.000 TL</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>30.000 TL Net Kiranın Stopajı Ne Kadar?</h2>
+
+<p>
+%20 stopaj oranında:
+</p>
+
+<p>
+30.000 ÷ 0,80 =
+<strong>37.500 TL brüt kira</strong>
+</p>
+
+<p>
+Stopaj:
+</p>
+
+<p>
+37.500 × %20 =
+<strong>7.500 TL</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kira Stopajını Kim Öder?</h2>
+
+<p>
+Gelir Vergisi Kanununun 94. maddesinde sayılan kişi,
+kurum ve kuruluşlar, stopaja tabi gayrimenkulleri
+kiraladıklarında yaptıkları kira ödemeleri üzerinden
+gelir vergisi kesintisi yapmakla yükümlüdür.
+</p>
+
+<p>
+Bu nedenle her kira ilişkisinde otomatik olarak
+stopaj uygulanacağı düşünülmemelidir. Kiracının
+ve kiraya verenin hukuki/vergi statüsü önemlidir.
+</p>
+
+<p>
+Örneğin Gelir İdaresi Başkanlığı rehberinde,
+kazançları basit usulde tespit olunan kiracının
+kira ödemesi üzerinden vergi kesintisi yapma
+yükümlülüğünün bulunmadığı belirtilmektedir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Konut Kirasında Stopaj Var mı?</h2>
+
+<p>
+Bu hesaplayıcı esas olarak stopaja tabi
+<strong>işyeri kira ödemeleri</strong> için hazırlanmıştır.
+</p>
+
+<p>
+Her kira ödemesi otomatik olarak %20 stopaja tabi değildir.
+Kiranın niteliği, kiracının vergi statüsü ve kiraya verenin
+durumu dikkate alınmalıdır.
+</p>
+
+<p>
+Kiralanan gayrimenkulün hem konut hem işyeri olarak
+kullanıldığı bazı durumlarda farklı vergisel sonuçlar
+doğabileceğinden güncel Gelir İdaresi düzenlemeleri
+esas alınmalıdır.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kira Stopajı Hesaplama Örnekleri</h2>
+
+<p>
+<strong>10.000 TL net kira</strong><br>
+Brüt kira: 12.500 TL<br>
+Stopaj: 2.500 TL
+</p>
+
+<p>
+<strong>20.000 TL net kira</strong><br>
+Brüt kira: 25.000 TL<br>
+Stopaj: 5.000 TL
+</p>
+
+<p>
+<strong>30.000 TL net kira</strong><br>
+Brüt kira: 37.500 TL<br>
+Stopaj: 7.500 TL
+</p>
+
+<p>
+<strong>40.000 TL net kira</strong><br>
+Brüt kira: 50.000 TL<br>
+Stopaj: 10.000 TL
+</p>
+
+<p>
+<strong>50.000 TL net kira</strong><br>
+Brüt kira: 62.500 TL<br>
+Stopaj: 12.500 TL
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+<h3>Kira stopaj oranı kaç?</h3>
+
+<p>
+Stopaja tabi işyeri kira ödemelerinde genel gelir vergisi
+kesintisi oranı brüt tutar üzerinden %20'dir.
+</p>
+
+
+<h3>Kira stopajı brüt üzerinden mi hesaplanır?</h3>
+
+<p>
+Evet. Stopaj, stopaja tabi kira ödemesinin brüt tutarı
+üzerinden hesaplanır.
+</p>
+
+
+<h3>Net kira ile brüt kira arasındaki fark nedir?</h3>
+
+<p>
+Net kira, kesinti sonrasında mal sahibine kalan tutarı;
+brüt kira ise stopaj dahil toplam kira tutarını ifade eder.
+</p>
+
+
+<h3>Net kira 20.000 TL ise stopaj kaç TL?</h3>
+
+<p>
+%20 stopaj oranında brüt kira 25.000 TL,
+stopaj ise 5.000 TL olur.
+</p>
+
+
+<h3>Brüt kira 20.000 TL ise stopaj kaç TL?</h3>
+
+<p>
+%20 stopaj oranında stopaj 4.000 TL,
+net kira ise 16.000 TL olur.
+</p>
+
+
+<h3>Her kirada stopaj var mı?</h3>
+
+<p>
+Hayır. Stopaj yükümlülüğü kira ilişkisinin ve tarafların
+vergi statüsüne göre değişebilir. Bu araç stopaja tabi
+işyeri kira ödemelerinin matematiksel hesabı için hazırlanmıştır.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Diğer Hesaplama Araçları</h2>
+
+<p>
+<a href="/kira-artis-hesaplama.html">
+Kira Artış Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/gelir-vergisi-hesaplama.html">
+Gelir Vergisi Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kdv-hesaplama.html">
+KDV Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kar-marji-hesaplama.html">
+Kâr Oranı ve Kâr Marjı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/yuzde-hesaplama.html">
+Yüzde Hesaplama →
+</a>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Bilgilendirme</h2>
+
+<p>
+Bu araç genel bilgilendirme ve matematiksel hesaplama
+amacıyla hazırlanmıştır. Vergisel yükümlülükler tarafların
+statüsüne ve işlemin niteliğine göre değişebilir.
+Kesin vergisel işlem öncesinde Gelir İdaresi Başkanlığının
+güncel düzenlemeleri veya mali müşavir görüşü esas alınmalıdır.
+</p>
+
+</section>
+
+</main>
+
+
+<footer>
+<div class="wrap">
+© <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+</div>
+</footer>
+
+
+<script>
+
+function para(deger){
+
+return deger.toLocaleString("tr-TR",{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+})+" TL";
+
+}
+
+
+function yuzde(deger){
+
+return deger.toLocaleString("tr-TR",{
+minimumFractionDigits:0,
+maximumFractionDigits:2
+})+"%";
+
+}
+
+
+function hesapla(){
+
+const tur=
+document.getElementById("tur").value;
+
+const kira=
+parseFloat(
+document.getElementById("kira").value
+);
+
+const oran=
+parseFloat(
+document.getElementById("oran").value
+);
+
+const sonuc=
+document.getElementById("sonuc");
+
+
+if(
+isNaN(kira) ||
+kira<=0
+){
+
+sonuc.innerHTML=
+"Lütfen 0'dan büyük geçerli bir kira tutarı girin.";
+
+return;
+
+}
+
+
+if(
+isNaN(oran) ||
+oran<0 ||
+oran>=100
+){
+
+sonuc.innerHTML=
+"Lütfen 0 ile 100 arasında geçerli bir stopaj oranı girin.";
+
+return;
+
+}
+
+
+let brut;
+let net;
+let stopaj;
+
+
+if(tur==="netten"){
+
+net=kira;
+
+brut=
+net/(1-oran/100);
+
+stopaj=
+brut-net;
+
+}else{
+
+brut=kira;
+
+stopaj=
+brut*(oran/100);
+
+net=
+brut-stopaj;
+
+}
+
+
+sonuc.innerHTML=
+
+"Hesaplama türü: <strong>"+
+(tur==="netten"
+?"Net Kiradan Brüt Hesaplama"
+:"Brüt Kiradan Net Hesaplama")+
+"</strong><br>"+
+
+"Stopaj oranı: <strong>"+
+yuzde(oran)+
+"</strong><br>"+
+
+"Brüt kira: <strong>"+
+para(brut)+
+"</strong><br>"+
+
+"Stopaj tutarı: <strong>"+
+para(stopaj)+
+"</strong><br>"+
+
+"Mal sahibine kalan net kira: <strong>"+
+para(net)+
+"</strong>";
+
+}
+
+
+document
+.getElementById("kira")
+.addEventListener("keydown",function(e){
+
+if(e.key==="Enter"){
+hesapla();
+}
+
+});
+
+
+document
+.getElementById("oran")
+.addEventListener("keydown",function(e){
+
+if(e.key==="Enter"){
+hesapla();
+}
+
+});
+
+
+document.getElementById("year").textContent=
+new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
