@@ -8,7 +8,7 @@
 
 <title>Online Hesaplama Araçları | Finans, Maaş, Ticaret ve Dönüştürme - Araclio</title>
 
-<meta name="description" content="Ücretsiz online hesaplama araçları. 2026 asgari ücret, fazla mesai ücreti, emekli maaşı zammı, gelir vergisi, işsizlik maaşı, yıllık izin, kıdem, kredi, KDV ve yüzde hesaplama.">
+<meta name="description" content="Ücretsiz online hesaplama araçları. 2026 netten brüte maaş, asgari ücret, fazla mesai, emekli maaşı, gelir vergisi, işsizlik maaşı, yıllık izin, kıdem, kredi, KDV ve yüzde hesaplama.">
 
 <meta name="robots" content="index,follow">
 
@@ -20,172 +20,37 @@
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-
 body{
 margin:0;
 font-family:Arial,Helvetica,sans-serif;
-background:
-radial-gradient(circle at 50% -10%,#123b69 0,#071a30 32%,#04101f 65%,#020a14 100%);
+background:radial-gradient(circle at 50% -10%,#123b69 0,#071a30 32%,#04101f 65%,#020a14 100%);
 color:#fff;
 min-height:100vh;
 }
-
 a{color:inherit}
-
-.wrap{
-width:min(1120px,calc(100% - 32px));
-margin:auto;
-}
-
-header{
-position:sticky;
-top:0;
-z-index:50;
-background:rgba(3,14,27,.94);
-backdrop-filter:blur(14px);
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.nav{
-height:76px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.brand{
-text-decoration:none;
-font-size:38px;
-font-weight:900;
-letter-spacing:-2px;
-color:#fff;
-}
-
+.wrap{width:min(1120px,calc(100% - 32px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(3,14,27,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.brand{text-decoration:none;font-size:38px;font-weight:900;letter-spacing:-2px;color:#fff}
 .brand span{color:#ffd400}
-
-.tag{
-color:#9db2c8;
-font-size:13px;
-font-weight:700;
-letter-spacing:.5px;
-}
-
-.hero{
-padding:48px 0 22px;
-text-align:center;
-}
-
-.eyebrow{
-display:inline-block;
-margin:0 0 15px;
-color:#ffd400;
-font-size:12px;
-font-weight:900;
-letter-spacing:2px;
-}
-
-.hero h1{
-max-width:760px;
-margin:0 auto;
-font-size:clamp(34px,7vw,58px);
-line-height:1.02;
-letter-spacing:-2px;
-}
-
+.tag{color:#9db2c8;font-size:13px;font-weight:700;letter-spacing:.5px}
+.hero{padding:48px 0 22px;text-align:center}
+.eyebrow{display:inline-block;margin:0 0 15px;color:#ffd400;font-size:12px;font-weight:900;letter-spacing:2px}
+.hero h1{max-width:760px;margin:0 auto;font-size:clamp(34px,7vw,58px);line-height:1.02;letter-spacing:-2px}
 .hero h1 span{color:#ffd400}
-
-.hero>p:not(.eyebrow){
-max-width:690px;
-margin:18px auto 0;
-color:#b7c7d8;
-line-height:1.65;
-font-size:17px;
-}
-
-.search-area{
-max-width:720px;
-margin:30px auto 0;
-}
-
+.hero>p:not(.eyebrow){max-width:690px;margin:18px auto 0;color:#b7c7d8;line-height:1.65;font-size:17px}
+.search-area{max-width:720px;margin:30px auto 0}
 .search-box{position:relative}
-
-.search-box input{
-width:100%;
-border:0;
-outline:none;
-border-radius:17px;
-padding:18px 58px 18px 20px;
-background:#fff;
-color:#17202b;
-font-size:16px;
-box-shadow:0 8px 35px rgba(0,0,0,.3);
-}
-
-.search-box input:focus{
-box-shadow:0 0 0 3px rgba(39,159,255,.35);
-}
-
-.search-icon{
-position:absolute;
-right:19px;
-top:50%;
-transform:translateY(-50%);
-color:#0b2a4b;
-font-size:25px;
-}
-
-.search-note{
-margin-top:9px;
-color:#8299af;
-font-size:13px;
-}
-
+.search-box input{width:100%;border:0;outline:none;border-radius:17px;padding:18px 58px 18px 20px;background:#fff;color:#17202b;font-size:16px;box-shadow:0 8px 35px rgba(0,0,0,.3)}
+.search-box input:focus{box-shadow:0 0 0 3px rgba(39,159,255,.35)}
+.search-icon{position:absolute;right:19px;top:50%;transform:translateY(-50%);color:#0b2a4b;font-size:25px}
+.search-note{margin-top:9px;color:#8299af;font-size:13px}
 .categories{padding:25px 0 20px}
-
-.categories-title{
-margin:0 0 17px;
-font-size:20px;
-}
-
-.category-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:12px;
-}
-
-.category{
-min-height:125px;
-padding:18px 10px;
-border:1px solid rgba(255,255,255,.10);
-border-radius:16px;
-background:linear-gradient(145deg,#102b47,#091c31);
-text-decoration:none;
-text-align:center;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-box-shadow:0 8px 25px rgba(0,0,0,.18);
-transition:.2s ease;
-}
-
-.category:hover{
-transform:translateY(-3px);
-border-color:rgba(255,255,255,.25);
-}
-
-.cat-icon{
-width:52px;
-height:52px;
-border-radius:14px;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-bottom:10px;
-font-size:28px;
-font-weight:900;
-}
-
+.categories-title{margin:0 0 17px;font-size:20px}
+.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.category{min-height:125px;padding:18px 10px;border:1px solid rgba(255,255,255,.10);border-radius:16px;background:linear-gradient(145deg,#102b47,#091c31);text-decoration:none;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 8px 25px rgba(0,0,0,.18);transition:.2s ease}
+.category:hover{transform:translateY(-3px);border-color:rgba(255,255,255,.25)}
+.cat-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:10px;font-size:28px;font-weight:900}
 .green{background:#123f38;color:#38e99b}
 .blue{background:#102f4c;color:#37aaff}
 .purple{background:#332650;color:#bd7cff}
@@ -195,201 +60,36 @@ font-weight:900;
 .yellow{background:#493e13;color:#ffd83e}
 .red{background:#472129;color:#ff6274}
 .gray{background:#263445;color:#b7c7d8}
-
-.category strong{
-font-size:14px;
-line-height:1.25;
-}
-
-.category small{
-display:block;
-color:#8fa5ba;
-font-size:11px;
-margin-top:5px;
-}
-
+.category strong{font-size:14px;line-height:1.25}
+.category small{display:block;color:#8fa5ba;font-size:11px;margin-top:5px}
 .tool-section{margin-top:35px}
-
-.section-head{
-display:flex;
-justify-content:space-between;
-align-items:end;
-gap:15px;
-margin-bottom:16px;
-}
-
-.section-head h2{
-margin:0;
-font-size:25px;
-}
-
-.section-head p{
-margin:5px 0 0;
-color:#93a8bc;
-font-size:14px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:14px;
-}
-
-.card{
-background:linear-gradient(145deg,#102a44,#081a2d);
-border:1px solid rgba(255,255,255,.09);
-border-radius:17px;
-padding:20px;
-box-shadow:0 9px 28px rgba(0,0,0,.18);
-}
-
-.card h3{
-margin:0 0 8px;
-font-size:17px;
-}
-
-.card p{
-color:#9eb0c2;
-line-height:1.5;
-font-size:14px;
-margin:8px 0;
-}
-
-.card a{
-display:inline-block;
-margin-top:5px;
-color:#52b7ff;
-font-weight:800;
-text-decoration:none;
-}
-
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:16px}
+.section-head h2{margin:0;font-size:25px}
+.section-head p{margin:5px 0 0;color:#93a8bc;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:linear-gradient(145deg,#102a44,#081a2d);border:1px solid rgba(255,255,255,.09);border-radius:17px;padding:20px;box-shadow:0 9px 28px rgba(0,0,0,.18)}
+.card h3{margin:0 0 8px;font-size:17px}
+.card p{color:#9eb0c2;line-height:1.5;font-size:14px;margin:8px 0}
+.card a{display:inline-block;margin-top:5px;color:#52b7ff;font-weight:800;text-decoration:none}
 .card a:hover{color:#ffd400}
-
-.badge{
-display:inline-block;
-margin-bottom:11px;
-padding:5px 9px;
-border-radius:20px;
-color:#081727;
-background:#ffd400;
-font-size:10px;
-font-weight:900;
-text-transform:uppercase;
-}
-
-.popular-panel{
-margin-top:28px;
-padding:25px;
-background:#f5f8fc;
-color:#101923;
-border-radius:22px;
-box-shadow:0 20px 55px rgba(0,0,0,.3);
-}
-
-.popular-title{
-display:flex;
-align-items:center;
-justify-content:space-between;
-margin-bottom:17px;
-}
-
-.popular-title h2{
-margin:0;
-font-size:24px;
-}
-
-.popular-title span{
-color:#168de2;
-font-size:13px;
-font-weight:700;
-}
-
-.popular-list{
-display:grid;
-gap:10px;
-}
-
-.popular-item{
-display:flex;
-align-items:center;
-gap:13px;
-padding:14px;
-background:#fff;
-border-radius:14px;
-text-decoration:none;
-box-shadow:0 3px 12px rgba(15,35,55,.08);
-}
-
-.popular-icon{
-flex:0 0 48px;
-height:48px;
-border-radius:12px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:24px;
-}
-
+.badge{display:inline-block;margin-bottom:11px;padding:5px 9px;border-radius:20px;color:#081727;background:#ffd400;font-size:10px;font-weight:900;text-transform:uppercase}
+.popular-panel{margin-top:28px;padding:25px;background:#f5f8fc;color:#101923;border-radius:22px;box-shadow:0 20px 55px rgba(0,0,0,.3)}
+.popular-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px}
+.popular-title h2{margin:0;font-size:24px}
+.popular-title span{color:#168de2;font-size:13px;font-weight:700}
+.popular-list{display:grid;gap:10px}
+.popular-item{display:flex;align-items:center;gap:13px;padding:14px;background:#fff;border-radius:14px;text-decoration:none;box-shadow:0 3px 12px rgba(15,35,55,.08)}
+.popular-icon{flex:0 0 48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px}
 .popular-text{flex:1}
-
-.popular-text strong{
-display:block;
-font-size:15px;
-}
-
-.popular-text small{
-display:block;
-color:#687787;
-margin-top:4px;
-line-height:1.3;
-}
-
-.arrow{
-color:#174a78;
-font-size:25px;
-font-weight:700;
-}
-
-#searchEmpty{
-display:none;
-margin:25px 0;
-padding:25px;
-border-radius:16px;
-text-align:center;
-background:#10263e;
-}
-
-.trust-box{
-margin:45px 0;
-padding:28px;
-border:1px solid rgba(255,255,255,.08);
-border-radius:20px;
-background:#081a2c;
-}
-
+.popular-text strong{display:block;font-size:15px}
+.popular-text small{display:block;color:#687787;margin-top:4px;line-height:1.3}
+.arrow{color:#174a78;font-size:25px;font-weight:700}
+#searchEmpty{display:none;margin:25px 0;padding:25px;border-radius:16px;text-align:center;background:#10263e}
+.trust-box{margin:45px 0;padding:28px;border:1px solid rgba(255,255,255,.08);border-radius:20px;background:#081a2c}
 .trust-box h2{margin-top:0}
-
-.trust-box p{
-color:#9eb1c3;
-line-height:1.65;
-}
-
-footer{
-margin-top:50px;
-padding:35px 0;
-border-top:1px solid rgba(255,255,255,.08);
-background:#020a13;
-color:#8397aa;
-text-align:center;
-font-size:13px;
-}
-
-footer a{
-color:#a8bdd0;
-text-decoration:none;
-margin:4px;
-}
-
+.trust-box p{color:#9eb1c3;line-height:1.65}
+footer{margin-top:50px;padding:35px 0;border-top:1px solid rgba(255,255,255,.08);background:#020a13;color:#8397aa;text-align:center;font-size:13px}
+footer a{color:#a8bdd0;text-decoration:none;margin:4px}
 .category-hidden{display:none!important}
 
 @media(max-width:760px){
@@ -430,141 +130,67 @@ margin:4px;
 <main class="wrap">
 
 <section class="hero">
-
 <p class="eyebrow">60+ PRATİK ARAÇ • ÜCRETSİZ • ÜYELİKSİZ</p>
-
 <h1>Hesaplamak artık daha <span>kolay.</span></h1>
-
 <p>İhtiyacınız olan hesaplama araçları, pratik bilgiler ve faydalı araçlar Araclio'da sizi bekliyor.</p>
 
 <div class="search-area">
-
 <div class="search-box">
 <input id="toolSearch" type="search" placeholder="Hangi aracı arıyorsunuz?" autocomplete="off" aria-label="Hesaplama aracı ara">
 <span class="search-icon">⌕</span>
 </div>
-
-<div class="search-note">
-Örn: fazla mesai, asgari ücret, emekli maaşı, işsizlik, yıllık izin, gelir vergisi...
-</div>
-
+<div class="search-note">Örn: netten brüte, fazla mesai, asgari ücret, emekli maaşı, işsizlik, gelir vergisi...</div>
 </div>
 </section>
 
 <section class="categories">
-
 <h2 class="categories-title">Araç Kategorileri</h2>
 
 <div class="category-grid">
-
-<a class="category" href="#maas">
-<span class="cat-icon green">▦</span>
-<strong>Maaş &amp; Çalışma</strong>
-<small>Maaş ve tazminat</small>
-</a>
-
-<a class="category" href="#finans">
-<span class="cat-icon orange">₺</span>
-<strong>Finans &amp; Para</strong>
-<small>Kredi ve faiz</small>
-</a>
-
-<a class="category" href="#gunluk">
-<span class="cat-icon blue">%</span>
-<strong>Yüzde &amp; Oran</strong>
-<small>Pratik hesaplar</small>
-</a>
-
-<a class="category" href="#gunluk">
-<span class="cat-icon purple">▣</span>
-<strong>Tarih &amp; Zaman</strong>
-<small>Tarih araçları</small>
-</a>
-
-<a class="category" href="#konut">
-<span class="cat-icon pink">⌂</span>
-<strong>Konut &amp; Emlak</strong>
-<small>Tapu ve kira</small>
-</a>
-
-<a class="category" href="#donusum">
-<span class="cat-icon yellow">↔️</span>
-<strong>Ölçü &amp; Dönüşüm</strong>
-<small>Birim dönüştürme</small>
-</a>
-
-<a class="category" href="#saglik">
-<span class="cat-icon cyan">♥️</span>
-<strong>Sağlık &amp; Yaşam</strong>
-<small>Yaşam araçları</small>
-</a>
-
-<a class="category" href="#gunluk">
-<span class="cat-icon red">✓</span>
-<strong>Günlük Araçlar</strong>
-<small>Pratik işlemler</small>
-</a>
-
-<a class="category" href="#tum-araclar">
-<span class="cat-icon gray">☷</span>
-<strong>Tüm Araçlar</strong>
-<small>Hepsini görüntüle</small>
-</a>
-
+<a class="category" href="#maas"><span class="cat-icon green">▦</span><strong>Maaş &amp; Çalışma</strong><small>Maaş ve tazminat</small></a>
+<a class="category" href="#finans"><span class="cat-icon orange">₺</span><strong>Finans &amp; Para</strong><small>Kredi ve faiz</small></a>
+<a class="category" href="#gunluk"><span class="cat-icon blue">%</span><strong>Yüzde &amp; Oran</strong><small>Pratik hesaplar</small></a>
+<a class="category" href="#gunluk"><span class="cat-icon purple">▣</span><strong>Tarih &amp; Zaman</strong><small>Tarih araçları</small></a>
+<a class="category" href="#konut"><span class="cat-icon pink">⌂</span><strong>Konut &amp; Emlak</strong><small>Tapu ve kira</small></a>
+<a class="category" href="#donusum"><span class="cat-icon yellow">↔️</span><strong>Ölçü &amp; Dönüşüm</strong><small>Birim dönüştürme</small></a>
+<a class="category" href="#saglik"><span class="cat-icon cyan">♥️</span><strong>Sağlık &amp; Yaşam</strong><small>Yaşam araçları</small></a>
+<a class="category" href="#gunluk"><span class="cat-icon red">✓</span><strong>Günlük Araçlar</strong><small>Pratik işlemler</small></a>
+<a class="category" href="#tum-araclar"><span class="cat-icon gray">☷</span><strong>Tüm Araçlar</strong><small>Hepsini görüntüle</small></a>
 </div>
 </section>
 
 <section id="popular" class="popular-panel">
-
-<div class="popular-title">
-<h2>🔥 Popüler Araçlar</h2>
-<span>Araçlar</span>
-</div>
+<div class="popular-title"><h2>🔥 Popüler Araçlar</h2><span>Araçlar</span></div>
 
 <div class="popular-list">
 
 <a class="popular-item" href="/asgari-ucret-hesaplama.html">
 <span class="popular-icon green">₺</span>
-<span class="popular-text">
-<strong>Asgari Ücret Hesaplama 2026</strong>
-<small>Net, brüt ve günlük asgari ücret hesabı.</small>
-</span>
+<span class="popular-text"><strong>Asgari Ücret Hesaplama 2026</strong><small>Net, brüt ve günlük asgari ücret hesabı.</small></span>
 <span class="arrow">›</span>
 </a>
 
 <a class="popular-item" href="/kidem-tazminati-hesaplama.html">
 <span class="popular-icon blue">▦</span>
-<span class="popular-text">
-<strong>Kıdem Tazminatı Hesaplama</strong>
-<small>Çalışma sürenize göre tahmini kıdem tazminatınızı hesaplayın.</small>
-</span>
+<span class="popular-text"><strong>Kıdem Tazminatı Hesaplama</strong><small>Çalışma sürenize göre tahmini kıdem tazminatınızı hesaplayın.</small></span>
 <span class="arrow">›</span>
 </a>
 
 <a class="popular-item" href="/brut-net-maas-hesaplama.html">
 <span class="popular-icon orange">₺</span>
-<span class="popular-text">
-<strong>Brüt Net Maaş Hesaplama</strong>
-<small>Brüt maaştan tahmini net maaşınızı hesaplayın.</small>
-</span>
+<span class="popular-text"><strong>Brüt Net Maaş Hesaplama</strong><small>Brüt maaştan tahmini net maaşınızı hesaplayın.</small></span>
 <span class="arrow">›</span>
 </a>
 
 <a class="popular-item" href="/yuzde-hesaplama.html">
 <span class="popular-icon green">%</span>
-<span class="popular-text">
-<strong>Yüzde Hesaplama</strong>
-<small>Yüzde ve temel oran hesaplamalarını yapın.</small>
-</span>
+<span class="popular-text"><strong>Yüzde Hesaplama</strong><small>Yüzde ve temel oran hesaplamalarını yapın.</small></span>
 <span class="arrow">›</span>
 </a>
 
 <a class="popular-item" href="/kredi-hesaplama.html">
 <span class="popular-icon purple">₺</span>
-<span class="popular-text">
-<strong>Kredi Hesaplama</strong>
-<small>Kredi tutarı, faiz ve vadeye göre taksiti hesaplayın.</small>
-</span>
+<span class="popular-text"><strong>Kredi Hesaplama</strong><small>Kredi tutarı, faiz ve vadeye göre taksiti hesaplayın.</small></span>
 <span class="arrow">›</span>
 </a>
 
@@ -577,7 +203,6 @@ margin:4px;
 </div>
 
 <section id="finans" class="tool-section">
-
 <div class="section-head">
 <div>
 <h2>💰 Finans ve Ticaret</h2>
@@ -690,15 +315,21 @@ margin:4px;
 </section>
 
 <section id="maas" class="tool-section">
-
 <div class="section-head">
 <div>
 <h2>💼 Maaş ve Çalışma</h2>
-<p>Asgari ücret, fazla mesai, emekli maaşı, işsizlik, yıllık izin ve tazminat hesaplamaları.</p>
+<p>Net-brüt maaş, asgari ücret, fazla mesai, emekli maaşı, işsizlik, izin ve tazminat hesaplamaları.</p>
 </div>
 </div>
 
 <div class="grid">
+
+<article class="card tool-card" data-search="netten brüte maaş 2026 net brüt maaş hesaplama bordro">
+<span class="badge">2026</span>
+<h3>Netten Brüte Maaş Hesaplama</h3>
+<p>Net maaşınızın 2026 kesintilerine göre tahmini brüt karşılığını hesaplayın.</p>
+<a href="/netten-brute-maas-hesaplama.html">Hesapla →</a>
+</article>
 
 <article class="card tool-card" data-search="asgari ücret 2026 net brüt günlük asgari ücret maaş">
 <span class="badge">2026</span>
@@ -769,7 +400,6 @@ margin:4px;
 </section>
 
 <section id="konut" class="tool-section">
-
 <div class="section-head">
 <div>
 <h2>🏠 Konut ve Gayrimenkul</h2>
@@ -795,7 +425,6 @@ margin:4px;
 </section>
 
 <section id="gunluk" class="tool-section">
-
 <div class="section-head">
 <div>
 <h2>🧰 Günlük Pratik Araçlar</h2>
@@ -887,7 +516,6 @@ margin:4px;
 </section>
 
 <section id="saglik" class="tool-section">
-
 <div class="section-head">
 <div>
 <h2>♥️ Sağlık ve Yaşam</h2>
@@ -925,7 +553,6 @@ margin:4px;
 </section>
 
 <section id="donusum" class="tool-section">
-
 <div class="section-head">
 <div>
 <h2>📐 Ölçü ve Dönüşüm</h2>
@@ -935,50 +562,23 @@ margin:4px;
 
 <div class="grid">
 
-<article class="card tool-card" data-search="güç watt kilowatt hp">
-<h3>Güç Dönüştürücü</h3>
-<a href="/guc-donusturucu.html">Dönüştür →</a>
-</article>
+<article class="card tool-card" data-search="güç watt kilowatt hp"><h3>Güç Dönüştürücü</h3><a href="/guc-donusturucu.html">Dönüştür →</a></article>
 
-<article class="card tool-card" data-search="enerji joule">
-<h3>Enerji Dönüştürücü</h3>
-<a href="/enerji-donusturucu.html">Dönüştür →</a>
-</article>
+<article class="card tool-card" data-search="enerji joule"><h3>Enerji Dönüştürücü</h3><a href="/enerji-donusturucu.html">Dönüştür →</a></article>
 
-<article class="card tool-card" data-search="hacim litre mililitre">
-<h3>Hacim Dönüştürücü</h3>
-<a href="/hacim-donusturucu.html">Dönüştür →</a>
-</article>
+<article class="card tool-card" data-search="hacim litre mililitre"><h3>Hacim Dönüştürücü</h3><a href="/hacim-donusturucu.html">Dönüştür →</a></article>
 
-<article class="card tool-card" data-search="alan metrekare hektar dönüm">
-<h3>Alan Dönüştürücü</h3>
-<a href="/alan-donusturucu.html">Dönüştür →</a>
-</article>
+<article class="card tool-card" data-search="alan metrekare hektar dönüm"><h3>Alan Dönüştürücü</h3><a href="/alan-donusturucu.html">Dönüştür →</a></article>
 
-<article class="card tool-card" data-search="ağırlık kilogram gram ton">
-<h3>Ağırlık Dönüştürücü</h3>
-<a href="/agirlik-donusturucu.html">Dönüştür →</a>
-</article>
+<article class="card tool-card" data-search="ağırlık kilogram gram ton"><h3>Ağırlık Dönüştürücü</h3><a href="/agirlik-donusturucu.html">Dönüştür →</a></article>
 
-<article class="card tool-card" data-search="sıcaklık celsius fahrenheit kelvin">
-<h3>Sıcaklık Dönüştürücü</h3>
-<a href="/sicaklik-donusturucu.html">Dönüştür →</a>
-</article>
+<article class="card tool-card" data-search="sıcaklık celsius fahrenheit kelvin"><h3>Sıcaklık Dönüştürücü</h3><a href="/sicaklik-donusturucu.html">Dönüştür →</a></article>
 
-<article class="card tool-card" data-search="uzunluk metre kilometre santimetre">
-<h3>Uzunluk Dönüştürücü</h3>
-<a href="/uzunluk-donusturucu.html">Dönüştür →</a>
-</article>
+<article class="card tool-card" data-search="uzunluk metre kilometre santimetre"><h3>Uzunluk Dönüştürücü</h3><a href="/uzunluk-donusturucu.html">Dönüştür →</a></article>
 
-<article class="card tool-card" data-search="mb gb tb veri">
-<h3>MB, GB ve TB Dönüştürücü</h3>
-<a href="/mb-gb-tb-donusturucu.html">Dönüştür →</a>
-</article>
+<article class="card tool-card" data-search="mb gb tb veri"><h3>MB, GB ve TB Dönüştürücü</h3><a href="/mb-gb-tb-donusturucu.html">Dönüştür →</a></article>
 
-<article class="card tool-card" data-search="zaman saat dakika saniye">
-<h3>Saat, Dakika ve Saniye</h3>
-<a href="/zaman-donusturucu.html">Dönüştür →</a>
-</article>
+<article class="card tool-card" data-search="zaman saat dakika saniye"><h3>Saat, Dakika ve Saniye</h3><a href="/zaman-donusturucu.html">Dönüştür →</a></article>
 
 </div>
 </section>
@@ -993,11 +593,7 @@ margin:4px;
 
 <p>Finansal, hukuki, vergi ve sağlıkla ilgili sonuçlar genel bilgilendirme amaçlıdır. Resmî işlem veya kişisel karar öncesinde güncel resmî bilgiler kontrol edilmelidir.</p>
 
-<p>
-<a href="/en/" style="color:#ffd400;font-weight:bold;">
-English Version →
-</a>
-</p>
+<p><a href="/en/" style="color:#ffd400;font-weight:bold;">English Version →</a></p>
 
 </section>
 
@@ -1045,10 +641,7 @@ let totalVisible=0;
 
 cards.forEach(function(card){
 
-const text=normalizeText(
-card.innerText+" "+(card.dataset.search||"")
-);
-
+const text=normalizeText(card.innerText+" "+(card.dataset.search||""));
 const show=query===""||text.includes(query);
 
 card.style.display=show?"":"none";
@@ -1059,9 +652,7 @@ if(show){totalVisible++;}
 
 sections.forEach(function(section){
 
-const visibleCards=
-Array.from(section.querySelectorAll(".tool-card"))
-.filter(function(card){
+const visibleCards=Array.from(section.querySelectorAll(".tool-card")).filter(function(card){
 return card.style.display!=="none";
 });
 
@@ -1073,10 +664,7 @@ section.classList.remove("category-hidden");
 
 });
 
-empty.style.display=
-query!==""&&totalVisible===0
-?"block"
-:"none";
+empty.style.display=query!==""&&totalVisible===0?"block":"none";
 
 });
 
@@ -1084,8 +672,7 @@ searchInput.addEventListener("keydown",function(event){
 
 if(event.key!=="Enter"){return;}
 
-const visibleCards=
-Array.from(cards).filter(function(card){
+const visibleCards=Array.from(cards).filter(function(card){
 return card.style.display!=="none";
 });
 
