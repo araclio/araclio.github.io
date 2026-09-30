@@ -1,420 +1,380 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<meta name="google-adsense-account" content="ca-pub-7634654090472031">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Online Hesaplama Araçları | Finans, Maaş, Ticaret ve Dönüştürme - Araclio</title>
 
-<meta name="description" content="Ücretsiz online hesaplama araçları. 2026 rapor parası, maaş vergi dilimi, netten brüte maaş, asgari ücret, fazla mesai, işsizlik maaşı, yıllık izin, kıdem, kredi ve KDV hesaplama.">
+<meta name="description" content="Ücretsiz online hesaplama araçları. 2026 rapor parası, maaş vergi dilimi, netten brüte maaş, kira stopajı, asgari ücret, fazla mesai, işsizlik maaşı, kıdem, kredi ve KDV hesaplama.">
 
 <meta name="robots" content="index,follow">
+<meta name="google-adsense-account" content="ca-pub-7634654090472031">
 
 <link rel="canonical" href="https://araclio.com/">
-<link rel="alternate" hreflang="tr" href="https://araclio.com/">
-<link rel="alternate" hreflang="en" href="https://araclio.com/en/">
-<link rel="alternate" hreflang="x-default" href="https://araclio.com/en/">
 
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:radial-gradient(circle at 50% -10%,#123b69 0,#071a30 32%,#04101f 65%,#020a14 100%);
-color:#fff;
-min-height:100vh;
+:root{
+  --bg:#071321;
+  --bg2:#0b1d32;
+  --panel:#102842;
+  --line:#203b58;
+  --text:#f5f7fa;
+  --muted:#aebdca;
+  --accent:#f0c873;
+  --accent2:#d9a441;
+  --white:#ffffff;
 }
 
-a{color:inherit}
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:
+    radial-gradient(circle at top right,#102d4c 0,transparent 35%),
+    linear-gradient(180deg,var(--bg),#081725 55%,#06101b);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a{
+  color:inherit;
+}
 
 .wrap{
-width:min(1120px,calc(100% - 32px));
-margin:auto;
+  width:min(1180px,calc(100% - 32px));
+  margin:auto;
 }
 
 header{
-position:sticky;
-top:0;
-z-index:50;
-background:rgba(3,14,27,.94);
-backdrop-filter:blur(14px);
-border-bottom:1px solid rgba(255,255,255,.08);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:rgba(7,19,33,.94);
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter:blur(12px);
 }
 
 .nav{
-height:76px;
-display:flex;
-align-items:center;
-justify-content:space-between;
+  min-height:68px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
 }
 
 .brand{
-text-decoration:none;
-font-size:38px;
-font-weight:900;
-letter-spacing:-2px;
-color:#fff;
+  font-size:26px;
+  font-weight:900;
+  text-decoration:none;
+  letter-spacing:-1px;
+  color:var(--white);
 }
 
-.brand span{color:#ffd400}
-
-.tag{
-color:#9db2c8;
-font-size:13px;
-font-weight:700;
-letter-spacing:.5px;
+.nav-tag{
+  font-size:12px;
+  font-weight:800;
+  color:var(--accent);
+  letter-spacing:.08em;
 }
 
 .hero{
-padding:48px 0 22px;
-text-align:center;
+  padding:72px 0 42px;
+  text-align:center;
 }
 
 .eyebrow{
-display:inline-block;
-margin:0 0 15px;
-color:#ffd400;
-font-size:12px;
-font-weight:900;
-letter-spacing:2px;
+  margin:0 0 12px;
+  font-size:13px;
+  font-weight:900;
+  letter-spacing:.12em;
+  color:var(--accent);
 }
 
 .hero h1{
-max-width:760px;
-margin:0 auto;
-font-size:clamp(34px,7vw,58px);
-line-height:1.02;
-letter-spacing:-2px;
+  margin:0 auto 14px;
+  max-width:850px;
+  font-size:clamp(36px,6vw,64px);
+  line-height:1.04;
+  letter-spacing:-2px;
 }
 
-.hero h1 span{color:#ffd400}
-
-.hero>p:not(.eyebrow){
-max-width:690px;
-margin:18px auto 0;
-color:#b7c7d8;
-line-height:1.65;
-font-size:17px;
+.hero-text{
+  max-width:720px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:18px;
 }
 
-.search-area{
-max-width:720px;
-margin:30px auto 0;
+.search-box{
+  max-width:760px;
+  margin:30px auto 0;
+  position:relative;
 }
-
-.search-box{position:relative}
 
 .search-box input{
-width:100%;
-border:0;
-outline:none;
-border-radius:17px;
-padding:18px 58px 18px 20px;
-background:#fff;
-color:#17202b;
-font-size:16px;
-box-shadow:0 8px 35px rgba(0,0,0,.3);
+  width:100%;
+  border:1px solid var(--line);
+  background:#0d2238;
+  color:var(--white);
+  border-radius:16px;
+  padding:18px 52px 18px 18px;
+  font-size:16px;
+  outline:none;
 }
 
 .search-box input:focus{
-box-shadow:0 0 0 3px rgba(39,159,255,.35);
+  border-color:var(--accent2);
 }
 
 .search-icon{
-position:absolute;
-right:19px;
-top:50%;
-transform:translateY(-50%);
-color:#0b2a4b;
-font-size:25px;
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:22px;
 }
 
 .search-note{
-margin-top:9px;
-color:#8299af;
-font-size:13px;
+  color:#8196a8;
+  font-size:13px;
+  margin-top:10px;
 }
 
-.categories{padding:25px 0 20px}
-
-.categories-title{
-margin:0 0 17px;
-font-size:20px;
+.category-nav{
+  padding:12px 0 38px;
 }
 
-.category-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:12px;
+.category-nav h2,
+.section-title{
+  margin:0 0 18px;
 }
 
-.category{
-min-height:125px;
-padding:18px 10px;
-border:1px solid rgba(255,255,255,.10);
-border-radius:16px;
-background:linear-gradient(145deg,#102b47,#091c31);
-text-decoration:none;
-text-align:center;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-box-shadow:0 8px 25px rgba(0,0,0,.18);
-transition:.2s ease;
+.category-links{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:12px;
 }
 
-.category:hover{
-transform:translateY(-3px);
-border-color:rgba(255,255,255,.25);
+.category-link{
+  display:block;
+  padding:15px;
+  border:1px solid var(--line);
+  background:rgba(16,40,66,.72);
+  border-radius:14px;
+  text-decoration:none;
+  transition:.2s;
 }
 
-.cat-icon{
-width:52px;
-height:52px;
-border-radius:14px;
-display:flex;
-align-items:center;
-justify-content:center;
-margin-bottom:10px;
-font-size:28px;
-font-weight:900;
+.category-link:hover{
+  transform:translateY(-2px);
+  border-color:var(--accent2);
 }
 
-.green{background:#123f38;color:#38e99b}
-.blue{background:#102f4c;color:#37aaff}
-.purple{background:#332650;color:#bd7cff}
-.orange{background:#493016;color:#ff9d35}
-.pink{background:#481d35;color:#ff5b93}
-.cyan{background:#123d46;color:#36dbea}
-.yellow{background:#493e13;color:#ffd83e}
-.red{background:#472129;color:#ff6274}
-.gray{background:#263445;color:#b7c7d8}
-
-.category strong{
-font-size:14px;
-line-height:1.25;
+.category-link strong{
+  display:block;
+  margin-bottom:2px;
 }
 
-.category small{
-display:block;
-color:#8fa5ba;
-font-size:11px;
-margin-top:5px;
+.category-link span{
+  font-size:13px;
+  color:var(--muted);
 }
 
-.tool-section{margin-top:35px}
+.section{
+  padding:34px 0;
+  scroll-margin-top:85px;
+}
 
 .section-head{
-display:flex;
-justify-content:space-between;
-align-items:end;
-gap:15px;
-margin-bottom:16px;
+  margin-bottom:20px;
 }
 
 .section-head h2{
-margin:0;
-font-size:25px;
+  margin:0 0 4px;
+  font-size:28px;
 }
 
 .section-head p{
-margin:5px 0 0;
-color:#93a8bc;
-font-size:14px;
+  margin:0;
+  color:var(--muted);
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:14px;
+.tools-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
 }
 
 .card{
-background:linear-gradient(145deg,#102a44,#081a2d);
-border:1px solid rgba(255,255,255,.09);
-border-radius:17px;
-padding:20px;
-box-shadow:0 9px 28px rgba(0,0,0,.18);
+  position:relative;
+  border:1px solid var(--line);
+  background:linear-gradient(145deg,rgba(16,40,66,.96),rgba(10,28,47,.96));
+  border-radius:18px;
+  padding:22px;
+  min-height:190px;
+  box-shadow:0 12px 30px rgba(0,0,0,.13);
+  transition:.2s;
+}
+
+.card:hover{
+  transform:translateY(-3px);
+  border-color:#365979;
 }
 
 .card h3{
-margin:0 0 8px;
-font-size:17px;
+  margin:8px 0 8px;
+  font-size:20px;
+  line-height:1.25;
 }
 
 .card p{
-color:#9eb0c2;
-line-height:1.5;
-font-size:14px;
-margin:8px 0;
+  color:var(--muted);
+  margin:0 0 18px;
 }
 
 .card a{
-display:inline-block;
-margin-top:5px;
-color:#52b7ff;
-font-weight:800;
-text-decoration:none;
+  display:inline-block;
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:800;
 }
-
-.card a:hover{color:#ffd400}
 
 .badge{
-display:inline-block;
-margin-bottom:11px;
-padding:5px 9px;
-border-radius:20px;
-color:#081727;
-background:#ffd400;
-font-size:10px;
-font-weight:900;
-text-transform:uppercase;
+  display:inline-block;
+  font-size:11px;
+  font-weight:900;
+  padding:4px 8px;
+  border-radius:999px;
+  color:#071321;
+  background:var(--accent);
 }
 
-.popular-panel{
-margin-top:28px;
-padding:25px;
-background:#f5f8fc;
-color:#101923;
-border-radius:22px;
-box-shadow:0 20px 55px rgba(0,0,0,.3);
+.popular{
+  border:1px solid rgba(240,200,115,.28);
+  background:rgba(217,164,65,.05);
+  border-radius:22px;
+  padding:24px;
 }
 
-.popular-title{
-display:flex;
-align-items:center;
-justify-content:space-between;
-margin-bottom:17px;
-}
-
-.popular-title h2{
-margin:0;
-font-size:24px;
-}
-
-.popular-title span{
-color:#168de2;
-font-size:13px;
-font-weight:700;
-}
-
-.popular-list{
-display:grid;
-gap:10px;
+.popular-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
 }
 
 .popular-item{
-display:flex;
-align-items:center;
-gap:13px;
-padding:14px;
-background:#fff;
-border-radius:14px;
-text-decoration:none;
-box-shadow:0 3px 12px rgba(15,35,55,.08);
+  display:block;
+  text-decoration:none;
+  border:1px solid var(--line);
+  background:#0c2136;
+  border-radius:14px;
+  padding:16px;
 }
 
-.popular-icon{
-flex:0 0 48px;
-height:48px;
-border-radius:12px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:24px;
+.popular-item strong{
+  display:block;
+  margin-bottom:5px;
 }
 
-.popular-text{flex:1}
-
-.popular-text strong{
-display:block;
-font-size:15px;
+.popular-item span{
+  color:var(--muted);
+  font-size:13px;
 }
 
-.popular-text small{
-display:block;
-color:#687787;
-margin-top:4px;
-line-height:1.3;
+.about{
+  margin:40px 0;
+  border:1px solid var(--line);
+  background:#0c2136;
+  border-radius:18px;
+  padding:24px;
 }
 
-.arrow{
-color:#174a78;
-font-size:25px;
-font-weight:700;
+.about h2{
+  margin-top:0;
 }
 
-#searchEmpty{
-display:none;
-margin:25px 0;
-padding:25px;
-border-radius:16px;
-text-align:center;
-background:#10263e;
+.about p{
+  color:var(--muted);
 }
 
-.trust-box{
-margin:45px 0;
-padding:28px;
-border:1px solid rgba(255,255,255,.08);
-border-radius:20px;
-background:#081a2c;
-}
-
-.trust-box h2{margin-top:0}
-
-.trust-box p{
-color:#9eb1c3;
-line-height:1.65;
+.empty{
+  display:none;
+  text-align:center;
+  border:1px dashed var(--line);
+  padding:22px;
+  border-radius:14px;
+  color:var(--muted);
+  margin-top:18px;
 }
 
 footer{
-margin-top:50px;
-padding:35px 0;
-border-top:1px solid rgba(255,255,255,.08);
-background:#020a13;
-color:#8397aa;
-text-align:center;
-font-size:13px;
+  margin-top:50px;
+  padding:30px 0;
+  border-top:1px solid rgba(255,255,255,.08);
+  color:var(--muted);
+  text-align:center;
 }
 
 footer a{
-color:#a8bdd0;
-text-decoration:none;
-margin:4px;
+  color:var(--muted);
+  text-decoration:none;
 }
 
-.category-hidden{display:none!important}
-
-@media(max-width:760px){
-
-.wrap{width:min(100% - 22px,1120px)}
-.nav{height:65px}
-.brand{font-size:31px}
-.tag{font-size:10px}
-.hero{padding-top:32px}
-.hero h1{font-size:38px}
-.hero>p:not(.eyebrow){font-size:15px}
-.category-grid{grid-template-columns:repeat(3,1fr);gap:8px}
-.category{min-height:112px;padding:13px 6px;border-radius:13px}
-.cat-icon{width:43px;height:43px;font-size:23px;border-radius:11px}
-.category strong{font-size:12px}
-.category small{display:none}
-.grid{grid-template-columns:1fr}
-.section-head{display:block}
-.popular-panel{padding:16px;border-radius:18px}
-.popular-title h2{font-size:20px}
-
+footer a:hover{
+  color:var(--accent);
 }
 
-@media(max-width:390px){
-.hero h1{font-size:34px}
-.category strong{font-size:11px}
+@media(max-width:900px){
+  .tools-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .popular-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .wrap{
+    width:min(100% - 22px,1180px);
+  }
+
+  .hero{
+    padding:48px 0 30px;
+  }
+
+  .hero h1{
+    letter-spacing:-1px;
+  }
+
+  .hero-text{
+    font-size:16px;
+  }
+
+  .tools-grid,
+  .popular-grid{
+    grid-template-columns:1fr;
+  }
+
+  .nav-tag{
+    display:none;
+  }
+
+  .section{
+    padding:26px 0;
+  }
+
+  .card{
+    min-height:auto;
+  }
 }
 </style>
 </head>
@@ -422,706 +382,659 @@ margin:4px;
 <body>
 
 <header>
-<div class="wrap nav">
-<a class="brand" href="/">Arac<span>lio</span></a>
-<span class="tag">HESAPLAMA ARAÇLARI TEK YERDE</span>
-</div>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="nav-tag">HESAPLAMA ARAÇLARI TEK YERDE</span>
+  </div>
 </header>
 
 <main class="wrap">
 
 <section class="hero">
+  <p class="eyebrow">60+ PRATİK ARAÇ • ÜCRETSİZ • ÜYELİKSİZ</p>
 
-<p class="eyebrow">60+ PRATİK ARAÇ • ÜCRETSİZ • ÜYELİKSİZ</p>
+  <h1>Hesaplamak artık daha kolay.</h1>
 
-<h1>Hesaplamak artık daha <span>kolay.</span></h1>
+  <p class="hero-text">
+    İhtiyacınız olan hesaplama araçları, pratik bilgiler ve faydalı araçlar
+    Araclio'da sizi bekliyor.
+  </p>
 
-<p>İhtiyacınız olan hesaplama araçları, pratik bilgiler ve faydalı araçlar Araclio'da sizi bekliyor.</p>
+  <div class="search-box">
+    <input
+      id="toolSearch"
+      type="search"
+      placeholder="Hangi aracı arıyorsunuz?"
+      autocomplete="off"
+      aria-label="Araç ara">
+    <span class="search-icon">⌕</span>
+  </div>
 
-<div class="search-area">
+  <div class="search-note">
+    Örn: kira stopajı, rapor parası, vergi dilimi, netten brüte,
+    fazla mesai, asgari ücret, işsizlik...
+  </div>
+</section>
 
-<div class="search-box">
-<input id="toolSearch" type="search" placeholder="Hangi aracı arıyorsunuz?" autocomplete="off" aria-label="Hesaplama aracı ara">
-<span class="search-icon">⌕</span>
-</div>
 
-<div class="search-note">
-Örn: rapor parası, vergi dilimi, netten brüte, fazla mesai, asgari ücret, işsizlik...
-</div>
+<section class="category-nav">
+  <h2>Araç Kategorileri</h2>
 
+  <div class="category-links">
+
+    <a class="category-link" href="#maas">
+      <strong>▦ Maaş &amp; Çalışma</strong>
+      <span>Maaş ve tazminat</span>
+    </a>
+
+    <a class="category-link" href="#finans">
+      <strong>₺ Finans &amp; Para</strong>
+      <span>Kredi ve faiz</span>
+    </a>
+
+    <a class="category-link" href="#gunluk">
+      <strong>% Yüzde &amp; Oran</strong>
+      <span>Pratik hesaplar</span>
+    </a>
+
+    <a class="category-link" href="#gunluk">
+      <strong>▣ Tarih &amp; Zaman</strong>
+      <span>Tarih araçları</span>
+    </a>
+
+    <a class="category-link" href="#konut">
+      <strong>⌂ Konut &amp; Emlak</strong>
+      <span>Tapu ve kira</span>
+    </a>
+
+    <a class="category-link" href="#donusum">
+      <strong>↔️ Ölçü &amp; Dönüşüm</strong>
+      <span>Birim dönüştürme</span>
+    </a>
+
+    <a class="category-link" href="#saglik">
+      <strong>♥️ Sağlık &amp; Yaşam</strong>
+      <span>Yaşam araçları</span>
+    </a>
+
+    <a class="category-link" href="#gunluk">
+      <strong>✓ Günlük Araçlar</strong>
+      <span>Pratik işlemler</span>
+    </a>
+
+    <a class="category-link" href="#finans">
+      <strong>☷ Tüm Araçlar</strong>
+      <span>Hepsini görüntüle</span>
+    </a>
+
+  </div>
+</section>
+
+
+<section class="section">
+<div class="popular">
+
+  <div class="section-head">
+    <h2>🔥 Popüler Araçlar</h2>
+  </div>
+
+  <div class="popular-grid">
+
+    <a class="popular-item" href="/asgari-ucret-hesaplama.html">
+      <strong>₺ Asgari Ücret Hesaplama</strong>
+      <span>2026 net, brüt ve günlük asgari ücret hesabı.</span>
+    </a>
+
+    <a class="popular-item" href="/kidem-tazminati-hesaplama.html">
+      <strong>▦ Kıdem Tazminatı Hesaplama</strong>
+      <span>Çalışma sürenize göre tahmini kıdem tazminatınızı hesaplayın.</span>
+    </a>
+
+    <a class="popular-item" href="/brut-net-maas-hesaplama.html">
+      <strong>₺ Brüt Net Maaş Hesaplama</strong>
+      <span>Brüt maaştan tahmini net maaşınızı hesaplayın.</span>
+    </a>
+
+    <a class="popular-item" href="/yuzde-hesaplama.html">
+      <strong>% Yüzde Hesaplama</strong>
+      <span>Yüzde ve temel oran hesaplamalarını yapın.</span>
+    </a>
+
+    <a class="popular-item" href="/kredi-hesaplama.html">
+      <strong>₺ Kredi Hesaplama</strong>
+      <span>Kredi tutarı, faiz ve vadeye göre taksiti hesaplayın.</span>
+    </a>
+
+  </div>
 </div>
 </section>
 
-<section class="categories">
 
-<h2 class="categories-title">Araç Kategorileri</h2>
-
-<div class="category-grid">
-
-<a class="category" href="#maas">
-<span class="cat-icon green">▦</span>
-<strong>Maaş &amp; Çalışma</strong>
-<small>Maaş ve tazminat</small>
-</a>
-
-<a class="category" href="#finans">
-<span class="cat-icon orange">₺</span>
-<strong>Finans &amp; Para</strong>
-<small>Kredi ve faiz</small>
-</a>
-
-<a class="category" href="#gunluk">
-<span class="cat-icon blue">%</span>
-<strong>Yüzde &amp; Oran</strong>
-<small>Pratik hesaplar</small>
-</a>
-
-<a class="category" href="#gunluk">
-<span class="cat-icon purple">▣</span>
-<strong>Tarih &amp; Zaman</strong>
-<small>Tarih araçları</small>
-</a>
-
-<a class="category" href="#konut">
-<span class="cat-icon pink">⌂</span>
-<strong>Konut &amp; Emlak</strong>
-<small>Tapu ve kira</small>
-</a>
-
-<a class="category" href="#donusum">
-<span class="cat-icon yellow">↔️</span>
-<strong>Ölçü &amp; Dönüşüm</strong>
-<small>Birim dönüştürme</small>
-</a>
-
-<a class="category" href="#saglik">
-<span class="cat-icon cyan">♥️</span>
-<strong>Sağlık &amp; Yaşam</strong>
-<small>Yaşam araçları</small>
-</a>
-
-<a class="category" href="#gunluk">
-<span class="cat-icon red">✓</span>
-<strong>Günlük Araçlar</strong>
-<small>Pratik işlemler</small>
-</a>
-
-<a class="category" href="#tum-araclar">
-<span class="cat-icon gray">☷</span>
-<strong>Tüm Araçlar</strong>
-<small>Hepsini görüntüle</small>
-</a>
-
-</div>
-</section>
-
-<section id="popular" class="popular-panel">
-
-<div class="popular-title">
-<h2>🔥 Popüler Araçlar</h2>
-<span>Araçlar</span>
-</div>
-
-<div class="popular-list">
-
-<a class="popular-item" href="/asgari-ucret-hesaplama.html">
-<span class="popular-icon green">₺</span>
-<span class="popular-text">
-<strong>Asgari Ücret Hesaplama 2026</strong>
-<small>Net, brüt ve günlük asgari ücret hesabı.</small>
-</span>
-<span class="arrow">›</span>
-</a>
-
-<a class="popular-item" href="/kidem-tazminati-hesaplama.html">
-<span class="popular-icon blue">▦</span>
-<span class="popular-text">
-<strong>Kıdem Tazminatı Hesaplama</strong>
-<small>Çalışma sürenize göre tahmini kıdem tazminatınızı hesaplayın.</small>
-</span>
-<span class="arrow">›</span>
-</a>
-
-<a class="popular-item" href="/brut-net-maas-hesaplama.html">
-<span class="popular-icon orange">₺</span>
-<span class="popular-text">
-<strong>Brüt Net Maaş Hesaplama</strong>
-<small>Brüt maaştan tahmini net maaşınızı hesaplayın.</small>
-</span>
-<span class="arrow">›</span>
-</a>
-
-<a class="popular-item" href="/yuzde-hesaplama.html">
-<span class="popular-icon green">%</span>
-<span class="popular-text">
-<strong>Yüzde Hesaplama</strong>
-<small>Yüzde ve temel oran hesaplamalarını yapın.</small>
-</span>
-<span class="arrow">›</span>
-</a>
-
-<a class="popular-item" href="/kredi-hesaplama.html">
-<span class="popular-icon purple">₺</span>
-<span class="popular-text">
-<strong>Kredi Hesaplama</strong>
-<small>Kredi tutarı, faiz ve vadeye göre taksiti hesaplayın.</small>
-</span>
-<span class="arrow">›</span>
-</a>
-
-</div>
-</section>
-
-<div id="searchEmpty">
-<strong>Bu aramaya uygun araç bulunamadı.</strong>
-<p>Başka bir kelimeyle tekrar arayabilirsiniz.</p>
-</div>
-
-<section id="finans" class="tool-section">
+<section class="section" id="finans">
 
 <div class="section-head">
-<div>
-<h2>💰 Finans ve Ticaret</h2>
-<p>Para, vergi, satış, maliyet, kredi ve faiz hesaplamaları.</p>
-</div>
+  <h2>💰 Finans ve Ticaret</h2>
+  <p>Para, vergi, satış, maliyet, kredi ve faiz hesaplamaları.</p>
 </div>
 
-<div class="grid">
+<div class="tools-grid">
 
-<article class="card tool-card" data-search="gelir vergisi 2026 vergi dilimi vergi oranı matrah ücret">
-<span class="badge">2026</span>
-<h3>Gelir Vergisi Hesaplama</h3>
-<p>2026 vergi dilimlerine göre matrahınız üzerinden tahmini gelir verginizi hesaplayın.</p>
-<a href="/gelir-vergisi-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="gelir vergisi hesaplama 2026 vergi dilimi">
+  <span class="badge">2026</span>
+  <h3>Gelir Vergisi Hesaplama</h3>
+  <p>2026 vergi dilimlerine göre matrahınız üzerinden tahmini gelir verginizi hesaplayın.</p>
+  <a href="/gelir-vergisi-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="e ticaret kar net kar komisyon satış maliyet">
-<span class="badge">Ticaret</span>
-<h3>E-Ticaret Kâr Hesaplama</h3>
-<p>Maliyet, komisyon, kargo ve reklam giderlerinden satış kârınızı hesaplayın.</p>
-<a href="/e-ticaret-kar-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="e ticaret kar hesaplama satış maliyet komisyon kargo reklam">
+  <span class="badge">Ticaret</span>
+  <h3>E-Ticaret Kâr Hesaplama</h3>
+  <p>Maliyet, komisyon, kargo ve reklam giderlerinden satış kârınızı hesaplayın.</p>
+  <a href="/e-ticaret-kar-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="kredi faiz taksit banka borç">
-<span class="badge">Finans</span>
-<h3>Kredi Hesaplama</h3>
-<p>Kredi tutarı, faiz ve vadeye göre aylık taksiti hesaplayın.</p>
-<a href="/kredi-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="kredi hesaplama faiz taksit">
+  <span class="badge">Finans</span>
+  <h3>Kredi Hesaplama</h3>
+  <p>Kredi tutarı, faiz ve vadeye göre aylık taksiti hesaplayın.</p>
+  <a href="/kredi-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="bileşik faiz yatırım getiri">
-<h3>Bileşik Faiz Hesaplama</h3>
-<p>Anapara, oran ve süreye göre bileşik getiriyi hesaplayın.</p>
-<a href="/bilesik-faiz-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="bileşik faiz hesaplama yatırım getiri">
+  <h3>Bileşik Faiz Hesaplama</h3>
+  <p>Anapara, oran ve süreye göre bileşik getiriyi hesaplayın.</p>
+  <a href="/bilesik-faiz-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="mevduat faiz banka getiri">
-<h3>Mevduat Faizi Hesaplama</h3>
-<p>Anapara, faiz, vade ve stopajdan tahmini getiriyi hesaplayın.</p>
-<a href="/mevduat-faizi-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="mevduat faizi hesaplama stopaj getiri">
+  <h3>Mevduat Faizi Hesaplama</h3>
+  <p>Anapara, faiz, vade ve stopajdan tahmini getiriyi hesaplayın.</p>
+  <a href="/mevduat-faizi-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="kredi kartı asgari ödeme borç">
-<h3>Kredi Kartı Asgari Ödeme</h3>
-<p>Dönem borcundan tahmini asgari ödeme tutarını hesaplayın.</p>
-<a href="/kredi-karti-asgari-odeme-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="kredi kartı asgari ödeme hesaplama">
+  <h3>Kredi Kartı Asgari Ödeme</h3>
+  <p>Dönem borcundan tahmini asgari ödeme tutarını hesaplayın.</p>
+  <a href="/kredi-karti-asgari-odeme.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="vade farkı vadeli satış">
-<h3>Vade Farkı Hesaplama</h3>
-<p>Peşin fiyat, oran ve vadeden vadeli fiyatı hesaplayın.</p>
-<a href="/vade-farki-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="vade farkı hesaplama vadeli fiyat">
+  <h3>Vade Farkı Hesaplama</h3>
+  <p>Peşin fiyat, oran ve vadeden vadeli fiyatı hesaplayın.</p>
+  <a href="/vade-farki-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="komisyon kesinti net">
-<h3>Komisyon Hesaplama</h3>
-<p>Komisyon kesintisini ve kalan net tutarı hesaplayın.</p>
-<a href="/komisyon-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="komisyon hesaplama kesinti net">
+  <h3>Komisyon Hesaplama</h3>
+  <p>Komisyon kesintisini ve kalan net tutarı hesaplayın.</p>
+  <a href="/komisyon-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="kar zarar alış satış">
-<h3>Kâr / Zarar Hesaplama</h3>
-<p>Alış ve satış fiyatından kâr veya zararı hesaplayın.</p>
-<a href="/kar-zarar-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="kar zarar hesaplama alış satış">
+  <h3>Kâr / Zarar Hesaplama</h3>
+  <p>Alış ve satış fiyatından kâr veya zararı hesaplayın.</p>
+  <a href="/kar-zarar-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="kar marjı maliyet satış">
-<h3>Kâr Marjı Hesaplama</h3>
-<p>Maliyet ve hedef kâr oranından satış fiyatını hesaplayın.</p>
-<a href="/kar-marji-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="kar marjı kar oranı hesaplama satış fiyatı">
+  <h3>Kâr Marjı Hesaplama</h3>
+  <p>Maliyet ve hedef kâr oranından satış fiyatını hesaplayın.</p>
+  <a href="/kar-marji-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="iskonto indirim">
-<h3>İskonto Hesaplama</h3>
-<p>İskonto uygulayarak net fiyatı hesaplayın.</p>
-<a href="/iskonto-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="iskonto hesaplama indirim net fiyat">
+  <h3>İskonto Hesaplama</h3>
+  <p>İskonto uygulayarak net fiyatı hesaplayın.</p>
+  <a href="/iskonto-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="birim fiyat ürün adet">
-<h3>Birim Fiyat Hesaplama</h3>
-<p>Toplam fiyat ve miktardan birim fiyatı hesaplayın.</p>
-<a href="/birim-fiyat-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="birim fiyat hesaplama miktar">
+  <h3>Birim Fiyat Hesaplama</h3>
+  <p>Toplam fiyat ve miktardan birim fiyatı hesaplayın.</p>
+  <a href="/birim-fiyat-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="kdv vergi dahil hariç">
-<h3>KDV Hesaplama</h3>
-<p>KDV dahil veya hariç tutarları hesaplayın.</p>
-<a href="/kdv-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="kdv hesaplama dahil hariç vergi">
+  <h3>KDV Hesaplama</h3>
+  <p>KDV dahil veya hariç tutarları hesaplayın.</p>
+  <a href="/kdv-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="indirim yüzde fiyat">
-<h3>İndirim Hesaplama</h3>
-<p>İndirim miktarını ve yeni fiyatı hesaplayın.</p>
-<a href="/indirim-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="indirim hesaplama yüzde fiyat">
+  <h3>İndirim Hesaplama</h3>
+  <p>İndirim miktarını ve yeni fiyatı hesaplayın.</p>
+  <a href="/indirim-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="zam artış fiyat">
-<h3>Zam Hesaplama</h3>
-<p>Zam miktarını ve yeni tutarı hesaplayın.</p>
-<a href="/zam-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="zam hesaplama yüzde yeni tutar">
+  <h3>Zam Hesaplama</h3>
+  <p>Zam miktarını ve yeni tutarı hesaplayın.</p>
+  <a href="/zam-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="taksit ödeme bölme">
-<h3>Basit Taksit Hesaplama</h3>
-<p>Toplam tutarı taksit sayısına bölün.</p>
-<a href="/basit-taksit-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="basit taksit hesaplama">
+  <h3>Basit Taksit Hesaplama</h3>
+  <p>Toplam tutarı taksit sayısına bölün.</p>
+  <a href="/basit-taksit-hesaplama.html">Hesapla →</a>
 </article>
 
 </div>
 </section>
 
-<section id="maas" class="tool-section">
+
+<section class="section" id="maas">
 
 <div class="section-head">
-<div>
-<h2>💼 Maaş ve Çalışma</h2>
-<p>Rapor parası, vergi dilimi, net-brüt maaş, fazla mesai, işsizlik, izin ve tazminat hesaplamaları.</p>
-</div>
+  <h2>💼 Maaş ve Çalışma</h2>
+  <p>Rapor parası, vergi dilimi, net-brüt maaş, fazla mesai, işsizlik, izin ve tazminat hesaplamaları.</p>
 </div>
 
-<div class="grid">
+<div class="tools-grid">
 
-<article class="card tool-card" data-search="rapor parası 2026 sgk iş göremezlik geçici iş göremezlik hastalık raporu iş kazası">
-<span class="badge">2026</span>
-<h3>Rapor Parası Hesaplama</h3>
-<p>Rapor süresi ve brüt kazancınıza göre tahmini SGK iş göremezlik ödeneğinizi hesaplayın.</p>
-<a href="/rapor-parasi-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="rapor parası 2026 sgk iş göremezlik hastalık raporu iş kazası">
+  <span class="badge">2026</span>
+  <h3>Rapor Parası Hesaplama</h3>
+  <p>Rapor süresi ve brüt kazancınıza göre tahmini SGK iş göremezlik ödeneğinizi hesaplayın.</p>
+  <a href="/rapor-parasi-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="maaş vergi dilimi 2026 gelir vergisi kümülatif matrah yüzde 15 20 27 35 40">
-<span class="badge">2026</span>
-<h3>Maaş Vergi Dilimi Hesaplama</h3>
-<p>Kümülatif ücret vergi matrahınıza göre 2026 gelir vergisi diliminizi hesaplayın.</p>
-<a href="/maas-vergi-dilimi-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="maaş vergi dilimi hesaplama 2026 kümülatif matrah">
+  <span class="badge">2026</span>
+  <h3>Maaş Vergi Dilimi Hesaplama</h3>
+  <p>Kümülatif ücret vergi matrahınıza göre 2026 gelir vergisi diliminizi hesaplayın.</p>
+  <a href="/maas-vergi-dilimi-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="netten brüte maaş 2026 net brüt maaş hesaplama bordro">
-<span class="badge">2026</span>
-<h3>Netten Brüte Maaş Hesaplama</h3>
-<p>Net maaşınızın 2026 kesintilerine göre tahmini brüt karşılığını hesaplayın.</p>
-<a href="/netten-brute-maas-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="netten brüte maaş hesaplama 2026 net brüt">
+  <span class="badge">2026</span>
+  <h3>Netten Brüte Maaş Hesaplama</h3>
+  <p>Net maaşınızın 2026 kesintilerine göre tahmini brüt karşılığını hesaplayın.</p>
+  <a href="/netten-brute-maas-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="asgari ücret 2026 net brüt günlük asgari ücret maaş">
-<span class="badge">2026</span>
-<h3>Asgari Ücret Hesaplama</h3>
-<p>2026 net, brüt ve günlük asgari ücret tutarlarını hesaplayın.</p>
-<a href="/asgari-ucret-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="asgari ücret hesaplama 2026 net brüt günlük">
+  <span class="badge">2026</span>
+  <h3>Asgari Ücret Hesaplama</h3>
+  <p>2026 net, brüt ve günlük asgari ücret tutarlarını hesaplayın.</p>
+  <a href="/asgari-ucret-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="fazla mesai ücreti 2026 mesai parası saatlik fazla çalışma yüzde 50">
-<span class="badge">2026</span>
-<h3>Fazla Mesai Ücreti Hesaplama</h3>
-<p>Brüt maaş ve fazla çalışma saatinize göre tahmini mesai ücretinizi hesaplayın.</p>
-<a href="/fazla-mesai-ucreti-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="fazla mesai ücreti hesaplama 2026 çalışma saat">
+  <span class="badge">2026</span>
+  <h3>Fazla Mesai Ücreti Hesaplama</h3>
+  <p>Brüt maaş ve fazla çalışma saatinize göre tahmini mesai ücretinizi hesaplayın.</p>
+  <a href="/fazla-mesai-ucreti-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="emekli maaşı zam 2026 ssk bağkur bağ-kur memur emeklisi">
-<span class="badge">2026</span>
-<h3>Emekli Maaşı Zam Hesaplama</h3>
-<p>SSK, Bağ-Kur ve memur emeklileri için zamlı aylığınızı hesaplayın.</p>
-<a href="/emekli-maasi-zam-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="emekli maaşı zam hesaplama 2026 ssk bağkur memur">
+  <span class="badge">2026</span>
+  <h3>Emekli Maaşı Zam Hesaplama</h3>
+  <p>SSK, Bağ-Kur ve memur emeklileri için zamlı aylığınızı hesaplayın.</p>
+  <a href="/emekli-maasi-zam-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="işsizlik maaşı 2026 işsizlik ödeneği işkur işsiz prim günü">
-<span class="badge">2026</span>
-<h3>İşsizlik Maaşı Hesaplama</h3>
-<p>Son 4 aylık brüt kazanç ve prim gününüze göre tahmini işsizlik ödeneğinizi hesaplayın.</p>
-<a href="/issizlik-maasi-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="işsizlik maaşı hesaplama 2026 ödenek prim">
+  <span class="badge">2026</span>
+  <h3>İşsizlik Maaşı Hesaplama</h3>
+  <p>Son 4 aylık brüt kazanç ve prim gününüze göre tahmini işsizlik ödeneğinizi hesaplayın.</p>
+  <a href="/issizlik-maasi-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="yıllık izin ücreti kullanılmayan izin parası işten ayrılma izin alacağı">
-<span class="badge">Çalışma</span>
-<h3>Yıllık İzin Ücreti Hesaplama</h3>
-<p>Aylık ücret ve kullanılmayan izin gününüze göre tahmini yıllık izin ücretinizi hesaplayın.</p>
-<a href="/yillik-izin-ucreti-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="yıllık izin ücreti hesaplama kullanılmayan izin">
+  <span class="badge">Çalışma</span>
+  <h3>Yıllık İzin Ücreti Hesaplama</h3>
+  <p>Aylık ücret ve kullanılmayan izin gününüze göre tahmini yıllık izin ücretinizi hesaplayın.</p>
+  <a href="/yillik-izin-ucreti-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="maaş zam ücret gelir">
-<h3>Maaş Zam Hesaplama</h3>
-<p>Zam oranına göre yeni maaşınızı hesaplayın.</p>
-<a href="/maas-zam-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="maaş zam hesaplama">
+  <h3>Maaş Zam Hesaplama</h3>
+  <p>Zam oranına göre yeni maaşınızı hesaplayın.</p>
+  <a href="/maas-zam-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="brüt net maaş sgk vergi">
-<h3>Brüt Net Maaş Hesaplama</h3>
-<p>Brüt maaştan tahmini net maaşı hesaplayın.</p>
-<a href="/brut-net-maas-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="brüt net maaş hesaplama">
+  <h3>Brüt Net Maaş Hesaplama</h3>
+  <p>Brüt maaştan tahmini net maaşı hesaplayın.</p>
+  <a href="/brut-net-maas-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="kıdem tazminatı çalışma">
-<h3>Kıdem Tazminatı Hesaplama</h3>
-<p>Brüt ücret ve çalışma süresinden tahmini kıdemi hesaplayın.</p>
-<a href="/kidem-tazminati-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="kıdem tazminatı hesaplama">
+  <h3>Kıdem Tazminatı Hesaplama</h3>
+  <p>Brüt ücret ve çalışma süresinden tahmini kıdemi hesaplayın.</p>
+  <a href="/kidem-tazminati-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="ihbar tazminatı">
-<h3>İhbar Tazminatı Hesaplama</h3>
-<p>Çalışma süresi ve ücrete göre ihbar tazminatını hesaplayın.</p>
-<a href="/ihbar-tazminati-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="ihbar tazminatı hesaplama">
+  <h3>İhbar Tazminatı Hesaplama</h3>
+  <p>Çalışma süresi ve ücrete göre ihbar tazminatını hesaplayın.</p>
+  <a href="/ihbar-tazminati-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="saatlik günlük aylık maaş">
-<h3>Saatlik, Günlük ve Aylık Maaş</h3>
-<p>Kazancınızı farklı zaman aralıklarına dönüştürün.</p>
-<a href="/saatlik-gunluk-maas-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="saatlik günlük aylık maaş hesaplama">
+  <h3>Saatlik, Günlük ve Aylık Maaş</h3>
+  <p>Kazancınızı farklı zaman aralıklarına dönüştürün.</p>
+  <a href="/saatlik-gunluk-aylik-maas.html">Hesapla →</a>
 </article>
 
 </div>
 </section>
 
-<section id="konut" class="tool-section">
+
+<section class="section" id="konut">
 
 <div class="section-head">
-<div>
-<h2>🏠 Konut ve Gayrimenkul</h2>
-<p>Tapu ve kira hesaplamaları.</p>
-</div>
+  <h2>🏠 Konut ve Gayrimenkul</h2>
+  <p>Tapu, kira artışı ve işyeri kira stopajı hesaplamaları.</p>
 </div>
 
-<div class="grid">
+<div class="tools-grid">
 
-<article class="card tool-card" data-search="tapu harcı ev konut gayrimenkul">
-<h3>Tapu Harcı Hesaplama</h3>
-<p>Alıcı, satıcı ve toplam tapu harcını hesaplayın.</p>
-<a href="/tapu-harci-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="tapu harcı hesaplama alıcı satıcı">
+  <h3>Tapu Harcı Hesaplama</h3>
+  <p>Alıcı, satıcı ve toplam tapu harcını hesaplayın.</p>
+  <a href="/tapu-harci-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="kira artış zam kiracı tüfe">
-<h3>Kira Artış Hesaplama</h3>
-<p>Mevcut kira ve artış oranından yeni kira bedelini hesaplayın.</p>
-<a href="/kira-artis-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="kira artış hesaplama zam">
+  <h3>Kira Artış Hesaplama</h3>
+  <p>Mevcut kira ve artış oranından yeni kira bedelini hesaplayın.</p>
+  <a href="/kira-artis-hesaplama.html">Hesapla →</a>
+</article>
+
+<article class="card tool-card" data-search="kira stopajı hesaplama 2026 işyeri kira stopaj net brüt kira vergi">
+  <span class="badge">2026</span>
+  <h3>Kira Stopajı Hesaplama</h3>
+  <p>Net veya brüt işyeri kirasından stopaj tutarını ve ödenecek kira bedelini hesaplayın.</p>
+  <a href="/kira-stopaji-hesaplama.html">Hesapla →</a>
 </article>
 
 </div>
 </section>
 
-<section id="gunluk" class="tool-section">
+
+<section class="section" id="gunluk">
 
 <div class="section-head">
-<div>
-<h2>🧰 Günlük Pratik Araçlar</h2>
-<p>Yüzde, tarih, yol ve günlük hesaplamalar.</p>
-</div>
+  <h2>🧰 Günlük Pratik Araçlar</h2>
+  <p>Yüzde, tarih, yol, kargo ve günlük hesaplamalar.</p>
 </div>
 
-<div class="grid">
+<div class="tools-grid">
 
-<article class="card tool-card" data-search="yüzde oran">
-<h3>Yüzde Hesaplama</h3>
-<p>Bir sayının belirli yüzdesini hesaplayın.</p>
-<a href="/yuzde-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="yüzde hesaplama">
+  <h3>Yüzde Hesaplama</h3>
+  <p>Bir sayının belirli yüzdesini hesaplayın.</p>
+  <a href="/yuzde-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="yüzde değişim artış azalış">
-<h3>Yüzde Değişim</h3>
-<p>İki değer arasındaki yüzde değişimi hesaplayın.</p>
-<a href="/yuzde-degisim-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="yüzde değişim hesaplama artış azalış">
+  <h3>Yüzde Değişim</h3>
+  <p>İki değer arasındaki yüzde değişimi hesaplayın.</p>
+  <a href="/yuzde-degisim-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="oran orantı">
-<h3>Oran Orantı</h3>
-<p>Doğru ve ters orantı hesaplamaları yapın.</p>
-<a href="/oran-oranti-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="oran orantı hesaplama">
+  <h3>Oran Orantı</h3>
+  <p>Doğru ve ters orantı hesaplamaları yapın.</p>
+  <a href="/oran-oranti-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="ağırlıklı ortalama not">
-<h3>Ağırlıklı Ortalama</h3>
-<p>Değer ve ağırlıklardan ortalamayı hesaplayın.</p>
-<a href="/agirlikli-ortalama-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="ağırlıklı ortalama hesaplama">
+  <h3>Ağırlıklı Ortalama</h3>
+  <p>Değer ve ağırlıklardan ortalamayı hesaplayın.</p>
+  <a href="/agirlikli-ortalama-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="yakıt tüketimi yol benzin">
-<h3>Yakıt Tüketimi ve Yol Masrafı</h3>
-<p>Mesafe ve yakıt bilgilerinden yol masrafını hesaplayın.</p>
-<a href="/yakit-tuketimi-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="yakıt tüketimi yol masrafı hesaplama">
+  <h3>Yakıt Tüketimi ve Yol Masrafı</h3>
+  <p>Mesafe ve yakıt bilgilerinden yol masrafını hesaplayın.</p>
+  <a href="/yakit-tuketimi-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="hız mesafe zaman">
-<h3>Hız, Mesafe ve Zaman</h3>
-<p>Seyahat hesaplamalarınızı yapın.</p>
-<a href="/hiz-mesafe-zaman-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="hız mesafe zaman hesaplama">
+  <h3>Hız, Mesafe ve Zaman</h3>
+  <p>Seyahat hesaplamalarınızı yapın.</p>
+  <a href="/hiz-mesafe-zaman-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="metrekare alan oda">
-<h3>Metrekare Hesaplama</h3>
-<p>Oda, zemin veya alanı metrekare olarak hesaplayın.</p>
-<a href="/metrekare-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="metrekare hesaplama alan">
+  <h3>Metrekare Hesaplama</h3>
+  <p>Oda, zemin veya alanı metrekare olarak hesaplayın.</p>
+  <a href="/metrekare-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="desi kargo paket">
-<h3>Desi Hesaplama</h3>
-<p>Paket ölçülerinden kargo desisini hesaplayın.</p>
-<a href="/desi-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="desi hesaplama kargo 30 desi bir desi ne kadar">
+  <h3>Desi Hesaplama</h3>
+  <p>Paket ölçülerinden kargo desisini hesaplayın.</p>
+  <a href="/desi-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="yaş doğum tarihi">
-<h3>Yaş Hesaplama</h3>
-<p>Doğum tarihinizden yaşınızı hesaplayın.</p>
-<a href="/yas-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="yaş hesaplama doğum tarihi">
+  <h3>Yaş Hesaplama</h3>
+  <p>Doğum tarihinizden yaşınızı hesaplayın.</p>
+  <a href="/yas-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="iki tarih arası gün">
-<h3>İki Tarih Arası Gün</h3>
-<p>İki tarih arasındaki süreyi hesaplayın.</p>
-<a href="/iki-tarih-arasi-gun-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="iki tarih arası gün hesaplama">
+  <h3>İki Tarih Arası Gün</h3>
+  <p>İki tarih arasındaki süreyi hesaplayın.</p>
+  <a href="/iki-tarih-arasi-gun.html">Hesapla →</a>
 </article>
 
 <article class="card tool-card" data-search="tarihe gün ekleme çıkarma">
-<h3>Tarihe Gün Ekleme / Çıkarma</h3>
-<p>Bir tarihten gün ekleyin veya çıkarın.</p>
-<a href="/gun-ekleme-cikarma.html">Hesapla →</a>
+  <h3>Tarihe Gün Ekleme / Çıkarma</h3>
+  <p>Bir tarihten gün ekleyin veya çıkarın.</p>
+  <a href="/tarihe-gun-ekleme-cikarma.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="iban doğrulama banka">
-<h3>IBAN Doğrulama</h3>
-<p>Türkiye IBAN biçimini kontrol edin.</p>
-<a href="/iban-dogrulama.html">Kontrol Et →</a>
+<article class="card tool-card" data-search="iban doğrulama kontrol">
+  <h3>IBAN Doğrulama</h3>
+  <p>Türkiye IBAN biçimini kontrol edin.</p>
+  <a href="/iban-dogrulama.html">Kontrol Et →</a>
 </article>
 
-<article class="card tool-card" data-search="kelime karakter metin">
-<h3>Kelime &amp; Karakter Sayacı</h3>
-<p>Metindeki kelime ve karakter sayısını öğrenin.</p>
-<a href="/kelime-karakter-sayaci.html">Say →</a>
+<article class="card tool-card" data-search="kelime karakter sayacı character number">
+  <h3>Kelime &amp; Karakter Sayacı</h3>
+  <p>Metindeki kelime ve karakter sayısını öğrenin.</p>
+  <a href="/kelime-karakter-sayaci.html">Say →</a>
 </article>
 
 </div>
 </section>
 
-<section id="saglik" class="tool-section">
+
+<section class="section" id="saglik">
 
 <div class="section-head">
-<div>
-<h2>♥️ Sağlık ve Yaşam</h2>
-<p>Genel bilgilendirme amaçlı yaşam hesaplamaları.</p>
-</div>
+  <h2>♥️ Sağlık ve Yaşam</h2>
+  <p>Genel bilgilendirme amaçlı yaşam hesaplamaları.</p>
 </div>
 
-<div class="grid">
+<div class="tools-grid">
 
 <article class="card tool-card" data-search="vücut kitle indeksi vki bmi">
-<h3>Vücut Kitle İndeksi (VKİ)</h3>
-<p>Boy ve kilodan vücut kitle indeksini hesaplayın.</p>
-<a href="/vucut-kitle-indeksi-hesaplama.html">Hesapla →</a>
+  <h3>Vücut Kitle İndeksi (VKİ)</h3>
+  <p>Boy ve kilodan vücut kitle indeksini hesaplayın.</p>
+  <a href="/vki-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="bazal metabolizma bmr kalori">
-<h3>Bazal Metabolizma ve Kalori</h3>
-<p>Tahmini günlük enerji ihtiyacınızı hesaplayın.</p>
-<a href="/bazal-metabolizma-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="bazal metabolizma kalori bmr">
+  <h3>Bazal Metabolizma ve Kalori</h3>
+  <p>Tahmini günlük enerji ihtiyacınızı hesaplayın.</p>
+  <a href="/bmr-kalori-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="gebelik hamilelik doğum">
-<h3>Gebelik Hesaplama</h3>
-<p>Tahmini gebelik haftası ve doğum tarihini hesaplayın.</p>
-<a href="/gebelik-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="gebelik hesaplama doğum tarihi">
+  <h3>Gebelik Hesaplama</h3>
+  <p>Tahmini gebelik haftası ve doğum tarihini hesaplayın.</p>
+  <a href="/gebelik-hesaplama.html">Hesapla →</a>
 </article>
 
-<article class="card tool-card" data-search="yumurtlama ovulasyon">
-<h3>Yumurtlama ve Ovulasyon</h3>
-<p>Tahmini yumurtlama dönemini hesaplayın.</p>
-<a href="/yumurtlama-ovulasyon-hesaplama.html">Hesapla →</a>
+<article class="card tool-card" data-search="yumurtlama ovulasyon hesaplama">
+  <h3>Yumurtlama ve Ovulasyon</h3>
+  <p>Tahmini yumurtlama dönemini hesaplayın.</p>
+  <a href="/ovulasyon-hesaplama.html">Hesapla →</a>
 </article>
 
 </div>
 </section>
 
-<section id="donusum" class="tool-section">
+
+<section class="section" id="donusum">
 
 <div class="section-head">
-<div>
-<h2>📐 Ölçü ve Dönüşüm</h2>
-<p>Günlük ve teknik birimleri birbirine dönüştürün.</p>
-</div>
+  <h2>📐 Ölçü ve Dönüşüm</h2>
+  <p>Günlük ve teknik birimleri birbirine dönüştürün.</p>
 </div>
 
-<div class="grid">
+<div class="tools-grid">
 
-<article class="card tool-card" data-search="güç watt kilowatt hp">
-<h3>Güç Dönüştürücü</h3>
-<a href="/guc-donusturucu.html">Dönüştür →</a>
+<article class="card tool-card" data-search="güç dönüştürücü watt kw hp">
+  <h3>Güç Dönüştürücü</h3>
+  <a href="/guc-donusturucu.html">Dönüştür →</a>
 </article>
 
-<article class="card tool-card" data-search="enerji joule">
-<h3>Enerji Dönüştürücü</h3>
-<a href="/enerji-donusturucu.html">Dönüştür →</a>
+<article class="card tool-card" data-search="enerji dönüştürücü">
+  <h3>Enerji Dönüştürücü</h3>
+  <a href="/enerji-donusturucu.html">Dönüştür →</a>
 </article>
 
-<article class="card tool-card" data-search="hacim litre mililitre">
-<h3>Hacim Dönüştürücü</h3>
-<a href="/hacim-donusturucu.html">Dönüştür →</a>
+<article class="card tool-card" data-search="hacim dönüştürücü litre ml">
+  <h3>Hacim Dönüştürücü</h3>
+  <a href="/hacim-donusturucu.html">Dönüştür →</a>
 </article>
 
-<article class="card tool-card" data-search="alan metrekare hektar dönüm">
-<h3>Alan Dönüştürücü</h3>
-<a href="/alan-donusturucu.html">Dönüştür →</a>
+<article class="card tool-card" data-search="alan dönüştürücü">
+  <h3>Alan Dönüştürücü</h3>
+  <a href="/alan-donusturucu.html">Dönüştür →</a>
 </article>
 
-<article class="card tool-card" data-search="ağırlık kilogram gram ton">
-<h3>Ağırlık Dönüştürücü</h3>
-<a href="/agirlik-donusturucu.html">Dönüştür →</a>
+<article class="card tool-card" data-search="ağırlık dönüştürücü kg gram">
+  <h3>Ağırlık Dönüştürücü</h3>
+  <a href="/agirlik-donusturucu.html">Dönüştür →</a>
 </article>
 
-<article class="card tool-card" data-search="sıcaklık celsius fahrenheit kelvin">
-<h3>Sıcaklık Dönüştürücü</h3>
-<a href="/sicaklik-donusturucu.html">Dönüştür →</a>
+<article class="card tool-card" data-search="sıcaklık dönüştürücü celsius fahrenheit">
+  <h3>Sıcaklık Dönüştürücü</h3>
+  <a href="/sicaklik-donusturucu.html">Dönüştür →</a>
 </article>
 
-<article class="card tool-card" data-search="uzunluk metre kilometre santimetre">
-<h3>Uzunluk Dönüştürücü</h3>
-<a href="/uzunluk-donusturucu.html">Dönüştür →</a>
+<article class="card tool-card" data-search="uzunluk dönüştürücü cm metre km">
+  <h3>Uzunluk Dönüştürücü</h3>
+  <a href="/uzunluk-donusturucu.html">Dönüştür →</a>
 </article>
 
-<article class="card tool-card" data-search="mb gb tb veri">
-<h3>MB, GB ve TB Dönüştürücü</h3>
-<a href="/mb-gb-tb-donusturucu.html">Dönüştür →</a>
+<article class="card tool-card" data-search="mb gb tb dönüştürücü">
+  <h3>MB, GB ve TB Dönüştürücü</h3>
+  <a href="/veri-boyutu-donusturucu.html">Dönüştür →</a>
 </article>
 
-<article class="card tool-card" data-search="zaman saat dakika saniye">
-<h3>Saat, Dakika ve Saniye</h3>
-<a href="/zaman-donusturucu.html">Dönüştür →</a>
+<article class="card tool-card" data-search="saat dakika saniye dönüştürücü">
+  <h3>Saat, Dakika ve Saniye</h3>
+  <a href="/zaman-donusturucu.html">Dönüştür →</a>
 </article>
 
 </div>
 </section>
 
-<section id="tum-araclar" class="trust-box">
+
+<div id="emptyState" class="empty">
+  Bu aramaya uygun araç bulunamadı.<br>
+  Başka bir kelimeyle tekrar arayabilirsiniz.
+</div>
+
+
+<section class="about">
 
 <h2>Araclio Nedir?</h2>
 
-<p>Araclio; finans, ticaret, vergi, maaş, çalışma hayatı, gayrimenkul, günlük hesaplamalar, sağlık ve birim dönüşümleri için ücretsiz online araçlar sunar.</p>
-
-<p>Üyelik gerekmez. Araçlar doğrudan tarayıcı üzerinden kullanılabilir.</p>
-
-<p>Finansal, hukuki, vergi ve sağlıkla ilgili sonuçlar genel bilgilendirme amaçlıdır. Resmî işlem veya kişisel karar öncesinde güncel resmî bilgiler kontrol edilmelidir.</p>
+<p>
+Araclio; finans, ticaret, vergi, maaş, çalışma hayatı,
+gayrimenkul, günlük hesaplamalar, sağlık ve birim dönüşümleri
+için ücretsiz online araçlar sunar.
+</p>
 
 <p>
-<a href="/en/" style="color:#ffd400;font-weight:bold;">
-English Version →
-</a>
+Üyelik gerekmez. Araçlar doğrudan tarayıcı üzerinden kullanılabilir.
+</p>
+
+<p>
+Finansal, hukuki, vergi ve sağlıkla ilgili sonuçlar genel
+bilgilendirme amaçlıdır. Resmî işlem veya kişisel karar öncesinde
+güncel resmî bilgiler kontrol edilmelidir.
+</p>
+
+<p>
+<a href="/en/">English Version →</a>
 </p>
 
 </section>
 
 </main>
 
+
 <footer>
 <div class="wrap">
 
 <p>
-<a href="/about.html">Hakkımızda</a> •
-<a href="/contact.html">İletişim</a> •
-<a href="/privacy-policy.html">Gizlilik Politikası</a> •
-<a href="/terms.html">Kullanım Koşulları</a> •
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
 <a href="/en/">English</a>
 </p>
 
-<p>© <span id="year"></span> Araclio • Ücretsiz Online Araçlar</p>
+<p>
+© <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+</p>
 
 </div>
 </footer>
 
-<script>
-document.getElementById("year").textContent=new Date().getFullYear();
 
-const searchInput=document.getElementById("toolSearch");
-const cards=document.querySelectorAll(".tool-card");
-const sections=document.querySelectorAll(".tool-section");
-const empty=document.getElementById("searchEmpty");
+<script>
+const searchInput = document.getElementById("toolSearch");
+const cards = Array.from(document.querySelectorAll(".tool-card"));
+const emptyState = document.getElementById("emptyState");
 
 function normalizeText(text){
-return text
-.toLocaleLowerCase("tr-TR")
-.replace(/ı/g,"i")
-.replace(/ğ/g,"g")
-.replace(/ü/g,"u")
-.replace(/ş/g,"s")
-.replace(/ö/g,"o")
-.replace(/ç/g,"c");
+  return text
+    .toLocaleLowerCase("tr-TR")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g,"");
 }
 
-searchInput.addEventListener("input",function(){
+function searchTools(){
+  const query = normalizeText(searchInput.value.trim());
+  let visible = 0;
 
-const query=normalizeText(this.value.trim());
-let totalVisible=0;
+  cards.forEach(function(card){
+    const text = normalizeText(
+      (card.dataset.search || "") + " " + card.textContent
+    );
 
-cards.forEach(function(card){
+    const show = query === "" || text.includes(query);
 
-const text=normalizeText(
-card.innerText+" "+(card.dataset.search||"")
-);
+    card.style.display = show ? "" : "none";
 
-const show=query===""||text.includes(query);
+    if(show){
+      visible++;
+    }
+  });
 
-card.style.display=show?"":"none";
-
-if(show){totalVisible++;}
-
-});
-
-sections.forEach(function(section){
-
-const visibleCards=
-Array.from(section.querySelectorAll(".tool-card"))
-.filter(function(card){
-return card.style.display!=="none";
-});
-
-if(query!==""&&visibleCards.length===0){
-section.classList.add("category-hidden");
-}else{
-section.classList.remove("category-hidden");
+  emptyState.style.display =
+    query !== "" && visible === 0 ? "block" : "none";
 }
 
-});
+searchInput.addEventListener("input",searchTools);
 
-empty.style.display=
-query!==""&&totalVisible===0
-?"block"
-:"none";
-
-});
-
-searchInput.addEventListener("keydown",function(event){
-
-if(event.key!=="Enter"){return;}
-
-const visibleCards=
-Array.from(cards).filter(function(card){
-return card.style.display!=="none";
-});
-
-if(visibleCards.length===1){
-
-const link=visibleCards[0].querySelector("a");
-
-if(link){
-window.location.href=link.href;
-}
-
-}
-
-});
+document.getElementById("year").textContent =
+  new Date().getFullYear();
 </script>
 
 </body>
