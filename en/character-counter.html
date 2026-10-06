@@ -1,161 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Character Counter | Free Online Character Count - Araclio</title>
+<title>Character Counter Online | Count Characters & Words Free - Araclio</title>
 
-  <meta name="description" content="Free online character counter. Type or paste text to instantly count characters with spaces, characters without spaces and words.">
+<meta
+  name="description"
+  content="Free online character counter. Instantly count characters with spaces, characters without spaces, words, sentences and lines. No sign-up required."
+>
 
-  <meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
 
-  <link rel="canonical" href="https://araclio.com/en/character-counter.html">
+<link rel="canonical" href="https://araclio.com/en/character-counter.html">
 
-  <link rel="alternate" hreflang="en" href="https://araclio.com/en/character-counter.html">
-  <link rel="alternate" hreflang="tr" href="https://araclio.com/kelime-karakter-sayaci.html">
-  <link rel="alternate" hreflang="x-default" href="https://araclio.com/en/character-counter.html">
+<link
+  rel="alternate"
+  hreflang="en"
+  href="https://araclio.com/en/character-counter.html"
+>
 
-  <link rel="stylesheet" href="../style.css">
+<link
+  rel="alternate"
+  hreflang="tr"
+  href="https://araclio.com/kelime-karakter-sayaci.html"
+>
+
+<link
+  rel="alternate"
+  hreflang="x-default"
+  href="https://araclio.com/en/character-counter.html"
+>
+
+<link rel="stylesheet" href="../style.css">
+
+<meta property="og:type" content="website">
+
+<meta
+  property="og:title"
+  content="Character Counter Online | Free Character & Word Count"
+>
+
+<meta
+  property="og:description"
+  content="Count characters, characters without spaces, words, sentences and lines instantly."
+>
+
+<meta
+  property="og:url"
+  content="https://araclio.com/en/character-counter.html"
+>
+
+<meta property="og:site_name" content="Araclio">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Character Counter",
+  "url": "https://araclio.com/en/character-counter.html",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Any",
+  "description": "Free online tool to count characters with spaces, characters without spaces, words, sentences and lines.",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I count characters online?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Type or paste your text into the Character Counter. The tool instantly displays the total number of characters, characters without spaces, words, sentences and lines."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the character count include spaces?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The tool shows both totals: characters including spaces and characters excluding whitespace."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are words counted?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Words are counted by separating non-empty text using whitespace such as spaces, tabs and line breaks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Character Counter free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Araclio Character Counter is free to use and does not require registration."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/en/">Araclio</a>
-    <span class="tag">Free Online Tools</span>
-  </div>
+<div class="wrap nav">
+
+<a class="brand" href="/en/">
+Araclio
+</a>
+
+<span class="tag">
+Free Online Tools
+</span>
+
+</div>
 </header>
+
 
 <main class="wrap">
 
-  <section class="hero">
-    <p class="eyebrow">FAST • FREE • NO SIGN-UP</p>
 
-    <h1>Character Counter</h1>
+<section class="hero">
 
-    <p>
-      Type or paste your text to instantly count characters
-      with and without spaces.
-    </p>
-  </section>
+<p class="eyebrow">
+FAST • FREE • NO SIGN-UP
+</p>
 
+<h1>Character Counter Online</h1>
 
-  <section class="card">
-    <h2>Free Online Character Counter</h2>
+<p>
+Type or paste your text to instantly count characters,
+characters without spaces, words, sentences and lines.
+The results update automatically while you type.
+</p>
 
-    <label>
-      Your Text
-      <textarea
-        id="text"
-        rows="12"
-        placeholder="Type or paste your text here..."
-        oninput="countCharacters()"></textarea>
-    </label>
-
-    <div id="result" class="result">
-      Characters: 0<br>
-      Characters without spaces: 0<br>
-      Words: 0
-    </div>
-  </section>
+</section>
 
 
-  <section class="card">
-    <h2>How to Use the Character Counter</h2>
+<section class="card">
 
-    <p>
-      Enter or paste your text into the box above. The results
-      update automatically every time you add or remove text.
-    </p>
+<h2>Free Character Counter</h2>
 
-    <p>
-      The first result includes spaces and punctuation. The second
-      removes whitespace such as spaces and line breaks.
-    </p>
-  </section>
+<p>
+Paste or type any text below. No button is required —
+the counter updates instantly.
+</p>
 
+<label>
+Your Text
 
-  <section class="card">
-    <h2>What Is a Character Count?</h2>
+<textarea
+  id="text"
+  rows="12"
+  placeholder="Type or paste your text here..."
+  oninput="countCharacters()"
+></textarea>
 
-    <p>
-      A character count measures the number of characters contained
-      in a piece of text. Characters can include letters, numbers,
-      punctuation marks and spaces.
-    </p>
-
-    <p>
-      Character limits are commonly used for forms, descriptions,
-      headlines, messages and online content.
-    </p>
-  </section>
+</label>
 
 
-  <section class="card">
-    <h2>Characters With Spaces vs. Without Spaces</h2>
+<div id="result" class="result" aria-live="polite">
 
-    <p>
-      Character count with spaces includes every character entered
-      in the text box, including whitespace.
-    </p>
+Characters: <strong>0</strong><br>
+Characters without spaces: <strong>0</strong><br>
+Words: <strong>0</strong><br>
+Sentences: <strong>0</strong><br>
+Lines: <strong>0</strong>
 
-    <p>
-      Character count without spaces removes whitespace before
-      calculating the total. This makes it easy to compare both
-      measurements instantly.
-    </p>
-  </section>
+</div>
+
+</section>
 
 
-  <section class="card">
-    <h2>More Free Online Tools</h2>
+<section class="card">
 
-    <p><a href="/en/percentage-calculator.html">Percentage Calculator →</a></p>
-    <p><a href="/en/discount-calculator.html">Discount Calculator →</a></p>
-    <p><a href="/en/profit-markup-calculator.html">Profit Markup Calculator →</a></p>
-    <p><a href="/en/word-counter.html">Word Counter →</a></p>
-    <p><a href="/en/">All Online Tools →</a></p>
-  </section>
+<h2>How to Use the Character Counter</h2>
+
+<p>
+Simply type or paste your text into the box above.
+The results update automatically whenever you add,
+remove or edit text.
+</p>
+
+<p>
+The tool displays:
+</p>
+
+<p>
+* Characters including spaces<br>
+* Characters without spaces<br>
+* Word count<br>
+* Sentence count<br>
+* Line count
+</p>
+
+<p>
+Everything is calculated directly in your browser.
+No registration is required.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>What Is a Character Count?</h2>
+
+<p>
+A character count measures how many individual characters
+appear in a piece of text.
+</p>
+
+<p>
+Characters may include:
+</p>
+
+<p>
+* Letters<br>
+* Numbers<br>
+* Spaces<br>
+* Punctuation marks<br>
+* Symbols<br>
+* Line breaks
+</p>
+
+<p>
+Character limits are commonly used for social media posts,
+forms, headlines, descriptions, advertisements, applications
+and online publishing.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Characters With Spaces vs. Without Spaces</h2>
+
+<p>
+<strong>Characters with spaces</strong> counts every character
+entered in the text box, including spaces and punctuation.
+</p>
+
+<p>
+<strong>Characters without spaces</strong> removes whitespace
+such as spaces, tabs and line breaks before calculating
+the total.
+</p>
+
+<p>
+Because different platforms may define character limits
+differently, seeing both totals can be useful.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>How Are Words Counted?</h2>
+
+<p>
+The word counter separates text using spaces, tabs and
+line breaks.
+</p>
+
+<p>
+For example:
+</p>
+
+<p>
+<strong>Hello world</strong>
+</p>
+
+<p>
+contains:
+</p>
+
+<p>
+<strong>11 characters including the space</strong><br>
+<strong>10 characters without the space</strong><br>
+<strong>2 words</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sentence Counter</h2>
+
+<p>
+The tool also estimates the number of sentences in your text.
+</p>
+
+<p>
+Sentences are generally detected using common ending
+punctuation such as:
+</p>
+
+<p>
+<strong>.</strong> period<br>
+<strong>!</strong> exclamation mark<br>
+<strong>?</strong> question mark
+</p>
+
+<p>
+Sentence counting is intended as a quick estimate and
+may vary for unusual punctuation or abbreviations.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Line Counter</h2>
+
+<p>
+The line counter shows how many lines are present in
+your text.
+</p>
+
+<p>
+This can be useful when working with:
+</p>
+
+<p>
+* Lists<br>
+* Code snippets<br>
+* Captions<br>
+* Notes<br>
+* Poetry<br>
+* Structured text
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>What Is a Character Counter Used For?</h2>
+
+<p>
+A character counter can help when writing content that has
+a specific length requirement.
+</p>
+
+<p>
+Common uses include:
+</p>
+
+<p>
+* Social media captions<br>
+* Profile descriptions<br>
+* Website titles and descriptions<br>
+* Forms and applications<br>
+* Product descriptions<br>
+* Advertising copy<br>
+* Messages<br>
+* Essays and assignments
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>How do I count characters online?</h3>
+
+<p>
+Type or paste your text into the box at the top of this page.
+The number of characters updates instantly.
+</p>
+
+<h3>Does the character count include spaces?</h3>
+
+<p>
+This tool shows both results. You can see the total number
+of characters including spaces and the total without spaces.
+</p>
+
+<h3>How do I count characters without spaces?</h3>
+
+<p>
+The tool automatically removes whitespace when calculating
+the “Characters without spaces” result.
+</p>
+
+<h3>Can I count words?</h3>
+
+<p>
+Yes. The tool automatically counts words as you type or paste text.
+</p>
+
+<h3>Can I count sentences?</h3>
+
+<p>
+Yes. The tool estimates the number of sentences using common
+sentence-ending punctuation.
+</p>
+
+<h3>Can I count lines?</h3>
+
+<p>
+Yes. The tool also displays the number of lines in your text.
+</p>
+
+<h3>Is this Character Counter free?</h3>
+
+<p>
+Yes. Araclio Character Counter is completely free and
+does not require registration.
+</p>
+
+<h3>Is my text uploaded or stored?</h3>
+
+<p>
+The counting process runs directly in your browser.
+The text you enter does not need to be sent to a server
+for the counter to work.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>About This Character Counter</h2>
+
+<p>
+Araclio Character Counter is designed as a fast,
+simple and free tool for checking text length.
+</p>
+
+<p>
+Results are calculated instantly in your browser
+as you type.
+</p>
+
+<p>
+<strong>Last updated: October 2026</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>More Free Online Tools</h2>
+
+<p>
+<a href="/en/percentage-calculator.html">
+Percentage Calculator →
+</a>
+</p>
+
+<p>
+<a href="/en/discount-calculator.html">
+Discount Calculator →
+</a>
+</p>
+
+<p>
+<a href="/en/profit-markup-calculator.html">
+Profit Markup Calculator →
+</a>
+</p>
+
+<p>
+<a href="/en/word-counter.html">
+Word Counter →
+</a>
+</p>
+
+<p>
+<a href="/en/">
+All Online Tools →
+</a>
+</p>
+
+</section>
+
 
 </main>
 
 
 <footer>
-  <div class="wrap">
-    © <span id="year"></span> Araclio • Free Online Tools
-  </div>
+
+<div class="wrap">
+© <span id="year"></span> Araclio • Free Online Tools
+</div>
+
 </footer>
 
 
 <script>
-function countCharacters() {
-  const text = document.getElementById("text").value;
-  const resultArea = document.getElementById("result");
 
-  const characters = text.length;
+function countCharacters() {
+
+  const text =
+    document.getElementById("text").value;
+
+  const resultArea =
+    document.getElementById("result");
+
+  const characters =
+    text.length;
 
   const charactersWithoutSpaces =
     text.replace(/\s/g, "").length;
 
-  const trimmedText = text.trim();
+  const trimmedText =
+    text.trim();
 
   const words =
     trimmedText === ""
       ? 0
       : trimmedText.split(/\s+/).length;
 
+  let sentences = 0;
+
+  if (trimmedText !== "") {
+
+    const sentenceMatches =
+      trimmedText.match(/[^.!?]+[.!?]+|[^.!?]+$/g);
+
+    sentences =
+      sentenceMatches
+        ? sentenceMatches.length
+        : 0;
+  }
+
+  const lines =
+    text === ""
+      ? 0
+      : text.split(/\r\n|\r|\n/).length;
+
   resultArea.innerHTML =
-    "Characters: <strong>" + characters + "</strong><br>" +
+
+    "Characters: <strong>" +
+    characters +
+    "</strong><br>" +
+
     "Characters without spaces: <strong>" +
     charactersWithoutSpaces +
     "</strong><br>" +
-    "Words: <strong>" + words + "</strong>";
+
+    "Words: <strong>" +
+    words +
+    "</strong><br>" +
+
+    "Sentences: <strong>" +
+    sentences +
+    "</strong><br>" +
+
+    "Lines: <strong>" +
+    lines +
+    "</strong>";
 }
+
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
+
 </script>
 
 </body>
