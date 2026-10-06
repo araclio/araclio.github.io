@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ücretsiz Online Hesaplama Araçları | Maaş, Finans, Yüzde, Kargo - Araclio</title>
+<title>Ücretsiz Online Hesaplama Araçları | Araclio</title>
 
 <meta
   name="description"
-  content="Araclio ile yüzde, desi, kâr marjı, maaş, KDV, kredi, kira, tazminat ve daha birçok hesaplamayı ücretsiz ve üyelik gerektirmeden yapın."
+  content="Araclio ile yüzde, desi, kâr marjı, maaş, KDV, kredi, kira, tazminat ve birçok hesaplamayı ücretsiz ve üyelik gerektirmeden yapın."
 >
 
 <meta name="robots" content="index,follow">
@@ -27,12 +27,14 @@
 <link rel="alternate" hreflang="en" href="https://araclio.com/en/">
 <link rel="alternate" hreflang="x-default" href="https://araclio.com/">
 
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
 <meta property="og:type" content="website">
 <meta property="og:title" content="Araclio | Ücretsiz Online Hesaplama Araçları">
 
 <meta
   property="og:description"
-  content="Yüzde, desi, kâr marjı, maaş, finans, vergi, kira ve günlük hesaplama araçları."
+  content="Yüzde, desi, kâr marjı, maaş, finans, vergi, kira, kargo ve günlük hesaplama araçları."
 >
 
 <meta property="og:url" content="https://araclio.com/">
@@ -44,17 +46,9 @@
   "@type": "WebSite",
   "name": "Araclio",
   "url": "https://araclio.com/",
-  "description": "Ücretsiz online hesaplama ve dönüştürme araçları.",
-  "inLanguage": "tr-TR"
-}
-</script>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Araclio",
-  "url": "https://araclio.com/"
+  "description": "Ücretsiz online hesaplama, dönüştürme ve günlük yardımcı araçlar.",
+  "inLanguage": "tr-TR",
+  "dateModified": "2026-10-07"
 }
 </script>
 
@@ -197,8 +191,7 @@ header{
   padding:12px 0 38px;
 }
 
-.category-nav h2,
-.section-title{
+.category-nav h2{
   margin:0 0 18px;
 }
 
@@ -366,6 +359,33 @@ header{
   text-decoration:none;
 }
 
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
+  margin-top:18px;
+}
+
+.trust-link{
+  display:block;
+  text-decoration:none;
+  border:1px solid var(--line);
+  background:#0a1c2e;
+  padding:16px;
+  border-radius:14px;
+}
+
+.trust-link strong{
+  display:block;
+  color:var(--white);
+  margin-bottom:4px;
+}
+
+.trust-link span{
+  color:var(--muted);
+  font-size:13px;
+}
+
 .empty{
   display:none;
   text-align:center;
@@ -403,6 +423,10 @@ footer a:hover{
     grid-template-columns:repeat(2,1fr);
   }
 
+  .trust-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
 }
 
 @media(max-width:600px){
@@ -424,7 +448,8 @@ footer a:hover{
   }
 
   .tools-grid,
-  .popular-grid{
+  .popular-grid,
+  .trust-grid{
     grid-template-columns:1fr;
   }
 
@@ -463,6 +488,7 @@ Araclio
 
 </header>
 
+
 <main class="wrap">
 
 <section class="hero">
@@ -476,9 +502,9 @@ Online hesaplamalar artık daha kolay.
 </h1>
 
 <p class="hero-text">
-Yüzde, desi, kâr marjı, maaş, vergi, kredi, kira,
-tazminat ve günlük hesaplamalar için ihtiyacınız olan
-ücretsiz online araçları tek yerde kullanın.
+Yüzde, desi, kâr marjı, maaş, SGK, vergi, kredi,
+kira, kargo ve günlük hesaplamalar için ihtiyacınız
+olan ücretsiz online araçları tek yerde kullanın.
 </p>
 
 <div class="search-box">
@@ -498,8 +524,8 @@ tazminat ve günlük hesaplamalar için ihtiyacınız olan
 </div>
 
 <div class="search-note">
-Örn: yüzde, desi, kâr marjı, KDV, maaş, rapor parası,
-kredi, kira, tazminat...
+Örn: yüzde, desi, kâr marjı, KDV, maaş,
+rapor parası, kredi, kira, tazminat...
 </div>
 
 </section>
@@ -614,19 +640,6 @@ Pratik günlük işlemler
 
 </a>
 
-
-<a class="category-link" href="#finans">
-
-<strong>
-☷ Tüm Araçlar
-</strong>
-
-<span>
-Tüm hesaplama araçları
-</span>
-
-</a>
-
 </div>
 
 </section>
@@ -657,7 +670,7 @@ En çok ihtiyaç duyulan hesaplamalara hızlıca ulaşın.
 </strong>
 
 <span>
-Yüzde, oran, artırma ve azaltma işlemlerini hesaplayın.
+Yüzde, oran, artırma ve azaltma işlemleri.
 </span>
 
 </a>
@@ -683,7 +696,7 @@ Paket ölçülerinden kargo desisini hesaplayın.
 </strong>
 
 <span>
-Kâr oranı, kâr marjı ve satış fiyatını hesaplayın.
+Kâr oranı, marj ve satış fiyatı hesaplayın.
 </span>
 
 </a>
@@ -696,7 +709,7 @@ Kâr oranı, kâr marjı ve satış fiyatını hesaplayın.
 </strong>
 
 <span>
-Tutar, faiz ve vadeye göre aylık taksiti hesaplayın.
+Faiz ve vadeye göre kredi taksitini hesaplayın.
 </span>
 
 </a>
@@ -709,7 +722,7 @@ Tutar, faiz ve vadeye göre aylık taksiti hesaplayın.
 </strong>
 
 <span>
-Count characters, words, sentences and lines online.
+Count characters, words, sentences and lines.
 </span>
 
 </a>
@@ -781,8 +794,8 @@ Hesapla →
 <h3>Kâr Marjı Hesaplama</h3>
 
 <p>
-Maliyet ve satış fiyatından kâr oranı ve kâr marjını;
-hedef marja göre satış fiyatını hesaplayın.
+Kâr oranı, kâr marjı ve hedef marja göre
+satış fiyatını hesaplayın.
 </p>
 
 <a href="/kar-marji-hesaplama.html">
@@ -1054,8 +1067,7 @@ Hesapla →
 <h3>Netten Brüte Maaş Hesaplama</h3>
 
 <p>
-Net maaşınızın 2026 kesintilerine göre tahmini
-brüt karşılığını hesaplayın.
+Net maaşınızın tahmini brüt karşılığını hesaplayın.
 </p>
 
 <a href="/netten-brute-maas-hesaplama.html">
@@ -1125,8 +1137,8 @@ Hesapla →
 <h3>İşsizlik Maaşı Hesaplama</h3>
 
 <p>
-Son 4 aylık brüt kazanç ve prim gününüze göre
-tahmini işsizlik ödeneğinizi hesaplayın.
+Brüt kazanç ve prim gününüze göre tahmini
+işsizlik ödeneğinizi hesaplayın.
 </p>
 
 <a href="/issizlik-maasi-hesaplama.html">
@@ -1138,13 +1150,11 @@ Hesapla →
 
 <article class="card tool-card" data-search="yıllık izin ücreti hesaplama kullanılmayan izin">
 
-<span class="badge">Çalışma</span>
-
 <h3>Yıllık İzin Ücreti Hesaplama</h3>
 
 <p>
-Aylık ücret ve kullanılmayan izin gününüze göre
-tahmini yıllık izin ücretinizi hesaplayın.
+Ücret ve kullanılmayan izin gününe göre
+tahmini izin ücretinizi hesaplayın.
 </p>
 
 <a href="/yillik-izin-ucreti-hesaplama.html">
@@ -1287,8 +1297,7 @@ Hesapla →
 <h3>Kira Stopajı Hesaplama</h3>
 
 <p>
-Net veya brüt işyeri kirasından stopaj tutarını
-ve ödenecek kira bedelini hesaplayın.
+Net veya brüt işyeri kirasından stopaj tutarını hesaplayın.
 </p>
 
 <a href="/kira-stopaji-hesaplama.html">
@@ -1326,8 +1335,8 @@ Yüzde, tarih, yol, metin, kargo ve günlük hesaplamalar.
 <h3>Yüzde Hesaplama</h3>
 
 <p>
-Bir sayının yüzdesini, oranını ve yüzde artırma veya
-azaltma sonucunu hesaplayın.
+Bir sayının yüzdesini, oranını ve yüzde artış
+veya azalış sonucunu hesaplayın.
 </p>
 
 <a href="/yuzde-hesaplama.html">
@@ -1504,7 +1513,7 @@ Kontrol Et →
 </article>
 
 
-<article class="card tool-card" data-search="kelime karakter sayacı metin kelime karakter">
+<article class="card tool-card" data-search="kelime karakter sayacı metin">
 
 <h3>Kelime &amp; Karakter Sayacı</h3>
 
@@ -1639,101 +1648,56 @@ Günlük ve teknik birimleri birbirine dönüştürün.
 
 
 <article class="card tool-card" data-search="güç dönüştürücü watt kw hp">
-
 <h3>Güç Dönüştürücü</h3>
-
-<a href="/guc-donusturucu.html">
-Dönüştür →
-</a>
-
+<a href="/guc-donusturucu.html">Dönüştür →</a>
 </article>
 
 
 <article class="card tool-card" data-search="enerji dönüştürücü">
-
 <h3>Enerji Dönüştürücü</h3>
-
-<a href="/enerji-donusturucu.html">
-Dönüştür →
-</a>
-
+<a href="/enerji-donusturucu.html">Dönüştür →</a>
 </article>
 
 
 <article class="card tool-card" data-search="hacim dönüştürücü litre ml">
-
 <h3>Hacim Dönüştürücü</h3>
-
-<a href="/hacim-donusturucu.html">
-Dönüştür →
-</a>
-
+<a href="/hacim-donusturucu.html">Dönüştür →</a>
 </article>
 
 
 <article class="card tool-card" data-search="alan dönüştürücü">
-
 <h3>Alan Dönüştürücü</h3>
-
-<a href="/alan-donusturucu.html">
-Dönüştür →
-</a>
-
+<a href="/alan-donusturucu.html">Dönüştür →</a>
 </article>
 
 
 <article class="card tool-card" data-search="ağırlık dönüştürücü kg gram">
-
 <h3>Ağırlık Dönüştürücü</h3>
-
-<a href="/agirlik-donusturucu.html">
-Dönüştür →
-</a>
-
+<a href="/agirlik-donusturucu.html">Dönüştür →</a>
 </article>
 
 
 <article class="card tool-card" data-search="sıcaklık dönüştürücü celsius fahrenheit">
-
 <h3>Sıcaklık Dönüştürücü</h3>
-
-<a href="/sicaklik-donusturucu.html">
-Dönüştür →
-</a>
-
+<a href="/sicaklik-donusturucu.html">Dönüştür →</a>
 </article>
 
 
 <article class="card tool-card" data-search="uzunluk dönüştürücü cm metre km">
-
 <h3>Uzunluk Dönüştürücü</h3>
-
-<a href="/uzunluk-donusturucu.html">
-Dönüştür →
-</a>
-
+<a href="/uzunluk-donusturucu.html">Dönüştür →</a>
 </article>
 
 
 <article class="card tool-card" data-search="mb gb tb dönüştürücü">
-
 <h3>MB, GB ve TB Dönüştürücü</h3>
-
-<a href="/veri-boyutu-donusturucu.html">
-Dönüştür →
-</a>
-
+<a href="/veri-boyutu-donusturucu.html">Dönüştür →</a>
 </article>
 
 
 <article class="card tool-card" data-search="saat dakika saniye dönüştürücü">
-
 <h3>Saat, Dakika ve Saniye</h3>
-
-<a href="/zaman-donusturucu.html">
-Dönüştür →
-</a>
-
+<a href="/zaman-donusturucu.html">Dönüştür →</a>
 </article>
 
 </div>
@@ -1756,41 +1720,55 @@ Araclio Nedir?
 </h2>
 
 <p>
-Araclio; finans, ticaret, vergi, maaş, çalışma hayatı,
-gayrimenkul, yüzde, kargo, günlük hesaplamalar,
+Araclio; finans, ticaret, vergi, maaş, SGK,
+gayrimenkul, yüzde, kargo, tarih, günlük hesaplamalar,
 sağlık ve birim dönüşümleri için ücretsiz online
-araçlar sunar.
+araçlar sunan bir web platformudur.
 </p>
 
 <p>
-Üyelik gerekmez. Hesaplama araçları doğrudan
-tarayıcı üzerinden kullanılabilir.
+Araçların temel özelliklerini kullanmak için üyelik
+veya hesap oluşturmanız gerekmez.
 </p>
 
 <p>
-Finansal, hukuki, vergi ve sağlıkla ilgili sonuçlar
-genel bilgilendirme amaçlıdır. Resmî işlem veya kişisel
-karar öncesinde güncel resmî bilgilerin kontrol edilmesi önerilir.
+Finansal, hukuki, vergi, SGK ve sağlıkla ilgili
+hesaplamalar genel bilgilendirme ve tahmin amaçlıdır.
+Resmî işlem veya önemli bir karar öncesinde ilgili
+kurumların güncel bilgilerinin kontrol edilmesi önerilir.
 </p>
 
 <p>
-<strong>Öne çıkan:</strong>
-<a href="/yuzde-hesaplama.html">Yüzde Hesaplama</a>
-•
-<a href="/desi-hesaplama.html">Desi Hesaplama</a>
-•
-<a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama</a>
+<strong>Son güncelleme: Ekim 2026</strong>
 </p>
 
-<p>
+<div class="trust-grid">
+
+<a class="trust-link" href="/hakkimizda.html">
+<strong>Hakkımızda</strong>
+<span>Araclio'nun amacı ve sunduğu hizmetler.</span>
+</a>
+
+<a class="trust-link" href="/iletisim.html">
+<strong>İletişim</strong>
+<span>Görüş, öneri ve hata bildirimleri.</span>
+</a>
+
+<a class="trust-link" href="/gizlilik-politikasi.html">
+<strong>Gizlilik Politikası</strong>
+<span>Çerezler, reklamlar ve gizlilik bilgileri.</span>
+</a>
+
+<a class="trust-link" href="/kullanim-kosullari.html">
+<strong>Kullanım Koşulları</strong>
+<span>Site ve hesaplama araçlarının kullanım şartları.</span>
+</a>
+
+</div>
+
+<p style="margin-top:22px;">
 <a href="/en/">
 English Version →
-</a>
-</p>
-
-<p>
-<a href="/en/character-counter.html">
-English Character Counter →
 </a>
 </p>
 
@@ -1804,6 +1782,12 @@ English Character Counter →
 <div class="wrap">
 
 <p>
+
+<a href="/">
+Ana Sayfa
+</a>
+
+•
 
 <a href="/hakkimizda.html">
 Hakkımızda
@@ -1877,7 +1861,6 @@ function searchTools(){
 
   let visible = 0;
 
-
   cards.forEach(function(card){
 
     const text =
@@ -1899,7 +1882,6 @@ function searchTools(){
     }
 
   });
-
 
   emptyState.style.display =
     query !== "" && visible === 0
