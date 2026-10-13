@@ -1,0 +1,1036 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Metrekare Hesaplama | Oda Duvar Zemin m² Hesapla - Araclio</title>
+
+<meta
+name="description"
+content="Ücretsiz metrekare hesaplama aracı. En ve boy ölçülerinden oda, zemin, duvar, halı, parke, fayans ve dikdörtgen alanların m² değerini kolayca hesaplayın."
+>
+
+<meta name="robots" content="index,follow">
+
+<meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
+
+<link rel="canonical" href="https://araclio.com/metrekare-hesaplama.html">
+
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Metrekare Hesaplama | Araclio">
+<meta
+property="og:description"
+content="En ve boy ölçülerinden oda, duvar ve zemin alanını metrekare olarak ücretsiz hesaplayın."
+>
+<meta property="og:url" content="https://araclio.com/metrekare-hesaplama.html">
+<meta property="og:site_name" content="Araclio">
+
+<style>
+
+.calc-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+.info-box{
+margin-top:18px;
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.result-detail{
+margin-top:12px;
+line-height:1.8;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:520px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+@media(max-width:600px){
+
+.calc-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Metrekare Hesaplama",
+  "url":"https://araclio.com/metrekare-hesaplama.html",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"En ve boy ölçülerinden dikdörtgen alanların metrekare değerini hesaplayan ücretsiz online araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Metrekare Hesaplama",
+      "item":"https://araclio.com/metrekare-hesaplama.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Metrekare nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Dikdörtgen bir alanın metrekaresi, metre cinsinden en ile boyun çarpılmasıyla hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"4 metreye 5 metre oda kaç metrekare?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"4 metre ile 5 metre çarpıldığında oda alanı 20 metrekaredir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Santimetreden metrekare hesaplanabilir mi?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Evet. Santimetre ölçüleri önce metreye çevrilir veya santimetrekare sonucu 10.000'e bölünerek metrekare bulunur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Duvar metrekaresi nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Dikdörtgen bir duvarın metrekaresi genişlik ile yükseklik çarpılarak hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Parke veya fayans için kaç metrekare alınmalı?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Net alan hesaplandıktan sonra kesim ve fire payı için uygulamaya göre ek malzeme gerekebilir. Bu oran ürün ve uygulama koşullarına göre değişir."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="wrap nav">
+
+<a class="brand" href="/">
+Araclio
+</a>
+
+<span class="tag">
+Ücretsiz Online Araçlar
+</span>
+
+</div>
+
+</header>
+
+
+<main class="wrap">
+
+<section class="hero">
+
+<p class="eyebrow">
+ALAN • ODA • ZEMİN • DUVAR
+</p>
+
+<h1>Metrekare Hesaplama</h1>
+
+<p>
+En ve boy ölçülerini girerek oda, zemin, duvar,
+halı, parke, fayans veya başka bir dikdörtgen alanın
+metrekaresini saniyeler içinde hesaplayın.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Metrekare Hesapla</h2>
+
+<label for="birim">
+Ölçü Birimi
+</label>
+
+<select id="birim">
+
+<option value="m" selected>
+Metre (m)
+</option>
+
+<option value="cm">
+Santimetre (cm)
+</option>
+
+</select>
+
+
+<div class="calc-grid">
+
+<div>
+
+<label for="en">
+En
+</label>
+
+<input
+id="en"
+type="number"
+min="0"
+step="any"
+inputmode="decimal"
+placeholder="Örnek: 4"
+>
+
+</div>
+
+
+<div>
+
+<label for="boy">
+Boy
+</label>
+
+<input
+id="boy"
+type="number"
+min="0"
+step="any"
+inputmode="decimal"
+placeholder="Örnek: 5"
+>
+
+</div>
+
+</div>
+
+
+<label for="adet">
+Aynı Ölçüde Alan Adedi — İsteğe Bağlı
+</label>
+
+<input
+id="adet"
+type="number"
+min="1"
+step="1"
+inputmode="numeric"
+value="1"
+>
+
+
+<button type="button" onclick="hesapla()">
+Metrekareyi Hesapla
+</button>
+
+
+<div id="sonuc" class="result" aria-live="polite">
+En ve boy ölçülerini girin.
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Metrekare Nasıl Hesaplanır?</h2>
+
+<p>
+Dikdörtgen veya kare bir alanın metrekaresi,
+metre cinsinden en ile boyun çarpılmasıyla bulunur.
+</p>
+
+<div class="info-box">
+
+<strong>Metrekare = En × Boy</strong>
+
+<br><br>
+
+Ölçüler metre cinsinden girilmelidir.
+
+</div>
+
+<p>
+Örneğin 4 metre en ve 5 metre boy:
+</p>
+
+<p>
+4 × 5 =
+<strong>20 m²</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>4 Metreye 5 Metre Oda Kaç Metrekare?</h2>
+
+<div class="info-box">
+
+4 m × 5 m =
+
+<br><br>
+
+<strong>20 m²</strong>
+
+</div>
+
+<p>
+Yani 4 metre genişliğinde ve 5 metre uzunluğunda
+dikdörtgen bir odanın zemin alanı 20 metrekaredir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Oda Metrekaresi Nasıl Hesaplanır?</h2>
+
+<p>
+Dikdörtgen bir odada duvardan duvara en ve boy
+ölçüleri alınır.
+</p>
+
+<p>
+Örneğin:
+</p>
+
+<div class="info-box">
+
+En = 3,5 metre
+
+<br>
+
+Boy = 4 metre
+
+<br><br>
+
+3,5 × 4 =
+<strong>14 m²</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Duvar Metrekaresi Nasıl Hesaplanır?</h2>
+
+<p>
+Dikdörtgen bir duvarın alanı genişlik ile yüksekliğin
+çarpılmasıyla bulunur.
+</p>
+
+<div class="info-box">
+
+Duvar genişliği = 4 metre
+
+<br>
+
+Duvar yüksekliği = 2,7 metre
+
+<br><br>
+
+4 × 2,7 =
+<strong>10,8 m²</strong>
+
+</div>
+
+<p>
+Kapı ve pencere alanları çıkarılacaksa bunların
+metrekareleri ayrıca hesaplanıp toplam duvar alanından
+düşülebilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Santimetreden Metrekare Nasıl Hesaplanır?</h2>
+
+<p>
+Ölçüler santimetre cinsindeyse bu araç birim olarak
+<strong>Santimetre (cm)</strong>
+seçilerek doğrudan kullanılabilir.
+</p>
+
+<p>
+Matematiksel olarak:
+</p>
+
+<div class="info-box">
+
+1 metre = 100 cm
+
+<br><br>
+
+1 m² = 10.000 cm²
+
+</div>
+
+<p>
+Örneğin:
+</p>
+
+<p>
+400 cm × 500 cm =
+20.0000 cm²
+</p>
+
+<p>
+200.000 ÷ 10.000 =
+<strong>20 m²</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Parke İçin Metrekare Nasıl Hesaplanır?</h2>
+
+<p>
+Parke uygulanacak zeminin en ve boy ölçüsü alınır ve
+çarpılarak net metrekare bulunur.
+</p>
+
+<p>
+Örneğin:
+</p>
+
+<div class="info-box">
+
+4,2 m × 3,8 m =
+
+<br><br>
+
+<strong>15,96 m²</strong>
+
+</div>
+
+<p>
+Satın alınacak gerçek parke miktarı, kesim ve fire
+nedeniyle net alandan daha fazla olabilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Fayans Metrekaresi Nasıl Hesaplanır?</h2>
+
+<p>
+Zemin veya duvar için fayans hesabında kaplanacak
+alanın net metrekaresi bulunur.
+</p>
+
+<p>
+Birden fazla aynı ölçülü yüzey varsa yukarıdaki
+<strong>Alan Adedi</strong>
+bölümünden toplam alanı hesaplayabilirsiniz.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Birden Fazla Odanın Metrekaresi Nasıl Hesaplanır?</h2>
+
+<p>
+Odaların ölçüleri birbirinden farklıysa her oda ayrı
+hesaplanmalı ve sonuçlar toplanmalıdır.
+</p>
+
+<div class="info-box">
+
+Oda 1 = 20 m²
+
+<br>
+
+Oda 2 = 15 m²
+
+<br>
+
+Oda 3 = 12 m²
+
+<br><br>
+
+Toplam =
+<strong>47 m²</strong>
+
+</div>
+
+<p>
+Odalar aynı ölçüdeyse araçtaki adet alanını
+kullanabilirsiniz.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Metrekare Hesaplama Örnekleri</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>En</th>
+<th>Boy</th>
+<th>Alan</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>2 m</td>
+<td>3 m</td>
+<td>6 m²</td>
+</tr>
+
+<tr>
+<td>3 m</td>
+<td>4 m</td>
+<td>12 m²</td>
+</tr>
+
+<tr>
+<td>4 m</td>
+<td>5 m</td>
+<td>20 m²</td>
+</tr>
+
+<tr>
+<td>5 m</td>
+<td>6 m</td>
+<td>30 m²</td>
+</tr>
+
+<tr>
+<td>7,5 m</td>
+<td>4 m</td>
+<td>30 m²</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Metrekare ile Metre Aynı Şey mi?</h2>
+
+<p>
+Hayır.
+</p>
+
+<p>
+Metre bir
+<strong>uzunluk</strong>
+birimidir.
+</p>
+
+<p>
+Metrekare ise bir
+<strong>alan</strong>
+birimidir.
+</p>
+
+<div class="info-box">
+
+1 metre = uzunluk
+
+<br><br>
+
+1 m² = 1 metre × 1 metre alan
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Metrekare Hesabı Nerelerde Kullanılır?</h2>
+
+<p>
+Metrekare hesabı birçok alanda kullanılır:
+</p>
+
+<p>
+* Oda ve ev alanı<br>
+* Zemin kaplama<br>
+* Parke hesabı<br>
+* Fayans ve seramik hesabı<br>
+* Halı ve zemin örtüsü<br>
+* Duvar boya alanı<br>
+* Bahçe ve arsa bölümleri<br>
+* İnşaat ve tadilat ön hesapları
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+<h3>Metrekare nasıl hesaplanır?</h3>
+
+<p>
+Metre cinsinden en ile boy çarpılır:
+<strong>m² = en × boy.</strong>
+</p>
+
+
+<h3>3 metreye 4 metre kaç metrekare?</h3>
+
+<p>
+3 × 4 =
+<strong>12 m²</strong>
+</p>
+
+
+<h3>4 metreye 5 metre kaç metrekare?</h3>
+
+<p>
+4 × 5 =
+<strong>20 m²</strong>
+</p>
+
+
+<h3>5 metreye 6 metre kaç metrekare?</h3>
+
+<p>
+5 × 6 =
+<strong>30 m²</strong>
+</p>
+
+
+<h3>400 cm × 500 cm kaç metrekare?</h3>
+
+<p>
+400 cm = 4 metre ve 500 cm = 5 metre olduğundan:
+<strong>20 m²</strong>
+</p>
+
+
+<h3>Duvar metrekaresi nasıl bulunur?</h3>
+
+<p>
+Duvar genişliği ile yüksekliği çarpılır.
+</p>
+
+
+<h3>Metrekare hesaplama ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio Metrekare Hesaplama aracı ücretsizdir
+ve üyelik gerektirmez.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Bilgilendirme</h2>
+
+<div class="info-box">
+
+Bu araç dikdörtgen ve kare alanlar için matematiksel
+metrekare hesabı yapar.
+
+<br><br>
+
+L şeklinde, üçgen, dairesel veya düzensiz alanlar için
+alanı daha küçük geometrik parçalara ayırıp ayrı ayrı
+hesaplamak gerekebilir.
+
+<br><br>
+
+Parke, fayans, boya veya başka malzeme satın alırken
+kesim, fire, derz, uygulama ve ürün özellikleri nedeniyle
+net metrekareden farklı miktar gerekebilir.
+
+</div>
+
+<p>
+<strong>Son güncelleme: Ekim 2026</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Diğer Hesaplama Araçları</h2>
+
+<p>
+<a href="/alan-donusturucu.html">
+Alan Dönüştürücü →
+</a>
+</p>
+
+<p>
+<a href="/mekanik-hesaplama.html">
+Mekanik Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/uzunluk-donusturucu.html">
+Uzunluk Dönüştürücü →
+</a>
+</p>
+
+<p>
+<a href="/birim-fiyat-hesaplama.html">
+Birim Fiyat Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/desi-hesaplama.html">
+Desi Hesaplama →
+</a>
+</p>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="wrap">
+
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
+
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
+
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
+
+</div>
+
+</footer>
+
+
+<script>
+
+function formatla(sayi){
+
+if(Math.abs(sayi) < 0.000000000001){
+sayi = 0;
+}
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+maximumFractionDigits:6
+}
+).format(sayi);
+
+}
+
+
+function hesapla(){
+
+const enInput =
+document.getElementById("en");
+
+const boyInput =
+document.getElementById("boy");
+
+const adetInput =
+document.getElementById("adet");
+
+const birim =
+document.getElementById("birim").value;
+
+const sonuc =
+document.getElementById("sonuc");
+
+
+const en =
+Number(enInput.value);
+
+const boy =
+Number(boyInput.value);
+
+const adet =
+Number(adetInput.value || 1);
+
+
+if(
+enInput.value === "" ||
+boyInput.value === "" ||
+!Number.isFinite(en) ||
+!Number.isFinite(boy) ||
+en <= 0 ||
+boy <= 0
+){
+
+sonuc.innerHTML =
+"Lütfen sıfırdan büyük geçerli en ve boy değerleri girin.";
+
+return;
+
+}
+
+
+if(
+!Number.isInteger(adet) ||
+adet <= 0
+){
+
+sonuc.innerHTML =
+"Alan adedi 1 veya daha büyük tam sayı olmalıdır.";
+
+return;
+
+}
+
+
+let enMetre =
+en;
+
+let boyMetre =
+boy;
+
+
+if(
+birim === "cm"
+){
+
+enMetre =
+en / 100;
+
+boyMetre =
+boy / 100;
+
+}
+
+
+const tekAlan =
+enMetre *
+boyMetre;
+
+
+const toplamAlan =
+tekAlan *
+adet;
+
+
+const cevre =
+2 *
+(
+enMetre +
+boyMetre
+);
+
+
+sonuc.innerHTML =
+
+"<strong>Toplam Alan: " +
+formatla(toplamAlan) +
+" m²</strong>" +
+
+"<div class='result-detail'>" +
+
+"Tek alan: <strong>" +
+formatla(tekAlan) +
+" m²</strong>" +
+
+"<br>" +
+
+"Adet: <strong>" +
+adet +
+"</strong>" +
+
+"<br>" +
+
+"En: <strong>" +
+formatla(enMetre) +
+" m</strong>" +
+
+"<br>" +
+
+"Boy: <strong>" +
+formatla(boyMetre) +
+" m</strong>" +
+
+"<br>" +
+
+"Tek alan çevresi: <strong>" +
+formatla(cevre) +
+" m</strong>" +
+
+"<br><br>" +
+
+"Formül: En × Boy × Adet" +
+
+"</div>";
+
+}
+
+
+[
+"en",
+"boy",
+"adet"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Enter"){
+hesapla();
+}
+
+}
+);
+
+});
+
+
+document
+.getElementById("birim")
+.addEventListener(
+"change",
+function(){
+
+if(
+document.getElementById("en").value !== "" &&
+document.getElementById("boy").value !== ""
+){
+
+hesapla();
+
+}
+
+}
+);
+
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
