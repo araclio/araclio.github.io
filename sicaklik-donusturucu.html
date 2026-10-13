@@ -1,281 +1,1023 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+<title>Sıcaklık Dönüştürücü | Celsius Fahrenheit Kelvin - Araclio</title>
 
-  <title>Sıcaklık Dönüştürücü | Celsius Fahrenheit Kelvin - Araclio</title>
+<meta
+name="description"
+content="Ücretsiz sıcaklık dönüştürücü. Celsius, Fahrenheit ve Kelvin arasında anında dönüşüm yapın. °C, °F ve K karşılıklarını kolayca hesaplayın."
+>
 
-  <meta name="description" content="Ücretsiz sıcaklık dönüştürücü. Celsius, Fahrenheit ve Kelvin arasında dönüşüm yapın. 1 Celsius kaç Fahrenheit, Fahrenheit kaç Celsius anında hesaplayın.">
+<meta name="robots" content="index,follow">
 
-  <meta name="robots" content="index,follow">
+<meta name="google-adsense-account" content="ca-pub-7634654090472031">
 
-  <link rel="canonical" href="https://araclio.com/sicaklik-donusturucu.html">
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
 
-  <link rel="stylesheet" href="style.css">
+<link rel="canonical" href="https://araclio.com/sicaklik-donusturucu.html">
 
-  <style>
-    .converter-grid {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:14px;
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sıcaklık Dönüştürücü | Celsius Fahrenheit Kelvin">
+<meta
+property="og:description"
+content="Celsius, Fahrenheit ve Kelvin sıcaklık birimleri arasında ücretsiz dönüşüm yapın."
+>
+<meta property="og:url" content="https://araclio.com/sicaklik-donusturucu.html">
+<meta property="og:site_name" content="Araclio">
+
+<style>
+
+.converter-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+.result-list{
+margin-top:14px;
+line-height:1.9;
+}
+
+.info-box{
+margin-top:16px;
+padding:16px;
+background:#f5f5f5;
+border-radius:10px;
+color:#222;
+line-height:1.8;
+}
+
+.formula-box{
+margin-top:15px;
+padding:15px;
+border-radius:8px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:520px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+@media(max-width:600px){
+
+.converter-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Sıcaklık Dönüştürücü",
+  "url":"https://araclio.com/sicaklik-donusturucu.html",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"Celsius, Fahrenheit ve Kelvin sıcaklık birimleri arasında dönüşüm yapan ücretsiz online araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Sıcaklık Dönüştürücü",
+      "item":"https://araclio.com/sicaklik-donusturucu.html"
     }
+  ]
+}
+</script>
 
-    .result-list {
-      margin-top:14px;
-      line-height:1.9;
-    }
-
-    .info-box {
-      margin-top:16px;
-      padding:16px;
-      background:#f5f5f5;
-      border-radius:10px;
-      line-height:1.8;
-    }
-
-    @media(max-width:600px){
-      .converter-grid {
-        grid-template-columns:1fr;
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Celsius Fahrenheit nasıl çevrilir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Celsius değerini Fahrenheit'a çevirmek için °F = (°C × 9/5) + 32 formülü kullanılır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Fahrenheit Celsius nasıl çevrilir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Fahrenheit değerini Celsius'a çevirmek için °C = (°F − 32) × 5/9 formülü kullanılır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Celsius Kelvin nasıl çevrilir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Celsius değerine 273,15 eklenerek Kelvin değeri bulunur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"0 Celsius kaç Fahrenheit?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"0 °C, 32 °F değerine eşittir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"100 Celsius kaç Fahrenheit?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"100 °C, 212 °F değerine eşittir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Mutlak sıfır kaç derecedir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Mutlak sıfır 0 K, yani −273,15 °C veya −459,67 °F değeridir."
       }
     }
-  </style>
+  ]
+}
+</script>
+
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Araclio</a>
-    <span class="tag">Ücretsiz Online Araçlar</span>
-  </div>
+
+<div class="wrap nav">
+
+<a class="brand" href="/">
+Araclio
+</a>
+
+<span class="tag">
+Ücretsiz Online Araçlar
+</span>
+
+</div>
+
 </header>
+
 
 <main class="wrap">
 
-  <section class="hero">
-    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+<section class="hero">
 
-    <h1>Sıcaklık Dönüştürücü</h1>
+<p class="eyebrow">
+CELSIUS • FAHRENHEIT • KELVIN
+</p>
 
-    <p>
-      Celsius (°C), Fahrenheit (°F) ve Kelvin (K)
-      sıcaklık birimlerini saniyeler içinde birbirine dönüştürün.
-    </p>
-  </section>
+<h1>Sıcaklık Dönüştürücü</h1>
 
-  <section>
+<p>
+Celsius (°C), Fahrenheit (°F) ve Kelvin (K)
+sıcaklık birimleri arasında saniyeler içinde dönüşüm yapın.
+</p>
 
-    <article class="card">
+</section>
 
-      <h2>Sıcaklık Birimi Dönüştür</h2>
 
-      <div class="converter-grid">
+<section class="card">
 
-        <label>
-          Sıcaklık Değeri
-          <input
-            id="deger"
-            type="number"
-            step="any"
-            placeholder="25">
-        </label>
+<h2>Sıcaklık Birimi Dönüştür</h2>
 
-        <label>
-          Birim
-          <select id="birim">
-            <option value="c" selected>Celsius (°C)</option>
-            <option value="f">Fahrenheit (°F)</option>
-            <option value="k">Kelvin (K)</option>
-          </select>
-        </label>
+<div class="converter-grid">
 
-      </div>
+<div>
 
-      <button type="button" onclick="hesapla()">
-        Dönüştür
-      </button>
+<label for="deger">
+Sıcaklık Değeri
+</label>
 
-      <div id="sonuc" class="result">
-        Bir sıcaklık değeri girip birimini seçin.
-      </div>
+<input
+id="deger"
+type="number"
+step="any"
+inputmode="decimal"
+placeholder="Örnek: 25"
+>
 
-    </article>
+</div>
 
-  </section>
 
-  <section class="info">
+<div>
 
-    <h2>Celsius Fahrenheit Dönüşümü</h2>
+<label for="birim">
+Birim
+</label>
 
-    <p>
-      Celsius değerini Fahrenheit'a çevirmek için
-      °F = (°C × 9/5) + 32 formülü kullanılır.
-    </p>
+<select id="birim">
 
-    <div class="info-box">
-      <strong>0 °C = 32 °F</strong><br>
-      10 °C = 50 °F<br>
-      20 °C = 68 °F<br>
-      25 °C = 77 °F<br>
-      30 °C = 86 °F<br>
-      100 °C = 212 °F
-    </div>
+<option value="c" selected>
+Celsius (°C)
+</option>
 
-    <h2>Fahrenheit Celsius Dönüşümü</h2>
+<option value="f">
+Fahrenheit (°F)
+</option>
 
-    <p>
-      Fahrenheit değerini Celsius'a çevirmek için
-      °C = (°F − 32) × 5/9 formülü kullanılır.
-    </p>
+<option value="k">
+Kelvin (K)
+</option>
 
-    <div class="info-box">
-      <strong>32 °F = 0 °C</strong><br>
-      50 °F = 10 °C<br>
-      68 °F = 20 °C<br>
-      77 °F = 25 °C<br>
-      86 °F = 30 °C<br>
-      212 °F = 100 °C
-    </div>
+</select>
 
-    <h2>Celsius Kelvin Dönüşümü</h2>
+</div>
 
-    <p>
-      Celsius değerinden Kelvin değerine geçmek için
-      Celsius sıcaklığına 273,15 eklenir.
-    </p>
+</div>
 
-    <div class="info-box">
-      <strong>0 °C = 273,15 K</strong><br>
-      25 °C = 298,15 K<br>
-      100 °C = 373,15 K
-    </div>
 
-    <h2>Mutlak Sıfır Nedir?</h2>
+<button type="button" onclick="hesapla()">
+Dönüştür
+</button>
 
-    <p>
-      Kelvin ölçeğinde 0 K mutlak sıfırdır.
-      Bu değer −273,15 °C veya −459,67 °F sıcaklığa eşittir.
-      Kelvin cinsinden sıcaklık 0 K değerinin altında olamaz.
-    </p>
 
-    <h2>Sıcaklık Dönüştürücü Nasıl Kullanılır?</h2>
+<div id="sonuc" class="result" aria-live="polite">
+Bir sıcaklık değeri girip birimini seçin.
+</div>
 
-    <p>
-      Dönüştürmek istediğiniz sıcaklık değerini girin ve
-      Celsius, Fahrenheit veya Kelvin birimini seçin.
-      Araç üç sıcaklık ölçeğindeki karşılıkları birlikte gösterir.
-    </p>
+</section>
 
-    <h2>Diğer Dönüştürme Araçları</h2>
 
-    <p>
-      <a href="/uzunluk-donusturucu.html">Uzunluk Dönüştürücü</a>
-      •
-      <a href="/mb-gb-tb-donusturucu.html">MB, GB ve TB Dönüştürücü</a>
-      •
-      <a href="/zaman-donusturucu.html">Saat Dakika Saniye Dönüştürücü</a>
-    </p>
+<section class="card">
 
-  </section>
+<h2>Celsius Fahrenheit Dönüşümü</h2>
+
+<p>
+Celsius değerini Fahrenheit'a çevirmek için aşağıdaki
+formül kullanılır:
+</p>
+
+<div class="formula-box">
+
+<strong>
+°F = (°C × 9/5) + 32
+</strong>
+
+</div>
+
+<div class="info-box">
+
+<strong>0 °C = 32 °F</strong><br>
+10 °C = 50 °F<br>
+20 °C = 68 °F<br>
+25 °C = 77 °F<br>
+30 °C = 86 °F<br>
+100 °C = 212 °F
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Fahrenheit Celsius Dönüşümü</h2>
+
+<p>
+Fahrenheit değerini Celsius'a çevirmek için aşağıdaki
+formül kullanılır:
+</p>
+
+<div class="formula-box">
+
+<strong>
+°C = (°F − 32) × 5/9
+</strong>
+
+</div>
+
+<div class="info-box">
+
+<strong>32 °F = 0 °C</strong><br>
+50 °F = 10 °C<br>
+68 °F = 20 °C<br>
+77 °F = 25 °C<br>
+86 °F = 30 °C<br>
+212 °F = 100 °C
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Celsius Kelvin Dönüşümü</h2>
+
+<p>
+Celsius değerinden Kelvin değerine geçmek için
+Celsius sıcaklığına 273,15 eklenir.
+</p>
+
+<div class="formula-box">
+
+<strong>
+K = °C + 273,15
+</strong>
+
+</div>
+
+<div class="info-box">
+
+<strong>0 °C = 273,15 K</strong><br>
+25 °C = 298,15 K<br>
+100 °C = 373,15 K
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kelvin Celsius Dönüşümü</h2>
+
+<p>
+Kelvin değerinden Celsius değerine geçmek için
+273,15 çıkarılır.
+</p>
+
+<div class="formula-box">
+
+<strong>
+°C = K − 273,15
+</strong>
+
+</div>
+
+<p>
+Örneğin:
+</p>
+
+<div class="info-box">
+
+300 K − 273,15 =
+
+<br><br>
+
+<strong>26,85 °C</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Fahrenheit Kelvin Dönüşümü</h2>
+
+<p>
+Fahrenheit değeri önce Celsius'a, ardından Kelvin'e
+dönüştürülebilir.
+</p>
+
+<div class="formula-box">
+
+<strong>
+K = (°F − 32) × 5/9 + 273,15
+</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kelvin Fahrenheit Dönüşümü</h2>
+
+<div class="formula-box">
+
+<strong>
+°F = (K − 273,15) × 9/5 + 32
+</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>0 Celsius Kaç Fahrenheit?</h2>
+
+<p>
+0 derece Celsius:
+</p>
+
+<div class="info-box">
+
+<strong>0 °C = 32 °F</strong>
+
+<br>
+
+<strong>0 °C = 273,15 K</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>25 Celsius Kaç Fahrenheit?</h2>
+
+<div class="info-box">
+
+25 × 9/5 + 32
+
+<br><br>
+
+<strong>25 °C = 77 °F</strong>
+
+<br>
+
+<strong>25 °C = 298,15 K</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>100 Celsius Kaç Fahrenheit?</h2>
+
+<div class="info-box">
+
+100 × 9/5 + 32
+
+<br><br>
+
+<strong>100 °C = 212 °F</strong>
+
+<br>
+
+<strong>100 °C = 373,15 K</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sıcaklık Dönüşüm Tablosu</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Celsius</th>
+<th>Fahrenheit</th>
+<th>Kelvin</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>−40 °C</td>
+<td>−40 °F</td>
+<td>233,15 K</td>
+</tr>
+
+<tr>
+<td>0 °C</td>
+<td>32 °F</td>
+<td>273,15 K</td>
+</tr>
+
+<tr>
+<td>10 °C</td>
+<td>50 °F</td>
+<td>283,15 K</td>
+</tr>
+
+<tr>
+<td>20 °C</td>
+<td>68 °F</td>
+<td>293,15 K</td>
+</tr>
+
+<tr>
+<td>25 °C</td>
+<td>77 °F</td>
+<td>298,15 K</td>
+</tr>
+
+<tr>
+<td>30 °C</td>
+<td>86 °F</td>
+<td>303,15 K</td>
+</tr>
+
+<tr>
+<td>37 °C</td>
+<td>98,6 °F</td>
+<td>310,15 K</td>
+</tr>
+
+<tr>
+<td>100 °C</td>
+<td>212 °F</td>
+<td>373,15 K</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Mutlak Sıfır Nedir?</h2>
+
+<p>
+Mutlak sıfır, termodinamik sıcaklık ölçeğinin teorik
+olarak mümkün olan en düşük sınırıdır.
+</p>
+
+<div class="info-box">
+
+<strong>0 K</strong>
+
+<br>
+
+= −273,15 °C
+
+<br>
+
+= −459,67 °F
+
+</div>
+
+<p>
+Kelvin ölçeğinde fiziksel sıcaklık değerleri
+0 K'nin altında olamaz.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Celsius Nedir?</h2>
+
+<p>
+Celsius, günlük yaşamda yaygın kullanılan sıcaklık
+ölçeklerinden biridir.
+</p>
+
+<p>
+Standart atmosfer basıncı altında suyun donma noktası
+yaklaşık 0 °C, kaynama noktası yaklaşık 100 °C olarak
+ifade edilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Fahrenheit Nedir?</h2>
+
+<p>
+Fahrenheit sıcaklık ölçeği özellikle Amerika Birleşik
+Devletleri'nde günlük sıcaklık ölçümlerinde yaygın
+olarak kullanılır.
+</p>
+
+<p>
+Su yaklaşık:
+</p>
+
+<p>
+<strong>32 °F'de donar</strong>
+ve
+<strong>212 °F'de kaynar.</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kelvin Nedir?</h2>
+
+<p>
+Kelvin, SI sistemindeki termodinamik sıcaklık birimidir.
+</p>
+
+<p>
+Kelvin değerlerinde derece işareti kullanılmaz.
+Bu nedenle:
+</p>
+
+<p>
+<strong>300 K</strong> ✅
+</p>
+
+<p>
+<strong>300 °K</strong> şeklinde yazılmaz.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sıcaklık Dönüştürücü Nasıl Kullanılır?</h2>
+
+<p>
+Dönüştürmek istediğiniz sıcaklık değerini girin.
+Ardından başlangıç birimini Celsius, Fahrenheit veya
+Kelvin olarak seçin.
+</p>
+
+<p>
+<strong>Dönüştür</strong>
+butonuna bastığınızda üç sıcaklık ölçeğindeki
+karşılıklar aynı anda gösterilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+<h3>0 Celsius kaç Fahrenheit?</h3>
+
+<p>
+<strong>0 °C = 32 °F</strong>
+</p>
+
+
+<h3>25 Celsius kaç Fahrenheit?</h3>
+
+<p>
+<strong>25 °C = 77 °F</strong>
+</p>
+
+
+<h3>100 Celsius kaç Fahrenheit?</h3>
+
+<p>
+<strong>100 °C = 212 °F</strong>
+</p>
+
+
+<h3>32 Fahrenheit kaç Celsius?</h3>
+
+<p>
+<strong>32 °F = 0 °C</strong>
+</p>
+
+
+<h3>77 Fahrenheit kaç Celsius?</h3>
+
+<p>
+<strong>77 °F = 25 °C</strong>
+</p>
+
+
+<h3>Kelvin'e 273,15 neden ekleniyor?</h3>
+
+<p>
+Celsius ile Kelvin ölçeklerinin birim büyüklüğü aynıdır,
+ancak sıfır noktaları farklıdır. 0 °C, 273,15 K'ye eşittir.
+</p>
+
+
+<h3>Kelvin negatif olabilir mi?</h3>
+
+<p>
+Fiziksel termodinamik sıcaklık ölçeğinde 0 K mutlak
+sıfırdır ve bunun altındaki sıcaklık değerleri bu
+hesaplayıcıda kabul edilmez.
+</p>
+
+
+<h3>−40 Celsius kaç Fahrenheit?</h3>
+
+<p>
+<strong>−40 °C = −40 °F</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Diğer Dönüştürme Araçları</h2>
+
+<p>
+<a href="/uzunluk-donusturucu.html">
+Uzunluk Dönüştürücü →
+</a>
+</p>
+
+<p>
+<a href="/agirlik-donusturucu.html">
+Ağırlık Dönüştürücü →
+</a>
+</p>
+
+<p>
+<a href="/alan-donusturucu.html">
+Alan Dönüştürücü →
+</a>
+</p>
+
+<p>
+<a href="/hacim-donusturucu.html">
+Hacim Dönüştürücü →
+</a>
+</p>
+
+<p>
+<a href="/enerji-donusturucu.html">
+Enerji Dönüştürücü →
+</a>
+</p>
+
+<p>
+<a href="/veri-boyutu-donusturucu.html">
+MB, GB ve TB Dönüştürücü →
+</a>
+</p>
+
+<p>
+<a href="/zaman-donusturucu.html">
+Saat, Dakika ve Saniye Dönüştürücü →
+</a>
+</p>
+
+</section>
 
 </main>
 
+
 <footer>
-  <div class="wrap">
 
-    <p>
-      <a href="/about.html">Hakkımızda</a>
-      •
-      <a href="/contact.html">İletişim</a>
-      •
-      <a href="/privacy-policy.html">Gizlilik Politikası</a>
-      •
-      <a href="/terms.html">Kullanım Koşulları</a>
-      •
-      <a href="/en/">English</a>
-    </p>
+<div class="wrap">
 
-    <p>
-      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
-    </p>
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
 
-  </div>
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
+
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
+
+</div>
+
 </footer>
+
 
 <script>
 
-function formatla(sayi) {
-  if (Math.abs(sayi) < 0.0000000001) {
-    sayi = 0;
-  }
+function formatla(sayi){
 
-  return new Intl.NumberFormat("tr-TR", {
-    maximumFractionDigits: 6
-  }).format(sayi);
+if(Math.abs(sayi) < 0.0000000001){
+sayi = 0;
 }
 
-function hesapla() {
+return new Intl.NumberFormat(
+"tr-TR",
+{
+maximumFractionDigits:6
+}
+).format(sayi);
 
-  const alan = document.getElementById("deger");
-  const birim = document.getElementById("birim").value;
-  const sonuc = document.getElementById("sonuc");
-
-  if (alan.value === "") {
-    sonuc.innerHTML = "Lütfen bir sıcaklık değeri girin.";
-    return;
-  }
-
-  const deger = Number(alan.value);
-
-  if (!Number.isFinite(deger)) {
-    sonuc.innerHTML = "Lütfen geçerli bir sayı girin.";
-    return;
-  }
-
-  let celsius;
-
-  if (birim === "c") {
-    celsius = deger;
-  }
-
-  if (birim === "f") {
-    celsius = (deger - 32) * 5 / 9;
-  }
-
-  if (birim === "k") {
-    celsius = deger - 273.15;
-  }
-
-  const kelvin = celsius + 273.15;
-
-  if (kelvin < -0.0000001) {
-    sonuc.innerHTML =
-      "Bu değer mutlak sıfırın altındadır. Fiziksel sıcaklık ölçeğinde 0 K değerinin altı kullanılamaz.";
-    return;
-  }
-
-  const fahrenheit = (celsius * 9 / 5) + 32;
-
-  sonuc.innerHTML =
-    "<strong>Dönüşüm Sonucu</strong>" +
-    "<div class='result-list'>" +
-    formatla(celsius) + " °C<br>" +
-    formatla(fahrenheit) + " °F<br>" +
-    formatla(kelvin) + " K" +
-    "</div>";
 }
 
-document.getElementById("deger").addEventListener("keydown", function(event) {
-  if (event.key === "Enter") {
-    hesapla();
-  }
-});
+
+function hesapla(){
+
+const alan =
+document.getElementById("deger");
+
+const birim =
+document.getElementById("birim").value;
+
+const sonuc =
+document.getElementById("sonuc");
+
+
+if(alan.value === ""){
+
+sonuc.innerHTML =
+"Lütfen bir sıcaklık değeri girin.";
+
+return;
+
+}
+
+
+const deger =
+Number(alan.value);
+
+
+if(!Number.isFinite(deger)){
+
+sonuc.innerHTML =
+"Lütfen geçerli bir sayı girin.";
+
+return;
+
+}
+
+
+let celsius;
+
+
+if(birim === "c"){
+
+celsius =
+deger;
+
+}
+else if(birim === "f"){
+
+celsius =
+(deger - 32) * 5 / 9;
+
+}
+else{
+
+celsius =
+deger - 273.15;
+
+}
+
+
+const kelvin =
+celsius + 273.15;
+
+
+if(kelvin < -0.0000001){
+
+sonuc.innerHTML =
+"Bu sıcaklık mutlak sıfırın altındadır. Fiziksel termodinamik sıcaklık ölçeğinde 0 K değerinin altı kullanılamaz.";
+
+return;
+
+}
+
+
+const guvenliKelvin =
+Math.abs(kelvin) < 0.0000001
+? 0
+: kelvin;
+
+
+const fahrenheit =
+(celsius * 9 / 5) + 32;
+
+
+sonuc.innerHTML =
+
+"<strong>Dönüşüm Sonucu</strong>" +
+
+"<div class='result-list'>" +
+
+"<strong>" +
+formatla(celsius) +
+" °C</strong>" +
+
+"<br>" +
+
+"<strong>" +
+formatla(fahrenheit) +
+" °F</strong>" +
+
+"<br>" +
+
+"<strong>" +
+formatla(guvenliKelvin) +
+" K</strong>" +
+
+"</div>";
+
+}
+
+
+document
+.getElementById("deger")
+.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Enter"){
+hesapla();
+}
+
+}
+);
+
+
+document
+.getElementById("birim")
+.addEventListener(
+"change",
+function(){
+
+if(document.getElementById("deger").value !== ""){
+hesapla();
+}
+
+}
+);
+
 
 document.getElementById("year").textContent =
-  new Date().getFullYear();
+new Date().getFullYear();
 
 </script>
 
