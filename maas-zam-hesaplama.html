@@ -1,392 +1,1036 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+<title>Maaş Zam Hesaplama | Zamlı Maaş Hesapla - Araclio</title>
 
-  <title>Maaş Zam Hesaplama | Zamlı Maaş Hesapla - Araclio</title>
+<meta
+name="description"
+content="Maaş zam hesaplama aracı ile mevcut maaşınıza uygulanacak zam oranını, zam tutarını, yeni maaşı ve yıllık gelir farkını ücretsiz hesaplayın."
+>
 
-  <meta name="description" content="Maaş zam hesaplama aracı ile mevcut maaşınıza uygulanacak zam oranını, zam tutarını, yeni maaşı ve yıllık gelir farkını ücretsiz hesaplayın.">
+<meta name="robots" content="index,follow">
 
-  <meta name="robots" content="index,follow">
+<meta
+name="google-adsense-account"
+content="ca-pub-7634654090472031"
+>
 
-  <link rel="canonical" href="https://araclio.com/maas-zam-hesaplama.html">
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
 
-  <link rel="stylesheet" href="style.css">
+<link
+rel="canonical"
+href="https://araclio.com/maas-zam-hesaplama.html"
+>
 
-  <style>
-    .result-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:12px;
-      margin-top:18px;
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+
+<meta
+property="og:title"
+content="Maaş Zam Hesaplama | Zamlı Maaş Hesapla"
+>
+
+<meta
+property="og:description"
+content="Mevcut maaş ve zam oranından yeni maaşı, aylık zam tutarını ve yıllık gelir farkını ücretsiz hesaplayın."
+>
+
+<meta
+property="og:url"
+content="https://araclio.com/maas-zam-hesaplama.html"
+>
+
+<meta property="og:site_name" content="Araclio">
+
+<style>
+
+.result-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:18px;
+}
+
+.result-box{
+background:#f5f5f5;
+padding:16px;
+border-radius:10px;
+color:#222;
+}
+
+.result-box strong{
+display:block;
+margin-bottom:7px;
+}
+
+.big-result{
+font-size:1.4rem;
+font-weight:700;
+}
+
+.quick-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin:12px 0 18px;
+}
+
+.quick-buttons button{
+width:auto;
+padding:9px 13px;
+}
+
+.info-box{
+padding:16px;
+margin:15px 0;
+background:#f5f5f5;
+border-radius:10px;
+color:#222;
+line-height:1.8;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:560px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+@media(max-width:650px){
+
+.result-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Maaş Zam Hesaplama",
+  "url":"https://araclio.com/maas-zam-hesaplama.html",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"Mevcut maaş ve zam oranına göre yeni maaşı, aylık zam tutarını ve yıllık gelir farkını hesaplayan ücretsiz online araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Maaş Zam Hesaplama",
+      "item":"https://araclio.com/maas-zam-hesaplama.html"
     }
+  ]
+}
+</script>
 
-    .result-box{
-      background:#f5f5f5;
-      padding:16px;
-      border-radius:10px;
-    }
-
-    .result-box strong{
-      display:block;
-      margin-bottom:7px;
-    }
-
-    .big-result{
-      font-size:1.4rem;
-      font-weight:700;
-    }
-
-    .quick-buttons{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin:12px 0 18px;
-    }
-
-    .quick-buttons button{
-      width:auto;
-      padding:9px 13px;
-    }
-
-    .info-box{
-      padding:16px;
-      margin:15px 0;
-      background:#f5f5f5;
-      border-radius:10px;
-      line-height:1.8;
-    }
-
-    @media(max-width:650px){
-      .result-grid{
-        grid-template-columns:1fr;
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Maaş zammı nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Maaş zam tutarı mevcut maaşın zam oranıyla çarpılıp 100'e bölünmesiyle bulunur. Yeni maaş, mevcut maaşa zam tutarı eklenerek hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"30.000 TL maaşa yüzde 20 zam gelirse ne kadar olur?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"30.000 TL maaşa yüzde 20 zam uygulanırsa zam tutarı 6.000 TL ve yeni maaş 36.000 TL olur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"30.000 TL maaşa yüzde 25 zam gelirse ne kadar olur?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"30.000 TL maaşa yüzde 25 zam uygulanırsa zam tutarı 7.500 TL ve yeni maaş 37.500 TL olur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Maaş zam hesabı net maaş için kullanılabilir mi?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Araç girilen tutara matematiksel yüzde artışı uygular. Bordroda vergi, SGK ve diğer kesintiler bulunduğundan kesin net maaş bordro koşullarına göre farklı olabilir."
       }
     }
-  </style>
+  ]
+}
+</script>
+
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Araclio</a>
-    <span class="tag">Ücretsiz Online Araçlar</span>
-  </div>
+
+<div class="wrap nav">
+
+<a class="brand" href="/">
+Araclio
+</a>
+
+<span class="tag">
+Ücretsiz Online Araçlar
+</span>
+
+</div>
+
 </header>
+
 
 <main class="wrap">
 
-  <section class="hero">
-    <p class="eyebrow">MAAŞ • ZAM • GELİR</p>
+<section class="hero">
 
-    <h1>Maaş Zam Hesaplama</h1>
+<p class="eyebrow">
+MAAŞ • ZAM • GELİR • YÜZDE
+</p>
 
-    <p>
-      Mevcut maaşınızı ve zam oranını girerek zam tutarını,
-      yeni maaşınızı ve yıllık gelir farkını anında hesaplayın.
-    </p>
-  </section>
+<h1>Maaş Zam Hesaplama</h1>
 
-  <section>
+<p>
+Mevcut maaşınızı ve zam oranını girerek aylık zam tutarını,
+zamlı yeni maaşınızı, yıllık gelir farkını ve yeni yıllık
+gelirinizi anında hesaplayın.
+</p>
 
-    <article class="card">
+</section>
 
-      <h2>Zamlı Maaşını Hesapla</h2>
 
-      <label>
-        Mevcut aylık maaş (TL)
-        <input
-          id="maas"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="30000"
-        >
-      </label>
+<section class="card">
 
-      <label>
-        Zam oranı (%)
-        <input
-          id="oran"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="25"
-        >
-      </label>
+<h2>Zamlı Maaşını Hesapla</h2>
 
-      <div class="quick-buttons">
-        <button type="button" onclick="oranSec(10)">%10</button>
-        <button type="button" onclick="oranSec(15)">%15</button>
-        <button type="button" onclick="oranSec(20)">%20</button>
-        <button type="button" onclick="oranSec(25)">%25</button>
-        <button type="button" onclick="oranSec(30)">%30</button>
-        <button type="button" onclick="oranSec(40)">%40</button>
-        <button type="button" onclick="oranSec(50)">%50</button>
-      </div>
+<label for="maas">
+Mevcut Aylık Maaş (TL)
+</label>
 
-      <button type="button" onclick="hesapla()">
-        Zamlı Maaşı Hesapla
-      </button>
+<input
+id="maas"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 30000"
+>
 
-      <div id="uyari" class="result">
-        Maaş ve zam oranını girip hesaplama butonuna basın.
-      </div>
 
-      <div id="sonuclar" class="result-grid" style="display:none;">
+<label for="oran">
+Zam Oranı (%)
+</label>
 
-        <div class="result-box">
-          <strong>Yeni Aylık Maaş</strong>
-          <span id="yeniMaas" class="big-result">0 TL</span>
-        </div>
+<input
+id="oran"
+type="number"
+min="0"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 25"
+>
 
-        <div class="result-box">
-          <strong>Aylık Zam Tutarı</strong>
-          <span id="zamTutari">0 TL</span>
-        </div>
 
-        <div class="result-box">
-          <strong>Eski Yıllık Gelir</strong>
-          <span id="eskiYillik">0 TL</span>
-        </div>
+<div class="quick-buttons">
 
-        <div class="result-box">
-          <strong>Yeni Yıllık Gelir</strong>
-          <span id="yeniYillik">0 TL</span>
-        </div>
+<button type="button" onclick="oranSec(10)">
+%10
+</button>
 
-        <div class="result-box">
-          <strong>Yıllık Gelir Farkı</strong>
-          <span id="yillikFark">0 TL</span>
-        </div>
+<button type="button" onclick="oranSec(15)">
+%15
+</button>
 
-        <div class="result-box">
-          <strong>Uygulanan Zam</strong>
-          <span id="uygulananOran">%0</span>
-        </div>
+<button type="button" onclick="oranSec(20)">
+%20
+</button>
 
-      </div>
+<button type="button" onclick="oranSec(25)">
+%25
+</button>
 
-    </article>
+<button type="button" onclick="oranSec(30)">
+%30
+</button>
 
-  </section>
+<button type="button" onclick="oranSec(40)">
+%40
+</button>
 
-  <section class="info">
+<button type="button" onclick="oranSec(50)">
+%50
+</button>
 
-    <h2>Maaş Zammı Nasıl Hesaplanır?</h2>
+</div>
 
-    <div class="info-box">
-      <strong>Formül:</strong><br><br>
 
-      Zam tutarı = Mevcut maaş × Zam oranı ÷ 100
-      <br><br>
+<button type="button" onclick="hesapla()">
+Zamlı Maaşı Hesapla
+</button>
 
-      Yeni maaş = Mevcut maaş + Zam tutarı
-    </div>
 
-    <h2>Maaşa Yüzde 10 Zam Nasıl Hesaplanır?</h2>
+<div id="uyari" class="result" aria-live="polite">
+Maaş ve zam oranını girip hesaplama butonuna basın.
+</div>
 
-    <p>
-      30.000 TL maaşa yüzde 10 zam uygulandığında zam tutarı
-      3.000 TL olur. Yeni maaş 33.000 TL'ye yükselir.
-    </p>
 
-    <h2>Maaşa Yüzde 20 Zam Nasıl Hesaplanır?</h2>
+<div id="sonuclar" class="result-grid" style="display:none;">
 
-    <p>
-      30.000 TL maaşa yüzde 20 zam uygulandığında aylık artış
-      6.000 TL, yeni aylık maaş ise 36.000 TL olur.
-    </p>
+<div class="result-box">
+<strong>Yeni Aylık Maaş</strong>
+<span id="yeniMaas" class="big-result">0 TL</span>
+</div>
 
-    <h2>Maaşa Yüzde 25 Zam Nasıl Hesaplanır?</h2>
+<div class="result-box">
+<strong>Aylık Zam Tutarı</strong>
+<span id="zamTutari">0 TL</span>
+</div>
 
-    <p>
-      30.000 TL maaş alan bir kişinin yüzde 25 zam sonrası
-      aylık zam tutarı 7.500 TL, yeni maaşı 37.500 TL olur.
-      Maaşın 12 ay aynı kaldığı varsayılırsa yıllık fark
-      90.000 TL'dir.
-    </p>
+<div class="result-box">
+<strong>Eski Yıllık Gelir</strong>
+<span id="eskiYillik">0 TL</span>
+</div>
 
-    <h2>Maaşa Yüzde 30 Zam Nasıl Hesaplanır?</h2>
+<div class="result-box">
+<strong>Yeni Yıllık Gelir</strong>
+<span id="yeniYillik">0 TL</span>
+</div>
 
-    <p>
-      30.000 TL maaşa yüzde 30 zam yapılması halinde zam
-      tutarı 9.000 TL, yeni maaş 39.000 TL olur.
-    </p>
+<div class="result-box">
+<strong>Yıllık Gelir Farkı</strong>
+<span id="yillikFark">0 TL</span>
+</div>
 
-    <h2>Maaşa Yüzde 50 Zam Nasıl Hesaplanır?</h2>
+<div class="result-box">
+<strong>Uygulanan Zam</strong>
+<span id="uygulananOran">%0</span>
+</div>
 
-    <p>
-      30.000 TL maaşa yüzde 50 zam uygulanırsa maaş
-      15.000 TL artarak 45.000 TL olur.
-    </p>
+</div>
 
-    <h2>Brüt Maaş ve Net Maaş Farkı</h2>
+</section>
 
-    <p>
-      Bu hesaplayıcı girilen maaş tutarı üzerinden doğrudan
-      yüzde hesabı yapar. Brüt maaştan net maaşa geçişte vergi,
-      SGK ve diğer kesintiler bulunduğundan yalnızca zam oranını
-      uygulamak kesin net bordro sonucunu göstermeyebilir.
-    </p>
 
-    <p>
-      Brüt-net hesaplaması yapmak için
-      <a href="/brut-net-maas-hesaplama.html">
-        Brüt Net Maaş Hesaplama
-      </a>
-      aracını kullanabilirsiniz.
-    </p>
+<section class="card">
 
-    <h2>Diğer Maaş ve Çalışma Araçları</h2>
+<h2>Maaş Zammı Nasıl Hesaplanır?</h2>
 
-    <p>
-      <a href="/fazla-mesai-hesaplama.html">Fazla Mesai Hesaplama</a>
-      •
-      <a href="/kidem-tazminati-hesaplama.html">Kıdem Tazminatı Hesaplama</a>
-      •
-      <a href="/ihbar-tazminati-hesaplama.html">İhbar Tazminatı Hesaplama</a>
-      •
-      <a href="/saatlik-gunluk-aylik-maas.html">Saatlik ve Günlük Maaş Hesaplama</a>
-    </p>
+<p>
+Maaş zam hesabında önce mevcut maaşın belirli bir yüzdesi
+bulunur. Daha sonra bu tutar mevcut maaşa eklenir.
+</p>
 
-    <div class="info-box">
-      <strong>Bilgilendirme:</strong><br>
-      Bu araç matematiksel yüzde hesabı yapar ve genel
-      bilgilendirme amacı taşır. Gerçek bordro, vergi,
-      kesinti, sözleşme ve mevzuat koşullarına göre elde
-      edilen net maaş farklı olabilir.
-    </div>
+<div class="info-box">
 
-  </section>
+<strong>
+Zam Tutarı =
+Mevcut Maaş × Zam Oranı ÷ 100
+</strong>
+
+<br><br>
+
+<strong>
+Yeni Maaş =
+Mevcut Maaş + Zam Tutarı
+</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>30.000 TL Maaş Zam Örnekleri</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Zam Oranı</th>
+<th>Zam Tutarı</th>
+<th>Yeni Maaş</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>%10</td>
+<td>3.000 TL</td>
+<td>33.000 TL</td>
+</tr>
+
+<tr>
+<td>%15</td>
+<td>4.500 TL</td>
+<td>34.500 TL</td>
+</tr>
+
+<tr>
+<td>%20</td>
+<td>6.000 TL</td>
+<td>36.000 TL</td>
+</tr>
+
+<tr>
+<td>%25</td>
+<td>7.500 TL</td>
+<td>37.500 TL</td>
+</tr>
+
+<tr>
+<td>%30</td>
+<td>9.000 TL</td>
+<td>39.000 TL</td>
+</tr>
+
+<tr>
+<td>%40</td>
+<td>12.000 TL</td>
+<td>42.000 TL</td>
+</tr>
+
+<tr>
+<td>%50</td>
+<td>15.000 TL</td>
+<td>45.000 TL</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Maaşa Yüzde 10 Zam Nasıl Hesaplanır?</h2>
+
+<p>
+30.000 TL maaşa yüzde 10 zam uygulanırsa:
+</p>
+
+<div class="info-box">
+
+30.000 × 10 ÷ 100 =
+
+<strong>3.000 TL zam</strong>
+
+<br><br>
+
+Yeni maaş:
+
+<strong>33.000 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Maaşa Yüzde 20 Zam Nasıl Hesaplanır?</h2>
+
+<div class="info-box">
+
+30.000 × 20 ÷ 100 =
+
+<strong>6.000 TL zam</strong>
+
+<br><br>
+
+Yeni maaş:
+
+<strong>36.000 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Maaşa Yüzde 25 Zam Nasıl Hesaplanır?</h2>
+
+<div class="info-box">
+
+30.000 × 25 ÷ 100 =
+
+<strong>7.500 TL zam</strong>
+
+<br><br>
+
+Yeni maaş:
+
+<strong>37.500 TL</strong>
+
+<br><br>
+
+Maaş 12 ay aynı kalırsa yıllık gelir farkı:
+
+<strong>90.000 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Maaşa Yüzde 30 Zam Nasıl Hesaplanır?</h2>
+
+<div class="info-box">
+
+30.000 × 30 ÷ 100 =
+
+<strong>9.000 TL zam</strong>
+
+<br><br>
+
+Yeni maaş:
+
+<strong>39.000 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Maaşa Yüzde 50 Zam Nasıl Hesaplanır?</h2>
+
+<div class="info-box">
+
+30.000 × 50 ÷ 100 =
+
+<strong>15.000 TL zam</strong>
+
+<br><br>
+
+Yeni maaş:
+
+<strong>45.000 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Yıllık Maaş Farkı Nasıl Hesaplanır?</h2>
+
+<p>
+Aylık zam tutarının 12 ile çarpılması, maaşın 12 ay boyunca
+aynı kaldığı varsayımıyla yaklaşık yıllık gelir farkını verir.
+</p>
+
+<div class="info-box">
+
+<strong>
+Yıllık Fark =
+Aylık Zam Tutarı × 12
+</strong>
+
+</div>
+
+<p>
+Örneğin aylık zam tutarı 7.500 TL ise:
+</p>
+
+<div class="info-box">
+
+7.500 × 12 =
+
+<strong>90.000 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Brüt Maaş ve Net Maaş Zammı Aynı mı?</h2>
+
+<p>
+Bu araç, kullanıcının girdiği maaş tutarına doğrudan yüzde
+artışı uygular.
+</p>
+
+<p>
+Girilen tutar net maaşsa matematiksel olarak net tutar üzerinden,
+brüt maaşsa brüt tutar üzerinden zam hesabı yapılır.
+</p>
+
+<p>
+Ancak gerçek bordroda gelir vergisi, SGK primi, işsizlik sigortası
+ve diğer kesintiler bulunabileceği için brüt maaşa uygulanan zam
+oranı net maaşta birebir aynı oranda görünmeyebilir.
+</p>
+
+<p>
+Daha ayrıntılı tahmini bordro hesabı için
+<a href="/brut-net-maas-hesaplama.html">
+Brüt Net Maaş Hesaplama
+</a>
+aracını kullanabilirsiniz.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Maaş Zammı Hesaplanırken Nelere Dikkat Edilmeli?</h2>
+
+<p>
+Maaşa uygulanan matematiksel zam oranı ile çalışanın eline geçen
+net tutardaki değişim her zaman aynı olmayabilir.
+</p>
+
+<p>
+Bunun nedeni vergi dilimi, SGK kesintileri, ek ödeme,
+prim, ikramiye ve bordrodaki diğer unsurlar olabilir.
+</p>
+
+<div class="info-box">
+
+<strong>Bu araç yüzde bazlı matematiksel maaş artışını hesaplar.</strong>
+
+<br><br>
+
+Resmî bordro sonucu için işveren bordrosu ve yürürlükteki
+mevzuat esas alınmalıdır.
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+<h3>30.000 TL maaşa yüzde 20 zam ne kadar?</h3>
+
+<p>
+6.000 TL zam gelir ve yeni maaş
+<strong>36.000 TL</strong>
+olur.
+</p>
+
+
+<h3>30.000 TL maaşa yüzde 25 zam ne kadar?</h3>
+
+<p>
+7.500 TL zam gelir ve yeni maaş
+<strong>37.500 TL</strong>
+olur.
+</p>
+
+
+<h3>40.000 TL maaşa yüzde 25 zam gelirse kaç TL olur?</h3>
+
+<p>
+10.000 TL zam gelir ve yeni maaş
+<strong>50.000 TL</strong>
+olur.
+</p>
+
+
+<h3>50.000 TL maaşa yüzde 20 zam gelirse kaç TL olur?</h3>
+
+<p>
+10.000 TL zam gelir ve yeni maaş
+<strong>60.000 TL</strong>
+olur.
+</p>
+
+
+<h3>Maaş zam hesaplama ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio Maaş Zam Hesaplama aracı ücretsizdir
+ve üyelik gerektirmez.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Diğer Maaş ve Çalışma Araçları</h2>
+
+<p>
+<a href="/brut-net-maas-hesaplama.html">
+Brüt Net Maaş Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/netten-brute-maas-hesaplama.html">
+Netten Brüte Maaş Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/fazla-mesai-ucreti-hesaplama.html">
+Fazla Mesai Ücreti Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kidem-tazminati-hesaplama.html">
+Kıdem Tazminatı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/ihbar-tazminati-hesaplama.html">
+İhbar Tazminatı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/saatlik-gunluk-aylik-maas.html">
+Saatlik, Günlük ve Aylık Maaş →
+</a>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Bilgilendirme</h2>
+
+<div class="info-box">
+
+Bu araç matematiksel yüzde hesabı yapar ve genel
+bilgilendirme amacı taşır.
+
+<br><br>
+
+Gerçek bordro, vergi, SGK kesintileri, sözleşme,
+yan haklar ve güncel mevzuata göre elde edilen net maaş
+farklı olabilir.
+
+</div>
+
+</section>
 
 </main>
 
+
 <footer>
-  <div class="wrap">
 
-    <p>
-      <a href="/about.html">Hakkımızda</a>
-      •
-      <a href="/iletisim.html">İletişim</a>
-      •
-      <a href="/privacy-policy.html">Gizlilik Politikası</a>
-      •
-      <a href="/terms.html">Kullanım Koşulları</a>
-      •
-      <a href="/en/">English</a>
-    </p>
+<div class="wrap">
 
-    <p>
-      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
-    </p>
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
 
-  </div>
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
+
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
+
+</div>
+
 </footer>
+
 
 <script>
 
 function para(sayi){
-  return new Intl.NumberFormat("tr-TR",{
-    minimumFractionDigits:2,
-    maximumFractionDigits:2
-  }).format(sayi) + " TL";
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+minimumFractionDigits:2,
+maximumFractionDigits:2
 }
+).format(sayi) + " TL";
+
+}
+
+
+function oranYaz(sayi){
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+maximumFractionDigits:2
+}
+).format(sayi);
+
+}
+
 
 function oranSec(deger){
-  document.getElementById("oran").value = deger;
 
-  if(Number(document.getElementById("maas").value) > 0){
-    hesapla();
-  }
+document
+.getElementById("oran")
+.value =
+deger;
+
+const maas =
+Number(
+document
+.getElementById("maas")
+.value
+);
+
+if(
+Number.isFinite(maas) &&
+maas > 0
+){
+
+hesapla();
+
 }
+
+}
+
 
 function hesapla(){
 
-  const maas =
-    Number(document.getElementById("maas").value);
+const maasInput =
+document.getElementById("maas");
 
-  const oran =
-    Number(document.getElementById("oran").value);
+const oranInput =
+document.getElementById("oran");
 
-  const uyari =
-    document.getElementById("uyari");
+const maas =
+Number(maasInput.value);
 
-  const sonuclar =
-    document.getElementById("sonuclar");
+const oran =
+Number(oranInput.value);
 
-  if(!Number.isFinite(maas) || maas <= 0){
+const uyari =
+document.getElementById("uyari");
 
-    uyari.textContent =
-      "Lütfen sıfırdan büyük geçerli bir maaş girin.";
+const sonuclar =
+document.getElementById("sonuclar");
 
-    sonuclar.style.display = "none";
-    return;
-  }
 
-  if(!Number.isFinite(oran) || oran < 0){
+if(
+maasInput.value === "" ||
+!Number.isFinite(maas) ||
+maas <= 0
+){
 
-    uyari.textContent =
-      "Lütfen geçerli bir zam oranı girin.";
+uyari.textContent =
+"Lütfen sıfırdan büyük geçerli bir maaş girin.";
 
-    sonuclar.style.display = "none";
-    return;
-  }
+sonuclar.style.display =
+"none";
 
-  const zamTutari =
-    maas * oran / 100;
+return;
 
-  const yeniMaas =
-    maas + zamTutari;
-
-  const eskiYillik =
-    maas * 12;
-
-  const yeniYillik =
-    yeniMaas * 12;
-
-  const yillikFark =
-    yeniYillik - eskiYillik;
-
-  document.getElementById("yeniMaas").textContent =
-    para(yeniMaas);
-
-  document.getElementById("zamTutari").textContent =
-    para(zamTutari);
-
-  document.getElementById("eskiYillik").textContent =
-    para(eskiYillik);
-
-  document.getElementById("yeniYillik").textContent =
-    para(yeniYillik);
-
-  document.getElementById("yillikFark").textContent =
-    para(yillikFark);
-
-  document.getElementById("uygulananOran").textContent =
-    "%" + new Intl.NumberFormat("tr-TR",{
-      maximumFractionDigits:2
-    }).format(oran);
-
-  uyari.innerHTML =
-    "<strong>Sonuç:</strong> " +
-    para(maas) +
-    " maaşa %" +
-    new Intl.NumberFormat("tr-TR",{
-      maximumFractionDigits:2
-    }).format(oran) +
-    " zam uygulandığında yeni maaş <strong>" +
-    para(yeniMaas) +
-    "</strong> olur.";
-
-  sonuclar.style.display = "grid";
 }
 
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+
+if(
+oranInput.value === "" ||
+!Number.isFinite(oran) ||
+oran < 0
+){
+
+uyari.textContent =
+"Lütfen sıfır veya daha büyük geçerli bir zam oranı girin.";
+
+sonuclar.style.display =
+"none";
+
+return;
+
+}
+
+
+const zamTutari =
+maas * oran / 100;
+
+
+const yeniMaas =
+maas + zamTutari;
+
+
+const eskiYillik =
+maas * 12;
+
+
+const yeniYillik =
+yeniMaas * 12;
+
+
+const yillikFark =
+yeniYillik -
+eskiYillik;
+
+
+document
+.getElementById("yeniMaas")
+.textContent =
+para(yeniMaas);
+
+
+document
+.getElementById("zamTutari")
+.textContent =
+para(zamTutari);
+
+
+document
+.getElementById("eskiYillik")
+.textContent =
+para(eskiYillik);
+
+
+document
+.getElementById("yeniYillik")
+.textContent =
+para(yeniYillik);
+
+
+document
+.getElementById("yillikFark")
+.textContent =
+para(yillikFark);
+
+
+document
+.getElementById("uygulananOran")
+.textContent =
+"%" +
+oranYaz(oran);
+
+
+uyari.innerHTML =
+
+"<strong>Sonuç:</strong> " +
+
+para(maas) +
+
+" maaşa %" +
+
+oranYaz(oran) +
+
+" zam uygulandığında yeni maaş <strong>" +
+
+para(yeniMaas) +
+
+"</strong> olur.";
+
+
+sonuclar.style.display =
+"grid";
+
+}
+
+
+[
+"maas",
+"oran"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Enter"){
+hesapla();
+}
+
+}
+);
+
+});
+
+
+document
+.getElementById("year")
+.textContent =
+new Date().getFullYear();
 
 </script>
 
