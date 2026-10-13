@@ -1,368 +1,1005 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Vade Farkı Hesaplama | Vadeli Fiyat Hesapla - Araclio</title>
+<title>Vade Farkı Hesaplama | Vadeli Fiyat Hesapla - Araclio</title>
 
-  <meta name="description" content="Peşin fiyat, aylık vade farkı oranı ve vade süresini girerek basit ve bileşik yöntemle vade farkını, vadeli satış fiyatını ve aylık ortalama tutarı hesaplayın.">
+<meta
+name="description"
+content="Ücretsiz vade farkı hesaplama aracı. Peşin fiyat, aylık oran ve vade süresini girerek basit ve bileşik yöntemle vade farkını, vadeli satış fiyatını ve aylık tutarı hesaplayın."
+>
 
-  <meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
 
-  <link rel="canonical" href="https://araclio.com/vade-farki-hesaplama.html">
+<meta name="google-adsense-account" content="ca-pub-7634654090472031">
 
-  <link rel="stylesheet" href="style.css">
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
 
-  <style>
-    .info-box {
-      margin-top:18px;
-      padding:16px;
-      border-radius:10px;
-      background:#f5f5f5;
+<link rel="canonical" href="https://araclio.com/vade-farki-hesaplama.html">
+
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vade Farkı Hesaplama | Vadeli Fiyat Hesapla">
+<meta
+property="og:description"
+content="Peşin fiyat, aylık vade farkı oranı ve vadeye göre basit ve bileşik vadeli fiyatı ücretsiz hesaplayın."
+>
+<meta property="og:url" content="https://araclio.com/vade-farki-hesaplama.html">
+<meta property="og:site_name" content="Araclio">
+
+<style>
+
+.info-box{
+margin-top:18px;
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.warning-box{
+margin-top:24px;
+padding:18px;
+border:2px solid #b26a00;
+border-radius:10px;
+background:#fff8e8;
+color:#6b4300;
+line-height:1.75;
+}
+
+.warning-box strong{
+display:block;
+margin-bottom:8px;
+font-size:18px;
+}
+
+.result-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:18px;
+}
+
+.result-box{
+background:#f5f5f5;
+padding:16px;
+border-radius:10px;
+color:#222;
+}
+
+.result-box strong{
+display:block;
+margin-bottom:7px;
+}
+
+.big-result{
+font-size:1.3rem;
+font-weight:700;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:560px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+@media(max-width:650px){
+
+.result-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Vade Farkı Hesaplama",
+  "url":"https://araclio.com/vade-farki-hesaplama.html",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"Peşin fiyat, aylık vade farkı oranı ve vade süresine göre basit ve bileşik vadeli fiyat hesaplayan ücretsiz online araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Vade Farkı Hesaplama",
+      "item":"https://araclio.com/vade-farki-hesaplama.html"
     }
+  ]
+}
+</script>
 
-    .warning-box {
-      margin-top:24px;
-      padding:18px;
-      border:2px solid #b26a00;
-      border-radius:10px;
-      background:#fff8e8;
-      color:#6b4300;
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Vade farkı nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Basit yöntemde vade farkı, peşin fiyat × aylık oran × ay sayısı formülüyle hesaplanabilir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Bileşik vade farkı nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Bileşik yöntemde vadeli tutar, peşin fiyat × (1 + aylık oran)^ay sayısı formülüyle hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Vade farkı ile taksit aynı şey mi?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Hayır. Vade farkı peşin ve vadeli fiyat arasındaki maliyet farkını, taksit ise toplam borcun ödeme sayısına bölünmesini ifade eder."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Basit ve bileşik sonuç neden farklıdır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Basit yöntemde oran yalnızca başlangıç peşin fiyat üzerinden uygulanırken bileşik yöntemde her dönemin oranı önceki dönemde oluşan tutarın üzerine uygulanır."
+      }
     }
+  ]
+}
+</script>
 
-    .warning-box strong {
-      display:block;
-      margin-bottom:8px;
-      font-size:18px;
-    }
-  </style>
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Araclio</a>
-    <span class="tag">Ücretsiz Online Araçlar</span>
-  </div>
+
+<div class="wrap nav">
+
+<a class="brand" href="/">
+Araclio
+</a>
+
+<span class="tag">
+Ücretsiz Online Araçlar
+</span>
+
+</div>
+
 </header>
+
 
 <main class="wrap">
 
-  <section class="hero">
-    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+<section class="hero">
 
-    <h1>Vade Farkı Hesaplama</h1>
+<p class="eyebrow">
+PEŞİN FİYAT • VADE • ORAN • VADELİ TOPLAM
+</p>
 
-    <p>
-      Peşin fiyatı, aylık vade farkı oranını ve vade süresini
-      girerek tahmini vade farkını ve vadeli satış fiyatını
-      hesaplayın.
-    </p>
-  </section>
+<h1>Vade Farkı Hesaplama</h1>
 
-  <section>
+<p>
+Peşin fiyatı, aylık vade farkı oranını ve vade süresini
+girerek basit ve bileşik yöntemle tahmini vade farkını,
+vadeli satış fiyatını ve aylık ortalama tutarı hesaplayın.
+</p>
 
-    <article class="card">
+</section>
 
-      <h2>Vadeli Fiyat Hesapla</h2>
 
-      <label>
-        Peşin Fiyat (TL)
-        <input
-          id="pesin"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="10000">
-      </label>
+<section class="card">
 
-      <label>
-        Aylık Vade Farkı Oranı (%)
-        <input
-          id="oran"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="3">
-      </label>
+<h2>Vadeli Fiyat Hesapla</h2>
 
-      <label>
-        Vade Süresi (Ay)
-        <input
-          id="ay"
-          type="number"
-          min="1"
-          step="1"
-          placeholder="6">
-      </label>
+<label for="pesin">
+Peşin Fiyat (TL)
+</label>
 
-      <button onclick="hesapla()">Hesapla</button>
+<input
+id="pesin"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 10000"
+>
 
-      <div id="sonuc" class="result">
-        Peşin fiyat, aylık oran ve vade süresini girin.
-      </div>
 
-      <div class="warning-box">
+<label for="oran">
+Aylık Vade Farkı Oranı (%)
+</label>
 
-        <strong>⚠️ ÖNEMLİ BİLGİLENDİRME</strong>
+<input
+id="oran"
+type="number"
+min="0"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 3"
+>
 
-        Vade farkının hesaplanma yöntemi satıcı, alıcı,
-        sözleşme ve ticari uygulamaya göre değişebilir.
 
-        <br><br>
+<label for="ay">
+Vade Süresi (Ay)
+</label>
 
-        Bu araç hem basit oran yöntemiyle hem de aylık
-        bileşik yöntemle matematiksel tahmin gösterir.
+<input
+id="ay"
+type="number"
+min="1"
+step="1"
+inputmode="numeric"
+placeholder="Örnek: 6"
+>
 
-        <br><br>
 
-        KDV, vergi, komisyon, banka maliyetleri, gecikme
-        bedelleri ve sözleşmeye bağlı diğer ücretler otomatik
-        olarak hesaba dahil edilmez.
+<button type="button" onclick="hesapla()">
+Hesapla
+</button>
 
-        <br><br>
 
-        Ticari işlemde uygulanacak gerçek tutar için taraflar
-        arasındaki sözleşme, fatura ve geçerli mevzuat esas
-        alınmalıdır.
-      </div>
+<div id="sonuc" class="result" aria-live="polite">
+Peşin fiyat, aylık oran ve vade süresini girin.
+</div>
 
-    </article>
 
-  </section>
+<div id="sonucKutulari" class="result-grid" style="display:none;">
 
-  <section class="info">
+<div class="result-box">
+<strong>Basit Vade Farkı</strong>
+<span id="basitFarkSonuc">0 TL</span>
+</div>
 
-    <h2>Vade Farkı Nedir?</h2>
+<div class="result-box">
+<strong>Basit Vadeli Toplam</strong>
+<span id="basitToplamSonuc" class="big-result">0 TL</span>
+</div>
 
-    <p>
-      Vade farkı, bir ürün veya hizmetin peşin fiyatı ile
-      belirli bir süre sonra ödenecek vadeli fiyatı arasındaki
-      farkı ifade etmek için kullanılan ticari bir terimdir.
-    </p>
+<div class="result-box">
+<strong>Basit Aylık Ortalama</strong>
+<span id="basitAylikSonuc">0 TL</span>
+</div>
 
-    <h2>Basit Vade Farkı Nasıl Hesaplanır?</h2>
+<div class="result-box">
+<strong>Bileşik Vade Farkı</strong>
+<span id="bilesikFarkSonuc">0 TL</span>
+</div>
 
-    <p>
-      Basit hesaplama yönteminde peşin tutar, aylık vade farkı
-      oranı ve vade süresiyle çarpılır.
-    </p>
+<div class="result-box">
+<strong>Bileşik Vadeli Toplam</strong>
+<span id="bilesikToplamSonuc" class="big-result">0 TL</span>
+</div>
 
-    <div class="info-box">
-      <strong>Formül:</strong><br><br>
+<div class="result-box">
+<strong>Bileşik Aylık Ortalama</strong>
+<span id="bilesikAylikSonuc">0 TL</span>
+</div>
 
-      Vade Farkı =
-      Peşin Fiyat × Aylık Oran × Ay Sayısı
+</div>
 
-      <br><br>
 
-      Vadeli Fiyat =
-      Peşin Fiyat + Vade Farkı
-    </div>
+<div class="warning-box">
 
-    <h2>Örnek Vade Farkı Hesabı</h2>
+<strong>⚠️ ÖNEMLİ BİLGİLENDİRME</strong>
 
-    <p>
-      10.000 TL peşin fiyatlı bir ürün için aylık %3 oran
-      ve 6 ay vade kullanılırsa basit hesaplamada:
-    </p>
+Vade farkının hesaplanma yöntemi satıcı, alıcı,
+sözleşme ve ticari uygulamaya göre değişebilir.
 
-    <div class="info-box">
-      10.000 × %3 × 6 = 1.800 TL vade farkı
+<br><br>
 
-      <br><br>
+Bu araç hem basit oran yöntemiyle hem de aylık
+bileşik yöntemle matematiksel tahmin gösterir.
 
-      Vadeli toplam fiyat = 11.800 TL
-    </div>
+<br><br>
 
-    <h2>Bileşik Vade Farkı Nedir?</h2>
+KDV, vergi, komisyon, banka maliyetleri, tahsilat
+ücretleri, gecikme bedelleri ve sözleşmeye bağlı diğer
+masraflar otomatik olarak hesaba dahil edilmez.
 
-    <p>
-      Bileşik yöntemde her dönemin oranı önceki dönemde
-      oluşan tutarın üzerine uygulanır. Bu nedenle vade
-      uzadıkça basit hesaplamadan farklı bir sonuç ortaya
-      çıkabilir.
-    </p>
+<br><br>
 
-    <div class="info-box">
-      <strong>Bileşik formül:</strong><br><br>
+Ticari işlemde uygulanacak gerçek tutar için taraflar
+arasındaki sözleşme, fatura ve geçerli mevzuat esas
+alınmalıdır.
 
-      Vadeli Tutar =
-      Peşin Fiyat × (1 + Aylık Oran)<sup>Ay Sayısı</sup>
-    </div>
+</div>
 
-    <h2>Vade Farkı ile Taksit Aynı Şey mi?</h2>
+</section>
 
-    <p>
-      Hayır. Vade farkı peşin ve vadeli fiyat arasındaki
-      maliyet farkını ifade eder. Taksit ise toplam borcun
-      belirli sayıda ödemeye bölünmesidir.
-    </p>
 
-    <h2>Diğer Finans ve Ticaret Araçları</h2>
+<section class="card">
 
-    <p>
-      <a href="/kredi-hesaplama.html">Kredi Hesaplama</a>
-      •
-      <a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama</a>
-      •
-      <a href="/basit-taksit-hesaplama.html">Taksit Hesaplama</a>
-      •
-      <a href="/mevduat-faizi-hesaplama.html">Mevduat Faizi Hesaplama</a>
-    </p>
+<h2>Vade Farkı Nedir?</h2>
 
-  </section>
+<p>
+Vade farkı, bir ürün veya hizmetin peşin satış fiyatı ile
+belirli bir süre sonra ödenecek vadeli satış fiyatı arasındaki
+maliyet farkını ifade eden ticari bir terimdir.
+</p>
+
+<p>
+Vadeli satışta satıcı, tahsilatın daha ileri tarihte
+yapılmasına karşılık peşin fiyatın üzerine belirli bir
+oran veya tutar ekleyebilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Basit Vade Farkı Nasıl Hesaplanır?</h2>
+
+<p>
+Basit yöntemde aylık oran yalnızca başlangıçtaki
+peşin fiyat üzerinden hesaplanır.
+</p>
+
+<div class="info-box">
+
+<strong>Vade Farkı = Peşin Fiyat × Aylık Oran × Ay Sayısı</strong>
+
+<br><br>
+
+<strong>Vadeli Fiyat = Peşin Fiyat + Vade Farkı</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>10.000 TL İçin Vade Farkı Örneği</h2>
+
+<p>
+10.000 TL peşin fiyatlı bir ürün için aylık %3 oran
+ve 6 ay vade kullanılırsa:
+</p>
+
+<div class="info-box">
+
+10.000 × 0,03 × 6
+
+<br><br>
+
+Vade farkı =
+<strong>1.800 TL</strong>
+
+<br><br>
+
+Vadeli toplam =
+<strong>11.800 TL</strong>
+
+</div>
+
+<p>
+11.800 TL tutar 6 eşit parçaya bölünürse aylık ortalama:
+</p>
+
+<div class="info-box">
+
+11.800 ÷ 6 ≈
+
+<br><br>
+
+<strong>1.966,67 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Bileşik Vade Farkı Nasıl Hesaplanır?</h2>
+
+<p>
+Bileşik yöntemde her ayın vade farkı, önceki dönemde
+oluşan yeni tutarın üzerine uygulanır.
+</p>
+
+<div class="info-box">
+
+<strong>
+Vadeli Tutar =
+Peşin Fiyat × (1 + Aylık Oran)<sup>Ay Sayısı</sup>
+</strong>
+
+</div>
+
+<p>
+Bu nedenle vade uzadıkça bileşik yöntem ile basit yöntem
+arasındaki fark büyüyebilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Basit ve Bileşik Vade Farkı Arasındaki Fark</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Özellik</th>
+<th>Basit Yöntem</th>
+<th>Bileşik Yöntem</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Oranın uygulandığı tutar</td>
+<td>Başlangıç peşin fiyat</td>
+<td>Her dönemde oluşan yeni tutar</td>
+</tr>
+
+<tr>
+<td>Vade uzadığında</td>
+<td>Doğrusal artış</td>
+<td>Bileşik artış</td>
+</tr>
+
+<tr>
+<td>Formül</td>
+<td>Peşin × oran × ay</td>
+<td>Peşin × (1 + oran)^ay</td>
+</tr>
+
+<tr>
+<td>Sonuç</td>
+<td>Genellikle daha düşük</td>
+<td>Aynı pozitif oranda genellikle daha yüksek</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Vade Farkı ile Taksit Aynı Şey mi?</h2>
+
+<p>
+Hayır.
+</p>
+
+<p>
+<strong>Vade farkı</strong>, peşin ve vadeli fiyat arasındaki
+maliyet farkını ifade eder.
+</p>
+
+<p>
+<strong>Taksit</strong> ise toplam borcun belirli sayıda
+ödemeye bölünmesidir.
+</p>
+
+<p>
+Bir vadeli satışta hem vade farkı olabilir hem de oluşan
+toplam bedel birden fazla taksite bölünebilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Aylık Vade Farkı Oranı Nedir?</h2>
+
+<p>
+Bu araçta oran aylık yüzde olarak girilir.
+</p>
+
+<p>
+Örneğin aylık vade farkı %3 ise oran alanına:
+</p>
+
+<div class="info-box">
+
+<strong>3</strong>
+
+</div>
+
+<p>
+yazılır. Hesaplama sırasında bu değer:
+</p>
+
+<div class="info-box">
+
+<strong>0,03</strong>
+
+</div>
+
+<p>
+ondalık oranına çevrilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Vade Farkı Hesabına KDV Dahil mi?</h2>
+
+<p>
+Bu araç KDV veya diğer vergileri otomatik olarak
+hesaba katmaz.
+</p>
+
+<p>
+Hesaplamada kullanılan peşin fiyatın KDV dahil veya hariç
+olması, kullanıcının girdiği değere bağlıdır.
+</p>
+
+<p>
+Gerçek ticari işlemde KDV'nin nasıl uygulanacağı için
+fatura düzeni ve yürürlükteki vergi kuralları dikkate
+alınmalıdır.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Vade Farkı Nerelerde Kullanılır?</h2>
+
+<p>
+Vade farkı hesabı özellikle:
+</p>
+
+<p>
+* Toptan satış<br>
+* Ticari mal alım satımı<br>
+* Vadeli fatura işlemleri<br>
+* Bayi ve tedarikçi satışları<br>
+* Kurumsal satışlar<br>
+* Senetli veya vadeli ticari anlaşmalar<br>
+* Peşin ve vadeli fiyat karşılaştırmaları
+</p>
+
+<p>
+gibi işlemlerde kullanılabilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+<h3>Vade farkı nasıl hesaplanır?</h3>
+
+<p>
+Basit yöntemde peşin fiyat, aylık oran ve vade ayı
+çarpılarak vade farkı hesaplanabilir.
+</p>
+
+
+<h3>10.000 TL'ye aylık %3 ve 6 ay vade farkı ne kadar?</h3>
+
+<p>
+Basit yöntemde:
+<strong>1.800 TL</strong>
+vade farkı oluşur ve vadeli toplam
+<strong>11.800 TL</strong>
+olur.
+</p>
+
+
+<h3>Vade farkı her ay bileşik uygulanır mı?</h3>
+
+<p>
+Her ticari işlemde böyle olmak zorunda değildir.
+Uygulanacak yöntem tarafların anlaşmasına ve sözleşmeye
+göre değişebilir.
+</p>
+
+
+<h3>Vade farkı ile faiz aynı şey mi?</h3>
+
+<p>
+Günlük ticari kullanımda benzer maliyet etkileri yaratabilse
+de hukuki, vergisel ve sözleşmesel açıdan aynı kavram
+olarak değerlendirilmemelidir.
+</p>
+
+
+<h3>Vade farkı KDV'ye dahil mi?</h3>
+
+<p>
+Vergisel uygulama işlemin niteliğine ve güncel mevzuata
+bağlı olabilir. Bu araç KDV uygulamasını otomatik belirlemez.
+</p>
+
+
+<h3>Vade farkı hesaplama ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio Vade Farkı Hesaplama aracı ücretsizdir
+ve üyelik gerektirmez.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Diğer Finans ve Ticaret Araçları</h2>
+
+<p>
+<a href="/kredi-hesaplama.html">
+Kredi Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/mevduat-faizi-hesaplama.html">
+Mevduat Faizi Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/bilesik-faiz-hesaplama.html">
+Bileşik Faiz Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/basit-taksit-hesaplama.html">
+Basit Taksit Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kar-marji-hesaplama.html">
+Kâr Marjı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/iskonto-hesaplama.html">
+İskonto Hesaplama →
+</a>
+</p>
+
+</section>
 
 </main>
 
+
 <footer>
 
-  <div class="wrap">
+<div class="wrap">
 
-    <p>
-      <a href="/about.html">Hakkımızda</a>
-      •
-      <a href="/contact.html">İletişim</a>
-      •
-      <a href="/privacy-policy.html">Gizlilik Politikası</a>
-      •
-      <a href="/terms.html">Kullanım Koşulları</a>
-      •
-      <a href="/en/">English</a>
-    </p>
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
 
-    <p>
-      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
-    </p>
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
 
-  </div>
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
+
+</div>
 
 </footer>
 
+
 <script>
 
-function para(tutar) {
-  return new Intl.NumberFormat(
-    "tr-TR",
-    {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    }
-  ).format(tutar) + " TL";
+function para(tutar){
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+}
+).format(tutar) + " TL";
+
 }
 
-function hesapla() {
 
-  const pesin =
-    Number(document.getElementById("pesin").value);
+function oranYaz(deger){
 
-  const oran =
-    Number(document.getElementById("oran").value);
-
-  const ay =
-    Number(document.getElementById("ay").value);
-
-  const sonuc =
-    document.getElementById("sonuc");
-
-  if (
-    !Number.isFinite(pesin) ||
-    !Number.isFinite(oran) ||
-    !Number.isInteger(ay) ||
-    pesin <= 0 ||
-    oran < 0 ||
-    ay < 1
-  ) {
-
-    sonuc.innerHTML =
-      "Lütfen geçerli peşin fiyat, oran ve vade süresi girin.";
-
-    return;
-  }
-
-  const oranOndalik =
-    oran / 100;
-
-  /*
-    BASİT VADE FARKI
-  */
-
-  const basitFark =
-    pesin * oranOndalik * ay;
-
-  const basitToplam =
-    pesin + basitFark;
-
-  const basitAylik =
-    basitToplam / ay;
-
-  /*
-    BİLEŞİK VADE FARKI
-  */
-
-  const bilesikToplam =
-    pesin * Math.pow(1 + oranOndalik, ay);
-
-  const bilesikFark =
-    bilesikToplam - pesin;
-
-  const bilesikAylik =
-    bilesikToplam / ay;
-
-  sonuc.innerHTML =
-
-    "<strong>BASİT VADE FARKI</strong>" +
-
-    "<br><br>" +
-
-    "<strong>Peşin fiyat:</strong> " +
-    para(pesin) +
-
-    "<br>" +
-
-    "<strong>Vade farkı:</strong> " +
-    para(basitFark) +
-
-    "<br>" +
-
-    "<strong>Vadeli toplam:</strong> " +
-    para(basitToplam) +
-
-    "<br>" +
-
-    "<strong>" + ay + " aya eşit bölünürse:</strong> " +
-    para(basitAylik) +
-
-    "<br><br><hr><br>" +
-
-    "<strong>BİLEŞİK HESAPLAMA</strong>" +
-
-    "<br><br>" +
-
-    "<strong>Vade farkı:</strong> " +
-    para(bilesikFark) +
-
-    "<br>" +
-
-    "<strong>Vadeli toplam:</strong> " +
-    para(bilesikToplam) +
-
-    "<br>" +
-
-    "<strong>" + ay + " aya eşit bölünürse:</strong> " +
-    para(bilesikAylik) +
-
-    "<br><br>" +
-
-    "<small>" +
-    "Hangi yöntemin uygulanacağı ticari anlaşmaya göre değişebilir." +
-    "</small>";
+return new Intl.NumberFormat(
+"tr-TR",
+{
+maximumFractionDigits:4
 }
+).format(deger);
+
+}
+
+
+function hesapla(){
+
+const pesinInput =
+document.getElementById("pesin");
+
+const oranInput =
+document.getElementById("oran");
+
+const ayInput =
+document.getElementById("ay");
+
+
+const pesin =
+Number(pesinInput.value);
+
+const oran =
+Number(oranInput.value);
+
+const ay =
+Number(ayInput.value);
+
+
+const sonuc =
+document.getElementById("sonuc");
+
+const sonucKutulari =
+document.getElementById("sonucKutulari");
+
+
+if(
+pesinInput.value === "" ||
+oranInput.value === "" ||
+ayInput.value === "" ||
+!Number.isFinite(pesin) ||
+!Number.isFinite(oran) ||
+!Number.isFinite(ay) ||
+!Number.isInteger(ay) ||
+pesin <= 0 ||
+oran < 0 ||
+ay < 1
+){
+
+sonuc.innerHTML =
+"Lütfen geçerli peşin fiyat, aylık oran ve vade süresi girin.";
+
+sonucKutulari.style.display =
+"none";
+
+return;
+
+}
+
+
+const oranOndalik =
+oran / 100;
+
+
+/*
+BASİT VADE FARKI
+*/
+
+const basitFark =
+pesin *
+oranOndalik *
+ay;
+
+
+const basitToplam =
+pesin +
+basitFark;
+
+
+const basitAylik =
+basitToplam /
+ay;
+
+
+/*
+BİLEŞİK VADE FARKI
+*/
+
+const bilesikToplam =
+pesin *
+Math.pow(
+1 + oranOndalik,
+ay
+);
+
+
+const bilesikFark =
+bilesikToplam -
+pesin;
+
+
+const bilesikAylik =
+bilesikToplam /
+ay;
+
+
+if(
+!Number.isFinite(basitToplam) ||
+!Number.isFinite(bilesikToplam)
+){
+
+sonuc.innerHTML =
+"Hesaplama yapılamadı. Girdiğiniz değerleri kontrol edin.";
+
+sonucKutulari.style.display =
+"none";
+
+return;
+
+}
+
+
+document
+.getElementById("basitFarkSonuc")
+.textContent =
+para(basitFark);
+
+
+document
+.getElementById("basitToplamSonuc")
+.textContent =
+para(basitToplam);
+
+
+document
+.getElementById("basitAylikSonuc")
+.textContent =
+para(basitAylik);
+
+
+document
+.getElementById("bilesikFarkSonuc")
+.textContent =
+para(bilesikFark);
+
+
+document
+.getElementById("bilesikToplamSonuc")
+.textContent =
+para(bilesikToplam);
+
+
+document
+.getElementById("bilesikAylikSonuc")
+.textContent =
+para(bilesikAylik);
+
+
+sonuc.innerHTML =
+
+"<strong>Hesaplama tamamlandı.</strong>" +
+
+"<br><br>" +
+
+"Peşin fiyat: <strong>" +
+para(pesin) +
+"</strong>" +
+
+"<br>" +
+
+"Aylık oran: <strong>%" +
+oranYaz(oran) +
+"</strong>" +
+
+"<br>" +
+
+"Vade: <strong>" +
+ay +
+" ay</strong>";
+
+
+sonucKutulari.style.display =
+"grid";
+
+}
+
+
+[
+"pesin",
+"oran",
+"ay"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Enter"){
+hesapla();
+}
+
+}
+);
+
+});
+
 
 document.getElementById("year").textContent =
-  new Date().getFullYear();
+new Date().getFullYear();
 
 </script>
 
