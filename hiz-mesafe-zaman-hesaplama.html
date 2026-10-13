@@ -1,375 +1,1139 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Hız Mesafe Zaman Hesaplama | Yol ve Süre Hesapla - Araclio</title>
+<title>Hız Mesafe Zaman Hesaplama | Yol ve Süre Hesapla - Araclio</title>
 
-  <meta name="description" content="Hız, mesafe ve zaman hesaplama aracı. Mesafe ve hızdan yolculuk süresini, mesafe ve süreden ortalama hızı veya hız ve süreden mesafeyi hesaplayın.">
+<meta
+name="description"
+content="Ücretsiz hız, mesafe ve zaman hesaplama aracı. Mesafe ve hızdan yolculuk süresini, mesafe ve süreden ortalama hızı veya hız ve süreden mesafeyi hesaplayın."
+>
 
-  <meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
 
-  <link rel="canonical" href="https://araclio.com/hiz-mesafe-zaman-hesaplama.html">
+<meta name="google-adsense-account" content="ca-pub-7634654090472031">
 
-  <link rel="stylesheet" href="style.css">
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
 
-  <style>
-    .info-box {
-      margin-top:18px;
-      padding:16px;
-      border-radius:10px;
-      background:#f5f5f5;
+<link rel="canonical" href="https://araclio.com/hiz-mesafe-zaman-hesaplama.html">
+
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hız Mesafe Zaman Hesaplama | Araclio">
+<meta
+property="og:description"
+content="Hız, mesafe ve süre arasındaki bilinmeyen değeri ücretsiz hesaplayın."
+>
+<meta property="og:url" content="https://araclio.com/hiz-mesafe-zaman-hesaplama.html">
+<meta property="og:site_name" content="Araclio">
+
+<style>
+
+.info-box{
+margin-top:18px;
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.result-detail{
+margin-top:12px;
+line-height:1.8;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:520px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Hız Mesafe Zaman Hesaplama",
+  "url":"https://araclio.com/hiz-mesafe-zaman-hesaplama.html",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"Hız, mesafe ve zaman değerlerinden bilinmeyen değeri hesaplayan ücretsiz online araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Hız Mesafe Zaman Hesaplama",
+      "item":"https://araclio.com/hiz-mesafe-zaman-hesaplama.html"
     }
+  ]
+}
+</script>
 
-    .result-detail {
-      margin-top:12px;
-      line-height:1.8;
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Yolculuk süresi nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yolculuk süresi, mesafenin ortalama hıza bölünmesiyle hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Ortalama hız nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Ortalama hız, toplam mesafenin toplam süreye bölünmesiyle hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Mesafe nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Mesafe, ortalama hız ile geçen sürenin çarpılmasıyla hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"450 km yol 90 km/saat hızla kaç saat sürer?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Sabit 90 km/saat ortalama hız varsayımıyla 450 kilometre yol yaklaşık 5 saat sürer."
+      }
     }
-  </style>
+  ]
+}
+</script>
+
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Araclio</a>
-    <span class="tag">Ücretsiz Online Araçlar</span>
-  </div>
+
+<div class="wrap nav">
+
+<a class="brand" href="/">
+Araclio
+</a>
+
+<span class="tag">
+Ücretsiz Online Araçlar
+</span>
+
+</div>
+
 </header>
+
 
 <main class="wrap">
 
-  <section class="hero">
-    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+<section class="hero">
 
-    <h1>Hız, Mesafe ve Zaman Hesaplama</h1>
+<p class="eyebrow">
+HIZLI • ÜCRETSİZ • ÜYELİKSİZ
+</p>
 
-    <p>
-      Hız, mesafe veya yolculuk süresinden bilinmeyen değeri
-      kolayca hesaplayın.
-    </p>
-  </section>
+<h1>Hız, Mesafe ve Zaman Hesaplama</h1>
 
-  <section>
+<p>
+Hız, mesafe veya yolculuk süresinden bilinmeyen değeri
+saniyeler içinde hesaplayın.
+</p>
 
-    <article class="card">
+</section>
 
-      <h2>Ne Hesaplamak İstiyorsunuz?</h2>
 
-      <label>
-        Hesaplama
-        <select id="tur" onchange="alanlariGuncelle()">
-          <option value="zaman">Yolculuk Süresi</option>
-          <option value="hiz">Ortalama Hız</option>
-          <option value="mesafe">Mesafe</option>
-        </select>
-      </label>
+<section class="card">
 
-      <div id="mesafeAlani">
-        <label>
-          Mesafe (km)
-          <input id="mesafe" type="number" min="0" step="any" placeholder="450">
-        </label>
-      </div>
+<h2>Ne Hesaplamak İstiyorsunuz?</h2>
 
-      <div id="hizAlani">
-        <label>
-          Hız (km/saat)
-          <input id="hiz" type="number" min="0" step="any" placeholder="90">
-        </label>
-      </div>
+<label for="tur">
+Hesaplama Türü
+</label>
 
-      <div id="zamanAlani" style="display:none;">
-        <label>
-          Süre - Saat
-          <input id="saat" type="number" min="0" step="1" placeholder="5">
-        </label>
+<select id="tur" onchange="alanlariGuncelle()">
 
-        <label>
-          Süre - Dakika
-          <input id="dakika" type="number" min="0" max="59" step="1" placeholder="0">
-        </label>
-      </div>
+<option value="zaman">
+Yolculuk Süresi
+</option>
 
-      <button onclick="hesapla()">Hesapla</button>
+<option value="hiz">
+Ortalama Hız
+</option>
 
-      <div id="sonuc" class="result">
-        Değerleri girerek hesaplama yapın.
-      </div>
+<option value="mesafe">
+Mesafe
+</option>
 
-    </article>
+</select>
 
-  </section>
 
-  <section class="info">
+<div id="mesafeAlani">
 
-    <h2>Hız, Mesafe ve Zaman Nasıl Hesaplanır?</h2>
+<label for="mesafe">
+Mesafe (km)
+</label>
 
-    <p>
-      Hız, mesafe ve zaman birbiriyle doğrudan ilişkilidir.
-      Bu üç değerden ikisi biliniyorsa üçüncü değer
-      hesaplanabilir.
-    </p>
+<input
+id="mesafe"
+type="number"
+min="0"
+step="any"
+inputmode="decimal"
+placeholder="Örnek: 450"
+>
 
-    <div class="info-box">
-      <strong>Hız = Mesafe ÷ Zaman</strong>
-      <br><br>
-      <strong>Mesafe = Hız × Zaman</strong>
-      <br><br>
-      <strong>Zaman = Mesafe ÷ Hız</strong>
-    </div>
+</div>
 
-    <h2>Yolculuk Süresi Nasıl Hesaplanır?</h2>
 
-    <p>
-      Gideceğiniz mesafeyi ortalama hızınıza böldüğünüzde
-      teorik yolculuk süresini bulabilirsiniz.
-    </p>
+<div id="hizAlani">
 
-    <div class="info-box">
-      450 km ÷ 90 km/saat = 5 saat
-    </div>
+<label for="hiz">
+Hız (km/saat)
+</label>
 
-    <p>
-      Bu hesaplama duraklama, trafik, yol çalışması, hız
-      değişiklikleri ve mola sürelerini içermez.
-    </p>
+<input
+id="hiz"
+type="number"
+min="0"
+step="any"
+inputmode="decimal"
+placeholder="Örnek: 90"
+>
 
-    <h2>Ortalama Hız Nasıl Hesaplanır?</h2>
+</div>
 
-    <p>
-      Toplam mesafe, toplam yolculuk süresine bölünür.
-      Örneğin 300 kilometrelik yol 4 saatte tamamlanırsa
-      ortalama hız 75 km/saat olur.
-    </p>
 
-    <div class="info-box">
-      300 km ÷ 4 saat = 75 km/saat
-    </div>
+<div id="zamanAlani" style="display:none;">
 
-    <h2>Mesafe Nasıl Hesaplanır?</h2>
+<label for="saat">
+Süre - Saat
+</label>
 
-    <p>
-      Ortalama hız ile geçen süre çarpılarak kat edilen
-      teorik mesafe hesaplanabilir.
-    </p>
+<input
+id="saat"
+type="number"
+min="0"
+step="1"
+inputmode="numeric"
+placeholder="Örnek: 5"
+>
 
-    <div class="info-box">
-      80 km/saat × 2,5 saat = 200 km
-    </div>
 
-    <h2>Diğer Araçlar</h2>
+<label for="dakika">
+Süre - Dakika
+</label>
 
-    <p>
-      <a href="/yakit-tuketimi-hesaplama.html">Yakıt Tüketimi Hesaplama</a>
-      •
-      <a href="/iki-tarih-arasi-gun-hesaplama.html">İki Tarih Arası Gün</a>
-      •
-      <a href="/oran-oranti-hesaplama.html">Oran Orantı Hesaplama</a>
-      •
-      <a href="/birim-fiyat-hesaplama.html">Birim Fiyat Hesaplama</a>
-    </p>
+<input
+id="dakika"
+type="number"
+min="0"
+max="59"
+step="1"
+inputmode="numeric"
+placeholder="Örnek: 30"
+>
 
-    <div class="info-box">
-      <strong>Not:</strong>
-      Yolculuk süresi sonuçları sabit ortalama hız varsayımıyla
-      yapılan matematiksel hesaplamalardır. Gerçek sürüş süresi
-      trafik, mola, yol ve hava koşullarına göre değişebilir.
-    </div>
+</div>
 
-  </section>
+
+<button type="button" onclick="hesapla()">
+Hesapla
+</button>
+
+
+<div id="sonuc" class="result" aria-live="polite">
+Değerleri girerek hesaplama yapın.
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Hız, Mesafe ve Zaman Nasıl Hesaplanır?</h2>
+
+<p>
+Hız, mesafe ve zaman birbiriyle doğrudan ilişkilidir.
+Bu üç değerden ikisi biliniyorsa üçüncü değer hesaplanabilir.
+</p>
+
+<div class="info-box">
+
+<strong>Hız = Mesafe ÷ Zaman</strong>
+
+<br><br>
+
+<strong>Mesafe = Hız × Zaman</strong>
+
+<br><br>
+
+<strong>Zaman = Mesafe ÷ Hız</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Yolculuk Süresi Nasıl Hesaplanır?</h2>
+
+<p>
+Gidilecek mesafe ortalama hıza bölündüğünde teorik
+yolculuk süresi bulunur.
+</p>
+
+<div class="info-box">
+
+450 km ÷ 90 km/saat =
+
+<br><br>
+
+<strong>5 saat</strong>
+
+</div>
+
+<p>
+Bu hesaplama sabit ortalama hız varsayımına dayanır.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Ortalama Hız Nasıl Hesaplanır?</h2>
+
+<p>
+Toplam mesafe, toplam yolculuk süresine bölünür.
+</p>
+
+<div class="info-box">
+
+300 km ÷ 4 saat =
+
+<br><br>
+
+<strong>75 km/saat</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Mesafe Nasıl Hesaplanır?</h2>
+
+<p>
+Ortalama hız ile geçen süre çarpılarak teorik
+mesafe bulunur.
+</p>
+
+<div class="info-box">
+
+80 km/saat × 2,5 saat =
+
+<br><br>
+
+<strong>200 km</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Dakikalı Süre Nasıl Hesaplanır?</h2>
+
+<p>
+Saat ve dakika birlikte kullanılıyorsa dakika önce
+saat cinsine çevrilir.
+</p>
+
+<p>
+Örneğin 2 saat 30 dakika:
+</p>
+
+<div class="info-box">
+
+30 dakika ÷ 60 = 0,5 saat
+
+<br><br>
+
+2 + 0,5 =
+<strong>2,5 saat</strong>
+
+</div>
+
+<p>
+80 km/saat hızla 2 saat 30 dakika gidilirse:
+</p>
+
+<p>
+80 × 2,5 =
+<strong>200 km</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>100 km Yol Kaç Saat Sürer?</h2>
+
+<p>
+Süre kullanılan ortalama hıza göre değişir.
+</p>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Ortalama Hız</th>
+<th>100 km İçin Süre</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>50 km/saat</td>
+<td>2 saat</td>
+</tr>
+
+<tr>
+<td>80 km/saat</td>
+<td>1 saat 15 dakika</td>
+</tr>
+
+<tr>
+<td>90 km/saat</td>
+<td>Yaklaşık 1 saat 7 dakika</td>
+</tr>
+
+<tr>
+<td>100 km/saat</td>
+<td>1 saat</td>
+</tr>
+
+<tr>
+<td>120 km/saat</td>
+<td>50 dakika</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>450 km Yol Kaç Saat Sürer?</h2>
+
+<p>
+450 kilometrelik yolun teorik süresi ortalama hıza göre:
+</p>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Ortalama Hız</th>
+<th>Tahmini Süre</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>60 km/saat</td>
+<td>7 saat 30 dakika</td>
+</tr>
+
+<tr>
+<td>75 km/saat</td>
+<td>6 saat</td>
+</tr>
+
+<tr>
+<td>90 km/saat</td>
+<td>5 saat</td>
+</tr>
+
+<tr>
+<td>100 km/saat</td>
+<td>4 saat 30 dakika</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Gerçek Yolculuk Süresi Neden Farklı Olabilir?</h2>
+
+<p>
+Hesaplayıcı matematiksel olarak sabit ortalama hız
+varsayımı kullanır.
+</p>
+
+<p>
+Gerçek yolculuk süresini şu faktörler değiştirebilir:
+</p>
+
+<p>
+* Trafik yoğunluğu<br>
+* Trafik ışıkları ve kavşaklar<br>
+* Dinlenme ve yakıt molaları<br>
+* Yol çalışmaları<br>
+* Hava koşulları<br>
+* Hız sınırları<br>
+* Şehir içi geçişler<br>
+* Yolun eğimi ve yapısı
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Ortalama Hız ile Anlık Hız Aynı mı?</h2>
+
+<p>
+Hayır.
+</p>
+
+<p>
+Anlık hız belirli bir andaki hızdır. Ortalama hız ise
+toplam mesafenin toplam süreye bölünmesiyle bulunan değerdir.
+</p>
+
+<p>
+Örneğin yol boyunca zaman zaman 120 km/saat hızla gidilmesi,
+yolculuğun ortalama hızının 120 km/saat olduğu anlamına gelmez.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+
+<h3>Hız nasıl hesaplanır?</h3>
+
+<p>
+Mesafe süreye bölünür:
+<strong>Hız = Mesafe ÷ Zaman.</strong>
+</p>
+
+
+<h3>Mesafe nasıl hesaplanır?</h3>
+
+<p>
+Hız süre ile çarpılır:
+<strong>Mesafe = Hız × Zaman.</strong>
+</p>
+
+
+<h3>Zaman nasıl hesaplanır?</h3>
+
+<p>
+Mesafe hıza bölünür:
+<strong>Zaman = Mesafe ÷ Hız.</strong>
+</p>
+
+
+<h3>450 km yol 90 km/saat hızla kaç saat sürer?</h3>
+
+<p>
+Sabit 90 km/saat ortalama hızla
+<strong>5 saat</strong>
+sürer.
+</p>
+
+
+<h3>300 km yol 4 saatte gidilirse ortalama hız kaçtır?</h3>
+
+<p>
+300 ÷ 4 =
+<strong>75 km/saat</strong>
+ortalama hızdır.
+</p>
+
+
+<h3>80 km/saat hızla 2,5 saatte kaç km gidilir?</h3>
+
+<p>
+80 × 2,5 =
+<strong>200 km</strong>
+mesafe kat edilir.
+</p>
+
+
+<h3>Molalar bu hesaplamaya dahil mi?</h3>
+
+<p>
+Hayır. Araç yalnızca girilen ortalama hız ve süre
+üzerinden matematiksel hesap yapar.
+</p>
+
+
+<h3>Hız mesafe zaman hesaplama ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio Hız, Mesafe ve Zaman Hesaplama aracı
+ücretsizdir ve üyelik gerektirmez.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Bilgilendirme</h2>
+
+<div class="info-box">
+
+<strong>Not:</strong>
+
+<br><br>
+
+Yolculuk süresi sonuçları sabit ortalama hız varsayımıyla
+yapılan matematiksel hesaplamalardır.
+
+Gerçek sürüş süresi trafik, mola, yol koşulları,
+hava durumu ve yasal hız sınırlarına göre değişebilir.
+
+</div>
+
+<p>
+<strong>Son güncelleme: Ekim 2026</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Diğer Hesaplama Araçları</h2>
+
+<p>
+<a href="/yakit-tuketimi-hesaplama.html">
+Yakıt Tüketimi Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/iki-tarih-arasi-gun-hesaplama.html">
+İki Tarih Arası Gün Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/oran-oranti-hesaplama.html">
+Oran Orantı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/birim-fiyat-hesaplama.html">
+Birim Fiyat Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/zaman-donusturucu.html">
+Zaman Dönüştürücü →
+</a>
+</p>
+
+</section>
 
 </main>
 
+
 <footer>
-  <div class="wrap">
 
-    <p>
-      <a href="/about.html">Hakkımızda</a>
-      •
-      <a href="/contact.html">İletişim</a>
-      •
-      <a href="/privacy-policy.html">Gizlilik Politikası</a>
-      •
-      <a href="/terms.html">Kullanım Koşulları</a>
-      •
-      <a href="/en/">English</a>
-    </p>
+<div class="wrap">
 
-    <p>
-      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
-    </p>
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
 
-  </div>
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
+
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
+
+</div>
+
 </footer>
+
 
 <script>
 
-function formatla(sayi) {
-  return new Intl.NumberFormat("tr-TR", {
-    maximumFractionDigits: 2
-  }).format(sayi);
+function formatla(sayi){
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+maximumFractionDigits:2
+}
+).format(sayi);
+
 }
 
-function alanlariGuncelle() {
 
-  const tur = document.getElementById("tur").value;
+function alanlariGuncelle(){
 
-  document.getElementById("mesafeAlani").style.display =
-    tur === "mesafe" ? "none" : "block";
+const tur =
+document.getElementById("tur").value;
 
-  document.getElementById("hizAlani").style.display =
-    tur === "hiz" ? "none" : "block";
 
-  document.getElementById("zamanAlani").style.display =
-    tur === "zaman" ? "none" : "block";
+document
+.getElementById("mesafeAlani")
+.style.display =
+tur === "mesafe"
+? "none"
+: "block";
 
-  document.getElementById("sonuc").innerHTML =
-    "Değerleri girerek hesaplama yapın.";
+
+document
+.getElementById("hizAlani")
+.style.display =
+tur === "hiz"
+? "none"
+: "block";
+
+
+document
+.getElementById("zamanAlani")
+.style.display =
+tur === "zaman"
+? "none"
+: "block";
+
+
+document
+.getElementById("sonuc")
+.innerHTML =
+"Değerleri girerek hesaplama yapın.";
+
 }
 
-function sureYaz(toplamSaat) {
 
-  let saat = Math.floor(toplamSaat);
-  let dakika = Math.round((toplamSaat - saat) * 60);
+function sureYaz(toplamSaat){
 
-  if (dakika === 60) {
-    saat++;
-    dakika = 0;
-  }
+let saat =
+Math.floor(toplamSaat);
 
-  if (saat === 0) {
-    return dakika + " dakika";
-  }
+let dakika =
+Math.round(
+(toplamSaat - saat) * 60
+);
 
-  if (dakika === 0) {
-    return saat + " saat";
-  }
 
-  return saat + " saat " + dakika + " dakika";
+if(
+dakika === 60
+){
+
+saat++;
+dakika = 0;
+
 }
 
-function hesapla() {
 
-  const tur = document.getElementById("tur").value;
-  const sonuc = document.getElementById("sonuc");
+if(
+saat === 0
+){
 
-  const mesafe = Number(document.getElementById("mesafe").value);
-  const hiz = Number(document.getElementById("hiz").value);
+return dakika +
+" dakika";
 
-  const saatDegeri =
-    Number(document.getElementById("saat").value || 0);
-
-  const dakikaDegeri =
-    Number(document.getElementById("dakika").value || 0);
-
-  if (tur === "zaman") {
-
-    if (
-      !Number.isFinite(mesafe) ||
-      !Number.isFinite(hiz) ||
-      mesafe <= 0 ||
-      hiz <= 0
-    ) {
-      sonuc.innerHTML =
-        "Lütfen sıfırdan büyük mesafe ve hız değerleri girin.";
-      return;
-    }
-
-    const zaman = mesafe / hiz;
-
-    sonuc.innerHTML =
-      "<strong>Tahmini süre: " +
-      sureYaz(zaman) +
-      "</strong>" +
-      "<div class='result-detail'>" +
-      "Mesafe: " + formatla(mesafe) + " km" +
-      "<br>" +
-      "Ortalama hız: " + formatla(hiz) + " km/saat" +
-      "<br>" +
-      "Ondalık saat: " + formatla(zaman) +
-      "</div>";
-
-    return;
-  }
-
-  if (
-    !Number.isFinite(saatDegeri) ||
-    !Number.isFinite(dakikaDegeri) ||
-    saatDegeri < 0 ||
-    dakikaDegeri < 0 ||
-    dakikaDegeri >= 60
-  ) {
-    sonuc.innerHTML =
-      "Lütfen geçerli bir saat ve 0-59 arasında dakika girin.";
-    return;
-  }
-
-  const toplamSaat =
-    saatDegeri + (dakikaDegeri / 60);
-
-  if (toplamSaat <= 0) {
-    sonuc.innerHTML =
-      "Süre sıfırdan büyük olmalıdır.";
-    return;
-  }
-
-  if (tur === "hiz") {
-
-    if (
-      !Number.isFinite(mesafe) ||
-      mesafe <= 0
-    ) {
-      sonuc.innerHTML =
-        "Lütfen sıfırdan büyük bir mesafe girin.";
-      return;
-    }
-
-    const ortalamaHiz =
-      mesafe / toplamSaat;
-
-    sonuc.innerHTML =
-      "<strong>Ortalama hız: " +
-      formatla(ortalamaHiz) +
-      " km/saat</strong>" +
-      "<div class='result-detail'>" +
-      "Mesafe: " + formatla(mesafe) + " km" +
-      "<br>" +
-      "Süre: " + sureYaz(toplamSaat) +
-      "</div>";
-
-    return;
-  }
-
-  if (tur === "mesafe") {
-
-    if (
-      !Number.isFinite(hiz) ||
-      hiz <= 0
-    ) {
-      sonuc.innerHTML =
-        "Lütfen sıfırdan büyük bir hız değeri girin.";
-      return;
-    }
-
-    const hesaplananMesafe =
-      hiz * toplamSaat;
-
-    sonuc.innerHTML =
-      "<strong>Mesafe: " +
-      formatla(hesaplananMesafe) +
-      " km</strong>" +
-      "<div class='result-detail'>" +
-      "Ortalama hız: " + formatla(hiz) + " km/saat" +
-      "<br>" +
-      "Süre: " + sureYaz(toplamSaat) +
-      "</div>";
-  }
 }
+
+
+if(
+dakika === 0
+){
+
+return saat +
+" saat";
+
+}
+
+
+return saat +
+" saat " +
+dakika +
+" dakika";
+
+}
+
+
+function hesapla(){
+
+const tur =
+document.getElementById("tur").value;
+
+const sonuc =
+document.getElementById("sonuc");
+
+
+const mesafeInput =
+document.getElementById("mesafe");
+
+const hizInput =
+document.getElementById("hiz");
+
+const saatInput =
+document.getElementById("saat");
+
+const dakikaInput =
+document.getElementById("dakika");
+
+
+const mesafe =
+Number(mesafeInput.value);
+
+const hiz =
+Number(hizInput.value);
+
+const saatDegeri =
+Number(
+saatInput.value || 0
+);
+
+const dakikaDegeri =
+Number(
+dakikaInput.value || 0
+);
+
+
+/*
+YOLCULUK SÜRESİ
+*/
+
+if(
+tur === "zaman"
+){
+
+if(
+mesafeInput.value === "" ||
+hizInput.value === "" ||
+!Number.isFinite(mesafe) ||
+!Number.isFinite(hiz) ||
+mesafe <= 0 ||
+hiz <= 0
+){
+
+sonuc.innerHTML =
+"Lütfen sıfırdan büyük geçerli mesafe ve hız değerleri girin.";
+
+return;
+
+}
+
+
+const zaman =
+mesafe / hiz;
+
+
+sonuc.innerHTML =
+
+"<strong>Tahmini süre: " +
+sureYaz(zaman) +
+"</strong>" +
+
+"<div class='result-detail'>" +
+
+"Mesafe: <strong>" +
+formatla(mesafe) +
+" km</strong>" +
+
+"<br>" +
+
+"Ortalama hız: <strong>" +
+formatla(hiz) +
+" km/saat</strong>" +
+
+"<br>" +
+
+"Ondalık saat: <strong>" +
+formatla(zaman) +
+"</strong>" +
+
+"</div>";
+
+return;
+
+}
+
+
+/*
+SÜRE KONTROLÜ
+*/
+
+if(
+!Number.isFinite(saatDegeri) ||
+!Number.isFinite(dakikaDegeri) ||
+saatDegeri < 0 ||
+dakikaDegeri < 0 ||
+dakikaDegeri >= 60 ||
+!Number.isInteger(saatDegeri) ||
+!Number.isInteger(dakikaDegeri)
+){
+
+sonuc.innerHTML =
+"Lütfen geçerli bir saat ve 0-59 arasında tam sayı dakika girin.";
+
+return;
+
+}
+
+
+const toplamSaat =
+saatDegeri +
+(dakikaDegeri / 60);
+
+
+if(
+toplamSaat <= 0
+){
+
+sonuc.innerHTML =
+"Süre sıfırdan büyük olmalıdır.";
+
+return;
+
+}
+
+
+/*
+ORTALAMA HIZ
+*/
+
+if(
+tur === "hiz"
+){
+
+if(
+mesafeInput.value === "" ||
+!Number.isFinite(mesafe) ||
+mesafe <= 0
+){
+
+sonuc.innerHTML =
+"Lütfen sıfırdan büyük geçerli bir mesafe girin.";
+
+return;
+
+}
+
+
+const ortalamaHiz =
+mesafe / toplamSaat;
+
+
+sonuc.innerHTML =
+
+"<strong>Ortalama hız: " +
+formatla(ortalamaHiz) +
+" km/saat</strong>" +
+
+"<div class='result-detail'>" +
+
+"Mesafe: <strong>" +
+formatla(mesafe) +
+" km</strong>" +
+
+"<br>" +
+
+"Süre: <strong>" +
+sureYaz(toplamSaat) +
+"</strong>" +
+
+"</div>";
+
+return;
+
+}
+
+
+/*
+MESAFE
+*/
+
+if(
+tur === "mesafe"
+){
+
+if(
+hizInput.value === "" ||
+!Number.isFinite(hiz) ||
+hiz <= 0
+){
+
+sonuc.innerHTML =
+"Lütfen sıfırdan büyük geçerli bir hız değeri girin.";
+
+return;
+
+}
+
+
+const hesaplananMesafe =
+hiz *
+toplamSaat;
+
+
+sonuc.innerHTML =
+
+"<strong>Mesafe: " +
+formatla(hesaplananMesafe) +
+" km</strong>" +
+
+"<div class='result-detail'>" +
+
+"Ortalama hız: <strong>" +
+formatla(hiz) +
+" km/saat</strong>" +
+
+"<br>" +
+
+"Süre: <strong>" +
+sureYaz(toplamSaat) +
+"</strong>" +
+
+"</div>";
+
+}
+
+}
+
+
+[
+"mesafe",
+"hiz",
+"saat",
+"dakika"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(
+event.key === "Enter"
+){
+
+hesapla();
+
+}
+
+}
+);
+
+});
+
 
 document.getElementById("year").textContent =
-  new Date().getFullYear();
+new Date().getFullYear();
+
 
 alanlariGuncelle();
 
