@@ -1,306 +1,1037 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Mevduat Faizi Hesaplama | Net Faiz Kazancı - Araclio</title>
+<title>Mevduat Faizi Hesaplama | Net Faiz Kazancı - Araclio</title>
 
-  <meta name="description" content="Ücretsiz mevduat faizi hesaplama aracı. Anapara, yıllık faiz oranı, vade ve stopaj oranını girerek brüt faiz, net kazanç ve vade sonu tutarı hesaplayın.">
+<meta
+name="description"
+content="Ücretsiz mevduat faizi hesaplama aracı. Anapara, yıllık faiz oranı, vade ve stopaj oranını girerek brüt faiz, stopaj kesintisi, net kazanç ve vade sonu tutarını hesaplayın."
+>
 
-  <meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
 
-  <link rel="canonical" href="https://araclio.com/mevduat-faizi-hesaplama.html">
+<meta name="google-adsense-account" content="ca-pub-7634654090472031">
 
-  <link rel="stylesheet" href="style.css">
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
 
-  <style>
-    .finance-warning {
-      margin-top: 24px;
-      padding: 18px;
-      border: 2px solid #c62828;
-      border-radius: 10px;
-      background: #fff4f4;
-      color: #7f0000;
+<link rel="canonical" href="https://araclio.com/mevduat-faizi-hesaplama.html">
+
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mevduat Faizi Hesaplama | Net Faiz Kazancı">
+<meta
+property="og:description"
+content="Anapara, yıllık faiz, vade ve stopaj oranına göre mevduat getirisi ve vade sonu tutarını ücretsiz hesaplayın."
+>
+<meta property="og:url" content="https://araclio.com/mevduat-faizi-hesaplama.html">
+<meta property="og:site_name" content="Araclio">
+
+<style>
+
+.finance-warning{
+margin-top:24px;
+padding:18px;
+border:2px solid #c62828;
+border-radius:10px;
+background:#fff4f4;
+color:#7f0000;
+line-height:1.75;
+}
+
+.finance-warning strong{
+display:block;
+margin-bottom:8px;
+font-size:18px;
+}
+
+.formula-box{
+margin-top:15px;
+padding:15px;
+border-radius:8px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.result-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:18px;
+}
+
+.result-box{
+background:#f5f5f5;
+padding:16px;
+border-radius:10px;
+color:#222;
+}
+
+.result-box strong{
+display:block;
+margin-bottom:7px;
+}
+
+.big-result{
+font-size:1.3rem;
+font-weight:700;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:540px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+@media(max-width:650px){
+
+.result-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Mevduat Faizi Hesaplama",
+  "url":"https://araclio.com/mevduat-faizi-hesaplama.html",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"Anapara, yıllık faiz oranı, vade ve stopaj oranına göre tahmini mevduat getirisini hesaplayan ücretsiz online araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Mevduat Faizi Hesaplama",
+      "item":"https://araclio.com/mevduat-faizi-hesaplama.html"
     }
+  ]
+}
+</script>
 
-    .finance-warning strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 18px;
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Mevduat faizi nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Basit gün bazlı hesaplamada anapara, yıllık faiz oranı ve vade gün sayısı kullanılır. Brüt faiz yaklaşık olarak anapara × yıllık faiz oranı × vade günü / 365 formülüyle hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Net mevduat faizi nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Brüt faiz kazancından kullanıcı tarafından girilen stopaj oranına göre hesaplanan kesinti çıkarılarak tahmini net faiz kazancı bulunur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Vade sonu tutarı nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Başlangıç anaparasına tahmini net faiz kazancı eklenerek vade sonu toplam tutarı hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Stopaj oranı neden otomatik girilmiyor?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Stopaj oranları mevduatın türüne, vadesine ve yürürlükteki düzenlemelere göre değişebileceğinden araç sabit bir oran varsaymaz."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Bankanın sonucu farklı çıkabilir mi?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Evet. Valör, gün hesabı, faiz oranı, banka uygulaması, stopaj ve ürün koşulları nedeniyle bankanın gerçek sonucu farklı olabilir."
+      }
     }
+  ]
+}
+</script>
 
-    .formula-box {
-      margin-top: 15px;
-      padding: 15px;
-      border-radius: 8px;
-      background: #f5f5f5;
-    }
-  </style>
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Araclio</a>
-    <span class="tag">Ücretsiz Online Araçlar</span>
-  </div>
+
+<div class="wrap nav">
+
+<a class="brand" href="/">
+Araclio
+</a>
+
+<span class="tag">
+Ücretsiz Online Araçlar
+</span>
+
+</div>
+
 </header>
+
 
 <main class="wrap">
 
-  <section class="hero">
-    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+<section class="hero">
 
-    <h1>Mevduat Faizi Hesaplama</h1>
+<p class="eyebrow">
+FAİZ • VADE • STOPAJ • NET GETİRİ
+</p>
 
-    <p>
-      Anapara, yıllık faiz oranı, vade süresi ve stopaj oranını
-      girerek tahmini brüt faiz kazancınızı, vergi kesintisini,
-      net faiz kazancınızı ve vade sonundaki toplam tutarı hesaplayın.
-    </p>
-  </section>
+<h1>Mevduat Faizi Hesaplama</h1>
 
-  <section>
+<p>
+Anapara, yıllık faiz oranı, vade süresi ve stopaj oranını
+girerek tahmini brüt faiz kazancınızı, stopaj kesintisini,
+net faiz kazancınızı ve vade sonu toplam tutarınızı hesaplayın.
+</p>
 
-    <article class="card">
+</section>
 
-      <h2>Vadeli Mevduat Hesapla</h2>
 
-      <label>
-        Anapara (TL)
-        <input
-          id="anapara"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="100000">
-      </label>
+<section class="card">
 
-      <label>
-        Yıllık Faiz Oranı (%)
-        <input
-          id="faizOrani"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="40">
-      </label>
+<h2>Vadeli Mevduat Getirisi Hesapla</h2>
 
-      <label>
-        Vade (Gün)
-        <input
-          id="vade"
-          type="number"
-          min="1"
-          step="1"
-          placeholder="32">
-      </label>
+<label for="anapara">
+Anapara (TL)
+</label>
 
-      <label>
-        Stopaj Oranı (%)
-        <input
-          id="stopaj"
-          type="number"
-          min="0"
-          max="100"
-          step="0.01"
-          placeholder="Güncel oranı girin">
-      </label>
+<input
+id="anapara"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 100000"
+>
 
-      <button onclick="mevduatHesapla()">Faiz Kazancını Hesapla</button>
 
-      <div id="mevduatSonuc" class="result">
-        Anapara, faiz, vade ve stopaj oranını girin.
-      </div>
+<label for="faizOrani">
+Yıllık Faiz Oranı (%)
+</label>
 
-      <div class="finance-warning">
-        <strong>⚠️ FİNANSAL UYARI</strong>
+<input
+id="faizOrani"
+type="number"
+min="0"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 40"
+>
 
-        Bu hesaplama yalnızca genel bilgilendirme amacıyla hazırlanmıştır
-        ve yatırım tavsiyesi değildir.
 
-        <br><br>
+<label for="vade">
+Vade (Gün)
+</label>
 
-        Bankaların sunduğu faiz oranları, kampanyalar, valör uygulamaları,
-        vade koşulları ve diğer şartlar farklı olabilir.
+<input
+id="vade"
+type="number"
+min="1"
+step="1"
+inputmode="numeric"
+placeholder="Örnek: 32"
+>
 
-        <br><br>
 
-        Stopaj oranları mevzuata, mevduat türüne ve vadeye göre
-        değişebileceğinden bu araç güncel stopaj oranını otomatik olarak
-        belirlemez. Bankanızdan veya güncel resmi kaynaklardan öğrendiğiniz
-        oranı ilgili alana kendiniz giriniz.
+<label for="stopaj">
+Stopaj Oranı (%)
+</label>
 
-        <br><br>
+<input
+id="stopaj"
+type="number"
+min="0"
+max="100"
+step="0.01"
+inputmode="decimal"
+placeholder="Güncel oranı girin"
+>
 
-        Bankanızın hesapladığı gerçek vade sonu tutarı ile burada
-        gösterilen tahmini sonuç arasında fark oluşabilir.
-      </div>
 
-    </article>
+<button type="button" onclick="mevduatHesapla()">
+Faiz Kazancını Hesapla
+</button>
 
-  </section>
 
-  <section class="info">
+<div id="mevduatSonuc" class="result" aria-live="polite">
+Anapara, yıllık faiz, vade ve stopaj oranını girin.
+</div>
 
-    <h2>Mevduat Faizi Nasıl Hesaplanır?</h2>
 
-    <p>
-      Gün üzerinden basit mevduat faizinin yaklaşık brüt kazancı;
-      anapara, yıllık faiz oranı ve vade gün sayısı kullanılarak
-      hesaplanabilir.
-    </p>
+<div id="sonucKutulari" class="result-grid" style="display:none;">
 
-    <div class="formula-box">
-      <strong>Brüt Faiz = Anapara × (Faiz Oranı / 100) × (Vade Günü / 365)</strong>
-    </div>
+<div class="result-box">
+<strong>Brüt Faiz</strong>
+<span id="brutFaizSonuc">0 TL</span>
+</div>
 
-    <p>
-      Hesaplanan brüt faizden, kullanıcının girdiği stopaj oranına
-      göre tahmini kesinti hesaplanır. Kalan tutar net faiz
-      kazancını verir.
-    </p>
+<div class="result-box">
+<strong>Stopaj Kesintisi</strong>
+<span id="stopajSonuc">0 TL</span>
+</div>
 
-    <div class="formula-box">
-      <strong>Net Faiz = Brüt Faiz - Stopaj</strong>
-    </div>
+<div class="result-box">
+<strong>Net Faiz Kazancı</strong>
+<span id="netFaizSonuc" class="big-result">0 TL</span>
+</div>
 
-    <h2>Vade Sonu Tutarı Nedir?</h2>
+<div class="result-box">
+<strong>Vade Sonu Toplam</strong>
+<span id="vadeSonuSonuc" class="big-result">0 TL</span>
+</div>
 
-    <p>
-      Vade sonu tutarı, başlangıçtaki anaparaya tahmini net faiz
-      kazancının eklenmesiyle bulunur.
-    </p>
+<div class="result-box">
+<strong>Günlük Brüt Faiz</strong>
+<span id="gunlukFaizSonuc">0 TL</span>
+</div>
 
-    <div class="formula-box">
-      <strong>Vade Sonu Tutar = Anapara + Net Faiz</strong>
-    </div>
+<div class="result-box">
+<strong>Vade</strong>
+<span id="vadeSonuc">0 gün</span>
+</div>
 
-    <h2>Mevduat Faiz Oranları Neden Farklıdır?</h2>
+</div>
 
-    <p>
-      Bankaların sunduğu faiz oranları; yatırılan tutara, vade
-      süresine, müşteri koşullarına, kampanyalara ve bankanın
-      uygulamalarına göre değişebilir. Bu nedenle hesaplama
-      yaparken bankanızın size sunduğu yıllık faiz oranını girmeniz
-      gerekir.
-    </p>
 
-    <h2>Stopaj Nedir?</h2>
+<div class="finance-warning">
 
-    <p>
-      Mevduat faiz kazancından uygulanabilecek vergi kesintisi
-      hesaplamada stopaj olarak gösterilir. Uygulanacak oran zaman
-      içinde ve mevduatın özelliklerine göre değişebileceği için
-      Araclio bu alanda sabit bir güncel oran kullanmaz.
-    </p>
+<strong>⚠️ FİNANSAL UYARI</strong>
 
-    <h2>Diğer Hesaplama Araçları</h2>
+Bu hesaplama genel bilgilendirme amacıyla hazırlanmıştır
+ve yatırım tavsiyesi veya banka teklifi değildir.
 
-    <p>
-      <a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama</a>
-      •
-      <a href="/yuzde-hesaplama.html">Yüzde Hesaplama</a>
-      •
-      <a href="/indirim-hesaplama.html">İndirim Hesaplama</a>
-      •
-      <a href="/basit-taksit-hesaplama.html">Taksit Hesaplama</a>
-    </p>
+<br><br>
 
-  </section>
+Bankaların sunduğu faiz oranları, kampanyalar,
+valör uygulamaları, faiz hesaplama yöntemleri ve
+vade koşulları farklı olabilir.
+
+<br><br>
+
+Stopaj oranları mevduatın türüne, vadesine ve yürürlükteki
+mevzuata göre değişebilir. Bu nedenle araç stopaj oranını
+otomatik belirlemez.
+
+<br><br>
+
+Bankanızdan veya güncel resmî kaynaklardan öğrendiğiniz
+oranı ilgili alana girin.
+
+<br><br>
+
+Gerçek vade sonu tutarı ile burada gösterilen tahmini
+sonuç arasında fark oluşabilir.
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Mevduat Faizi Nasıl Hesaplanır?</h2>
+
+<p>
+Basit gün bazlı mevduat hesabında anapara, yıllık faiz oranı
+ve vade gün sayısı kullanılır.
+</p>
+
+<div class="formula-box">
+
+<strong>
+Brüt Faiz =
+Anapara × (Yıllık Faiz / 100) × (Vade Günü / 365)
+</strong>
+
+</div>
+
+<p>
+Bu araç hesaplamada 365 günlük yıl esasını kullanır.
+Bankaların gerçek ürünlerinde gün hesabı ve diğer
+uygulamalar farklılık gösterebilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Net Mevduat Faizi Nasıl Hesaplanır?</h2>
+
+<p>
+Önce brüt faiz kazancı bulunur. Daha sonra kullanıcının
+girdiği stopaj oranına göre tahmini kesinti hesaplanır.
+</p>
+
+<div class="formula-box">
+
+<strong>
+Stopaj =
+Brüt Faiz × (Stopaj Oranı / 100)
+</strong>
+
+<br><br>
+
+<strong>
+Net Faiz =
+Brüt Faiz − Stopaj
+</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Vade Sonu Tutarı Nasıl Hesaplanır?</h2>
+
+<p>
+Vade sonunda anaparanın üzerine net faiz kazancı eklenir.
+</p>
+
+<div class="formula-box">
+
+<strong>
+Vade Sonu Tutar =
+Anapara + Net Faiz
+</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>100.000 TL Mevduat Faizi Örneği</h2>
+
+<p>
+Örnek olarak:
+</p>
+
+<p>
+<strong>Anapara:</strong> 100.000 TL<br>
+<strong>Yıllık faiz:</strong> %40<br>
+<strong>Vade:</strong> 32 gün
+</p>
+
+<p>
+Stopaj dikkate alınmadan önce yaklaşık brüt faiz:
+</p>
+
+<div class="formula-box">
+
+100.000 × 0,40 × (32 ÷ 365)
+
+<br><br>
+
+≈ <strong>3.506,85 TL brüt faiz</strong>
+
+</div>
+
+<p>
+Net kazanç ise girilen stopaj oranına göre değişir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Stopaj Nedir?</h2>
+
+<p>
+Stopaj, faiz kazancı üzerinden uygulanabilecek vergi
+kesintisini ifade eder.
+</p>
+
+<p>
+Uygulanacak oran mevduatın türüne, vadesine,
+hesabın özelliklerine ve yürürlükteki düzenlemelere göre
+değişebileceği için Araclio sabit bir stopaj oranı kullanmaz.
+</p>
+
+<p>
+Hesaplama yaparken bankanızın veya ilgili resmî kaynağın
+güncel olarak belirttiği oranı girmeniz gerekir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Mevduat Faiz Oranları Neden Bankaya Göre Değişir?</h2>
+
+<p>
+Bankaların sunduğu mevduat faiz oranları çeşitli
+faktörlere göre değişebilir:
+</p>
+
+<p>
+* Yatırılan para tutarı<br>
+* Vade süresi<br>
+* Yeni müşteri kampanyaları<br>
+* Dijital veya şube ürünü olması<br>
+* Bankanın fonlama politikası<br>
+* Piyasa faiz koşulları<br>
+* Müşteriye özel teklifler
+</p>
+
+<p>
+Bu nedenle hesaplamada bankanızın size sunduğu
+<strong>yıllık faiz oranını</strong>
+kullanmanız gerekir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>32 Günlük Mevduat Nasıl Hesaplanır?</h2>
+
+<p>
+32 günlük vadeli mevduatta yıllık faiz oranının yalnızca
+32 günlük bölümü hesaplamaya dahil edilir.
+</p>
+
+<div class="formula-box">
+
+<strong>
+Anapara × Yıllık Faiz × 32 / 365
+</strong>
+
+</div>
+
+<p>
+Stopaj kesintisi varsa bu brüt kazanç üzerinden ayrıca
+hesaplanır.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Faiz Oranı %40 Ne Anlama Gelir?</h2>
+
+<p>
+Mevduatta belirtilen %40 oran, genellikle yıllıklandırılmış
+faiz oranını ifade eder.
+</p>
+
+<p>
+32 günlük vadede anaparanın doğrudan %40'ı kazanılmaz.
+Yıllık oranın vade gününe karşılık gelen bölümü hesaplanır.
+</p>
+
+<p>
+Bu nedenle kısa vadeli mevduatlarda kazanç hesabında
+<strong>vade gün sayısı</strong>
+önemlidir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Brüt Faiz ile Net Faiz Arasındaki Fark</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Terim</th>
+<th>Anlamı</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Brüt Faiz</td>
+<td>Vergi veya stopaj kesilmeden önceki faiz kazancı.</td>
+</tr>
+
+<tr>
+<td>Stopaj</td>
+<td>Brüt faiz üzerinden hesaplanan tahmini vergi kesintisi.</td>
+</tr>
+
+<tr>
+<td>Net Faiz</td>
+<td>Stopaj kesintisi sonrasında kalan tahmini kazanç.</td>
+</tr>
+
+<tr>
+<td>Vade Sonu Tutar</td>
+<td>Anapara ile net faiz kazancının toplamı.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+<h3>Mevduat faizi nasıl hesaplanır?</h3>
+
+<p>
+Anapara, yıllık faiz oranı ve vade gün sayısı kullanılarak
+brüt faiz hesaplanır.
+</p>
+
+
+<h3>Yıllık faiz oranı %40 ise 32 günde %40 mı kazanılır?</h3>
+
+<p>
+Hayır. %40 yıllık oran olduğundan 32 günlük vade için
+yalnızca ilgili gün sayısına karşılık gelen faiz hesaplanır.
+</p>
+
+
+<h3>Stopajı sıfır girebilir miyim?</h3>
+
+<p>
+Evet. Uyguladığınız hesaplamada stopaj olmadığı bilgisine
+sahipseniz %0 girebilirsiniz. Araç herhangi bir oranı
+otomatik varsaymaz.
+</p>
+
+
+<h3>365 gün neden kullanılıyor?</h3>
+
+<p>
+Bu hesaplayıcı basit tahmini hesaplama için 365 günlük
+yıl esasını kullanır. Bankaların ürün ve hesaplama
+uygulamaları farklılık gösterebilir.
+</p>
+
+
+<h3>Bankanın hesabı farklı çıkabilir mi?</h3>
+
+<p>
+Evet. Faiz oranı, valör, gün hesabı, stopaj, ürün koşulları
+ve bankanın hesaplama yöntemi nedeniyle fark oluşabilir.
+</p>
+
+
+<h3>Mevduat hesaplama yatırım tavsiyesi midir?</h3>
+
+<p>
+Hayır. Araç yalnızca matematiksel ve genel bilgilendirme
+amaçlı tahmini hesaplama yapar.
+</p>
+
+
+<h3>Mevduat faizi hesaplama ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio Mevduat Faizi Hesaplama aracı ücretsizdir
+ve üyelik gerektirmez.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Önemli Finansal Bilgilendirme</h2>
+
+<div class="finance-warning">
+
+<strong>Hesaplama sonucu banka teklifi değildir.</strong>
+
+Araclio herhangi bir banka adına faiz oranı veya mevduat
+ürünü sunmaz.
+
+<br><br>
+
+Sonuçlar yalnızca kullanıcı tarafından girilen anapara,
+yıllık faiz oranı, vade ve stopaj oranı kullanılarak
+hesaplanır.
+
+<br><br>
+
+Gerçek yatırım veya mevduat kararı vermeden önce
+bankanın güncel faiz oranlarını, stopaj uygulamasını,
+ürün koşullarını ve resmî ödeme bilgisini kontrol edin.
+
+</div>
+
+<p>
+<strong>Son güncelleme: Ekim 2026</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Diğer Finansal Araçlar</h2>
+
+<p>
+<a href="/bilesik-faiz-hesaplama.html">
+Bileşik Faiz Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kredi-hesaplama.html">
+Kredi Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/vade-farki-hesaplama.html">
+Vade Farkı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kar-marji-hesaplama.html">
+Kâr Marjı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/yuzde-hesaplama.html">
+Yüzde Hesaplama →
+</a>
+</p>
+
+</section>
 
 </main>
 
+
 <footer>
-  <div class="wrap">
 
-    <p>
-      <a href="/about.html">Hakkımızda</a>
-      •
-      <a href="/contact.html">İletişim</a>
-      •
-      <a href="/privacy-policy.html">Gizlilik Politikası</a>
-      •
-      <a href="/terms.html">Kullanım Koşulları</a>
-      •
-      <a href="/en/">English</a>
-    </p>
+<div class="wrap">
 
-    <p>
-      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
-    </p>
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
 
-  </div>
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
+
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
+
+</div>
+
 </footer>
+
 
 <script>
 
-function paraYaz(deger) {
-  return deger.toLocaleString("tr-TR", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  });
+function paraYaz(deger){
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+}
+).format(deger) + " TL";
+
 }
 
-function mevduatHesapla() {
 
-  const anapara = Number(document.getElementById("anapara").value);
-  const faiz = Number(document.getElementById("faizOrani").value);
-  const vade = Number(document.getElementById("vade").value);
-  const stopaj = Number(document.getElementById("stopaj").value);
+function oranYaz(deger){
 
-  const sonuc = document.getElementById("mevduatSonuc");
-
-  if (
-    !Number.isFinite(anapara) ||
-    !Number.isFinite(faiz) ||
-    !Number.isFinite(vade) ||
-    !Number.isFinite(stopaj) ||
-    anapara <= 0 ||
-    faiz < 0 ||
-    vade <= 0 ||
-    stopaj < 0 ||
-    stopaj > 100
-  ) {
-    sonuc.innerHTML =
-      "Lütfen tüm alanlara geçerli değerler girin.";
-    return;
-  }
-
-  const brutFaiz =
-    anapara * (faiz / 100) * (vade / 365);
-
-  const stopajTutari =
-    brutFaiz * (stopaj / 100);
-
-  const netFaiz =
-    brutFaiz - stopajTutari;
-
-  const vadeSonu =
-    anapara + netFaiz;
-
-  sonuc.innerHTML =
-    "<strong>Brüt faiz kazancı:</strong> " +
-    paraYaz(brutFaiz) +
-    " TL<br><br>" +
-
-    "<strong>Stopaj kesintisi:</strong> " +
-    paraYaz(stopajTutari) +
-    " TL<br><br>" +
-
-    "<strong>Net faiz kazancı:</strong> " +
-    paraYaz(netFaiz) +
-    " TL<br><br>" +
-
-    "<strong>Vade sonu toplam:</strong> " +
-    paraYaz(vadeSonu) +
-    " TL";
+return new Intl.NumberFormat(
+"tr-TR",
+{
+maximumFractionDigits:4
 }
+).format(deger);
+
+}
+
+
+function mevduatHesapla(){
+
+const anaparaInput =
+document.getElementById("anapara");
+
+const faizInput =
+document.getElementById("faizOrani");
+
+const vadeInput =
+document.getElementById("vade");
+
+const stopajInput =
+document.getElementById("stopaj");
+
+
+const anapara =
+Number(anaparaInput.value);
+
+const faiz =
+Number(faizInput.value);
+
+const vade =
+Number(vadeInput.value);
+
+const stopaj =
+Number(stopajInput.value);
+
+
+const sonuc =
+document.getElementById("mevduatSonuc");
+
+const sonucKutulari =
+document.getElementById("sonucKutulari");
+
+
+if(
+anaparaInput.value === "" ||
+faizInput.value === "" ||
+vadeInput.value === "" ||
+stopajInput.value === "" ||
+!Number.isFinite(anapara) ||
+!Number.isFinite(faiz) ||
+!Number.isFinite(vade) ||
+!Number.isFinite(stopaj) ||
+anapara <= 0 ||
+faiz < 0 ||
+vade <= 0 ||
+!Number.isInteger(vade) ||
+stopaj < 0 ||
+stopaj > 100
+){
+
+sonuc.innerHTML =
+"Lütfen tüm alanlara geçerli değerler girin.";
+
+sonucKutulari.style.display =
+"none";
+
+return;
+
+}
+
+
+const brutFaiz =
+anapara *
+(faiz / 100) *
+(vade / 365);
+
+
+const stopajTutari =
+brutFaiz *
+(stopaj / 100);
+
+
+const netFaiz =
+brutFaiz -
+stopajTutari;
+
+
+const vadeSonu =
+anapara +
+netFaiz;
+
+
+const gunlukBrutFaiz =
+brutFaiz /
+vade;
+
+
+if(
+!Number.isFinite(brutFaiz) ||
+!Number.isFinite(stopajTutari) ||
+!Number.isFinite(netFaiz) ||
+!Number.isFinite(vadeSonu)
+){
+
+sonuc.innerHTML =
+"Hesaplama yapılamadı. Girdiğiniz değerleri kontrol edin.";
+
+sonucKutulari.style.display =
+"none";
+
+return;
+
+}
+
+
+document
+.getElementById("brutFaizSonuc")
+.textContent =
+paraYaz(brutFaiz);
+
+
+document
+.getElementById("stopajSonuc")
+.textContent =
+paraYaz(stopajTutari);
+
+
+document
+.getElementById("netFaizSonuc")
+.textContent =
+paraYaz(netFaiz);
+
+
+document
+.getElementById("vadeSonuSonuc")
+.textContent =
+paraYaz(vadeSonu);
+
+
+document
+.getElementById("gunlukFaizSonuc")
+.textContent =
+paraYaz(gunlukBrutFaiz);
+
+
+document
+.getElementById("vadeSonuc")
+.textContent =
+vade + " gün";
+
+
+sonuc.innerHTML =
+
+"<strong>Tahmini net faiz kazancı: " +
+paraYaz(netFaiz) +
+"</strong>" +
+
+"<br><br>" +
+
+"Yıllık faiz oranı: <strong>%" +
+oranYaz(faiz) +
+"</strong>" +
+
+"<br>" +
+
+"Stopaj oranı: <strong>%" +
+oranYaz(stopaj) +
+"</strong>";
+
+
+sonucKutulari.style.display =
+"grid";
+
+}
+
+
+[
+"anapara",
+"faizOrani",
+"vade",
+"stopaj"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Enter"){
+mevduatHesapla();
+}
+
+}
+);
+
+});
+
 
 document.getElementById("year").textContent =
-  new Date().getFullYear();
+new Date().getFullYear();
 
 </script>
 
