@@ -1,224 +1,1266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Percentage Calculator | Calculate Percentages Online - Araclio</title>
+<title>Percentage Calculator | Percent, Increase & Change - Araclio</title>
 
-  <meta name="description" content="Free online percentage calculator. Calculate the percentage of any number instantly with a simple formula and practical examples.">
+<meta
+name="description"
+content="Free online percentage calculator. Find X% of a number, calculate what percent one number is of another, increase or decrease by a percentage, and calculate percentage change."
+>
 
-  <meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
 
-  <link rel="canonical" href="https://araclio.com/en/percentage-calculator.html">
+<meta
+name="google-adsense-account"
+content="ca-pub-7634654090472031"
+>
 
-  <link rel="alternate" hreflang="en" href="https://araclio.com/en/percentage-calculator.html">
-  <link rel="alternate" hreflang="tr" href="https://araclio.com/yuzde-hesaplama.html">
-  <link rel="alternate" hreflang="x-default" href="https://araclio.com/en/percentage-calculator.html">
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
 
-  <link rel="stylesheet" href="../style.css">
+<link
+rel="canonical"
+href="https://araclio.com/en/percentage-calculator.html"
+>
+
+<link
+rel="alternate"
+hreflang="en"
+href="https://araclio.com/en/percentage-calculator.html"
+>
+
+<link
+rel="alternate"
+hreflang="tr"
+href="https://araclio.com/yuzde-hesaplama.html"
+>
+
+<link
+rel="alternate"
+hreflang="x-default"
+href="https://araclio.com/en/percentage-calculator.html"
+>
+
+<link rel="stylesheet" href="../style.css">
+
+<meta property="og:type" content="website">
+
+<meta
+property="og:title"
+content="Percentage Calculator | Percent, Increase & Change"
+>
+
+<meta
+property="og:description"
+content="Calculate percentages, percentage increase, percentage decrease and percentage change online for free."
+>
+
+<meta
+property="og:url"
+content="https://araclio.com/en/percentage-calculator.html"
+>
+
+<meta property="og:site_name" content="Araclio">
+
+<style>
+
+.calc-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+.result-box{
+margin-top:16px;
+padding:18px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.info-box{
+margin-top:16px;
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:560px;
+}
+
+th,
+td{
+padding:12px;
+text-align:left;
+border-bottom:1px solid rgba(127,127,127,.25);
+}
+
+.tool-divider{
+margin:34px 0;
+border:0;
+border-top:1px solid rgba(127,127,127,.25);
+}
+
+@media(max-width:650px){
+
+.calc-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Percentage Calculator",
+  "url":"https://araclio.com/en/percentage-calculator.html",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"en",
+  "description":"Free online percentage calculator for calculating percentages, percentage increase, decrease and percentage change.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"USD"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Online Tools",
+      "item":"https://araclio.com/en/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Percentage Calculator",
+      "item":"https://araclio.com/en/percentage-calculator.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"How do you calculate a percentage of a number?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Multiply the number by the percentage and divide by 100."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"How do I find what percentage one number is of another?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Divide the first number by the second number and multiply by 100."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"How do you calculate a percentage increase?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Multiply the original number by 1 plus the percentage expressed as a decimal."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"How do you calculate percentage change?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Subtract the old value from the new value, divide the difference by the old value, and multiply by 100."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/en/">Araclio</a>
-    <span class="tag">Free Online Tools</span>
-  </div>
+<div class="wrap nav">
+
+<a class="brand" href="/en/">
+Araclio
+</a>
+
+<span class="tag">
+Free Online Tools
+</span>
+
+</div>
 </header>
+
 
 <main class="wrap">
 
-  <section class="hero">
-    <p class="eyebrow">FAST • FREE • NO SIGN-UP</p>
+<section class="hero">
 
-    <h1>Percentage Calculator</h1>
+<p class="eyebrow">
+PERCENT • INCREASE • DECREASE • CHANGE
+</p>
 
-    <p>
-      Enter a number and a percentage to instantly calculate
-      the percentage value.
-    </p>
-  </section>
+<h1>Percentage Calculator</h1>
 
+<p>
+Calculate percentages instantly. Find a percentage of a number,
+work out what percentage one number is of another, increase or
+decrease values by a percentage, and calculate percentage change.
+</p>
 
-  <section class="card">
-    <h2>Calculate a Percentage</h2>
-
-    <label>
-      Number
-      <input
-        id="number"
-        type="number"
-        step="0.01"
-        placeholder="Example: 1500">
-    </label>
-
-    <label>
-      Percentage (%)
-      <input
-        id="percentage"
-        type="number"
-        step="0.01"
-        placeholder="Example: 15">
-    </label>
-
-    <div class="buttons">
-      <button onclick="calculatePercentage()">Calculate</button>
-    </div>
-
-    <div id="result" class="result">
-      Your result will appear here.
-    </div>
-  </section>
+</section>
 
 
-  <section class="card">
-    <h2>How to Calculate a Percentage</h2>
+<section class="card">
 
-    <p>
-      To calculate a percentage of a number, multiply the number
-      by the percentage and divide the result by 100.
-    </p>
+<h2>What Is X% of a Number?</h2>
 
-    <p>
-      <strong>Formula:</strong><br>
-      Result = Number × Percentage ÷ 100
-    </p>
+<div class="calc-grid">
 
-    <p>
-      For example, to find 15% of 1,500:
-    </p>
+<div>
 
-    <p>
-      1,500 × 15 ÷ 100 = <strong>225</strong>
-    </p>
-  </section>
+<label for="percent1">
+Percentage (%)
+</label>
 
+<input
+id="percent1"
+type="number"
+step="any"
+inputmode="decimal"
+placeholder="Example: 20"
+>
 
-  <section class="card">
-    <h2>Percentage Calculation Examples</h2>
-
-    <p>
-      <strong>20% of 1,000:</strong><br>
-      200
-    </p>
-
-    <p>
-      <strong>10% of 500:</strong><br>
-      50
-    </p>
-
-    <p>
-      <strong>15% of 1,500:</strong><br>
-      225
-    </p>
-
-    <p>
-      <strong>25% of 2,000:</strong><br>
-      500
-    </p>
-  </section>
+</div>
 
 
-  <section class="card">
-    <h2>What Can a Percentage Calculator Be Used For?</h2>
+<div>
 
-    <p>
-      Percentage calculations are useful for discounts, price changes,
-      taxes, budgets, business calculations, statistics and many
-      everyday situations.
-    </p>
+<label for="number1">
+Number
+</label>
 
-    <p>
-      Araclio's percentage calculator works directly in your browser
-      and does not require registration.
-    </p>
-  </section>
+<input
+id="number1"
+type="number"
+step="any"
+inputmode="decimal"
+placeholder="Example: 1500"
+>
+
+</div>
+
+</div>
+
+<button type="button" onclick="calculateOfNumber()">
+Calculate
+</button>
+
+<div id="result1" class="result" aria-live="polite">
+Enter a percentage and a number.
+</div>
+
+</section>
 
 
-  <section class="card">
-    <h2>More Free Online Tools</h2>
+<section class="card">
 
-    <p>
-      <a href="/en/discount-calculator.html">
-        Discount Calculator →
-      </a>
-    </p>
+<h2>What Percent Is One Number of Another?</h2>
 
-    <p>
-      <a href="/en/profit-markup-calculator.html">
-        Profit Markup Calculator →
-      </a>
-    </p>
+<div class="calc-grid">
 
-    <p>
-      <a href="/en/word-counter.html">
-        Word Counter →
-      </a>
-    </p>
+<div>
 
-    <p>
-      <a href="/en/character-counter.html">
-        Character Counter →
-      </a>
-    </p>
+<label for="part">
+First Number
+</label>
 
-    <p>
-      <a href="/en/">
-        All Online Tools →
-      </a>
-    </p>
-  </section>
+<input
+id="part"
+type="number"
+step="any"
+inputmode="decimal"
+placeholder="Example: 200"
+>
+
+</div>
+
+
+<div>
+
+<label for="whole">
+Second Number
+</label>
+
+<input
+id="whole"
+type="number"
+step="any"
+inputmode="decimal"
+placeholder="Example: 800"
+>
+
+</div>
+
+</div>
+
+<button type="button" onclick="calculatePercentOf()">
+Calculate Percentage
+</button>
+
+<div id="result2" class="result" aria-live="polite">
+Enter both numbers.
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Increase or Decrease a Number by a Percentage</h2>
+
+<div class="calc-grid">
+
+<div>
+
+<label for="baseValue">
+Starting Number
+</label>
+
+<input
+id="baseValue"
+type="number"
+step="any"
+inputmode="decimal"
+placeholder="Example: 1000"
+>
+
+</div>
+
+
+<div>
+
+<label for="changePercent">
+Percentage (%)
+</label>
+
+<input
+id="changePercent"
+type="number"
+min="0"
+step="any"
+inputmode="decimal"
+placeholder="Example: 20"
+>
+
+</div>
+
+</div>
+
+<div class="buttons">
+
+<button type="button" onclick="changeValue('increase')">
+Increase
+</button>
+
+<button type="button" onclick="changeValue('decrease')">
+Decrease
+</button>
+
+</div>
+
+<div id="result3" class="result" aria-live="polite">
+Enter a starting number and percentage.
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Percentage Change Calculator</h2>
+
+<div class="calc-grid">
+
+<div>
+
+<label for="oldValue">
+Old Value
+</label>
+
+<input
+id="oldValue"
+type="number"
+step="any"
+inputmode="decimal"
+placeholder="Example: 800"
+>
+
+</div>
+
+
+<div>
+
+<label for="newValue">
+New Value
+</label>
+
+<input
+id="newValue"
+type="number"
+step="any"
+inputmode="decimal"
+placeholder="Example: 1000"
+>
+
+</div>
+
+</div>
+
+<button type="button" onclick="calculateChange()">
+Calculate Change
+</button>
+
+<div id="result4" class="result" aria-live="polite">
+Enter the old and new values.
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>How to Calculate a Percentage</h2>
+
+<p>
+To calculate a percentage of a number, multiply the number
+by the percentage and divide the result by 100.
+</p>
+
+<div class="info-box">
+
+<strong>
+Result = Number × Percentage ÷ 100
+</strong>
+
+<br><br>
+
+Example:
+
+<br><br>
+
+15% of 1,500
+
+<br>
+
+1,500 × 15 ÷ 100 =
+
+<strong>225</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>How to Find What Percentage One Number Is of Another</h2>
+
+<p>
+Divide the first value by the second value and multiply by 100.
+</p>
+
+<div class="info-box">
+
+<strong>
+Percentage = First Number ÷ Second Number × 100
+</strong>
+
+<br><br>
+
+Example:
+
+<br><br>
+
+200 is what percent of 800?
+
+<br>
+
+200 ÷ 800 × 100 =
+
+<strong>25%</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>How to Calculate a Percentage Increase</h2>
+
+<p>
+To increase a number by a percentage, first calculate the percentage
+amount and add it to the original value.
+</p>
+
+<div class="info-box">
+
+<strong>
+New Value =
+Original Value × (1 + Percentage ÷ 100)
+</strong>
+
+<br><br>
+
+Example:
+
+<br><br>
+
+Increase 1,000 by 20%
+
+<br>
+
+1,000 × 1.20 =
+
+<strong>1,200</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>How to Calculate a Percentage Decrease</h2>
+
+<p>
+To decrease a number by a percentage, subtract the percentage
+amount from the original value.
+</p>
+
+<div class="info-box">
+
+<strong>
+New Value =
+Original Value × (1 − Percentage ÷ 100)
+</strong>
+
+<br><br>
+
+Example:
+
+<br><br>
+
+Decrease 1,000 by 20%
+
+<br>
+
+1,000 × 0.80 =
+
+<strong>800</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>How to Calculate Percentage Change</h2>
+
+<p>
+Percentage change compares an old value with a new value.
+</p>
+
+<div class="info-box">
+
+<strong>
+Percentage Change =
+(New Value − Old Value) ÷ Old Value × 100
+</strong>
+
+<br><br>
+
+Example:
+
+<br><br>
+
+Old value: 800
+
+<br>
+
+New value: 1,000
+
+<br><br>
+
+(1,000 − 800) ÷ 800 × 100 =
+
+<strong>25% increase</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Percentage Examples</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Calculation</th>
+<th>Result</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>10% of 500</td>
+<td>50</td>
+</tr>
+
+<tr>
+<td>15% of 1,500</td>
+<td>225</td>
+</tr>
+
+<tr>
+<td>20% of 1,000</td>
+<td>200</td>
+</tr>
+
+<tr>
+<td>25% of 2,000</td>
+<td>500</td>
+</tr>
+
+<tr>
+<td>50% of 600</td>
+<td>300</td>
+</tr>
+
+<tr>
+<td>200 is what % of 800?</td>
+<td>25%</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Common Percentage Calculations</h2>
+
+<h3>What is 10% of 100?</h3>
+
+<p>
+10% of 100 is <strong>10</strong>.
+</p>
+
+<h3>What is 20% of 500?</h3>
+
+<p>
+20% of 500 is <strong>100</strong>.
+</p>
+
+<h3>What is 25% of 1,000?</h3>
+
+<p>
+25% of 1,000 is <strong>250</strong>.
+</p>
+
+<h3>What is 50% of 200?</h3>
+
+<p>
+50% of 200 is <strong>100</strong>.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>What Can a Percentage Calculator Be Used For?</h2>
+
+<p>
+Percentage calculations are useful in many everyday and professional situations,
+including:
+</p>
+
+<p>
+* Discounts and sale prices<br>
+* Price increases and decreases<br>
+* Taxes and fees<br>
+* Business margins<br>
+* Budget planning<br>
+* Statistics<br>
+* Exam scores<br>
+* Financial comparisons<br>
+* Growth and performance analysis
+</p>
+
+<p>
+Araclio's percentage calculator works directly in your browser
+and requires no registration.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>How do you calculate 20% of a number?</h3>
+
+<p>
+Multiply the number by 20 and divide by 100.
+For example, 20% of 500 is 100.
+</p>
+
+
+<h3>How do I calculate what percentage one number is of another?</h3>
+
+<p>
+Divide the first number by the second number and multiply the result by 100.
+</p>
+
+
+<h3>How do I add 15% to a number?</h3>
+
+<p>
+Multiply the number by 1.15.
+For example, 1,000 increased by 15% becomes 1,150.
+</p>
+
+
+<h3>How do I subtract 20% from a number?</h3>
+
+<p>
+Multiply the number by 0.80.
+For example, 1,000 reduced by 20% becomes 800.
+</p>
+
+
+<h3>Is percentage increase the same as percentage change?</h3>
+
+<p>
+Percentage increase is a type of percentage change where the new value
+is greater than the old value. Percentage change can describe either
+an increase or a decrease.
+</p>
+
+
+<h3>Is this percentage calculator free?</h3>
+
+<p>
+Yes. Araclio's percentage calculator is free to use and requires no sign-up.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>More Free Online Tools</h2>
+
+<p>
+<a href="/en/discount-calculator.html">
+Discount Calculator →
+</a>
+</p>
+
+<p>
+<a href="/en/profit-markup-calculator.html">
+Profit &amp; Markup Calculator →
+</a>
+</p>
+
+<p>
+<a href="/en/word-counter.html">
+Word Counter →
+</a>
+</p>
+
+<p>
+<a href="/en/character-counter.html">
+Character Counter →
+</a>
+</p>
+
+<p>
+<a href="/en/">
+All Online Tools →
+</a>
+</p>
+
+</section>
 
 </main>
 
 
 <footer>
-  <div class="wrap">
-    © <span id="year"></span> Araclio • Free Online Tools
-  </div>
+
+<div class="wrap">
+
+<p>
+
+<a href="/en/">
+Online Tools
+</a>
+
+•
+
+<a href="/hakkimizda.html">
+About
+</a>
+
+•
+
+<a href="/iletisim.html">
+Contact
+</a>
+
+•
+
+<a href="/gizlilik-politikasi.html">
+Privacy Policy
+</a>
+
+•
+
+<a href="/kullanim-kosullari.html">
+Terms
+</a>
+
+•
+
+<a href="/yuzde-hesaplama.html">
+Türkçe
+</a>
+
+</p>
+
+<p>
+Contact:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
+
+<p>
+© <span id="year"></span>
+Araclio • Free Online Tools
+</p>
+
+</div>
+
 </footer>
 
 
 <script>
-function formatNumber(value) {
-  return value.toLocaleString("en-US", {
-    maximumFractionDigits: 10
-  });
+
+function formatNumber(value){
+
+if(Math.abs(value) < 0.000000000001){
+value = 0;
 }
 
-function calculatePercentage() {
-  const number = parseFloat(
-    document.getElementById("number").value
-  );
+return new Intl.NumberFormat(
+"en-US",
+{
+maximumFractionDigits:10
+}
+).format(value);
 
-  const percentage = parseFloat(
-    document.getElementById("percentage").value
-  );
-
-  const resultArea = document.getElementById("result");
-
-  if (isNaN(number) || isNaN(percentage)) {
-    resultArea.innerHTML =
-      "Please enter a valid number and percentage.";
-    return;
-  }
-
-  const result = number * percentage / 100;
-
-  resultArea.innerHTML =
-    "<strong>" +
-    formatNumber(percentage) +
-    "%</strong> of <strong>" +
-    formatNumber(number) +
-    "</strong> = <strong>" +
-    formatNumber(result) +
-    "</strong>";
 }
 
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+
+function getNumber(id){
+
+const input =
+document.getElementById(id);
+
+if(input.value === ""){
+return null;
+}
+
+const value =
+Number(input.value);
+
+if(!Number.isFinite(value)){
+return null;
+}
+
+return value;
+
+}
+
+
+function calculateOfNumber(){
+
+const percent =
+getNumber("percent1");
+
+const number =
+getNumber("number1");
+
+const result =
+document.getElementById("result1");
+
+if(
+percent === null ||
+number === null
+){
+
+result.innerHTML =
+"Please enter a valid percentage and number.";
+
+return;
+
+}
+
+const answer =
+number * percent / 100;
+
+result.innerHTML =
+
+"<strong>" +
+formatNumber(percent) +
+"% of " +
+formatNumber(number) +
+" = " +
+formatNumber(answer) +
+"</strong>";
+
+}
+
+
+function calculatePercentOf(){
+
+const part =
+getNumber("part");
+
+const whole =
+getNumber("whole");
+
+const result =
+document.getElementById("result2");
+
+if(
+part === null ||
+whole === null
+){
+
+result.innerHTML =
+"Please enter two valid numbers.";
+
+return;
+
+}
+
+if(whole === 0){
+
+result.innerHTML =
+"The second number cannot be zero.";
+
+return;
+
+}
+
+const percent =
+part / whole * 100;
+
+result.innerHTML =
+
+"<strong>" +
+formatNumber(part) +
+" is " +
+formatNumber(percent) +
+"% of " +
+formatNumber(whole) +
+".</strong>";
+
+}
+
+
+function changeValue(type){
+
+const value =
+getNumber("baseValue");
+
+const percent =
+getNumber("changePercent");
+
+const result =
+document.getElementById("result3");
+
+if(
+value === null ||
+percent === null ||
+percent < 0
+){
+
+result.innerHTML =
+"Please enter a valid starting number and a percentage of zero or greater.";
+
+return;
+
+}
+
+const amount =
+value * percent / 100;
+
+let newValue;
+
+let word;
+
+
+if(type === "increase"){
+
+newValue =
+value + amount;
+
+word =
+"increased";
+
+}else{
+
+newValue =
+value - amount;
+
+word =
+"decreased";
+
+}
+
+
+result.innerHTML =
+
+"<strong>" +
+formatNumber(value) +
+" " +
+word +
+" by " +
+formatNumber(percent) +
+"% = " +
+formatNumber(newValue) +
+"</strong>" +
+
+"<br><br>" +
+
+"Percentage amount: " +
+formatNumber(amount);
+
+}
+
+
+function calculateChange(){
+
+const oldValue =
+getNumber("oldValue");
+
+const newValue =
+getNumber("newValue");
+
+const result =
+document.getElementById("result4");
+
+if(
+oldValue === null ||
+newValue === null
+){
+
+result.innerHTML =
+"Please enter valid old and new values.";
+
+return;
+
+}
+
+if(oldValue === 0){
+
+result.innerHTML =
+"Percentage change is undefined when the old value is zero.";
+
+return;
+
+}
+
+const difference =
+newValue - oldValue;
+
+const percent =
+difference / oldValue * 100;
+
+
+if(difference === 0){
+
+result.innerHTML =
+"<strong>Percentage change: 0%</strong>";
+
+return;
+
+}
+
+
+const type =
+difference > 0
+? "increase"
+: "decrease";
+
+
+result.innerHTML =
+
+"<strong>" +
+formatNumber(Math.abs(percent)) +
+"% " +
+type +
+"</strong>" +
+
+"<br><br>" +
+
+"Change amount: " +
+formatNumber(Math.abs(difference)) +
+
+"<br>" +
+
+"Old value: " +
+formatNumber(oldValue) +
+
+"<br>" +
+
+"New value: " +
+formatNumber(newValue);
+
+}
+
+
+[
+"percent1",
+"number1"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Enter"){
+calculateOfNumber();
+}
+
+}
+);
+
+});
+
+
+[
+"part",
+"whole"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Enter"){
+calculatePercentOf();
+}
+
+}
+);
+
+});
+
+
+[
+"oldValue",
+"newValue"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Enter"){
+calculateChange();
+}
+
+}
+);
+
+});
+
+
+document
+.getElementById("year")
+.textContent =
+new Date().getFullYear();
+
 </script>
 
 </body>
