@@ -1,317 +1,1094 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Kredi Hesaplama | Aylık Taksit ve Toplam Ödeme - Araclio</title>
+<title>Kredi Hesaplama | Aylık Taksit ve Toplam Ödeme - Araclio</title>
 
-  <meta name="description" content="Kredi tutarı, aylık faiz oranı ve vade bilgilerini girerek aylık taksit, toplam geri ödeme ve tahmini faiz maliyetini ücretsiz hesaplayın.">
+<meta
+name="description"
+content="Ücretsiz kredi hesaplama aracı. Kredi tutarı, aylık faiz oranı ve vadeyi girerek aylık taksit, toplam geri ödeme ve tahmini finansman maliyetini hesaplayın."
+>
 
-  <meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
 
-  <link rel="canonical" href="https://araclio.com/kredi-hesaplama.html">
+<meta name="google-adsense-account" content="ca-pub-7634654090472031">
 
-  <link rel="stylesheet" href="style.css">
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
 
-  <style>
-    .finance-warning {
-      margin-top: 24px;
-      padding: 18px;
-      border: 2px solid #c62828;
-      border-radius: 10px;
-      background: #fff4f4;
-      color: #7f0000;
+<link rel="canonical" href="https://araclio.com/kredi-hesaplama.html">
+
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kredi Hesaplama | Aylık Taksit ve Toplam Ödeme">
+<meta
+property="og:description"
+content="Kredi tutarı, aylık faiz oranı ve vadeye göre aylık taksit ve toplam geri ödemeyi ücretsiz hesaplayın."
+>
+<meta property="og:url" content="https://araclio.com/kredi-hesaplama.html">
+<meta property="og:site_name" content="Araclio">
+
+<style>
+
+.finance-warning{
+margin-top:24px;
+padding:18px;
+border:2px solid #c62828;
+border-radius:10px;
+background:#fff4f4;
+color:#7f0000;
+line-height:1.75;
+}
+
+.finance-warning strong{
+display:block;
+margin-bottom:8px;
+font-size:18px;
+}
+
+.formula-box{
+margin-top:15px;
+padding:15px;
+border-radius:8px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.result-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:18px;
+}
+
+.result-box{
+background:#f5f5f5;
+padding:16px;
+border-radius:10px;
+color:#222;
+}
+
+.result-box strong{
+display:block;
+margin-bottom:7px;
+}
+
+.big-result{
+font-size:1.35rem;
+font-weight:700;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:520px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+@media(max-width:650px){
+
+.result-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Kredi Hesaplama",
+  "url":"https://araclio.com/kredi-hesaplama.html",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"Kredi tutarı, aylık faiz oranı ve vadeye göre eşit taksitli kredi ödemesini hesaplayan ücretsiz online araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Kredi Hesaplama",
+      "item":"https://araclio.com/kredi-hesaplama.html"
     }
+  ]
+}
+</script>
 
-    .finance-warning strong {
-      display: block;
-      margin-bottom: 8px;
-      font-size: 18px;
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Kredi taksiti nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Eşit taksitli kredi hesabında anapara, aylık faiz oranı ve toplam vade kullanılarak standart anüite formülü uygulanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Faiz oranı sıfırsa kredi taksiti nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Aylık faiz oranı yüzde sıfırsa kredi tutarı doğrudan toplam vade sayısına bölünerek aylık taksit hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Toplam geri ödeme nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Aylık taksit tutarı toplam taksit sayısıyla çarpılır. Kullanıcı ek masraf girdiyse bu tutar ayrıca toplam maliyete eklenir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Kredi hesaplama sonucu bankanın ödeme planıyla aynı olur mu?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Her zaman aynı olmayabilir. Vergi, fon, sigorta, tahsis ücreti ve banka hesaplama yöntemi gibi unsurlar gerçek ödeme planını değiştirebilir."
+      }
     }
+  ]
+}
+</script>
 
-    .formula-box {
-      margin-top: 15px;
-      padding: 15px;
-      border-radius: 8px;
-      background: #f5f5f5;
-    }
-  </style>
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Araclio</a>
-    <span class="tag">Ücretsiz Online Araçlar</span>
-  </div>
+
+<div class="wrap nav">
+
+<a class="brand" href="/">
+Araclio
+</a>
+
+<span class="tag">
+Ücretsiz Online Araçlar
+</span>
+
+</div>
+
 </header>
+
 
 <main class="wrap">
 
-  <section class="hero">
-    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+<section class="hero">
 
-    <h1>Kredi Hesaplama</h1>
+<p class="eyebrow">
+HIZLI • ÜCRETSİZ • ÜYELİKSİZ
+</p>
 
-    <p>
-      Kredi tutarı, aylık faiz oranı ve vade süresini girerek
-      tahmini aylık taksit tutarını, toplam geri ödemeyi ve
-      toplam finansman maliyetini hesaplayın.
-    </p>
-  </section>
+<h1>Kredi Hesaplama</h1>
 
-  <section>
+<p>
+Kredi tutarı, aylık faiz oranı ve vade süresini girerek
+tahmini aylık taksit tutarını, toplam geri ödemeyi ve
+finansman maliyetini saniyeler içinde hesaplayın.
+</p>
 
-    <article class="card">
+</section>
 
-      <h2>Kredi Taksiti Hesapla</h2>
 
-      <label>
-        Kredi Tutarı (TL)
-        <input
-          id="krediTutari"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="100000">
-      </label>
+<section class="card">
 
-      <label>
-        Aylık Faiz Oranı (%)
-        <input
-          id="faizOrani"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="3">
-      </label>
+<h2>Kredi Taksiti Hesapla</h2>
 
-      <label>
-        Vade (Ay)
-        <input
-          id="vade"
-          type="number"
-          min="1"
-          step="1"
-          placeholder="12">
-      </label>
+<label for="krediTutari">
+Kredi Tutarı (TL)
+</label>
 
-      <label>
-        Ek Masraf (TL) - İsteğe Bağlı
-        <input
-          id="masraf"
-          type="number"
-          min="0"
-          step="0.01"
-          value="0">
-      </label>
+<input
+id="krediTutari"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 100000"
+>
 
-      <button onclick="krediHesapla()">Krediyi Hesapla</button>
 
-      <div id="krediSonuc" class="result">
-        Kredi tutarı, aylık faiz oranı ve vadeyi girin.
-      </div>
+<label for="faizOrani">
+Aylık Faiz Oranı (%)
+</label>
 
-      <div class="finance-warning">
-        <strong>⚠️ FİNANSAL UYARI</strong>
+<input
+id="faizOrani"
+type="number"
+min="0"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 3"
+>
 
-        Bu araç genel bilgilendirme amacıyla yaklaşık hesaplama yapar.
-        Banka teklifi veya finansal tavsiye değildir.
 
-        <br><br>
+<label for="vade">
+Vade (Ay)
+</label>
 
-        Bankaların uyguladığı BSMV, KKDF, tahsis ücreti, sigorta,
-        ekspertiz ve diğer ücretler kredi türüne ve koşullara göre
-        değişebilir.
+<input
+id="vade"
+type="number"
+min="1"
+step="1"
+inputmode="numeric"
+placeholder="Örnek: 12"
+>
 
-        <br><br>
 
-        Bu nedenle bankanızın gerçek ödeme planı ve toplam kredi
-        maliyeti burada gösterilen sonuçtan farklı olabilir.
-        Kredi kararı verirken bankanın size sunduğu resmi ödeme
-        planını ve toplam maliyet bilgisini esas alın.
-      </div>
+<label for="masraf">
+Ek Masraf (TL) — İsteğe Bağlı
+</label>
 
-    </article>
+<input
+id="masraf"
+type="number"
+min="0"
+step="0.01"
+inputmode="decimal"
+value="0"
+>
 
-  </section>
 
-  <section class="info">
+<button type="button" onclick="krediHesapla()">
+Krediyi Hesapla
+</button>
 
-    <h2>Kredi Hesaplama Nasıl Yapılır?</h2>
 
-    <p>
-      Eşit taksitli bir kredi için aylık ödeme; kredi tutarı,
-      aylık faiz oranı ve toplam vade kullanılarak hesaplanabilir.
-      Bu yöntemde her ay aynı taksit ödenirken taksit içerisindeki
-      anapara ve faiz dağılımı zamanla değişir.
-    </p>
+<div id="krediSonuc" class="result" aria-live="polite">
+Kredi tutarı, aylık faiz oranı ve vadeyi girin.
+</div>
 
-    <div class="formula-box">
-      <strong>
-        Taksit = Anapara × [r × (1+r)^n] / [(1+r)^n - 1]
-      </strong>
-      <br><br>
-      r = aylık faiz oranı<br>
-      n = toplam taksit sayısı
-    </div>
 
-    <h2>Toplam Geri Ödeme Nedir?</h2>
+<div id="sonucKutulari" class="result-grid" style="display:none;">
 
-    <p>
-      Hesaplanan aylık taksit tutarının vade sayısıyla
-      çarpılmasıyla kredi taksitlerinin yaklaşık toplamı bulunur.
-      Kullanıcı tarafından ek masraf girilmişse bu tutar da toplam
-      maliyete eklenir.
-    </p>
+<div class="result-box">
+<strong>Aylık Taksit</strong>
+<span id="aylikTaksit" class="big-result">0 TL</span>
+</div>
 
-    <h2>Kredi Faizi Neden Bankaya Göre Değişir?</h2>
+<div class="result-box">
+<strong>Taksitlerin Toplamı</strong>
+<span id="taksitToplami">0 TL</span>
+</div>
 
-    <p>
-      Kredi faiz oranları kredi türüne, vadeye, bankaya, müşterinin
-      koşullarına ve bankanın güncel tekliflerine göre değişebilir.
-      Bu nedenle hesaplamada bankanızın size sunduğu aylık faiz
-      oranını kullanmanız gerekir.
-    </p>
+<div class="result-box">
+<strong>Finansman Maliyeti</strong>
+<span id="finansmanMaliyeti">0 TL</span>
+</div>
 
-    <h2>Kredi Masrafları Hesaba Dahil mi?</h2>
+<div class="result-box">
+<strong>Ek Masraf</strong>
+<span id="masrafSonuc">0 TL</span>
+</div>
 
-    <p>
-      Bu araç banka tarafından uygulanabilecek tüm vergi, fon,
-      sigorta ve diğer ücretleri otomatik olarak belirlemez.
-      Bildiğiniz ek maliyetleri "Ek Masraf" alanına girebilirsiniz.
-      Kesin maliyet için bankanın resmi kredi ödeme planını
-      kontrol edin.
-    </p>
+<div class="result-box">
+<strong>Masraf Dahil Toplam</strong>
+<span id="genelToplam" class="big-result">0 TL</span>
+</div>
 
-    <h2>Diğer Finansal Araçlar</h2>
+<div class="result-box">
+<strong>Vade</strong>
+<span id="vadeSonuc">0 ay</span>
+</div>
 
-    <p>
-      <a href="/mevduat-faizi-hesaplama.html">Mevduat Faizi Hesaplama</a>
-      •
-      <a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama</a>
-      •
-      <a href="/yuzde-hesaplama.html">Yüzde Hesaplama</a>
-      •
-      <a href="/basit-taksit-hesaplama.html">Basit Taksit Hesaplama</a>
-    </p>
+</div>
 
-  </section>
+
+<div class="finance-warning">
+
+<strong>⚠️ FİNANSAL UYARI</strong>
+
+Bu araç yalnızca genel bilgilendirme amacıyla matematiksel
+kredi taksiti hesabı yapar.
+
+<br><br>
+
+Banka teklifi veya finansal tavsiye değildir.
+
+<br><br>
+
+BSMV, KKDF, tahsis ücreti, sigorta, ekspertiz,
+paket ücreti ve diğer masraflar kredi türüne,
+mevzuata ve bankanın koşullarına göre değişebilir.
+
+<br><br>
+
+Bu nedenle bankanızın gerçek ödeme planı ve toplam kredi
+maliyeti burada gösterilen sonuçtan farklı olabilir.
+Kredi kararı verirken bankanızın sunduğu resmi ödeme
+planını ve toplam maliyet bilgisini esas alın.
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kredi Hesaplama Nasıl Yapılır?</h2>
+
+<p>
+Eşit taksitli kredi hesabında kredi tutarı, aylık faiz oranı
+ve toplam vade kullanılır.
+</p>
+
+<p>
+Faiz oranı sıfırdan büyük olduğunda standart anüite
+formülü uygulanır.
+</p>
+
+<div class="formula-box">
+
+<strong>
+Taksit =
+Anapara × [r × (1+r)<sup>n</sup>] ÷ [(1+r)<sup>n</sup> − 1]
+</strong>
+
+<br><br>
+
+<strong>r:</strong> Aylık faiz oranı
+
+<br>
+
+<strong>n:</strong> Toplam taksit sayısı
+
+<br>
+
+<strong>Anapara:</strong> Kullanılan kredi tutarı
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Faizsiz Kredi Nasıl Hesaplanır?</h2>
+
+<p>
+Aylık faiz oranı %0 ise faiz formülü kullanılmaz.
+</p>
+
+<p>
+Kredi tutarı doğrudan vade sayısına bölünür.
+</p>
+
+<div class="formula-box">
+
+<strong>
+Aylık Taksit =
+Kredi Tutarı ÷ Vade
+</strong>
+
+</div>
+
+<p>
+Örneğin:
+</p>
+
+<p>
+120.000 TL kredi ÷ 12 ay =
+<strong>10.000 TL aylık taksit</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Aylık Faiz Oranı Nedir?</h2>
+
+<p>
+Bu hesaplayıcıda faiz oranı
+<strong>aylık yüzde oran</strong>
+olarak girilir.
+</p>
+
+<p>
+Örneğin bankanın teklifinde aylık faiz oranı %3 ise
+alana:
+</p>
+
+<p>
+<strong>3</strong>
+</p>
+
+<p>
+yazılır.
+</p>
+
+<p>
+%3 değeri hesaplamada:
+</p>
+
+<p>
+<strong>0,03</strong>
+</p>
+
+<p>
+ondalık oranına çevrilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Toplam Geri Ödeme Nasıl Hesaplanır?</h2>
+
+<p>
+Aylık taksit tutarı toplam taksit sayısıyla çarpılır.
+</p>
+
+<div class="formula-box">
+
+<strong>
+Taksitlerin Toplamı =
+Aylık Taksit × Vade
+</strong>
+
+</div>
+
+<p>
+Kullanıcı tarafından ek masraf girilmişse:
+</p>
+
+<div class="formula-box">
+
+<strong>
+Masraf Dahil Toplam =
+Taksitlerin Toplamı + Ek Masraf
+</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Finansman Maliyeti Nedir?</h2>
+
+<p>
+Bu araçta “finansman maliyeti”, taksitlerin toplamı ile
+başlangıçta kullanılan kredi tutarı arasındaki matematiksel
+farkı ifade eder.
+</p>
+
+<div class="formula-box">
+
+<strong>
+Finansman Maliyeti =
+Taksitlerin Toplamı − Kredi Tutarı
+</strong>
+
+</div>
+
+<p>
+Ek masraf bu kaleme dahil edilmez; ayrıca gösterilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>100.000 TL Kredi Örneği</h2>
+
+<p>
+Örnek olarak:
+</p>
+
+<p>
+Kredi tutarı:
+<strong>100.000 TL</strong>
+</p>
+
+<p>
+Aylık faiz:
+<strong>%3</strong>
+</p>
+
+<p>
+Vade:
+<strong>12 ay</strong>
+</p>
+
+<p>
+girildiğinde aylık taksit yaklaşık
+<strong>10.046 TL</strong>
+seviyesinde çıkar.
+</p>
+
+<p>
+Kesin değer için yukarıdaki hesaplama aracını kullanabilirsiniz.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Vade Uzadıkça Ne Olur?</h2>
+
+<p>
+Aynı kredi tutarı ve aynı aylık faiz oranında vade uzadıkça
+aylık taksit genellikle düşer.
+</p>
+
+<p>
+Ancak daha fazla dönem boyunca faiz işlendiği için toplam geri
+ödeme ve toplam finansman maliyeti artabilir.
+</p>
+
+<p>
+Bu nedenle yalnızca aylık taksit tutarına değil,
+<strong>toplam geri ödeme</strong>
+tutarına da bakmak önemlidir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kredi Faizi Neden Bankaya Göre Değişir?</h2>
+
+<p>
+Kredi faiz oranları birçok faktöre göre değişebilir:
+</p>
+
+<p>
+* Kredi türü<br>
+* Vade<br>
+* Banka<br>
+* Müşteri profili<br>
+* Kampanya koşulları<br>
+* Kredi tutarı<br>
+* Bankanın güncel fiyatlama politikası
+</p>
+
+<p>
+Bu nedenle hesaplamada bankanızın size sunduğu
+<strong>aylık faiz oranını</strong>
+kullanmanız gerekir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kredi Masrafları Hesaba Dahil mi?</h2>
+
+<p>
+Hayır. Araç banka tarafından uygulanabilecek tüm masraf,
+vergi, fon veya sigorta kalemlerini otomatik olarak belirlemez.
+</p>
+
+<p>
+Bildiğiniz ek maliyetleri
+<strong>Ek Masraf</strong>
+alanına yazabilirsiniz.
+</p>
+
+<p>
+Gerçek kredi maliyeti için bankanın sunduğu resmi ödeme
+planı esas alınmalıdır.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kredi Taksiti ile Basit Taksit Aynı mı?</h2>
+
+<p>
+Hayır.
+</p>
+
+<p>
+Basit taksit hesabında toplam tutar yalnızca taksit sayısına
+bölünebilir.
+</p>
+
+<p>
+Kredi hesabında ise aylık faiz oranı ve bileşik ödeme mantığı
+hesaba dahil edilir.
+</p>
+
+<p>
+Faizsiz bir işlemde iki sonuç aynı olabilir; faiz bulunan
+bir kredi işleminde ise farklıdır.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+
+<h3>Kredi taksiti nasıl hesaplanır?</h3>
+
+<p>
+Kredi tutarı, aylık faiz oranı ve vade kullanılarak eşit
+taksit formülü uygulanır.
+</p>
+
+
+<h3>Aylık faiz oranı %3 ise alana ne yazılır?</h3>
+
+<p>
+Faiz oranı alanına
+<strong>3</strong>
+yazılır.
+</p>
+
+
+<h3>Faiz oranı %0 olabilir mi?</h3>
+
+<p>
+Evet. %0 faiz durumunda kredi tutarı vade sayısına bölünür.
+</p>
+
+
+<h3>Toplam geri ödeme nedir?</h3>
+
+<p>
+Aylık taksitlerin vade boyunca ödenen toplam tutarıdır.
+</p>
+
+
+<h3>Ek masraf aylık taksite ekleniyor mu?</h3>
+
+<p>
+Hayır. Bu araçta ek masraf aylık taksit formülüne dahil edilmez;
+toplam maliyete ayrıca eklenir.
+</p>
+
+
+<h3>BSMV ve KKDF otomatik hesaplanıyor mu?</h3>
+
+<p>
+Hayır. Araç kredi türüne göre vergi veya fon oranı
+varsaymaz.
+</p>
+
+
+<h3>Bankanın sonucu farklı çıkabilir mi?</h3>
+
+<p>
+Evet. Bankanın faiz hesaplama yöntemi, vergi, fon, sigorta,
+ücret ve diğer maliyetleri nedeniyle gerçek ödeme planı farklı olabilir.
+</p>
+
+
+<h3>Kredi hesaplama ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio Kredi Hesaplama aracı ücretsizdir
+ve üyelik gerektirmez.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Önemli Finansal Bilgilendirme</h2>
+
+<div class="finance-warning">
+
+<strong>Bu sonuç kredi teklifi değildir.</strong>
+
+Araclio herhangi bir banka adına kredi oranı veya kredi
+kullandırım teklifi sunmaz.
+
+<br><br>
+
+Sonuçlar yalnızca kullanıcı tarafından girilen kredi tutarı,
+aylık faiz oranı, vade ve ek masraf değerleri üzerinden
+matematiksel olarak hesaplanır.
+
+<br><br>
+
+Kredi kullanmadan önce bankanızın sözleşmesini,
+yıllık maliyet oranını, ödeme planını ve tüm masraf
+kalemlerini kontrol edin.
+
+</div>
+
+<p>
+<strong>Son güncelleme: Ekim 2026</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Diğer Finansal Araçlar</h2>
+
+<p>
+<a href="/mevduat-faizi-hesaplama.html">
+Mevduat Faizi Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/bilesik-faiz-hesaplama.html">
+Bileşik Faiz Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kredi-karti-asgari-odeme.html">
+Kredi Kartı Asgari Ödeme Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/basit-taksit-hesaplama.html">
+Basit Taksit Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/vade-farki-hesaplama.html">
+Vade Farkı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/yuzde-hesaplama.html">
+Yüzde Hesaplama →
+</a>
+</p>
+
+</section>
 
 </main>
 
+
 <footer>
-  <div class="wrap">
 
-    <p>
-      <a href="/about.html">Hakkımızda</a>
-      •
-      <a href="/contact.html">İletişim</a>
-      •
-      <a href="/privacy-policy.html">Gizlilik Politikası</a>
-      •
-      <a href="/terms.html">Kullanım Koşulları</a>
-      •
-      <a href="/en/">English</a>
-    </p>
+<div class="wrap">
 
-    <p>
-      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
-    </p>
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
 
-  </div>
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
+
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
+
+</div>
+
 </footer>
+
 
 <script>
 
-function paraYaz(deger) {
-  return deger.toLocaleString("tr-TR", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  });
+function paraYaz(deger){
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+}
+).format(deger) + " TL";
+
 }
 
-function krediHesapla() {
 
-  const anapara =
-    Number(document.getElementById("krediTutari").value);
+function krediHesapla(){
 
-  const faiz =
-    Number(document.getElementById("faizOrani").value);
+const krediInput =
+document.getElementById("krediTutari");
 
-  const vade =
-    Number(document.getElementById("vade").value);
+const faizInput =
+document.getElementById("faizOrani");
 
-  const masraf =
-    Number(document.getElementById("masraf").value || 0);
+const vadeInput =
+document.getElementById("vade");
 
-  const sonuc =
-    document.getElementById("krediSonuc");
+const masrafInput =
+document.getElementById("masraf");
 
-  if (
-    !Number.isFinite(anapara) ||
-    !Number.isFinite(faiz) ||
-    !Number.isFinite(vade) ||
-    !Number.isFinite(masraf) ||
-    anapara <= 0 ||
-    faiz < 0 ||
-    vade <= 0 ||
-    !Number.isInteger(vade) ||
-    masraf < 0
-  ) {
-    sonuc.innerHTML =
-      "Lütfen geçerli kredi bilgileri girin.";
-    return;
-  }
 
-  const aylikOran = faiz / 100;
+const anapara =
+Number(krediInput.value);
 
-  let taksit;
+const faiz =
+Number(faizInput.value);
 
-  if (aylikOran === 0) {
-    taksit = anapara / vade;
-  } else {
-    const kuvvet = Math.pow(1 + aylikOran, vade);
+const vade =
+Number(vadeInput.value);
 
-    taksit =
-      anapara *
-      ((aylikOran * kuvvet) / (kuvvet - 1));
-  }
+const masraf =
+Number(masrafInput.value || 0);
 
-  const taksitToplami = taksit * vade;
 
-  const finansmanMaliyeti =
-    taksitToplami - anapara;
+const sonuc =
+document.getElementById("krediSonuc");
 
-  const masrafDahilToplam =
-    taksitToplami + masraf;
+const sonucKutulari =
+document.getElementById("sonucKutulari");
 
-  sonuc.innerHTML =
-    "<strong>Aylık taksit:</strong> " +
-    paraYaz(taksit) +
-    " TL<br><br>" +
 
-    "<strong>Taksitlerin toplamı:</strong> " +
-    paraYaz(taksitToplami) +
-    " TL<br><br>" +
+if(
+krediInput.value === "" ||
+faizInput.value === "" ||
+vadeInput.value === "" ||
+!Number.isFinite(anapara) ||
+!Number.isFinite(faiz) ||
+!Number.isFinite(vade) ||
+!Number.isFinite(masraf) ||
+anapara <= 0 ||
+faiz < 0 ||
+vade <= 0 ||
+!Number.isInteger(vade) ||
+masraf < 0
+){
 
-    "<strong>Tahmini finansman maliyeti:</strong> " +
-    paraYaz(finansmanMaliyeti) +
-    " TL<br><br>" +
+sonuc.innerHTML =
+"Lütfen geçerli kredi bilgileri girin.";
 
-    "<strong>Ek masraf:</strong> " +
-    paraYaz(masraf) +
-    " TL<br><br>" +
+sonucKutulari.style.display =
+"none";
 
-    "<strong>Masraf dahil toplam:</strong> " +
-    paraYaz(masrafDahilToplam) +
-    " TL";
+return;
+
 }
+
+
+const aylikOran =
+faiz / 100;
+
+
+let taksit;
+
+
+if(
+aylikOran === 0
+){
+
+taksit =
+anapara / vade;
+
+}
+else{
+
+const kuvvet =
+Math.pow(
+1 + aylikOran,
+vade
+);
+
+
+taksit =
+anapara *
+(
+(
+aylikOran *
+kuvvet
+) /
+(
+kuvvet - 1
+)
+);
+
+}
+
+
+if(
+!Number.isFinite(taksit)
+){
+
+sonuc.innerHTML =
+"Hesaplama yapılamadı. Girdiğiniz faiz oranı veya vade değerini kontrol edin.";
+
+sonucKutulari.style.display =
+"none";
+
+return;
+
+}
+
+
+const taksitToplami =
+taksit * vade;
+
+
+const finansmanMaliyeti =
+taksitToplami - anapara;
+
+
+const masrafDahilToplam =
+taksitToplami + masraf;
+
+
+document
+.getElementById("aylikTaksit")
+.textContent =
+paraYaz(taksit);
+
+
+document
+.getElementById("taksitToplami")
+.textContent =
+paraYaz(taksitToplami);
+
+
+document
+.getElementById("finansmanMaliyeti")
+.textContent =
+paraYaz(finansmanMaliyeti);
+
+
+document
+.getElementById("masrafSonuc")
+.textContent =
+paraYaz(masraf);
+
+
+document
+.getElementById("genelToplam")
+.textContent =
+paraYaz(masrafDahilToplam);
+
+
+document
+.getElementById("vadeSonuc")
+.textContent =
+vade + " ay";
+
+
+sonuc.innerHTML =
+
+"<strong>Yaklaşık aylık taksit: " +
+paraYaz(taksit) +
+"</strong>" +
+
+"<br><br>" +
+
+"Girilen aylık faiz oranı: <strong>%" +
+new Intl.NumberFormat(
+"tr-TR",
+{
+maximumFractionDigits:4
+}
+).format(faiz) +
+"</strong>";
+
+
+sonucKutulari.style.display =
+"grid";
+
+}
+
+
+[
+"krediTutari",
+"faizOrani",
+"vade",
+"masraf"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(
+event.key === "Enter"
+){
+
+krediHesapla();
+
+}
+
+}
+);
+
+});
+
 
 document.getElementById("year").textContent =
-  new Date().getFullYear();
+new Date().getFullYear();
 
 </script>
 
