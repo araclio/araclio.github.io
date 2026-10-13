@@ -1,317 +1,915 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Ağırlıklı Ortalama Hesaplama | Online Hesapla - Araclio</title>
+<title>Ağırlıklı Ortalama Hesaplama | Not ve Maliyet Ortalaması - Araclio</title>
 
-  <meta name="description" content="Ağırlıklı ortalama hesaplama aracı ile not, maliyet, alış fiyatı ve diğer değerlerin ağırlıklarına göre ortalamasını ücretsiz hesaplayın.">
+<meta
+name="description"
+content="Ücretsiz ağırlıklı ortalama hesaplama aracı. Not ortalaması, kredi ağırlıklı ortalama, ortalama alış fiyatı ve maliyet ortalamasını değer ve ağırlıklara göre hesaplayın."
+>
 
-  <meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
 
-  <link rel="canonical" href="https://araclio.com/agirlikli-ortalama-hesaplama.html">
+<meta name="google-adsense-account" content="ca-pub-7634654090472031">
 
-  <link rel="stylesheet" href="style.css">
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
 
-  <style>
-    .info-box {
-      margin-top:18px;
-      padding:16px;
-      border-radius:10px;
-      background:#f5f5f5;
+<link rel="canonical" href="https://araclio.com/agirlikli-ortalama-hesaplama.html">
+
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Ağırlıklı Ortalama Hesaplama">
+<meta
+property="og:description"
+content="Not, kredi, maliyet, alış fiyatı ve miktar ağırlıklı ortalamaları ücretsiz hesaplayın."
+>
+<meta property="og:url" content="https://araclio.com/agirlikli-ortalama-hesaplama.html">
+<meta property="og:site_name" content="Araclio">
+
+<style>
+.info-box{
+margin-top:18px;
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.satir{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin-bottom:10px;
+}
+
+.result-detail{
+margin-top:12px;
+line-height:1.8;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:520px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+@media(max-width:600px){
+.satir{
+grid-template-columns:1fr;
+}
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Ağırlıklı Ortalama Hesaplama",
+  "url":"https://araclio.com/agirlikli-ortalama-hesaplama.html",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"Not, kredi, maliyet, alış fiyatı ve diğer değerler için ağırlıklı ortalama hesaplayan ücretsiz online araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Ağırlıklı Ortalama Hesaplama",
+      "item":"https://araclio.com/agirlikli-ortalama-hesaplama.html"
     }
+  ]
+}
+</script>
 
-    .satir {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-bottom:10px;
-    }
-
-    .result-detail {
-      margin-top:12px;
-      line-height:1.8;
-    }
-
-    @media (max-width:600px) {
-      .satir {
-        grid-template-columns:1fr;
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Ağırlıklı ortalama nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Her değer kendi ağırlığıyla çarpılır, bu çarpımlar toplanır ve sonuç toplam ağırlığa bölünür."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Normal ortalama ile ağırlıklı ortalama arasındaki fark nedir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Normal ortalamada tüm değerler eşit etkiye sahiptir. Ağırlıklı ortalamada ise her değerin sonuç üzerindeki etkisi farklı olabilir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Not ortalaması ağırlıklı nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Her ders notu dersin kredi veya ağırlık değeriyle çarpılır. Bu sonuçlar toplanır ve toplam krediye bölünür."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Ortalama alış fiyatı nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Her alış fiyatı alınan adet veya miktarla çarpılır. Toplam maliyet toplam adede bölünerek ağırlıklı ortalama alış fiyatı bulunur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Ağırlık yüzde olmak zorunda mı?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Hayır. Ağırlık olarak adet, miktar, kredi, oran veya aynı ölçekte başka pozitif değerler kullanılabilir."
       }
     }
-  </style>
+  ]
+}
+</script>
+
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Araclio</a>
-    <span class="tag">Ücretsiz Online Araçlar</span>
-  </div>
+<div class="wrap nav">
+<a class="brand" href="/">Araclio</a>
+<span class="tag">Ücretsiz Online Araçlar</span>
+</div>
 </header>
 
 <main class="wrap">
 
-  <section class="hero">
-    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+<section class="hero">
+<p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
 
-    <h1>Ağırlıklı Ortalama Hesaplama</h1>
+<h1>Ağırlıklı Ortalama Hesaplama</h1>
 
-    <p>
-      Değerleri ve bu değerlerin ağırlıklarını girerek ağırlıklı
-      ortalamayı hesaplayın. Not, maliyet ve alış fiyatı gibi
-      farklı hesaplamalarda kullanabilirsiniz.
-    </p>
-  </section>
+<p>
+Değerleri ve bu değerlere ait ağırlıkları girerek
+ağırlıklı ortalamayı saniyeler içinde hesaplayın.
+Not, kredi, maliyet, alış fiyatı ve miktar ortalamalarında kullanabilirsiniz.
+</p>
+</section>
 
-  <section>
+<section class="card">
 
-    <article class="card">
+<h2>Değerleri ve Ağırlıkları Girin</h2>
 
-      <h2>Değerleri Girin</h2>
+<p>
+Her satıra bir değer ve o değerin ağırlığını yazın.
+Ağırlık; adet, miktar, kredi, yüzde veya başka bir
+pozitif ölçü olabilir.
+</p>
 
-      <p>
-        Ağırlık kısmına adet, miktar, kredi veya yüzde gibi
-        aynı türde ağırlık değerleri girebilirsiniz.
-      </p>
+<div id="satirlar"></div>
 
-      <div id="satirlar"></div>
+<button type="button" class="secondary" onclick="satirEkle()">
++ Yeni Satır Ekle
+</button>
 
-      <button type="button" class="secondary" onclick="satirEkle()">
-        + Yeni Satır Ekle
-      </button>
+<button type="button" onclick="hesapla()">
+Ağırlıklı Ortalamayı Hesapla
+</button>
 
-      <button type="button" onclick="hesapla()">
-        Ortalamayı Hesapla
-      </button>
+<div id="sonuc" class="result" aria-live="polite">
+Değer ve ağırlıkları girin.
+</div>
 
-      <div id="sonuc" class="result">
-        Değer ve ağırlıkları girin.
-      </div>
+</section>
 
-    </article>
+<section class="card">
 
-  </section>
+<h2>Ağırlıklı Ortalama Nedir?</h2>
 
-  <section class="info">
+<p>
+Ağırlıklı ortalama, bazı değerlerin sonuç üzerinde
+diğerlerinden daha fazla etkili olduğu ortalama türüdür.
+</p>
 
-    <h2>Ağırlıklı Ortalama Nedir?</h2>
+<p>
+Normal ortalamada tüm değerlerin etkisi eşittir.
+Ağırlıklı ortalamada ise her değer kendi ağırlığına göre
+sonuca katkı sağlar.
+</p>
 
-    <p>
-      Normal ortalamada bütün değerlerin etkisi aynıdır.
-      Ağırlıklı ortalamada ise bazı değerlerin sonuç üzerindeki
-      etkisi diğerlerinden daha fazla olabilir.
-    </p>
+<div class="info-box">
 
-    <div class="info-box">
-      <strong>
-        Ağırlıklı Ortalama =
-        (Değer × Ağırlık toplamı) ÷ Ağırlıkların toplamı
-      </strong>
-    </div>
+<strong>Formül:</strong>
 
-    <h2>Ağırlıklı Ortalama Örneği</h2>
+<br><br>
 
-    <p>
-      80 değerinin ağırlığı 2, 90 değerinin ağırlığı 3 olsun.
-    </p>
+Ağırlıklı Ortalama =
+Σ (Değer × Ağırlık) ÷ Σ Ağırlık
 
-    <div class="info-box">
-      (80 × 2) + (90 × 3) = 430
-      <br><br>
-      Toplam ağırlık = 2 + 3 = 5
-      <br><br>
-      430 ÷ 5 = <strong>86</strong>
-    </div>
+</div>
 
-    <h2>Not Ortalaması Hesaplama</h2>
+</section>
 
-    <p>
-      Derslerin kredi değerleri farklıysa her dersin notunu
-      ders kredisiyle birlikte girerek kredi ağırlıklı bir
-      ortalama hesaplanabilir.
-    </p>
+<section class="card">
 
-    <h2>Ortalama Alış Fiyatı Hesaplama</h2>
+<h2>Ağırlıklı Ortalama Örneği</h2>
 
-    <p>
-      Aynı ürünü farklı fiyatlardan ve farklı adetlerde
-      satın aldıysanız fiyatları "Değer", alınan miktarları
-      ise "Ağırlık" alanına girerek miktar ağırlıklı ortalama
-      alış fiyatını hesaplayabilirsiniz.
-    </p>
+<p>
+80 değerinin ağırlığı 2,
+90 değerinin ağırlığı 3 olsun.
+</p>
 
-    <div class="info-box">
-      100 TL'den 10 adet ve 120 TL'den 20 adet alındığında:
-      <br><br>
-      (100 × 10 + 120 × 20) ÷ 30
-      <br><br>
-      <strong>Ortalama alış fiyatı = 113,33 TL</strong>
-    </div>
+<div class="info-box">
 
-    <h2>Diğer Hesaplama Araçları</h2>
+(80 × 2) + (90 × 3)
 
-    <p>
-      <a href="/oran-oranti-hesaplama.html">Oran Orantı Hesaplama</a>
-      •
-      <a href="/birim-fiyat-hesaplama.html">Birim Fiyat Hesaplama</a>
-      •
-      <a href="/kar-zarar-hesaplama.html">Kâr Zarar Hesaplama</a>
-      •
-      <a href="/yuzde-hesaplama.html">Yüzde Hesaplama</a>
-    </p>
+<br><br>
 
-  </section>
+160 + 270 = 430
+
+<br><br>
+
+Toplam ağırlık:
+
+2 + 3 = 5
+
+<br><br>
+
+430 ÷ 5 =
+<strong>86</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Not Ortalaması Ağırlıklı Nasıl Hesaplanır?</h2>
+
+<p>
+Derslerin kredi veya katsayı değerleri farklıysa
+basit aritmetik ortalama yerine ağırlıklı ortalama
+kullanmak daha doğru sonuç verir.
+</p>
+
+<div class="info-box">
+
+Matematik:
+80 not × 4 kredi = 320
+
+<br><br>
+
+Fizik:
+90 not × 3 kredi = 270
+
+<br><br>
+
+Türkçe:
+70 not × 2 kredi = 140
+
+<br><br>
+
+Toplam ağırlıklı puan:
+730
+
+<br>
+
+Toplam kredi:
+9
+
+<br><br>
+
+730 ÷ 9 =
+<strong>81,11</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Ortalama Alış Fiyatı Nasıl Hesaplanır?</h2>
+
+<p>
+Aynı ürünü farklı fiyatlardan ve farklı miktarlarda
+satın aldıysanız gerçek ortalama alış maliyetini
+ağırlıklı ortalama ile hesaplayabilirsiniz.
+</p>
+
+<div class="info-box">
+
+100 TL'den 10 adet:
+
+100 × 10 = 1.000 TL
+
+<br><br>
+
+120 TL'den 20 adet:
+
+120 × 20 = 2.400 TL
+
+<br><br>
+
+Toplam maliyet:
+
+3.400 TL
+
+<br>
+
+Toplam adet:
+
+30
+
+<br><br>
+
+3.400 ÷ 30 =
+<strong>113,33 TL ortalama alış fiyatı</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Maliyet Ortalaması Nasıl Hesaplanır?</h2>
+
+<p>
+Stok veya yatırım işlemlerinde farklı fiyatlardan
+yapılan alımların ortalama maliyeti de aynı yöntemle
+hesaplanabilir.
+</p>
+
+<p>
+Her alış fiyatı, alınan miktarla çarpılır.
+Tüm alışların toplam maliyeti toplam miktara bölünür.
+</p>
+
+<p>
+<strong>
+Ortalama Maliyet =
+Toplam Maliyet ÷ Toplam Miktar
+</strong>
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Ağırlık Yüzde Olmak Zorunda mı?</h2>
+
+<p>
+Hayır.
+</p>
+
+<p>
+Ağırlık olarak:
+</p>
+
+<p>
+* Adet<br>
+* Kilogram veya miktar<br>
+* Ders kredisi<br>
+* Katsayı<br>
+* Yüzde<br>
+* İşlem hacmi<br>
+* Satış miktarı
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Yüzde Ağırlıklı Ortalama</h2>
+
+<p>
+Ağırlıklar yüzde olarak girilecekse toplamlarının
+100 olması yaygın bir kullanımdır.
+</p>
+
+<div class="info-box">
+
+Vize notu: 70 — ağırlık %40
+
+<br>
+
+Final notu: 90 — ağırlık %60
+
+<br><br>
+
+70 × 40 = 2.800
+
+<br>
+
+90 × 60 = 5.400
+
+<br><br>
+
+Toplam = 8.200
+
+<br>
+
+Toplam ağırlık = 100
+
+<br><br>
+
+8.200 ÷ 100 =
+<strong>82</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Ağırlıklı Ortalama Örnekleri</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Değerler</th>
+<th>Ağırlıklar</th>
+<th>Sonuç</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>80, 90</td>
+<td>2, 3</td>
+<td>86</td>
+</tr>
+
+<tr>
+<td>70, 90</td>
+<td>40, 60</td>
+<td>82</td>
+</tr>
+
+<tr>
+<td>100, 120</td>
+<td>10, 20</td>
+<td>113,33</td>
+</tr>
+
+<tr>
+<td>60, 80, 100</td>
+<td>1, 2, 3</td>
+<td>86,67</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Normal Ortalama ile Ağırlıklı Ortalama Arasındaki Fark</h2>
+
+<p>
+Normal ortalamada her değer eşit ağırlıktadır.
+</p>
+
+<p>
+Örneğin 80 ve 90 değerlerinin normal ortalaması:
+</p>
+
+<p>
+(80 + 90) ÷ 2 =
+<strong>85</strong>
+</p>
+
+<p>
+Ancak 80'in ağırlığı 2, 90'ın ağırlığı 3 olduğunda
+ağırlıklı ortalama:
+</p>
+
+<p>
+<strong>86</strong>
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+<h3>Ağırlıklı ortalama nasıl hesaplanır?</h3>
+
+<p>
+Her değer kendi ağırlığıyla çarpılır.
+Bu çarpımlar toplanır ve toplam ağırlığa bölünür.
+</p>
+
+<h3>Normal ortalama ile ağırlıklı ortalama aynı mı?</h3>
+
+<p>
+Hayır. Normal ortalamada tüm değerler eşit etkiye sahiptir.
+Ağırlıklı ortalamada bazı değerlerin etkisi daha fazladır.
+</p>
+
+<h3>Not ortalaması nasıl ağırlıklı hesaplanır?</h3>
+
+<p>
+Her dersin notu kredi veya katsayı ile çarpılır,
+elde edilen sonuçlar toplanır ve toplam krediye bölünür.
+</p>
+
+<h3>Ortalama alış fiyatı nasıl bulunur?</h3>
+
+<p>
+Her alış fiyatı alınan adetle çarpılır.
+Toplam maliyet toplam adede bölünür.
+</p>
+
+<h3>Ağırlık sıfır olabilir mi?</h3>
+
+<p>
+Tek bir satırın ağırlığı sıfır olabilir ancak
+tüm satırların toplam ağırlığı sıfır olamaz.
+</p>
+
+<h3>Negatif değer kullanılabilir mi?</h3>
+
+<p>
+Değer alanında negatif sayı kullanılabilir.
+Ancak ağırlık alanı negatif olamaz.
+</p>
+
+<h3>Ağırlıklı ortalama hesaplama ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio Ağırlıklı Ortalama Hesaplama aracı
+ücretsizdir ve üyelik gerektirmez.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Bilgilendirme</h2>
+
+<p>
+Bu araç matematiksel ağırlıklı ortalama hesabı yapar.
+Kullanılan değerlerin ve ağırlıkların doğru seçilmesi
+hesap sonucunun anlamlı olması açısından önemlidir.
+</p>
+
+<p>
+<strong>Son güncelleme: Ekim 2026</strong>
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Diğer Hesaplama Araçları</h2>
+
+<p>
+<a href="/oran-oranti-hesaplama.html">
+Oran Orantı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/birim-fiyat-hesaplama.html">
+Birim Fiyat Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kar-zarar-hesaplama.html">
+Kâr Zarar Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kar-marji-hesaplama.html">
+Kâr Marjı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/yuzde-hesaplama.html">
+Yüzde Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/yuzde-degisim-hesaplama.html">
+Yüzde Değişim Hesaplama →
+</a>
+</p>
+
+</section>
 
 </main>
 
 <footer>
-  <div class="wrap">
 
-    <p>
-      <a href="/about.html">Hakkımızda</a>
-      •
-      <a href="/contact.html">İletişim</a>
-      •
-      <a href="/privacy-policy.html">Gizlilik Politikası</a>
-      •
-      <a href="/terms.html">Kullanım Koşulları</a>
-      •
-      <a href="/en/">English</a>
-    </p>
+<div class="wrap">
 
-    <p>
-      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
-    </p>
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
 
-  </div>
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
+
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
+
+</div>
+
 </footer>
 
 <script>
 
 let satirSayisi = 0;
 
-function satirEkle(deger = "", agirlik = "") {
+function satirEkle(
+deger = "",
+agirlik = ""
+){
 
-  satirSayisi++;
+satirSayisi++;
 
-  const alan = document.getElementById("satirlar");
+const alan =
+document.getElementById("satirlar");
 
-  const div = document.createElement("div");
+const div =
+document.createElement("div");
 
-  div.className = "satir";
+div.className =
+"satir";
 
-  div.innerHTML =
-    '<label>Değer ' + satirSayisi +
-    '<input class="deger" type="number" step="any" value="' +
-    deger + '" placeholder="80"></label>' +
+div.innerHTML =
 
-    '<label>Ağırlık ' + satirSayisi +
-    '<input class="agirlik" type="number" min="0" step="any" value="' +
-    agirlik + '" placeholder="2"></label>';
+'<label>' +
+'Değer ' +
+satirSayisi +
 
-  alan.appendChild(div);
+'<input ' +
+'class="deger" ' +
+'type="number" ' +
+'step="any" ' +
+'inputmode="decimal" ' +
+'value="' +
+deger +
+'" ' +
+'placeholder="Örnek: 80">' +
+
+'</label>' +
+
+'<label>' +
+'Ağırlık ' +
+satirSayisi +
+
+'<input ' +
+'class="agirlik" ' +
+'type="number" ' +
+'min="0" ' +
+'step="any" ' +
+'inputmode="decimal" ' +
+'value="' +
+agirlik +
+'" ' +
+'placeholder="Örnek: 2">' +
+
+'</label>';
+
+alan.appendChild(div);
+
 }
 
-function formatla(sayi) {
-  return new Intl.NumberFormat("tr-TR", {
-    maximumFractionDigits: 4
-  }).format(sayi);
+function formatla(sayi){
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+maximumFractionDigits:6
+}
+).format(sayi);
+
 }
 
-function hesapla() {
+function hesapla(){
 
-  const degerler =
-    document.querySelectorAll(".deger");
+const degerler =
+document.querySelectorAll(".deger");
 
-  const agirliklar =
-    document.querySelectorAll(".agirlik");
+const agirliklar =
+document.querySelectorAll(".agirlik");
 
-  const sonuc =
-    document.getElementById("sonuc");
+const sonuc =
+document.getElementById("sonuc");
 
-  let carpimToplami = 0;
-  let agirlikToplami = 0;
-  let kullanilan = 0;
+let carpimToplami = 0;
+let agirlikToplami = 0;
+let kullanilan = 0;
 
-  for (let i = 0; i < degerler.length; i++) {
+for(
+let i = 0;
+i < degerler.length;
+i++
+){
 
-    const degerMetni = degerler[i].value.trim();
-    const agirlikMetni = agirliklar[i].value.trim();
+const degerMetni =
+degerler[i].value.trim();
 
-    if (degerMetni === "" && agirlikMetni === "") {
-      continue;
-    }
+const agirlikMetni =
+agirliklar[i].value.trim();
 
-    if (degerMetni === "" || agirlikMetni === "") {
-      sonuc.innerHTML =
-        "Doldurduğunuz her satırda hem değer hem ağırlık bulunmalıdır.";
-      return;
-    }
+if(
+degerMetni === "" &&
+agirlikMetni === ""
+){
+continue;
+}
 
-    const deger = Number(degerMetni);
-    const agirlik = Number(agirlikMetni);
+if(
+degerMetni === "" ||
+agirlikMetni === ""
+){
 
-    if (
-      !Number.isFinite(deger) ||
-      !Number.isFinite(agirlik) ||
-      agirlik < 0
-    ) {
-      sonuc.innerHTML =
-        "Lütfen geçerli değerler girin. Ağırlık negatif olamaz.";
-      return;
-    }
+sonuc.innerHTML =
+"Doldurduğunuz her satırda hem değer hem ağırlık bulunmalıdır.";
 
-    carpimToplami += deger * agirlik;
-    agirlikToplami += agirlik;
-    kullanilan++;
-  }
+return;
+}
 
-  if (kullanilan === 0) {
-    sonuc.innerHTML =
-      "Hesaplama için en az bir satır doldurun.";
-    return;
-  }
+const deger =
+Number(degerMetni);
 
-  if (agirlikToplami === 0) {
-    sonuc.innerHTML =
-      "Toplam ağırlık sıfırdan büyük olmalıdır.";
-    return;
-  }
+const agirlik =
+Number(agirlikMetni);
 
-  const ortalama =
-    carpimToplami / agirlikToplami;
+if(
+!Number.isFinite(deger) ||
+!Number.isFinite(agirlik) ||
+agirlik < 0
+){
 
-  sonuc.innerHTML =
-    "<strong>Ağırlıklı Ortalama: " +
-    formatla(ortalama) +
-    "</strong>" +
+sonuc.innerHTML =
+"Lütfen geçerli değerler girin. Ağırlık negatif olamaz.";
 
-    "<div class='result-detail'>" +
+return;
+}
 
-    "Toplam ağırlık: " +
-    formatla(agirlikToplami) +
+carpimToplami +=
+deger * agirlik;
 
-    "<br>" +
+agirlikToplami +=
+agirlik;
 
-    "Ağırlıklı değer toplamı: " +
-    formatla(carpimToplami) +
+kullanilan++;
 
-    "<br>" +
+}
 
-    "Kullanılan satır sayısı: " +
-    kullanilan +
+if(
+kullanilan === 0
+){
 
-    "</div>";
+sonuc.innerHTML =
+"Hesaplama için en az bir satır doldurun.";
+
+return;
+}
+
+if(
+agirlikToplami === 0
+){
+
+sonuc.innerHTML =
+"Toplam ağırlık sıfırdan büyük olmalıdır.";
+
+return;
+}
+
+const ortalama =
+carpimToplami /
+agirlikToplami;
+
+sonuc.innerHTML =
+
+"<strong>Ağırlıklı Ortalama: " +
+formatla(ortalama) +
+"</strong>" +
+
+"<div class='result-detail'>" +
+
+"Toplam ağırlık: <strong>" +
+formatla(agirlikToplami) +
+"</strong>" +
+
+"<br>" +
+
+"Ağırlıklı değer toplamı: <strong>" +
+formatla(carpimToplami) +
+"</strong>" +
+
+"<br>" +
+
+"Kullanılan satır sayısı: <strong>" +
+kullanilan +
+"</strong>" +
+
+"</div>";
+
 }
 
 satirEkle();
 satirEkle();
 satirEkle();
+
+document
+.addEventListener(
+"keydown",
+function(e){
+
+if(
+e.key === "Enter" &&
+(
+e.target.classList.contains("deger") ||
+e.target.classList.contains("agirlik")
+)
+){
+
+hesapla();
+
+}
+
+}
+);
 
 document.getElementById("year").textContent =
-  new Date().getFullYear();
+new Date().getFullYear();
 
 </script>
 
