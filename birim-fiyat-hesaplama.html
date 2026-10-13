@@ -1,331 +1,1002 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Birim Fiyat Hesaplama | Adet, Kg ve Litre Fiyatı - Araclio</title>
+<title>Birim Fiyat Hesaplama | Adet, Kg, Gram ve Litre Fiyatı - Araclio</title>
 
-  <meta name="description" content="Birim fiyat hesaplama aracı ile toplam fiyat ve miktardan adet, kilogram, gram, litre, mililitre veya metre başına fiyatı hesaplayın.">
+<meta
+name="description"
+content="Ücretsiz birim fiyat hesaplama aracı. Toplam fiyat ve miktardan adet, kilogram, gram, litre, mililitre veya metre başına fiyatı hesaplayın ve ürünleri kolayca karşılaştırın."
+>
 
-  <meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
 
-  <link rel="canonical" href="https://araclio.com/birim-fiyat-hesaplama.html">
+<meta name="google-adsense-account" content="ca-pub-7634654090472031">
 
-  <link rel="stylesheet" href="style.css">
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
 
-  <style>
-    .info-box {
-      margin-top:18px;
-      padding:16px;
-      border-radius:10px;
-      background:#f5f5f5;
+<link rel="canonical" href="https://araclio.com/birim-fiyat-hesaplama.html">
+
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Birim Fiyat Hesaplama | Araclio">
+<meta
+property="og:description"
+content="Adet, kilogram, gram, litre, mililitre ve metre başına düşen fiyatı ücretsiz hesaplayın."
+>
+<meta property="og:url" content="https://araclio.com/birim-fiyat-hesaplama.html">
+<meta property="og:site_name" content="Araclio">
+
+<style>
+
+.info-box{
+margin-top:18px;
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.result-detail{
+margin-top:12px;
+line-height:1.8;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:520px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Birim Fiyat Hesaplama",
+  "url":"https://araclio.com/birim-fiyat-hesaplama.html",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"Toplam fiyat ve miktardan adet, kilogram, gram, litre, mililitre veya metre başına birim fiyat hesaplayan ücretsiz online araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Birim Fiyat Hesaplama",
+      "item":"https://araclio.com/birim-fiyat-hesaplama.html"
     }
+  ]
+}
+</script>
 
-    .result-detail {
-      margin-top:12px;
-      line-height:1.8;
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Birim fiyat nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Birim fiyat, toplam fiyatın toplam miktara bölünmesiyle hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Kilogram fiyatı nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Toplam fiyat kilogram cinsinden toplam miktara bölünerek kilogram başına fiyat bulunur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"500 gram ürünün kilogram fiyatı nasıl bulunur?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"500 gramlık ürünün fiyatı önce gram başına bölünür ve sonuç 1000 ile çarpılarak kilogram fiyatı bulunur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"500 ml ürünün litre fiyatı nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Toplam fiyat 500'e bölünerek 1 ml fiyatı bulunur ve sonuç 1000 ile çarpılarak litre fiyatı hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Birim fiyat karşılaştırması neden önemlidir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Farklı ambalaj boyutlarında satılan ürünlerin gerçek fiyat farkını görmek için toplam satış fiyatı yerine aynı miktara düşen birim fiyat karşılaştırılabilir."
+      }
     }
-  </style>
+  ]
+}
+</script>
+
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Araclio</a>
-    <span class="tag">Ücretsiz Online Araçlar</span>
-  </div>
+<div class="wrap nav">
+<a class="brand" href="/">Araclio</a>
+<span class="tag">Ücretsiz Online Araçlar</span>
+</div>
 </header>
 
 <main class="wrap">
 
-  <section class="hero">
+<section class="hero">
 
-    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+<p class="eyebrow">
+HIZLI • ÜCRETSİZ • ÜYELİKSİZ
+</p>
 
-    <h1>Birim Fiyat Hesaplama</h1>
+<h1>Birim Fiyat Hesaplama</h1>
 
-    <p>
-      Bir ürünün toplam fiyatını ve miktarını girerek
-      adet, kilogram, gram, litre, mililitre veya metre
-      başına düşen fiyatı hesaplayın.
-    </p>
+<p>
+Toplam fiyatı ve ürün miktarını girerek adet,
+kilogram, gram, litre, mililitre veya metre başına
+düşen fiyatı saniyeler içinde hesaplayın.
+</p>
 
-  </section>
+</section>
 
-  <section>
 
-    <article class="card">
+<section class="card">
 
-      <h2>Birim Fiyatı Hesapla</h2>
+<h2>Birim Fiyatı Hesapla</h2>
 
-      <label>
-        Toplam Fiyat (TL)
-        <input
-          id="fiyat"
-          type="number"
-          min="0.01"
-          step="0.01"
-          placeholder="300">
-      </label>
+<p>
+Ürünün toplam satış fiyatını ve miktarını girin.
+Ardından miktarın hangi birimde olduğunu seçin.
+</p>
 
-      <label>
-        Miktar
-        <input
-          id="miktar"
-          type="number"
-          min="0.000001"
-          step="any"
-          placeholder="5">
-      </label>
+<label for="fiyat">
+Toplam Fiyat (TL)
+</label>
 
-      <label>
-        Birim
-        <select id="birim">
-          <option value="adet">Adet</option>
-          <option value="kg">Kilogram (kg)</option>
-          <option value="g">Gram (g)</option>
-          <option value="litre">Litre</option>
-          <option value="ml">Mililitre (ml)</option>
-          <option value="metre">Metre</option>
-        </select>
-      </label>
+<input
+id="fiyat"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 300"
+>
 
-      <button onclick="hesapla()">Hesapla</button>
 
-      <div id="sonuc" class="result">
-        Toplam fiyat ve miktarı girin.
-      </div>
+<label for="miktar">
+Miktar
+</label>
 
-    </article>
+<input
+id="miktar"
+type="number"
+min="0.000001"
+step="any"
+inputmode="decimal"
+placeholder="Örnek: 5"
+>
 
-  </section>
 
-  <section class="info">
+<label for="birim">
+Birim
+</label>
 
-    <h2>Birim Fiyat Nasıl Hesaplanır?</h2>
+<select id="birim">
 
-    <p>
-      Birim fiyat, ürünün toplam fiyatının toplam miktara
-      bölünmesiyle bulunur.
-    </p>
+<option value="adet">
+Adet
+</option>
 
-    <div class="info-box">
-      <strong>Birim Fiyat = Toplam Fiyat ÷ Miktar</strong>
-    </div>
+<option value="kg">
+Kilogram (kg)
+</option>
 
-    <h2>Adet Fiyatı Hesaplama</h2>
+<option value="g">
+Gram (g)
+</option>
 
-    <p>
-      5 adet ürün toplam 300 TL ise:
-    </p>
+<option value="litre">
+Litre
+</option>
 
-    <div class="info-box">
-      300 ÷ 5 = 60 TL
-      <br><br>
-      Bir adet ürünün fiyatı = 60 TL
-    </div>
+<option value="ml">
+Mililitre (ml)
+</option>
 
-    <h2>Kilogram Fiyatı Hesaplama</h2>
+<option value="metre">
+Metre
+</option>
 
-    <p>
-      2,5 kilogramlık bir ürün 400 TL ise:
-    </p>
+</select>
 
-    <div class="info-box">
-      400 ÷ 2,5 = 160 TL/kg
-    </div>
 
-    <h2>Gramdan Kilogram Fiyatı Hesaplama</h2>
+<button type="button" onclick="hesapla()">
+Birim Fiyatı Hesapla
+</button>
 
-    <p>
-      Gram cinsinden girilen ürünlerde araç hem gram başına
-      fiyatı hem de 1 kilogram karşılığını gösterebilir.
-    </p>
 
-    <div class="info-box">
-      500 gram ürün 120 TL ise:
-      <br><br>
-      Gram fiyatı = 0,24 TL
-      <br>
-      Kilogram fiyatı = 240 TL
-    </div>
+<div id="sonuc" class="result" aria-live="polite">
+Toplam fiyat ve miktarı girin.
+</div>
 
-    <h2>Mililitreden Litre Fiyatı Hesaplama</h2>
+</section>
 
-    <p>
-      Mililitre ile satılan ürünlerde litre karşılığını
-      görmek farklı ambalaj boyutlarını karşılaştırmayı
-      kolaylaştırabilir.
-    </p>
 
-    <div class="info-box">
-      500 ml ürün 75 TL ise:
-      <br><br>
-      1 ml fiyatı = 0,15 TL
-      <br>
-      1 litre fiyatı = 150 TL
-    </div>
+<section class="card">
 
-    <h2>Birim Fiyat Neden Önemlidir?</h2>
+<h2>Birim Fiyat Nasıl Hesaplanır?</h2>
 
-    <p>
-      Farklı paket büyüklüklerine sahip ürünlerin yalnızca
-      toplam satış fiyatına bakılması yanıltıcı olabilir.
-      Birim fiyat hesabı, hangi ürünün miktarına göre daha
-      uygun fiyatlı olduğunu karşılaştırmaya yardımcı olur.
-    </p>
+<p>
+Birim fiyat, ürünün toplam fiyatının toplam miktara
+bölünmesiyle bulunur.
+</p>
 
-    <h2>Diğer Hesaplama Araçları</h2>
+<div class="info-box">
 
-    <p>
-      <a href="/indirim-hesaplama.html">İndirim Hesaplama</a>
-      •
-      <a href="/iskonto-hesaplama.html">İskonto Hesaplama</a>
-      •
-      <a href="/kar-zarar-hesaplama.html">Kâr Zarar Hesaplama</a>
-      •
-      <a href="/komisyon-hesaplama.html">Komisyon Hesaplama</a>
-      •
-      <a href="/yuzde-hesaplama.html">Yüzde Hesaplama</a>
-    </p>
+<strong>Formül:</strong>
 
-  </section>
+<br><br>
+
+Birim Fiyat =
+Toplam Fiyat ÷ Toplam Miktar
+
+</div>
+
+<p>
+Örneğin 5 adet ürün toplam 300 TL ise:
+</p>
+
+<p>
+300 ÷ 5 =
+<strong>60 TL/adet</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Adet Fiyatı Nasıl Hesaplanır?</h2>
+
+<p>
+Bir paket içinde birden fazla ürün bulunuyorsa
+toplam fiyat paket içindeki adet sayısına bölünür.
+</p>
+
+<div class="info-box">
+
+5 adet ürün = 300 TL
+
+<br><br>
+
+300 ÷ 5 =
+<strong>60 TL/adet</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kilogram Fiyatı Nasıl Hesaplanır?</h2>
+
+<p>
+Ürünün toplam ağırlığı kilogram cinsindeyse,
+toplam fiyat kilogram miktarına bölünür.
+</p>
+
+<div class="info-box">
+
+2,5 kg ürün = 400 TL
+
+<br><br>
+
+400 ÷ 2,5 =
+<strong>160 TL/kg</strong>
+
+<br><br>
+
+100 gram fiyatı =
+<strong>16 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Gramdan Kilogram Fiyatı Nasıl Hesaplanır?</h2>
+
+<p>
+Gram cinsinden satılan bir ürünün kilogram karşılığını
+bulmak için gram başına fiyat 1000 ile çarpılır.
+</p>
+
+<div class="info-box">
+
+500 gram ürün = 120 TL
+
+<br><br>
+
+1 gram fiyatı:
+
+120 ÷ 500 =
+<strong>0,24 TL</strong>
+
+<br><br>
+
+1 kilogram fiyatı:
+
+0,24 × 1000 =
+<strong>240 TL/kg</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Litre Fiyatı Nasıl Hesaplanır?</h2>
+
+<p>
+Toplam fiyat, litre cinsinden miktara bölünerek
+litre başına düşen fiyat bulunur.
+</p>
+
+<div class="info-box">
+
+2 litre ürün = 180 TL
+
+<br><br>
+
+180 ÷ 2 =
+<strong>90 TL/litre</strong>
+
+<br><br>
+
+100 ml fiyatı =
+<strong>9 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Mililitreden Litre Fiyatı Nasıl Hesaplanır?</h2>
+
+<p>
+Mililitre cinsinden girilen miktarda önce 1 ml fiyatı
+hesaplanır, ardından 1000 ile çarpılarak litre fiyatı bulunur.
+</p>
+
+<div class="info-box">
+
+500 ml ürün = 75 TL
+
+<br><br>
+
+1 ml fiyatı:
+
+75 ÷ 500 =
+<strong>0,15 TL</strong>
+
+<br><br>
+
+1 litre fiyatı:
+
+0,15 × 1000 =
+<strong>150 TL/litre</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Metre Fiyatı Nasıl Hesaplanır?</h2>
+
+<p>
+Kumaş, kablo, halat, profil veya metre ile satılan başka
+ürünlerde toplam fiyat toplam metre miktarına bölünür.
+</p>
+
+<div class="info-box">
+
+20 metre ürün = 1.000 TL
+
+<br><br>
+
+1.000 ÷ 20 =
+<strong>50 TL/metre</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Birim Fiyat Karşılaştırması Neden Önemlidir?</h2>
+
+<p>
+Farklı paket veya ambalaj büyüklüğündeki ürünlerin
+yalnızca toplam satış fiyatını karşılaştırmak yanıltıcı olabilir.
+</p>
+
+<p>
+Örneğin:
+</p>
+
+<div class="info-box">
+
+<strong>Ürün A:</strong><br>
+500 gram = 120 TL<br>
+Kilogram fiyatı = 240 TL
+
+<br><br>
+
+<strong>Ürün B:</strong><br>
+750 gram = 165 TL<br>
+Kilogram fiyatı = 220 TL
+
+<br><br>
+
+Bu örnekte Ürün B'nin toplam fiyatı daha yüksek olsa da
+kilogram başına fiyatı daha düşüktür.
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Birim Fiyat Örnekleri</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Toplam Fiyat</th>
+<th>Miktar</th>
+<th>Birim Fiyat</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>300 TL</td>
+<td>5 adet</td>
+<td>60 TL/adet</td>
+</tr>
+
+<tr>
+<td>400 TL</td>
+<td>2,5 kg</td>
+<td>160 TL/kg</td>
+</tr>
+
+<tr>
+<td>120 TL</td>
+<td>500 g</td>
+<td>240 TL/kg</td>
+</tr>
+
+<tr>
+<td>75 TL</td>
+<td>500 ml</td>
+<td>150 TL/litre</td>
+</tr>
+
+<tr>
+<td>1.000 TL</td>
+<td>20 metre</td>
+<td>50 TL/metre</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Birim Fiyat Hesaplama Nerelerde Kullanılır?</h2>
+
+<p>
+Birim fiyat hesabı günlük alışverişten ticari
+maliyet analizine kadar birçok yerde kullanılabilir.
+</p>
+
+<p>
+* Market ürünlerini karşılaştırma<br>
+* Toptan ve perakende fiyat hesabı<br>
+* Kilo ile satılan ürünler<br>
+* Litre ve mililitre ile satılan ürünler<br>
+* Kumaş ve metre ile satılan ürünler<br>
+* Ambalaj büyüklüğü karşılaştırması<br>
+* Maliyet ve satın alma analizi
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+<h3>Birim fiyat nasıl hesaplanır?</h3>
+
+<p>
+Toplam fiyat toplam miktara bölünür.
+</p>
+
+
+<h3>500 gram 120 TL ise kilogramı kaç TL?</h3>
+
+<p>
+500 gram 120 TL ise 1 kilogram fiyatı
+<strong>240 TL</strong>'dir.
+</p>
+
+
+<h3>500 ml 75 TL ise litre fiyatı kaç TL?</h3>
+
+<p>
+500 ml 75 TL ise 1 litre fiyatı
+<strong>150 TL</strong>'dir.
+</p>
+
+
+<h3>2,5 kg ürün 400 TL ise kilosu kaç TL?</h3>
+
+<p>
+400 ÷ 2,5 =
+<strong>160 TL/kg</strong>
+</p>
+
+
+<h3>Bir ürünün 100 gram fiyatı nasıl bulunur?</h3>
+
+<p>
+Kilogram fiyatı biliniyorsa 10'a bölünerek
+100 gram fiyatı bulunabilir.
+</p>
+
+
+<h3>Bir ürünün 100 ml fiyatı nasıl bulunur?</h3>
+
+<p>
+Litre fiyatı 10'a bölünerek 100 ml fiyatı bulunabilir.
+</p>
+
+
+<h3>Birim fiyat hesaplama ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio Birim Fiyat Hesaplama aracı
+ücretsizdir ve üyelik gerektirmez.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Bilgilendirme</h2>
+
+<p>
+Bu araç yalnızca matematiksel birim fiyat hesabı yapar.
+Vergi, kargo, indirim, komisyon veya diğer masraflar
+girilen toplam fiyata dahil değilse sonuçta ayrıca
+gösterilmez.
+</p>
+
+<p>
+<strong>Son güncelleme: Ekim 2026</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Diğer Hesaplama Araçları</h2>
+
+<p>
+<a href="/indirim-hesaplama.html">
+İndirim Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/iskonto-hesaplama.html">
+İskonto Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kar-zarar-hesaplama.html">
+Kâr Zarar Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kar-marji-hesaplama.html">
+Kâr Marjı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/komisyon-hesaplama.html">
+Komisyon Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/yuzde-hesaplama.html">
+Yüzde Hesaplama →
+</a>
+</p>
+
+</section>
 
 </main>
 
+
 <footer>
 
-  <div class="wrap">
+<div class="wrap">
 
-    <p>
-      <a href="/about.html">Hakkımızda</a>
-      •
-      <a href="/contact.html">İletişim</a>
-      •
-      <a href="/privacy-policy.html">Gizlilik Politikası</a>
-      •
-      <a href="/terms.html">Kullanım Koşulları</a>
-      •
-      <a href="/en/">English</a>
-    </p>
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
 
-    <p>
-      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
-    </p>
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
 
-  </div>
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
+
+</div>
 
 </footer>
 
+
 <script>
 
-function para(sayi) {
-  return new Intl.NumberFormat(
-    "tr-TR",
-    {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 4
-    }
-  ).format(sayi) + " TL";
+function para(sayi){
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+minimumFractionDigits:2,
+maximumFractionDigits:4
+}
+).format(sayi) + " TL";
+
 }
 
-function hesapla() {
 
-  const fiyatInput = document.getElementById("fiyat");
-  const miktarInput = document.getElementById("miktar");
-  const birim = document.getElementById("birim").value;
-  const sonuc = document.getElementById("sonuc");
+function miktarYaz(sayi){
 
-  const fiyat = Number(fiyatInput.value);
-  const miktar = Number(miktarInput.value);
-
-  if (
-    fiyatInput.value === "" ||
-    miktarInput.value === "" ||
-    !Number.isFinite(fiyat) ||
-    !Number.isFinite(miktar) ||
-    fiyat <= 0 ||
-    miktar <= 0
-  ) {
-
-    sonuc.innerHTML =
-      "Lütfen geçerli bir fiyat ve sıfırdan büyük miktar girin.";
-
-    return;
-  }
-
-  const birimFiyat = fiyat / miktar;
-
-  let birimAdi = "";
-  let ekSonuc = "";
-
-  if (birim === "adet") {
-    birimAdi = "adet";
-  }
-
-  if (birim === "kg") {
-    birimAdi = "kg";
-    ekSonuc =
-      "<br>100 gram fiyatı: " +
-      para(birimFiyat / 10);
-  }
-
-  if (birim === "g") {
-    birimAdi = "gram";
-    ekSonuc =
-      "<br>1 kg fiyatı: " +
-      para(birimFiyat * 1000);
-  }
-
-  if (birim === "litre") {
-    birimAdi = "litre";
-    ekSonuc =
-      "<br>100 ml fiyatı: " +
-      para(birimFiyat / 10);
-  }
-
-  if (birim === "ml") {
-    birimAdi = "ml";
-    ekSonuc =
-      "<br>1 litre fiyatı: " +
-      para(birimFiyat * 1000);
-  }
-
-  if (birim === "metre") {
-    birimAdi = "metre";
-  }
-
-  sonuc.innerHTML =
-
-    "<strong>1 " +
-    birimAdi +
-    " fiyatı: " +
-    para(birimFiyat) +
-    "</strong>" +
-
-    "<div class='result-detail'>" +
-
-    "Toplam fiyat: " +
-    para(fiyat) +
-
-    "<br>" +
-
-    "Toplam miktar: " +
-    new Intl.NumberFormat("tr-TR", {
-      maximumFractionDigits: 6
-    }).format(miktar) +
-    " " +
-    birimAdi +
-
-    ekSonuc +
-
-    "</div>";
+return new Intl.NumberFormat(
+"tr-TR",
+{
+maximumFractionDigits:6
 }
+).format(sayi);
+
+}
+
+
+function hesapla(){
+
+const fiyatInput =
+document.getElementById("fiyat");
+
+const miktarInput =
+document.getElementById("miktar");
+
+const birim =
+document.getElementById("birim").value;
+
+const sonuc =
+document.getElementById("sonuc");
+
+
+const fiyat =
+Number(fiyatInput.value);
+
+const miktar =
+Number(miktarInput.value);
+
+
+if(
+fiyatInput.value === "" ||
+miktarInput.value === "" ||
+!Number.isFinite(fiyat) ||
+!Number.isFinite(miktar) ||
+fiyat <= 0 ||
+miktar <= 0
+){
+
+sonuc.innerHTML =
+"Lütfen sıfırdan büyük geçerli bir fiyat ve miktar girin.";
+
+return;
+
+}
+
+
+const birimFiyat =
+fiyat / miktar;
+
+
+let birimAdi = "";
+let ekSonuc = "";
+
+
+if(
+birim === "adet"
+){
+
+birimAdi =
+"adet";
+
+}
+
+
+if(
+birim === "kg"
+){
+
+birimAdi =
+"kg";
+
+ekSonuc =
+
+"<br>100 gram fiyatı: <strong>" +
+para(birimFiyat / 10) +
+"</strong>" +
+
+"<br>1 gram fiyatı: <strong>" +
+para(birimFiyat / 1000) +
+"</strong>";
+
+}
+
+
+if(
+birim === "g"
+){
+
+birimAdi =
+"gram";
+
+ekSonuc =
+
+"<br>100 gram fiyatı: <strong>" +
+para(birimFiyat * 100) +
+"</strong>" +
+
+"<br>1 kg fiyatı: <strong>" +
+para(birimFiyat * 1000) +
+"</strong>";
+
+}
+
+
+if(
+birim === "litre"
+){
+
+birimAdi =
+"litre";
+
+ekSonuc =
+
+"<br>100 ml fiyatı: <strong>" +
+para(birimFiyat / 10) +
+"</strong>" +
+
+"<br>1 ml fiyatı: <strong>" +
+para(birimFiyat / 1000) +
+"</strong>";
+
+}
+
+
+if(
+birim === "ml"
+){
+
+birimAdi =
+"ml";
+
+ekSonuc =
+
+"<br>100 ml fiyatı: <strong>" +
+para(birimFiyat * 100) +
+"</strong>" +
+
+"<br>1 litre fiyatı: <strong>" +
+para(birimFiyat * 1000) +
+"</strong>";
+
+}
+
+
+if(
+birim === "metre"
+){
+
+birimAdi =
+"metre";
+
+}
+
+
+sonuc.innerHTML =
+
+"<strong>1 " +
+birimAdi +
+" fiyatı: " +
+para(birimFiyat) +
+"</strong>" +
+
+"<div class='result-detail'>" +
+
+"Toplam fiyat: <strong>" +
+para(fiyat) +
+"</strong>" +
+
+"<br>" +
+
+"Toplam miktar: <strong>" +
+miktarYaz(miktar) +
+" " +
+birimAdi +
+"</strong>" +
+
+ekSonuc +
+
+"</div>";
+
+}
+
+
+[
+"fiyat",
+"miktar"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(e){
+
+if(
+e.key === "Enter"
+){
+
+hesapla();
+
+}
+
+}
+);
+
+});
+
+
+document
+.getElementById("birim")
+.addEventListener(
+"change",
+function(){
+
+if(
+document.getElementById("fiyat").value !== "" &&
+document.getElementById("miktar").value !== ""
+){
+
+hesapla();
+
+}
+
+}
+);
+
 
 document.getElementById("year").textContent =
-  new Date().getFullYear();
+new Date().getFullYear();
 
 </script>
 
