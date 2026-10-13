@@ -1,351 +1,989 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Gebelik Hesaplama | Kaç Haftalık ve Tahmini Doğum Tarihi - Araclio</title>
+<title>Gebelik Hesaplama | Kaç Haftalık ve Tahmini Doğum Tarihi - Araclio</title>
 
-  <meta name="description" content="Son adet tarihinizi girerek gebeliğin yaklaşık kaç hafta kaç günlük olduğunu, tahmini doğum tarihini ve doğuma kalan süreyi hesaplayın.">
+<meta
+name="description"
+content="Son adet tarihinizin ilk gününü girerek yaklaşık kaç hafta kaç günlük hamile olduğunuzu, tahmini doğum tarihini ve doğuma kalan süreyi ücretsiz hesaplayın."
+>
 
-  <meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
 
-  <link rel="canonical" href="https://araclio.com/gebelik-hesaplama.html">
+<meta name="google-adsense-account" content="ca-pub-7634654090472031">
 
-  <link rel="stylesheet" href="style.css">
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
 
-  <style>
-    .health-warning {
-      margin-top:24px;
-      padding:18px;
-      border:2px solid #c62828;
-      border-radius:10px;
-      background:#fff4f4;
-      color:#7f0000;
+<link rel="canonical" href="https://araclio.com/gebelik-hesaplama.html">
+
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gebelik Hesaplama | Araclio">
+<meta
+property="og:description"
+content="Son adet tarihine göre yaklaşık gebelik haftasını, tahmini doğum tarihini ve doğuma kalan süreyi hesaplayın."
+>
+<meta property="og:url" content="https://araclio.com/gebelik-hesaplama.html">
+<meta property="og:site_name" content="Araclio">
+
+<style>
+
+.health-warning{
+margin-top:24px;
+padding:18px;
+border:2px solid #c62828;
+border-radius:10px;
+background:#fff4f4;
+color:#7f0000;
+line-height:1.75;
+}
+
+.health-warning strong{
+display:block;
+margin-bottom:8px;
+font-size:18px;
+}
+
+.info-box{
+margin-top:18px;
+padding:15px;
+border-radius:8px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.result-detail{
+margin-top:12px;
+line-height:1.8;
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Gebelik Hesaplama",
+  "url":"https://araclio.com/gebelik-hesaplama.html",
+  "applicationCategory":"HealthApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"Son adet tarihine göre yaklaşık gebelik haftasını, tahmini doğum tarihini ve doğuma kalan süreyi hesaplayan ücretsiz online araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Gebelik Hesaplama",
+      "item":"https://araclio.com/gebelik-hesaplama.html"
     }
+  ]
+}
+</script>
 
-    .health-warning strong {
-      display:block;
-      margin-bottom:8px;
-      font-size:18px;
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Gebelik haftası nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Gebelik haftası genellikle son adet tarihinin ilk gününden itibaren geçen süre esas alınarak hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Tahmini doğum tarihi nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Standart 28 günlük adet döngüsünde son adet tarihinin ilk gününe 280 gün eklenerek tahmini doğum tarihi bulunur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Gebelik kaç hafta sürer?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Standart tahmini doğum tarihi hesabında gebelik süresi yaklaşık 40 hafta veya 280 gün olarak kabul edilir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Adet döngüsü 28 günden farklıysa doğum tarihi değişir mi?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Bu hesaplayıcı, girilen döngü uzunluğunun 28 günden farkını tahmini doğum tarihine ekleyerek veya çıkararak yaklaşık bir düzeltme yapar."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Gebelik hesaplama sonucu kesin midir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Hayır. Sonuç yaklaşık bilgi verir. Gerçek gebelik haftası ve tahmini doğum tarihi ultrason ve sağlık profesyoneli değerlendirmesiyle farklılaşabilir."
+      }
     }
+  ]
+}
+</script>
 
-    .info-box {
-      margin-top:18px;
-      padding:15px;
-      border-radius:8px;
-      background:#f5f5f5;
-    }
-  </style>
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Araclio</a>
-    <span class="tag">Ücretsiz Online Araçlar</span>
-  </div>
+
+<div class="wrap nav">
+
+<a class="brand" href="/">
+Araclio
+</a>
+
+<span class="tag">
+Ücretsiz Online Araçlar
+</span>
+
+</div>
+
 </header>
+
 
 <main class="wrap">
 
-  <section class="hero">
-    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+<section class="hero">
 
-    <h1>Gebelik Hesaplama</h1>
+<p class="eyebrow">
+HIZLI • ÜCRETSİZ • ÜYELİKSİZ
+</p>
 
-    <p>
-      Son adet tarihinizin ilk gününü girerek yaklaşık gebelik
-      haftanızı, tahmini doğum tarihinizi ve doğuma kalan süreyi
-      hesaplayın.
-    </p>
-  </section>
+<h1>Gebelik Hesaplama</h1>
 
-  <section>
+<p>
+Son adet tarihinizin ilk gününü girerek yaklaşık
+gebelik haftanızı, tahmini doğum tarihinizi ve
+doğuma kalan süreyi hesaplayın.
+</p>
 
-    <article class="card">
+</section>
 
-      <h2>Gebelik Haftası ve Doğum Tarihi Hesapla</h2>
 
-      <label>
-        Son Adet Tarihinin İlk Günü
-        <input id="sat" type="date">
-      </label>
+<section class="card">
 
-      <label>
-        Ortalama Adet Döngüsü (Gün)
-        <input
-          id="dongu"
-          type="number"
-          min="20"
-          max="44"
-          step="1"
-          value="28">
-      </label>
+<h2>Gebelik Haftası ve Doğum Tarihi Hesapla</h2>
 
-      <button onclick="gebelikHesapla()">Hesapla</button>
+<label for="sat">
+Son Adet Tarihinin İlk Günü
+</label>
 
-      <div id="sonuc" class="result">
-        Son adet tarihinizin ilk gününü girin.
-      </div>
+<input
+id="sat"
+type="date"
+>
 
-      <div class="health-warning">
-        <strong>⚠️ SAĞLIK UYARISI</strong>
 
-        Bu araç yalnızca yaklaşık ve genel bilgilendirme amacıyla
-        hesaplama yapar. Gebeliği doğrulamaz ve tıbbi değerlendirme,
-        tanı veya doktor muayenesi yerine geçmez.
+<label for="dongu">
+Ortalama Adet Döngüsü (Gün)
+</label>
 
-        <br><br>
+<input
+id="dongu"
+type="number"
+min="20"
+max="44"
+step="1"
+value="28"
+inputmode="numeric"
+>
 
-        Son adet tarihine göre yapılan hesaplama; adet döngüsünün
-        düzensiz olması, son adet tarihinin kesin bilinmemesi veya
-        yumurtlama zamanının farklı olması gibi nedenlerle gerçek
-        gebelik haftasından farklı olabilir.
 
-        <br><br>
+<button type="button" onclick="gebelikHesapla()">
+Gebeliği Hesapla
+</button>
 
-        Ultrason değerlendirmesi tahmini gebelik yaşını ve doğum
-        tarihini değiştirebilir. Gebelik takibinde doktorunuzun
-        belirlediği gebelik haftasını ve tahmini doğum tarihini
-        esas alın.
-      </div>
 
-    </article>
+<div id="sonuc" class="result" aria-live="polite">
+Son adet tarihinizin ilk gününü girin.
+</div>
 
-  </section>
 
-  <section class="info">
+<div class="health-warning">
 
-    <h2>Gebelik Haftası Nasıl Hesaplanır?</h2>
+<strong>⚠️ SAĞLIK UYARISI</strong>
 
-    <p>
-      Gebelik haftası geleneksel olarak son adet tarihinin ilk
-      gününden itibaren hesaplanır. Bu nedenle hesaplanan gebelik
-      yaşı, döllenmenin gerçekleştiği tarihten yaklaşık iki hafta
-      daha önce başlamış gibi görünür.
-    </p>
+Bu araç yalnızca yaklaşık ve genel bilgilendirme amacıyla
+hesaplama yapar.
 
-    <div class="info-box">
-      <strong>Standart hesap:</strong><br><br>
-      Son adet tarihinin ilk günü + 280 gün = Tahmini doğum tarihi
-    </div>
+<br><br>
 
-    <h2>Tahmini Doğum Tarihi Kesin midir?</h2>
+Gebeliği doğrulamaz ve tıbbi değerlendirme, tanı,
+ultrason veya doktor muayenesinin yerine geçmez.
 
-    <p>
-      Hayır. Hesaplanan tarih tahmini bir tarihtir. Gerçek doğum
-      bu tarihten önce veya sonra gerçekleşebilir. Gebelik süresinin
-      değerlendirilmesinde ultrason ve sağlık profesyonelinin
-      değerlendirmesi daha önemlidir.
-    </p>
+<br><br>
 
-    <h2>Adet Döngüsü Neden Soruluyor?</h2>
+Son adet tarihine göre yapılan hesaplama; adet döngüsünün
+düzensiz olması, son adet tarihinin kesin bilinmemesi,
+yumurtlamanın farklı zamanda gerçekleşmesi veya başka
+nedenlerle gerçek gebelik haftasından farklı olabilir.
 
-    <p>
-      Standart hesaplama 28 günlük adet döngüsünü temel alır.
-      Döngünüz 28 günden daha kısa veya daha uzunsa araç tahmini
-      doğum tarihini aradaki gün farkına göre ayarlar.
-    </p>
+<br><br>
 
-    <h2>Kaç Haftalık Hamileyim?</h2>
+Gebelik takibinde doktorunuzun ve ultrason değerlendirmesinin
+belirlediği gebelik haftası ile tahmini doğum tarihini
+esas alın.
 
-    <p>
-      Araç, son adet tarihinin ilk gününden bugüne kadar geçen
-      süreyi hafta ve gün olarak gösterir. Örneğin 10 hafta ve
-      3 gün geçmişse sonuç 10 hafta 3 gün olarak görüntülenir.
-    </p>
+</div>
 
-    <h2>Gebelik Kaç Hafta Sürer?</h2>
+</section>
 
-    <p>
-      Standart tahmini doğum tarihi hesabı 40 hafta yani 280 gün
-      üzerinden yapılır. Ancak bu tarih bebeğin kesin doğacağı gün
-      anlamına gelmez.
-    </p>
 
-    <h2>Diğer Araçlar</h2>
+<section class="card">
 
-    <p>
-      <a href="/yas-hesaplama.html">Yaş Hesaplama</a>
-      •
-      <a href="/vucut-kitle-indeksi-hesaplama.html">VKİ Hesaplama</a>
-      •
-      <a href="/iki-tarih-arasi-gun-hesaplama.html">İki Tarih Arası Gün Hesaplama</a>
-    </p>
+<h2>Gebelik Haftası Nasıl Hesaplanır?</h2>
 
-  </section>
+<p>
+Gebelik haftası genellikle
+<strong>son adet tarihinin ilk gününden</strong>
+itibaren hesaplanır.
+</p>
+
+<p>
+Bu nedenle gebelik yaşı, gerçek döllenme tarihinden
+yaklaşık iki hafta daha önce başlamış gibi görünür.
+</p>
+
+<div class="info-box">
+
+<strong>Standart yaklaşım:</strong>
+
+<br><br>
+
+Son adet tarihinin ilk günü → gebelik haftasının başlangıcı
+
+<br><br>
+
+Tahmini doğum tarihi için:
+
+<br><br>
+
+<strong>
+Son adet tarihinin ilk günü + 280 gün
+</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Tahmini Doğum Tarihi Nasıl Hesaplanır?</h2>
+
+<p>
+Standart hesaplamada 28 günlük adet döngüsü temel alınır.
+</p>
+
+<p>
+Son adet tarihinin ilk gününe yaklaşık
+<strong>280 gün</strong>
+eklenerek tahmini doğum tarihi hesaplanır.
+</p>
+
+<p>
+280 gün yaklaşık:
+</p>
+
+<p>
+<strong>40 hafta</strong>
+</p>
+
+<p>
+olarak kabul edilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Adet Döngüsü Neden Soruluyor?</h2>
+
+<p>
+Standart gebelik tarihi hesaplamaları genellikle
+28 günlük adet döngüsünü temel alır.
+</p>
+
+<p>
+Döngünüz 28 günden daha uzun veya kısa ise bu araç,
+tahmini doğum tarihini aradaki gün farkına göre
+yaklaşık olarak ayarlar.
+</p>
+
+<div class="info-box">
+
+<strong>Örnek:</strong>
+
+<br><br>
+
+28 günlük döngü → standart 280 gün
+
+<br>
+
+30 günlük döngü → yaklaşık 282 gün
+
+<br>
+
+26 günlük döngü → yaklaşık 278 gün
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kaç Haftalık Hamileyim?</h2>
+
+<p>
+Araç son adet tarihinin ilk gününden bugüne kadar geçen
+süreyi hafta ve gün olarak hesaplar.
+</p>
+
+<p>
+Örneğin son adet tarihinden itibaren 73 gün geçmişse:
+</p>
+
+<p>
+<strong>10 hafta 3 gün</strong>
+</p>
+
+<p>
+olarak gösterilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Gebeliğin Kaçıncı Günündeyim?</h2>
+
+<p>
+Son adet tarihinin ilk günü gebeliğin başlangıcı olarak
+kabul edildiği için geçen toplam gün sayısı da ayrıca
+hesaplanabilir.
+</p>
+
+<p>
+Örneğin:
+</p>
+
+<p>
+70 gün =
+<strong>10 hafta</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Gebelik Kaç Hafta Sürer?</h2>
+
+<p>
+Standart tahmini doğum tarihi hesabında gebelik süresi
+yaklaşık:
+</p>
+
+<p>
+<strong>40 hafta veya 280 gün</strong>
+</p>
+
+<p>
+olarak kabul edilir.
+</p>
+
+<p>
+Ancak bu, bebeğin mutlaka 40. haftanın tam gününde
+doğacağı anlamına gelmez.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Tahmini Doğum Tarihi Kesin midir?</h2>
+
+<p>
+Hayır.
+</p>
+
+<p>
+Tahmini doğum tarihi yalnızca yaklaşık bir hesaplamadır.
+Gerçek doğum bu tarihten önce veya sonra gerçekleşebilir.
+</p>
+
+<p>
+Özellikle:
+</p>
+
+<p>
+* Adet döngüsü düzensizse<br>
+* Son adet tarihi tam bilinmiyorsa<br>
+* Yumurtlama normalden erken veya geç olmuşsa<br>
+* Ultrason ölçümleri farklı gebelik yaşı gösteriyorsa
+</p>
+
+<p>
+hesaplanan tarih değişebilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Son Adet Tarihi ile Ultrason Tarihi Farklı Çıkarsa?</h2>
+
+<p>
+Son adet tarihine göre yapılan hesaplama yalnızca
+takvim temelli yaklaşık bir yöntemdir.
+</p>
+
+<p>
+Doktorunuz ultrason ölçümleri, gebelik gelişimi ve
+diğer klinik bulgulara göre gebelik haftasını veya
+tahmini doğum tarihini farklı değerlendirebilir.
+</p>
+
+<p>
+Bu durumda sağlık profesyonelinizin belirlediği tarih
+esas alınmalıdır.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Gebelik Hesaplama Sonucu Ne Anlama Gelir?</h2>
+
+<p>
+Araç size dört temel bilgi verir:
+</p>
+
+<p>
+* Yaklaşık gebelik haftası<br>
+* Gebeliğin yaklaşık günü<br>
+* Tahmini doğum tarihi<br>
+* Tahmini doğuma kalan süre
+</p>
+
+<p>
+Bu değerlerin tamamı takvim hesabına dayalı yaklaşık
+sonuçlardır.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+
+<h3>Gebelik haftası hangi tarihten hesaplanır?</h3>
+
+<p>
+Gebelik haftası genellikle son adet tarihinin ilk
+gününden itibaren hesaplanır.
+</p>
+
+
+<h3>Son adet tarihine göre doğum tarihi nasıl hesaplanır?</h3>
+
+<p>
+28 günlük standart döngüde son adet tarihinin ilk
+gününe yaklaşık 280 gün eklenir.
+</p>
+
+
+<h3>280 gün kaç hafta eder?</h3>
+
+<p>
+280 gün
+<strong>40 haftadır.</strong>
+</p>
+
+
+<h3>30 günlük adet döngüsünde hesap değişir mi?</h3>
+
+<p>
+Bu araç tahmini doğum tarihine 28 günlük standart
+döngüden olan farkı ekler. 30 günlük döngüde yaklaşık
+2 günlük düzeltme yapılır.
+</p>
+
+
+<h3>Gebelik hesaplama kesin sonuç verir mi?</h3>
+
+<p>
+Hayır. Bu araç yalnızca yaklaşık takvim hesabı yapar.
+</p>
+
+
+<h3>Ultrason tarihi farklı çıkabilir mi?</h3>
+
+<p>
+Evet. Ultrason ve doktor değerlendirmesi sonucunda
+gebelik haftası veya tahmini doğum tarihi farklı
+belirlenebilir.
+</p>
+
+
+<h3>Bu araç gebelik testi yerine geçer mi?</h3>
+
+<p>
+Hayır. Bu araç gebeliği doğrulamaz.
+</p>
+
+
+<h3>Gebelik hesaplama ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio Gebelik Hesaplama aracı ücretsizdir
+ve üyelik gerektirmez.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Önemli Sağlık Bilgilendirmesi</h2>
+
+<div class="health-warning">
+
+<strong>Bu hesaplayıcı tıbbi araç değildir.</strong>
+
+Sonuçlar yalnızca son adet tarihi ve girilen döngü
+uzunluğuna dayanan yaklaşık matematiksel değerlerdir.
+
+<br><br>
+
+Gebeliğin doğrulanması, gebelik haftasının kesinleştirilmesi,
+tahmini doğum tarihinin belirlenmesi ve gebelik takibi için
+bir sağlık profesyoneline başvurulmalıdır.
+
+<br><br>
+
+Acil veya olağandışı bir sağlık belirtiniz varsa online
+hesaplama sonucuna dayanarak hareket etmek yerine uygun
+sağlık hizmetine başvurun.
+
+</div>
+
+<p>
+<strong>Son güncelleme: Ekim 2026</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Diğer Hesaplama Araçları</h2>
+
+<p>
+<a href="/ovulasyon-hesaplama.html">
+Ovulasyon Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/yas-hesaplama.html">
+Yaş Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/vki-hesaplama.html">
+VKİ Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/bmr-kalori-hesaplama.html">
+BMR ve Kalori Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/iki-tarih-arasi-gun-hesaplama.html">
+İki Tarih Arası Gün Hesaplama →
+</a>
+</p>
+
+</section>
 
 </main>
 
+
 <footer>
-  <div class="wrap">
 
-    <p>
-      <a href="/about.html">Hakkımızda</a>
-      •
-      <a href="/contact.html">İletişim</a>
-      •
-      <a href="/privacy-policy.html">Gizlilik Politikası</a>
-      •
-      <a href="/terms.html">Kullanım Koşulları</a>
-      •
-      <a href="/en/">English</a>
-    </p>
+<div class="wrap">
 
-    <p>
-      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
-    </p>
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
 
-  </div>
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
+
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
+
+</div>
+
 </footer>
+
 
 <script>
 
-const MS_GUN = 24 * 60 * 60 * 1000;
+const MS_GUN =
+24 * 60 * 60 * 1000;
 
-function tarihUTC(deger) {
-  const parca = deger.split("-");
 
-  return new Date(Date.UTC(
-    Number(parca[0]),
-    Number(parca[1]) - 1,
-    Number(parca[2])
-  ));
+function tarihUTC(deger){
+
+const parca =
+deger.split("-");
+
+return new Date(
+Date.UTC(
+Number(parca[0]),
+Number(parca[1]) - 1,
+Number(parca[2])
+)
+);
+
 }
 
-function tarihYaz(tarih) {
-  return new Intl.DateTimeFormat("tr-TR", {
-    timeZone: "UTC",
-    day: "numeric",
-    month: "long",
-    year: "numeric"
-  }).format(tarih);
+
+function bugunUTC(){
+
+const simdi =
+new Date();
+
+return new Date(
+Date.UTC(
+simdi.getFullYear(),
+simdi.getMonth(),
+simdi.getDate()
+)
+);
+
 }
 
-function gebelikHesapla() {
 
-  const satDeger =
-    document.getElementById("sat").value;
+function tarihYaz(tarih){
 
-  const dongu =
-    Number(document.getElementById("dongu").value);
-
-  const sonuc =
-    document.getElementById("sonuc");
-
-  if (!satDeger) {
-    sonuc.innerHTML =
-      "Lütfen son adet tarihinizin ilk gününü seçin.";
-    return;
-  }
-
-  if (
-    !Number.isInteger(dongu) ||
-    dongu < 20 ||
-    dongu > 44
-  ) {
-    sonuc.innerHTML =
-      "Lütfen 20 ile 44 gün arasında geçerli bir adet döngüsü girin.";
-    return;
-  }
-
-  const sat = tarihUTC(satDeger);
-
-  const simdi = new Date();
-
-  const bugun = new Date(Date.UTC(
-    simdi.getFullYear(),
-    simdi.getMonth(),
-    simdi.getDate()
-  ));
-
-  if (sat > bugun) {
-    sonuc.innerHTML =
-      "Son adet tarihi gelecekte bir tarih olamaz.";
-    return;
-  }
-
-  const gecenGun =
-    Math.floor((bugun - sat) / MS_GUN);
-
-  if (gecenGun > 308) {
-    sonuc.innerHTML =
-      "Girilen tarih gebelik hesaplaması için çok eski görünüyor. Tarihi kontrol edin.";
-    return;
-  }
-
-  const hafta =
-    Math.floor(gecenGun / 7);
-
-  const gun =
-    gecenGun % 7;
-
-  const donguFarki =
-    dongu - 28;
-
-  const tahminiDogum =
-    new Date(
-      sat.getTime() +
-      (280 + donguFarki) * MS_GUN
-    );
-
-  const kalanGun =
-    Math.ceil(
-      (tahminiDogum - bugun) / MS_GUN
-    );
-
-  let kalanMetin = "";
-
-  if (kalanGun > 0) {
-
-    const kalanHafta =
-      Math.floor(kalanGun / 7);
-
-    const kalanEkGun =
-      kalanGun % 7;
-
-    kalanMetin =
-      kalanHafta +
-      " hafta " +
-      kalanEkGun +
-      " gün";
-
-  } else if (kalanGun === 0) {
-
-    kalanMetin =
-      "Tahmini doğum tarihi bugün";
-
-  } else {
-
-    kalanMetin =
-      "Tahmini doğum tarihi " +
-      Math.abs(kalanGun) +
-      " gün önceydi";
-  }
-
-  sonuc.innerHTML =
-    "<strong>Yaklaşık gebelik süresi:</strong> " +
-    hafta +
-    " hafta " +
-    gun +
-    " gün<br><br>" +
-
-    "<strong>Gebeliğin yaklaşık günü:</strong> " +
-    gecenGun +
-    ". gün<br><br>" +
-
-    "<strong>Tahmini doğum tarihi:</strong> " +
-    tarihYaz(tahminiDogum) +
-    "<br><br>" +
-
-    "<strong>Tahmini doğuma kalan süre:</strong> " +
-    kalanMetin;
+return new Intl.DateTimeFormat(
+"tr-TR",
+{
+timeZone:"UTC",
+day:"numeric",
+month:"long",
+year:"numeric"
 }
+).format(tarih);
+
+}
+
+
+function gebelikHesapla(){
+
+const satDeger =
+document.getElementById("sat").value;
+
+const donguInput =
+document.getElementById("dongu");
+
+const dongu =
+Number(donguInput.value);
+
+const sonuc =
+document.getElementById("sonuc");
+
+
+if(
+!satDeger
+){
+
+sonuc.innerHTML =
+"Lütfen son adet tarihinizin ilk gününü seçin.";
+
+return;
+
+}
+
+
+if(
+donguInput.value === "" ||
+!Number.isInteger(dongu) ||
+dongu < 20 ||
+dongu > 44
+){
+
+sonuc.innerHTML =
+"Lütfen 20 ile 44 gün arasında geçerli bir adet döngüsü girin.";
+
+return;
+
+}
+
+
+const sat =
+tarihUTC(satDeger);
+
+const bugun =
+bugunUTC();
+
+
+if(
+sat > bugun
+){
+
+sonuc.innerHTML =
+"Son adet tarihi gelecekte bir tarih olamaz.";
+
+return;
+
+}
+
+
+const gecenGun =
+Math.floor(
+(bugun - sat) /
+MS_GUN
+);
+
+
+if(
+gecenGun > 308
+){
+
+sonuc.innerHTML =
+"Girilen tarih gebelik hesaplaması için çok eski görünüyor. Lütfen tarihi kontrol edin.";
+
+return;
+
+}
+
+
+const hafta =
+Math.floor(
+gecenGun / 7
+);
+
+
+const gun =
+gecenGun % 7;
+
+
+/*
+Gebelik haftası SAT tarihinden hesaplanır.
+Döngü farkı yalnızca tahmini doğum tarihine uygulanır.
+*/
+
+const donguFarki =
+dongu - 28;
+
+
+const tahminiDogum =
+new Date(
+sat.getTime() +
+(
+280 +
+donguFarki
+) *
+MS_GUN
+);
+
+
+const kalanGun =
+Math.round(
+(
+tahminiDogum -
+bugun
+) /
+MS_GUN
+);
+
+
+let kalanMetin = "";
+
+
+if(
+kalanGun > 0
+){
+
+const kalanHafta =
+Math.floor(
+kalanGun / 7
+);
+
+const kalanEkGun =
+kalanGun % 7;
+
+kalanMetin =
+kalanHafta +
+" hafta " +
+kalanEkGun +
+" gün";
+
+}
+else if(
+kalanGun === 0
+){
+
+kalanMetin =
+"Tahmini doğum tarihi bugün";
+
+}
+else{
+
+kalanMetin =
+"Tahmini doğum tarihi " +
+Math.abs(kalanGun) +
+" gün önceydi";
+
+}
+
+
+sonuc.innerHTML =
+
+"<strong>Yaklaşık gebelik süresi:</strong> " +
+hafta +
+" hafta " +
+gun +
+" gün" +
+
+"<div class='result-detail'>" +
+
+"<strong>Gebeliğin yaklaşık günü:</strong> " +
+gecenGun +
+". gün" +
+
+"<br><br>" +
+
+"<strong>Tahmini doğum tarihi:</strong> " +
+tarihYaz(tahminiDogum) +
+
+"<br><br>" +
+
+"<strong>Tahmini doğuma kalan süre:</strong> " +
+kalanMetin +
+
+"<br><br>" +
+
+"<strong>Hesaplamada kullanılan döngü:</strong> " +
+dongu +
+" gün" +
+
+"</div>";
+
+}
+
+
+document
+.getElementById("sat")
+.addEventListener(
+"keydown",
+function(e){
+
+if(
+e.key === "Enter"
+){
+
+gebelikHesapla();
+
+}
+
+}
+);
+
+
+document
+.getElementById("dongu")
+.addEventListener(
+"keydown",
+function(e){
+
+if(
+e.key === "Enter"
+){
+
+gebelikHesapla();
+
+}
+
+}
+);
+
 
 document.getElementById("year").textContent =
-  new Date().getFullYear();
+new Date().getFullYear();
 
 </script>
 
