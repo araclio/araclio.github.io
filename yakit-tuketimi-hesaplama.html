@@ -1,336 +1,1088 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Yakıt Tüketimi Hesaplama | 100 KM ve Yol Masrafı - Araclio</title>
+<title>Yakıt Tüketimi Hesaplama | 100 KM ve Yol Masrafı - Araclio</title>
 
-  <meta name="description" content="Yakıt tüketimi ve yol masrafını ücretsiz hesaplayın. 100 km'de kaç litre, kilometrede kaç TL yaktığınızı ve yolculuk yakıt maliyetini öğrenin.">
+<meta
+name="description"
+content="Ücretsiz yakıt tüketimi hesaplama aracı. 100 km'de kaç litre yaktığınızı, kilometre başına yakıt maliyetini ve yolculuk yakıt masrafını hesaplayın."
+>
 
-  <meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
 
-  <link rel="canonical" href="https://araclio.com/yakit-tuketimi-hesaplama.html">
+<meta name="google-adsense-account" content="ca-pub-7634654090472031">
 
-  <link rel="stylesheet" href="style.css">
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
+
+<link rel="canonical" href="https://araclio.com/yakit-tuketimi-hesaplama.html">
+
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yakıt Tüketimi Hesaplama | 100 KM ve Yol Masrafı">
+<meta
+property="og:description"
+content="100 km'de yakıt tüketimi, kilometre başı maliyet ve yolculuk yakıt masrafını ücretsiz hesaplayın."
+>
+<meta property="og:url" content="https://araclio.com/yakit-tuketimi-hesaplama.html">
+<meta property="og:site_name" content="Araclio">
+
+<style>
+
+.result-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:18px;
+}
+
+.result-box{
+background:#f5f5f5;
+padding:16px;
+border-radius:10px;
+color:#222;
+}
+
+.result-box strong{
+display:block;
+margin-bottom:7px;
+}
+
+.big-result{
+font-size:1.3rem;
+font-weight:700;
+}
+
+.info-box{
+margin-top:18px;
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:560px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+@media(max-width:650px){
+
+.result-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Yakıt Tüketimi Hesaplama",
+  "url":"https://araclio.com/yakit-tuketimi-hesaplama.html",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"100 kilometrede yakıt tüketimi, kilometre başına maliyet ve yolculuk yakıt masrafı hesaplayan ücretsiz online araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Yakıt Tüketimi Hesaplama",
+      "item":"https://araclio.com/yakit-tuketimi-hesaplama.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"100 km'de yakıt tüketimi nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Harcanan yakıt litre olarak gidilen kilometreye bölünür ve sonuç 100 ile çarpılır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Kilometrede kaç TL yaktığı nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Toplam yakıt maliyeti gidilen kilometreye bölünerek kilometre başına yakıt maliyeti bulunur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Yolculukta kaç litre yakıt harcanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yol mesafesi, aracın L/100 km tüketimi ile çarpılır ve 100'e bölünür."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Yakıt tüketimi neden değişir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Trafik, hız, sürüş tarzı, yol eğimi, araç yükü, lastik basıncı, klima kullanımı ve hava koşulları gerçek tüketimi etkileyebilir."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Araclio</a>
-    <span class="tag">Ücretsiz Online Araçlar</span>
-  </div>
+
+<div class="wrap nav">
+
+<a class="brand" href="/">
+Araclio
+</a>
+
+<span class="tag">
+Ücretsiz Online Araçlar
+</span>
+
+</div>
+
 </header>
+
 
 <main class="wrap">
 
-  <section class="hero">
-    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+<section class="hero">
 
-    <h1>Yakıt Tüketimi ve Yol Masrafı Hesaplama</h1>
+<p class="eyebrow">
+YAKIT • 100 KM • TL/KM • YOL MASRAFI
+</p>
 
-    <p>
-      Aracınızın 100 kilometrede kaç litre yakıt tükettiğini,
-      kilometre başına yakıt maliyetini veya planladığınız bir
-      yolculuğun yaklaşık yakıt masrafını hesaplayın.
-    </p>
-  </section>
+<h1>Yakıt Tüketimi ve Yol Masrafı Hesaplama</h1>
 
-  <section>
+<p>
+Aracınızın 100 kilometrede kaç litre yakıt tükettiğini,
+kilometre başına yakıt maliyetini veya planladığınız
+bir yolculuğun yaklaşık yakıt masrafını hesaplayın.
+</p>
 
-    <article class="card">
+</section>
 
-      <h2>Yakıt Tüketimi Hesaplama</h2>
 
-      <p>
-        Gittiğiniz mesafeyi ve harcadığınız yakıt miktarını girerek
-        aracınızın ortalama tüketimini hesaplayın.
-      </p>
+<section class="card">
 
-      <label>
-        Gidilen Mesafe (km)
-        <input
-          id="gidilenKm"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="500">
-      </label>
+<h2>Yakıt Tüketimi Hesaplama</h2>
 
-      <label>
-        Harcanan Yakıt (litre)
-        <input
-          id="harcananLitre"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="35">
-      </label>
+<p>
+Gittiğiniz mesafeyi, harcadığınız yakıt miktarını ve litre
+fiyatını girerek aracınızın ortalama tüketimini hesaplayın.
+</p>
 
-      <label>
-        Yakıt Litre Fiyatı (TL)
-        <input
-          id="litreFiyat"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="50">
-      </label>
+<label for="gidilenKm">
+Gidilen Mesafe (km)
+</label>
 
-      <button onclick="tuketimHesapla()">Tüketimi Hesapla</button>
+<input
+id="gidilenKm"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 500"
+>
 
-      <div id="tuketimSonuc" class="result">
-        Mesafe, yakıt miktarı ve litre fiyatını girin.
-      </div>
 
-    </article>
+<label for="harcananLitre">
+Harcanan Yakıt (litre)
+</label>
 
-    <article class="card">
+<input
+id="harcananLitre"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 35"
+>
 
-      <h2>Yol Yakıt Masrafı Hesaplama</h2>
 
-      <p>
-        Gideceğiniz mesafeyi, aracınızın ortalama tüketimini ve
-        güncel litre fiyatını girerek yolculuğun yaklaşık yakıt
-        maliyetini hesaplayın.
-      </p>
+<label for="litreFiyat">
+Yakıt Litre Fiyatı (TL)
+</label>
 
-      <label>
-        Yol Mesafesi (km)
-        <input
-          id="yolKm"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="750">
-      </label>
+<input
+id="litreFiyat"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 50"
+>
 
-      <label>
-        Ortalama Tüketim (L/100 km)
-        <input
-          id="ortalamaTuketim"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="7">
-      </label>
 
-      <label>
-        Yakıt Litre Fiyatı (TL)
-        <input
-          id="yolLitreFiyat"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="50">
-      </label>
+<button type="button" onclick="tuketimHesapla()">
+Tüketimi Hesapla
+</button>
 
-      <button onclick="yolMasrafHesapla()">Yol Masrafını Hesapla</button>
 
-      <div id="yolSonuc" class="result">
-        Yol mesafesi, ortalama tüketim ve litre fiyatını girin.
-      </div>
+<div id="tuketimSonuc" class="result" aria-live="polite">
+Mesafe, yakıt miktarı ve litre fiyatını girin.
+</div>
 
-    </article>
 
-  </section>
+<div id="tuketimKutulari" class="result-grid" style="display:none;">
 
-  <section class="info">
+<div class="result-box">
+<strong>Ortalama Tüketim</strong>
+<span id="ortalamaSonuc" class="big-result">0 L/100 km</span>
+</div>
 
-    <h2>100 KM'de Yakıt Tüketimi Nasıl Hesaplanır?</h2>
+<div class="result-box">
+<strong>1 Litre ile Mesafe</strong>
+<span id="litreKmSonuc">0 km</span>
+</div>
 
-    <p>
-      Aracın 100 kilometredeki ortalama yakıt tüketimini hesaplamak
-      için harcanan yakıt miktarı gidilen kilometreye bölünür ve
-      sonuç 100 ile çarpılır.
-    </p>
+<div class="result-box">
+<strong>Toplam Yakıt Maliyeti</strong>
+<span id="toplamMaliyetSonuc">0 TL</span>
+</div>
 
-    <p>
-      Örneğin 500 kilometrelik yolculukta 35 litre yakıt
-      harcandıysa ortalama tüketim 7 L/100 km olur.
-    </p>
+<div class="result-box">
+<strong>Kilometre Başına Maliyet</strong>
+<span id="kmMaliyetSonuc">0 TL/km</span>
+</div>
 
-    <h2>Kilometrede Kaç TL Yaktığı Nasıl Hesaplanır?</h2>
+<div class="result-box">
+<strong>100 KM Yakıt Maliyeti</strong>
+<span id="yuzKmMaliyetSonuc">0 TL</span>
+</div>
 
-    <p>
-      Toplam yakıt maliyeti, kullanılan yakıt miktarı ile litre
-      fiyatının çarpılmasıyla bulunur. Bu tutar gidilen mesafeye
-      bölündüğünde kilometre başına yaklaşık yakıt maliyeti elde edilir.
-    </p>
+</div>
 
-    <h2>Bir Yolculukta Ne Kadar Yakıt Harcanır?</h2>
+</section>
 
-    <p>
-      Gideceğiniz mesafeyi ve aracınızın ortalama L/100 km tüketimini
-      biliyorsanız yolculukta kullanılacak yaklaşık yakıt miktarını
-      hesaplayabilirsiniz.
-    </p>
 
-    <p>
-      Örneğin 750 kilometrelik bir yolculukta ortalama 7 L/100 km
-      tüketen bir araç yaklaşık 52,5 litre yakıt kullanır.
-    </p>
+<section class="card">
 
-    <h2>Gerçek Yakıt Masrafı Neden Değişebilir?</h2>
+<h2>Yol Yakıt Masrafı Hesaplama</h2>
 
-    <p>
-      Trafik yoğunluğu, sürüş tarzı, hız, yol eğimi, hava koşulları,
-      araç yükü, lastik basıncı ve klima kullanımı gibi faktörler
-      gerçek yakıt tüketimini değiştirebilir. Bu nedenle hesaplanan
-      değerler yaklaşık sonuçlardır.
-    </p>
+<p>
+Gideceğiniz mesafeyi, aracınızın ortalama tüketimini ve
+yakıt litre fiyatını girerek yolculuğun yaklaşık maliyetini hesaplayın.
+</p>
 
-    <h2>Diğer Hesaplama Araçları</h2>
+<label for="yolKm">
+Yol Mesafesi (km)
+</label>
 
-    <p>
-      <a href="/yuzde-hesaplama.html">Yüzde Hesaplama</a>
-      •
-      <a href="/desi-hesaplama.html">Desi Hesaplama</a>
-      •
-      <a href="/indirim-hesaplama.html">İndirim Hesaplama</a>
-      •
-      <a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama</a>
-    </p>
+<input
+id="yolKm"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 750"
+>
 
-    <p>
-      Araclio üzerindeki sonuçlar bilgilendirme ve yaklaşık hesaplama
-      amaçlıdır. Gerçek yakıt tüketimi ve maliyetleri farklılık
-      gösterebilir.
-    </p>
 
-  </section>
+<label for="ortalamaTuketim">
+Ortalama Tüketim (L/100 km)
+</label>
+
+<input
+id="ortalamaTuketim"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 7"
+>
+
+
+<label for="yolLitreFiyat">
+Yakıt Litre Fiyatı (TL)
+</label>
+
+<input
+id="yolLitreFiyat"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 50"
+>
+
+
+<button type="button" onclick="yolMasrafHesapla()">
+Yol Masrafını Hesapla
+</button>
+
+
+<div id="yolSonuc" class="result" aria-live="polite">
+Yol mesafesi, ortalama tüketim ve litre fiyatını girin.
+</div>
+
+
+<div id="yolKutulari" class="result-grid" style="display:none;">
+
+<div class="result-box">
+<strong>Tahmini Yakıt</strong>
+<span id="gerekenLitreSonuc" class="big-result">0 litre</span>
+</div>
+
+<div class="result-box">
+<strong>Tahmini Yol Masrafı</strong>
+<span id="yolMaliyetSonuc" class="big-result">0 TL</span>
+</div>
+
+<div class="result-box">
+<strong>Kilometre Başına Maliyet</strong>
+<span id="yolKmMaliyetSonuc">0 TL/km</span>
+</div>
+
+<div class="result-box">
+<strong>100 KM Maliyeti</strong>
+<span id="yolYuzKmMaliyetSonuc">0 TL</span>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>100 KM'de Yakıt Tüketimi Nasıl Hesaplanır?</h2>
+
+<p>
+Aracın 100 kilometredeki ortalama yakıt tüketimini bulmak için
+harcanan yakıt miktarı gidilen kilometreye bölünür ve sonuç 100 ile çarpılır.
+</p>
+
+<div class="info-box">
+
+<strong>
+L/100 km = Harcanan Litre ÷ Gidilen KM × 100
+</strong>
+
+</div>
+
+<p>
+Örneğin 500 kilometrede 35 litre yakıt harcanmışsa:
+</p>
+
+<div class="info-box">
+
+35 ÷ 500 × 100 =
+
+<br><br>
+
+<strong>7 L/100 km</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kilometrede Kaç TL Yaktığı Nasıl Hesaplanır?</h2>
+
+<p>
+Önce toplam yakıt maliyeti bulunur:
+</p>
+
+<div class="info-box">
+
+<strong>
+Toplam Maliyet = Harcanan Litre × Litre Fiyatı
+</strong>
+
+</div>
+
+<p>
+Daha sonra bu tutar gidilen kilometreye bölünür:
+</p>
+
+<div class="info-box">
+
+<strong>
+TL/km = Toplam Yakıt Maliyeti ÷ Gidilen KM
+</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Bir Yolculukta Ne Kadar Yakıt Harcanır?</h2>
+
+<p>
+Aracınızın ortalama tüketimi biliniyorsa gereken yaklaşık yakıt:
+</p>
+
+<div class="info-box">
+
+<strong>
+Yakıt = Mesafe × L/100 km ÷ 100
+</strong>
+
+</div>
+
+<p>
+Örneğin 750 km yol ve 7 L/100 km tüketim:
+</p>
+
+<div class="info-box">
+
+750 × 7 ÷ 100 =
+
+<br><br>
+
+<strong>52,5 litre</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>750 KM Yol Ne Kadar Yakar?</h2>
+
+<p>
+Araç 100 kilometrede 7 litre tüketiyorsa:
+</p>
+
+<div class="info-box">
+
+750 km için yaklaşık:
+
+<br><br>
+
+<strong>52,5 litre yakıt</strong>
+
+</div>
+
+<p>
+Yakıtın litre fiyatı 50 TL ise:
+</p>
+
+<div class="info-box">
+
+52,5 × 50 =
+
+<br><br>
+
+<strong>2.625 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Yakıt Tüketimi Örnekleri</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Mesafe</th>
+<th>Yakıt</th>
+<th>Ortalama Tüketim</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>500 km</td>
+<td>30 L</td>
+<td>6 L/100 km</td>
+</tr>
+
+<tr>
+<td>500 km</td>
+<td>35 L</td>
+<td>7 L/100 km</td>
+</tr>
+
+<tr>
+<td>500 km</td>
+<td>40 L</td>
+<td>8 L/100 km</td>
+</tr>
+
+<tr>
+<td>1000 km</td>
+<td>70 L</td>
+<td>7 L/100 km</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Gerçek Yakıt Tüketimi Neden Değişebilir?</h2>
+
+<p>
+Gerçek tüketim birçok faktörden etkilenebilir:
+</p>
+
+<p>
+* Trafik yoğunluğu<br>
+* Şehir içi veya şehir dışı kullanım<br>
+* Ortalama hız<br>
+* Ani hızlanma ve frenleme<br>
+* Yol eğimi<br>
+* Araç yükü<br>
+* Lastik basıncı<br>
+* Klima kullanımı<br>
+* Motor ve bakım durumu<br>
+* Hava sıcaklığı ve rüzgâr
+</p>
+
+<p>
+Bu nedenle hesaplanan değerler matematiksel ve yaklaşık sonuçlardır.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Şehir İçi ve Şehir Dışı Tüketim Neden Farklıdır?</h2>
+
+<p>
+Şehir içinde sık dur-kalk yapılması, düşük ortalama hız
+ve trafik nedeniyle yakıt tüketimi genellikle daha yüksek olabilir.
+</p>
+
+<p>
+Şehir dışı sürüşte ise sabit hız korunabildiği için araç
+daha düşük tüketim gösterebilir. Ancak yüksek hızlarda hava direnci
+arttığından tüketim tekrar yükselebilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Yakıt Tüketimi Nasıl Ölçülür?</h2>
+
+<p>
+Pratik yöntemlerden biri depoyu doldurup kilometre sayacını sıfırlamak,
+bir süre araç kullandıktan sonra tekrar depoyu doldurmaktır.
+</p>
+
+<p>
+İkinci dolumda alınan litre miktarı ile arada gidilen kilometre
+kullanılarak gerçek kullanım tüketimine yakın bir değer hesaplanabilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+<h3>100 km'de 7 litre ne demek?</h3>
+
+<p>
+Araç ortalama olarak her 100 kilometrede
+<strong>7 litre yakıt</strong>
+tüketiyor demektir.
+</p>
+
+
+<h3>500 km'de 35 litre yakan araç kaç litre yakar?</h3>
+
+<p>
+<strong>7 L/100 km</strong>
+ortalama tüketir.
+</p>
+
+
+<h3>1 litre ile kaç km giderim?</h3>
+
+<p>
+Gidilen kilometreyi harcanan litreye bölerek hesaplayabilirsiniz.
+Örneğin 500 km'de 35 litre kullanan araç yaklaşık
+<strong>14,29 km/L</strong>
+değerine sahiptir.
+</p>
+
+
+<h3>Yol masrafı nasıl hesaplanır?</h3>
+
+<p>
+Gerekli yakıt miktarı, yakıt litre fiyatı ile çarpılır.
+</p>
+
+
+<h3>Yakıt tüketimi sonucu kesin midir?</h3>
+
+<p>
+Hayır. Hesaplanan sonuçlar girilen değerlere göre matematiksel
+tahmindir. Gerçek tüketim sürüş ve yol koşullarına göre değişebilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Diğer Hesaplama Araçları</h2>
+
+<p>
+<a href="/hiz-mesafe-zaman-hesaplama.html">
+Hız, Mesafe ve Zaman Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/oran-oranti-hesaplama.html">
+Oran Orantı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/yuzde-hesaplama.html">
+Yüzde Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/birim-fiyat-hesaplama.html">
+Birim Fiyat Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/mekanik-hesaplama.html">
+Mekanik Hesaplama →
+</a>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Bilgilendirme</h2>
+
+<div class="info-box">
+
+Bu araç yalnızca matematiksel ve yaklaşık hesaplama yapar.
+
+<br><br>
+
+Gerçek yakıt tüketimi ve yol maliyeti aracın teknik durumu,
+trafik, sürüş tarzı, hava koşulları ve yakıt fiyatına göre değişebilir.
+
+</div>
+
+<p>
+<strong>Son güncelleme: Ekim 2026</strong>
+</p>
+
+</section>
 
 </main>
 
+
 <footer>
-  <div class="wrap">
 
-    <p>
-      <a href="/about.html">Hakkımızda</a>
-      •
-      <a href="/contact.html">İletişim</a>
-      •
-      <a href="/privacy-policy.html">Gizlilik Politikası</a>
-      •
-      <a href="/terms.html">Kullanım Koşulları</a>
-      •
-      <a href="/en/">English</a>
-    </p>
+<div class="wrap">
 
-    <p>
-      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
-    </p>
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
 
-  </div>
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
+
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
+
+</div>
+
 </footer>
 
+
 <script>
-function sayiAl(id) {
-  const deger = document.getElementById(id).value;
 
-  if (deger === "") {
-    return null;
-  }
+function sayiAl(id){
 
-  const sayi = Number(deger);
+const alan =
+document.getElementById(id);
 
-  if (!Number.isFinite(sayi) || sayi <= 0) {
-    return null;
-  }
-
-  return sayi;
+if(alan.value === ""){
+return null;
 }
 
-function paraYaz(sayi) {
-  return sayi.toLocaleString("tr-TR", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  });
+const sayi =
+Number(alan.value);
+
+if(
+!Number.isFinite(sayi) ||
+sayi <= 0
+){
+return null;
 }
 
-function sayiYaz(sayi) {
-  return sayi.toLocaleString("tr-TR", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  });
+return sayi;
+
 }
 
-function tuketimHesapla() {
-  const km = sayiAl("gidilenKm");
-  const litre = sayiAl("harcananLitre");
-  const fiyat = sayiAl("litreFiyat");
 
-  const sonuc = document.getElementById("tuketimSonuc");
+function paraYaz(sayi){
 
-  if (km === null || litre === null || fiyat === null) {
-    sonuc.innerHTML =
-      "Lütfen tüm alanlara 0'dan büyük geçerli değerler girin.";
-    return;
-  }
+return new Intl.NumberFormat(
+"tr-TR",
+{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+}
+).format(sayi);
 
-  const yuzKmTuketim = (litre / km) * 100;
-  const kmLitre = km / litre;
-  const toplamMaliyet = litre * fiyat;
-  const kmMaliyet = toplamMaliyet / km;
-  const yuzKmMaliyet = kmMaliyet * 100;
-
-  sonuc.innerHTML =
-    "<strong>Ortalama tüketim:</strong> " +
-    sayiYaz(yuzKmTuketim) +
-    " L/100 km<br><br>" +
-
-    "<strong>1 litre ile:</strong> " +
-    sayiYaz(kmLitre) +
-    " km<br>" +
-
-    "<strong>Toplam yakıt maliyeti:</strong> " +
-    paraYaz(toplamMaliyet) +
-    " TL<br>" +
-
-    "<strong>Kilometre başına maliyet:</strong> " +
-    paraYaz(kmMaliyet) +
-    " TL/km<br>" +
-
-    "<strong>100 km yakıt maliyeti:</strong> " +
-    paraYaz(yuzKmMaliyet) +
-    " TL";
 }
 
-function yolMasrafHesapla() {
-  const km = sayiAl("yolKm");
-  const tuketim = sayiAl("ortalamaTuketim");
-  const fiyat = sayiAl("yolLitreFiyat");
 
-  const sonuc = document.getElementById("yolSonuc");
+function sayiYaz(sayi){
 
-  if (km === null || tuketim === null || fiyat === null) {
-    sonuc.innerHTML =
-      "Lütfen tüm alanlara 0'dan büyük geçerli değerler girin.";
-    return;
-  }
-
-  const gerekenLitre = (km * tuketim) / 100;
-  const toplamMaliyet = gerekenLitre * fiyat;
-  const kmMaliyet = toplamMaliyet / km;
-
-  sonuc.innerHTML =
-    "<strong>Tahmini yakıt:</strong> " +
-    sayiYaz(gerekenLitre) +
-    " litre<br><br>" +
-
-    "<strong>Tahmini yol masrafı:</strong> " +
-    paraYaz(toplamMaliyet) +
-    " TL<br>" +
-
-    "<strong>Kilometre başına maliyet:</strong> " +
-    paraYaz(kmMaliyet) +
-    " TL/km";
+return new Intl.NumberFormat(
+"tr-TR",
+{
+minimumFractionDigits:2,
+maximumFractionDigits:2
 }
+).format(sayi);
+
+}
+
+
+function tuketimHesapla(){
+
+const km =
+sayiAl("gidilenKm");
+
+const litre =
+sayiAl("harcananLitre");
+
+const fiyat =
+sayiAl("litreFiyat");
+
+const sonuc =
+document.getElementById("tuketimSonuc");
+
+const kutular =
+document.getElementById("tuketimKutulari");
+
+
+if(
+km === null ||
+litre === null ||
+fiyat === null
+){
+
+sonuc.innerHTML =
+"Lütfen tüm alanlara 0'dan büyük geçerli değerler girin.";
+
+kutular.style.display =
+"none";
+
+return;
+
+}
+
+
+const yuzKmTuketim =
+(litre / km) * 100;
+
+const kmLitre =
+km / litre;
+
+const toplamMaliyet =
+litre * fiyat;
+
+const kmMaliyet =
+toplamMaliyet / km;
+
+const yuzKmMaliyet =
+kmMaliyet * 100;
+
+
+document
+.getElementById("ortalamaSonuc")
+.textContent =
+sayiYaz(yuzKmTuketim) +
+" L/100 km";
+
+
+document
+.getElementById("litreKmSonuc")
+.textContent =
+sayiYaz(kmLitre) +
+" km";
+
+
+document
+.getElementById("toplamMaliyetSonuc")
+.textContent =
+paraYaz(toplamMaliyet) +
+" TL";
+
+
+document
+.getElementById("kmMaliyetSonuc")
+.textContent =
+paraYaz(kmMaliyet) +
+" TL/km";
+
+
+document
+.getElementById("yuzKmMaliyetSonuc")
+.textContent =
+paraYaz(yuzKmMaliyet) +
+" TL";
+
+
+sonuc.innerHTML =
+
+"<strong>Ortalama tüketim: " +
+sayiYaz(yuzKmTuketim) +
+" L/100 km</strong>";
+
+
+kutular.style.display =
+"grid";
+
+}
+
+
+function yolMasrafHesapla(){
+
+const km =
+sayiAl("yolKm");
+
+const tuketim =
+sayiAl("ortalamaTuketim");
+
+const fiyat =
+sayiAl("yolLitreFiyat");
+
+const sonuc =
+document.getElementById("yolSonuc");
+
+const kutular =
+document.getElementById("yolKutulari");
+
+
+if(
+km === null ||
+tuketim === null ||
+fiyat === null
+){
+
+sonuc.innerHTML =
+"Lütfen tüm alanlara 0'dan büyük geçerli değerler girin.";
+
+kutular.style.display =
+"none";
+
+return;
+
+}
+
+
+const gerekenLitre =
+(km * tuketim) / 100;
+
+const toplamMaliyet =
+gerekenLitre * fiyat;
+
+const kmMaliyet =
+toplamMaliyet / km;
+
+const yuzKmMaliyet =
+kmMaliyet * 100;
+
+
+document
+.getElementById("gerekenLitreSonuc")
+.textContent =
+sayiYaz(gerekenLitre) +
+" litre";
+
+
+document
+.getElementById("yolMaliyetSonuc")
+.textContent =
+paraYaz(toplamMaliyet) +
+" TL";
+
+
+document
+.getElementById("yolKmMaliyetSonuc")
+.textContent =
+paraYaz(kmMaliyet) +
+" TL/km";
+
+
+document
+.getElementById("yolYuzKmMaliyetSonuc")
+.textContent =
+paraYaz(yuzKmMaliyet) +
+" TL";
+
+
+sonuc.innerHTML =
+
+"<strong>Tahmini yol masrafı: " +
+paraYaz(toplamMaliyet) +
+" TL</strong>";
+
+
+kutular.style.display =
+"grid";
+
+}
+
+
+[
+"gidilenKm",
+"harcananLitre",
+"litreFiyat"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Enter"){
+tuketimHesapla();
+}
+
+}
+);
+
+});
+
+
+[
+"yolKm",
+"ortalamaTuketim",
+"yolLitreFiyat"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Enter"){
+yolMasrafHesapla();
+}
+
+}
+);
+
+});
+
 
 document.getElementById("year").textContent =
-  new Date().getFullYear();
+new Date().getFullYear();
+
 </script>
 
 </body>
