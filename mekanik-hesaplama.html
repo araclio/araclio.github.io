@@ -1,0 +1,1320 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Mekanik Hesaplama | Kuvvet İş Güç Tork Basınç - Araclio</title>
+
+<meta
+name="description"
+content="Ücretsiz mekanik hesaplama aracı. Kuvvet, iş, güç, tork ve basınç hesaplamalarını temel fizik formülleriyle kolayca yapın."
+>
+
+<meta name="robots" content="index,follow">
+
+<meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
+
+<link rel="canonical" href="https://araclio.com/mekanik-hesaplama.html">
+
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mekanik Hesaplama | Araclio">
+<meta
+property="og:description"
+content="Kuvvet, iş, güç, tork ve basınç hesaplamalarını ücretsiz yapın."
+>
+<meta property="og:url" content="https://araclio.com/mekanik-hesaplama.html">
+<meta property="og:site_name" content="Araclio">
+
+<style>
+
+.calc-select{
+margin-bottom:18px;
+}
+
+.form-area{
+margin-top:18px;
+}
+
+.info-box{
+margin-top:18px;
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.result-detail{
+margin-top:12px;
+line-height:1.8;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:520px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Mekanik Hesaplama",
+  "url":"https://araclio.com/mekanik-hesaplama.html",
+  "applicationCategory":"EducationalApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"Kuvvet, iş, güç, tork ve basınç hesaplamalarını temel fizik formülleriyle yapan ücretsiz online araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Mekanik Hesaplama",
+      "item":"https://araclio.com/mekanik-hesaplama.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Kuvvet nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Kuvvet, kütle ile ivmenin çarpılmasıyla hesaplanır. F = m × a."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Mekanik iş nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Kuvvet hareket yönüne paralel kabul edildiğinde mekanik iş, kuvvet ile yolun çarpılmasıyla hesaplanır. W = F × s."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Güç nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Güç, yapılan işin geçen zamana bölünmesiyle hesaplanır. P = W ÷ t."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Tork nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Kuvvet kola dik uygulanıyorsa tork, kuvvet ile kuvvet kolunun çarpılmasıyla hesaplanır. T = F × r."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Basınç nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Basınç, yüzeye dik kuvvetin alana bölünmesiyle hesaplanır. p = F ÷ A."
+      }
+    }
+  ]
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+<div class="wrap nav">
+
+<a class="brand" href="/">
+Araclio
+</a>
+
+<span class="tag">
+Ücretsiz Online Araçlar
+</span>
+
+</div>
+</header>
+
+
+<main class="wrap">
+
+<section class="hero">
+
+<p class="eyebrow">
+FİZİK • MEKANİK • HESAPLAMA
+</p>
+
+<h1>Mekanik Hesaplama</h1>
+
+<p>
+Kuvvet, mekanik iş, güç, tork ve basınç gibi temel
+mekanik hesaplamaları ücretsiz olarak yapın.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Mekanik Hesaplama Aracı</h2>
+
+<label for="hesapTuru">
+Hesaplama Türü
+</label>
+
+<select
+id="hesapTuru"
+class="calc-select"
+onchange="alanlariGuncelle()"
+>
+
+<option value="kuvvet">
+Kuvvet Hesaplama
+</option>
+
+<option value="is">
+İş Hesaplama
+</option>
+
+<option value="guc">
+Güç Hesaplama
+</option>
+
+<option value="tork">
+Tork Hesaplama
+</option>
+
+<option value="basinc">
+Basınç Hesaplama
+</option>
+
+</select>
+
+
+<div id="kuvvetAlan" class="form-area">
+
+<h3>Kuvvet Hesaplama</h3>
+
+<label for="kutle">
+Kütle (kg)
+</label>
+
+<input
+id="kutle"
+type="number"
+min="0"
+step="any"
+inputmode="decimal"
+placeholder="Örnek: 10"
+>
+
+<label for="ivme">
+İvme (m/s²)
+</label>
+
+<input
+id="ivme"
+type="number"
+step="any"
+inputmode="decimal"
+placeholder="Örnek: 9.81"
+>
+
+</div>
+
+
+<div id="isAlan" class="form-area" style="display:none;">
+
+<h3>İş Hesaplama</h3>
+
+<label for="isKuvvet">
+Kuvvet (N)
+</label>
+
+<input
+id="isKuvvet"
+type="number"
+min="0"
+step="any"
+inputmode="decimal"
+placeholder="Örnek: 100"
+>
+
+<label for="yol">
+Yol (m)
+</label>
+
+<input
+id="yol"
+type="number"
+min="0"
+step="any"
+inputmode="decimal"
+placeholder="Örnek: 5"
+>
+
+</div>
+
+
+<div id="gucAlan" class="form-area" style="display:none;">
+
+<h3>Güç Hesaplama</h3>
+
+<label for="isDegeri">
+Yapılan İş (J)
+</label>
+
+<input
+id="isDegeri"
+type="number"
+min="0"
+step="any"
+inputmode="decimal"
+placeholder="Örnek: 1000"
+>
+
+<label for="zaman">
+Zaman (s)
+</label>
+
+<input
+id="zaman"
+type="number"
+min="0"
+step="any"
+inputmode="decimal"
+placeholder="Örnek: 10"
+>
+
+</div>
+
+
+<div id="torkAlan" class="form-area" style="display:none;">
+
+<h3>Tork Hesaplama</h3>
+
+<label for="torkKuvvet">
+Kuvvet (N)
+</label>
+
+<input
+id="torkKuvvet"
+type="number"
+min="0"
+step="any"
+inputmode="decimal"
+placeholder="Örnek: 200"
+>
+
+<label for="kol">
+Kuvvet Kolu (m)
+</label>
+
+<input
+id="kol"
+type="number"
+min="0"
+step="any"
+inputmode="decimal"
+placeholder="Örnek: 0.5"
+>
+
+</div>
+
+
+<div id="basincAlan" class="form-area" style="display:none;">
+
+<h3>Basınç Hesaplama</h3>
+
+<label for="basincKuvvet">
+Kuvvet (N)
+</label>
+
+<input
+id="basincKuvvet"
+type="number"
+min="0"
+step="any"
+inputmode="decimal"
+placeholder="Örnek: 1000"
+>
+
+<label for="alan">
+Alan (m²)
+</label>
+
+<input
+id="alan"
+type="number"
+min="0"
+step="any"
+inputmode="decimal"
+placeholder="Örnek: 0.5"
+>
+
+</div>
+
+
+<button type="button" onclick="hesapla()">
+Hesapla
+</button>
+
+
+<div id="sonuc" class="result" aria-live="polite">
+Hesaplama türünü seçip değerleri girin.
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kuvvet Nasıl Hesaplanır?</h2>
+
+<p>
+Newton'un ikinci hareket yasasına göre kuvvet,
+kütle ile ivmenin çarpımına eşittir.
+</p>
+
+<div class="info-box">
+
+<strong>F = m × a</strong>
+
+<br><br>
+
+F = Kuvvet (N)<br>
+m = Kütle (kg)<br>
+a = İvme (m/s²)
+
+</div>
+
+<p>
+Örneğin 10 kg kütle 3 m/s² ivmeyle hızlanıyorsa:
+</p>
+
+<p>
+10 × 3 =
+<strong>30 N</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Mekanik İş Nasıl Hesaplanır?</h2>
+
+<p>
+Kuvvet hareket yönüne paralel uygulanıyorsa yapılan iş,
+kuvvet ile alınan yolun çarpımına eşittir.
+</p>
+
+<div class="info-box">
+
+<strong>W = F × s</strong>
+
+<br><br>
+
+W = İş (Joule)<br>
+F = Kuvvet (N)<br>
+s = Yol (m)
+
+</div>
+
+<p>
+100 N kuvvetle bir cisim 5 metre hareket ettirilirse:
+</p>
+
+<p>
+100 × 5 =
+<strong>500 J</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Güç Nasıl Hesaplanır?</h2>
+
+<p>
+Güç, yapılan işin ne kadar sürede gerçekleştirildiğini
+ifade eder.
+</p>
+
+<div class="info-box">
+
+<strong>P = W ÷ t</strong>
+
+<br><br>
+
+P = Güç (Watt)<br>
+W = İş (Joule)<br>
+t = Zaman (saniye)
+
+</div>
+
+<p>
+1.000 joule iş 10 saniyede yapılırsa:
+</p>
+
+<p>
+1.000 ÷ 10 =
+<strong>100 W</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Tork Nasıl Hesaplanır?</h2>
+
+<p>
+Kuvvet, dönme eksenine olan kola dik uygulanıyorsa
+tork; kuvvet ile kuvvet kolunun çarpımıdır.
+</p>
+
+<div class="info-box">
+
+<strong>T = F × r</strong>
+
+<br><br>
+
+T = Tork (N·m)<br>
+F = Kuvvet (N)<br>
+r = Kuvvet kolu (m)
+
+</div>
+
+<p>
+200 N kuvvet 0,5 metre uzunluğundaki kola dik uygulanırsa:
+</p>
+
+<p>
+200 × 0,5 =
+<strong>100 N·m</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Basınç Nasıl Hesaplanır?</h2>
+
+<p>
+Basınç, yüzeye dik uygulanan kuvvetin yüzey alanına
+bölünmesiyle hesaplanır.
+</p>
+
+<div class="info-box">
+
+<strong>p = F ÷ A</strong>
+
+<br><br>
+
+p = Basınç (Pa)<br>
+F = Kuvvet (N)<br>
+A = Alan (m²)
+
+</div>
+
+<p>
+1.000 N kuvvet 0,5 m² alana uygulanırsa:
+</p>
+
+<p>
+1.000 ÷ 0,5 =
+<strong>2.000 Pa</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Temel Mekanik Formülleri</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Hesaplama</th>
+<th>Formül</th>
+<th>Sonuç Birimi</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Kuvvet</td>
+<td>F = m × a</td>
+<td>Newton (N)</td>
+</tr>
+
+<tr>
+<td>İş</td>
+<td>W = F × s</td>
+<td>Joule (J)</td>
+</tr>
+
+<tr>
+<td>Güç</td>
+<td>P = W ÷ t</td>
+<td>Watt (W)</td>
+</tr>
+
+<tr>
+<td>Tork</td>
+<td>T = F × r</td>
+<td>Newton metre (N·m)</td>
+</tr>
+
+<tr>
+<td>Basınç</td>
+<td>p = F ÷ A</td>
+<td>Pascal (Pa)</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Mekanik Hesaplama Nerelerde Kullanılır?</h2>
+
+<p>
+Temel mekanik hesapları birçok alanda kullanılır:
+</p>
+
+<p>
+* Fizik dersleri<br>
+* Makine ve mekanik uygulamalar<br>
+* Mühendislik ön hesapları<br>
+* Kuvvet ve hareket problemleri<br>
+* Motor ve makine sistemleri<br>
+* Tork hesapları<br>
+* Basınç hesapları<br>
+* Eğitim ve ödev çalışmaları
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Newton Nedir?</h2>
+
+<p>
+Newton, SI sisteminde kuvvet birimidir.
+</p>
+
+<p>
+1 kilogramlık bir kütleye 1 m/s² ivme kazandırmak
+için gereken kuvvet:
+</p>
+
+<p>
+<strong>1 Newton</strong>
+</p>
+
+<p>
+olarak tanımlanır.
+</p>
+
+<div class="info-box">
+
+<strong>
+1 N = 1 kg × 1 m/s²
+</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Joule Nedir?</h2>
+
+<p>
+Joule, SI sisteminde enerji ve iş birimidir.
+</p>
+
+<p>
+1 Newton kuvvetle bir cismi kuvvet yönünde
+1 metre hareket ettirmek:
+</p>
+
+<p>
+<strong>1 Joule</strong>
+</p>
+
+<p>
+iş yapılması anlamına gelir.
+</p>
+
+<div class="info-box">
+
+<strong>
+1 J = 1 N × 1 m
+</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Watt Nedir?</h2>
+
+<p>
+Watt güç birimidir.
+</p>
+
+<p>
+1 saniyede 1 joule iş yapılması:
+</p>
+
+<p>
+<strong>1 Watt</strong>
+</p>
+
+<p>
+güce karşılık gelir.
+</p>
+
+<div class="info-box">
+
+<strong>
+1 W = 1 J/s
+</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+<h3>Kuvvet nasıl hesaplanır?</h3>
+
+<p>
+Kütle ile ivme çarpılır:
+<strong>F = m × a.</strong>
+</p>
+
+
+<h3>10 kg cisme 5 m/s² ivme uygulanırsa kuvvet kaç Newton?</h3>
+
+<p>
+10 × 5 =
+<strong>50 N</strong>
+</p>
+
+
+<h3>İş nasıl hesaplanır?</h3>
+
+<p>
+Kuvvet hareket yönüne paralelse kuvvet ile yol çarpılır:
+<strong>W = F × s.</strong>
+</p>
+
+
+<h3>Güç nasıl hesaplanır?</h3>
+
+<p>
+Yapılan iş geçen zamana bölünür:
+<strong>P = W ÷ t.</strong>
+</p>
+
+
+<h3>Tork nasıl hesaplanır?</h3>
+
+<p>
+Kuvvet kola dik uygulanıyorsa kuvvet ile kol uzunluğu
+çarpılır:
+<strong>T = F × r.</strong>
+</p>
+
+
+<h3>Basınç nasıl hesaplanır?</h3>
+
+<p>
+Kuvvet alana bölünür:
+<strong>p = F ÷ A.</strong>
+</p>
+
+
+<h3>Mekanik hesaplama aracı ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio Mekanik Hesaplama aracı ücretsizdir
+ve üyelik gerektirmez.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Bilgilendirme</h2>
+
+<div class="info-box">
+
+Bu araç temel fizik formülleri kullanılarak matematiksel
+hesaplama yapar.
+
+<br><br>
+
+İş hesabında kuvvetin hareket yönüne paralel,
+tork hesabında ise kuvvetin kuvvet koluna dik uygulandığı
+varsayılır.
+
+<br><br>
+
+Gerçek mühendislik projelerinde açı, sürtünme, kayıplar,
+malzeme özellikleri, güvenlik katsayıları ve başka fiziksel
+etkenler ayrıca değerlendirilmelidir.
+
+</div>
+
+<p>
+<strong>Son güncelleme: Ekim 2026</strong>
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Diğer Hesaplama Araçları</h2>
+
+<p>
+<a href="/guc-donusturucu.html">
+Güç Dönüştürücü →
+</a>
+</p>
+
+<p>
+<a href="/enerji-donusturucu.html">
+Enerji Dönüştürücü →
+</a>
+</p>
+
+<p>
+<a href="/hiz-mesafe-zaman-hesaplama.html">
+Hız Mesafe Zaman Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/alan-donusturucu.html">
+Alan Dönüştürücü →
+</a>
+</p>
+
+<p>
+<a href="/metrekare-hesaplama.html">
+Metrekare Hesaplama →
+</a>
+</p>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="wrap">
+
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
+
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
+
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
+
+</div>
+
+</footer>
+
+
+<script>
+
+function formatla(sayi){
+
+if(Math.abs(sayi) < 0.000000000001){
+sayi = 0;
+}
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+maximumFractionDigits:6
+}
+).format(sayi);
+
+}
+
+
+function alanlariGuncelle(){
+
+const tur =
+document.getElementById("hesapTuru").value;
+
+document.getElementById("kuvvetAlan").style.display =
+tur === "kuvvet" ? "block" : "none";
+
+document.getElementById("isAlan").style.display =
+tur === "is" ? "block" : "none";
+
+document.getElementById("gucAlan").style.display =
+tur === "guc" ? "block" : "none";
+
+document.getElementById("torkAlan").style.display =
+tur === "tork" ? "block" : "none";
+
+document.getElementById("basincAlan").style.display =
+tur === "basinc" ? "block" : "none";
+
+document.getElementById("sonuc").innerHTML =
+"Hesaplama türünü seçip değerleri girin.";
+
+}
+
+
+function degerOku(id){
+
+const input =
+document.getElementById(id);
+
+if(input.value === ""){
+return null;
+}
+
+const deger =
+Number(input.value);
+
+if(!Number.isFinite(deger)){
+return null;
+}
+
+return deger;
+
+}
+
+
+function hesapla(){
+
+const tur =
+document.getElementById("hesapTuru").value;
+
+const sonuc =
+document.getElementById("sonuc");
+
+
+if(tur === "kuvvet"){
+
+const kutle =
+degerOku("kutle");
+
+const ivme =
+degerOku("ivme");
+
+if(
+kutle === null ||
+ivme === null ||
+kutle < 0
+){
+
+sonuc.innerHTML =
+"Lütfen geçerli kütle ve ivme değerleri girin.";
+
+return;
+
+}
+
+const kuvvet =
+kutle * ivme;
+
+sonuc.innerHTML =
+
+"<strong>Kuvvet: " +
+formatla(kuvvet) +
+" N</strong>" +
+
+"<div class='result-detail'>" +
+
+"Kütle: " +
+formatla(kutle) +
+" kg" +
+
+"<br>" +
+
+"İvme: " +
+formatla(ivme) +
+" m/s²" +
+
+"<br><br>" +
+
+"F = m × a" +
+
+"</div>";
+
+return;
+
+}
+
+
+if(tur === "is"){
+
+const kuvvet =
+degerOku("isKuvvet");
+
+const yol =
+degerOku("yol");
+
+if(
+kuvvet === null ||
+yol === null ||
+kuvvet < 0 ||
+yol < 0
+){
+
+sonuc.innerHTML =
+"Lütfen geçerli kuvvet ve yol değerleri girin.";
+
+return;
+
+}
+
+const isDegeri =
+kuvvet * yol;
+
+sonuc.innerHTML =
+
+"<strong>Yapılan İş: " +
+formatla(isDegeri) +
+" J</strong>" +
+
+"<div class='result-detail'>" +
+
+"Kuvvet: " +
+formatla(kuvvet) +
+" N" +
+
+"<br>" +
+
+"Yol: " +
+formatla(yol) +
+" m" +
+
+"<br><br>" +
+
+"W = F × s" +
+
+"</div>";
+
+return;
+
+}
+
+
+if(tur === "guc"){
+
+const isDegeri =
+degerOku("isDegeri");
+
+const zaman =
+degerOku("zaman");
+
+if(
+isDegeri === null ||
+zaman === null ||
+isDegeri < 0 ||
+zaman <= 0
+){
+
+sonuc.innerHTML =
+"Lütfen geçerli iş ve sıfırdan büyük zaman değeri girin.";
+
+return;
+
+}
+
+const guc =
+isDegeri / zaman;
+
+sonuc.innerHTML =
+
+"<strong>Güç: " +
+formatla(guc) +
+" W</strong>" +
+
+"<div class='result-detail'>" +
+
+"İş: " +
+formatla(isDegeri) +
+" J" +
+
+"<br>" +
+
+"Zaman: " +
+formatla(zaman) +
+" s" +
+
+"<br><br>" +
+
+"P = W ÷ t" +
+
+"</div>";
+
+return;
+
+}
+
+
+if(tur === "tork"){
+
+const kuvvet =
+degerOku("torkKuvvet");
+
+const kol =
+degerOku("kol");
+
+if(
+kuvvet === null ||
+kol === null ||
+kuvvet < 0 ||
+kol < 0
+){
+
+sonuc.innerHTML =
+"Lütfen geçerli kuvvet ve kuvvet kolu değerleri girin.";
+
+return;
+
+}
+
+const tork =
+kuvvet * kol;
+
+sonuc.innerHTML =
+
+"<strong>Tork: " +
+formatla(tork) +
+" N·m</strong>" +
+
+"<div class='result-detail'>" +
+
+"Kuvvet: " +
+formatla(kuvvet) +
+" N" +
+
+"<br>" +
+
+"Kuvvet kolu: " +
+formatla(kol) +
+" m" +
+
+"<br><br>" +
+
+"T = F × r" +
+
+"</div>";
+
+return;
+
+}
+
+
+if(tur === "basinc"){
+
+const kuvvet =
+degerOku("basincKuvvet");
+
+const alan =
+degerOku("alan");
+
+if(
+kuvvet === null ||
+alan === null ||
+kuvvet < 0 ||
+alan <= 0
+){
+
+sonuc.innerHTML =
+"Lütfen geçerli kuvvet ve sıfırdan büyük alan değeri girin.";
+
+return;
+
+}
+
+const basinc =
+kuvvet / alan;
+
+const kpa =
+basinc / 1000;
+
+sonuc.innerHTML =
+
+"<strong>Basınç: " +
+formatla(basinc) +
+" Pa</strong>" +
+
+"<div class='result-detail'>" +
+
+"Basınç: " +
+formatla(kpa) +
+" kPa" +
+
+"<br>" +
+
+"Kuvvet: " +
+formatla(kuvvet) +
+" N" +
+
+"<br>" +
+
+"Alan: " +
+formatla(alan) +
+" m²" +
+
+"<br><br>" +
+
+"p = F ÷ A" +
+
+"</div>";
+
+}
+
+}
+
+
+[
+"kutle",
+"ivme",
+"isKuvvet",
+"yol",
+"isDegeri",
+"zaman",
+"torkKuvvet",
+"kol",
+"basincKuvvet",
+"alan"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Enter"){
+hesapla();
+}
+
+}
+);
+
+});
+
+
+document.getElementById("year").textContent =
+new Date().getFullYear();
+
+alanlariGuncelle();
+
+</script>
+
+</body>
+</html>
