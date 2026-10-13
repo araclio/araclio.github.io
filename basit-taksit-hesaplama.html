@@ -1,430 +1,988 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Taksit Hesaplama 2026 | Aylık Taksit Tutarı - Araclio</title>
+<title>Taksit Hesaplama | Aylık Taksit Tutarı - Araclio</title>
 
-  <meta name="description" content="Taksit hesaplama aracı ile toplam tutarı 2, 3, 6, 9, 12 veya istediğiniz taksit sayısına bölün. Faizsiz aylık taksit tutarını ücretsiz hesaplayın.">
+<meta
+name="description"
+content="Ücretsiz taksit hesaplama aracı. Toplam tutarı istediğiniz taksit sayısına bölerek faizsiz aylık taksit tutarını anında hesaplayın."
+>
 
-  <meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
 
-  <link rel="canonical" href="https://araclio.com/basit-taksit-hesaplama.html">
-  <link rel="stylesheet" href="style.css">
+<meta
+name="google-adsense-account"
+content="ca-pub-7634654090472031"
+>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Taksit Hesaplama",
-    "url": "https://araclio.com/basit-taksit-hesaplama.html",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Any",
-    "description": "Toplam tutarı seçilen taksit sayısına bölerek faizsiz eşit taksit tutarını hesaplayan ücretsiz online araç.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "TRY"
-    }
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
+
+<link
+rel="canonical"
+href="https://araclio.com/basit-taksit-hesaplama.html"
+>
+
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+
+<meta
+property="og:title"
+content="Taksit Hesaplama | Aylık Taksit Tutarı"
+>
+
+<meta
+property="og:description"
+content="Toplam tutarı istediğiniz taksit sayısına bölerek faizsiz eşit taksit tutarını ücretsiz hesaplayın."
+>
+
+<meta
+property="og:url"
+content="https://araclio.com/basit-taksit-hesaplama.html"
+>
+
+<meta property="og:site_name" content="Araclio">
+
+<style>
+
+.quick-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin:12px 0 18px;
+}
+
+.quick-buttons button{
+width:auto;
+padding:9px 13px;
+}
+
+.result-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:18px;
+}
+
+.result-box{
+background:#f5f5f5;
+padding:16px;
+border-radius:10px;
+color:#222;
+}
+
+.result-box strong{
+display:block;
+margin-bottom:7px;
+}
+
+.big-result{
+font-size:1.35rem;
+font-weight:700;
+}
+
+.info-box{
+margin-top:16px;
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.warning-box{
+margin-top:18px;
+padding:16px;
+border:2px solid #b26a00;
+border-radius:10px;
+background:#fff8e8;
+color:#6b4300;
+line-height:1.8;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:540px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+@media(max-width:650px){
+
+.result-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Taksit Hesaplama",
+  "url":"https://araclio.com/basit-taksit-hesaplama.html",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"Toplam tutarı seçilen taksit sayısına bölerek faizsiz eşit taksit tutarını hesaplayan ücretsiz online araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
   }
-  </script>
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Taksit Hesaplama",
+      "item":"https://araclio.com/basit-taksit-hesaplama.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Taksit tutarı nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Faizsiz basit hesaplamada toplam tutar taksit sayısına bölünerek her taksitte ödenecek tutar bulunur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"12.000 TL 6 taksit olursa ne kadar ödenir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Faiz ve ek ücret yoksa 12.000 TL'nin 6 eşit taksiti 2.000 TL'dir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"24.000 TL 12 taksit olursa aylık ne kadar ödenir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"24.000 TL'nin 12 eşit taksiti 2.000 TL'dir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Bu taksit hesaplamasına faiz dahil mi?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Hayır. Bu araç yalnızca toplam tutarı eşit taksitlere böler. Faiz, vade farkı, komisyon, vergi ve banka ücretleri dahil değildir."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Araclio</a>
-    <span class="tag">Ücretsiz Online Araçlar</span>
-  </div>
+
+<div class="wrap nav">
+
+<a class="brand" href="/">
+Araclio
+</a>
+
+<span class="tag">
+Ücretsiz Online Araçlar
+</span>
+
+</div>
+
 </header>
+
 
 <main class="wrap">
 
-  <section class="hero">
-    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
-
-    <h1>Taksit Hesaplama - Aylık Taksit Tutarı</h1>
-
-    <p>
-      Toplam tutarı ve taksit sayısını girerek faizsiz eşit
-      taksit tutarını saniyeler içinde hesaplayın.
-    </p>
-  </section>
-
-
-  <section class="card">
-    <h2>Taksit Hesaplama Aracı</h2>
-
-    <label>
-      Toplam Tutar (TL)
-      <input
-        id="tutar"
-        type="number"
-        min="0.01"
-        step="0.01"
-        inputmode="decimal"
-        placeholder="Örnek: 12000">
-    </label>
-
-    <label>
-      Taksit Sayısı
-      <input
-        id="taksitSayisi"
-        type="number"
-        min="1"
-        step="1"
-        inputmode="numeric"
-        placeholder="Örnek: 6">
-    </label>
-
-    <div class="buttons">
-      <button type="button" onclick="taksitHesapla()">Taksiti Hesapla</button>
-    </div>
-
-    <div id="sonuc" class="result" aria-live="polite">
-      Sonuç burada görünecek.
-    </div>
-
-    <p>
-      <small>
-        Bu araç faizsiz eşit bölme hesabı yapar. Faiz, vade farkı,
-        komisyon veya banka ücretlerini hesaplamaz.
-      </small>
-    </p>
-  </section>
-
-
-  <section class="card">
-    <h2>Taksit Nasıl Hesaplanır?</h2>
-
-    <p>
-      Faizsiz basit taksit hesabında toplam ödeme tutarı,
-      belirlenen taksit sayısına bölünür. Böylece her ödeme
-      döneminde ödenecek eşit taksit tutarı bulunur.
-    </p>
-
-    <p>
-      <strong>Formül:</strong><br>
-      Taksit Tutarı = Toplam Tutar ÷ Taksit Sayısı
-    </p>
-
-    <p>
-      Örneğin 12.000 TL tutarındaki bir ödeme 6 eşit taksite
-      bölünürse:
-    </p>
-
-    <p>
-      <strong>12.000 ÷ 6 = 2.000 TL</strong>
-    </p>
-
-    <p>
-      Buna göre her taksit 2.000 TL olur.
-    </p>
-  </section>
-
-
-  <section class="card">
-    <h2>3 Taksit Nasıl Hesaplanır?</h2>
-
-    <p>
-      Toplam tutarı 3'e bölerek üç eşit taksit tutarını
-      hesaplayabilirsiniz.
-    </p>
-
-    <p>
-      Örneğin 9.000 TL'lik bir ödeme 3 taksite bölünürse:
-    </p>
-
-    <p>
-      <strong>9.000 ÷ 3 = 3.000 TL</strong>
-    </p>
-
-    <p>
-      Her taksit 3.000 TL olur.
-    </p>
-  </section>
+<section class="hero">
 
+<p class="eyebrow">
+TAKSİT • AYLIK ÖDEME • FAİZSİZ BÖLME
+</p>
 
-  <section class="card">
-    <h2>6 Taksit Nasıl Hesaplanır?</h2>
+<h1>Taksit Hesaplama</h1>
 
-    <p>
-      Toplam ödeme tutarı 6'ya bölünerek altı eşit ödeme
-      tutarı bulunabilir.
-    </p>
+<p>
+Toplam tutarı ve taksit sayısını girerek faizsiz eşit taksit
+tutarını saniyeler içinde hesaplayın.
+</p>
 
-    <p>
-      Örneğin 12.000 TL için:
-    </p>
+</section>
 
-    <p>
-      <strong>12.000 ÷ 6 = 2.000 TL</strong>
-    </p>
 
-    <p>
-      Her taksit 2.000 TL olur.
-    </p>
-  </section>
+<section class="card">
 
+<h2>Aylık Taksit Tutarını Hesapla</h2>
 
-  <section class="card">
-    <h2>9 Taksit Nasıl Hesaplanır?</h2>
+<label for="tutar">
+Toplam Tutar (TL)
+</label>
 
-    <p>
-      Toplam tutarı 9'a bölerek her taksitte ödenecek
-      tutarı hesaplayabilirsiniz.
-    </p>
+<input
+id="tutar"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 12000"
+>
 
-    <p>
-      Örneğin 18.000 TL'nin 9 eşit taksite bölünmesi durumunda:
-    </p>
 
-    <p>
-      <strong>18.000 ÷ 9 = 2.000 TL</strong>
-    </p>
+<label for="taksitSayisi">
+Taksit Sayısı
+</label>
 
-    <p>
-      Her taksit 2.000 TL olur.
-    </p>
-  </section>
+<input
+id="taksitSayisi"
+type="number"
+min="1"
+step="1"
+inputmode="numeric"
+placeholder="Örnek: 6"
+>
 
 
-  <section class="card">
-    <h2>12 Taksit Nasıl Hesaplanır?</h2>
+<div class="quick-buttons">
 
-    <p>
-      Toplam tutarı 12'ye bölerek 12 eşit taksit için
-      ödeme tutarını hesaplayabilirsiniz.
-    </p>
+<button type="button" onclick="taksitSec(2)">
+2 Taksit
+</button>
 
-    <p>
-      Örneğin 24.000 TL'nin 12 eşit taksite bölünmesi durumunda:
-    </p>
+<button type="button" onclick="taksitSec(3)">
+3 Taksit
+</button>
 
-    <p>
-      <strong>24.000 ÷ 12 = 2.000 TL</strong>
-    </p>
+<button type="button" onclick="taksitSec(6)">
+6 Taksit
+</button>
 
-    <p>
-      Her taksit 2.000 TL olur.
-    </p>
-  </section>
-
+<button type="button" onclick="taksitSec(9)">
+9 Taksit
+</button>
 
-  <section class="card">
-    <h2>Taksit Hesaplama Örnekleri</h2>
+<button type="button" onclick="taksitSec(12)">
+12 Taksit
+</button>
 
-    <p>
-      <strong>6.000 TL / 3 taksit:</strong><br>
-      Her taksit: 2.000 TL
-    </p>
+</div>
 
-    <p>
-      <strong>12.000 TL / 6 taksit:</strong><br>
-      Her taksit: 2.000 TL
-    </p>
 
-    <p>
-      <strong>18.000 TL / 9 taksit:</strong><br>
-      Her taksit: 2.000 TL
-    </p>
+<button type="button" onclick="taksitHesapla()">
+Taksiti Hesapla
+</button>
 
-    <p>
-      <strong>24.000 TL / 12 taksit:</strong><br>
-      Her taksit: 2.000 TL
-    </p>
-
-    <p>
-      <strong>10.000 TL / 4 taksit:</strong><br>
-      Her taksit: 2.500 TL
-    </p>
-  </section>
-
-
-  <section class="card">
-    <h2>Aylık Taksit Tutarı Nasıl Hesaplanır?</h2>
-
-    <p>
-      Ödemelerin aylık ve eşit yapıldığı faizsiz bir planda,
-      toplam tutar ay veya taksit sayısına bölünerek aylık
-      ödeme tutarı bulunabilir.
-    </p>
-
-    <p>
-      Örneğin 36.000 TL toplam ödeme 12 aya eşit olarak
-      bölünürse aylık ödeme:
-    </p>
-
-    <p>
-      <strong>36.000 ÷ 12 = 3.000 TL</strong>
-    </p>
-
-    <p>
-      olur.
-    </p>
-  </section>
 
+<div id="sonuc" class="result" aria-live="polite">
+Toplam tutar ve taksit sayısını girin.
+</div>
 
-  <section class="card">
-    <h2>Bu Taksit Hesaplamasına Faiz Dahil mi?</h2>
 
-    <p>
-      Hayır. Araclio taksit hesaplama aracı toplam tutarı seçilen
-      taksit sayısına eşit şekilde bölen basit bir hesaplama yapar.
-    </p>
+<div id="sonucKutulari" class="result-grid" style="display:none;">
 
-    <p>
-      Banka, kredi kartı, finans kuruluşu veya ödeme kuruluşlarının
-      uygulayabileceği faiz, vade farkı, komisyon, vergi veya diğer
-      ücretler hesaplamaya dahil değildir.
-    </p>
+<div class="result-box">
+<strong>Her Taksit</strong>
+<span id="taksitTutariSonuc" class="big-result">0 TL</span>
+</div>
 
-    <p>
-      Bu nedenle faizli kredi veya kredi kartı taksitlerinde gerçek
-      ödeme tutarı burada hesaplanan tutardan farklı olabilir.
-    </p>
-  </section>
+<div class="result-box">
+<strong>Toplam Tutar</strong>
+<span id="toplamTutarSonuc">0 TL</span>
+</div>
 
+<div class="result-box">
+<strong>Taksit Sayısı</strong>
+<span id="taksitSayisiSonuc">0</span>
+</div>
 
-  <section class="card">
-    <h2>Taksit Sayısı Arttıkça Ne Olur?</h2>
+<div class="result-box">
+<strong>Toplam Ek Maliyet</strong>
+<span>0 TL</span>
+</div>
 
-    <p>
-      Faizsiz ve ek masrafsız basit bölme hesabında taksit sayısı
-      arttıkça her bir taksitin tutarı azalır.
-    </p>
+</div>
 
-    <p>
-      Örneğin 12.000 TL toplam tutar:
-    </p>
 
-    <p>
-      3 taksitte: <strong>4.000 TL</strong><br>
-      6 taksitte: <strong>2.000 TL</strong><br>
-      12 taksitte: <strong>1.000 TL</strong>
-    </p>
+<div class="warning-box">
 
-    <p>
-      Gerçek finansal işlemlerde ise faiz veya ek ücret uygulanması
-      durumunda toplam ödeme değişebilir.
-    </p>
-  </section>
+<strong>Önemli:</strong>
 
+Bu araç yalnızca faizsiz ve masrafsız eşit bölme hesabı yapar.
 
-  <section class="card">
-    <h2>Sık Sorulan Sorular</h2>
+<br><br>
 
-    <h3>12.000 TL 6 taksit olursa ne kadar ödenir?</h3>
-    <p>
-      Faiz veya ek ücret yoksa 12.000 TL, 6 eşit taksite
-      bölündüğünde her taksit 2.000 TL olur.
-    </p>
+Faiz, vade farkı, komisyon, vergi, banka ücreti veya
+kredi kartı işlem maliyetleri hesaplamaya dahil değildir.
 
-    <h3>10.000 TL 5 taksit ne kadar?</h3>
-    <p>
-      10.000 TL'nin 5 eşit taksite bölünmesi durumunda
-      her taksit 2.000 TL olur.
-    </p>
+</div>
 
-    <h3>24.000 TL 12 taksit ne kadar?</h3>
-    <p>
-      24.000 TL, 12 eşit taksite bölündüğünde her taksit
-      2.000 TL olur.
-    </p>
+</section>
 
-    <h3>Taksit tutarı nasıl hesaplanır?</h3>
-    <p>
-      Faizsiz basit hesaplamada toplam tutar taksit sayısına
-      bölünerek her taksitte ödenecek tutar bulunur.
-    </p>
 
-    <h3>Kredi taksiti de bu araçla hesaplanabilir mi?</h3>
-    <p>
-      Bu araç kredi faizi hesaplamaz. Faizli kredilerde faiz oranı,
-      vade ve diğer maliyetler ödeme tutarını değiştirebilir.
-    </p>
+<section class="card">
 
-    <h3>Taksit hesaplama aracı ücretsiz mi?</h3>
-    <p>
-      Evet. Araclio taksit hesaplama aracını ücretsiz ve
-      üyelik gerektirmeden kullanabilirsiniz.
-    </p>
-  </section>
+<h2>Taksit Nasıl Hesaplanır?</h2>
 
+<p>
+Faizsiz basit taksit hesabında toplam ödeme tutarı,
+belirlenen taksit sayısına bölünür.
+</p>
 
-  <section class="card">
-    <h2>Diğer Ücretsiz Hesaplama Araçları</h2>
+<div class="info-box">
 
-    <p><a href="/kdv-hesaplama.html">KDV Hesaplama →</a></p>
+<strong>
+Taksit Tutarı =
+Toplam Tutar ÷ Taksit Sayısı
+</strong>
 
-    <p><a href="/yuzde-hesaplama.html">Yüzde Hesaplama →</a></p>
+</div>
 
-    <p><a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama →</a></p>
+<p>
+Örneğin 12.000 TL tutarındaki bir ödeme 6 taksite bölünürse:
+</p>
 
-    <p><a href="/indirim-hesaplama.html">İndirim Hesaplama →</a></p>
+<div class="info-box">
 
-    <p><a href="/zam-hesaplama.html">Zam Hesaplama →</a></p>
+12.000 ÷ 6 =
 
-    <p><a href="/desi-hesaplama.html">Desi Hesaplama →</a></p>
+<br><br>
 
-    <p><a href="/kelime-karakter-sayaci.html">Kelime &amp; Karakter Sayacı →</a></p>
-  </section>
+<strong>2.000 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>3 Taksit Nasıl Hesaplanır?</h2>
+
+<p>
+Toplam tutar 3'e bölünür.
+</p>
+
+<div class="info-box">
+
+9.000 TL ÷ 3 =
+
+<br><br>
+
+<strong>3.000 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>6 Taksit Nasıl Hesaplanır?</h2>
+
+<div class="info-box">
+
+12.000 TL ÷ 6 =
+
+<br><br>
+
+<strong>2.000 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>9 Taksit Nasıl Hesaplanır?</h2>
+
+<div class="info-box">
+
+18.000 TL ÷ 9 =
+
+<br><br>
+
+<strong>2.000 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>12 Taksit Nasıl Hesaplanır?</h2>
+
+<div class="info-box">
+
+24.000 TL ÷ 12 =
+
+<br><br>
+
+<strong>2.000 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Taksit Hesaplama Örnekleri</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Toplam Tutar</th>
+<th>Taksit</th>
+<th>Her Taksit</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>6.000 TL</td>
+<td>3</td>
+<td>2.000 TL</td>
+</tr>
+
+<tr>
+<td>12.000 TL</td>
+<td>6</td>
+<td>2.000 TL</td>
+</tr>
+
+<tr>
+<td>18.000 TL</td>
+<td>9</td>
+<td>2.000 TL</td>
+</tr>
+
+<tr>
+<td>24.000 TL</td>
+<td>12</td>
+<td>2.000 TL</td>
+</tr>
+
+<tr>
+<td>10.000 TL</td>
+<td>4</td>
+<td>2.500 TL</td>
+</tr>
+
+<tr>
+<td>36.000 TL</td>
+<td>12</td>
+<td>3.000 TL</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Aylık Taksit Tutarı Nasıl Hesaplanır?</h2>
+
+<p>
+Ödemeler aylık ve eşit yapılıyorsa toplam tutar ödeme sayısına
+bölünerek aylık tutar bulunabilir.
+</p>
+
+<div class="info-box">
+
+36.000 TL ÷ 12 =
+
+<br><br>
+
+<strong>3.000 TL aylık ödeme</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Taksit Sayısı Arttıkça Ne Olur?</h2>
+
+<p>
+Faizsiz ve ek masrafsız bir işlemde taksit sayısı arttıkça
+her bir taksitin tutarı azalır.
+</p>
+
+<div class="info-box">
+
+12.000 TL toplam tutar:
+
+<br><br>
+
+3 taksit =
+<strong>4.000 TL</strong>
+
+<br>
+
+6 taksit =
+<strong>2.000 TL</strong>
+
+<br>
+
+12 taksit =
+<strong>1.000 TL</strong>
+
+</div>
+
+<p>
+Ancak gerçek finansal işlemlerde taksit sayısının artmasıyla
+faiz veya ek maliyet de uygulanabilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Bu Taksit Hesabına Faiz Dahil mi?</h2>
+
+<p>
+Hayır. Bu araç yalnızca basit eşit bölme işlemi yapar.
+</p>
+
+<p>
+Banka kredisi veya faizli finansman hesabında ödeme tutarı;
+faiz oranı, vade ve diğer masraflara göre farklı olur.
+</p>
+
+<p>
+Faizli kredi hesabı için:
+<a href="/kredi-hesaplama.html">
+Kredi Hesaplama
+</a>
+aracını kullanabilirsiniz.
+</p>
+
+<p>
+Vadeli satış farkı için:
+<a href="/vade-farki-hesaplama.html">
+Vade Farkı Hesaplama
+</a>
+aracını kullanabilirsiniz.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kredi Taksiti ile Basit Taksit Aynı mı?</h2>
+
+<p>
+Hayır.
+</p>
+
+<p>
+<strong>Basit taksit</strong>,
+toplam borcun eşit parçalara bölünmesidir.
+</p>
+
+<p>
+<strong>Kredi taksiti</strong> ise anapara ve faiz dikkate alınarak
+hesaplanan finansal ödeme planıdır.
+</p>
+
+<div class="info-box">
+
+Örneğin 120.000 TL faizsiz olarak 12 eşit parçaya bölünürse:
+
+<br><br>
+
+<strong>10.000 TL</strong>
+
+<br><br>
+
+olur.
+
+Faizli bir kredide ise aylık ödeme faiz oranına göre daha yüksek olabilir.
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+<h3>12.000 TL 6 taksit olursa ne kadar?</h3>
+
+<p>
+Faiz ve ek ücret yoksa her taksit
+<strong>2.000 TL</strong>
+olur.
+</p>
+
+
+<h3>10.000 TL 5 taksit ne kadar?</h3>
+
+<p>
+Her taksit
+<strong>2.000 TL</strong>
+olur.
+</p>
+
+
+<h3>24.000 TL 12 taksit ne kadar?</h3>
+
+<p>
+Her taksit
+<strong>2.000 TL</strong>
+olur.
+</p>
+
+
+<h3>36.000 TL 12 taksit ne kadar?</h3>
+
+<p>
+Her taksit
+<strong>3.000 TL</strong>
+olur.
+</p>
+
+
+<h3>Taksit tutarı nasıl hesaplanır?</h3>
+
+<p>
+Toplam tutar taksit sayısına bölünür.
+</p>
+
+
+<h3>Bu araç kredi taksiti hesaplar mı?</h3>
+
+<p>
+Hayır. Bu araç kredi faizi hesaplamaz.
+Faizli kredi için Kredi Hesaplama aracını kullanabilirsiniz.
+</p>
+
+
+<h3>Taksit hesaplama ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio Taksit Hesaplama aracı ücretsizdir
+ve üyelik gerektirmez.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Diğer Finans ve Hesaplama Araçları</h2>
+
+<p>
+<a href="/kredi-hesaplama.html">
+Kredi Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/vade-farki-hesaplama.html">
+Vade Farkı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kdv-hesaplama.html">
+KDV Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/yuzde-hesaplama.html">
+Yüzde Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/indirim-hesaplama.html">
+İndirim Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/zam-hesaplama.html">
+Zam Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kar-marji-hesaplama.html">
+Kâr Marjı Hesaplama →
+</a>
+</p>
+
+</section>
 
 </main>
 
 
 <footer>
-  <div class="wrap">
-    © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
-  </div>
+
+<div class="wrap">
+
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
+
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
+
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
+
+</div>
+
 </footer>
 
 
 <script>
-function formatTL(deger) {
-  return deger.toLocaleString("tr-TR", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  }) + " TL";
+
+function formatTL(deger){
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+}
+).format(deger) + " TL";
+
 }
 
-function taksitHesapla() {
-  const tutar = parseFloat(document.getElementById("tutar").value);
-  const taksitInput = document.getElementById("taksitSayisi").value;
-  const taksitSayisi = Number(taksitInput);
-  const sonucAlani = document.getElementById("sonuc");
 
-  if (
-    isNaN(tutar) ||
-    isNaN(taksitSayisi) ||
-    tutar <= 0 ||
-    taksitSayisi < 1 ||
-    !Number.isInteger(taksitSayisi)
-  ) {
-    sonucAlani.innerHTML =
-      "Lütfen geçerli bir toplam tutar ve tam sayı olarak taksit sayısı girin.";
-    return;
-  }
+function taksitSec(sayi){
 
-  const taksitTutari = tutar / taksitSayisi;
+document
+.getElementById("taksitSayisi")
+.value =
+sayi;
 
-  sonucAlani.innerHTML =
-    "Toplam tutar: <strong>" + formatTL(tutar) + "</strong><br>" +
-    "Taksit sayısı: <strong>" + taksitSayisi + "</strong><br>" +
-    "Her taksit: <strong>" + formatTL(taksitTutari) + "</strong>";
+const tutar =
+Number(
+document
+.getElementById("tutar")
+.value
+);
+
+if(
+Number.isFinite(tutar) &&
+tutar > 0
+){
+
+taksitHesapla();
+
 }
 
-document.getElementById("year").textContent = new Date().getFullYear();
+}
 
-["tutar", "taksitSayisi"].forEach(function(id) {
-  document.getElementById(id).addEventListener("keydown", function(e) {
-    if (e.key === "Enter") {
-      taksitHesapla();
-    }
-  });
+
+function taksitHesapla(){
+
+const tutarInput =
+document.getElementById("tutar");
+
+const taksitInput =
+document.getElementById("taksitSayisi");
+
+const tutar =
+Number(tutarInput.value);
+
+const taksitSayisi =
+Number(taksitInput.value);
+
+const sonuc =
+document.getElementById("sonuc");
+
+const kutular =
+document.getElementById("sonucKutulari");
+
+
+if(
+tutarInput.value === "" ||
+taksitInput.value === "" ||
+!Number.isFinite(tutar) ||
+!Number.isFinite(taksitSayisi) ||
+tutar <= 0 ||
+taksitSayisi < 1 ||
+!Number.isInteger(taksitSayisi)
+){
+
+sonuc.innerHTML =
+"Lütfen geçerli bir toplam tutar ve tam sayı olarak taksit sayısı girin.";
+
+kutular.style.display =
+"none";
+
+return;
+
+}
+
+
+const taksitTutari =
+tutar / taksitSayisi;
+
+
+if(!Number.isFinite(taksitTutari)){
+
+sonuc.innerHTML =
+"Hesaplama yapılamadı. Girdiğiniz değerleri kontrol edin.";
+
+kutular.style.display =
+"none";
+
+return;
+
+}
+
+
+document
+.getElementById("taksitTutariSonuc")
+.textContent =
+formatTL(taksitTutari);
+
+
+document
+.getElementById("toplamTutarSonuc")
+.textContent =
+formatTL(tutar);
+
+
+document
+.getElementById("taksitSayisiSonuc")
+.textContent =
+taksitSayisi;
+
+
+sonuc.innerHTML =
+
+"<strong>" +
+formatTL(tutar) +
+"</strong> toplam tutar " +
+
+"<strong>" +
+taksitSayisi +
+" taksite</strong> bölündüğünde her taksit " +
+
+"<strong>" +
+formatTL(taksitTutari) +
+"</strong> olur.";
+
+
+kutular.style.display =
+"grid";
+
+}
+
+
+[
+"tutar",
+"taksitSayisi"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Enter"){
+taksitHesapla();
+}
+
+}
+);
+
 });
+
+
+document
+.getElementById("year")
+.textContent =
+new Date().getFullYear();
+
 </script>
 
 </body>
