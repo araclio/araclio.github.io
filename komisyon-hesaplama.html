@@ -1,304 +1,1035 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Komisyon Hesaplama | Komisyon Oranı ve Net Tutar - Araclio</title>
+<title>Komisyon Hesaplama | Banka, POS ve Pazaryeri Komisyonu - Araclio</title>
 
-  <meta name="description" content="Komisyon hesaplama aracı ile satış tutarı ve komisyon oranından komisyon kesintisini ve elinize kalacak net tutarı hesaplayın.">
+<meta
+name="description"
+content="Ücretsiz komisyon hesaplama aracı. Satış veya işlem tutarı ile komisyon oranını girerek komisyon kesintisini ve net kalan tutarı hesaplayın."
+>
 
-  <meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
 
-  <link rel="canonical" href="https://araclio.com/komisyon-hesaplama.html">
+<meta
+name="google-adsense-account"
+content="ca-pub-7634654090472031"
+>
 
-  <link rel="stylesheet" href="style.css">
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
 
-  <style>
-    .info-box {
-      margin-top:18px;
-      padding:16px;
-      border-radius:10px;
-      background:#f5f5f5;
+<link
+rel="canonical"
+href="https://araclio.com/komisyon-hesaplama.html"
+>
+
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+
+<meta
+property="og:title"
+content="Komisyon Hesaplama | Banka, POS ve Pazaryeri"
+>
+
+<meta
+property="og:description"
+content="Komisyon oranından kesinti tutarını ve elinize kalacak net tutarı ücretsiz hesaplayın."
+>
+
+<meta
+property="og:url"
+content="https://araclio.com/komisyon-hesaplama.html"
+>
+
+<meta property="og:site_name" content="Araclio">
+
+<style>
+
+.result-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:18px;
+}
+
+.result-box{
+background:#f5f5f5;
+padding:16px;
+border-radius:10px;
+color:#222;
+}
+
+.result-box strong{
+display:block;
+margin-bottom:7px;
+}
+
+.big-result{
+font-size:1.35rem;
+font-weight:700;
+}
+
+.info-box{
+margin-top:18px;
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.warning-box{
+margin-top:18px;
+padding:16px;
+border:2px solid #b26a00;
+border-radius:10px;
+background:#fff8e8;
+color:#6b4300;
+line-height:1.8;
+}
+
+.quick-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin:12px 0 18px;
+}
+
+.quick-buttons button{
+width:auto;
+padding:9px 13px;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:560px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+@media(max-width:650px){
+
+.result-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Komisyon Hesaplama",
+  "url":"https://araclio.com/komisyon-hesaplama.html",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"Satış veya işlem tutarı ve komisyon oranından komisyon kesintisini ve net kalan tutarı hesaplayan ücretsiz online araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Komisyon Hesaplama",
+      "item":"https://araclio.com/komisyon-hesaplama.html"
     }
+  ]
+}
+</script>
 
-    .result-detail {
-      margin-top:12px;
-      line-height:1.8;
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Komisyon nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Komisyon tutarı, işlem tutarının komisyon oranıyla çarpılıp 100'e bölünmesiyle hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Komisyon sonrası net tutar nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"İşlem tutarından hesaplanan komisyon tutarı çıkarılarak net kalan tutar bulunur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"10.000 TL'de yüzde 15 komisyon ne kadar?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"10.000 TL'nin yüzde 15 komisyonu 1.500 TL'dir. Komisyon sonrası 8.500 TL kalır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Banka veya POS komisyonu bu araçla hesaplanabilir mi?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Yüzde bazlı komisyon bu araçla hesaplanabilir. Sabit ücret, vergi veya diğer ek kesintiler ayrıca değerlendirilmelidir."
+      }
     }
-  </style>
+  ]
+}
+</script>
+
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Araclio</a>
-    <span class="tag">Ücretsiz Online Araçlar</span>
-  </div>
+<div class="wrap nav">
+
+<a class="brand" href="/">
+Araclio
+</a>
+
+<span class="tag">
+Ücretsiz Online Araçlar
+</span>
+
+</div>
 </header>
+
 
 <main class="wrap">
 
-  <section class="hero">
-    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+<section class="hero">
 
-    <h1>Komisyon Hesaplama</h1>
+<p class="eyebrow">
+KOMİSYON • NET TUTAR • POS • PAZARYERİ
+</p>
 
-    <p>
-      Satış tutarı ve komisyon oranını girerek kesilecek
-      komisyon tutarını ve komisyon sonrası elinizde
-      kalacak net tutarı hesaplayın.
-    </p>
-  </section>
+<h1>Komisyon Hesaplama</h1>
 
-  <section>
+<p>
+Satış veya işlem tutarı ile komisyon oranını girerek
+kesilecek komisyon tutarını ve komisyon sonrası
+elinize kalacak net tutarı saniyeler içinde hesaplayın.
+</p>
 
-    <article class="card">
+</section>
 
-      <h2>Komisyon Hesapla</h2>
 
-      <label>
-        Satış / İşlem Tutarı (TL)
-        <input
-          id="tutar"
-          type="number"
-          min="0.01"
-          step="0.01"
-          placeholder="10000">
-      </label>
+<section class="card">
 
-      <label>
-        Komisyon Oranı (%)
-        <input
-          id="oran"
-          type="number"
-          min="0"
-          max="100"
-          step="0.01"
-          placeholder="15">
-      </label>
+<h2>Komisyon Hesapla</h2>
 
-      <button onclick="hesapla()">Hesapla</button>
+<label for="tutar">
+Satış / İşlem Tutarı (TL)
+</label>
 
-      <div id="sonuc" class="result">
-        Tutar ve komisyon oranını girin.
-      </div>
+<input
+id="tutar"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 10000"
+>
 
-    </article>
 
-  </section>
+<label for="oran">
+Komisyon Oranı (%)
+</label>
 
-  <section class="info">
+<input
+id="oran"
+type="number"
+min="0"
+max="100"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 15"
+>
 
-    <h2>Komisyon Nasıl Hesaplanır?</h2>
 
-    <p>
-      Komisyon tutarı, işlem veya satış tutarının belirlenen
-      komisyon oranıyla çarpılmasıyla hesaplanır.
-    </p>
+<div class="quick-buttons">
 
-    <div class="info-box">
-      <strong>Komisyon = Tutar × Komisyon Oranı ÷ 100</strong>
-      <br><br>
-      <strong>Net Tutar = Tutar − Komisyon</strong>
-    </div>
+<button type="button" onclick="oranSec(5)">
+%5
+</button>
 
-    <h2>Komisyon Hesaplama Örneği</h2>
+<button type="button" onclick="oranSec(10)">
+%10
+</button>
 
-    <p>
-      10.000 TL tutarındaki bir satıştan %15 komisyon
-      kesildiğini düşünelim.
-    </p>
+<button type="button" onclick="oranSec(15)">
+%15
+</button>
 
-    <div class="info-box">
-      Satış tutarı: 10.000 TL
-      <br>
-      Komisyon oranı: %15
-      <br>
-      Komisyon: 1.500 TL
-      <br>
-      Net kalan: 8.500 TL
-    </div>
+<button type="button" onclick="oranSec(20)">
+%20
+</button>
 
-    <h2>Pazaryeri Komisyonu Nasıl Hesaplanır?</h2>
+<button type="button" onclick="oranSec(25)">
+%25
+</button>
 
-    <p>
-      Pazaryerlerinde ürün satış fiyatı üzerinden belirli bir
-      komisyon oranı uygulanabilir. Örneğin 2.000 TL'lik bir
-      satışta komisyon oranı %20 ise yalnızca bu oran üzerinden
-      yapılan matematiksel hesapta komisyon 400 TL, kalan tutar
-      ise 1.600 TL olur.
-    </p>
+</div>
 
-    <p>
-      Gerçek pazaryeri ödemelerinde hizmet bedeli, kargo,
-      reklam, vergi veya başka kesintiler bulunabileceğinden
-      hesabınıza geçen gerçek tutar farklı olabilir.
-    </p>
 
-    <h2>POS Komisyonu Nasıl Hesaplanır?</h2>
+<button type="button" onclick="hesapla()">
+Komisyonu Hesapla
+</button>
 
-    <p>
-      Aynı hesaplama yöntemi POS veya ödeme hizmetlerinde
-      yüzde bazlı komisyonu görmek için de kullanılabilir.
-      Ancak banka veya ödeme kuruluşunun sabit ücretleri,
-      vergi ve diğer masrafları varsa bunların ayrıca
-      değerlendirilmesi gerekir.
-    </p>
 
-    <h2>%10 Komisyon Ne Kadar?</h2>
+<div id="sonuc" class="result" aria-live="polite">
+Tutar ve komisyon oranını girin.
+</div>
 
-    <div class="info-box">
-      1.000 TL için = 100 TL
-      <br>
-      5.000 TL için = 500 TL
-      <br>
-      10.000 TL için = 1.000 TL
-      <br>
-      50.000 TL için = 5.000 TL
-    </div>
 
-    <h2>Diğer Ticari Hesaplama Araçları</h2>
+<div id="sonucKutulari" class="result-grid" style="display:none;">
 
-    <p>
-      <a href="/kar-zarar-hesaplama.html">Kâr Zarar Hesaplama</a>
-      •
-      <a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama</a>
-      •
-      <a href="/iskonto-hesaplama.html">İskonto Hesaplama</a>
-      •
-      <a href="/vade-farki-hesaplama.html">Vade Farkı Hesaplama</a>
-      •
-      <a href="/kdv-hesaplama.html">KDV Hesaplama</a>
-    </p>
+<div class="result-box">
+<strong>Komisyon Tutarı</strong>
+<span id="komisyonSonuc" class="big-result">0 TL</span>
+</div>
 
-    <div class="info-box">
-      <strong>Not:</strong>
-      Bu araç yalnızca girilen yüzde üzerinden matematiksel
-      komisyon hesabı yapar. Vergi, KDV, kargo, hizmet bedeli,
-      sabit ücret veya platforma özel diğer kesintiler otomatik
-      olarak hesaba katılmaz.
-    </div>
+<div class="result-box">
+<strong>Net Kalan Tutar</strong>
+<span id="netSonuc" class="big-result">0 TL</span>
+</div>
 
-  </section>
+<div class="result-box">
+<strong>İşlem Tutarı</strong>
+<span id="tutarSonuc">0 TL</span>
+</div>
+
+<div class="result-box">
+<strong>Komisyon Oranı</strong>
+<span id="oranSonuc">%0</span>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Komisyon Nasıl Hesaplanır?</h2>
+
+<p>
+Komisyon tutarı, işlem veya satış tutarının belirlenen
+komisyon oranıyla çarpılmasıyla bulunur.
+</p>
+
+<div class="info-box">
+
+<strong>
+Komisyon =
+İşlem Tutarı × Komisyon Oranı ÷ 100
+</strong>
+
+<br><br>
+
+<strong>
+Net Tutar =
+İşlem Tutarı − Komisyon
+</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>10.000 TL'de %15 Komisyon Ne Kadar?</h2>
+
+<div class="info-box">
+
+İşlem tutarı:
+
+<strong>10.000 TL</strong>
+
+<br>
+
+Komisyon oranı:
+
+<strong>%15</strong>
+
+<br><br>
+
+Komisyon:
+
+<strong>1.500 TL</strong>
+
+<br>
+
+Net kalan:
+
+<strong>8.500 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Banka Komisyonu Nasıl Hesaplanır?</h2>
+
+<p>
+Banka veya ödeme kuruluşunun komisyonu yüzde olarak belirtilmişse
+aynı temel formül kullanılabilir.
+</p>
+
+<div class="info-box">
+
+Örneğin:
+
+<br><br>
+
+50.000 TL işlem
+
+<br>
+
+%3 komisyon
+
+<br><br>
+
+50.000 × 3 ÷ 100 =
+
+<strong>1.500 TL komisyon</strong>
+
+<br><br>
+
+Net kalan:
+
+<strong>48.500 TL</strong>
+
+</div>
+
+<p>
+Ancak bankanın sabit işlem ücreti, BSMV veya başka bir masrafı varsa
+bunların ayrıca değerlendirilmesi gerekir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>POS Komisyonu Nasıl Hesaplanır?</h2>
+
+<p>
+POS işlemlerinde bankanın veya ödeme kuruluşunun uyguladığı
+yüzde bazlı kesinti, işlem tutarı üzerinden hesaplanabilir.
+</p>
+
+<div class="info-box">
+
+10.000 TL işlem
+
+<br>
+
+%2,5 POS komisyonu
+
+<br><br>
+
+Komisyon:
+
+<strong>250 TL</strong>
+
+<br>
+
+Komisyon sonrası:
+
+<strong>9.750 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Pazaryeri Komisyonu Nasıl Hesaplanır?</h2>
+
+<p>
+Pazaryerlerinde satış fiyatı üzerinden kategoriye göre
+belirli bir komisyon oranı uygulanabilir.
+</p>
+
+<div class="info-box">
+
+2.000 TL satış
+
+<br>
+
+%20 komisyon
+
+<br><br>
+
+Komisyon:
+
+<strong>400 TL</strong>
+
+<br>
+
+Komisyon sonrası:
+
+<strong>1.600 TL</strong>
+
+</div>
+
+<p>
+Bu yalnızca komisyon hesabıdır. Gerçek pazaryeri ödemelerinde
+hizmet bedeli, kargo, reklam, vergi veya başka kesintiler olabilir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Komisyon Hesaplama Örnekleri</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>İşlem Tutarı</th>
+<th>Komisyon</th>
+<th>Kesinti</th>
+<th>Net Kalan</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>1.000 TL</td>
+<td>%5</td>
+<td>50 TL</td>
+<td>950 TL</td>
+</tr>
+
+<tr>
+<td>1.000 TL</td>
+<td>%10</td>
+<td>100 TL</td>
+<td>900 TL</td>
+</tr>
+
+<tr>
+<td>5.000 TL</td>
+<td>%10</td>
+<td>500 TL</td>
+<td>4.500 TL</td>
+</tr>
+
+<tr>
+<td>10.000 TL</td>
+<td>%15</td>
+<td>1.500 TL</td>
+<td>8.500 TL</td>
+</tr>
+
+<tr>
+<td>10.000 TL</td>
+<td>%20</td>
+<td>2.000 TL</td>
+<td>8.000 TL</td>
+</tr>
+
+<tr>
+<td>50.000 TL</td>
+<td>%10</td>
+<td>5.000 TL</td>
+<td>45.000 TL</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>%10 Komisyon Ne Kadar?</h2>
+
+<div class="info-box">
+
+1.000 TL → <strong>100 TL</strong>
+
+<br>
+
+5.000 TL → <strong>500 TL</strong>
+
+<br>
+
+10.000 TL → <strong>1.000 TL</strong>
+
+<br>
+
+50.000 TL → <strong>5.000 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>%20 Komisyon Ne Kadar?</h2>
+
+<div class="info-box">
+
+1.000 TL → <strong>200 TL</strong>
+
+<br>
+
+5.000 TL → <strong>1.000 TL</strong>
+
+<br>
+
+10.000 TL → <strong>2.000 TL</strong>
+
+<br>
+
+50.000 TL → <strong>10.000 TL</strong>
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Komisyon Hesabı ile Kâr Hesabı Aynı mı?</h2>
+
+<p>
+Hayır.
+</p>
+
+<p>
+Komisyon, satış veya işlem tutarından yapılan kesintidir.
+Kâr hesabında ise alış maliyeti, satış fiyatı ve diğer giderler
+dikkate alınabilir.
+</p>
+
+<p>
+Kâr hesabı için:
+<a href="/kar-zarar-hesaplama.html">
+Kâr Zarar Hesaplama
+</a>
+aracını kullanabilirsiniz.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Gerçek Net Tutar Neden Farklı Olabilir?</h2>
+
+<p>
+Bu araç yalnızca girdiğiniz yüzde üzerinden komisyonu hesaplar.
+</p>
+
+<div class="warning-box">
+
+Aşağıdaki kalemler otomatik olarak dahil değildir:
+
+<br><br>
+
+* KDV veya diğer vergiler<br>
+* Banka vergileri ve yasal kesintiler<br>
+* Sabit işlem ücretleri<br>
+* Pazaryeri hizmet bedeli<br>
+* Kargo gideri<br>
+* Reklam gideri<br>
+* Ödeme kuruluşu ücretleri<br>
+* Platforma özel diğer kesintiler
+
+</div>
+
+</section>
+
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+<h3>Komisyon nasıl hesaplanır?</h3>
+
+<p>
+İşlem tutarı komisyon oranıyla çarpılır ve 100'e bölünür.
+</p>
+
+
+<h3>10.000 TL'de %15 komisyon ne kadar?</h3>
+
+<p>
+Komisyon
+<strong>1.500 TL</strong>,
+net kalan
+<strong>8.500 TL</strong>
+olur.
+</p>
+
+
+<h3>10.000 TL'de %20 komisyon ne kadar?</h3>
+
+<p>
+Komisyon
+<strong>2.000 TL</strong>,
+net kalan
+<strong>8.000 TL</strong>
+olur.
+</p>
+
+
+<h3>Banka komisyonu nasıl hesaplanır?</h3>
+
+<p>
+Yüzde bazlı komisyon, işlem tutarı × komisyon oranı ÷ 100
+formülüyle hesaplanabilir.
+</p>
+
+
+<h3>POS komisyonu hesaplanabilir mi?</h3>
+
+<p>
+Evet. Yüzde bazlı POS komisyonunu hesaplayabilirsiniz.
+Ek ücretler varsa ayrıca eklenmelidir.
+</p>
+
+
+<h3>Pazaryeri komisyonu hesaplanabilir mi?</h3>
+
+<p>
+Evet. Satış tutarı ve pazaryerinin komisyon oranı girilerek
+matematiksel komisyon hesaplanabilir.
+</p>
+
+
+<h3>Komisyon hesaplama ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio Komisyon Hesaplama aracı ücretsizdir
+ve üyelik gerektirmez.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Diğer Ticari Hesaplama Araçları</h2>
+
+<p>
+<a href="/kar-zarar-hesaplama.html">
+Kâr Zarar Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kar-marji-hesaplama.html">
+Kâr Marjı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/e-ticaret-kar-hesaplama.html">
+E-Ticaret Kâr Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/iskonto-hesaplama.html">
+İskonto Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/vade-farki-hesaplama.html">
+Vade Farkı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kdv-hesaplama.html">
+KDV Hesaplama →
+</a>
+</p>
+
+</section>
 
 </main>
 
+
 <footer>
-  <div class="wrap">
 
-    <p>
-      <a href="/about.html">Hakkımızda</a>
-      •
-      <a href="/iletisim.html">İletişim</a>
-      •
-      <a href="/privacy-policy.html">Gizlilik Politikası</a>
-      •
-      <a href="/terms.html">Kullanım Koşulları</a>
-      •
-      <a href="/en/">English</a>
-    </p>
+<div class="wrap">
 
-    <p>
-      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
-    </p>
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
 
-  </div>
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
+
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
+
+</div>
+
 </footer>
+
 
 <script>
 
-function para(sayi) {
-  return new Intl.NumberFormat(
-    "tr-TR",
-    {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    }
-  ).format(sayi) + " TL";
+function para(sayi){
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+}
+).format(sayi) + " TL";
+
 }
 
-function yuzde(sayi) {
-  return new Intl.NumberFormat(
-    "tr-TR",
-    {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    }
-  ).format(sayi);
+
+function yuzde(sayi){
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+maximumFractionDigits:2
+}
+).format(sayi);
+
 }
 
-function hesapla() {
 
-  const tutarInput =
-    document.getElementById("tutar");
+function oranSec(deger){
 
-  const oranInput =
-    document.getElementById("oran");
+document
+.getElementById("oran")
+.value =
+deger;
 
-  const sonuc =
-    document.getElementById("sonuc");
+const tutar =
+Number(
+document
+.getElementById("tutar")
+.value
+);
 
-  const tutar =
-    Number(tutarInput.value);
+if(
+Number.isFinite(tutar) &&
+tutar > 0
+){
 
-  const oran =
-    Number(oranInput.value);
+hesapla();
 
-  if (
-    tutarInput.value === "" ||
-    oranInput.value === "" ||
-    !Number.isFinite(tutar) ||
-    !Number.isFinite(oran) ||
-    tutar <= 0 ||
-    oran < 0 ||
-    oran > 100
-  ) {
-
-    sonuc.innerHTML =
-      "Lütfen geçerli bir tutar ve %0 ile %100 arasında komisyon oranı girin.";
-
-    return;
-  }
-
-  const komisyon =
-    tutar * oran / 100;
-
-  const net =
-    tutar - komisyon;
-
-  sonuc.innerHTML =
-
-    "<strong>Net Kalan: " +
-    para(net) +
-    "</strong>" +
-
-    "<div class='result-detail'>" +
-
-    "İşlem tutarı: " +
-    para(tutar) +
-
-    "<br>" +
-
-    "Komisyon oranı: %" +
-    yuzde(oran) +
-
-    "<br>" +
-
-    "Komisyon tutarı: " +
-    para(komisyon) +
-
-    "<br>" +
-
-    "Komisyon sonrası net tutar: " +
-    para(net) +
-
-    "</div>";
 }
 
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+}
+
+
+function hesapla(){
+
+const tutarInput =
+document.getElementById("tutar");
+
+const oranInput =
+document.getElementById("oran");
+
+const sonuc =
+document.getElementById("sonuc");
+
+const kutular =
+document.getElementById("sonucKutulari");
+
+
+const tutar =
+Number(tutarInput.value);
+
+const oran =
+Number(oranInput.value);
+
+
+if(
+tutarInput.value === "" ||
+oranInput.value === "" ||
+!Number.isFinite(tutar) ||
+!Number.isFinite(oran) ||
+tutar <= 0 ||
+oran < 0 ||
+oran > 100
+){
+
+sonuc.innerHTML =
+"Lütfen geçerli bir tutar ve %0 ile %100 arasında komisyon oranı girin.";
+
+kutular.style.display =
+"none";
+
+return;
+
+}
+
+
+const komisyon =
+tutar * oran / 100;
+
+
+const net =
+tutar - komisyon;
+
+
+document
+.getElementById("komisyonSonuc")
+.textContent =
+para(komisyon);
+
+
+document
+.getElementById("netSonuc")
+.textContent =
+para(net);
+
+
+document
+.getElementById("tutarSonuc")
+.textContent =
+para(tutar);
+
+
+document
+.getElementById("oranSonuc")
+.textContent =
+"%" +
+yuzde(oran);
+
+
+sonuc.innerHTML =
+
+"<strong>Net kalan: " +
+para(net) +
+"</strong>" +
+
+"<br><br>" +
+
+"Komisyon tutarı: <strong>" +
+para(komisyon) +
+"</strong>" +
+
+"<br>" +
+
+"Komisyon oranı: <strong>%" +
+yuzde(oran) +
+"</strong>";
+
+
+kutular.style.display =
+"grid";
+
+}
+
+
+[
+"tutar",
+"oran"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(event.key === "Enter"){
+hesapla();
+}
+
+}
+);
+
+});
+
+
+document
+.getElementById("year")
+.textContent =
+new Date().getFullYear();
 
 </script>
 
