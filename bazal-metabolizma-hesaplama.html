@@ -2,38 +2,700 @@
 <html lang="tr">
 <head>
   <meta charset="utf-8">
-
   <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Sayfa Taşındı | Araclio</title>
+  <title>Bazal Metabolizma Hızı Hesaplama | BMR ve Günlük Kalori - Araclio</title>
 
-  <meta name="robots" content="noindex,follow">
+  <meta
+    name="description"
+    content="Bazal metabolizma hızınızı (BMR) ve aktivite seviyenize göre tahmini günlük kalori ihtiyacınızı ücretsiz hesaplayın."
+  >
+
+  <meta name="robots" content="index,follow">
+
+  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+    crossorigin="anonymous">
+  </script>
 
   <link
     rel="canonical"
-    href="https://araclio.com/bmr-kalori-hesaplama.html"
+    href="https://araclio.com/bazal-metabolizma-hesaplama.html"
   >
 
+  <link rel="stylesheet" href="style.css">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Bazal Metabolizma Hızı Hesaplama | Araclio">
   <meta
-    http-equiv="refresh"
-    content="0; url=https://araclio.com/bmr-kalori-hesaplama.html"
+    property="og:description"
+    content="Yaş, boy, kilo ve aktivite seviyenize göre tahmini BMR ve günlük enerji ihtiyacınızı hesaplayın."
   >
+  <meta
+    property="og:url"
+    content="https://araclio.com/bazal-metabolizma-hesaplama.html"
+  >
+  <meta property="og:site_name" content="Araclio">
 
-  <script>
-    window.location.replace(
-      "https://araclio.com/bmr-kalori-hesaplama.html"
-    );
+  <style>
+    .health-warning{
+      margin-top:24px;
+      padding:18px;
+      border:2px solid #c62828;
+      border-radius:10px;
+      background:#fff4f4;
+      color:#7f0000;
+      line-height:1.75;
+    }
+
+    .health-warning strong{
+      display:block;
+      margin-bottom:8px;
+      font-size:18px;
+    }
+
+    .info-box{
+      margin-top:18px;
+      padding:16px;
+      border-radius:8px;
+      background:#f5f5f5;
+      color:#222;
+      line-height:1.8;
+    }
+
+    select{
+      width:100%;
+      box-sizing:border-box;
+      padding:12px;
+      margin-top:6px;
+      margin-bottom:14px;
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Bazal Metabolizma Hızı Hesaplama",
+    "url":"https://araclio.com/bazal-metabolizma-hesaplama.html",
+    "applicationCategory":"HealthApplication",
+    "operatingSystem":"Any",
+    "inLanguage":"tr-TR",
+    "description":"Yaş, boy, kilo ve aktivite bilgilerine göre tahmini bazal metabolizma hızı ve günlük enerji ihtiyacını hesaplayan ücretsiz online araç.",
+    "offers":{
+      "@type":"Offer",
+      "price":"0",
+      "priceCurrency":"TRY"
+    },
+    "isPartOf":{
+      "@type":"WebSite",
+      "name":"Araclio",
+      "url":"https://araclio.com/"
+    }
+  }
   </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "name":"Ana Sayfa",
+        "item":"https://araclio.com/"
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "name":"Bazal Metabolizma Hızı Hesaplama",
+        "item":"https://araclio.com/bazal-metabolizma-hesaplama.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Bazal metabolizma hızı nedir?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Bazal metabolizma hızı, vücudun temel yaşamsal işlevlerini sürdürebilmek için dinlenme halinde harcadığı tahmini enerji miktarıdır."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"BMR nasıl hesaplanır?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Bu araç yetişkinler için yaygın kullanılan Mifflin-St Jeor denklemine göre tahmini hesaplama yapar."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"BMR ile günlük kalori ihtiyacı aynı mı?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Hayır. BMR dinlenme halindeki temel enerji ihtiyacını, günlük enerji ihtiyacı ise aktivite düzeyi dahil yaklaşık toplam enerji harcamasını ifade eder."
+        }
+      }
+    ]
+  }
+  </script>
+
 </head>
 
 <body>
 
-  <p>
-    Bu sayfa taşındı.
-    <a href="/bmr-kalori-hesaplama.html">
-      BMR ve Kalori Hesaplama aracına git →
-    </a>
-  </p>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">Araclio</a>
+    <span class="tag">Ücretsiz Online Araçlar</span>
+  </div>
+</header>
+
+
+<main class="wrap">
+
+  <section class="hero">
+
+    <p class="eyebrow">
+      HIZLI • ÜCRETSİZ • ÜYELİKSİZ
+    </p>
+
+    <h1>Bazal Metabolizma Hızı Hesaplama</h1>
+
+    <p>
+      Yaş, boy, kilo ve aktivite bilgilerinizi girerek
+      tahmini bazal metabolizma hızınızı (BMR) ve günlük
+      enerji ihtiyacınızı hesaplayın.
+    </p>
+
+  </section>
+
+
+  <section>
+
+    <article class="card">
+
+      <h2>BMR ve Günlük Kalori İhtiyacı Hesapla</h2>
+
+      <label for="cinsiyet">
+        Cinsiyet
+      </label>
+
+      <select id="cinsiyet">
+        <option value="erkek">Erkek</option>
+        <option value="kadin">Kadın</option>
+      </select>
+
+
+      <label for="yas">
+        Yaş
+      </label>
+
+      <input
+        id="yas"
+        type="number"
+        min="18"
+        max="100"
+        step="1"
+        inputmode="numeric"
+        placeholder="Örnek: 35"
+      >
+
+
+      <label for="boy">
+        Boy (cm)
+      </label>
+
+      <input
+        id="boy"
+        type="number"
+        min="100"
+        max="250"
+        step="0.1"
+        inputmode="decimal"
+        placeholder="Örnek: 175"
+      >
+
+
+      <label for="kilo">
+        Kilo (kg)
+      </label>
+
+      <input
+        id="kilo"
+        type="number"
+        min="30"
+        max="350"
+        step="0.1"
+        inputmode="decimal"
+        placeholder="Örnek: 75"
+      >
+
+
+      <label for="aktivite">
+        Aktivite Seviyesi
+      </label>
+
+      <select id="aktivite">
+
+        <option value="1.2">
+          Hareketsiz / çok az hareket
+        </option>
+
+        <option value="1.375">
+          Hafif aktif
+        </option>
+
+        <option value="1.55">
+          Orta derecede aktif
+        </option>
+
+        <option value="1.725">
+          Çok aktif
+        </option>
+
+        <option value="1.9">
+          Çok yoğun aktif
+        </option>
+
+      </select>
+
+
+      <button type="button" onclick="hesapla()">
+        Hesapla
+      </button>
+
+
+      <div id="sonuc" class="result" aria-live="polite">
+        Bilgilerinizi girerek hesaplama yapın.
+      </div>
+
+
+      <div class="health-warning">
+
+        <strong>⚠️ Sağlık Uyarısı</strong>
+
+        Bu hesaplama yalnızca genel bilgilendirme amacıyla
+        tahmini değerler üretir. Tıbbi değerlendirme veya
+        kişiye özel beslenme önerisi değildir.
+
+        <br><br>
+
+        Gerçek enerji ihtiyacı; vücut kompozisyonu, sağlık
+        durumu, gebelik, emzirme, kullanılan ilaçlar,
+        metabolik durum ve günlük aktivite gibi birçok
+        faktöre göre değişebilir.
+
+        <br><br>
+
+        Özellikle kilo verme, kilo alma veya sağlık durumuna
+        bağlı beslenme planlarında doktor veya diyetisyen
+        değerlendirmesi esas alınmalıdır.
+
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <section class="card">
+
+    <h2>Bazal Metabolizma Hızı (BMR) Nedir?</h2>
+
+    <p>
+      Bazal metabolizma hızı, vücudun temel yaşamsal
+      fonksiyonlarını sürdürebilmek için dinlenme halinde
+      harcadığı enerjiyi tahmin etmek amacıyla kullanılan
+      bir değerdir.
+    </p>
+
+    <p>
+      Solunum, dolaşım, vücut ısısının korunması ve organların
+      temel işlevleri gibi süreçler bu enerji ihtiyacının
+      önemli bölümünü oluşturur.
+    </p>
+
+  </section>
+
+
+  <section class="card">
+
+    <h2>BMR Nasıl Hesaplanır?</h2>
+
+    <p>
+      Bu araç yetişkinler için yaygın kullanılan
+      Mifflin-St Jeor denklemine göre tahmini hesaplama yapar.
+    </p>
+
+    <div class="info-box">
+
+      <strong>Erkek:</strong><br>
+      10 × kilo (kg) + 6,25 × boy (cm) − 5 × yaş + 5
+
+      <br><br>
+
+      <strong>Kadın:</strong><br>
+      10 × kilo (kg) + 6,25 × boy (cm) − 5 × yaş − 161
+
+    </div>
+
+  </section>
+
+
+  <section class="card">
+
+    <h2>Günlük Kalori İhtiyacı Nasıl Hesaplanır?</h2>
+
+    <p>
+      Hesaplanan BMR değeri seçilen aktivite katsayısıyla
+      çarpılarak günlük toplam enerji harcaması için yaklaşık
+      bir değer elde edilir.
+    </p>
+
+    <div class="info-box">
+
+      <strong>Hareketsiz:</strong> BMR × 1,20
+
+      <br><br>
+
+      <strong>Hafif aktif:</strong> BMR × 1,375
+
+      <br><br>
+
+      <strong>Orta derecede aktif:</strong> BMR × 1,55
+
+      <br><br>
+
+      <strong>Çok aktif:</strong> BMR × 1,725
+
+      <br><br>
+
+      <strong>Çok yoğun aktif:</strong> BMR × 1,90
+
+    </div>
+
+    <p>
+      Bu değer mevcut kiloyu korumak için kesin bir kalori
+      hedefi değildir. Günlük gerçek enerji harcaması
+      kişiden kişiye değişebilir.
+    </p>
+
+  </section>
+
+
+  <section class="card">
+
+    <h2>BMR ile Günlük Kalori İhtiyacı Aynı Şey mi?</h2>
+
+    <p>
+      Hayır. BMR, temel yaşamsal işlevler için tahmini enerji
+      harcamasını ifade eder.
+    </p>
+
+    <p>
+      Günlük toplam enerji ihtiyacı ise hareket ve fiziksel
+      aktiviteyi de hesaba katan daha yüksek bir tahmini
+      değerdir.
+    </p>
+
+  </section>
+
+
+  <section class="card">
+
+    <h2>BMR Sonucunu Neler Etkileyebilir?</h2>
+
+    <p>
+      Yaş, boy, kilo ve biyolojik cinsiyet dışında gerçek
+      enerji harcaması birçok farklı faktörden etkilenebilir.
+    </p>
+
+    <ul>
+      <li>Kas ve yağ oranı</li>
+      <li>Günlük hareket miktarı</li>
+      <li>Egzersiz yoğunluğu</li>
+      <li>Uyku düzeni</li>
+      <li>Sağlık durumu</li>
+      <li>Gebelik ve emzirme</li>
+      <li>Kullanılan bazı ilaçlar</li>
+      <li>Metabolik ve hormonal durumlar</li>
+    </ul>
+
+  </section>
+
+
+  <section class="card">
+
+    <h2>Sık Sorulan Sorular</h2>
+
+    <h3>BMR ne demek?</h3>
+
+    <p>
+      BMR, bazal metabolizma hızının İngilizce kısaltmasıdır
+      ve vücudun dinlenme halindeki tahmini temel enerji
+      harcamasını ifade eder.
+    </p>
+
+
+    <h3>BMR günlük kalori ihtiyacım mı?</h3>
+
+    <p>
+      Hayır. BMR yalnızca temel enerji harcamasını ifade eder.
+      Günlük toplam enerji ihtiyacı hesaplanırken fiziksel
+      aktivite de dikkate alınır.
+    </p>
+
+
+    <h3>Bu sonuçla diyet hazırlanabilir mi?</h3>
+
+    <p>
+      Bu sonuç yalnızca genel bir tahmindir. Kişiye özel
+      beslenme veya kilo yönetimi planı için sağlık uzmanı
+      değerlendirmesi gerekir.
+    </p>
+
+
+    <h3>Aktivite katsayısı neden önemli?</h3>
+
+    <p>
+      Gün içinde ne kadar hareket edildiği toplam enerji
+      harcamasını etkilediği için BMR değeri aktivite
+      katsayısıyla çarpılarak yaklaşık günlük enerji
+      harcaması hesaplanır.
+    </p>
+
+  </section>
+
+
+  <section class="card">
+
+    <h2>Bilgilendirme</h2>
+
+    <p>
+      Bu araç yalnızca genel bilgilendirme amacıyla
+      tahmini sonuç üretir ve tıbbi tavsiye değildir.
+    </p>
+
+    <p>
+      <strong>Son güncelleme: Kasım 2026</strong>
+    </p>
+
+  </section>
+
+
+  <section class="card">
+
+    <h2>Diğer Sağlık ve Yaşam Araçları</h2>
+
+    <p>
+      <a href="/vki-hesaplama.html">
+        VKİ Hesaplama →
+      </a>
+    </p>
+
+    <p>
+      <a href="/gebelik-hesaplama.html">
+        Gebelik Hesaplama →
+      </a>
+    </p>
+
+    <p>
+      <a href="/ovulasyon-hesaplama.html">
+        Ovulasyon Hesaplama →
+      </a>
+    </p>
+
+    <p>
+      <a href="/yas-hesaplama.html">
+        Yaş Hesaplama →
+      </a>
+    </p>
+
+    <p>
+      <a href="/">
+        Tüm Hesaplama Araçları →
+      </a>
+    </p>
+
+  </section>
+
+</main>
+
+
+<footer>
+
+  <div class="wrap">
+
+    <p>
+      <a href="/">Ana Sayfa</a>
+      •
+      <a href="/hakkimizda.html">Hakkımızda</a>
+      •
+      <a href="/iletisim.html">İletişim</a>
+      •
+      <a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+      •
+      <a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+      •
+      <a href="/en/">English</a>
+    </p>
+
+    <p>
+      İletişim:
+      <a href="mailto:araclioiletisim@gmail.com">
+        araclioiletisim@gmail.com
+      </a>
+    </p>
+
+    <p>
+      © <span id="year"></span>
+      Araclio • Ücretsiz Online Araçlar
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+function sayiFormatla(sayi){
+
+  return new Intl.NumberFormat(
+    "tr-TR",
+    {
+      maximumFractionDigits:0
+    }
+  ).format(sayi);
+
+}
+
+
+function hesapla(){
+
+  const cinsiyet =
+    document.getElementById("cinsiyet").value;
+
+  const yas =
+    Number(
+      document.getElementById("yas").value
+    );
+
+  const boy =
+    Number(
+      document.getElementById("boy").value
+    );
+
+  const kilo =
+    Number(
+      document.getElementById("kilo").value
+    );
+
+  const aktivite =
+    Number(
+      document.getElementById("aktivite").value
+    );
+
+  const sonuc =
+    document.getElementById("sonuc");
+
+
+  if(
+    !Number.isFinite(yas) ||
+    !Number.isFinite(boy) ||
+    !Number.isFinite(kilo) ||
+    yas < 18 ||
+    yas > 100 ||
+    boy < 100 ||
+    boy > 250 ||
+    kilo < 30 ||
+    kilo > 350
+  ){
+
+    sonuc.innerHTML =
+      "Lütfen yaş, boy ve kilo bilgilerini geçerli aralıklarda girin.";
+
+    return;
+
+  }
+
+
+  let bmr;
+
+
+  if(cinsiyet === "erkek"){
+
+    bmr =
+      (10 * kilo) +
+      (6.25 * boy) -
+      (5 * yas) +
+      5;
+
+  }else{
+
+    bmr =
+      (10 * kilo) +
+      (6.25 * boy) -
+      (5 * yas) -
+      161;
+
+  }
+
+
+  const gunluk =
+    bmr * aktivite;
+
+
+  sonuc.innerHTML =
+
+    "<strong>Tahmini BMR:</strong> " +
+    sayiFormatla(bmr) +
+    " kcal/gün" +
+
+    "<br><br>" +
+
+    "<strong>Aktiviteye göre tahmini günlük enerji harcaması:</strong> " +
+    sayiFormatla(gunluk) +
+    " kcal/gün" +
+
+    "<br><br>" +
+
+    "<small>Bu değerler tahminidir ve kişiye özel beslenme hedefi değildir.</small>";
+
+}
+
+
+document
+  .getElementById("kilo")
+  .addEventListener(
+    "keydown",
+    function(event){
+
+      if(event.key === "Enter"){
+        hesapla();
+      }
+
+    }
+  );
+
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+</script>
 
 </body>
 </html>
