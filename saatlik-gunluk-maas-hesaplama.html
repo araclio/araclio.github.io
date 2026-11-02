@@ -6,16 +6,42 @@
 
   <title>Saatlik, Günlük ve Aylık Maaş Hesaplama - Araclio</title>
 
-  <meta name="description" content="Saatlik, günlük, haftalık, aylık veya yıllık kazancınızı girerek diğer maaş karşılıklarını hesaplayın. Çalışma saati ve gün sayısına göre ücretsiz maaş dönüştürücü.">
+  <meta
+    name="description"
+    content="Saatlik, günlük, haftalık, aylık veya yıllık kazancınızı girerek diğer maaş karşılıklarını hesaplayın. Çalışma saati ve gün sayısına göre ücretsiz maaş dönüştürücü."
+  >
 
   <meta name="robots" content="index,follow">
 
-  <link rel="canonical" href="https://araclio.com/maas-donusturucu.html">
+  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+  <script
+    async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+    crossorigin="anonymous">
+  </script>
+
+  <link
+    rel="canonical"
+    href="https://araclio.com/saatlik-gunluk-maas-hesaplama.html"
+  >
 
   <link rel="stylesheet" href="style.css">
 
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Saatlik, Günlük ve Aylık Maaş Hesaplama | Araclio">
+  <meta
+    property="og:description"
+    content="Saatlik, günlük, haftalık, aylık veya yıllık kazancınızı diğer kazanç türlerine dönüştürün."
+  >
+  <meta
+    property="og:url"
+    content="https://araclio.com/saatlik-gunluk-maas-hesaplama.html"
+  >
+  <meta property="og:site_name" content="Araclio">
+
   <style>
-    select {
+    select{
       width:100%;
       box-sizing:border-box;
       padding:12px;
@@ -23,28 +49,109 @@
       margin-bottom:14px;
     }
 
-    .info-box {
+    .info-box{
       margin-top:18px;
       padding:15px;
       border-radius:8px;
       background:#f5f5f5;
+      color:#222;
+      line-height:1.8;
     }
 
-    .warning-box {
+    .warning-box{
       margin-top:24px;
       padding:18px;
       border:2px solid #b26a00;
       border-radius:10px;
       background:#fff8e8;
       color:#6b4300;
+      line-height:1.75;
     }
 
-    .warning-box strong {
+    .warning-box strong{
       display:block;
       margin-bottom:8px;
       font-size:18px;
     }
   </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Saatlik Günlük Aylık Maaş Hesaplama",
+    "url":"https://araclio.com/saatlik-gunluk-maas-hesaplama.html",
+    "applicationCategory":"FinanceApplication",
+    "operatingSystem":"Any",
+    "inLanguage":"tr-TR",
+    "description":"Saatlik, günlük, haftalık, aylık veya yıllık kazançları birbirine dönüştüren ücretsiz online araç.",
+    "offers":{
+      "@type":"Offer",
+      "price":"0",
+      "priceCurrency":"TRY"
+    },
+    "isPartOf":{
+      "@type":"WebSite",
+      "name":"Araclio",
+      "url":"https://araclio.com/"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {
+        "@type":"ListItem",
+        "position":1,
+        "name":"Ana Sayfa",
+        "item":"https://araclio.com/"
+      },
+      {
+        "@type":"ListItem",
+        "position":2,
+        "name":"Saatlik Günlük Aylık Maaş Hesaplama",
+        "item":"https://araclio.com/saatlik-gunluk-maas-hesaplama.html"
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {
+        "@type":"Question",
+        "name":"Saatlik maaş nasıl hesaplanır?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Bu araç aylık veya yıllık kazancı, kullanıcının girdiği haftalık çalışma günü ve günlük çalışma saati bilgilerine göre saatlik karşılığa dönüştürür."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Aylık maaştan günlük ücret nasıl bulunur?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Aylık kazanç önce yıllık kazanca çevrilir, ardından kullanıcının haftalık çalışma gününe göre yıllık çalışma günü hesaplanarak günlük karşılık bulunur."
+        }
+      },
+      {
+        "@type":"Question",
+        "name":"Bu araç brüt net maaş hesabı yapar mı?",
+        "acceptedAnswer":{
+          "@type":"Answer",
+          "text":"Hayır. Bu araç matematiksel kazanç dönüşümü yapar. Vergi, SGK ve bordro kesintilerini hesaplamaz."
+        }
+      }
+    ]
+  }
+  </script>
+
 </head>
 
 <body>
@@ -76,90 +183,109 @@
 
       <h2>Maaş Dönüştürücü</h2>
 
-      <label>
+      <label for="tur">
         Bildiğiniz Kazanç Türü
-        <select id="tur">
-          <option value="saatlik">Saatlik</option>
-          <option value="gunluk">Günlük</option>
-          <option value="haftalik">Haftalık</option>
-          <option value="aylik" selected>Aylık</option>
-          <option value="yillik">Yıllık</option>
-        </select>
       </label>
 
-      <label>
+      <select id="tur">
+        <option value="saatlik">Saatlik</option>
+        <option value="gunluk">Günlük</option>
+        <option value="haftalik">Haftalık</option>
+        <option value="aylik" selected>Aylık</option>
+        <option value="yillik">Yıllık</option>
+      </select>
+
+      <label for="tutar">
         Kazanç Tutarı (TL)
-        <input
-          id="tutar"
-          type="number"
-          min="0"
-          step="0.01"
-          placeholder="30000">
       </label>
 
-      <label>
+      <input
+        id="tutar"
+        type="number"
+        min="0"
+        step="0.01"
+        inputmode="decimal"
+        placeholder="Örnek: 30000"
+      >
+
+      <label for="gunlukSaat">
         Günde Çalışılan Saat
-        <input
-          id="gunlukSaat"
-          type="number"
-          min="0.5"
-          max="24"
-          step="0.5"
-          value="8">
       </label>
 
-      <label>
+      <input
+        id="gunlukSaat"
+        type="number"
+        min="0.5"
+        max="24"
+        step="0.5"
+        inputmode="decimal"
+        value="8"
+      >
+
+      <label for="haftalikGun">
         Haftada Çalışılan Gün
-        <input
-          id="haftalikGun"
-          type="number"
-          min="1"
-          max="7"
-          step="1"
-          value="5">
       </label>
 
-      <button onclick="hesapla()">Hesapla</button>
+      <input
+        id="haftalikGun"
+        type="number"
+        min="1"
+        max="7"
+        step="1"
+        inputmode="numeric"
+        value="5"
+      >
 
-      <div id="sonuc" class="result">
+      <button type="button" onclick="hesapla()">
+        Hesapla
+      </button>
+
+      <div id="sonuc" class="result" aria-live="polite">
         Kazanç türünü ve tutarı girerek hesaplama yapın.
       </div>
 
       <div class="warning-box">
-        <strong>⚠️ BİLGİLENDİRME</strong>
 
-        Bu araç matematiksel kazanç dönüşümü yapar. Sonuçlar
-        kullanıcının girdiği çalışma saati ve çalışma günü
-        bilgilerine göre tahmin edilir.
+        <strong>⚠️ Bilgilendirme</strong>
+
+        Bu araç matematiksel kazanç dönüşümü yapar.
+        Sonuçlar kullanıcının girdiği çalışma saati ve
+        çalışma günü bilgilerine göre tahmin edilir.
 
         <br><br>
 
-        Vergi, SGK, fazla mesai, resmi tatil, izin, prim,
+        Vergi, SGK, fazla mesai, resmî tatil, izin, prim,
         ikramiye, yemek, yol yardımı ve diğer ücret unsurları
         bu hesaplamaya dahil değildir.
 
         <br><br>
 
-        Brüt maaştan net maaş hesaplamak için Araclio'nun
-        Brüt Net Maaş Hesaplama aracını kullanabilirsiniz.
+        Brüt maaştan net maaş hesaplamak için
+        Araclio'nun Brüt Net Maaş Hesaplama aracını
+        kullanabilirsiniz.
+
       </div>
 
     </article>
 
   </section>
 
-  <section class="info">
+  <section class="card">
 
     <h2>Saatlik Maaş Nasıl Hesaplanır?</h2>
 
     <p>
       Bu araç haftada çalışılan gün ve günde çalışılan saat
       bilgilerini kullanarak yaklaşık çalışma süresini hesaplar.
-      Aylık dönüşümlerde bir yıl 52 hafta, bir yıl ise
-      12 ay kabul edilir.
+    </p>
+
+    <p>
+      Yıllık hesaplamalarda 52 hafta, aylık ortalama dönüşümlerde
+      ise 12 ay kullanılır.
     </p>
 
     <div class="info-box">
+
       <strong>Örnek:</strong><br><br>
 
       Günde 8 saat ve haftada 5 gün çalışan bir kişi için
@@ -168,42 +294,164 @@
       <br><br>
 
       Yıllık yaklaşık çalışma süresi:
-      40 × 52 = 2.080 saat
+      <strong>40 × 52 = 2.080 saat</strong>
+
     </div>
+
+  </section>
+
+  <section class="card">
 
     <h2>Aylık Maaştan Saatlik Ücret Nasıl Bulunur?</h2>
 
     <p>
       Önce aylık kazanç 12 ile çarpılarak yıllık kazanca
-      dönüştürülür. Ardından yıllık kazanç, hesaplanan yıllık
-      çalışma saatine bölünür.
+      dönüştürülür.
     </p>
+
+    <p>
+      Daha sonra yıllık kazanç, haftalık çalışma düzenine göre
+      hesaplanan yıllık toplam çalışma saatine bölünür.
+    </p>
+
+  </section>
+
+  <section class="card">
 
     <h2>Günlük Ücretten Aylık Kazanç Nasıl Hesaplanır?</h2>
 
     <p>
-      Günlük ücret, haftada çalışılan gün sayısı ve yıldaki
-      52 hafta üzerinden yıllık kazanca çevrilir. Yıllık tutarın
-      12'ye bölünmesiyle aylık ortalama karşılık hesaplanır.
+      Günlük ücret, haftada çalışılan gün sayısı ve 52 hafta
+      üzerinden yıllık kazanca çevrilir.
     </p>
+
+    <p>
+      Yıllık toplam kazanç 12'ye bölünerek aylık ortalama
+      kazanç hesaplanır.
+    </p>
+
+  </section>
+
+  <section class="card">
 
     <h2>Neden Ayda 30 Gün Üzerinden Hesaplanmıyor?</h2>
 
     <p>
-      Bu araç maaş bordrosu veya yasal günlük ücret hesabı
-      yapmaz. Kullanıcının fiili çalışma düzenine göre kazanç
-      dönüşümü yapar. Bu nedenle haftalık çalışma günü ve
-      çalışma saati esas alınır.
+      Bu araç bordro veya yasal günlük ücret hesabı yapmaz.
+      Kullanıcının fiili çalışma düzenine göre matematiksel
+      kazanç dönüşümü yapar.
     </p>
+
+    <p>
+      Bu nedenle haftalık çalışma günü ve günlük çalışma
+      saati temel alınır.
+    </p>
+
+  </section>
+
+  <section class="card">
+
+    <h2>Hangi Kazanç Türleri Dönüştürülebilir?</h2>
+
+    <ul>
+      <li>Saatlik kazanç</li>
+      <li>Günlük kazanç</li>
+      <li>Haftalık kazanç</li>
+      <li>Aylık kazanç</li>
+      <li>Yıllık kazanç</li>
+    </ul>
+
+  </section>
+
+  <section class="card">
+
+    <h2>Sık Sorulan Sorular</h2>
+
+    <h3>Aylık maaştan saatlik ücret hesaplanabilir mi?</h3>
+
+    <p>
+      Evet. Aylık kazanç yıllık kazanca dönüştürülür ve
+      kullanıcının çalışma düzenine göre yıllık saat sayısına
+      bölünür.
+    </p>
+
+    <h3>Haftalık maaştan aylık maaş hesaplanabilir mi?</h3>
+
+    <p>
+      Evet. Haftalık kazanç 52 hafta üzerinden yıllık tutara
+      çevrilip 12'ye bölünür.
+    </p>
+
+    <h3>Bu hesap brüt mü net mi?</h3>
+
+    <p>
+      Araç, girdiğiniz tutarı olduğu gibi matematiksel olarak
+      dönüştürür. Tutarın brüt veya net olması kullanıcının
+      girdiği değere bağlıdır.
+    </p>
+
+    <h3>Vergi ve SGK dahil mi?</h3>
+
+    <p>
+      Hayır. Bu araç vergi, SGK veya bordro kesintisi
+      hesaplamaz.
+    </p>
+
+  </section>
+
+  <section class="card">
+
+    <h2>Bilgilendirme</h2>
+
+    <p>
+      Bu hesaplama yalnızca yaklaşık kazanç dönüşümü amacıyla
+      sunulmaktadır ve resmî bordro hesabı değildir.
+    </p>
+
+    <p>
+      <strong>Son güncelleme: Kasım 2026</strong>
+    </p>
+
+  </section>
+
+  <section class="card">
 
     <h2>Diğer Maaş ve Finans Araçları</h2>
 
     <p>
-      <a href="/brut-net-maas-hesaplama.html">2026 Brüt Net Maaş Hesaplama</a>
-      •
-      <a href="/kredi-karti-asgari-odeme.html">Kredi Kartı Asgari Ödeme</a>
-      •
-      <a href="/kredi-hesaplama.html">Kredi Hesaplama</a>
+      <a href="/brut-net-maas-hesaplama.html">
+        Brüt Net Maaş Hesaplama →
+      </a>
+    </p>
+
+    <p>
+      <a href="/netten-brute-maas-hesaplama.html">
+        Netten Brüte Maaş Hesaplama →
+      </a>
+    </p>
+
+    <p>
+      <a href="/maas-vergi-dilimi-hesaplama.html">
+        Maaş Vergi Dilimi Hesaplama →
+      </a>
+    </p>
+
+    <p>
+      <a href="/maas-zam-hesaplama.html">
+        Maaş Zam Hesaplama →
+      </a>
+    </p>
+
+    <p>
+      <a href="/kredi-hesaplama.html">
+        Kredi Hesaplama →
+      </a>
+    </p>
+
+    <p>
+      <a href="/">
+        Tüm Hesaplama Araçları →
+      </a>
     </p>
 
   </section>
@@ -211,54 +459,79 @@
 </main>
 
 <footer>
+
   <div class="wrap">
 
     <p>
-      <a href="/about.html">Hakkımızda</a>
+      <a href="/">Ana Sayfa</a>
+      •
+      <a href="/hakkimizda.html">Hakkımızda</a>
       •
       <a href="/iletisim.html">İletişim</a>
       •
-      <a href="/privacy-policy.html">Gizlilik Politikası</a>
+      <a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
       •
-      <a href="/terms.html">Kullanım Koşulları</a>
+      <a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
       •
       <a href="/en/">English</a>
     </p>
 
     <p>
-      © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
+      İletişim:
+      <a href="mailto:araclioiletisim@gmail.com">
+        araclioiletisim@gmail.com
+      </a>
+    </p>
+
+    <p>
+      © <span id="year"></span>
+      Araclio • Ücretsiz Online Araçlar
     </p>
 
   </div>
+
 </footer>
 
 <script>
 
-function para(tutar) {
-  return new Intl.NumberFormat("tr-TR", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  }).format(tutar) + " TL";
+function para(tutar){
+
+  return new Intl.NumberFormat(
+    "tr-TR",
+    {
+      minimumFractionDigits:2,
+      maximumFractionDigits:2
+    }
+  ).format(tutar) + " TL";
+
 }
 
-function hesapla() {
+
+function hesapla(){
 
   const tur =
     document.getElementById("tur").value;
 
   const tutar =
-    Number(document.getElementById("tutar").value);
+    Number(
+      document.getElementById("tutar").value
+    );
 
   const gunlukSaat =
-    Number(document.getElementById("gunlukSaat").value);
+    Number(
+      document.getElementById("gunlukSaat").value
+    );
 
   const haftalikGun =
-    Number(document.getElementById("haftalikGun").value);
+    Number(
+      document.getElementById("haftalikGun").value
+    );
 
   const sonuc =
     document.getElementById("sonuc");
 
-  if (
+
+  if(
     !Number.isFinite(tutar) ||
     !Number.isFinite(gunlukSaat) ||
     !Number.isFinite(haftalikGun) ||
@@ -267,61 +540,101 @@ function hesapla() {
     gunlukSaat > 24 ||
     haftalikGun < 1 ||
     haftalikGun > 7
-  ) {
+  ){
+
     sonuc.innerHTML =
       "Lütfen geçerli kazanç ve çalışma bilgileri girin.";
+
     return;
+
   }
+
 
   const haftalikSaat =
-    gunlukSaat * haftalikGun;
+    gunlukSaat *
+    haftalikGun;
+
 
   const yillikSaat =
-    haftalikSaat * 52;
+    haftalikSaat *
+    52;
+
 
   const yillikGun =
-    haftalikGun * 52;
+    haftalikGun *
+    52;
 
-  let yillikKazanc = 0;
 
-  if (tur === "saatlik") {
+  let yillikKazanc =
+    0;
+
+
+  if(tur === "saatlik"){
+
     yillikKazanc =
-      tutar * yillikSaat;
+      tutar *
+      yillikSaat;
+
   }
 
-  if (tur === "gunluk") {
+
+  if(tur === "gunluk"){
+
     yillikKazanc =
-      tutar * yillikGun;
+      tutar *
+      yillikGun;
+
   }
 
-  if (tur === "haftalik") {
+
+  if(tur === "haftalik"){
+
     yillikKazanc =
-      tutar * 52;
+      tutar *
+      52;
+
   }
 
-  if (tur === "aylik") {
+
+  if(tur === "aylik"){
+
     yillikKazanc =
-      tutar * 12;
+      tutar *
+      12;
+
   }
 
-  if (tur === "yillik") {
+
+  if(tur === "yillik"){
+
     yillikKazanc =
       tutar;
+
   }
 
+
   const saatlik =
-    yillikKazanc / yillikSaat;
+    yillikKazanc /
+    yillikSaat;
+
 
   const gunluk =
-    yillikKazanc / yillikGun;
+    yillikKazanc /
+    yillikGun;
+
 
   const haftalik =
-    yillikKazanc / 52;
+    yillikKazanc /
+    52;
+
 
   const aylik =
-    yillikKazanc / 12;
+    yillikKazanc /
+    12;
+
 
   sonuc.innerHTML =
+
     "<strong>Saatlik kazanç:</strong> " +
     para(saatlik) +
 
@@ -350,7 +663,23 @@ function hesapla() {
     "<small>Hesaplama " +
     haftalikSaat +
     " saat/hafta çalışma düzenine göre yapılmıştır.</small>";
+
 }
+
+
+document
+  .getElementById("tutar")
+  .addEventListener(
+    "keydown",
+    function(event){
+
+      if(event.key === "Enter"){
+        hesapla();
+      }
+
+    }
+  );
+
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
