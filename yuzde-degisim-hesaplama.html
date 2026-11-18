@@ -4,16 +4,19 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Yüzde Değişim Hesaplama | Artış ve Azalış - Araclio</title>
+<title>Yüzde Değişim Hesaplama | Artış ve Azalış Oranı - Araclio</title>
 
 <meta
 name="description"
-content="Ücretsiz yüzde değişim hesaplama aracı. Eski ve yeni değeri girerek yüzde kaç arttığını veya azaldığını, değişim miktarını ve yüzde farkını hesaplayın."
+content="Yüzde değişim hesaplama aracı. Eski ve yeni değeri girerek yüzde kaç artış veya azalış olduğunu ve mutlak değişim miktarını hesaplayın."
 >
 
 <meta name="robots" content="index,follow">
 
-<meta name="google-adsense-account" content="ca-pub-7634654090472031">
+<meta
+name="google-adsense-account"
+content="ca-pub-7634654090472031"
+>
 
 <script
 async
@@ -21,26 +24,50 @@ src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pu
 crossorigin="anonymous">
 </script>
 
-<link rel="canonical" href="https://araclio.com/yuzde-degisim-hesaplama.html">
+<link
+rel="canonical"
+href="https://araclio.com/yuzde-degisim-hesaplama.html"
+>
 
 <link rel="stylesheet" href="style.css">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Yüzde Değişim Hesaplama | Artış ve Azalış">
+
+<meta
+property="og:title"
+content="Yüzde Değişim Hesaplama | Artış ve Azalış"
+>
+
 <meta
 property="og:description"
-content="Eski ve yeni değer arasındaki yüzde artış veya azalışı ücretsiz hesaplayın."
+content="Eski değerden yeni değere yüzde artış veya azalış oranını ve değişim miktarını hesaplayın."
 >
-<meta property="og:url" content="https://araclio.com/yuzde-degisim-hesaplama.html">
+
+<meta
+property="og:url"
+content="https://araclio.com/yuzde-degisim-hesaplama.html"
+>
+
 <meta property="og:site_name" content="Araclio">
 
 <style>
+
 .info-box{
-margin-top:18px;
+margin:16px 0;
 padding:16px;
 border-radius:10px;
 background:#f5f5f5;
 color:#222;
+line-height:1.8;
+}
+
+.warning-box{
+margin:18px 0;
+padding:16px;
+border:1px solid #e7d28b;
+border-radius:10px;
+background:#fff8e1;
+color:#4d3d00;
 line-height:1.8;
 }
 
@@ -92,10 +119,13 @@ text-align:left;
 }
 
 @media(max-width:650px){
+
 .result-grid{
 grid-template-columns:1fr;
 }
+
 }
+
 </style>
 
 <script type="application/ld+json">
@@ -107,7 +137,7 @@ grid-template-columns:1fr;
   "applicationCategory":"UtilitiesApplication",
   "operatingSystem":"Any",
   "inLanguage":"tr-TR",
-  "description":"Eski ve yeni değer arasındaki yüzde artış veya yüzde azalışı hesaplayan ücretsiz online araç.",
+  "description":"Eski ve yeni değer arasındaki yüzde artış veya azalış oranını ve mutlak değişim miktarını hesaplayan ücretsiz online araç.",
   "offers":{
     "@type":"Offer",
     "price":"0",
@@ -152,7 +182,7 @@ grid-template-columns:1fr;
       "name":"Yüzde değişim nasıl hesaplanır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Yeni değerden eski değer çıkarılır, bulunan fark eski değere bölünür ve sonuç 100 ile çarpılır."
+        "text":"Yeni değerden eski değer çıkarılır. Bulunan fark eski değere bölünür ve sonuç 100 ile çarpılır."
       }
     },
     {
@@ -176,7 +206,15 @@ grid-template-columns:1fr;
       "name":"Eski değer 0 ise yüzde değişim hesaplanabilir mi?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Standart yüzde değişim formülünde eski değer paydaya yazıldığı için eski değer 0 olduğunda yüzde değişim tanımlı değildir."
+        "text":"Hayır. Standart yüzde değişim formülünde eski değer paydaya yazıldığı için eski değer 0 olduğunda yüzde değişim tanımlı değildir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Yüzde değişim ile yüzde fark aynı şey midir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Hayır. Yüzde değişimde eski değer başlangıç ve referans değeridir. Yüzde fark ise iki değeri simetrik biçimde karşılaştırmak için farklı bir formül kullanabilir."
       }
     }
   ]
@@ -188,10 +226,19 @@ grid-template-columns:1fr;
 <body>
 
 <header>
+
 <div class="wrap nav">
-<a class="brand" href="/">Araclio</a>
-<span class="tag">Ücretsiz Online Araçlar</span>
+
+<a class="brand" href="/">
+Araclio
+</a>
+
+<span class="tag">
+Ücretsiz Online Araçlar
+</span>
+
 </div>
+
 </header>
 
 <main class="wrap">
@@ -205,19 +252,19 @@ YÜZDE • ARTIŞ • AZALIŞ • DEĞİŞİM
 <h1>Yüzde Değişim Hesaplama</h1>
 
 <p>
-Eski ve yeni değeri girerek bir fiyatın, tutarın veya sayının
-yüzde kaç arttığını ya da yüzde kaç azaldığını saniyeler içinde hesaplayın.
+Bir değerin başlangıç seviyesinden yeni seviyesine yüzde kaç
+arttığını veya azaldığını hesaplayın. Mutlak değişim miktarını
+ve değişimin yönünü de aynı anda görün.
 </p>
 
 </section>
-
 
 <section class="card">
 
 <h2>Yüzde Artış / Azalış Hesapla</h2>
 
 <label for="eski">
-Eski Değer
+Eski / Başlangıç Değeri
 </label>
 
 <input
@@ -230,7 +277,7 @@ placeholder="Örnek: 800"
 >
 
 <label for="yeni">
-Yeni Değer
+Yeni / Son Değer
 </label>
 
 <input
@@ -254,7 +301,7 @@ Eski ve yeni değeri girin.
 
 <div class="result-box">
 <strong>Yüzde Değişim</strong>
-<span id="yuzdeSonuc" class="big-result">%0</span>
+<span id="yuzdeSonuc" class="big-result">-</span>
 </div>
 
 <div class="result-box">
@@ -263,63 +310,75 @@ Eski ve yeni değeri girin.
 </div>
 
 <div class="result-box">
-<strong>Değişim Miktarı</strong>
-<span id="farkSonuc">0</span>
+<strong>Mutlak Değişim</strong>
+<span id="farkSonuc">-</span>
 </div>
 
 <div class="result-box">
-<strong>Eski → Yeni</strong>
-<span id="degerSonuc">0 → 0</span>
+<strong>Başlangıç → Yeni</strong>
+<span id="degerSonuc">-</span>
 </div>
 
 </div>
 
 </section>
-
 
 <section class="card">
 
 <h2>Yüzde Değişim Nasıl Hesaplanır?</h2>
 
 <p>
-Yüzde değişim, yeni değer ile eski değer arasındaki farkın
-eski değere oranlanmasıyla bulunur.
+Yüzde değişim, yeni değer ile başlangıç değeri arasındaki farkın
+başlangıç değerine oranlanmasıyla hesaplanır.
 </p>
 
 <div class="info-box">
 
-<strong>
-Yüzde Değişim =
-((Yeni Değer − Eski Değer) ÷ Eski Değer) × 100
-</strong>
+<strong>Yüzde Değişim (%) =</strong>
+
+<br><br>
+
+(Yeni Değer − Eski Değer)
+
+<br>
+
+÷ Eski Değer
+
+<br>
+
+× 100
 
 </div>
 
 <p>
 Sonuç pozitifse artış, negatifse azalış vardır.
-İki değer aynıysa yüzde değişim %0'dır.
+Değerler eşitse sonuç %0'dır.
 </p>
 
 </section>
 
-
 <section class="card">
 
-<h2>Yüzde Artış Nasıl Hesaplanır?</h2>
-
-<p>
-Yeni değer eski değerden büyükse önce artış miktarı bulunur.
-Bu fark eski değere bölünüp 100 ile çarpılır.
-</p>
+<h2>800'den 1.000'e Yüzde Kaç Artış Var?</h2>
 
 <div class="info-box">
 
-<strong>Örnek: 800 → 1.000</strong>
+Başlangıç =
+<strong>800</strong>
 
 <br><br>
 
-Fark:
-1.000 − 800 = 200
+Yeni değer =
+<strong>1.000</strong>
+
+<br><br>
+
+Değişim:
+
+<br>
+
+1.000 − 800 =
+<strong>200</strong>
 
 <br><br>
 
@@ -333,36 +392,182 @@ Fark:
 
 </section>
 
+<section class="card">
+
+<h2>1.000'den 800'e Yüzde Kaç Azalış Var?</h2>
+
+<div class="info-box">
+
+Başlangıç =
+<strong>1.000</strong>
+
+<br><br>
+
+Yeni değer =
+<strong>800</strong>
+
+<br><br>
+
+Değişim:
+
+<br>
+
+800 − 1.000 =
+<strong>−200</strong>
+
+<br><br>
+
+−200 ÷ 1.000 × 100 =
+
+<br><br>
+
+<strong>−%20</strong>
+
+</div>
+
+<p>
+Bu sonuç günlük kullanımda
+<strong>%20 azalış</strong>
+olarak ifade edilir.
+</p>
+
+</section>
 
 <section class="card">
 
-<h2>Yüzde Azalış Nasıl Hesaplanır?</h2>
+<h2>Neden 800 → 1.000 %25, 1.000 → 800 %20?</h2>
 
 <p>
-Yeni değer eski değerden küçükse düşüş miktarının eski değere oranı alınır.
+Yüzde değişimde referans olarak her zaman başlangıç değeri kullanılır.
+Bu nedenle aynı iki sayı ters yönde karşılaştırıldığında oran değişir.
 </p>
 
 <div class="info-box">
 
-<strong>Örnek: 1.000 → 750</strong>
+<strong>800 → 1.000</strong>
+
+<br>
+
+200 ÷ 800 =
+<strong>%25 artış</strong>
 
 <br><br>
 
-Düşüş:
-1.000 − 750 = 250
+<strong>1.000 → 800</strong>
+
+<br>
+
+200 ÷ 1.000 =
+<strong>%20 azalış</strong>
+
+</div>
+
+<p>
+Bu durum hesaplama hatası değildir. İki işlemin başlangıç değerleri farklıdır.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Eski Değer 0 İse Ne Olur?</h2>
+
+<p>
+Standart yüzde değişim hesabında başlangıç değeri paydadır.
+Başlangıç 0 olduğunda 0'a bölme gerekir.
+</p>
+
+<div class="warning-box">
+
+<strong>0'dan farklı bir değere standart yüzde değişim tanımlı değildir.</strong>
 
 <br><br>
 
-250 ÷ 1.000 × 100 =
+Örneğin 0'dan 100'e geçişte mutlak artış 100 birimdir;
+ancak standart formülle “%X artış” şeklinde sonlu bir oran bulunamaz.
+
+</div>
+
+<p>
+0'dan 0'a geçişte de başlangıç bazlı yüzde değişim formülü
+matematiksel olarak uygulanamaz; fakat mutlak değişim 0'dır.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Yüzde Değişim ile Yüzde Fark Aynı Şey mi?</h2>
+
+<p>
+Hayır. Bu sayfanın yaptığı hesap
+<strong>yüzde değişimdir</strong>.
+</p>
+
+<div class="info-box">
+
+<strong>Yüzde değişim:</strong>
+
+<br>
+
+Bir başlangıç değeri vardır ve eski değer referans alınır.
 
 <br><br>
 
-<strong>%25 azalış</strong>
+<strong>Yüzde fark:</strong>
+
+<br>
+
+İki değerden birini başlangıç kabul etmeden, iki değeri
+simetrik biçimde karşılaştırmak için farklı bir yöntem kullanılabilir.
+
+</div>
+
+<p>
+Bu nedenle “800'den 1.000'e ne kadar arttı?” sorusu
+yüzde değişim hesabıdır.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Aynı Oranda Artış ve Azalış Neden Birbirini Geri Almaz?</h2>
+
+<div class="info-box">
+
+100 → %20 artış → 120
+
+<br><br>
+
+120 → %20 azalış → 96
+
+</div>
+
+<p>
+İkinci işlem artık 100 üzerinden değil, 120 üzerinden yapılır.
+Bu nedenle değer tekrar 100 olmaz.
+</p>
+
+<p>
+120'den tekrar 100'e dönmek için gereken azalış:
+</p>
+
+<div class="info-box">
+
+20 ÷ 120 × 100
+
+<br><br>
+
+=
+
+<br><br>
+
+<strong>yaklaşık %16,67 azalış</strong>
 
 </div>
 
 </section>
-
 
 <section class="card">
 
@@ -376,7 +581,8 @@ Düşüş:
 <tr>
 <th>Eski Değer</th>
 <th>Yeni Değer</th>
-<th>Sonuç</th>
+<th>Mutlak Değişim</th>
+<th>Yüzde Değişim</th>
 </tr>
 </thead>
 
@@ -385,31 +591,36 @@ Düşüş:
 <tr>
 <td>100</td>
 <td>120</td>
+<td>+20</td>
 <td>%20 artış</td>
 </tr>
 
 <tr>
 <td>200</td>
 <td>150</td>
+<td>−50</td>
 <td>%25 azalış</td>
 </tr>
 
 <tr>
 <td>800</td>
 <td>1.000</td>
+<td>+200</td>
 <td>%25 artış</td>
 </tr>
 
 <tr>
 <td>1.000</td>
 <td>800</td>
+<td>−200</td>
 <td>%20 azalış</td>
 </tr>
 
 <tr>
 <td>500</td>
 <td>500</td>
-<td>%0 değişim</td>
+<td>0</td>
+<td>%0</td>
 </tr>
 
 </tbody>
@@ -420,160 +631,106 @@ Düşüş:
 
 </section>
 
-
 <section class="card">
 
-<h2>Fiyat Yüzde Kaç Arttı?</h2>
+<h2>Fiyat Artış Oranı Nasıl Hesaplanır?</h2>
 
 <p>
-Bir ürünün eski ve yeni fiyatı biliniyorsa fiyat artış oranı kolayca hesaplanabilir.
+Eski fiyat başlangıç değeri olarak kullanılır.
 </p>
 
 <div class="info-box">
 
-Eski fiyat:
+Eski fiyat =
 <strong>2.000 TL</strong>
 
-<br>
+<br><br>
 
-Yeni fiyat:
+Yeni fiyat =
 <strong>2.500 TL</strong>
 
 <br><br>
 
-Artış:
-500 TL
+Fark =
+<strong>500 TL</strong>
 
 <br><br>
 
-500 ÷ 2.000 × 100 =
+500 ÷ 2.000 × 100
 
 <br><br>
 
-<strong>%25 artış</strong>
+=
+
+<br><br>
+
+<strong>%25 fiyat artışı</strong>
 
 </div>
 
 </section>
 
-
 <section class="card">
 
-<h2>Fiyat Yüzde Kaç Düştü?</h2>
+<h2>Fiyat Düşüş Oranı Nasıl Hesaplanır?</h2>
 
 <div class="info-box">
 
-Eski fiyat:
+Eski fiyat =
 <strong>2.000 TL</strong>
 
-<br>
+<br><br>
 
-Yeni fiyat:
+Yeni fiyat =
 <strong>1.600 TL</strong>
 
 <br><br>
 
-Düşüş:
-400 TL
+Düşüş =
+<strong>400 TL</strong>
 
 <br><br>
 
-400 ÷ 2.000 × 100 =
+400 ÷ 2.000 × 100
 
 <br><br>
 
-<strong>%20 azalış</strong>
+=
+
+<br><br>
+
+<strong>%20 fiyat düşüşü</strong>
 
 </div>
 
 </section>
-
-
-<section class="card">
-
-<h2>Eski Değer 0 İse Ne Olur?</h2>
-
-<p>
-Standart yüzde değişim formülünde eski değer paydaya yazılır.
-Bu nedenle eski değer 0 olduğunda işlem 0'a bölme içerir.
-</p>
-
-<div class="info-box">
-
-<strong>
-Eski değer = 0 ise standart yüzde değişim tanımlı değildir.
-</strong>
-
-</div>
-
-<p>
-Örneğin bir satış rakamının 0'dan 100'e çıkması mutlak olarak
-100 birimlik artıştır; ancak standart yüzde değişim formülüyle
-sonlu bir yüzde artış değeri verilemez.
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>Yüzde Artış ve Azalış Neden Birbirini Geri Almaz?</h2>
-
-<p>
-Yüzde hesabında kullanılan başlangıç değeri değiştiği için aynı orandaki
-artış ve azalış birbirini her zaman sıfırlamaz.
-</p>
-
-<div class="info-box">
-
-100 → %20 artış → 120
-
-<br><br>
-
-120 → %20 azalış → 96
-
-</div>
-
-<p>
-Bu nedenle sonuç başlangıçtaki 100 değerine geri dönmez.
-</p>
-
-</section>
-
 
 <section class="card">
 
 <h2>Yüzde Değişim Nerelerde Kullanılır?</h2>
 
-<p>
-Yüzde değişim hesabı:
-</p>
+<ul>
 
-<p>
-* Fiyat artışlarında<br>
-* İndirim ve düşüş analizlerinde<br>
-* Satış rakamlarında<br>
-* Gelir ve gider karşılaştırmalarında<br>
-* Maliyet değişimlerinde<br>
-* İstatistiksel karşılaştırmalarda<br>
-* Dönemsel performans analizlerinde
-</p>
+<li>Fiyat artış ve düşüşlerinde</li>
+<li>Satış rakamlarının dönemsel karşılaştırmasında</li>
+<li>Gelir ve gider analizinde</li>
+<li>Maliyet değişimlerinde</li>
+<li>Üretim ve performans verilerinde</li>
+<li>Nüfus ve istatistik karşılaştırmalarında</li>
+<li>Finansal ve ticari analizlerde</li>
 
-<p>
-kullanılabilir.
-</p>
+</ul>
 
 </section>
-
 
 <section class="card">
 
 <h2>Sık Sorulan Sorular</h2>
 
-<h3>Yüzde değişim nasıl bulunur?</h3>
+<h3>Yüzde değişim nasıl hesaplanır?</h3>
 
 <p>
-Yeni değerden eski değer çıkarılır. Fark eski değere bölünür
+Yeni değerden eski değer çıkarılır, fark eski değere bölünür
 ve sonuç 100 ile çarpılır.
 </p>
 
@@ -589,17 +746,32 @@ ve sonuç 100 ile çarpılır.
 <strong>%20 azalış</strong> vardır.
 </p>
 
-<h3>Eski ve yeni değer aynıysa sonuç nedir?</h3>
+<h3>İki değer aynıysa yüzde değişim kaçtır?</h3>
 
 <p>
-Değişim miktarı 0 olduğu için yüzde değişim de <strong>%0</strong> olur.
+Başlangıç değeri 0 değilse yüzde değişim
+<strong>%0</strong> olur.
 </p>
 
 <h3>0'dan 100'e yüzde kaç artış vardır?</h3>
 
 <p>
 Standart yüzde değişim formülünde başlangıç değeri 0 olduğu için
-sonlu bir yüzde değişim sonucu tanımlanamaz.
+sonlu bir yüzde değişim oranı tanımlanamaz.
+</p>
+
+<h3>Yüzde değişim ile yüzde fark aynı mı?</h3>
+
+<p>
+Hayır. Yüzde değişimde eski değer referans alınır.
+Yüzde fark hesabında ise farklı bir karşılaştırma yöntemi kullanılabilir.
+</p>
+
+<h3>Neden %20 artıştan sonra %20 düşüş başlangıç değerine döndürmez?</h3>
+
+<p>
+Çünkü ikinci yüzde farklı bir başlangıç değeri üzerinden hesaplanır.
+100'ün %20 artışı 120, 120'nin %20 düşüşü ise 96'dır.
 </p>
 
 <h3>Yüzde değişim hesaplama ücretsiz mi?</h3>
@@ -611,6 +783,30 @@ ve üyelik gerektirmez.
 
 </section>
 
+<section class="card">
+
+<h2>Bilgilendirme</h2>
+
+<div class="warning-box">
+
+Bu araç standart başlangıç bazlı yüzde değişim formülünü kullanır.
+
+<br><br>
+
+Başlangıç değeri 0 olduğunda standart yüzde değişim tanımlı değildir.
+
+<br><br>
+
+Araç fiyat, tutar ve benzeri sıfır veya pozitif değerlerin
+karşılaştırılması için tasarlanmıştır.
+
+</div>
+
+<p>
+<strong>Son güncelleme: Kasım 2026</strong>
+</p>
+
+</section>
 
 <section class="card">
 
@@ -656,7 +852,6 @@ Kâr Zarar Hesaplama →
 
 </main>
 
-
 <footer>
 
 <div class="wrap">
@@ -691,7 +886,6 @@ Araclio • Ücretsiz Online Araçlar
 
 </footer>
 
-
 <script>
 
 function sayiFormatla(sayi){
@@ -706,6 +900,20 @@ maximumFractionDigits:4
 }
 
 
+function yuzdeFormatla(sayi){
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+minimumFractionDigits:0,
+maximumFractionDigits:4
+}
+).format(sayi) +
+"%";
+
+}
+
+
 function hesapla(){
 
 const eskiInput =
@@ -714,17 +922,22 @@ document.getElementById("eski");
 const yeniInput =
 document.getElementById("yeni");
 
-const eski =
-Number(eskiInput.value);
-
-const yeni =
-Number(yeniInput.value);
-
 const sonuc =
 document.getElementById("sonuc");
 
 const kutular =
 document.getElementById("sonucKutulari");
+
+
+const eski =
+Number(
+eskiInput.value
+);
+
+const yeni =
+Number(
+yeniInput.value
+);
 
 
 if(
@@ -734,8 +947,8 @@ yeniInput.value === "" ||
 !Number.isFinite(yeni)
 ){
 
-sonuc.innerHTML =
-"Lütfen eski ve yeni değeri eksiksiz girin.";
+sonuc.textContent =
+"Lütfen eski ve yeni değeri eksiksiz ve geçerli olarak girin.";
 
 kutular.style.display =
 "none";
@@ -750,7 +963,7 @@ eski < 0 ||
 yeni < 0
 ){
 
-sonuc.innerHTML =
+sonuc.textContent =
 "Lütfen 0 veya daha büyük değerler girin.";
 
 kutular.style.display =
@@ -761,46 +974,139 @@ return;
 }
 
 
-if(eski === 0){
+const fark =
+yeni -
+eski;
+
+
+if(
+eski === 0
+){
+
+document
+.getElementById("yuzdeSonuc")
+.textContent =
+"Tanımsız";
+
+
+document
+.getElementById("durumSonuc")
+.textContent =
+fark > 0
+?
+"Artış"
+:
+"Değişim yok";
+
+
+document
+.getElementById("farkSonuc")
+.textContent =
+(
+fark > 0
+?
+"+"
+:
+""
+) +
+sayiFormatla(
+fark
+);
+
+
+document
+.getElementById("degerSonuc")
+.textContent =
+sayiFormatla(
+eski
+) +
+" → " +
+sayiFormatla(
+yeni
+);
+
 
 sonuc.innerHTML =
 
-"<strong>Yüzde değişim hesaplanamaz.</strong>" +
+"<strong>Standart yüzde değişim tanımlı değildir.</strong>" +
+
+"<div class='result-detail'>" +
+
+"Başlangıç değeri: <strong>" +
+sayiFormatla(
+eski
+) +
+"</strong>" +
+
+"<br>" +
+
+"Yeni değer: <strong>" +
+sayiFormatla(
+yeni
+) +
+"</strong>" +
+
+"<br>" +
+
+"Mutlak değişim: <strong>" +
+(
+fark > 0
+?
+"+"
+:
+""
+) +
+sayiFormatla(
+fark
+) +
+"</strong>" +
 
 "<br><br>" +
 
-"Eski değer 0 olduğunda standart yüzde değişim formülü " +
-"0'a bölme içerdiği için yüzde değişim tanımlı değildir.";
+"Başlangıç değeri 0 olduğu için standart yüzde değişim formülünde 0'a bölme oluşur." +
+
+"</div>";
+
 
 kutular.style.display =
-"none";
+"grid";
 
 return;
 
 }
 
 
-const fark =
-yeni - eski;
-
-const yuzde =
-(fark / eski) * 100;
-
-
-let durum;
+const yuzdeDegisim =
+(
+fark /
+eski
+) *
+100;
 
 
-if(fark > 0){
+let durum =
+"";
+
+
+if(
+fark >
+0
+){
 
 durum =
 "Artış";
 
-}else if(fark < 0){
+}
+else if(
+fark <
+0
+){
 
 durum =
 "Azalış";
 
-}else{
+}
+else{
 
 durum =
 "Değişim yok";
@@ -811,9 +1117,10 @@ durum =
 document
 .getElementById("yuzdeSonuc")
 .textContent =
-"%" +
-sayiFormatla(
-Math.abs(yuzde)
+yuzdeFormatla(
+Math.abs(
+yuzdeDegisim
+)
 );
 
 
@@ -826,76 +1133,131 @@ durum;
 document
 .getElementById("farkSonuc")
 .textContent =
+(
+fark > 0
+?
+"+"
+:
+""
+) +
 sayiFormatla(
-Math.abs(fark)
+fark
 );
 
 
 document
 .getElementById("degerSonuc")
 .textContent =
-sayiFormatla(eski) +
+sayiFormatla(
+eski
+) +
 " → " +
-sayiFormatla(yeni);
+sayiFormatla(
+yeni
+);
 
 
-if(fark === 0){
+if(
+fark === 0
+){
 
 sonuc.innerHTML =
 
-"<strong>Değişim: %0</strong>" +
+"<strong>Yüzde değişim: %0</strong>" +
 
 "<div class='result-detail'>" +
 
-"Eski değer: " +
-sayiFormatla(eski) +
+"Eski değer: <strong>" +
+sayiFormatla(
+eski
+) +
+"</strong>" +
 
 "<br>" +
 
-"Yeni değer: " +
-sayiFormatla(yeni) +
+"Yeni değer: <strong>" +
+sayiFormatla(
+yeni
+) +
+"</strong>" +
 
-"<br><br>" +
+"<br>" +
 
-"İki değer birbirine eşittir." +
+"Mutlak değişim: <strong>0</strong>" +
 
 "</div>";
 
-}else{
+}
+else{
+
+const isaretli =
+(
+yuzdeDegisim >
+0
+?
+"+"
+:
+""
+) +
+yuzdeFormatla(
+yuzdeDegisim
+);
+
 
 sonuc.innerHTML =
 
-"<strong>%" +
-sayiFormatla(
-Math.abs(yuzde)
+"<strong>" +
+
+yuzdeFormatla(
+Math.abs(
+yuzdeDegisim
+)
 ) +
+
 " " +
-durum.toLocaleLowerCase("tr-TR") +
+
+durum.toLocaleLowerCase(
+"tr-TR"
+) +
+
 "</strong>" +
 
 "<div class='result-detail'>" +
 
-"Eski değer: " +
-sayiFormatla(eski) +
-
-"<br>" +
-
-"Yeni değer: " +
-sayiFormatla(yeni) +
-
-"<br>" +
-
-"Değişim miktarı: " +
+"Eski değer: <strong>" +
 sayiFormatla(
-Math.abs(fark)
+eski
 ) +
+"</strong>" +
 
 "<br>" +
 
-"İşaretli yüzde değişim: " +
-(yuzde > 0 ? "+" : "") +
-"%" +
-sayiFormatla(yuzde) +
+"Yeni değer: <strong>" +
+sayiFormatla(
+yeni
+) +
+"</strong>" +
+
+"<br>" +
+
+"Mutlak değişim: <strong>" +
+(
+fark > 0
+?
+"+"
+:
+""
+) +
+sayiFormatla(
+fark
+) +
+"</strong>" +
+
+"<br>" +
+
+"İşaretli yüzde değişim: <strong>" +
+isaretli +
+"</strong>" +
 
 "</div>";
 
@@ -920,8 +1282,13 @@ document
 "keydown",
 function(event){
 
-if(event.key === "Enter"){
+if(
+event.key ===
+"Enter"
+){
+
 hesapla();
+
 }
 
 }
