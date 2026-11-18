@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>İşsizlik Maaşı Hesaplama 2026 | İşsizlik Ödeneği - Araclio</title>
 
 <meta
 name="description"
-content="2026 işsizlik maaşı hesaplama aracı. Son 4 aylık prime esas brüt kazancınıza göre tahmini işsizlik ödeneğinizi, damga vergisi sonrası net tutarı ve ödeme süresini hesaplayın."
+content="2026 işsizlik maaşı hesaplama aracı. Son 4 aylık prime esas kazanç ve prim günlerinize göre tahmini işsizlik ödeneğini, damga vergisi sonrası net tutarı ve ödeme süresini hesaplayın."
 >
 
 <meta name="robots" content="index,follow">
@@ -26,14 +26,105 @@ crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="İşsizlik Maaşı Hesaplama 2026">
+<meta property="og:title" content="İşsizlik Maaşı Hesaplama 2026 | İşsizlik Ödeneği">
 <meta
 property="og:description"
-content="2026 işsizlik ödeneğinizi, tahmini net ödemenizi ve kaç ay ödeme alabileceğinizi ücretsiz hesaplayın."
+content="Son dört aylık prime esas kazanç ve prim günlerinize göre 2026 tahmini işsizlik ödeneğini ve ödeme süresini hesaplayın."
 >
 <meta property="og:url" content="https://araclio.com/issizlik-maasi-hesaplama.html">
 <meta property="og:site_name" content="Araclio">
 
+<style>
+
+.month-grid{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:12px;
+align-items:end;
+margin-bottom:10px;
+}
+
+.result-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:18px;
+}
+
+.result-box{
+background:#f5f5f5;
+padding:16px;
+border-radius:10px;
+color:#222;
+}
+
+.result-box strong{
+display:block;
+margin-bottom:7px;
+}
+
+.big-result{
+font-size:1.35rem;
+font-weight:700;
+}
+
+.info-box{
+margin:16px 0;
+padding:16px;
+background:#f5f5f5;
+border-radius:10px;
+color:#222;
+line-height:1.8;
+}
+
+.warning-box{
+margin:16px 0;
+padding:16px;
+background:#fff8e1;
+border:1px solid #e7d28b;
+border-radius:10px;
+color:#493b05;
+line-height:1.8;
+}
+
+.source-box{
+margin:16px 0;
+padding:16px;
+background:#eef6ff;
+border:1px solid #bad9f5;
+border-radius:10px;
+color:#1f3550;
+line-height:1.8;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:560px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+@media(max-width:650px){
+
+.month-grid,
+.result-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
 
 <script type="application/ld+json">
 {
@@ -44,7 +135,7 @@ content="2026 işsizlik ödeneğinizi, tahmini net ödemenizi ve kaç ay ödeme 
   "applicationCategory":"FinanceApplication",
   "operatingSystem":"Any",
   "inLanguage":"tr-TR",
-  "description":"2026 yılı için tahmini işsizlik ödeneğini, damga vergisi sonrası net tutarı ve ödeme süresini hesaplayan ücretsiz araç.",
+  "description":"Son dört aylık prime esas kazanç ve prim günlerine göre 2026 tahmini işsizlik ödeneğini, damga vergisi sonrası tutarı ve ödeme süresini hesaplayan ücretsiz araç.",
   "offers":{
     "@type":"Offer",
     "price":"0",
@@ -57,7 +148,6 @@ content="2026 işsizlik ödeneğinizi, tahmini net ödemenizi ve kaç ay ödeme 
   }
 }
 </script>
-
 
 <script type="application/ld+json">
 {
@@ -80,7 +170,6 @@ content="2026 işsizlik ödeneğinizi, tahmini net ödemenizi ve kaç ay ödeme 
 }
 </script>
 
-
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -91,7 +180,7 @@ content="2026 işsizlik ödeneğinizi, tahmini net ödemenizi ve kaç ay ödeme 
       "name":"2026 işsizlik maaşı nasıl hesaplanır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"İşsizlik ödeneği, son dört aylık prime esas kazançlar üzerinden hesaplanan günlük ortalama brüt kazancın yüzde 40'ı esas alınarak hesaplanır."
+        "text":"Günlük işsizlik ödeneği, hizmet akdinin sona ermesinden önceki son dört aylık prime esas kazançlar dikkate alınarak hesaplanan günlük ortalama brüt kazancın yüzde 40'ıdır."
       }
     },
     {
@@ -99,12 +188,12 @@ content="2026 işsizlik ödeneğinizi, tahmini net ödemenizi ve kaç ay ödeme 
       "name":"2026 işsizlik maaşı en fazla ne kadar?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"İşsizlik ödeneği aylık brüt asgari ücretin yüzde 80'ini geçemez. 2026 brüt asgari ücret 33.030 TL olduğundan brüt aylık üst sınır 26.424 TL'dir."
+        "text":"İşsizlik ödeneği aylık brüt asgari ücretin yüzde 80'ini geçemez. 2026 brüt asgari ücret 33.030 TL olduğundan aylık brüt üst sınır 26.424 TL'dir."
       }
     },
     {
       "@type":"Question",
-      "name":"600 gün primi olan kaç ay işsizlik maaşı alır?",
+      "name":"600 gün primi olan kaç gün işsizlik maaşı alır?",
       "acceptedAnswer":{
         "@type":"Answer",
         "text":"Diğer şartların da sağlanması halinde son üç yılda 600 gün işsizlik sigortası primi bulunanlara 180 gün işsizlik ödeneği verilir."
@@ -112,26 +201,34 @@ content="2026 işsizlik ödeneğinizi, tahmini net ödemenizi ve kaç ay ödeme 
     },
     {
       "@type":"Question",
-      "name":"900 gün primi olan kaç ay işsizlik maaşı alır?",
+      "name":"900 gün primi olan kaç gün işsizlik maaşı alır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Diğer şartların sağlanması halinde 900 gün primi bulunanlara 240 gün işsizlik ödeneği verilir."
+        "text":"Diğer şartların da sağlanması halinde 900 gün işsizlik sigortası primi bulunanlara 240 gün işsizlik ödeneği verilir."
       }
     },
     {
       "@type":"Question",
-      "name":"1080 gün primi olan kaç ay işsizlik maaşı alır?",
+      "name":"1080 gün primi olan kaç gün işsizlik maaşı alır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Diğer şartların sağlanması halinde 1080 gün primi bulunanlara 300 gün işsizlik ödeneği verilir."
+        "text":"Diğer şartların da sağlanması halinde 1080 gün işsizlik sigortası primi bulunanlara 300 gün işsizlik ödeneği verilir."
       }
     },
     {
       "@type":"Question",
-      "name":"İşsizlik maaşından vergi kesilir mi?",
+      "name":"İşsizlik maaşından hangi kesinti yapılır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"İşsizlik ödeneğinden damga vergisi kesilir. İŞKUR açıklamalarına göre bunun dışında vergi veya kesinti uygulanmaz."
+        "text":"İşsizlik ödeneği damga vergisi hariç herhangi bir vergi ve kesintiye tabi tutulmaz."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"İşsizlik maaşı için kaç gün içinde başvuru yapılmalıdır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Hizmet akdinin sona ermesini izleyen günden itibaren 30 gün içinde İŞKUR'a başvurulmalıdır. Mücbir sebep dışında gecikilen süre hak sahipliği süresinden düşülebilir."
       }
     }
   ]
@@ -140,10 +237,10 @@ content="2026 işsizlik ödeneğinizi, tahmini net ödemenizi ve kaç ay ödeme 
 
 </head>
 
-
 <body>
 
 <header>
+
 <div class="wrap nav">
 
 <a class="brand" href="/">
@@ -155,40 +252,61 @@ Araclio
 </span>
 
 </div>
-</header>
 
+</header>
 
 <main class="wrap">
 
 <section class="hero">
 
 <p class="eyebrow">
-2026 • HIZLI • ÜCRETSİZ • ÜYELİKSİZ
+2026 • İŞSİZLİK ÖDENEĞİ • PRİM • SÜRE
 </p>
 
 <h1>İşsizlik Maaşı Hesaplama 2026</h1>
 
 <p>
-Son 4 aylık prime esas brüt kazancınızı ve
-son 3 yıldaki işsizlik sigortası prim gününüzü girerek
-tahmini işsizlik ödeneğinizi, damga vergisi sonrası
-net ödemeyi ve ödeme süresini hesaplayın.
+Son dört aylık SGK prime esas brüt kazançlarınızı ve
+prim günlerinizi girerek tahmini aylık işsizlik ödeneğinizi,
+damga vergisi sonrası tutarı ve prim gününüze göre
+ödenek süresini hesaplayın.
 </p>
 
 </section>
 
-
 <section class="card">
 
-<h2>2026 İşsizlik Maaşı Hesaplama Aracı</h2>
+<h2>2026 İşsizlik Maaşını Hesapla</h2>
 
 <p>
-Son dört ayın SGK prime esas
-<strong>brüt kazançlarını</strong> ayrı ayrı girin.
+Son dört ayın SGK prime esas brüt kazancını ve
+her aya ait prim gününü girin.
 </p>
 
+<div class="warning-box">
+
+<strong>Prime esas kazanç nedir?</strong>
+
+<br><br>
+
+Buraya elinize geçen net maaşı değil, SGK kayıtlarında
+ilgili ay için görünen <strong>prime esas kazanç</strong>
+tutarını girmeniz gerekir.
+
+<br><br>
+
+Ay tam çalışıldıysa prim günü genellikle 30'dur.
+Eksik gün varsa SGK hizmet dökümünüzde görünen gerçek
+prim gününü girin.
+
+</div>
+
+<div class="month-grid">
+
+<div>
+
 <label for="ay1">
-1. Ay Prime Esas Brüt Kazanç (TL)
+1. Ay Prime Esas Kazanç (TL)
 </label>
 
 <input
@@ -200,9 +318,34 @@ inputmode="decimal"
 placeholder="Örnek: 40000"
 >
 
+</div>
+
+<div>
+
+<label for="gun1">
+Prim Günü
+</label>
+
+<input
+id="gun1"
+type="number"
+min="1"
+max="30"
+step="1"
+value="30"
+inputmode="numeric"
+>
+
+</div>
+
+</div>
+
+<div class="month-grid">
+
+<div>
 
 <label for="ay2">
-2. Ay Prime Esas Brüt Kazanç (TL)
+2. Ay Prime Esas Kazanç (TL)
 </label>
 
 <input
@@ -214,9 +357,34 @@ inputmode="decimal"
 placeholder="Örnek: 40000"
 >
 
+</div>
+
+<div>
+
+<label for="gun2">
+Prim Günü
+</label>
+
+<input
+id="gun2"
+type="number"
+min="1"
+max="30"
+step="1"
+value="30"
+inputmode="numeric"
+>
+
+</div>
+
+</div>
+
+<div class="month-grid">
+
+<div>
 
 <label for="ay3">
-3. Ay Prime Esas Brüt Kazanç (TL)
+3. Ay Prime Esas Kazanç (TL)
 </label>
 
 <input
@@ -228,9 +396,34 @@ inputmode="decimal"
 placeholder="Örnek: 40000"
 >
 
+</div>
+
+<div>
+
+<label for="gun3">
+Prim Günü
+</label>
+
+<input
+id="gun3"
+type="number"
+min="1"
+max="30"
+step="1"
+value="30"
+inputmode="numeric"
+>
+
+</div>
+
+</div>
+
+<div class="month-grid">
+
+<div>
 
 <label for="ay4">
-4. Ay Prime Esas Brüt Kazanç (TL)
+4. Ay Prime Esas Kazanç (TL)
 </label>
 
 <input
@@ -242,6 +435,27 @@ inputmode="decimal"
 placeholder="Örnek: 40000"
 >
 
+</div>
+
+<div>
+
+<label for="gun4">
+Prim Günü
+</label>
+
+<input
+id="gun4"
+type="number"
+min="1"
+max="30"
+step="1"
+value="30"
+inputmode="numeric"
+>
+
+</div>
+
+</div>
 
 <label for="primGun">
 Son 3 Yıldaki İşsizlik Sigortası Prim Günü
@@ -256,266 +470,499 @@ inputmode="numeric"
 placeholder="Örnek: 900"
 >
 
-
-<div class="buttons">
-
 <button type="button" onclick="hesapla()">
 İşsizlik Maaşını Hesapla
 </button>
 
+<div id="sonuc" class="result" aria-live="polite">
+Bilgileri girip hesaplama butonuna basın.
 </div>
 
+<div id="sonucKutulari" class="result-grid" style="display:none;">
 
-<div id="sonuc" class="result" aria-live="polite">
-Sonuç burada görünecek.
+<div class="result-box">
+<strong>Tahmini Aylık Net Ödenek</strong>
+<span id="netOdenek" class="big-result">-</span>
+</div>
+
+<div class="result-box">
+<strong>Tahmini Aylık Brüt Ödenek</strong>
+<span id="brutOdenek" class="big-result">-</span>
+</div>
+
+<div class="result-box">
+<strong>Günlük Ortalama Brüt Kazanç</strong>
+<span id="gunlukOrt">-</span>
+</div>
+
+<div class="result-box">
+<strong>Günlük Brüt İşsizlik Ödeneği</strong>
+<span id="gunlukOdenek">-</span>
+</div>
+
+<div class="result-box">
+<strong>Damga Vergisi</strong>
+<span id="damga">-</span>
+</div>
+
+<div class="result-box">
+<strong>Ödeme Süresi</strong>
+<span id="sure">-</span>
+</div>
+
+</div>
+
+<div class="warning-box">
+
+<strong>Hak sahipliği uyarısı:</strong>
+
+<br><br>
+
+Bu hesaplayıcı yalnızca tutar ve prim günü üzerinden
+matematiksel bir tahmin yapar.
+
+<br><br>
+
+Kendi istek ve kusuru dışında işsiz kalma,
+son 120 güne ilişkin koşullar, fesih nedeni,
+başvuru süresi ve diğer yasal şartlar ayrıca
+İŞKUR tarafından değerlendirilir.
+
 </div>
 
 </section>
-
 
 <section class="card">
 
 <h2>2026 İşsizlik Maaşı Nasıl Hesaplanır?</h2>
 
 <p>
-Günlük işsizlik ödeneği, sigortalının hizmet akdinin
-sona ermesinden önceki son dört aylık prime esas kazançları
-dikkate alınarak hesaplanan günlük ortalama brüt kazancının
-<strong>%40'ı</strong> üzerinden hesaplanır.
+Günlük işsizlik ödeneği, hizmet akdinin sona ermesinden
+önceki son dört aylık prime esas kazançlar dikkate alınarak
+hesaplanan günlük ortalama brüt kazancın
+<strong>%40'ı</strong> olarak hesaplanır.
 </p>
 
-<p>
-Hesaplanan işsizlik ödeneği, aylık brüt asgari ücretin
-<strong>%80'ini geçemez.</strong>
-</p>
+<div class="info-box">
+
+<strong>Günlük ortalama brüt kazanç:</strong>
+
+<br><br>
+
+Son 4 Aylık Toplam Prime Esas Kazanç
+÷
+Son 4 Aylık Toplam Prim Günü
+
+<br><br>
+
+<strong>Günlük işsizlik ödeneği:</strong>
+
+<br><br>
+
+Günlük Ortalama Brüt Kazanç × %40
+
+<br><br>
+
+<strong>30 günlük aylık karşılık:</strong>
+
+<br><br>
+
+Günlük İşsizlik Ödeneği × 30
+
+</div>
 
 <p>
-2026 yılında brüt asgari ücret:
-<strong>33.030,00 TL</strong>
-</p>
-
-<p>
-Buna göre aylık brüt işsizlik ödeneği üst sınırı:
-</p>
-
-<p>
-33.030 × %80 =
-<strong>26.424,00 TL</strong>
+Hesaplanan aylık ödenek, yürürlükteki aylık brüt
+asgari ücretin %80'ini geçemez.
 </p>
 
 </section>
-
 
 <section class="card">
 
-<h2>2026 İşsizlik Maaşı Üst Sınırı Ne Kadar?</h2>
+<h2>2026 İşsizlik Maaşı Üst Sınırı</h2>
 
 <p>
-İşsizlik ödeneğinin yasal üst sınırı brüt asgari ücretin
-%80'idir.
+2026 yılı aylık brüt asgari ücret:
 </p>
 
-<p>
-2026 brüt asgari ücret:
+<div class="info-box">
+
 <strong>33.030,00 TL</strong>
-</p>
+
+</div>
 
 <p>
-2026 brüt işsizlik ödeneği üst sınırı:
+İşsizlik ödeneğinin aylık brüt üst sınırı
+brüt asgari ücretin %80'idir.
+</p>
+
+<div class="info-box">
+
+33.030 × %80 =
+
+<br><br>
+
 <strong>26.424,00 TL</strong>
-</p>
+
+</div>
 
 <p>
-Hesaplanan tutar 26.424 TL'nin üzerinde olsa bile
-brüt aylık ödenek bu tutarla sınırlandırılır.
+Hesaplanan brüt aylık işsizlik ödeneği bu tutarın
+üzerinde olsa bile tavan nedeniyle
+<strong>26.424,00 TL</strong>
+ile sınırlandırılır.
 </p>
 
 </section>
-
 
 <section class="card">
 
 <h2>İşsizlik Maaşından Damga Vergisi Kesilir mi?</h2>
 
 <p>
-Evet. İşsizlik ödeneğinden damga vergisi kesintisi yapılır.
-İŞKUR açıklamalarına göre ödenek damga vergisi dışında
-başka bir vergi veya kesintiye tabi tutulmaz.
+Evet. İşsizlik ödeneği damga vergisi hariç herhangi
+bir vergi ve kesintiye tabi tutulmaz.
 </p>
 
 <p>
-Bu hesaplama aracı, brüt işsizlik ödeneğinin yanında
-tahmini damga vergisini ve kesinti sonrasında elde kalan
-tahmini net ödeneği de gösterir.
+Bu hesaplayıcı damga vergisini
+<strong>binde 7,59 (%0,759)</strong>
+oranıyla tahmini olarak hesaplar.
 </p>
 
-</section>
+<div class="info-box">
 
+<strong>Örnek:</strong>
+
+<br><br>
+
+16.000 TL brüt işsizlik ödeneğinde:
+
+<br><br>
+
+16.000 × 0,00759 =
+121,44 TL
+
+<br><br>
+
+16.000 − 121,44 =
+
+<br><br>
+
+<strong>15.878,56 TL</strong>
+
+</div>
+
+</section>
 
 <section class="card">
 
 <h2>İşsizlik Maaşı Kaç Ay Alınır?</h2>
 
 <p>
-Hizmet akdinin sona ermesinden önceki son üç yıl içerisinde
-ödenmiş işsizlik sigortası primi sayısına göre ödeme süresi
-belirlenir.
+Ödeme süresi, hizmet akdinin sona ermesinden önceki
+son üç yıldaki işsizlik sigortası prim gününe göre belirlenir.
 </p>
 
-<p>
-<strong>600 gün prim:</strong><br>
-180 gün — yaklaşık 6 ay
-</p>
-
-<p>
-<strong>900 gün prim:</strong><br>
-240 gün — yaklaşık 8 ay
-</p>
-
-<p>
-<strong>1080 gün prim:</strong><br>
-300 gün — yaklaşık 10 ay
-</p>
-
-<p>
-600 günden az prim bulunması halinde prim günü bakımından
-asgari şart sağlanmaz.
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>İşsizlik Maaşı Alma Şartları Nelerdir?</h2>
-
-<p>
-Prim gününün yeterli olması tek başına işsizlik ödeneği
-almak için yeterli değildir.
-</p>
-
-<p>
-Temel şartlar arasında:
-</p>
-
-<p>
-* Kendi istek ve kusuru dışında işsiz kalmak<br>
-* Hizmet akdinin sona ermesinden önceki son 120 gün
-hizmet akdine tabi olmak<br>
-* Son üç yılda en az 600 gün işsizlik sigortası primi ödemiş olmak<br>
-* Hizmet akdinin sona ermesini izleyen 30 gün içinde başvurmak
-</p>
-
-<p>
-bulunmaktadır.
-</p>
-
-<p>
-Kesin hak sahipliği değerlendirmesi İŞKUR tarafından yapılır.
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>40.000 TL Maaş Alan Ne Kadar İşsizlik Maaşı Alır?</h2>
-
-<p>
-Son dört aylık prime esas brüt kazancın her ay
-40.000 TL olduğunu varsayalım.
-</p>
-
-<p>
-Ortalama aylık brüt kazanç:
-<strong>40.000 TL</strong>
-</p>
-
-<p>
-%40 üzerinden hesaplanan brüt ödenek:
-</p>
-
-<p>
-40.000 × %40 =
-<strong>16.000 TL</strong>
-</p>
-
-<p>
-16.000 TL, 2026 brüt üst sınırı olan 26.424 TL'nin
-altında olduğu için tavan uygulanmaz.
-</p>
-
-<p>
-Damga vergisi kesintisinden sonra kişiye ödenecek tutar
-brüt 16.000 TL'nin bir miktar altında olur.
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>50.000 TL Maaş Alan Ne Kadar İşsizlik Maaşı Alır?</h2>
-
-<p>
-Son dört aylık prime esas brüt kazancın ortalama
-50.000 TL olması halinde:
-</p>
-
-<p>
-50.000 × %40 =
-<strong>20.000 TL brüt işsizlik ödeneği</strong>
-</p>
-
-<p>
-Bu tutar 26.424 TL tavanın altında olduğu için
-üst sınır uygulanmaz.
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>70.000 TL Maaş Alan Ne Kadar İşsizlik Maaşı Alır?</h2>
-
-<p>
-70.000 × %40 =
-<strong>28.000 TL</strong>
-</p>
-
-<p>
-Ancak 2026 brüt işsizlik ödeneği üst sınırı
-<strong>26.424 TL</strong> olduğundan ödeme hesabında
-tavan uygulanır.
-</p>
-
-<p>
-Brüt ödenek:
-<strong>26.424 TL</strong>
-</p>
-
-<p>
-Bundan damga vergisi kesildikten sonra tahmini net
-işsizlik ödeneği bulunur.
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>2026 İşsizlik Maaşı Örnekleri</h2>
-
-<div style="overflow-x:auto">
+<div class="table-wrap">
 
 <table>
 
 <thead>
 <tr>
-<th>Ortalama Brüt Kazanç</th>
+<th>Son 3 Yıldaki Prim</th>
+<th>Ödeme Süresi</th>
+<th>Yaklaşık Ay</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>600–899 gün</td>
+<td><strong>180 gün</strong></td>
+<td>6 ay</td>
+</tr>
+
+<tr>
+<td>900–1079 gün</td>
+<td><strong>240 gün</strong></td>
+<td>8 ay</td>
+</tr>
+
+<tr>
+<td>1080 gün ve üzeri</td>
+<td><strong>300 gün</strong></td>
+<td>10 ay</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<p>
+600 günden az prim bulunması halinde son üç yıldaki
+prim günü açısından asgari 600 günlük koşul sağlanmaz.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>İşsizlik Maaşı Alma Şartları</h2>
+
+<p>
+Prim günü tek başına işsizlik ödeneğine hak kazanmak
+için yeterli değildir.
+</p>
+
+<ul>
+
+<li>
+Kendi istek ve kusuru dışında işsiz kalmak
+</li>
+
+<li>
+Hizmet akdinin sona ermesinden önceki son 120 güne
+ilişkin yasal koşulu sağlamak
+</li>
+
+<li>
+Son üç yıl içinde en az 600 gün işsizlik sigortası
+primi ödemiş olmak
+</li>
+
+<li>
+Hizmet akdinin sona ermesini izleyen günden itibaren
+30 gün içinde İŞKUR'a başvurmak
+</li>
+
+<li>
+Yeni bir iş almaya hazır olmak
+</li>
+
+</ul>
+
+<div class="warning-box">
+
+Fesih kodu ve işten ayrılış nedeni hak sahipliği
+bakımından önemlidir.
+
+<br><br>
+
+Bu araç yalnızca kullanıcının girdiği ücret ve prim
+bilgilerini hesaplar; kişinin işsizlik ödeneğine
+hukuken hak kazanıp kazanmadığını belirlemez.
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Son 120 Gün Şartı Nedir?</h2>
+
+<p>
+İşsizlik ödeneğinde hizmet akdinin sona ermesinden
+önceki son 120 güne ilişkin ayrıca bir hak kazanma
+koşulu bulunmaktadır.
+</p>
+
+<p>
+Bu koşul yalnızca “son dört ayda 120 prim günü”
+şeklinde basit bir matematik kontrolü olarak
+değerlendirilmemelidir.
+</p>
+
+<p>
+Rapor, ücretsiz izin veya mevzuatta özel olarak
+değerlendirilen bazı durumlarda SGK ve İŞKUR kayıtları
+önem taşır.
+</p>
+
+<p>
+Bu nedenle hesaplayıcı son 120 gün şartına ilişkin
+kesin hak sahipliği kararı vermez.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>İşsizlik Maaşı İçin 30 Günlük Başvuru Süresi</h2>
+
+<p>
+Hizmet akdinin sona ermesini izleyen günden itibaren
+<strong>30 gün içinde</strong>
+İŞKUR'a başvurulması gerekir.
+</p>
+
+<p>
+Başvuru şahsen veya elektronik ortamda yapılabilir.
+</p>
+
+<p>
+Mücbir sebep dışında başvuruda gecikilen süre,
+toplam hak sahipliği süresinden düşülebilir.
+</p>
+
+<div class="info-box">
+
+Örneğin 180 günlük ödenek hakkı bulunan kişinin
+başvurusunu mücbir sebep olmadan geç yapması halinde,
+gecikme süresi toplam ödeme hakkını azaltabilir.
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>40.000 TL Prime Esas Kazançta İşsizlik Maaşı</h2>
+
+<p>
+Son dört ayın her birinde 30 prim günü ve
+40.000 TL prime esas kazanç olduğunu varsayalım.
+</p>
+
+<div class="info-box">
+
+Aylık ortalama:
+40.000 TL
+
+<br><br>
+
+%40 hesabı:
+
+<br>
+
+40.000 × %40 =
+
+<br><br>
+
+<strong>16.000 TL brüt aylık ödenek</strong>
+
+<br><br>
+
+Damga vergisi:
+
+<br>
+
+16.000 × 0,00759 =
+121,44 TL
+
+<br><br>
+
+Tahmini net:
+
+<br><br>
+
+<strong>15.878,56 TL</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>50.000 TL Prime Esas Kazançta İşsizlik Maaşı</h2>
+
+<div class="info-box">
+
+50.000 × %40 =
+
+<br><br>
+
+<strong>20.000 TL brüt aylık ödenek</strong>
+
+<br><br>
+
+Damga vergisi:
+
+<br>
+
+20.000 × 0,00759 =
+151,80 TL
+
+<br><br>
+
+Tahmini net:
+
+<br><br>
+
+<strong>19.848,20 TL</strong>
+
+</div>
+
+<p>
+20.000 TL, 2026 yılı 26.424 TL brüt üst sınırının
+altında olduğundan tavan uygulanmaz.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>70.000 TL Prime Esas Kazançta İşsizlik Maaşı</h2>
+
+<div class="info-box">
+
+70.000 × %40 =
+
+<br><br>
+
+28.000 TL
+
+<br><br>
+
+Ancak 2026 aylık brüt tavan:
+
+<br><br>
+
+<strong>26.424 TL</strong>
+
+<br><br>
+
+Tahmini damga vergisi:
+
+<br>
+
+26.424 × 0,00759 ≈
+200,55 TL
+
+<br><br>
+
+Tahmini net:
+
+<br><br>
+
+<strong>26.223,45 TL</strong>
+
+</div>
+
+<p>
+%40 hesabı tavanı geçtiği için brüt ödenek
+26.424 TL ile sınırlandırılır.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>2026 İşsizlik Maaşı Örnekleri</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Aylık Ortalama PEK</th>
 <th>%40 Hesap</th>
 <th>Brüt Ödenek</th>
+<th>Tavan</th>
 </tr>
 </thead>
 
@@ -525,36 +972,42 @@ işsizlik ödeneği bulunur.
 <td>33.030 TL</td>
 <td>13.212 TL</td>
 <td>13.212 TL</td>
+<td>Uygulanmaz</td>
 </tr>
 
 <tr>
 <td>40.000 TL</td>
 <td>16.000 TL</td>
 <td>16.000 TL</td>
+<td>Uygulanmaz</td>
 </tr>
 
 <tr>
 <td>50.000 TL</td>
 <td>20.000 TL</td>
 <td>20.000 TL</td>
+<td>Uygulanmaz</td>
 </tr>
 
 <tr>
 <td>60.000 TL</td>
 <td>24.000 TL</td>
 <td>24.000 TL</td>
+<td>Uygulanmaz</td>
 </tr>
 
 <tr>
 <td>70.000 TL</td>
 <td>28.000 TL</td>
 <td>26.424 TL</td>
+<td>Uygulanır</td>
 </tr>
 
 <tr>
 <td>100.000 TL</td>
 <td>40.000 TL</td>
 <td>26.424 TL</td>
+<td>Uygulanır</td>
 </tr>
 
 </tbody>
@@ -565,141 +1018,269 @@ işsizlik ödeneği bulunur.
 
 </section>
 
-
 <section class="card">
 
-<h2>İşsizlik Maaşı Başvurusu Ne Zaman Yapılır?</h2>
+<h2>İşsizlik Maaşı En Az Ne Kadar?</h2>
 
 <p>
-Hizmet akdinin sona ermesini izleyen
-<strong>30 gün içinde</strong> İŞKUR'a başvuru yapılması gerekir.
+İşsizlik ödeneğinin herkes için sabit bir “en düşük maaş”
+rakamı şeklinde değerlendirilmesi doğru değildir.
 </p>
 
 <p>
-Mücbir sebep dışında başvurunun gecikmesi halinde gecikilen
-süre toplam hak sahipliği süresinden düşülebilir.
+Tutar, sigortalının son dört aylık prime esas kazançlarından
+hesaplanan günlük ortalama brüt kazanca bağlıdır.
 </p>
 
 <p>
-Başvuru ve kesin hak sahipliği değerlendirmesi İŞKUR
-tarafından yapılır.
+Bununla birlikte son dört ay boyunca tam gün ve brüt asgari
+ücret seviyesinde prime esas kazanç bulunduğu örnekte:
+</p>
+
+<div class="info-box">
+
+33.030 × %40 =
+
+<br><br>
+
+<strong>13.212,00 TL brüt aylık ödenek</strong>
+
+</div>
+
+<p>
+Bu örnek, tam zamanlı asgari ücret düzeyinde kazanç
+varsayımıdır; herkes için kanuni sabit bir alt ödeme
+olarak değerlendirilmemelidir.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>Eksik Prim Günü İşsizlik Maaşı Hesabını Etkiler mi?</h2>
+
+<p>
+Evet, son dört aylık dönemde eksik prim günleri bulunuyorsa
+günlük ortalama prime esas kazanç hesabının doğru yapılması
+için gerçek prim günlerinin kullanılması önemlidir.
+</p>
+
+<p>
+Bu nedenle Araclio hesaplayıcısında her ay için hem
+prime esas kazanç hem de prim günü ayrı olarak girilebilir.
+</p>
+
+<div class="info-box">
+
+<strong>Örnek:</strong>
+
+<br><br>
+
+Bir ayda 30 yerine 20 prim günü varsa, o aya ait
+prime esas kazancı 30'a bölmek yerine gerçek prim
+günü bilgisiyle birlikte değerlendirmek daha doğru
+bir günlük ortalama verir.
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>İşsizlik Ödeneği Alırken Sağlık Güvencesi</h2>
+
+<p>
+İşsizlik ödeneğine hak kazanan sigortalılar için
+işsizlik sigortası kapsamında genel sağlık sigortası
+primleri de karşılanmaktadır.
+</p>
+
+<p>
+Bu hizmet, işsizlik ödeneğinin yanı sıra işsizlik
+sigortası kapsamında sağlanan haklardan biridir.
+</p>
+
+</section>
 
 <section class="card">
 
 <h2>Sık Sorulan Sorular</h2>
 
-
 <h3>2026 işsizlik maaşı nasıl hesaplanır?</h3>
 
 <p>
-Son dört aylık prime esas kazançlardan günlük ortalama
-brüt kazanç hesaplanır. Günlük ödenek bunun %40'ıdır.
-Yasal üst sınır ayrıca uygulanır.
+Son dört aylık prime esas kazançların günlük ortalaması
+hesaplanır. Günlük işsizlik ödeneği bu tutarın
+<strong>%40'ıdır</strong>.
 </p>
-
 
 <h3>2026 işsizlik maaşı en fazla ne kadar?</h3>
 
 <p>
-2026 brüt asgari ücret 33.030 TL olduğundan aylık brüt
-işsizlik ödeneği üst sınırı
+2026 brüt asgari ücret 33.030 TL olduğundan aylık
+brüt işsizlik ödeneği tavanı
 <strong>26.424 TL</strong>'dir.
 </p>
 
-
-<h3>2026 işsizlik maaşı en az ne kadar?</h3>
+<h3>İşsizlik maaşından ne kadar vergi kesilir?</h3>
 
 <p>
-Tam zamanlı asgari ücret seviyesindeki son dört aylık
-prime esas kazanç için %40 hesabı aylık brüt
-<strong>13.212 TL</strong>'ye karşılık gelir.
-Gerçek ödenek, kişinin son dört aylık prime esas kazanç
-ve prim bilgilerinden hesaplanır.
+İşsizlik ödeneği damga vergisi hariç herhangi bir
+vergi ve kesintiye tabi tutulmaz.
 </p>
-
 
 <h3>600 gün primi olan kaç ay işsizlik maaşı alır?</h3>
 
 <p>
-Diğer şartların sağlanması halinde
-<strong>180 gün</strong>, yani yaklaşık 6 ay.
+Diğer şartların da sağlanması halinde
+<strong>180 gün</strong>,
+yaklaşık 6 ay ödeme yapılır.
 </p>
-
 
 <h3>900 gün primi olan kaç ay işsizlik maaşı alır?</h3>
 
 <p>
-Diğer şartların sağlanması halinde
-<strong>240 gün</strong>, yani yaklaşık 8 ay.
+Diğer şartların da sağlanması halinde
+<strong>240 gün</strong>,
+yaklaşık 8 ay ödeme yapılır.
 </p>
-
 
 <h3>1080 gün primi olan kaç ay işsizlik maaşı alır?</h3>
 
 <p>
-Diğer şartların sağlanması halinde
-<strong>300 gün</strong>, yani yaklaşık 10 ay.
+Diğer şartların da sağlanması halinde
+<strong>300 gün</strong>,
+yaklaşık 10 ay ödeme yapılır.
 </p>
 
-
-<h3>600 günden az primle işsizlik maaşı alınabilir mi?</h3>
+<h3>600 günden az primle işsizlik maaşı alınır mı?</h3>
 
 <p>
 Son üç yıldaki işsizlik sigortası prim günü bakımından
-en az 600 gün şartı bulunmaktadır.
+en az <strong>600 gün</strong> şartı bulunmaktadır.
+Diğer şartların da ayrıca sağlanması gerekir.
 </p>
 
-
-<h3>İşsizlik maaşından kesinti yapılır mı?</h3>
+<h3>İşsizlik maaşı için kaç gün içinde başvurulur?</h3>
 
 <p>
-İşsizlik ödeneğinden damga vergisi kesilir.
-İŞKUR açıklamalarına göre bunun dışında vergi veya
-kesinti uygulanmaz.
+Hizmet akdinin sona ermesini izleyen günden itibaren
+<strong>30 gün içinde</strong>
+İŞKUR'a başvurulmalıdır.
+</p>
+
+<h3>Başvuru geç yapılırsa ne olur?</h3>
+
+<p>
+Mücbir sebep dışında gecikilen süre toplam hak sahipliği
+süresinden düşülebilir.
+</p>
+
+<h3>Son dört ayın maaşı mı yoksa prime esas kazancı mı kullanılır?</h3>
+
+<p>
+Hesaplama SGK'ya bildirilen
+<strong>prime esas kazançlar</strong>
+üzerinden yapılır.
+</p>
+
+<h3>İşsizlik maaşı hesaplama sonucu kesin midir?</h3>
+
+<p>
+Hayır. Araclio aracı matematiksel tahmin verir.
+Kesin hak sahipliği ve ödeme tutarı İŞKUR tarafından
+SGK kayıtları ve işten ayrılış koşulları değerlendirilerek belirlenir.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>Resmî Hesaplama Esasları</h2>
+
+<div class="source-box">
+
+<strong>Hesaplama oranı:</strong>
+Günlük ortalama brüt kazancın %40'ı
+
+<br><br>
+
+<strong>2026 aylık brüt tavan:</strong>
+26.424,00 TL
+
+<br><br>
+
+<strong>Prim süreleri:</strong>
+
+<br>
+
+600 gün → 180 gün ödeme
+
+<br>
+
+900 gün → 240 gün ödeme
+
+<br>
+
+1080 gün → 300 gün ödeme
+
+<br><br>
+
+<strong>Başvuru:</strong>
+İşten ayrılışı izleyen günden itibaren 30 gün
+
+<br><br>
+
+<strong>Kesinti:</strong>
+Damga vergisi dışında vergi ve kesinti uygulanmaz.
+
+</div>
+
+<p>
+Hesaplama yaklaşımında 4447 sayılı İşsizlik Sigortası
+Kanunu ile T.C. Çalışma ve Sosyal Güvenlik Bakanlığı
+ve Türkiye İş Kurumunun yayımladığı güncel bilgiler
+esas alınmıştır.
+</p>
+
+</section>
 
 <section class="card">
 
 <h2>Önemli Bilgilendirme</h2>
 
-<p>
-Bu araç genel bilgilendirme amacıyla tahmini hesaplama yapar.
-</p>
+<div class="warning-box">
+
+Bu araç resmî İŞKUR hesaplama sistemi değildir.
+
+<br><br>
+
+İşten ayrılış nedeni, SGK çıkış kodu, son 120 güne
+ilişkin durum, son üç yıldaki primler, prime esas
+kazanç kayıtları, başvuru tarihi ve diğer mevzuat
+koşulları kesin hak sahipliğini etkileyebilir.
+
+<br><br>
+
+Gösterilen net değer damga vergisi oranı üzerinden
+yapılmış tahmini matematiksel sonuçtur.
+
+<br><br>
+
+Kesin işsizlik ödeneği hakkı, ödeme süresi ve tutarı
+İŞKUR tarafından belirlenir.
+
+</div>
 
 <p>
-Hesaplayıcı, son dört ayın her birinde 30 prim günü bulunduğu
-varsayımıyla aylık prime esas kazançlardan ortalama hesaplar.
-Eksik prim günü bulunan dönemlerde kesin İŞKUR hesabı
-farklı olabilir.
-</p>
-
-<p>
-İşten ayrılış nedeni, hizmet dökümü, son 120 gün şartı,
-başvuru tarihi ve diğer yasal koşullar hak sahipliğini
-etkileyebilir.
-</p>
-
-<p>
-Kesin hak sahipliği ve ödeme tutarı İŞKUR tarafından belirlenir.
-</p>
-
-<p>
-<strong>Son güncelleme: Ekim 2026</strong>
+<strong>Son güncelleme: Kasım 2026</strong>
 </p>
 
 </section>
 
-
 <section class="card">
 
-<h2>Diğer Maaş Hesaplama Araçları</h2>
+<h2>Diğer Maaş ve Çalışma Araçları</h2>
 
 <p>
 <a href="/asgari-ucret-hesaplama.html">
@@ -732,6 +1313,12 @@ Kıdem Tazminatı Hesaplama →
 </p>
 
 <p>
+<a href="/ihbar-tazminati-hesaplama.html">
+İhbar Tazminatı Hesaplama →
+</a>
+</p>
+
+<p>
 <a href="/fazla-mesai-ucreti-hesaplama.html">
 Fazla Mesai Ücreti Hesaplama →
 </a>
@@ -740,7 +1327,6 @@ Fazla Mesai Ücreti Hesaplama →
 </section>
 
 </main>
-
 
 <footer>
 
@@ -756,6 +1342,8 @@ Fazla Mesai Ücreti Hesaplama →
 <a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
 •
 <a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
 </p>
 
 <p>
@@ -774,78 +1362,171 @@ Araclio • Ücretsiz Online Araçlar
 
 </footer>
 
-
 <script>
 
-const BRUT_ASGARI_2026 = 33030;
+const BRUT_ASGARI_2026 =
+33030;
 
 const AYLIK_BRUT_UST_SINIR =
-BRUT_ASGARI_2026 * 0.80;
+BRUT_ASGARI_2026 *
+0.80;
 
-/*
-İşsizlik ödeneğinden uygulanan
-damga vergisi oranı
-*/
-const DAMGA_ORANI = 0.00759;
+const DAMGA_ORANI =
+0.00759;
 
 
 function para(deger){
 
-return deger.toLocaleString("tr-TR",{
+return new Intl.NumberFormat(
+"tr-TR",
+{
 minimumFractionDigits:2,
 maximumFractionDigits:2
-});
+}
+).format(deger) +
+" TL";
+
+}
+
+
+function sayiOku(id){
+
+return Number(
+document
+.getElementById(id)
+.value
+);
 
 }
 
 
 function hesapla(){
 
-const ids =
-["ay1","ay2","ay3","ay4"];
+const kazancIds =
+[
+"ay1",
+"ay2",
+"ay3",
+"ay4"
+];
+
+const gunIds =
+[
+"gun1",
+"gun2",
+"gun3",
+"gun4"
+];
 
 
-const degerler =
-ids.map(function(id){
+const kazanc =
+kazancIds.map(function(id){
 
-return Number(
-document.getElementById(id).value
-);
+return sayiOku(id);
 
 });
 
 
-const bosAlan =
-ids.some(function(id){
+const gun =
+gunIds.map(function(id){
 
-return document.getElementById(id).value === "";
+return sayiOku(id);
 
 });
 
 
 const primInput =
-document.getElementById("primGun");
+document
+.getElementById("primGun");
 
 const primGun =
-Number(primInput.value);
+Number(
+primInput.value
+);
 
 const sonuc =
-document.getElementById("sonuc");
+document
+.getElementById("sonuc");
+
+const sonucKutulari =
+document
+.getElementById("sonucKutulari");
+
+
+const kazancBos =
+kazancIds.some(function(id){
+
+return document
+.getElementById(id)
+.value === "";
+
+});
+
+
+const gunBos =
+gunIds.some(function(id){
+
+return document
+.getElementById(id)
+.value === "";
+
+});
 
 
 if(
-bosAlan ||
-degerler.some(function(v){
-return !Number.isFinite(v) || v < 0;
-}) ||
-primInput.value === "" ||
-!Number.isFinite(primGun) ||
-primGun < 0 ||
-!Number.isInteger(primGun)
+kazancBos ||
+gunBos ||
+primInput.value === ""
 ){
 
-sonuc.innerHTML =
-"Lütfen tüm alanlara geçerli değerler girin.";
+sonuc.textContent =
+"Lütfen tüm kazanç, prim günü ve son 3 yıllık prim günü alanlarını doldurun.";
+
+sonucKutulari.style.display =
+"none";
+
+return;
+
+}
+
+
+const gecersizKazanc =
+kazanc.some(function(deger){
+
+return (
+!Number.isFinite(deger) ||
+deger < 0
+);
+
+});
+
+
+const gecersizGun =
+gun.some(function(deger){
+
+return (
+!Number.isFinite(deger) ||
+!Number.isInteger(deger) ||
+deger < 1 ||
+deger > 30
+);
+
+});
+
+
+if(
+gecersizKazanc ||
+gecersizGun ||
+!Number.isFinite(primGun) ||
+!Number.isInteger(primGun) ||
+primGun < 0
+){
+
+sonuc.textContent =
+"Lütfen geçerli kazanç ve prim günü bilgileri girin. Aylık prim günleri 1 ile 30 arasında tam sayı olmalıdır.";
+
+sonucKutulari.style.display =
+"none";
 
 return;
 
@@ -853,83 +1534,131 @@ return;
 
 
 const toplamKazanc =
-degerler.reduce(function(toplam,deger){
+kazanc.reduce(
+function(toplam,deger){
 
-return toplam + deger;
+return toplam +
+deger;
 
-},0);
+},
+0
+);
 
 
-/*
-Bu basit hesapta son dört ayın
-her biri 30 gün kabul edilir.
-*/
+const toplamPrimGun =
+gun.reduce(
+function(toplam,deger){
 
-const toplamGun = 120;
+return toplam +
+deger;
+
+},
+0
+);
+
+
+if(
+toplamPrimGun <= 0
+){
+
+sonuc.textContent =
+"Toplam prim günü sıfırdan büyük olmalıdır.";
+
+sonucKutulari.style.display =
+"none";
+
+return;
+
+}
+
 
 const gunlukOrtalamaBrut =
-toplamKazanc / toplamGun;
-
-const gunlukHesaplananOdenek =
-gunlukOrtalamaBrut * 0.40;
-
-const aylikHesaplananOdenek =
-gunlukHesaplananOdenek * 30;
+toplamKazanc /
+toplamPrimGun;
 
 
-/*
-Yasal aylık brüt tavan
-*/
+const gunlukBrutOdenek =
+gunlukOrtalamaBrut *
+0.40;
+
+
+const tavansizAylik =
+gunlukBrutOdenek *
+30;
+
 
 const aylikBrutOdenek =
 Math.min(
-aylikHesaplananOdenek,
+tavansizAylik,
 AYLIK_BRUT_UST_SINIR
 );
 
 
-/*
-Damga vergisi
-*/
-
 const damgaVergisi =
-aylikBrutOdenek * DAMGA_ORANI;
+aylikBrutOdenek *
+DAMGA_ORANI;
+
 
 const aylikNetOdenek =
-aylikBrutOdenek - damgaVergisi;
+aylikBrutOdenek -
+damgaVergisi;
 
 
-/*
-Ödeme süresi
-*/
-
-let odemeGun = 0;
-let odemeAy = 0;
-let primDurumu = "";
+const tavanUygulandi =
+tavansizAylik >
+AYLIK_BRUT_UST_SINIR;
 
 
-if(primGun >= 1080){
+let odemeGun =
+0;
 
-odemeGun = 300;
-odemeAy = 10;
+let yaklasikAy =
+0;
+
+let primDurumu =
+"";
+
+
+if(
+primGun >=
+1080
+){
+
+odemeGun =
+300;
+
+yaklasikAy =
+10;
 
 primDurumu =
 "Prim günü bakımından 300 günlük ödeme süresi";
 
 }
-else if(primGun >= 900){
+else if(
+primGun >=
+900
+){
 
-odemeGun = 240;
-odemeAy = 8;
+odemeGun =
+240;
+
+yaklasikAy =
+8;
 
 primDurumu =
 "Prim günü bakımından 240 günlük ödeme süresi";
 
 }
-else if(primGun >= 600){
+else if(
+primGun >=
+600
+){
 
-odemeGun = 180;
-odemeAy = 6;
+odemeGun =
+180;
+
+yaklasikAy =
+6;
 
 primDurumu =
 "Prim günü bakımından 180 günlük ödeme süresi";
@@ -938,172 +1667,234 @@ primDurumu =
 else{
 
 primDurumu =
-"600 günlük asgari prim şartı sağlanmıyor";
+"Son 3 yıldaki 600 günlük asgari prim şartı sağlanmıyor";
 
 }
 
 
-/*
-Toplam tahmini ödeme
-*/
+document
+.getElementById("netOdenek")
+.textContent =
+para(
+aylikNetOdenek
+);
 
-let toplamBrut = 0;
-let toplamDamga = 0;
-let toplamNet = 0;
+
+document
+.getElementById("brutOdenek")
+.textContent =
+para(
+aylikBrutOdenek
+);
 
 
-if(odemeAy > 0){
+document
+.getElementById("gunlukOrt")
+.textContent =
+para(
+gunlukOrtalamaBrut
+);
 
-toplamBrut =
-aylikBrutOdenek * odemeAy;
 
-toplamDamga =
-damgaVergisi * odemeAy;
+document
+.getElementById("gunlukOdenek")
+.textContent =
+para(
+Math.min(
+gunlukBrutOdenek,
+AYLIK_BRUT_UST_SINIR / 30
+)
+);
 
-toplamNet =
-aylikNetOdenek * odemeAy;
+
+document
+.getElementById("damga")
+.textContent =
+"− " +
+para(
+damgaVergisi
+);
+
+
+if(
+odemeGun >
+0
+){
+
+document
+.getElementById("sure")
+.textContent =
+odemeGun +
+" gün (yaklaşık " +
+yaklasikAy +
+" ay)";
+
+}
+else{
+
+document
+.getElementById("sure")
+.textContent =
+"Prim şartı sağlanmıyor";
 
 }
 
 
-const ustSinirUygulandi =
-aylikHesaplananOdenek >
-AYLIK_BRUT_UST_SINIR;
+let toplamHtml =
+"";
+
+
+if(
+odemeGun >
+0
+){
+
+const toplamBrut =
+aylikBrutOdenek *
+yaklasikAy;
+
+const toplamDamga =
+damgaVergisi *
+yaklasikAy;
+
+const toplamNet =
+aylikNetOdenek *
+yaklasikAy;
+
+
+toplamHtml =
+
+"<br><br>" +
+
+"<strong>Prim gününe göre tahmini ödeme süresi boyunca:</strong>" +
+
+"<br>" +
+
+"Brüt toplam: <strong>" +
+para(toplamBrut) +
+"</strong>" +
+
+"<br>" +
+
+"Damga vergisi toplamı: <strong>− " +
+para(toplamDamga) +
+"</strong>" +
+
+"<br>" +
+
+"Tahmini net toplam: <strong>" +
+para(toplamNet) +
+"</strong>";
+
+}
 
 
 sonuc.innerHTML =
 
-'<div class="result-main">' +
+"<strong>Tahmini aylık net işsizlik ödeneği: " +
 para(aylikNetOdenek) +
-' TL Tahmini Net</div>' +
+"</strong>" +
 
-'<div class="row">' +
-'<span>Son 4 ay toplam brüt kazanç</span>' +
-'<strong>' +
+"<br><br>" +
+
+"Son 4 ay toplam prime esas kazanç: <strong>" +
 para(toplamKazanc) +
-' TL</strong>' +
-'</div>' +
+"</strong>" +
 
-'<div class="row">' +
-'<span>Aylık ortalama brüt kazanç</span>' +
-'<strong>' +
-para(toplamKazanc / 4) +
-' TL</strong>' +
-'</div>' +
+"<br>" +
 
-'<div class="row">' +
-'<span>Günlük ortalama brüt kazanç</span>' +
-'<strong>' +
+"Son 4 ay toplam prim günü: <strong>" +
+toplamPrimGun +
+" gün</strong>" +
+
+"<br>" +
+
+"Günlük ortalama brüt kazanç: <strong>" +
 para(gunlukOrtalamaBrut) +
-' TL</strong>' +
-'</div>' +
+"</strong>" +
 
-'<div class="row">' +
-'<span>%40 üzerinden hesaplanan aylık tutar</span>' +
-'<strong>' +
-para(aylikHesaplananOdenek) +
-' TL</strong>' +
-'</div>' +
+"<br>" +
 
-'<div class="row">' +
-'<span>2026 brüt ödenek tavanı</span>' +
-'<strong>' +
+"%40 üzerinden 30 günlük hesap: <strong>" +
+para(tavansizAylik) +
+"</strong>" +
+
+"<br>" +
+
+"2026 aylık brüt tavan: <strong>" +
 para(AYLIK_BRUT_UST_SINIR) +
-' TL</strong>' +
-'</div>' +
+"</strong>" +
 
-'<div class="row">' +
-'<span>Üst sınır uygulandı mı?</span>' +
-'<strong>' +
-(ustSinirUygulandi ? "Evet" : "Hayır") +
-'</strong>' +
-'</div>' +
+"<br>" +
 
-'<div class="row">' +
-'<span>Tahmini aylık brüt ödenek</span>' +
-'<strong>' +
-para(aylikBrutOdenek) +
-' TL</strong>' +
-'</div>' +
-
-'<div class="row">' +
-'<span>Tahmini damga vergisi</span>' +
-'<strong>− ' +
-para(damgaVergisi) +
-' TL</strong>' +
-'</div>' +
-
-'<div class="row">' +
-'<span>Tahmini aylık net ödenek</span>' +
-'<strong>' +
-para(aylikNetOdenek) +
-' TL</strong>' +
-'</div>' +
-
-'<div class="row">' +
-'<span>Prim durumu</span>' +
-'<strong>' +
-primDurumu +
-'</strong>' +
-'</div>' +
-
+"Tavan uygulandı mı? <strong>" +
 (
-odemeGun > 0
+tavanUygulandi
 ?
-'<div class="row">' +
-'<span>Tahmini ödeme süresi</span>' +
-'<strong>' +
-odemeGun +
-' gün (' +
-odemeAy +
-' ay)</strong>' +
-'</div>' +
-
-'<div class="row">' +
-'<span>Süre boyunca tahmini brüt toplam</span>' +
-'<strong>' +
-para(toplamBrut) +
-' TL</strong>' +
-'</div>' +
-
-'<div class="row">' +
-'<span>Süre boyunca tahmini damga vergisi</span>' +
-'<strong>− ' +
-para(toplamDamga) +
-' TL</strong>' +
-'</div>' +
-
-'<div class="row">' +
-'<span>Süre boyunca tahmini net toplam</span>' +
-'<strong>' +
-para(toplamNet) +
-' TL</strong>' +
-'</div>'
+"Evet"
 :
-''
+"Hayır"
 ) +
+"</strong>" +
 
-'<br><small>Kesin hak sahipliği, prime esas kazanç ve ödeme tutarı İŞKUR tarafından belirlenir.</small>';
+"<br>" +
+
+"Prim durumu: <strong>" +
+primDurumu +
+"</strong>" +
+
+toplamHtml +
+
+"<br><br>" +
+
+"<small>" +
+"Kesin hak sahipliği, ödeme süresi ve ödeme tutarı İŞKUR tarafından belirlenir." +
+"</small>";
+
+
+sonucKutulari.style.display =
+"grid";
 
 }
 
 
-["ay1","ay2","ay3","ay4","primGun"].forEach(function(id){
+[
+"ay1",
+"gun1",
+"ay2",
+"gun2",
+"ay3",
+"gun3",
+"ay4",
+"gun4",
+"primGun"
+]
+.forEach(function(id){
 
 document
 .getElementById(id)
-.addEventListener("keydown",function(e){
+.addEventListener(
+"keydown",
+function(event){
 
-if(e.key === "Enter"){
+if(
+event.key ===
+"Enter"
+){
+
 hesapla();
+
 }
 
-});
+}
+);
 
 });
 
 
-document.getElementById("year").textContent =
+document
+.getElementById("year")
+.textContent =
 new Date().getFullYear();
 
 </script>
