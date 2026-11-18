@@ -4,19 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Kullanılmayan Yıllık İzin Ücreti Hesaplama 2026 - Araclio</title>
+<title>Yıllık İzin Ücreti Hesaplama 2026 | Kullanılmayan İzin - Araclio</title>
 
 <meta
 name="description"
-content="2026 kullanılmayan yıllık izin ücreti hesaplama aracı. Brüt aylık ücretinizi ve kullanılmayan izin gününüzü girerek tahmini brüt yıllık izin alacağınızı hesaplayın."
+content="2026 yıllık izin ücreti hesaplama aracı. Brüt aylık ücret ve kullanılmayan izin gününe göre tahmini brüt yıllık izin alacağını hesaplayın; 14, 20 ve 26 günlük izin sürelerini inceleyin."
 >
 
 <meta name="robots" content="index,follow">
 
-<meta
-name="google-adsense-account"
-content="ca-pub-7634654090472031"
->
+<meta name="google-adsense-account" content="ca-pub-7634654090472031">
 
 <script
 async
@@ -24,183 +21,20 @@ src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pu
 crossorigin="anonymous">
 </script>
 
-<link
-rel="canonical"
-href="https://araclio.com/yillik-izin-ucreti-hesaplama.html"
->
+<link rel="canonical" href="https://araclio.com/yillik-izin-ucreti-hesaplama.html">
+
+<link rel="stylesheet" href="style.css">
 
 <meta property="og:type" content="website">
-
-<meta
-property="og:title"
-content="Kullanılmayan Yıllık İzin Ücreti Hesaplama 2026"
->
-
+<meta property="og:title" content="Yıllık İzin Ücreti Hesaplama 2026 | Kullanılmayan İzin">
 <meta
 property="og:description"
-content="Brüt maaş ve kullanılmayan izin gününe göre tahmini yıllık izin ücretinizi ücretsiz hesaplayın."
+content="Brüt aylık ücret ve kullanılmayan izin gününe göre tahmini brüt yıllık izin ücretinizi hesaplayın."
 >
-
-<meta
-property="og:url"
-content="https://araclio.com/yillik-izin-ucreti-hesaplama.html"
->
-
+<meta property="og:url" content="https://araclio.com/yillik-izin-ucreti-hesaplama.html">
 <meta property="og:site_name" content="Araclio">
 
-
 <style>
-
-*{
-box-sizing:border-box;
-}
-
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:
-radial-gradient(circle at 50% -10%,#123b69 0,#071a30 32%,#04101f 65%,#020a14 100%);
-color:#fff;
-min-height:100vh;
-}
-
-.wrap{
-width:min(850px,calc(100% - 28px));
-margin:auto;
-}
-
-header{
-background:rgba(3,14,27,.95);
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.nav{
-height:70px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.brand{
-font-size:34px;
-font-weight:900;
-text-decoration:none;
-color:#fff;
-}
-
-.brand span{
-color:#ffd400;
-}
-
-.tag{
-font-size:12px;
-color:#9db2c8;
-font-weight:bold;
-}
-
-.hero{
-padding:45px 0 25px;
-text-align:center;
-}
-
-.eyebrow{
-color:#ffd400;
-font-size:12px;
-font-weight:900;
-letter-spacing:1.5px;
-}
-
-h1{
-font-size:clamp(32px,6vw,48px);
-margin:12px 0;
-line-height:1.05;
-}
-
-.hero p{
-max-width:700px;
-margin:15px auto 0;
-color:#b7c7d8;
-line-height:1.65;
-}
-
-.card{
-margin:18px 0;
-padding:24px;
-border-radius:18px;
-background:linear-gradient(145deg,#102a44,#081a2d);
-border:1px solid rgba(255,255,255,.09);
-box-shadow:0 9px 28px rgba(0,0,0,.2);
-}
-
-.card h2{
-margin-top:0;
-font-size:24px;
-}
-
-.card h3{
-margin-top:25px;
-}
-
-.card p,
-.card li{
-color:#b4c3d2;
-line-height:1.7;
-}
-
-label{
-display:block;
-font-weight:bold;
-margin-top:18px;
-}
-
-input{
-width:100%;
-margin-top:8px;
-padding:15px;
-border:1px solid #29435d;
-border-radius:11px;
-background:#061526;
-color:#fff;
-font-size:16px;
-outline:none;
-}
-
-input:focus{
-border-color:#42aaff;
-}
-
-button{
-width:100%;
-margin-top:22px;
-padding:16px;
-border:0;
-border-radius:12px;
-background:#ffd400;
-color:#071321;
-font-size:17px;
-font-weight:900;
-cursor:pointer;
-}
-
-button:hover{
-filter:brightness(1.05);
-}
-
-.result{
-margin-top:20px;
-padding:20px;
-border-radius:13px;
-background:#061526;
-border:1px solid #1d4567;
-line-height:1.9;
-}
-
-.result-main{
-font-size:28px;
-font-weight:900;
-color:#ffd400;
-margin-bottom:12px;
-}
 
 .result-grid{
 display:grid;
@@ -210,34 +44,49 @@ margin-top:18px;
 }
 
 .result-box{
+background:#f5f5f5;
 padding:16px;
-border-radius:12px;
-background:#061526;
-border:1px solid #1d4567;
+border-radius:10px;
+color:#222;
 }
 
 .result-box strong{
 display:block;
-color:#ffd400;
-margin-bottom:6px;
+margin-bottom:7px;
 }
 
-.formula{
-padding:17px;
-border-radius:12px;
-background:#061526;
-border-left:4px solid #ffd400;
+.big-result{
+font-size:1.4rem;
+font-weight:700;
+}
+
+.info-box{
+padding:16px;
+margin:15px 0;
+background:#f5f5f5;
+border-radius:10px;
 line-height:1.8;
+color:#222;
 }
 
-.warning{
-padding:17px;
-margin-top:16px;
-border-radius:12px;
-background:#171306;
-border:1px solid #6d5d12;
-color:#d9cf9c;
-line-height:1.7;
+.warning-box{
+padding:16px;
+margin:15px 0;
+background:#fff8e1;
+border:1px solid #e7d28b;
+border-radius:10px;
+line-height:1.8;
+color:#4d3d00;
+}
+
+.source-box{
+padding:16px;
+margin:15px 0;
+background:#eef6ff;
+border:1px solid #bad9f5;
+border-radius:10px;
+line-height:1.8;
+color:#1f3550;
 }
 
 .table-wrap{
@@ -254,52 +103,11 @@ min-width:560px;
 th,
 td{
 padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
 text-align:left;
-border-bottom:1px solid rgba(255,255,255,.1);
 }
 
-th{
-color:#ffd400;
-}
-
-td{
-color:#b4c3d2;
-}
-
-a{
-color:#52b7ff;
-}
-
-footer{
-margin-top:40px;
-padding:30px 0;
-text-align:center;
-color:#8195a8;
-border-top:1px solid rgba(255,255,255,.08);
-}
-
-footer p{
-line-height:1.8;
-}
-
-footer a{
-color:#9db2c8;
-text-decoration:none;
-}
-
-footer a:hover{
-color:#ffd400;
-}
-
-@media(max-width:600px){
-
-.card{
-padding:19px;
-}
-
-.tag{
-display:none;
-}
+@media(max-width:650px){
 
 .result-grid{
 grid-template-columns:1fr;
@@ -309,12 +117,11 @@ grid-template-columns:1fr;
 
 </style>
 
-
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"WebApplication",
-  "name":"Kullanılmayan Yıllık İzin Ücreti Hesaplama 2026",
+  "name":"Yıllık İzin Ücreti Hesaplama 2026",
   "url":"https://araclio.com/yillik-izin-ucreti-hesaplama.html",
   "applicationCategory":"FinanceApplication",
   "operatingSystem":"Any",
@@ -333,7 +140,6 @@ grid-template-columns:1fr;
 }
 </script>
 
-
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -348,13 +154,12 @@ grid-template-columns:1fr;
     {
       "@type":"ListItem",
       "position":2,
-      "name":"Yıllık İzin Ücreti Hesaplama",
+      "name":"Yıllık İzin Ücreti Hesaplama 2026",
       "item":"https://araclio.com/yillik-izin-ucreti-hesaplama.html"
     }
   ]
 }
 </script>
-
 
 <script type="application/ld+json">
 {
@@ -366,7 +171,7 @@ grid-template-columns:1fr;
       "name":"Kullanılmayan yıllık izin ücreti nasıl hesaplanır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Basit brüt hesaplamada aylık brüt ücret 30'a bölünerek günlük brüt ücret bulunur ve kullanılmayan hak edilmiş izin günüyle çarpılır."
+        "text":"Basit brüt hesaplamada aylık brüt ücret 30'a bölünerek günlük brüt ücret bulunur ve hak kazanılmış fakat kullanılmamış izin günüyle çarpılır."
       }
     },
     {
@@ -374,15 +179,7 @@ grid-template-columns:1fr;
       "name":"İşten ayrılınca kullanılmayan yıllık izinler yanar mı?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"İş sözleşmesinin sona ermesi halinde hak kazanılmış fakat kullanılmamış yıllık izin sürelerinin ücret karşılığı, sözleşmenin sona erdiği tarihteki ücret üzerinden ödenir."
-      }
-    },
-    {
-      "@type":"Question",
-      "name":"14 günlük yıllık izin ücreti nasıl hesaplanır?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"Aylık brüt ücret 30'a bölünür ve bulunan günlük brüt ücret 14 ile çarpılır."
+        "text":"Hayır. İş sözleşmesinin sona ermesi halinde hak kazanılmış fakat kullanılmamış yıllık izin sürelerinin ücret karşılığı, sözleşmenin sona erdiği tarihteki ücret üzerinden işçiye veya hak sahiplerine ödenir."
       }
     },
     {
@@ -390,7 +187,31 @@ grid-template-columns:1fr;
       "name":"Yıllık izin süresi kaç gündür?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Hizmet süresi 1 yıldan 5 yıla kadar olanlarda en az 14 gün, 5 yıldan fazla 15 yıldan az olanlarda en az 20 gün, 15 yıl ve üzerindekilerde en az 26 gündür."
+        "text":"Hizmet süresi 1 yıldan 5 yıla kadar 5 yıl dahil olanlarda en az 14 gün, 5 yıldan fazla 15 yıldan az olanlarda en az 20 gün, 15 yıl ve üzerindekilerde en az 26 gündür."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"18 yaş ve daha küçük çalışanların yıllık izni kaç gündür?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"18 yaş ve daha küçük çalışanların yıllık ücretli izin süresi 20 günden az olamaz."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"50 yaş ve üzeri çalışanların yıllık izni kaç gündür?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"50 yaş ve daha yukarı yaştaki çalışanların yıllık ücretli izin süresi 20 günden az olamaz."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Yer altı işlerinde yıllık izin süresi farklı mı?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Evet. Yer altı işlerinde çalışan işçilerin kanuni yıllık ücretli izin süreleri dörder gün artırılarak uygulanır."
       }
     }
   ]
@@ -399,7 +220,6 @@ grid-template-columns:1fr;
 
 </head>
 
-
 <body>
 
 <header>
@@ -407,42 +227,59 @@ grid-template-columns:1fr;
 <div class="wrap nav">
 
 <a class="brand" href="/">
-Arac<span>lio</span>
+Araclio
 </a>
 
 <span class="tag">
-ÜCRETSİZ HESAPLAMA ARAÇLARI
+Ücretsiz Online Araçlar
 </span>
 
 </div>
 
 </header>
 
-
 <main class="wrap">
 
 <section class="hero">
 
-<div class="eyebrow">
+<p class="eyebrow">
 2026 • YILLIK İZİN • İŞÇİLİK ALACAĞI
-</div>
+</p>
 
-<h1>Kullanılmayan Yıllık İzin Ücreti Hesaplama</h1>
+<h1>Yıllık İzin Ücreti Hesaplama 2026</h1>
 
 <p>
-Brüt aylık ücretinizi ve hak kazanıp kullanmadığınız yıllık izin
-gününüzü girerek tahmini brüt yıllık izin alacağınızı hesaplayın.
+İş sözleşmesi sona erdiğinde hak kazanıp kullanmadığınız
+yıllık izin günleri için brüt aylık ücretinizi ve izin
+gününüzü girerek tahmini brüt izin alacağınızı hesaplayın.
 </p>
 
 </section>
 
-
 <section class="card">
 
-<h2>Yıllık İzin Ücretini Hesapla</h2>
+<h2>Kullanılmayan Yıllık İzin Ücretini Hesapla</h2>
+
+<div class="warning-box">
+
+<strong>Önemli:</strong>
+
+<br><br>
+
+Bu hesaplama, iş sözleşmesinin sona ermesi halinde
+hak kazanılmış fakat kullanılmamış yıllık izinlerin
+ücret karşılığını hesaplamak amacıyla hazırlanmıştır.
+
+<br><br>
+
+İş sözleşmesi devam ederken yıllık izin hakkının
+kural olarak ücret karşılığına çevrilmesi yerine
+izin olarak kullandırılması gerekir.
+
+</div>
 
 <label for="aylikUcret">
-Aylık Brüt Ücret (TL)
+İş Sözleşmesinin Sona Erdiği Tarihteki Aylık Brüt Ücret (TL)
 </label>
 
 <input
@@ -454,110 +291,123 @@ inputmode="decimal"
 placeholder="Örnek: 45000"
 >
 
-
 <label for="izinGun">
-Kullanılmayan İzin Günü
+Hak Edilmiş ve Kullanılmamış İzin Günü
 </label>
 
 <input
 id="izinGun"
 type="number"
-min="0.01"
+min="1"
 step="1"
 inputmode="numeric"
 placeholder="Örnek: 14"
 >
 
-
 <button type="button" onclick="hesapla()">
 İzin Ücretini Hesapla
 </button>
-
 
 <div id="sonuc" class="result" aria-live="polite">
 Brüt aylık ücretinizi ve kullanılmayan izin gününüzü girin.
 </div>
 
-
 <div id="sonucKutulari" class="result-grid" style="display:none;">
 
 <div class="result-box">
+<strong>Tahmini Brüt İzin Ücreti</strong>
+<span id="izinUcretiSonuc" class="big-result">
+-
+</span>
+</div>
+
+<div class="result-box">
 <strong>Günlük Brüt Ücret</strong>
-<span id="gunlukSonuc">0 TL</span>
+<span id="gunlukSonuc">
+-
+</span>
 </div>
 
 <div class="result-box">
 <strong>Kullanılmayan İzin</strong>
-<span id="gunSonuc">0 gün</span>
+<span id="gunSonuc">
+-
+</span>
 </div>
 
 <div class="result-box">
-<strong>Tahmini Brüt İzin Ücreti</strong>
-<span id="izinUcretiSonuc">0 TL</span>
-</div>
-
-<div class="result-box">
-<strong>Aylık Brüt Ücret</strong>
-<span id="aylikSonuc">0 TL</span>
+<strong>Hesaba Esas Aylık Brüt Ücret</strong>
+<span id="aylikSonuc">
+-
+</span>
 </div>
 
 </div>
 
+<div class="warning-box">
 
-<div class="warning">
-
-<strong>Önemli:</strong>
-
-Hesaplayıcı brüt matematiksel tutarı gösterir.
-Gerçek bordro veya işçilik alacağı hesabında uygulanacak
-SGK, vergi ve diğer yasal kesintiler nedeniyle net ödeme
-farklı olabilir.
-
-</div>
-
-</section>
-
-
-<section class="card">
-
-<h2>Yıllık İzin Ücreti Nasıl Hesaplanır?</h2>
-
-<p>
-Basit hesaplamada aylık brüt ücret 30'a bölünerek günlük
-brüt ücret bulunur. Bu tutar, hak kazanılmış fakat kullanılmamış
-izin günüyle çarpılır.
-</p>
-
-<div class="formula">
-
-Günlük brüt ücret =
-Aylık brüt ücret ÷ 30
+<strong>Net ödeme neden gösterilmiyor?</strong>
 
 <br><br>
 
-Kullanılmayan izin ücreti =
-Günlük brüt ücret × Kullanılmayan izin günü
+Kullanılmayan yıllık izin ücretinin bordro ve prim
+uygulaması çalışanın durumu, fesih ayındaki prime esas
+kazanç ve yürürlükteki vergi kurallarına göre değişebilir.
+
+<br><br>
+
+Bu nedenle araç, herkes için tek bir kesinti oranı
+varsaymak yerine temel matematiksel değer olan
+<strong>brüt izin ücretini</strong> gösterir.
 
 </div>
 
 </section>
 
+<section class="card">
+
+<h2>Kullanılmayan Yıllık İzin Ücreti Nasıl Hesaplanır?</h2>
+
+<p>
+İş sözleşmesinin sona ermesi halinde kullanılmayan
+hak edilmiş yıllık izinler için basit brüt hesapta,
+sözleşmenin sona erdiği tarihteki aylık brüt ücret
+30'a bölünür.
+</p>
+
+<p>
+Bulunan günlük ücret kullanılmayan izin günüyle çarpılır.
+</p>
+
+<div class="info-box">
+
+<strong>Günlük brüt ücret:</strong>
+
+<br><br>
+
+Aylık Brüt Ücret ÷ 30
+
+<br><br>
+
+<strong>Brüt kullanılmayan izin ücreti:</strong>
+
+<br><br>
+
+Günlük Brüt Ücret × Kullanılmayan İzin Günü
+
+</div>
+
+</section>
 
 <section class="card">
 
-<h2>45.000 TL Maaşla 14 Gün İzin Ücreti Ne Kadar?</h2>
+<h2>45.000 TL Maaşla 14 Günlük İzin Ücreti</h2>
 
-<p>
-Aylık brüt ücretin
-<strong>45.000 TL</strong>
-ve kullanılmayan yıllık izin süresinin
-<strong>14 gün</strong>
-olduğunu düşünelim.
-</p>
-
-<div class="formula">
+<div class="info-box">
 
 45.000 ÷ 30 =
+
+<br><br>
 
 <strong>1.500 TL günlük brüt ücret</strong>
 
@@ -565,60 +415,72 @@ olduğunu düşünelim.
 
 1.500 × 14 =
 
+<br><br>
+
 <strong>21.000 TL brüt izin ücreti</strong>
 
 </div>
 
 </section>
 
-
 <section class="card">
 
-<h2>Kullanılmayan Yıllık İzin Ücreti Ödenir mi?</h2>
+<h2>İşten Ayrılınca Kullanılmayan Yıllık İzinler Yanar mı?</h2>
 
 <p>
-4857 sayılı İş Kanunu'nun 59. maddesine göre iş sözleşmesinin
-herhangi bir nedenle sona ermesi halinde, işçinin hak kazanıp
-kullanmadığı yıllık izin sürelerinin ücret karşılığı ödenir.
+Hayır.
 </p>
 
 <p>
-Hesaplamada iş sözleşmesinin sona erdiği tarihteki ücret
+4857 sayılı İş Kanunu'nun 59'uncu maddesine göre,
+iş sözleşmesinin herhangi bir nedenle sona ermesi halinde
+işçinin hak kazanıp kullanmadığı yıllık izin sürelerine
+ait ücret kendisine veya hak sahiplerine ödenir.
+</p>
+
+<p>
+Hesaplamada
+<strong>iş sözleşmesinin sona erdiği tarihteki ücret</strong>
 esas alınır.
 </p>
 
-<p>
-Bu nedenle kullanılmayan yıllık izinlerin ücret alacağına
-dönüşmesi bakımından iş sözleşmesinin sona ermesi önemlidir.
-</p>
+<div class="source-box">
+
+<strong>Kanuni esas:</strong>
+
+<br><br>
+
+Hak kazanılmış fakat kullanılmamış yıllık izinler,
+iş sözleşmesinin sona ermesiyle ücret alacağına dönüşür.
+
+</div>
 
 </section>
-
 
 <section class="card">
 
-<h2>İşten Ayrılınca Kullanılmayan İzinler Yanar mı?</h2>
+<h2>Yıllık İzin Hakkı Ne Zaman Başlar?</h2>
 
 <p>
-Hak kazanılmış fakat kullanılmamış yıllık izinler,
-iş sözleşmesinin sona ermesi halinde ortadan kalkmaz.
+İşçinin yıllık ücretli izne hak kazanabilmesi için,
+deneme süresi dahil aynı işverene bağlı işyerinde
+en az <strong>1 yıl</strong> çalışmış olması gerekir.
 </p>
 
 <p>
-Kanundaki şartlar kapsamında bu izin süreleri ücret alacağına
-dönüşür ve işçiye veya hak sahiplerine ödenir.
+Bir yıllık süre dolmadan İş Kanunu kapsamındaki
+kanuni yıllık ücretli izin hakkı kural olarak doğmaz.
 </p>
 
 </section>
-
 
 <section class="card">
 
 <h2>Yıllık İzin Süresi Kaç Gündür?</h2>
 
 <p>
-4857 sayılı İş Kanunu kapsamındaki asgari yıllık izin süresi,
-işyerindeki hizmet süresine göre değişir.
+4857 sayılı İş Kanununa göre asgari yıllık izin
+süresi işyerindeki hizmet süresine göre değişir.
 </p>
 
 <div class="table-wrap">
@@ -626,29 +488,27 @@ işyerindeki hizmet süresine göre değişir.
 <table>
 
 <thead>
-
 <tr>
 <th>Hizmet Süresi</th>
 <th>Asgari Yıllık İzin</th>
 </tr>
-
 </thead>
 
 <tbody>
 
 <tr>
 <td>1 yıldan 5 yıla kadar (5 yıl dahil)</td>
-<td>14 gün</td>
+<td><strong>14 gün</strong></td>
 </tr>
 
 <tr>
 <td>5 yıldan fazla, 15 yıldan az</td>
-<td>20 gün</td>
+<td><strong>20 gün</strong></td>
 </tr>
 
 <tr>
 <td>15 yıl ve üzeri</td>
-<td>26 gün</td>
+<td><strong>26 gün</strong></td>
 </tr>
 
 </tbody>
@@ -658,108 +518,266 @@ işyerindeki hizmet süresine göre değişir.
 </div>
 
 <p>
-İş sözleşmesi veya toplu iş sözleşmesiyle daha uzun izin
-süreleri belirlenebilir.
+Bu süreler asgari sürelerdir.
+İş sözleşmesi veya toplu iş sözleşmesiyle daha uzun
+izin süreleri kararlaştırılabilir.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>Tam 5 Yıl Çalışanın Yıllık İzni Kaç Gün?</h2>
+
+<p>
+Bir yıldan beş yıla kadar olan hizmet süresi
+<strong>5 yıl dahil</strong> olmak üzere en az
+14 günlük izin basamağındadır.
+</p>
+
+<p>
+Bakanlığın açıklamasına göre çalışan,
+5 yıllık hizmet süresini doldurduktan sonra hak
+kazanacağı sonraki yıllık izin için 20 günlük
+basamağa geçer.
+</p>
+
+<div class="info-box">
+
+<strong>5 yıl dahil:</strong>
+14 gün
+
+<br><br>
+
+<strong>5 yıldan fazla ve 15 yıldan az:</strong>
+20 gün
+
+</div>
+
+</section>
 
 <section class="card">
 
-<h2>18 Yaş Altı ve 50 Yaş Üstü Çalışanlarda Yıllık İzin</h2>
+<h2>18 Yaş ve Daha Küçük Çalışanlarda Yıllık İzin</h2>
 
 <p>
-18 yaş ve daha küçük çalışanlar ile 50 yaş ve daha yukarı
-yaştaki çalışanların yıllık ücretli izin süresi
+18 yaş ve daha küçük işçilere verilecek yıllık
+ücretli izin süresi
 <strong>20 günden az olamaz.</strong>
 </p>
 
 <p>
-Bu süre, kıdeme göre hesaplanan normal asgari izin süresinin
-alt sınırını etkileyebilir.
+Bu nedenle örneğin 17 yaşındaki ve hizmet süresi
+2 yıl olan bir çalışana genel 14 günlük alt sınır
+değil, en az 20 günlük izin uygulanır.
 </p>
 
 </section>
 
-
 <section class="card">
 
-<h2>Brüt Yıllık İzin Ücreti ile Net Ödeme Aynı mı?</h2>
+<h2>50 Yaş ve Daha Büyük Çalışanlarda Yıllık İzin</h2>
 
 <p>
-Hayır.
+50 yaş ve daha yukarı yaştaki çalışanlara verilecek
+yıllık ücretli izin süresi de
+<strong>20 günden az olamaz.</strong>
 </p>
 
 <p>
-Bu hesaplayıcı aylık
-<strong>brüt ücret</strong>
-üzerinden tahmini brüt yıllık izin alacağını gösterir.
-</p>
-
-<p>
-Bordroda uygulanabilecek vergi, SGK primi ve diğer yasal
-kesintiler nedeniyle çalışanın eline geçecek net ödeme
-brüt tutardan farklı olabilir.
+Örneğin 52 yaşındaki ve hizmet süresi 3 yıl olan
+çalışan için asgari izin süresi 14 değil,
+en az 20 gündür.
 </p>
 
 </section>
 
-
 <section class="card">
 
-<h2>İzin Ücretine Fazla Mesai ve Prim Dahil mi?</h2>
+<h2>Yer Altı İşlerinde Yıllık İzin Kaç Gün?</h2>
 
 <p>
-Yıllık Ücretli İzin Yönetmeliğine göre izin ücretinin
-belirlenmesinde fazla çalışma karşılığı ücretler,
-primler ve bazı sosyal yardımlar hesaba katılmaz.
+Yer altı işlerinde çalışan işçilerin yıllık ücretli
+izin süreleri kanuni normal sürelere
+<strong>4 gün eklenerek</strong> uygulanır.
 </p>
-
-<p>
-Bu nedenle hesaplayıcı yalnızca girilen aylık brüt
-ücret üzerinden temel matematiksel hesabı yapar.
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>Yıllık İzin Kullanılırken Ücret Ne Zaman Ödenir?</h2>
-
-<p>
-İş sözleşmesi devam ederken kullanılan yıllık ücretli izin
-ile işten ayrılırken ortaya çıkan kullanılmayan izin alacağı
-birbirinden farklı konulardır.
-</p>
-
-<p>
-Yıllık izin kullanılırken işverenin izin dönemine ilişkin
-ücreti, mevzuattaki şartlar kapsamında izne başlamadan önce
-peşin veya avans olarak ödemesi öngörülmektedir.
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>Yıllık İzin Ücreti Hesaplama Örnekleri</h2>
 
 <div class="table-wrap">
 
 <table>
 
 <thead>
+<tr>
+<th>Hizmet Süresi</th>
+<th>Normal Süre</th>
+<th>Yer Altı İşleri</th>
+</tr>
+</thead>
 
+<tbody>
+
+<tr>
+<td>1–5 yıl</td>
+<td>14 gün</td>
+<td><strong>18 gün</strong></td>
+</tr>
+
+<tr>
+<td>5 yıldan fazla – 15 yıldan az</td>
+<td>20 gün</td>
+<td><strong>24 gün</strong></td>
+</tr>
+
+<tr>
+<td>15 yıl ve üzeri</td>
+<td>26 gün</td>
+<td><strong>30 gün</strong></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Hafta Tatili ve Resmî Tatiller Yıllık İzinden Sayılır mı?</h2>
+
+<p>
+Hayır.
+</p>
+
+<p>
+Yıllık ücretli izin günlerinin hesabında izin dönemine
+rastlayan hafta tatili, ulusal bayram ve genel tatil
+günleri yıllık izin süresinden sayılmaz.
+</p>
+
+<div class="info-box">
+
+Örneğin 14 günlük yıllık izin süresinin içine
+2 hafta tatili günü denk geliyorsa çalışan fiilen
+daha uzun süre işyerinden ayrı kalabilir.
+
+<br><br>
+
+Hafta tatili ve genel tatil günleri 14 günlük
+yıllık izin hakkının içinden düşülmez.
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Yıllık İzin Bölünebilir mi?</h2>
+
+<p>
+Yıllık ücretli izin, tarafların anlaşması halinde
+bölümler halinde kullanılabilir.
+</p>
+
+<p>
+Ancak izin bölümlerinden
+<strong>en az birinin 10 günden az olmaması</strong>
+gerekir.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Yıllık İzin Kullanılırken Ücret Ne Zaman Ödenir?</h2>
+
+<p>
+İş sözleşmesi devam ederken kullanılan yıllık izin
+süresine ilişkin ücretin, işveren tarafından işçi
+izne başlamadan önce peşin veya avans olarak ödenmesi
+öngörülmektedir.
+</p>
+
+<p>
+Bu durum, işten ayrılma sonrası kullanılmayan izin
+ücretinden farklıdır.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>İzin Ücretine Fazla Mesai ve Prim Dahil mi?</h2>
+
+<p>
+İş sözleşmesi devam ederken kullanılan yıllık izin
+ücretinin hesabında fazla çalışma ücretleri,
+primler ve sosyal yardımlar dahil edilmez.
+</p>
+
+<p>
+Bu nedenle bu hesaplayıcıya temel aylık
+<strong>brüt ücret</strong> girilmesi amaçlanmıştır.
+</p>
+
+<div class="warning-box">
+
+İşten ayrılma sonrası kullanılmayan izin alacağının
+kesin bordro hesabında ücretin niteliği ve bordrodaki
+diğer unsurlar ayrıca değerlendirilmelidir.
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Kullanılmayan İzin Ücretinden SGK Primi Kesilir mi?</h2>
+
+<p>
+SGK'nın güncel açıklamasına göre, iş sözleşmesinin
+sona ermesinden sonra ödenen hak edilmiş fakat
+kullanılmamış yıllık izin ücretleri, şartlarına göre
+fesih ayının prime esas kazancına dahil edilir.
+</p>
+
+<p>
+Bu nedenle kullanılmayan izin ücretinin net tutarı
+yalnızca brüt tutardan sabit bir yüzde çıkarılarak
+her çalışan için aynı şekilde hesaplanamaz.
+</p>
+
+<p>
+Prime esas kazanç üst sınırı ve fesih ayındaki diğer
+kazançlar SGK primi hesabını etkileyebilir.
+</p>
+
+<div class="source-box">
+
+Bu nedenle Araclio hesaplayıcısı
+<strong>brüt izin alacağını</strong>
+gösterir; kesin net bordro tutarı üretmez.
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Yıllık İzin Ücreti Örnekleri</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
 <tr>
 <th>Aylık Brüt Ücret</th>
 <th>İzin Günü</th>
-<th>Günlük Ücret</th>
+<th>Günlük Brüt</th>
 <th>Brüt İzin Ücreti</th>
 </tr>
-
 </thead>
 
 <tbody>
@@ -807,71 +825,202 @@ peşin veya avans olarak ödemesi öngörülmektedir.
 
 </section>
 
-
 <section class="card">
 
 <h2>Sık Sorulan Sorular</h2>
 
+<h3>Kullanılmayan yıllık izin ücreti nasıl hesaplanır?</h3>
+
+<p>
+Aylık brüt ücret 30'a bölünerek günlük brüt ücret
+bulunur ve bu tutar hak edilmiş fakat kullanılmamış
+izin günüyle çarpılır.
+</p>
 
 <h3>14 günlük yıllık izin ücreti nasıl hesaplanır?</h3>
 
 <p>
-Aylık brüt ücret 30'a bölünür ve bulunan günlük brüt ücret
-14 ile çarpılır.
+Aylık brüt ücret 30'a bölünür ve bulunan günlük
+brüt ücret 14 ile çarpılır.
 </p>
 
-
-<h3>20 günlük yıllık izin ücreti nasıl hesaplanır?</h3>
+<h3>İşten ayrılınca kullanılmayan izinler yanar mı?</h3>
 
 <p>
-Aylık brüt ücret 30'a bölünür ve günlük brüt ücret
-20 ile çarpılır.
+Hayır. İş sözleşmesi sona erdiğinde hak kazanılmış
+fakat kullanılmamış izinlerin ücret karşılığı ödenir.
 </p>
 
-
-<h3>İşten ayrılınca kullanılmayan izin parası alınır mı?</h3>
+<h3>Yıllık izin ücreti hangi maaşa göre hesaplanır?</h3>
 
 <p>
-İş sözleşmesinin sona ermesi halinde hak kazanılmış ancak
-kullanılmamış yıllık izinlerin ücret karşılığı kanundaki
-şartlara göre ödenir.
+İş sözleşmesinin sona ermesi halinde kullanılmayan
+izin ücreti, sözleşmenin sona erdiği tarihteki ücret
+üzerinden hesaplanır.
 </p>
 
-
-<h3>Yıllık izin ücreti hangi maaş üzerinden hesaplanır?</h3>
+<h3>Yıllık izne kaç yıl sonra hak kazanılır?</h3>
 
 <p>
-İş sözleşmesinin sona ermesinde kullanılmayan yıllık izin
-alacağı, sözleşmenin sona erdiği tarihteki ücret üzerinden
-hesaplanır.
+Deneme süresi dahil aynı işverene bağlı en az
+<strong>1 yıl</strong> çalışma sonunda yıllık ücretli
+izne hak kazanılır.
 </p>
 
-
-<h3>Yıllık izin parası brüt mü hesaplanır?</h3>
+<h3>5 yıllık çalışanın yıllık izni kaç gündür?</h3>
 
 <p>
-İşçilik alacağı hesabında brüt ücret ve uygulanacak yasal
-kesintiler dikkate alınır. Bu araç tahmini brüt tutarı gösterir.
+5 yıl dahil olmak üzere asgari izin süresi
+<strong>14 gündür</strong>.
+5 yıllık hizmet süresi doldurulduktan sonra hak
+kazanılan sonraki izin 20 günlük basamağa geçer.
 </p>
 
-
-<h3>Yıllık izin hakkı kaç gün?</h3>
+<h3>18 yaşındaki çalışanın yıllık izni kaç gündür?</h3>
 
 <p>
-Hizmet süresine göre genel asgari süreler 14, 20 ve 26 gündür.
-Yaş ve bazı özel çalışma koşulları farklı kurallar doğurabilir.
+18 yaş ve daha küçük çalışanlara verilecek yıllık izin
+<strong>20 günden az olamaz.</strong>
 </p>
 
+<h3>50 yaşındaki çalışanın yıllık izni kaç gündür?</h3>
+
+<p>
+50 yaş ve daha yukarı yaştaki çalışanların yıllık
+ücretli izni <strong>20 günden az olamaz.</strong>
+</p>
+
+<h3>Yer altında çalışanların yıllık izni farklı mı?</h3>
+
+<p>
+Evet. Yer altı işlerinde çalışanların normal yıllık
+izin süreleri dörder gün artırılır.
+</p>
+
+<h3>Pazar günü yıllık izinden sayılır mı?</h3>
+
+<p>
+Yıllık izin dönemine rastlayan hafta tatili günleri
+kanuni yıllık izin günlerinden sayılmaz.
+</p>
+
+<h3>Resmî tatil yıllık izinden düşer mi?</h3>
+
+<p>
+İzin süresine rastlayan ulusal bayram ve genel tatil
+günleri yıllık izin süresinden sayılmaz.
+</p>
+
+<h3>Yıllık izin parası çalışırken alınabilir mi?</h3>
+
+<p>
+Yıllık izin esas olarak dinlenme hakkıdır ve iş
+sözleşmesi devam ederken izin olarak kullandırılması
+gerekir. Hak edilmiş kullanılmamış izinlerin ücret
+alacağına dönüşmesi iş sözleşmesinin sona ermesiyle
+gündeme gelir.
+</p>
 
 <h3>Yıllık izin ücreti hesaplama ücretsiz mi?</h3>
 
 <p>
-Evet. Araclio Yıllık İzin Ücreti Hesaplama aracı ücretsizdir
-ve üyelik gerektirmez.
+Evet. Araclio Yıllık İzin Ücreti Hesaplama aracı
+ücretsizdir ve üyelik gerektirmez.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>Resmî Dayanak ve Hesaplama Yaklaşımı</h2>
+
+<div class="source-box">
+
+<strong>Yıllık izin süreleri:</strong>
+
+<br><br>
+
+1–5 yıl (5 yıl dahil):
+14 gün
+
+<br>
+
+5 yıldan fazla – 15 yıldan az:
+20 gün
+
+<br>
+
+15 yıl ve üzeri:
+26 gün
+
+<br><br>
+
+<strong>Özel yaş kuralı:</strong>
+
+<br>
+
+18 ve daha küçük yaştaki işçiler ile
+50 ve daha yukarı yaştaki işçiler:
+en az 20 gün
+
+<br><br>
+
+<strong>Yer altı işleri:</strong>
+
+<br>
+
+Normal izin sürelerine 4 gün eklenir.
+
+<br><br>
+
+<strong>Kullanılmayan izin:</strong>
+
+<br>
+
+İş sözleşmesi sona erdiğinde, sona erme tarihindeki
+ücret üzerinden ücret alacağına dönüşür.
+
+</div>
+
+<p>
+Sayfadaki bilgiler 4857 sayılı İş Kanunu ile
+T.C. Çalışma ve Sosyal Güvenlik Bakanlığının yıllık
+ücretli izne ilişkin güncel açıklamaları esas alınarak
+hazırlanmıştır.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Önemli Bilgilendirme</h2>
+
+<div class="warning-box">
+
+Bu hesaplayıcı genel bilgilendirme ve matematiksel
+hesaplama amacıyla hazırlanmıştır.
+
+<br><br>
+
+Kesin kullanılmayan yıllık izin alacağı;
+iş sözleşmesinin sona erme tarihi, son ücret,
+izin kayıtları, hak edilmiş izin günleri, bordro,
+SGK prime esas kazanç sınırları ve vergisel
+uygulamalara göre farklılaşabilir.
+
+<br><br>
+
+Uyuşmazlık halinde işverenin yıllık izin kayıtları,
+bordrolar, iş sözleşmesi ve diğer belgeler birlikte
+değerlendirilmelidir.
+
+</div>
+
+<p>
+<strong>Son güncelleme: Kasım 2026</strong>
+</p>
+
+</section>
 
 <section class="card">
 
@@ -902,6 +1051,12 @@ Kıdem Tazminatı Hesaplama →
 </p>
 
 <p>
+<a href="/asgari-ucret-hesaplama.html">
+Asgari Ücret Hesaplama →
+</a>
+</p>
+
+<p>
 <a href="/brut-net-maas-hesaplama.html">
 Brüt Net Maaş Hesaplama →
 </a>
@@ -915,37 +1070,7 @@ Gelir Vergisi Hesaplama →
 
 </section>
 
-
-<section class="card">
-
-<h2>Önemli Bilgilendirme</h2>
-
-<div class="warning">
-
-Bu hesaplayıcı genel bilgilendirme amacıyla hazırlanmıştır.
-
-<br><br>
-
-Kullanılmayan yıllık izin alacağının kesin hesabı;
-iş sözleşmesinin sona erme tarihi, ücretin niteliği,
-izin kayıtları, hak edilmiş izin günleri ve uygulanacak
-yasal kesintilere göre değişebilir.
-
-<br><br>
-
-Uyuşmazlık veya resmî işlemde bordrolar, iş sözleşmesi,
-yıllık izin kayıtları ve yürürlükteki mevzuat esas alınmalıdır.
-
-<br><br>
-
-<strong>Son güncelleme: Ekim 2026</strong>
-
-</div>
-
-</section>
-
 </main>
-
 
 <footer>
 
@@ -981,7 +1106,6 @@ Araclio • Ücretsiz Online Araçlar
 
 </footer>
 
-
 <script>
 
 function para(deger){
@@ -992,7 +1116,8 @@ return new Intl.NumberFormat(
 minimumFractionDigits:2,
 maximumFractionDigits:2
 }
-).format(deger) + " TL";
+).format(deger) +
+" TL";
 
 }
 
@@ -1011,7 +1136,6 @@ document.getElementById("sonuc");
 const kutular =
 document.getElementById("sonucKutulari");
 
-
 const ucret =
 Number(ucretInput.value);
 
@@ -1025,11 +1149,12 @@ gunInput.value === "" ||
 !Number.isFinite(ucret) ||
 !Number.isFinite(gun) ||
 ucret <= 0 ||
-gun <= 0
+gun <= 0 ||
+!Number.isInteger(gun)
 ){
 
-sonuc.innerHTML =
-"Lütfen sıfırdan büyük geçerli bir aylık brüt ücret ve kullanılmayan izin günü girin.";
+sonuc.textContent =
+"Lütfen sıfırdan büyük geçerli bir aylık brüt ücret ve tam sayı olarak kullanılmayan izin günü girin.";
 
 kutular.style.display =
 "none";
@@ -1040,11 +1165,13 @@ return;
 
 
 const gunluk =
-ucret / 30;
+ucret /
+30;
 
 
 const izinUcreti =
-gunluk * gun;
+gunluk *
+gun;
 
 
 document
@@ -1074,29 +1201,43 @@ para(ucret);
 
 sonuc.innerHTML =
 
-'<div class="result-main">' +
+"<strong>Tahmini brüt kullanılmayan yıllık izin ücreti: " +
+
 para(izinUcreti) +
-'</div>' +
 
-'<strong>Tahmini brüt kullanılmayan yıllık izin ücreti</strong>' +
+"</strong>" +
 
-'<br><br>' +
+"<br><br>" +
 
-'Aylık brüt ücret: <strong>' +
+"Hesaba esas aylık brüt ücret: <strong>" +
+
 para(ucret) +
-'</strong>' +
 
-'<br>' +
+"</strong>" +
 
-'Günlük brüt ücret: <strong>' +
+"<br>" +
+
+"Günlük brüt ücret: <strong>" +
+
 para(gunluk) +
-'</strong>' +
 
-'<br>' +
+"</strong>" +
 
-'Kullanılmayan izin: <strong>' +
+"<br>" +
+
+"Kullanılmayan izin: <strong>" +
+
 gun.toLocaleString("tr-TR") +
-' gün</strong>';
+
+" gün</strong>" +
+
+"<br><br>" +
+
+"<small>" +
+
+"Bu tutar brüt matematiksel sonuçtur. Kesin net bordro ve işçilik alacağı hesabı farklılık gösterebilir." +
+
+"</small>";
 
 
 kutular.style.display =
@@ -1118,7 +1259,9 @@ document
 function(event){
 
 if(event.key === "Enter"){
+
 hesapla();
+
 }
 
 }
