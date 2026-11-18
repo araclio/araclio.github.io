@@ -4,147 +4,47 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<meta name="google-adsense-account" content="ca-pub-7634654090472031">
-
 <title>Rapor Parası Hesaplama 2026 | SGK İş Göremezlik Ödeneği - Araclio</title>
 
-<meta name="description" content="2026 rapor parası hesaplama aracı. Brüt kazanç, rapor süresi, hastalık veya iş kazası ve ayakta/yatarak tedavi seçimine göre tahmini SGK iş göremezlik ödeneğini hesaplayın.">
+<meta
+name="description"
+content="2026 rapor parası hesaplama aracı. Son 12 aylık prime esas kazanç ve prim gününüzle hastalık, iş kazası veya meslek hastalığı için tahmini SGK geçici iş göremezlik ödeneğini hesaplayın."
+>
 
 <meta name="robots" content="index,follow">
 
+<meta name="google-adsense-account" content="ca-pub-7634654090472031">
+
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
+
 <link rel="canonical" href="https://araclio.com/rapor-parasi-hesaplama.html">
 
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rapor Parası Hesaplama 2026 | Araclio">
+<meta
+property="og:description"
+content="Son 12 aylık prime esas kazanç ve prim gününüzle tahmini SGK geçici iş göremezlik ödeneğinizi hesaplayın."
+>
+<meta property="og:url" content="https://araclio.com/rapor-parasi-hesaplama.html">
+<meta property="og:site_name" content="Araclio">
+
 <style>
-*{box-sizing:border-box}
 
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:radial-gradient(circle at 50% -10%,#123b69 0,#071a30 32%,#04101f 65%,#020a14 100%);
-color:#fff;
-min-height:100vh;
-}
-
-.wrap{
-width:min(850px,calc(100% - 28px));
-margin:auto;
-}
-
-header{
-background:rgba(3,14,27,.95);
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.nav{
-height:70px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.brand{
-font-size:34px;
-font-weight:900;
-text-decoration:none;
-color:#fff;
-}
-
-.brand span{color:#ffd400}
-
-.tag{
-font-size:12px;
-color:#9db2c8;
-font-weight:bold;
-}
-
-.hero{
-padding:45px 0 25px;
-text-align:center;
-}
-
-.eyebrow{
-color:#ffd400;
-font-size:12px;
-font-weight:900;
-letter-spacing:1.5px;
-}
-
-h1{
-font-size:clamp(32px,6vw,48px);
-margin:12px 0;
-line-height:1.05;
-}
-
-.hero p{
-max-width:700px;
-margin:15px auto 0;
-color:#b7c7d8;
-line-height:1.65;
-}
-
-.card{
-margin:18px 0;
-padding:24px;
-border-radius:18px;
-background:linear-gradient(145deg,#102a44,#081a2d);
-border:1px solid rgba(255,255,255,.09);
-box-shadow:0 9px 28px rgba(0,0,0,.2);
-}
-
-.card h2{
-margin-top:0;
-font-size:24px;
-}
-
-.card h3{
-margin-top:25px;
-}
-
-.card p,
-.card li{
-color:#b4c3d2;
-line-height:1.7;
-}
-
-label{
-display:block;
-font-weight:bold;
-margin-top:18px;
-}
-
-input,
 select{
 width:100%;
 margin-top:8px;
 padding:15px;
-border:1px solid #29435d;
-border-radius:11px;
-background:#061526;
-color:#fff;
+border:1px solid rgba(127,127,127,.35);
+border-radius:10px;
 font-size:16px;
-outline:none;
-}
-
-input:focus,
-select:focus{
-border-color:#42aaff;
-}
-
-button{
-width:100%;
-margin-top:22px;
-padding:16px;
-border:0;
-border-radius:12px;
-background:#ffd400;
-color:#071321;
-font-size:17px;
-font-weight:900;
-cursor:pointer;
-}
-
-button:hover{
-filter:brightness(1.05);
+background:inherit;
+color:inherit;
 }
 
 .two{
@@ -153,100 +53,178 @@ grid-template-columns:1fr 1fr;
 gap:12px;
 }
 
-.result{
-margin-top:20px;
-padding:20px;
-border-radius:13px;
-background:#061526;
-border:1px solid #1d4567;
-line-height:1.8;
-}
-
-.result-main{
-font-size:28px;
-font-weight:900;
-color:#ffd400;
-margin-bottom:12px;
-}
-
-.row{
-display:flex;
-justify-content:space-between;
-gap:20px;
-padding:10px 0;
-border-bottom:1px solid rgba(255,255,255,.07);
-}
-
-.row span{
-color:#aebdcb;
-}
-
-.row strong{
-text-align:right;
-}
-
-.info{
-padding:17px;
-border-radius:12px;
-background:#061526;
-border-left:4px solid #ffd400;
-line-height:1.7;
-color:#b4c3d2;
-}
-
-.warning{
-padding:17px;
-border-radius:12px;
-background:#291d0a;
-border:1px solid #75571a;
-color:#f0d797;
-line-height:1.6;
+.result-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
 margin-top:18px;
 }
 
-a{
-color:#52b7ff;
+.result-box{
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
 }
 
-footer{
-margin-top:40px;
-padding:30px 0;
-text-align:center;
-color:#8195a8;
-border-top:1px solid rgba(255,255,255,.08);
+.result-box strong{
+display:block;
+margin-bottom:7px;
 }
 
-@media(max-width:600px){
+.big-result{
+font-size:1.35rem;
+font-weight:700;
+}
 
-.card{padding:19px}
+.info-box{
+margin:16px 0;
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
 
-.tag{display:none}
+.warning-box{
+margin:16px 0;
+padding:16px;
+border-radius:10px;
+background:#fff8e1;
+border:1px solid #e7d28b;
+color:#4d3d00;
+line-height:1.8;
+}
 
-.two{
+.source-box{
+margin:16px 0;
+padding:16px;
+border-radius:10px;
+background:#eef6ff;
+border:1px solid #bad9f5;
+color:#1f3550;
+line-height:1.8;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:600px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+@media(max-width:650px){
+
+.two,
+.result-grid{
 grid-template-columns:1fr;
 }
 
-.row{
-font-size:14px;
 }
 
-}
 </style>
 
 <script type="application/ld+json">
 {
-"@context":"https://schema.org",
-"@type":"WebApplication",
-"name":"Rapor Parası Hesaplama 2026",
-"url":"https://araclio.com/rapor-parasi-hesaplama.html",
-"applicationCategory":"FinanceApplication",
-"operatingSystem":"Any",
-"description":"SGK geçici iş göremezlik ödeneği için tahmini rapor parası hesaplama aracı.",
-"offers":{
-"@type":"Offer",
-"price":"0",
-"priceCurrency":"TRY"
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Rapor Parası Hesaplama 2026",
+  "url":"https://araclio.com/rapor-parasi-hesaplama.html",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"Son 12 aylık prime esas kazanç ve prim günlerinden günlük kazancı hesaplayarak hastalık, iş kazası veya meslek hastalığı için tahmini SGK geçici iş göremezlik ödeneğini hesaplayan ücretsiz araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
 }
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Rapor Parası Hesaplama 2026",
+      "item":"https://araclio.com/rapor-parasi-hesaplama.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"2026 rapor parası nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Geçici iş göremezlik ödeneğine esas günlük kazanç, ilgili olaydan veya iş göremezlik başlangıcından önceki 12 aylık prime esas kazanç toplamının bu kazançlara ait prim gününe bölünmesiyle hesaplanır. Ayakta tedavide günlük kazancın üçte ikisi, yatarak tedavide yarısı esas alınır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Hastalık raporunda ilk iki güne rapor parası ödenir mi?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Hastalık halinde geçici iş göremezlik ödeneği üçüncü günden itibaren ödenir. Bu nedenle ilk iki gün için SGK geçici iş göremezlik ödeneği hesaplanmaz."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Hastalık rapor parası için kaç gün prim gerekir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Hastalık halinde iş göremezliğin başladığı tarihten önceki bir yıl içinde en az 90 gün kısa vadeli sigorta primi bildirilmiş olması gerekir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"İş kazasında 90 gün prim şartı var mı?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"İş kazası ve meslek hastalığında geçici iş göremezlik ödeneği için belirli bir prim gün sayısı şartı aranmaz."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Ayakta ve yatarak tedavide rapor parası oranı nedir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Ayakta tedavide günlük kazancın üçte ikisi, yatarak tedavide günlük kazancın yarısı oranında geçici iş göremezlik ödeneği hesaplanır."
+      }
+    }
+  ]
 }
 </script>
 
@@ -255,73 +233,104 @@ font-size:14px;
 <body>
 
 <header>
+
 <div class="wrap nav">
 
 <a class="brand" href="/">
-Arac<span>lio</span>
+Araclio
 </a>
 
 <span class="tag">
-ÜCRETSİZ HESAPLAMA ARAÇLARI
+Ücretsiz Online Araçlar
 </span>
 
 </div>
+
 </header>
 
 <main class="wrap">
 
 <section class="hero">
 
-<div class="eyebrow">
-2026 • SGK &amp; ÇALIŞMA
-</div>
+<p class="eyebrow">
+2026 • SGK • RAPOR PARASI
+</p>
 
 <h1>Rapor Parası Hesaplama 2026</h1>
 
 <p>
-Brüt kazancınız, rapor süreniz ve tedavi türünüze
-göre tahmini SGK geçici iş göremezlik ödeneğinizi
-hesaplayın.
+Rapor başlangıcından önceki 12 aylık prime esas
+kazanç toplamınızı ve prim gününüzü girerek
+hastalık, iş kazası veya meslek hastalığı için
+tahmini SGK geçici iş göremezlik ödeneğinizi hesaplayın.
 </p>
 
 </section>
-
 
 <section class="card">
 
 <h2>Rapor Parasını Hesapla</h2>
 
-<label for="kazanc">
-Aylık Prime Esas Brüt Kazanç (TL)
+<label for="pek">
+Önceki 12 Aylık Toplam Prime Esas Kazanç (TL)
 </label>
 
 <input
-id="kazanc"
+id="pek"
 type="number"
-min="1"
+min="0.01"
 step="0.01"
 inputmode="decimal"
-placeholder="Örnek: 45000">
+placeholder="Örnek: 450000"
+>
 
+<p>
+<small>
+Rapor başlangıcından önceki 12 aylık dönemde SGK'ya
+bildirilmiş prime esas kazanç toplamınızı girin.
+</small>
+</p>
 
 <div class="two">
 
 <div>
 
-<label for="gun">
+<label for="primGun">
+Önceki 12 Aylık Prim Günü
+</label>
+
+<input
+id="primGun"
+type="number"
+min="1"
+max="365"
+step="1"
+inputmode="numeric"
+placeholder="Örnek: 300"
+>
+
+</div>
+
+<div>
+
+<label for="raporGun">
 Rapor Süresi (Gün)
 </label>
 
 <input
-id="gun"
+id="raporGun"
 type="number"
 min="1"
 step="1"
 inputmode="numeric"
-placeholder="Örnek: 10">
+placeholder="Örnek: 10"
+>
 
 </div>
 
+</div>
+
+<div class="two">
 
 <div>
 
@@ -336,15 +345,18 @@ Hastalık
 </option>
 
 <option value="iskazasi">
-İş Kazası / Meslek Hastalığı
+İş Kazası
+</option>
+
+<option value="meslek">
+Meslek Hastalığı
 </option>
 
 </select>
 
 </div>
 
-</div>
-
+<div>
 
 <label for="tedavi">
 Tedavi Türü
@@ -362,134 +374,237 @@ Yatarak Tedavi
 
 </select>
 
-
-<div id="primAlani">
-
-<label for="prim">
-Son 1 Yıldaki Kısa Vadeli Sigorta Prim Günü
-</label>
-
-<input
-id="prim"
-type="number"
-min="0"
-max="365"
-step="1"
-inputmode="numeric"
-placeholder="Örnek: 180">
-
 </div>
 
+</div>
 
 <button type="button" onclick="hesapla()">
 Rapor Parasını Hesapla
 </button>
 
-
 <div id="sonuc" class="result" aria-live="polite">
-
 Bilgilerinizi girerek tahmini rapor paranızı hesaplayabilirsiniz.
+</div>
+
+<div id="sonucKutulari" class="result-grid" style="display:none;">
+
+<div class="result-box">
+<strong>Tahmini Toplam Ödenek</strong>
+<span id="toplamSonuc" class="big-result">-</span>
+</div>
+
+<div class="result-box">
+<strong>Tahmini Günlük Ödenek</strong>
+<span id="gunlukOdenekSonuc" class="big-result">-</span>
+</div>
+
+<div class="result-box">
+<strong>Hesaba Esas Günlük Kazanç</strong>
+<span id="gunlukKazancSonuc">-</span>
+</div>
+
+<div class="result-box">
+<strong>Ödenecek Gün</strong>
+<span id="odenecekGunSonuc">-</span>
+</div>
 
 </div>
 
-</section>
+<div class="warning-box">
 
-
-<section class="card">
-
-<h2>Rapor Parası Nasıl Hesaplanır?</h2>
-
-<p>
-SGK'da rapor parası, geçici iş göremezlik ödeneği
-olarak adlandırılır.
-</p>
-
-<div class="info">
-
-<strong>Ayakta tedavi:</strong>
-
-<br>
-
-Günlük kazancın yaklaşık
-<strong>2/3'ü</strong>
+<strong>Bu hesaplayıcı standart 4/a çalışanı için hazırlanmıştır.</strong>
 
 <br><br>
 
-<strong>Yatarak tedavi:</strong>
+4/b sigortalılarında özellikle iş kazası ve meslek
+hastalığı ödeneği bakımından farklı şartlar bulunabilir.
 
-<br>
+<br><br>
 
-Günlük kazancın yaklaşık
-<strong>1/2'si</strong>
+İlk kez işe başlanan gün meydana gelen iş kazası,
+önceki dönemde hiç prime esas kazanç bulunmaması,
+prim/ikramiye gibi özel kazanç unsurları ve bazı
+istisnai durumlarda SGK'nın özel hesap kuralları uygulanır.
 
 </div>
 
+</section>
+
+<section class="card">
+
+<h2>Rapor Parası Nedir?</h2>
+
 <p>
-Bu araçta girilen aylık prime esas brüt kazanç
-30'a bölünerek tahmini günlük kazanç oluşturulur.
-Gerçek SGK hesabında mevzuata göre esas alınan
-prime esas kazanç dönemi ve diğer unsurlar
-sonucu değiştirebilir.
+Rapor parası, SGK mevzuatındaki adıyla
+<strong>geçici iş göremezlik ödeneği</strong>,
+sigortalının iş kazası, meslek hastalığı,
+hastalık veya analık nedeniyle geçici olarak
+çalışamadığı belirli dönemlerde ödenen parasal yardımdır.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>2026 Rapor Parası Nasıl Hesaplanır?</h2>
+
+<p>
+Geçici iş göremezlik ödeneğinin hesabında doğrudan
+“mevcut aylık brüt maaş ÷ 30” yöntemi kullanılmaz.
+</p>
+
+<p>
+Güncel mevzuatta geçici iş göremezlik ödeneğine esas
+günlük kazanç için rapordan önceki dönem prime esas
+kazanç kayıtları dikkate alınır.
+</p>
+
+<div class="info-box">
+
+<strong>Temel hesap:</strong>
+
+<br><br>
+
+Önceki 12 Aylık Prime Esas Kazanç Toplamı
+
+<br>
+
+÷
+
+<br>
+
+Bu Kazançlara Ait Prim Gün Sayısı
+
+<br><br>
+
+=
+
+<br><br>
+
+<strong>Ortalama Günlük Kazanç</strong>
+
+</div>
+
+<p>
+Daha sonra tedavi türüne göre günlük ödenek hesaplanır.
+</p>
+
+</section>
 
 <section class="card">
 
-<h2>Hastalık Raporunda Kaç Gün Ödenir?</h2>
+<h2>Ayakta ve Yatarak Tedavi Rapor Parası</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Tedavi Türü</th>
+<th>Günlük Ödenek Oranı</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Ayakta Tedavi</td>
+<td><strong>Günlük Kazancın 2/3'ü</strong></td>
+</tr>
+
+<tr>
+<td>Yatarak Tedavi</td>
+<td><strong>Günlük Kazancın 1/2'si</strong></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Hastalık Raporunda İlk 2 Gün Ödenir mi?</h2>
 
 <p>
-SGK'nın hastalık hali kurallarına göre geçici
-iş göremezlik ödeneği, iş göremezliğin
-<strong>üçüncü gününden itibaren</strong> ödenir.
+Hayır.
 </p>
 
-<div class="info">
+<p>
+Hastalık nedeniyle geçici iş göremezlik ödeneği
+<strong>iş göremezliğin üçüncü gününden itibaren</strong>
+ödenir.
+</p>
+
+<div class="info-box">
 
 <strong>2 günlük hastalık raporu:</strong>
-Ödenecek gün bulunmaz.
+
+<br>
+
+SGK ödeme günü: 0
+
+<br><br>
+
+<strong>3 günlük hastalık raporu:</strong>
+
+<br>
+
+SGK ödeme günü: 1
 
 <br><br>
 
 <strong>5 günlük hastalık raporu:</strong>
-3 gün için ödeme hesaplanır.
+
+<br>
+
+SGK ödeme günü: 3
 
 <br><br>
 
 <strong>10 günlük hastalık raporu:</strong>
-8 gün için ödeme hesaplanır.
+
+<br>
+
+SGK ödeme günü: 8
 
 </div>
 
 </section>
-
 
 <section class="card">
 
 <h2>İş Kazasında İlk 2 Gün Kesilir mi?</h2>
 
 <p>
-İş kazası veya meslek hastalığı nedeniyle oluşan
-geçici iş göremezlikte hastalık raporundaki
-iki günlük bekleme süresi uygulanmaz.
+Hayır.
 </p>
 
 <p>
-Şartların sağlanması halinde ödenek raporlu
-olunan her gün için hesaplanabilir.
+İş kazası veya meslek hastalığında hastalık
+sigortasındaki iki günlük bekleme süresi uygulanmaz.
+</p>
+
+<p>
+Şartların sağlanması halinde geçici iş göremezlik
+ödeneği iş göremez olunan
+<strong>her gün için</strong>
+hesaplanır.
 </p>
 
 </section>
 
-
 <section class="card">
 
-<h2>Rapor Parası İçin 90 Gün Prim Şartı</h2>
+<h2>Hastalık Raporunda 90 Gün Prim Şartı</h2>
 
 <p>
-Hastalık nedeniyle geçici iş göremezlik ödeneği
-alınabilmesi için iş göremezliğin başladığı
+Hastalık nedeniyle geçici iş göremezlik ödeneğine
+hak kazanabilmek için iş göremezliğin başladığı
 tarihten önceki bir yıl içinde en az
 <strong>90 gün kısa vadeli sigorta primi</strong>
 bildirilmiş olması gerekir.
@@ -497,49 +612,175 @@ bildirilmiş olması gerekir.
 
 <p>
 Ayrıca istirahatin başladığı tarihte sigortalılık
-niteliğinin sona ermemiş olması ve SGK tarafından
-yetkilendirilmiş hekim veya sağlık kurulu tarafından
-istirahat raporu düzenlenmiş olması gerekir.
-</p>
-
-<p>
-İş kazasında ise belirli bir prim ödeme gün
-sayısı şartı aranmaz.
+niteliğinin devam etmesi ve SGK tarafından
+yetkilendirilen hekim veya sağlık kurulundan
+istirahat raporu alınmış olması gerekir.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>İş Kazasında Prim Gün Şartı Var mı?</h2>
+
+<p>
+İş kazası ve meslek hastalığı nedeniyle geçici
+iş göremezlik ödeneğinde belirli bir sigortalılık
+süresi veya minimum prim gün sayısı şartı aranmaz.
+</p>
+
+<p>
+Ancak olayın SGK mevzuatı bakımından iş kazası veya
+meslek hastalığı olarak kabul edilmesi ve diğer
+hak sahipliği şartlarının bulunması gerekir.
+</p>
+
+</section>
 
 <section class="card">
 
-<h2>Rapor Parası Örneği</h2>
+<h2>180 Günden Az Primi Olanlarda Günlük Kazanç Tavanı</h2>
 
-<div class="info">
+<p>
+Güncel mevzuata göre önceki 12 ay içinde
+<strong>180 günden az kısa vadeli sigorta primi</strong>
+bildirilmiş kişilerde geçici iş göremezlik ödeneğine
+esas günlük kazanç için ayrıca bir üst sınır uygulanır.
+</p>
 
-Aylık prime esas brüt kazanç:
-<strong>45.000 TL</strong>
+<div class="info-box">
+
+2026 günlük prime esas kazanç alt sınırı:
 
 <br><br>
 
-Tahmini günlük kazanç:
+<strong>1.101,00 TL</strong>
+
+<br><br>
+
+180 günden az primi olanlarda özel günlük kazanç tavanı:
+
+<br><br>
+
+1.101 × 2 =
+
+<br><br>
+
+<strong>2.202,00 TL</strong>
+
+</div>
+
+<p>
+Bu sınır doğrudan ödeneğin kendisi değil,
+ödeneğe esas alınacak günlük kazancın tavanıdır.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>2026 SGK Günlük Prime Esas Kazanç Sınırları</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>2026 Değeri</th>
+<th>Tutar</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Günlük PEK Alt Sınırı</td>
+<td><strong>1.101,00 TL</strong></td>
+</tr>
+
+<tr>
+<td>Aylık PEK Alt Sınırı</td>
+<td>33.030,00 TL</td>
+</tr>
+
+<tr>
+<td>Günlük PEK Üst Sınırı</td>
+<td><strong>9.909,00 TL</strong></td>
+</tr>
+
+<tr>
+<td>Aylık PEK Üst Sınırı</td>
+<td>297.270,00 TL</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Rapor Parası Hesaplama Örneği</h2>
+
+<p>
+Örnek olarak rapor başlangıcından önceki 12 aylık:
+</p>
+
+<div class="info-box">
+
+Toplam prime esas kazanç:
 
 <br>
 
-45.000 ÷ 30 =
+<strong>450.000 TL</strong>
+
+<br><br>
+
+Prim günü:
+
+<br>
+
+<strong>300 gün</strong>
+
+<br><br>
+
+Ortalama günlük kazanç:
+
+<br>
+
+450.000 ÷ 300 =
+
+<br>
+
 <strong>1.500 TL</strong>
 
+</div>
+
+<p>
+10 günlük hastalık raporu ve ayakta tedavi olduğunu
+varsayalım.
+</p>
+
+<div class="info-box">
+
+İlk 2 gün ödenmez.
+
 <br><br>
 
-10 günlük hastalık raporu ve ayakta tedavide
-ilk iki gün için ödeme yapılmadığından:
+Ödenecek gün:
 
 <br>
 
-<strong>8 ödeme günü</strong>
+10 − 2 =
+<strong>8 gün</strong>
 
 <br><br>
 
-Günlük tahmini ödenek:
+Günlük ödenek:
 
 <br>
 
@@ -553,69 +794,243 @@ Tahmini toplam:
 <br>
 
 8 × 1.000 =
+
+<br>
+
 <strong>8.000 TL</strong>
 
 </div>
 
 </section>
 
+<section class="card">
+
+<h2>Neden Sadece Aylık Brüt Maaşla Hesap Yapmıyoruz?</h2>
+
+<p>
+Çünkü SGK ödeneğinde esas alınan günlük kazanç,
+yalnızca rapor alındığı aydaki maaşa göre
+belirlenmez.
+</p>
+
+<p>
+Rapor başlangıcından önceki dönemde:
+</p>
+
+<ul>
+<li>Maaş değişmiş olabilir.</li>
+<li>Eksik prim günü bulunabilir.</li>
+<li>Prim veya ikramiye ödemeleri bulunabilir.</li>
+<li>İşe yeni başlanmış olabilir.</li>
+</ul>
+
+<p>
+Bu nedenle önceki 12 aylık SGK prime esas
+kazanç ve prim gününün kullanılması daha doğru
+bir yaklaşık sonuç verir.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Prime Esas Kazancı Nereden Öğrenebilirim?</h2>
+
+<p>
+Prime esas kazançlarınızı e-Devlet üzerinden
+SGK hizmet dökümünüzdeki aylık kayıtları
+inceleyerek görebilirsiniz.
+</p>
+
+<p>
+Hesaplama için rapor başlangıcından önceki
+12 aylık dönemdeki prime esas kazanç tutarlarını
+ve bunlara ait prim günlerini toplamanız gerekir.
+</p>
+
+</section>
 
 <section class="card">
 
 <h2>Sık Sorulan Sorular</h2>
 
-
-<h3>2 günlük rapora para ödenir mi?</h3>
+<h3>2 günlük hastalık raporuna para ödenir mi?</h3>
 
 <p>
-Hastalık nedeniyle alınan raporda SGK ödemesi
-üçüncü günden başladığı için iki günlük raporda
-geçici iş göremezlik ödeneği oluşmaz.
-İş kazası ve meslek hastalığı durumlarında
-kurallar farklıdır.
+Hayır. Hastalık halinde ödeme üçüncü günden
+başladığı için 2 günlük hastalık raporunda
+SGK geçici iş göremezlik ödeneği oluşmaz.
 </p>
 
-
-<h3>3 günlük raporda kaç gün ödeme yapılır?</h3>
+<h3>3 günlük hastalık raporunda kaç gün ödeme yapılır?</h3>
 
 <p>
-Hastalık raporunda ödeme üçüncü günden
-başladığından şartların sağlanması halinde
-bir günlük ödeme hesaplanır.
+Şartlar sağlanıyorsa 1 gün için ödeme hesaplanır.
 </p>
 
-
-<h3>10 günlük raporda kaç gün rapor parası alınır?</h3>
+<h3>10 günlük hastalık raporunda kaç gün ödeme yapılır?</h3>
 
 <p>
-Hastalık nedeniyle alınmış 10 günlük raporda
-ilk iki gün düşüldüğünde sekiz günlük ödeme
-hesaplanır.
+İlk iki gün düşüldüğü için 8 gün üzerinden
+ödeme hesaplanır.
 </p>
 
-
-<h3>Ayakta tedavi rapor parası ne kadar?</h3>
+<h3>Ayakta tedavide rapor parası oranı nedir?</h3>
 
 <p>
-SGK kurallarına göre ayakta tedavide geçici
-iş göremezlik ödeneği günlük kazancın
-üçte ikisi oranındadır.
+Geçici iş göremezlik ödeneği günlük kazancın
+<strong>üçte ikisi</strong> oranındadır.
 </p>
 
-
-<h3>Yatarak tedavide rapor parası ne kadar?</h3>
+<h3>Yatarak tedavide rapor parası oranı nedir?</h3>
 
 <p>
-Yatarak tedavide geçici iş göremezlik ödeneği
-günlük kazancın yarısı oranındadır.
+Geçici iş göremezlik ödeneği günlük kazancın
+<strong>yarısı</strong> oranındadır.
+</p>
+
+<h3>Hastalık rapor parası için kaç gün prim gerekir?</h3>
+
+<p>
+Rapor başlangıcından önceki bir yıl içinde en az
+<strong>90 gün kısa vadeli sigorta primi</strong>
+bildirilmiş olması gerekir.
+</p>
+
+<h3>İş kazasında ilk iki gün kesilir mi?</h3>
+
+<p>
+Hayır. İş kazası ve meslek hastalığında ödenek
+iş göremez olunan her gün için hesaplanabilir.
+</p>
+
+<h3>İş kazasında 90 gün prim şartı var mı?</h3>
+
+<p>
+Hayır. İş kazası ve meslek hastalığında belirli
+bir minimum prim gün şartı aranmaz.
+</p>
+
+<h3>180 günden az prim varsa ne olur?</h3>
+
+<p>
+Önceki 12 ayda 180 günden az kısa vadeli sigorta
+primi varsa ödeneğe esas günlük kazanç için
+kanuni üst sınır uygulanır.
+</p>
+
+<h3>2026 yılında bu sınır ne kadar?</h3>
+
+<p>
+2026 günlük PEK alt sınırı 1.101 TL olduğundan
+iki katlık sınır
+<strong>2.202 TL günlük kazanç</strong>
+seviyesindedir.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>Resmî Hesaplama Esası</h2>
+
+<div class="source-box">
+
+<strong>Günlük kazanç hesabı:</strong>
+
+<br><br>
+
+Önceki 12 aylık prime esas kazanç toplamı
+
+<br>
+
+÷
+
+<br>
+
+Bu kazançlara ait prim günü
+
+<br><br>
+
+<strong>Ayakta tedavi:</strong>
+
+<br>
+
+Günlük kazancın 2/3'ü
+
+<br><br>
+
+<strong>Yatarak tedavi:</strong>
+
+<br>
+
+Günlük kazancın 1/2'si
+
+<br><br>
+
+<strong>Hastalık:</strong>
+
+<br>
+
+Ödeme üçüncü günden başlar.
+
+<br><br>
+
+<strong>Hastalık prim şartı:</strong>
+
+<br>
+
+Önceki bir yılda en az 90 gün kısa vadeli
+sigorta primi.
+
+</div>
+
+</section>
 
 <section class="card">
 
-<h2>Diğer Çalışma Araçları</h2>
+<h2>Önemli Bilgilendirme</h2>
+
+<div class="warning-box">
+
+Bu araç standart 4/a sigortalısı için yaklaşık
+hesaplama amacıyla hazırlanmıştır.
+
+<br><br>
+
+Gerçek SGK ödemesinde Kurum kayıtlarındaki prime
+esas kazançlar, prim günleri, rapor başlangıç tarihi,
+raporun niteliği, ayakta/yatarak tedavi süreleri,
+prim ve ikramiye gibi kazanç unsurları ve sigortalılık
+durumu dikkate alınır.
+
+<br><br>
+
+Özellikle tek bir raporda hem yatarak hem ayakta
+tedavi günleri bulunuyorsa bu günler SGK tarafından
+ayrı oranlarla değerlendirilebilir.
+
+<br><br>
+
+İlk işe giriş günü meydana gelen iş kazası veya
+önceki 12 ayda hiç kazanç bulunmaması gibi özel
+durumlarda farklı hesaplama kuralları uygulanabilir.
+
+<br><br>
+
+Kesin ödeme tutarı için SGK kayıtları esas alınmalıdır.
+
+</div>
+
+<p>
+<strong>Son güncelleme: Kasım 2026</strong>
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Diğer Çalışma ve SGK Araçları</h2>
 
 <p>
 <a href="/issizlik-maasi-hesaplama.html">
@@ -624,20 +1039,14 @@ günlük kazancın yarısı oranındadır.
 </p>
 
 <p>
+<a href="/brut-net-maas-hesaplama.html">
+Brüt Net Maaş Hesaplama →
+</a>
+</p>
+
+<p>
 <a href="/fazla-mesai-ucreti-hesaplama.html">
 Fazla Mesai Ücreti Hesaplama →
-</a>
-</p>
-
-<p>
-<a href="/netten-brute-maas-hesaplama.html">
-Netten Brüte Maaş Hesaplama →
-</a>
-</p>
-
-<p>
-<a href="/maas-vergi-dilimi-hesaplama.html">
-Maaş Vergi Dilimi Hesaplama →
 </a>
 </p>
 
@@ -653,115 +1062,141 @@ Kıdem Tazminatı Hesaplama →
 </a>
 </p>
 
-</section>
-
-
-<section class="card">
-
-<h2>Bilgilendirme</h2>
-
 <p>
-Bu hesaplama genel bilgilendirme amacıyla yaklaşık
-sonuç verir. SGK'nın gerçek ödemesinde prime esas
-kazanç kayıtları, raporun nedeni ve türü, sigortalılık
-statüsü, prim şartları ve diğer mevzuat hükümleri
-dikkate alınır.
+<a href="/ihbar-tazminati-hesaplama.html">
+İhbar Tazminatı Hesaplama →
+</a>
 </p>
-
-<div class="warning">
-
-Hesaplanan tutar SGK tarafından yapılacak kesin
-ödeme değildir. Kesin iş göremezlik ödeneğinizi
-e-Devlet üzerindeki SGK İş Göremezlik Ödemesi
-sorgulama hizmetinden kontrol edebilirsiniz.
-
-</div>
 
 </section>
 
 </main>
 
-
 <footer>
 
 <div class="wrap">
 
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
+
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
+
+<p>
 © <span id="year"></span>
 Araclio • Ücretsiz Online Araçlar
+</p>
 
 </div>
 
 </footer>
 
-
 <script>
+
+const GUNLUK_PEK_ALT =
+1101;
+
+const GUNLUK_PEK_UST =
+9909;
+
+const AZ_PRIM_GUN_SINIRI =
+180;
+
+const AZ_PRIM_GUNLUK_TAVAN =
+GUNLUK_PEK_ALT * 2;
+
 
 function para(deger){
 
-return deger.toLocaleString("tr-TR",{
+return new Intl.NumberFormat(
+"tr-TR",
+{
 minimumFractionDigits:2,
 maximumFractionDigits:2
-});
+}
+).format(deger) +
+" TL";
 
 }
-
-
-const neden =
-document.getElementById("neden");
-
-const primAlani =
-document.getElementById("primAlani");
-
-
-neden.addEventListener("change",function(){
-
-if(this.value === "hastalik"){
-
-primAlani.style.display="block";
-
-}else{
-
-primAlani.style.display="none";
-
-}
-
-});
 
 
 function hesapla(){
 
-const kazanc =
-Number(
-document.getElementById("kazanc").value
-);
+const pekInput =
+document
+.getElementById("pek");
 
-const gun =
-Number(
-document.getElementById("gun").value
-);
+const primGunInput =
+document
+.getElementById("primGun");
+
+const raporGunInput =
+document
+.getElementById("raporGun");
 
 const neden =
-document.getElementById("neden").value;
+document
+.getElementById("neden")
+.value;
 
 const tedavi =
-document.getElementById("tedavi").value;
-
-const prim =
-Number(
-document.getElementById("prim").value
-);
+document
+.getElementById("tedavi")
+.value;
 
 const sonuc =
-document.getElementById("sonuc");
+document
+.getElementById("sonuc");
+
+const kutular =
+document
+.getElementById("sonucKutulari");
+
+const toplamPek =
+Number(
+pekInput.value
+);
+
+const primGun =
+Number(
+primGunInput.value
+);
+
+const raporGun =
+Number(
+raporGunInput.value
+);
 
 
 if(
-!Number.isFinite(kazanc) ||
-kazanc <= 0
+pekInput.value === "" ||
+!Number.isFinite(
+toplamPek
+) ||
+toplamPek <=
+0
 ){
 
-sonuc.innerHTML =
-"Lütfen geçerli bir aylık prime esas brüt kazanç girin.";
+sonuc.textContent =
+"Lütfen önceki 12 aylık toplam prime esas kazancı girin.";
+
+kutular.style.display =
+"none";
 
 return;
 
@@ -769,13 +1204,21 @@ return;
 
 
 if(
-!Number.isFinite(gun) ||
-gun <= 0 ||
-!Number.isInteger(gun)
+primGunInput.value === "" ||
+!Number.isInteger(
+primGun
+) ||
+primGun <
+1 ||
+primGun >
+365
 ){
 
-sonuc.innerHTML =
-"Lütfen geçerli bir rapor günü girin.";
+sonuc.textContent =
+"Lütfen 1 ile 365 arasında geçerli bir prim günü girin.";
+
+kutular.style.display =
+"none";
 
 return;
 
@@ -783,108 +1226,280 @@ return;
 
 
 if(
-neden === "hastalik" &&
-(
-!Number.isFinite(prim) ||
-prim < 0
-)
+raporGunInput.value === "" ||
+!Number.isInteger(
+raporGun
+) ||
+raporGun <
+1
 ){
 
-sonuc.innerHTML =
-"Lütfen son 1 yıldaki prim gününüzü girin.";
+sonuc.textContent =
+"Lütfen sıfırdan büyük geçerli bir rapor süresi girin.";
+
+kutular.style.display =
+"none";
 
 return;
 
 }
 
+
+/*
+Hastalık halinde en az 90 gün
+kısa vadeli sigorta primi şartı.
+*/
 
 if(
-neden === "hastalik" &&
-prim < 90
+neden ===
+"hastalik" &&
+primGun <
+90
 ){
 
 sonuc.innerHTML =
 
-'<div class="result-main">Prim şartı sağlanmıyor</div>' +
+"<strong>Hastalık ödeneği için prim şartı sağlanmıyor.</strong>" +
 
-'<p>Hastalık nedeniyle geçici iş göremezlik ödeneği için rapor başlangıcından önceki 1 yılda en az <strong>90 gün</strong> kısa vadeli sigorta primi gerekir.</p>' +
+"<br><br>" +
 
-'<div class="row">' +
-'<span>Girilen prim günü</span>' +
-'<strong>' +
-prim +
-' gün</strong>' +
-'</div>';
+"Rapor başlangıcından önceki bir yıl içinde en az " +
+
+"<strong>90 gün kısa vadeli sigorta primi</strong> " +
+
+"bildirilmiş olması gerekir." +
+
+"<br><br>" +
+
+"Girilen prim günü: <strong>" +
+
+primGun +
+
+" gün</strong>";
+
+
+kutular.style.display =
+"none";
 
 return;
 
 }
 
 
-const gunlukKazanc =
-kazanc / 30;
+/*
+12 aylık PEK / prim günü.
+*/
 
+const hamGunlukKazanc =
+toplamPek /
+primGun;
+
+
+/*
+2026 PEK günlük üst sınırı.
+*/
+
+let esasGunlukKazanc =
+Math.min(
+hamGunlukKazanc,
+GUNLUK_PEK_UST
+);
+
+
+let sinirNotu =
+"";
+
+
+/*
+Önceki 12 ayda 180 günden az
+kısa vadeli sigorta primi varsa
+günlük kazanç, cari günlük PEK
+alt sınırının iki katını geçemez.
+*/
+
+if(
+primGun <
+AZ_PRIM_GUN_SINIRI &&
+esasGunlukKazanc >
+AZ_PRIM_GUNLUK_TAVAN
+){
+
+esasGunlukKazanc =
+AZ_PRIM_GUNLUK_TAVAN;
+
+
+sinirNotu =
+
+"Önceki 12 ayda 180 günden az prim bulunduğu için " +
+
+"ödeneğe esas günlük kazanç 2026 için " +
+
+para(
+AZ_PRIM_GUNLUK_TAVAN
+) +
+
+" ile sınırlandı.";
+
+}
+else if(
+hamGunlukKazanc >
+GUNLUK_PEK_UST
+){
+
+sinirNotu =
+
+"Hesaplanan günlük kazanç 2026 günlük prime esas kazanç üst sınırı olan " +
+
+para(
+GUNLUK_PEK_UST
+) +
+
+" ile sınırlandı.";
+
+}
+
+
+/*
+Hastalıkta ilk iki gün SGK tarafından ödenmez.
+İş kazası ve meslek hastalığında tüm günler.
+*/
 
 let odenecekGun;
 
-if(neden === "hastalik"){
+
+if(
+neden ===
+"hastalik"
+){
 
 odenecekGun =
-Math.max(0,gun-2);
+Math.max(
+0,
+raporGun -
+2
+);
 
-}else{
+}
+else{
 
 odenecekGun =
-gun;
+raporGun;
 
 }
 
 
+/*
+Tedavi türüne göre oran.
+*/
+
 const oran =
-tedavi === "ayakta"
-? 2/3
-: 1/2;
+tedavi ===
+"ayakta"
+?
+2 / 3
+:
+1 / 2;
 
 
 const gunlukOdenek =
-gunlukKazanc * oran;
+esasGunlukKazanc *
+oran;
 
 
-const toplam =
-gunlukOdenek * odenecekGun;
+const toplamOdenek =
+gunlukOdenek *
+odenecekGun;
 
 
-const nedenAdi =
-neden === "hastalik"
-? "Hastalık"
-: "İş Kazası / Meslek Hastalığı";
+let nedenAdi;
+
+
+if(
+neden ===
+"hastalik"
+){
+
+nedenAdi =
+"Hastalık";
+
+}
+else if(
+neden ===
+"iskazasi"
+){
+
+nedenAdi =
+"İş Kazası";
+
+}
+else{
+
+nedenAdi =
+"Meslek Hastalığı";
+
+}
 
 
 const tedaviAdi =
-tedavi === "ayakta"
-? "Ayakta Tedavi"
-: "Yatarak Tedavi";
+tedavi ===
+"ayakta"
+?
+"Ayakta Tedavi"
+:
+"Yatarak Tedavi";
 
 
-if(odenecekGun === 0){
+document
+.getElementById("toplamSonuc")
+.textContent =
+para(
+toplamOdenek
+);
+
+
+document
+.getElementById("gunlukOdenekSonuc")
+.textContent =
+para(
+gunlukOdenek
+);
+
+
+document
+.getElementById("gunlukKazancSonuc")
+.textContent =
+para(
+esasGunlukKazanc
+);
+
+
+document
+.getElementById("odenecekGunSonuc")
+.textContent =
+odenecekGun +
+" gün";
+
+
+if(
+odenecekGun ===
+0
+){
 
 sonuc.innerHTML =
 
-'<div class="result-main">0,00 TL</div>' +
+"<strong>Tahmini SGK ödeneği: 0,00 TL</strong>" +
 
-'<p>Hastalık raporunda SGK ödemesi üçüncü günden başladığı için bu rapor süresinde ödeme günü oluşmuyor.</p>' +
+"<br><br>" +
 
-'<div class="row">' +
-'<span>Rapor süresi</span>' +
-'<strong>' +
-gun +
-' gün</strong>' +
-'</div>' +
+"Hastalık halinde ödeme üçüncü günden başladığı için " +
 
-'<div class="row">' +
-'<span>Ödenecek gün</span>' +
-'<strong>0 gün</strong>' +
-'</div>';
+raporGun +
+
+" günlük raporda SGK ödeme günü oluşmuyor.";
+
+
+kutular.style.display =
+"grid";
 
 return;
 
@@ -893,105 +1508,204 @@ return;
 
 sonuc.innerHTML =
 
-'<div class="result-main">' +
-para(toplam) +
-' TL</div>' +
+"<strong>Tahmini toplam rapor parası: " +
 
-'<div class="row">' +
-'<span>Rapor nedeni</span>' +
-'<strong>' +
+para(
+toplamOdenek
+) +
+
+"</strong>" +
+
+"<br><br>" +
+
+"Rapor nedeni: <strong>" +
+
 nedenAdi +
-'</strong>' +
-'</div>' +
 
-'<div class="row">' +
-'<span>Tedavi türü</span>' +
-'<strong>' +
+"</strong>" +
+
+"<br>" +
+
+"Tedavi türü: <strong>" +
+
 tedaviAdi +
-'</strong>' +
-'</div>' +
 
-'<div class="row">' +
-'<span>Aylık brüt kazanç</span>' +
-'<strong>' +
-para(kazanc) +
-' TL</strong>' +
-'</div>' +
+"</strong>" +
 
-'<div class="row">' +
-'<span>Tahmini günlük kazanç</span>' +
-'<strong>' +
-para(gunlukKazanc) +
-' TL</strong>' +
-'</div>' +
+"<br>" +
 
-'<div class="row">' +
-'<span>Toplam rapor süresi</span>' +
-'<strong>' +
-gun +
-' gün</strong>' +
-'</div>' +
+"12 aylık toplam PEK: <strong>" +
 
-'<div class="row">' +
-'<span>Ödenecek gün</span>' +
-'<strong>' +
+para(
+toplamPek
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"12 aylık prim günü: <strong>" +
+
+primGun +
+
+" gün</strong>" +
+
+"<br>" +
+
+"Ham ortalama günlük kazanç: <strong>" +
+
+para(
+hamGunlukKazanc
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Ödeneğe esas günlük kazanç: <strong>" +
+
+para(
+esasGunlukKazanc
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Toplam rapor süresi: <strong>" +
+
+raporGun +
+
+" gün</strong>" +
+
+"<br>" +
+
+"SGK tarafından ödenecek gün: <strong>" +
+
 odenecekGun +
-' gün</strong>' +
-'</div>' +
 
-'<div class="row">' +
-'<span>Günlük ödeme oranı</span>' +
-'<strong>' +
-(tedavi === "ayakta" ? "2/3" : "1/2") +
-'</strong>' +
-'</div>' +
+" gün</strong>" +
 
-'<div class="row">' +
-'<span>Tahmini günlük ödenek</span>' +
-'<strong>' +
-para(gunlukOdenek) +
-' TL</strong>' +
-'</div>' +
+"<br>" +
 
-'<div class="row">' +
-'<span>Tahmini toplam rapor parası</span>' +
-'<strong>' +
-para(toplam) +
-' TL</strong>' +
-'</div>' +
+"Günlük ödeme oranı: <strong>" +
 
-'<br><small>Sonuç yaklaşık hesaplamadır. Kesin ödeme SGK kayıtlarına göre belirlenir.</small>';
+(
+tedavi ===
+"ayakta"
+?
+"2/3"
+:
+"1/2"
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Tahmini günlük ödenek: <strong>" +
+
+para(
+gunlukOdenek
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Tahmini toplam ödenek: <strong>" +
+
+para(
+toplamOdenek
+) +
+
+"</strong>" +
+
+(
+sinirNotu !==
+""
+?
+"<br><br><small><strong>Uygulanan sınır:</strong> " +
+sinirNotu +
+"</small>"
+:
+""
+) +
+
+"<br><br>" +
+
+"<small>" +
+
+"Bu hesap yaklaşık sonuç verir. Kesin ödeme SGK kayıtları ve ilgili rapor bilgilerine göre belirlenir." +
+
+"</small>";
+
+
+kutular.style.display =
+"grid";
 
 }
 
+
+[
+"pek",
+"primGun",
+"raporGun"
+]
+.forEach(function(id){
 
 document
-.getElementById("kazanc")
+.getElementById(id)
 .addEventListener(
 "keydown",
-function(e){
+function(event){
 
-if(e.key==="Enter"){
+if(
+event.key ===
+"Enter"
+){
+
 hesapla();
+
 }
+
+}
+);
+
+});
+
+
+[
+"neden",
+"tedavi"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"change",
+function(){
+
+if(
+document
+.getElementById("pek")
+.value !== ""
+){
+
+hesapla();
+
+}
+
+}
+);
 
 });
 
 
 document
-.getElementById("gun")
-.addEventListener(
-"keydown",
-function(e){
-
-if(e.key==="Enter"){
-hesapla();
-}
-
-});
-
-
-document.getElementById("year").textContent =
+.getElementById("year")
+.textContent =
 new Date().getFullYear();
 
 </script>
