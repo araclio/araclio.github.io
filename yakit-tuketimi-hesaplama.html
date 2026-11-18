@@ -172,6 +172,22 @@ grid-template-columns:1fr;
     },
     {
       "@type":"Question",
+      "name":"500 km'de 35 litre yakan araç 100 km'de kaç litre yakar?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"500 kilometrede 35 litre yakıt tüketen bir araç ortalama 7 L/100 km yakıt tüketir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"1 litre ile kaç kilometre gidildiği nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Gidilen kilometre harcanan litre miktarına bölünür. Örneğin 500 kilometrede 35 litre tüketen araç yaklaşık 14,29 km/L değerine sahiptir."
+      }
+    },
+    {
+      "@type":"Question",
       "name":"Yakıt tüketimi neden değişir?",
       "acceptedAnswer":{
         "@type":"Answer",
@@ -202,7 +218,6 @@ Araclio
 
 </header>
 
-
 <main class="wrap">
 
 <section class="hero">
@@ -215,12 +230,12 @@ YAKIT • 100 KM • TL/KM • YOL MASRAFI
 
 <p>
 Aracınızın 100 kilometrede kaç litre yakıt tükettiğini,
+bir litre yakıtla kaç kilometre gittiğinizi,
 kilometre başına yakıt maliyetini veya planladığınız
 bir yolculuğun yaklaşık yakıt masrafını hesaplayın.
 </p>
 
 </section>
-
 
 <section class="card">
 
@@ -244,7 +259,6 @@ inputmode="decimal"
 placeholder="Örnek: 500"
 >
 
-
 <label for="harcananLitre">
 Harcanan Yakıt (litre)
 </label>
@@ -257,7 +271,6 @@ step="0.01"
 inputmode="decimal"
 placeholder="Örnek: 35"
 >
-
 
 <label for="litreFiyat">
 Yakıt Litre Fiyatı (TL)
@@ -272,16 +285,13 @@ inputmode="decimal"
 placeholder="Örnek: 50"
 >
 
-
 <button type="button" onclick="tuketimHesapla()">
 Tüketimi Hesapla
 </button>
 
-
 <div id="tuketimSonuc" class="result" aria-live="polite">
 Mesafe, yakıt miktarı ve litre fiyatını girin.
 </div>
-
 
 <div id="tuketimKutulari" class="result-grid" style="display:none;">
 
@@ -292,7 +302,7 @@ Mesafe, yakıt miktarı ve litre fiyatını girin.
 
 <div class="result-box">
 <strong>1 Litre ile Mesafe</strong>
-<span id="litreKmSonuc">0 km</span>
+<span id="litreKmSonuc">0 km/L</span>
 </div>
 
 <div class="result-box">
@@ -313,7 +323,6 @@ Mesafe, yakıt miktarı ve litre fiyatını girin.
 </div>
 
 </section>
-
 
 <section class="card">
 
@@ -337,7 +346,6 @@ inputmode="decimal"
 placeholder="Örnek: 750"
 >
 
-
 <label for="ortalamaTuketim">
 Ortalama Tüketim (L/100 km)
 </label>
@@ -350,7 +358,6 @@ step="0.01"
 inputmode="decimal"
 placeholder="Örnek: 7"
 >
-
 
 <label for="yolLitreFiyat">
 Yakıt Litre Fiyatı (TL)
@@ -365,16 +372,13 @@ inputmode="decimal"
 placeholder="Örnek: 50"
 >
 
-
 <button type="button" onclick="yolMasrafHesapla()">
 Yol Masrafını Hesapla
 </button>
 
-
 <div id="yolSonuc" class="result" aria-live="polite">
 Yol mesafesi, ortalama tüketim ve litre fiyatını girin.
 </div>
-
 
 <div id="yolKutulari" class="result-grid" style="display:none;">
 
@@ -401,7 +405,6 @@ Yol mesafesi, ortalama tüketim ve litre fiyatını girin.
 </div>
 
 </section>
-
 
 <section class="card">
 
@@ -436,6 +439,43 @@ L/100 km = Harcanan Litre ÷ Gidilen KM × 100
 
 </section>
 
+<section class="card">
+
+<h2>1 Litre ile Kaç Kilometre Gidilir?</h2>
+
+<p>
+Bir litre yakıtla gidilen mesafeyi bulmak için toplam
+mesafe harcanan litre miktarına bölünür.
+</p>
+
+<div class="info-box">
+
+<strong>
+km/L = Gidilen KM ÷ Harcanan Litre
+</strong>
+
+</div>
+
+<p>
+Örneğin 500 kilometrede 35 litre yakıt harcanmışsa:
+</p>
+
+<div class="info-box">
+
+500 ÷ 35 =
+
+<br><br>
+
+<strong>Yaklaşık 14,29 km/L</strong>
+
+</div>
+
+<p>
+Bu değer, aracın ortalama olarak bir litre yakıtla
+yaklaşık 14,29 kilometre yol alabildiğini gösterir.
+</p>
+
+</section>
 
 <section class="card">
 
@@ -467,6 +507,40 @@ TL/km = Toplam Yakıt Maliyeti ÷ Gidilen KM
 
 </section>
 
+<section class="card">
+
+<h2>100 KM Yakıt Maliyeti Nasıl Hesaplanır?</h2>
+
+<p>
+Aracın 100 kilometrede tükettiği yakıt miktarı,
+litre fiyatı ile çarpılarak 100 kilometrelik
+yakıt maliyeti hesaplanabilir.
+</p>
+
+<div class="info-box">
+
+<strong>
+100 KM Maliyeti = L/100 km × Litre Fiyatı
+</strong>
+
+</div>
+
+<p>
+Örneğin araç 7 L/100 km tüketiyor ve yakıtın litresi
+50 TL ise:
+</p>
+
+<div class="info-box">
+
+7 × 50 =
+
+<br><br>
+
+<strong>350 TL / 100 km</strong>
+
+</div>
+
+</section>
 
 <section class="card">
 
@@ -499,7 +573,6 @@ Yakıt = Mesafe × L/100 km ÷ 100
 </div>
 
 </section>
-
 
 <section class="card">
 
@@ -535,7 +608,6 @@ Yakıtın litre fiyatı 50 TL ise:
 
 </section>
 
-
 <section class="card">
 
 <h2>Yakıt Tüketimi Örnekleri</h2>
@@ -549,6 +621,7 @@ Yakıtın litre fiyatı 50 TL ise:
 <th>Mesafe</th>
 <th>Yakıt</th>
 <th>Ortalama Tüketim</th>
+<th>1 Litre ile Mesafe</th>
 </tr>
 </thead>
 
@@ -558,24 +631,28 @@ Yakıtın litre fiyatı 50 TL ise:
 <td>500 km</td>
 <td>30 L</td>
 <td>6 L/100 km</td>
+<td>16,67 km/L</td>
 </tr>
 
 <tr>
 <td>500 km</td>
 <td>35 L</td>
 <td>7 L/100 km</td>
+<td>14,29 km/L</td>
 </tr>
 
 <tr>
 <td>500 km</td>
 <td>40 L</td>
 <td>8 L/100 km</td>
+<td>12,50 km/L</td>
 </tr>
 
 <tr>
-<td>1000 km</td>
+<td>1.000 km</td>
 <td>70 L</td>
 <td>7 L/100 km</td>
+<td>14,29 km/L</td>
 </tr>
 
 </tbody>
@@ -586,6 +663,33 @@ Yakıtın litre fiyatı 50 TL ise:
 
 </section>
 
+<section class="card">
+
+<h2>L/100 KM ile KM/L Arasındaki Fark Nedir?</h2>
+
+<p>
+Bu iki değer aynı yakıt tüketimini farklı biçimde ifade eder.
+</p>
+
+<p>
+<strong>L/100 km</strong>, aracın 100 kilometrede kaç litre
+yakıt tükettiğini gösterir. Bu değerin düşük olması genellikle
+daha düşük yakıt tüketimi anlamına gelir.
+</p>
+
+<p>
+<strong>km/L</strong> ise aracın bir litre yakıtla kaç kilometre
+gidebildiğini gösterir. Bu değerin yüksek olması daha fazla
+mesafe anlamına gelir.
+</p>
+
+<div class="info-box">
+
+<strong>7 L/100 km ≈ 14,29 km/L</strong>
+
+</div>
+
+</section>
 
 <section class="card">
 
@@ -595,25 +699,25 @@ Yakıtın litre fiyatı 50 TL ise:
 Gerçek tüketim birçok faktörden etkilenebilir:
 </p>
 
-<p>
-* Trafik yoğunluğu<br>
-* Şehir içi veya şehir dışı kullanım<br>
-* Ortalama hız<br>
-* Ani hızlanma ve frenleme<br>
-* Yol eğimi<br>
-* Araç yükü<br>
-* Lastik basıncı<br>
-* Klima kullanımı<br>
-* Motor ve bakım durumu<br>
-* Hava sıcaklığı ve rüzgâr
-</p>
+<ul>
+<li>Trafik yoğunluğu</li>
+<li>Şehir içi veya şehir dışı kullanım</li>
+<li>Ortalama hız</li>
+<li>Ani hızlanma ve frenleme</li>
+<li>Yol eğimi</li>
+<li>Araç yükü</li>
+<li>Lastik basıncı</li>
+<li>Klima kullanımı</li>
+<li>Motor ve bakım durumu</li>
+<li>Hava sıcaklığı ve rüzgâr</li>
+</ul>
 
 <p>
-Bu nedenle hesaplanan değerler matematiksel ve yaklaşık sonuçlardır.
+Bu nedenle hesaplanan değerler girilen verilere dayanan
+matematiksel sonuçlardır; gerçek kullanım koşulları farklılık yaratabilir.
 </p>
 
 </section>
-
 
 <section class="card">
 
@@ -625,30 +729,49 @@ ve trafik nedeniyle yakıt tüketimi genellikle daha yüksek olabilir.
 </p>
 
 <p>
-Şehir dışı sürüşte ise sabit hız korunabildiği için araç
-daha düşük tüketim gösterebilir. Ancak yüksek hızlarda hava direnci
-arttığından tüketim tekrar yükselebilir.
+Şehir dışı sürüşte ise daha sabit hız korunabildiği için araç
+daha düşük tüketim gösterebilir. Bununla birlikte yüksek hızlarda
+hava direncinin artması yakıt tüketimini yeniden yükseltebilir.
 </p>
 
 </section>
-
 
 <section class="card">
 
 <h2>Yakıt Tüketimi Nasıl Ölçülür?</h2>
 
 <p>
-Pratik yöntemlerden biri depoyu doldurup kilometre sayacını sıfırlamak,
-bir süre araç kullandıktan sonra tekrar depoyu doldurmaktır.
+Pratik yöntemlerden biri depoyu doldurup kilometre sayacını sıfırlamak
+veya mevcut kilometre değerini not etmektir.
 </p>
 
 <p>
-İkinci dolumda alınan litre miktarı ile arada gidilen kilometre
-kullanılarak gerçek kullanım tüketimine yakın bir değer hesaplanabilir.
+Bir süre araç kullandıktan sonra depo yeniden doldurulur.
+İkinci dolumda alınan litre miktarı ile iki dolum arasında
+gidilen kilometre kullanılarak ortalama tüketim hesaplanabilir.
 </p>
 
-</section>
+<div class="info-box">
 
+<strong>Örnek:</strong>
+
+<br><br>
+
+Gidilen mesafe: 620 km
+
+<br>
+
+İkinci dolumda alınan yakıt: 43 litre
+
+<br><br>
+
+43 ÷ 620 × 100 ≈
+
+<strong>6,94 L/100 km</strong>
+
+</div>
+
+</section>
 
 <section class="card">
 
@@ -662,14 +785,13 @@ Araç ortalama olarak her 100 kilometrede
 tüketiyor demektir.
 </p>
 
-
-<h3>500 km'de 35 litre yakan araç kaç litre yakar?</h3>
+<h3>500 km'de 35 litre yakan araç 100 km'de kaç litre yakar?</h3>
 
 <p>
+500 kilometrede 35 litre tüketen araç ortalama
 <strong>7 L/100 km</strong>
-ortalama tüketir.
+yakıt tüketir.
 </p>
-
 
 <h3>1 litre ile kaç km giderim?</h3>
 
@@ -680,23 +802,38 @@ Gidilen kilometreyi harcanan litreye bölerek hesaplayabilirsiniz.
 değerine sahiptir.
 </p>
 
+<h3>7 L/100 km kaç km/L eder?</h3>
+
+<p>
+100 ÷ 7 işlemiyle yaklaşık
+<strong>14,29 km/L</strong>
+sonucu bulunur.
+</p>
 
 <h3>Yol masrafı nasıl hesaplanır?</h3>
 
 <p>
-Gerekli yakıt miktarı, yakıt litre fiyatı ile çarpılır.
+Önce yolculukta gereken yakıt miktarı hesaplanır.
+Bu miktar yakıtın litre fiyatı ile çarpılarak yaklaşık
+yol yakıt maliyeti bulunur.
 </p>
-
 
 <h3>Yakıt tüketimi sonucu kesin midir?</h3>
 
 <p>
-Hayır. Hesaplanan sonuçlar girilen değerlere göre matematiksel
-tahmindir. Gerçek tüketim sürüş ve yol koşullarına göre değişebilir.
+Hesaplama girilen mesafe, yakıt miktarı ve fiyat değerlerine göre
+matematiksel sonuç verir. Gerçek tüketim sürüş tarzı, trafik,
+hava ve yol koşullarına göre değişebilir.
+</p>
+
+<h3>Yakıt tüketimi hesaplama ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio Yakıt Tüketimi Hesaplama aracı ücretsizdir
+ve üyelik gerektirmez.
 </p>
 
 </section>
-
 
 <section class="card">
 
@@ -734,30 +871,30 @@ Mekanik Hesaplama →
 
 </section>
 
-
 <section class="card">
 
 <h2>Bilgilendirme</h2>
 
 <div class="info-box">
 
-Bu araç yalnızca matematiksel ve yaklaşık hesaplama yapar.
+Bu araç girilen değerlere göre matematiksel yakıt tüketimi
+ve maliyet hesabı yapar.
 
 <br><br>
 
 Gerçek yakıt tüketimi ve yol maliyeti aracın teknik durumu,
-trafik, sürüş tarzı, hava koşulları ve yakıt fiyatına göre değişebilir.
+trafik, sürüş tarzı, hava koşulları ve güncel yakıt fiyatına
+göre farklılık gösterebilir.
 
 </div>
 
 <p>
-<strong>Son güncelleme: Ekim 2026</strong>
+<strong>Son güncelleme: Kasım 2026</strong>
 </p>
 
 </section>
 
 </main>
-
 
 <footer>
 
@@ -792,7 +929,6 @@ Araclio • Ücretsiz Online Araçlar
 </div>
 
 </footer>
-
 
 <script>
 
@@ -908,7 +1044,7 @@ document
 .getElementById("litreKmSonuc")
 .textContent =
 sayiYaz(kmLitre) +
-" km";
+" km/L";
 
 
 document
@@ -936,7 +1072,13 @@ sonuc.innerHTML =
 
 "<strong>Ortalama tüketim: " +
 sayiYaz(yuzKmTuketim) +
-" L/100 km</strong>";
+" L/100 km</strong>" +
+
+"<br><br>" +
+
+"1 litre ile yaklaşık <strong>" +
+sayiYaz(kmLitre) +
+" km</strong>";
 
 
 kutular.style.display =
@@ -1025,7 +1167,13 @@ sonuc.innerHTML =
 
 "<strong>Tahmini yol masrafı: " +
 paraYaz(toplamMaliyet) +
-" TL</strong>";
+" TL</strong>" +
+
+"<br><br>" +
+
+"Tahmini yakıt ihtiyacı: <strong>" +
+sayiYaz(gerekenLitre) +
+" litre</strong>";
 
 
 kutular.style.display =
