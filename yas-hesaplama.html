@@ -13,7 +13,10 @@ content="Doğum tarihinizi girerek yaşınızı yıl, ay ve gün olarak hesaplay
 
 <meta name="robots" content="index,follow">
 
-<meta name="google-adsense-account" content="ca-pub-7634654090472031">
+<meta
+name="google-adsense-account"
+content="ca-pub-7634654090472031"
+>
 
 <script
 async
@@ -21,17 +24,26 @@ src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pu
 crossorigin="anonymous">
 </script>
 
-<link rel="canonical" href="https://araclio.com/yas-hesaplama.html">
+<link
+rel="canonical"
+href="https://araclio.com/yas-hesaplama.html"
+>
 
 <link rel="stylesheet" href="style.css">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Yaş Hesaplama | Kaç Yaşındayım?">
+<meta
+property="og:title"
+content="Yaş Hesaplama | Kaç Yaşındayım?"
+>
 <meta
 property="og:description"
-content="Yaşınızı yıl, ay ve gün olarak hesaplayın. Toplam yaşadığınız gün sayısını ve doğum gününüze kalan süreyi öğrenin."
+content="Yaşınızı yıl, ay ve gün olarak hesaplayın. Toplam yaşadığınız gün sayısını ve sonraki doğum gününüze kalan süreyi öğrenin."
 >
-<meta property="og:url" content="https://araclio.com/yas-hesaplama.html">
+<meta
+property="og:url"
+content="https://araclio.com/yas-hesaplama.html"
+>
 <meta property="og:site_name" content="Araclio">
 
 <style>
@@ -61,11 +73,21 @@ font-weight:700;
 }
 
 .info-box{
-margin-top:18px;
+margin:18px 0;
 padding:16px;
 border-radius:10px;
 background:#f5f5f5;
 color:#222;
+line-height:1.8;
+}
+
+.warning-box{
+margin:18px 0;
+padding:16px;
+border:1px solid #e7d28b;
+border-radius:10px;
+background:#fff8e1;
+color:#4d3d00;
 line-height:1.8;
 }
 
@@ -151,7 +173,7 @@ grid-template-columns:1fr;
       "name":"Yaş nasıl hesaplanır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Yaş, doğum tarihi ile bugünün tarihi arasındaki tamamlanmış yıl, ay ve gün farkı hesaplanarak bulunur."
+        "text":"Yaş, doğum tarihi ile bugünün tarihi arasındaki tamamlanmış yıl, ay ve gün farkı dikkate alınarak hesaplanır."
       }
     },
     {
@@ -159,7 +181,7 @@ grid-template-columns:1fr;
       "name":"Kaç gün yaşadığımı nasıl hesaplarım?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Doğum tarihi ile bugünün tarihi arasındaki takvim günlerinin toplamı hesaplanarak yaklaşık toplam yaşanan gün sayısı bulunabilir."
+        "text":"Doğum tarihi ile bugünün tarihi arasındaki takvim günü farkı hesaplanarak toplam yaşanan gün sayısı bulunabilir."
       }
     },
     {
@@ -167,7 +189,7 @@ grid-template-columns:1fr;
       "name":"Doğum günüme kaç gün kaldığını nasıl hesaplarım?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Bu yılki doğum günü geçmişse gelecek yılın doğum günü, geçmemişse bu yılki doğum günü esas alınarak kalan gün hesaplanır."
+        "text":"Bu yılki doğum günü henüz gelmediyse bu yılki tarih, geçtiyse gelecek yılın doğum günü esas alınarak kalan gün hesaplanır. Doğum günü bugünse kalan süre 0 gündür."
       }
     },
     {
@@ -175,7 +197,7 @@ grid-template-columns:1fr;
       "name":"29 Şubat doğumluların yaşı nasıl hesaplanır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Artık olmayan yıllarda 29 Şubat tarihi takvim hesabında Şubat ayının son gününe uyarlanabilir. Resmi ve hukuki yaş değerlendirmelerinde ilgili mevzuat esas alınmalıdır."
+        "text":"Bu araç artık olmayan yıllarda 29 Şubat tarihini Şubat ayının son gününe uyarlar. Resmi veya hukuki yaş değerlendirmelerinde ilgili mevzuat ve kurum uygulaması esas alınmalıdır."
       }
     }
   ]
@@ -202,7 +224,6 @@ Araclio
 
 </header>
 
-
 <main class="wrap">
 
 <section class="hero">
@@ -220,7 +241,6 @@ gün sayısını ve bir sonraki doğum gününüze kalan süreyi öğrenin.
 </p>
 
 </section>
-
 
 <section class="card">
 
@@ -243,36 +263,35 @@ Yaşımı Hesapla
 Doğum tarihinizi seçin ve hesapla butonuna basın.
 </div>
 
-
 <div id="yasKutulari" class="result-grid" style="display:none;">
 
 <div class="result-box">
 <strong>Yaşınız</strong>
-<span id="yilSonuc" class="big-result">0 yaş</span>
+<span id="yilSonuc" class="big-result">-</span>
 </div>
 
 <div class="result-box">
 <strong>Tam Yaşınız</strong>
-<span id="tamYasSonuc">0 yıl, 0 ay, 0 gün</span>
+<span id="tamYasSonuc">-</span>
 </div>
 
 <div class="result-box">
 <strong>Toplam Yaşadığınız Gün</strong>
-<span id="toplamGunSonuc">0 gün</span>
+<span id="toplamGunSonuc">-</span>
 </div>
 
 <div class="result-box">
-<strong>Sonraki Doğum Gününe</strong>
-<span id="kalanGunSonuc">0 gün</span>
+<strong>Doğum Gününe Kalan</strong>
+<span id="kalanGunSonuc">-</span>
 </div>
 
 <div class="result-box">
-<strong>Bir Sonraki Yaşınız</strong>
-<span id="sonrakiYasSonuc">0</span>
+<strong>Sonraki Ulaşacağınız Yaş</strong>
+<span id="sonrakiYasSonuc">-</span>
 </div>
 
 <div class="result-box">
-<strong>Sonraki Doğum Günü</strong>
+<strong>Bir Sonraki Doğum Günü</strong>
 <span id="sonrakiDogumSonuc">-</span>
 </div>
 
@@ -280,20 +299,19 @@ Doğum tarihinizi seçin ve hesapla butonuna basın.
 
 </section>
 
-
 <section class="card">
 
 <h2>Yaş Nasıl Hesaplanır?</h2>
 
 <p>
-Yaş hesabında yalnızca doğum yılı ile mevcut yılın
-çıkarılması yeterli değildir. Doğum gününün bu yıl gelip
-gelmediğinin de kontrol edilmesi gerekir.
+Yaş hesabında yalnızca mevcut yıldan doğum yılını çıkarmak
+yeterli değildir. O yıl içindeki doğum gününün gelip gelmediği
+de dikkate alınmalıdır.
 </p>
 
 <p>
-Araclio Yaş Hesaplama aracı tamamlanan yıl sayısının yanında
-kalan ay ve gün bilgisini de hesaplar.
+Araclio Yaş Hesaplama aracı tamamlanmış yıl sayısını,
+ardından kalan ay ve günleri ayrı ayrı hesaplar.
 </p>
 
 <div class="info-box">
@@ -306,86 +324,115 @@ kalan ay ve gün bilgisini de hesaplar.
 
 <br><br>
 
-ise yaşınız, bugünün tarihi ile 15 Mayıs 2000 arasındaki
-tamamlanmış takvim süresine göre hesaplanır.
+ise yaşınız, bugünün tarihi ile bu tarih arasındaki
+tamamlanmış takvim süresine göre belirlenir.
 
 </div>
 
 </section>
-
 
 <section class="card">
 
 <h2>Yaşı Yıl, Ay ve Gün Olarak Hesaplama</h2>
 
 <p>
-Yaşınızı yalnızca “25 yaş” şeklinde göstermek yerine,
-tam geçen süre:
+Yaş yalnızca “25 yaş” şeklinde değil,
+ayrıntılı takvim farkı olarak da gösterilebilir.
 </p>
 
 <div class="info-box">
 
-<strong>
-25 yıl, 4 ay, 12 gün
-</strong>
+Örnek:
+
+<br><br>
+
+<strong>25 yıl, 4 ay, 12 gün</strong>
 
 </div>
 
 <p>
-gibi yıl, ay ve gün bileşenlerine ayrılabilir.
-</p>
-
-<p>
-Bu yöntem iki tarih arasındaki takvim farkını daha ayrıntılı
-görmenizi sağlar.
+Buradaki yıl ve aylar sabit gün sayıları değildir.
+Takvim aylarının gerçek uzunlukları dikkate alınır.
 </p>
 
 </section>
-
 
 <section class="card">
 
 <h2>Toplam Kaç Gün Yaşadım?</h2>
 
 <p>
-Doğum tarihiniz ile bugünün tarihi arasındaki toplam takvim
+Doğum tarihi ile bugünün tarihi arasındaki toplam takvim
 günü ayrıca hesaplanır.
 </p>
 
 <p>
-Artık yıllardaki 29 Şubat günleri de toplam gün hesabına dahil edilir.
+Bu hesapta artık yıllardaki 29 Şubat günleri de otomatik
+olarak hesaba katılır.
 </p>
 
 <div class="info-box">
 
 <strong>
-Toplam gün = Bugünün tarihi − Doğum tarihi
+Toplam Gün =
+Bugünün Tarihi − Doğum Tarihi
 </strong>
 
 </div>
 
 </section>
 
-
 <section class="card">
 
 <h2>Doğum Gününe Kaç Gün Kaldı?</h2>
 
 <p>
-Araç, bir sonraki doğum gününüzü otomatik belirler.
+Araç en yakın doğum günü tarihini belirleyerek
+kaç takvim günü kaldığını hesaplar.
 </p>
 
 <p>
-Bu yılki doğum gününüz henüz gelmediyse bu yılın tarihi,
-geçtiyse gelecek yılın doğum günü kullanılır.
+Bu yılki doğum gününüz henüz gelmediyse bu yılki tarih,
+geçmişse gelecek yılın tarihi esas alınır.
 </p>
 
 <p>
-Doğum gününüz bugünse sonuç bölümünde ayrıca belirtilir.
+Doğum gününüz bugünse:
+</p>
+
+<div class="info-box">
+
+<strong>Bugün doğum gününüz! 🎉</strong>
+
+</div>
+
+<p>
+şeklinde gösterilir.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>Doğum Günü Bugünse Sonraki Tarih Nasıl Gösterilir?</h2>
+
+<p>
+Doğum gününüz bugün olduğunda kalan gün sayısı
+<strong>0 gün</strong>
+olarak gösterilir.
+</p>
+
+<p>
+Ancak “Bir Sonraki Doğum Günü” alanı, bugün değil,
+gelecek yıl ulaşacağınız bir sonraki doğum günü tarihini gösterir.
+</p>
+
+<p>
+Böylece “sonraki yaş” ile “sonraki doğum günü”
+bilgileri birbiriyle tutarlı kalır.
+</p>
+
+</section>
 
 <section class="card">
 
@@ -393,18 +440,23 @@ Doğum gününüz bugünse sonuç bölümünde ayrıca belirtilir.
 
 <p>
 29 Şubat yalnızca artık yıllarda bulunduğu için,
-29 Şubat doğumluların sonraki doğum günü tarihi artık
-olmayan yıllarda takvimsel olarak Şubat ayının son gününe
-uyarlanabilir.
+bu araç artık olmayan yıllarda 29 Şubat tarihini
+Şubat ayının son gününe uyarlar.
 </p>
 
-<p>
-Resmi yaş, sözleşme, sigorta, eğitim veya hukuki işlemlerde
-ilgili kurumun ve yürürlükteki mevzuatın uygulaması esas alınmalıdır.
-</p>
+<div class="warning-box">
+
+Bu yaklaşım genel takvim hesabı içindir.
+
+<br><br>
+
+Resmi yaş sınırı, hukuki işlem, sigorta, eğitim,
+askerlik veya benzeri işlemlerde ilgili mevzuatın ve
+kurumun uygulaması esas alınmalıdır.
+
+</div>
 
 </section>
-
 
 <section class="card">
 
@@ -416,26 +468,26 @@ ilgili kurumun ve yürürlükteki mevzuatın uygulaması esas alınmalıdır.
 
 <thead>
 <tr>
-<th>Doğum Tarihi</th>
-<th>Hesaplama</th>
+<th>Durum</th>
+<th>Sonuç</th>
 </tr>
 </thead>
 
 <tbody>
 
 <tr>
-<td>10 yıl önce bugün</td>
-<td>Tam 10 yaş</td>
+<td>10 yıl önce bugün doğan kişi</td>
+<td>Tam 10 yaşındadır</td>
 </tr>
 
 <tr>
-<td>20 yıl önce bugün</td>
-<td>Tam 20 yaş</td>
+<td>20 yıl önce bugün doğan kişi</td>
+<td>Tam 20 yaşındadır</td>
 </tr>
 
 <tr>
-<td>30 yıl önce bugün</td>
-<td>Tam 30 yaş</td>
+<td>30 yıl önce bugün doğan kişi</td>
+<td>Tam 30 yaşındadır</td>
 </tr>
 
 <tr>
@@ -445,7 +497,7 @@ ilgili kurumun ve yürürlükteki mevzuatın uygulaması esas alınmalıdır.
 
 <tr>
 <td>Doğum günü bugün</td>
-<td>Yeni yaş bugün tamamlanır</td>
+<td>Yeni yaş bugün tamamlanmıştır</td>
 </tr>
 
 </tbody>
@@ -456,31 +508,29 @@ ilgili kurumun ve yürürlükteki mevzuatın uygulaması esas alınmalıdır.
 
 </section>
 
-
 <section class="card">
 
 <h2>Yaş ile Doğum Yılı Aynı Şey Değildir</h2>
 
 <p>
-Örneğin 2000 doğumlu bir kişinin yaşı sadece mevcut yıldan
-2000 çıkarılarak kesin olarak belirlenemez.
+Örneğin yalnızca “2000 doğumlu” bilgisi kişinin kesin
+yaşını söylemek için yeterli değildir.
 </p>
 
 <p>
-Kişinin o yılki doğum günü henüz gelmediyse bir yaş daha
-küçük olması gerekir.
+Kişinin o yılki doğum günü henüz gelmediyse,
+mevcut yıl ile 2000 arasındaki farktan bir yaş daha küçük olur.
 </p>
 
 <div class="info-box">
 
 <strong>
-Doğru yaş hesabında gün, ay ve yıl birlikte değerlendirilir.
+Kesin takvim yaşında gün, ay ve yıl birlikte değerlendirilir.
 </strong>
 
 </div>
 
 </section>
-
 
 <section class="card">
 
@@ -489,51 +539,55 @@ Doğru yaş hesabında gün, ay ve yıl birlikte değerlendirilir.
 <h3>Kaç yaşında olduğumu nasıl hesaplarım?</h3>
 
 <p>
-Doğum tarihinizi seçerek bu araç üzerinden yıl, ay ve gün
-olarak yaşınızı hesaplayabilirsiniz.
+Doğum tarihinizi seçerek tamamladığınız yıl sayısını
+ve ayrıntılı yıl, ay, gün farkını hesaplayabilirsiniz.
 </p>
-
 
 <h3>Yaş hesaplanırken doğum günü dikkate alınır mı?</h3>
 
 <p>
-Evet. Yeni yaş, doğum günü tamamlandığında oluşur.
+Evet. Yeni yaş doğum günü geldiğinde tamamlanır.
 </p>
-
 
 <h3>Toplam kaç gün yaşadığımı görebilir miyim?</h3>
 
 <p>
 Evet. Araç doğum tarihiniz ile bugün arasındaki toplam
-gün sayısını da gösterir.
+takvim günü sayısını da gösterir.
 </p>
-
 
 <h3>Bir sonraki doğum günüme kaç gün kaldığını hesaplayabilir miyim?</h3>
 
 <p>
-Evet. Sonuç bölümünde bir sonraki doğum gününüzün tarihi
-ve kalan gün sayısı gösterilir.
+Evet. Sonuç bölümünde kalan gün sayısı ile bir sonraki
+doğum gününün tarihi birlikte gösterilir.
 </p>
-
 
 <h3>Bugün doğum günümdüyse ne gösterir?</h3>
 
 <p>
-Doğum gününüz bugünse araç
-<strong>“Bugün doğum gününüz!”</strong>
-mesajını gösterir.
+Kalan gün alanında
+<strong>“Bugün 🎉”</strong>
+mesajı gösterilir. Bir sonraki doğum günü alanında ise
+gelecek yılın tarihi gösterilir.
 </p>
 
+<h3>29 Şubat doğumlular nasıl hesaplanıyor?</h3>
+
+<p>
+Bu araç artık olmayan yıllarda tarihi Şubat ayının son
+takvim gününe uyarlar. Resmi işlemlerde kurum ve mevzuat
+kuralları ayrıca dikkate alınmalıdır.
+</p>
 
 <h3>Yaş hesaplama ücretsiz mi?</h3>
 
 <p>
-Evet. Araclio Yaş Hesaplama aracı ücretsizdir ve üyelik gerektirmez.
+Evet. Araclio Yaş Hesaplama aracı ücretsizdir
+ve üyelik gerektirmez.
 </p>
 
 </section>
-
 
 <section class="card">
 
@@ -557,35 +611,31 @@ Zaman Dönüştürücü →
 </a>
 </p>
 
-<p>
-<a href="/gebelik-hesaplama.html">
-Gebelik Hesaplama →
-</a>
-</p>
-
 </section>
-
 
 <section class="card">
 
 <h2>Bilgilendirme</h2>
 
-<div class="info-box">
+<div class="warning-box">
 
-Bu araç genel takvim hesaplaması amacıyla hazırlanmıştır.
+Bu araç genel takvim hesabı amacıyla hazırlanmıştır.
 
 <br><br>
 
 Resmi yaş sınırı, hukuki işlem, sigorta, emeklilik,
 askerlik, eğitim veya benzeri işlemlerde ilgili kurumların
-kayıt ve kuralları esas alınmalıdır.
+kayıtları ve yürürlükteki kurallar esas alınmalıdır.
 
 </div>
+
+<p>
+<strong>Son güncelleme: Kasım 2026</strong>
+</p>
 
 </section>
 
 </main>
-
 
 <footer>
 
@@ -621,7 +671,6 @@ Araclio • Ücretsiz Online Araçlar
 
 </footer>
 
-
 <script>
 
 const BIR_GUN =
@@ -631,7 +680,11 @@ const BIR_GUN =
 function gunSayisi(yil, ay){
 
 return new Date(
-Date.UTC(yil, ay + 1, 0)
+Date.UTC(
+yil,
+ay + 1,
+0
+)
 ).getUTCDate();
 
 }
@@ -640,12 +693,18 @@ Date.UTC(yil, ay + 1, 0)
 function tarihOlustur(yil, ay, gun){
 
 const sonGun =
-gunSayisi(yil, ay);
+gunSayisi(
+yil,
+ay
+);
 
 return {
 yil:yil,
 ay:ay,
-gun:Math.min(gun, sonGun)
+gun:Math.min(
+gun,
+sonGun
+)
 };
 
 }
@@ -662,7 +721,7 @@ tarih.gun
 }
 
 
-function tarihKarsilastir(a, b){
+function tarihKarsilastir(a,b){
 
 return utcDegeri(a) -
 utcDegeri(b);
@@ -670,7 +729,7 @@ utcDegeri(b);
 }
 
 
-function yilEkle(tarih, miktar){
+function yilEkle(tarih,miktar){
 
 return tarihOlustur(
 tarih.yil + miktar,
@@ -681,7 +740,7 @@ tarih.gun
 }
 
 
-function ayEkle(tarih, miktar){
+function ayEkle(tarih,miktar){
 
 let toplamAy =
 tarih.yil * 12 +
@@ -689,17 +748,23 @@ tarih.ay +
 miktar;
 
 let yil =
-Math.floor(toplamAy / 12);
+Math.floor(
+toplamAy / 12
+);
 
 let ay =
 toplamAy % 12;
 
-if(ay < 0){
+
+if(
+ay < 0
+){
 
 ay += 12;
 yil--;
 
 }
+
 
 return tarihOlustur(
 yil,
@@ -721,6 +786,7 @@ tarih.gun
 )
 );
 
+
 return new Intl.DateTimeFormat(
 "tr-TR",
 {
@@ -737,7 +803,10 @@ timeZone:"UTC"
 function yasHesapla(){
 
 const input =
-document.getElementById("dogumTarihi").value;
+document
+.getElementById("dogumTarihi")
+.value;
+
 
 const sonuc =
 document.getElementById("yasSonuc");
@@ -746,9 +815,11 @@ const kutular =
 document.getElementById("yasKutulari");
 
 
-if(!input){
+if(
+!input
+){
 
-sonuc.innerHTML =
+sonuc.textContent =
 "Lütfen doğum tarihinizi seçin.";
 
 kutular.style.display =
@@ -765,11 +836,20 @@ input.split("-");
 
 const dogum = {
 
-yil:Number(parcalar[0]),
+yil:
+Number(
+parcalar[0]
+),
 
-ay:Number(parcalar[1]) - 1,
+ay:
+Number(
+parcalar[1]
+) - 1,
 
-gun:Number(parcalar[2])
+gun:
+Number(
+parcalar[2]
+)
 
 };
 
@@ -780,7 +860,7 @@ if(
 !Number.isInteger(dogum.gun)
 ){
 
-sonuc.innerHTML =
+sonuc.textContent =
 "Lütfen geçerli bir doğum tarihi seçin.";
 
 kutular.style.display =
@@ -797,20 +877,26 @@ new Date();
 
 const bugun = {
 
-yil:simdi.getFullYear(),
+yil:
+simdi.getFullYear(),
 
-ay:simdi.getMonth(),
+ay:
+simdi.getMonth(),
 
-gun:simdi.getDate()
+gun:
+simdi.getDate()
 
 };
 
 
 if(
-tarihKarsilastir(dogum, bugun) > 0
+tarihKarsilastir(
+dogum,
+bugun
+) > 0
 ){
 
-sonuc.innerHTML =
+sonuc.textContent =
 "Doğum tarihi gelecekte olamaz.";
 
 kutular.style.display =
@@ -821,9 +907,7 @@ return;
 }
 
 
-/*
-TAMAMLANMIŞ YIL
-*/
+/* TAMAMLANMIŞ YIL */
 
 let yil =
 bugun.yil -
@@ -855,23 +939,25 @@ yil
 }
 
 
-/*
-TAMAMLANMIŞ AY
-*/
+/* TAMAMLANMIŞ AY */
 
-let ay = 0;
+let ay =
+0;
 
 let ayDonumu =
 yilDonumu;
 
 
-while(true){
+while(
+ay < 11
+){
 
 const sonrakiAy =
 ayEkle(
 yilDonumu,
 ay + 1
 );
+
 
 if(
 tarihKarsilastir(
@@ -885,7 +971,8 @@ ay++;
 ayDonumu =
 sonrakiAy;
 
-}else{
+}
+else{
 
 break;
 
@@ -894,9 +981,7 @@ break;
 }
 
 
-/*
-KALAN GÜN
-*/
+/* KALAN GÜN */
 
 const gun =
 Math.round(
@@ -908,9 +993,7 @@ BIR_GUN
 );
 
 
-/*
-TOPLAM GÜN
-*/
+/* TOPLAM GÜN */
 
 const toplamGun =
 Math.round(
@@ -922,11 +1005,9 @@ BIR_GUN
 );
 
 
-/*
-SONRAKİ DOĞUM GÜNÜ
-*/
+/* BU YILKİ DOĞUM GÜNÜ */
 
-let sonrakiDogum =
+const buYilDogum =
 tarihOlustur(
 bugun.yil,
 dogum.ay,
@@ -934,14 +1015,32 @@ dogum.gun
 );
 
 
+const bugunDogumGunu =
+tarihKarsilastir(
+buYilDogum,
+bugun
+) === 0;
+
+
+/* EN YAKIN DOĞUM GÜNÜ / KALAN GÜN */
+
+let yakinDogum;
+
+
 if(
 tarihKarsilastir(
-sonrakiDogum,
+buYilDogum,
 bugun
-) < 0
+) >= 0
 ){
 
-sonrakiDogum =
+yakinDogum =
+buYilDogum;
+
+}
+else{
+
+yakinDogum =
 tarihOlustur(
 bugun.yil + 1,
 dogum.ay,
@@ -954,16 +1053,64 @@ dogum.gun
 const kalanGun =
 Math.round(
 (
-utcDegeri(sonrakiDogum) -
+utcDegeri(yakinDogum) -
 utcDegeri(bugun)
 ) /
 BIR_GUN
 );
 
 
-/*
-SONUÇLAR
-*/
+/* GERÇEK BİR SONRAKİ DOĞUM GÜNÜ */
+
+let sonrakiDogum;
+
+
+if(
+bugunDogumGunu ||
+tarihKarsilastir(
+buYilDogum,
+bugun
+) < 0
+){
+
+sonrakiDogum =
+tarihOlustur(
+bugun.yil + 1,
+dogum.ay,
+dogum.gun
+);
+
+}
+else{
+
+sonrakiDogum =
+buYilDogum;
+
+}
+
+
+/* SONRAKİ ULAŞILACAK YAŞ */
+
+let sonrakiYas;
+
+
+if(
+bugunDogumGunu
+){
+
+sonrakiYas =
+yil + 1;
+
+}
+else{
+
+sonrakiYas =
+yil + 1;
+
+}
+
+
+/* SONUÇLAR */
 
 document
 .getElementById("yilSonuc")
@@ -988,23 +1135,32 @@ document
 .textContent =
 new Intl.NumberFormat(
 "tr-TR"
-).format(toplamGun) +
+).format(
+toplamGun
+) +
 " gün";
 
 
-if(kalanGun === 0){
+if(
+bugunDogumGunu
+){
 
 document
 .getElementById("kalanGunSonuc")
 .textContent =
 "Bugün 🎉";
 
-}else{
+}
+else{
 
 document
 .getElementById("kalanGunSonuc")
 .textContent =
-kalanGun +
+new Intl.NumberFormat(
+"tr-TR"
+).format(
+kalanGun
+) +
 " gün";
 
 }
@@ -1013,7 +1169,7 @@ kalanGun +
 document
 .getElementById("sonrakiYasSonuc")
 .textContent =
-(yil + 1) +
+sonrakiYas +
 " yaş";
 
 
@@ -1025,50 +1181,85 @@ sonrakiDogum
 );
 
 
-if(kalanGun === 0){
+if(
+bugunDogumGunu
+){
 
 sonuc.innerHTML =
 
 "<strong>" +
+
 yil +
+
 " yaşındasınız.</strong>" +
 
 "<br><br>" +
 
 "Tam yaşınız: <strong>" +
+
 yil +
+
 " yıl, " +
+
 ay +
+
 " ay, " +
+
 gun +
+
 " gün</strong>" +
 
 "<br><br>" +
 
-"<strong>Bugün doğum gününüz! 🎉</strong>";
+"<strong>Bugün doğum gününüz! 🎉</strong>" +
 
-}else{
+"<br><br>" +
+
+"Bir sonraki doğum gününüz: <strong>" +
+
+tarihFormat(
+sonrakiDogum
+) +
+
+"</strong>";
+
+}
+else{
 
 sonuc.innerHTML =
 
 "<strong>" +
+
 yil +
+
 " yaşındasınız.</strong>" +
 
 "<br><br>" +
 
 "Tam yaşınız: <strong>" +
+
 yil +
+
 " yıl, " +
+
 ay +
+
 " ay, " +
+
 gun +
+
 " gün</strong>" +
 
 "<br>" +
 
-"Bir sonraki doğum gününüze <strong>" +
-kalanGun +
+"Doğum gününüze <strong>" +
+
+new Intl.NumberFormat(
+"tr-TR"
+).format(
+kalanGun
+) +
+
 " gün</strong> kaldı.";
 
 }
@@ -1086,8 +1277,30 @@ document
 "keydown",
 function(event){
 
-if(event.key === "Enter"){
+if(
+event.key === "Enter"
+){
+
 yasHesapla();
+
+}
+
+}
+);
+
+
+document
+.getElementById("dogumTarihi")
+.addEventListener(
+"change",
+function(){
+
+if(
+this.value !== ""
+){
+
+yasHesapla();
+
 }
 
 }
@@ -1097,18 +1310,27 @@ yasHesapla();
 const bugunInput =
 new Date();
 
+
 const yilInput =
 bugunInput.getFullYear();
+
 
 const ayInput =
 String(
 bugunInput.getMonth() + 1
-).padStart(2,"0");
+).padStart(
+2,
+"0"
+);
+
 
 const gunInput =
 String(
 bugunInput.getDate()
-).padStart(2,"0");
+).padStart(
+2,
+"0"
+);
 
 
 document
