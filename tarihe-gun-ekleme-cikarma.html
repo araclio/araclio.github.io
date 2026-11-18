@@ -8,12 +8,15 @@
 
 <meta
 name="description"
-content="Bir tarihe gün ekleyin veya tarihten gün çıkarın. 30, 45, 90 veya istediğiniz kadar gün sonrası ya da öncesinin hangi tarih olduğunu ücretsiz hesaplayın."
+content="Bir tarihe gün ekleyin veya tarihten gün çıkarın. 7, 30, 45, 90 veya istediğiniz kadar takvim günü öncesi ya da sonrasındaki tarihi hesaplayın."
 >
 
 <meta name="robots" content="index,follow">
 
-<meta name="google-adsense-account" content="ca-pub-7634654090472031">
+<meta
+name="google-adsense-account"
+content="ca-pub-7634654090472031"
+>
 
 <script
 async
@@ -21,18 +24,89 @@ src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pu
 crossorigin="anonymous">
 </script>
 
-<link rel="canonical" href="https://araclio.com/tarihe-gun-ekleme-cikarma.html">
+<link
+rel="canonical"
+href="https://araclio.com/tarihe-gun-ekleme-cikarma.html"
+>
 
 <link rel="stylesheet" href="style.css">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tarihe Gün Ekleme ve Çıkarma | Araclio">
+
+<meta
+property="og:title"
+content="Tarihe Gün Ekleme ve Çıkarma | Araclio"
+>
+
 <meta
 property="og:description"
-content="Bir tarihe istediğiniz kadar gün ekleyin veya çıkarın ve sonuç tarihini anında öğrenin."
+content="Bir tarihe istediğiniz kadar takvim günü ekleyin veya çıkarın ve sonuç tarihini öğrenin."
 >
-<meta property="og:url" content="https://araclio.com/tarihe-gun-ekleme-cikarma.html">
+
+<meta
+property="og:url"
+content="https://araclio.com/tarihe-gun-ekleme-cikarma.html"
+>
+
 <meta property="og:site_name" content="Araclio">
+
+<style>
+
+.info-box{
+margin:18px 0;
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.warning-box{
+margin:18px 0;
+padding:16px;
+border:1px solid #e7d28b;
+border-radius:10px;
+background:#fff8e1;
+color:#4d3d00;
+line-height:1.8;
+}
+
+.quick-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin:12px 0 18px;
+}
+
+.quick-buttons button{
+width:auto;
+padding:9px 13px;
+}
+
+.result-detail{
+margin-top:12px;
+line-height:1.8;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:540px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+</style>
 
 <script type="application/ld+json">
 {
@@ -43,7 +117,7 @@ content="Bir tarihe istediğiniz kadar gün ekleyin veya çıkarın ve sonuç ta
   "applicationCategory":"UtilitiesApplication",
   "operatingSystem":"Any",
   "inLanguage":"tr-TR",
-  "description":"Bir tarihe belirli sayıda gün ekleyen veya tarihten gün çıkaran ücretsiz online araç.",
+  "description":"Bir tarihe belirli sayıda takvim günü ekleyen veya tarihten gün çıkararak önceki ya da sonraki tarihi hesaplayan ücretsiz online araç.",
   "offers":{
     "@type":"Offer",
     "price":"0",
@@ -88,7 +162,7 @@ content="Bir tarihe istediğiniz kadar gün ekleyin veya çıkarın ve sonuç ta
       "name":"Bir tarihe gün nasıl eklenir?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Başlangıç tarihini seçin, eklemek istediğiniz gün sayısını girin ve Gün Ekle seçeneğini kullanın."
+        "text":"Başlangıç tarihi seçilir, eklenecek takvim günü sayısı girilir ve gün sayısı başlangıç tarihine eklenir."
       }
     },
     {
@@ -96,7 +170,7 @@ content="Bir tarihe istediğiniz kadar gün ekleyin veya çıkarın ve sonuç ta
       "name":"Bir tarihten gün nasıl çıkarılır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Başlangıç tarihini seçin, çıkarmak istediğiniz gün sayısını girin ve Gün Çıkar seçeneğini kullanın."
+        "text":"Başlangıç tarihi seçilir, çıkarılacak takvim günü sayısı girilir ve bu sayı başlangıç tarihinden çıkarılır."
       }
     },
     {
@@ -104,7 +178,15 @@ content="Bir tarihe istediğiniz kadar gün ekleyin veya çıkarın ve sonuç ta
       "name":"30 gün sonrası nasıl hesaplanır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Başlangıç tarihine 30 takvim günü eklenerek sonuç tarihi bulunur."
+        "text":"Başlangıç tarihine 30 takvim günü eklenerek 30 gün sonraki tarih bulunur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Hafta sonları gün hesabına dahil edilir mi?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Evet. Bu araç takvim günü hesabı yaptığı için cumartesi, pazar ve resmi tatiller ayrıca çıkarılmaz."
       }
     },
     {
@@ -112,7 +194,7 @@ content="Bir tarihe istediğiniz kadar gün ekleyin veya çıkarın ve sonuç ta
       "name":"Artık yıllar hesaba katılır mı?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Evet. Hesaplama gerçek takvim tarihleri üzerinden yapıldığı için 29 Şubat bulunan artık yıllar otomatik olarak dikkate alınır."
+        "text":"Evet. Gerçek takvim tarihleri kullanıldığı için 29 Şubat bulunan artık yıllar otomatik olarak hesaba katılır."
       }
     }
   ]
@@ -124,6 +206,7 @@ content="Bir tarihe istediğiniz kadar gün ekleyin veya çıkarın ve sonuç ta
 <body>
 
 <header>
+
 <div class="wrap nav">
 
 <a class="brand" href="/">
@@ -135,27 +218,26 @@ Araclio
 </span>
 
 </div>
-</header>
 
+</header>
 
 <main class="wrap">
 
 <section class="hero">
 
 <p class="eyebrow">
-HIZLI • ÜCRETSİZ • ÜYELİKSİZ
+TARİH • GÜN EKLE • GÜN ÇIKAR
 </p>
 
 <h1>Tarihe Gün Ekleme ve Çıkarma</h1>
 
 <p>
-Bir tarihten belirli sayıda gün sonrasını veya öncesini
+Bir tarihten belirli sayıda takvim günü sonrasını veya öncesini
 hesaplayın. Başlangıç tarihini ve gün sayısını girerek
-sonuç tarihini anında öğrenin.
+sonuç tarihini ve haftanın hangi gününe denk geldiğini öğrenin.
 </p>
 
 </section>
-
 
 <section class="card">
 
@@ -170,7 +252,6 @@ id="tarih"
 type="date"
 >
 
-
 <label for="gun">
 Gün Sayısı
 </label>
@@ -184,6 +265,29 @@ inputmode="numeric"
 placeholder="Örnek: 30"
 >
 
+<div class="quick-buttons">
+
+<button type="button" onclick="gunSec(7)">
+7 Gün
+</button>
+
+<button type="button" onclick="gunSec(30)">
+30 Gün
+</button>
+
+<button type="button" onclick="gunSec(45)">
+45 Gün
+</button>
+
+<button type="button" onclick="gunSec(90)">
+90 Gün
+</button>
+
+<button type="button" onclick="gunSec(100)">
+100 Gün
+</button>
+
+</div>
 
 <div class="buttons">
 
@@ -197,66 +301,207 @@ Gün Çıkar
 
 </div>
 
-
 <div id="sonuc" class="result" aria-live="polite">
 Başlangıç tarihini ve gün sayısını girin.
 </div>
 
 </section>
 
-
 <section class="card">
 
 <h2>Tarihe Gün Nasıl Eklenir?</h2>
 
 <p>
-Başlangıç tarihini seçin ve eklemek istediğiniz gün sayısını
-yazın. Gün Ekle butonuna bastığınızda Araclio, belirtilen süre
-sonrasındaki tarihi hesaplar.
+Başlangıç tarihine belirli sayıda takvim günü eklenerek
+gelecekteki tarih bulunur.
 </p>
 
+<div class="info-box">
+
+<strong>Örnek:</strong>
+
+<br><br>
+
+1 Ekim + 30 gün
+
+<br><br>
+
+=
+
+<br><br>
+
+<strong>31 Ekim</strong>
+
+</div>
+
 <p>
-Örneğin 1 Ekim tarihine 30 gün eklendiğinde sonuç
-<strong>31 Ekim</strong> olur.
+Başlangıç tarihi “0. gün” kabul edilir. Bu nedenle
+1 Ekim'den 1 gün sonrası 2 Ekim'dir.
 </p>
 
 </section>
-
 
 <section class="card">
 
 <h2>Tarihten Gün Nasıl Çıkarılır?</h2>
 
 <p>
-Geçmişteki bir tarihi bulmak için başlangıç tarihini seçin,
-çıkarılacak gün sayısını girin ve Gün Çıkar butonunu kullanın.
+Geçmişteki bir tarihi bulmak için gün sayısı başlangıç
+tarihinden çıkarılır.
 </p>
 
-<p>
-Örneğin 30 Ekim tarihinden 10 gün çıkarılırsa sonuç
-<strong>20 Ekim</strong> olur.
-</p>
+<div class="info-box">
+
+<strong>Örnek:</strong>
+
+<br><br>
+
+30 Ekim − 10 gün
+
+<br><br>
+
+=
+
+<br><br>
+
+<strong>20 Ekim</strong>
+
+</div>
 
 </section>
-
 
 <section class="card">
 
-<h2>30, 45, 90 veya 100 Gün Sonrası</h2>
+<h2>0 Gün Eklenirse veya Çıkarılırsa Ne Olur?</h2>
 
 <p>
-Araçta belirli bir gün sınırı yoktur.
-7 gün, 30 gün, 45 gün, 90 gün, 100 gün veya ihtiyacınız
-olan farklı bir gün sayısını kullanabilirsiniz.
+Gün sayısı 0 ise başlangıç tarihi değişmez.
 </p>
 
+<div class="info-box">
+
+15 Kasım + 0 gün =
+
+<strong>15 Kasım</strong>
+
+<br><br>
+
+15 Kasım − 0 gün =
+
+<strong>15 Kasım</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>30, 45, 90 veya 100 Gün Sonrası Nasıl Bulunur?</h2>
+
 <p>
-Girilen gün sayısı takvim günü olarak değerlendirilir.
-Hafta sonları ve resmî tatiller ayrıca çıkarılmaz.
+Araç belirli birkaç süreyle sınırlı değildir.
+İstediğiniz tam sayı kadar takvim günü ekleyebilir
+veya çıkarabilirsiniz.
+</p>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>İşlem</th>
+<th>Anlamı</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>+7 gün</td>
+<td>Başlangıç tarihinden 1 hafta sonrası</td>
+</tr>
+
+<tr>
+<td>+30 gün</td>
+<td>30 takvim günü sonrası</td>
+</tr>
+
+<tr>
+<td>+45 gün</td>
+<td>45 takvim günü sonrası</td>
+</tr>
+
+<tr>
+<td>+90 gün</td>
+<td>90 takvim günü sonrası</td>
+</tr>
+
+<tr>
+<td>−30 gün</td>
+<td>30 takvim günü öncesi</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Takvim Günü ile İş Günü Aynı mı?</h2>
+
+<p>
+Hayır.
+</p>
+
+<div class="info-box">
+
+<strong>Takvim günü:</strong>
+
+<br>
+
+Haftanın bütün günlerini kapsar.
+
+<br><br>
+
+<strong>İş günü:</strong>
+
+<br>
+
+Kullanılan kurala göre hafta sonlarını ve bazı resmî tatilleri
+hariç tutabilir.
+
+</div>
+
+<p>
+Bu araç
+<strong>takvim günü</strong>
+hesabı yapar.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>Hafta Sonları Hesaplamaya Dahil mi?</h2>
+
+<p>
+Evet. Cumartesi ve pazar günleri de normal takvim günü olarak
+hesaba katılır.
+</p>
+
+<p>
+Örneğin cuma gününe 3 takvim günü eklendiğinde hafta sonu
+atlanmaz.
+</p>
+
+</section>
 
 <section class="card">
 
@@ -264,30 +509,64 @@ Hafta sonları ve resmî tatiller ayrıca çıkarılmaz.
 
 <p>
 Evet. Hesaplama gerçek takvim tarihleri üzerinden yapılır.
-Bu nedenle 29 Şubat bulunan artık yıllar otomatik olarak
-hesaba dahil edilir.
+</p>
+
+<p>
+Bu nedenle artık yılda bulunan
+<strong>29 Şubat</strong>
+gerektiğinde otomatik olarak hesaba dahil edilir.
 </p>
 
 </section>
 
-
 <section class="card">
 
-<h2>Hangi İşlemlerde Kullanılabilir?</h2>
+<h2>Ay ve Yıl Sonlarında Gün Ekleme</h2>
 
-<ul>
-<li>Teslim tarihleri</li>
-<li>Proje süreleri</li>
-<li>Seyahat planları</li>
-<li>Etkinlik tarihleri</li>
-<li>Randevular</li>
-<li>Ödeme tarihleri</li>
-<li>Sınav ve başvuru takvimleri</li>
-<li>Belirli bir tarihten önceki veya sonraki günü bulma</li>
-</ul>
+<p>
+Eklenen gün sayısı aynı ayın dışına çıkarsa tarih otomatik
+olarak sonraki aya veya sonraki yıla taşınır.
+</p>
+
+<div class="info-box">
+
+31 Aralık + 1 gün
+
+<br><br>
+
+=
+
+<br><br>
+
+<strong>1 Ocak</strong>
+
+</div>
+
+<p>
+Aynı şekilde gün çıkarma işlemi önceki aya veya önceki yıla
+geçebilir.
+</p>
 
 </section>
 
+<section class="card">
+
+<h2>Bu Araç Nerelerde Kullanılabilir?</h2>
+
+<ul>
+
+<li>Teslim tarihlerini planlarken</li>
+<li>Proje bitiş tarihini hesaplarken</li>
+<li>Seyahat ve tatil planlarında</li>
+<li>Etkinlik tarihlerini hesaplarken</li>
+<li>Randevu planlamasında</li>
+<li>Ödeme veya vade tarihlerini kontrol ederken</li>
+<li>Sınav ve başvuru takvimlerinde</li>
+<li>Belirli bir tarihin kaç gün öncesini veya sonrasını bulurken</li>
+
+</ul>
+
+</section>
 
 <section class="card">
 
@@ -296,57 +575,96 @@ hesaba dahil edilir.
 <h3>Bir tarihe gün nasıl eklenir?</h3>
 
 <p>
-Başlangıç tarihini seçip eklemek istediğiniz gün sayısını girin
-ve Gün Ekle butonuna basın.
+Başlangıç tarihini seçin, eklemek istediğiniz tam gün
+sayısını girin ve Gün Ekle butonunu kullanın.
 </p>
 
 <h3>Bir tarihten gün nasıl çıkarılır?</h3>
 
 <p>
-Başlangıç tarihini seçip çıkarmak istediğiniz gün sayısını girin
-ve Gün Çıkar butonuna basın.
+Başlangıç tarihini seçin, çıkarmak istediğiniz gün
+sayısını girin ve Gün Çıkar butonunu kullanın.
+</p>
+
+<h3>1 Ekim'e 30 gün eklenirse hangi tarih olur?</h3>
+
+<p>
+Sonuç
+<strong>31 Ekim</strong>
+olur.
+</p>
+
+<h3>30 Ekim'den 10 gün çıkarılırsa hangi tarih olur?</h3>
+
+<p>
+Sonuç
+<strong>20 Ekim</strong>
+olur.
 </p>
 
 <h3>Hafta sonları hesaplamaya dahil mi?</h3>
 
 <p>
-Evet. Bu araç takvim günü hesabı yapar. Cumartesi, pazar
-ve resmî tatiller otomatik olarak çıkarılmaz.
+Evet. Araç takvim günü hesabı yaptığı için cumartesi
+ve pazar günleri de dahildir.
 </p>
 
-<h3>Artık yıllar hesaba katılır mı?</h3>
+<h3>Resmî tatiller çıkarılıyor mu?</h3>
 
 <p>
-Evet. Gerçek takvim tarihi kullanıldığı için 29 Şubat da
-gerektiğinde otomatik olarak hesaba dahil edilir.
+Hayır. Resmî tatiller normal takvim günü olarak
+hesaba dahil edilir.
+</p>
+
+<h3>Artık yıllar dikkate alınıyor mu?</h3>
+
+<p>
+Evet. 29 Şubat bulunan yıllar otomatik olarak dikkate alınır.
+</p>
+
+<h3>0 gün ekleyebilir miyim?</h3>
+
+<p>
+Evet. Sonuç başlangıç tarihinin kendisi olur.
 </p>
 
 <h3>Araç ücretsiz mi?</h3>
 
 <p>
-Evet. Araclio Tarihe Gün Ekleme ve Çıkarma aracı ücretsizdir
-ve üyelik gerektirmez.
+Evet. Araclio Tarihe Gün Ekleme ve Çıkarma aracı
+ücretsizdir ve üyelik gerektirmez.
 </p>
 
 </section>
-
 
 <section class="card">
 
 <h2>Bilgilendirme</h2>
 
-<p>
-Bu araç standart takvim günü hesabı yapar.
-İş günü, resmî tatil, hukuki süre veya kurumlara özel
-süre hesaplama kuralları ayrıca değerlendirilmelidir.
-</p>
+<div class="warning-box">
+
+Bu araç standart
+<strong>takvim günü</strong>
+hesabı yapar.
+
+<br><br>
+
+İş günü, banka günü, resmî tatil, dava süresi,
+itiraz süresi, başvuru süresi veya kurumlara özel
+son gün hesaplamaları farklı kurallara tabi olabilir.
+
+<br><br>
+
+Hukuki veya resmî işlemlerde yalnızca bu matematiksel
+takvim hesabına dayanılmamalıdır.
+
+</div>
 
 <p>
 <strong>Son güncelleme: Kasım 2026</strong>
 </p>
 
 </section>
-
 
 <section class="card">
 
@@ -365,8 +683,8 @@ Yaş Hesaplama →
 </p>
 
 <p>
-<a href="/yuzde-hesaplama.html">
-Yüzde Hesaplama →
+<a href="/zaman-donusturucu.html">
+Zaman Dönüştürücü →
 </a>
 </p>
 
@@ -379,7 +697,6 @@ Tüm Hesaplama Araçları →
 </section>
 
 </main>
-
 
 <footer>
 
@@ -415,27 +732,45 @@ Araclio • Ücretsiz Online Araçlar
 
 </footer>
 
-
 <script>
+
+const BIR_GUN =
+24 * 60 * 60 * 1000;
+
+
+function gunSec(sayi){
+
+document
+.getElementById("gun")
+.value =
+sayi;
+
+}
+
 
 function bilgileriAl(){
 
 const tarihDegeri =
-document.getElementById("tarih").value;
+document
+.getElementById("tarih")
+.value;
 
 const gunDegeri =
-document.getElementById("gun").value;
+document
+.getElementById("gun")
+.value;
 
 const sonuc =
-document.getElementById("sonuc");
+document
+.getElementById("sonuc");
 
 
 if(
-!tarihDegeri ||
+tarihDegeri === "" ||
 gunDegeri === ""
 ){
 
-sonuc.innerHTML =
+sonuc.textContent =
 "Lütfen başlangıç tarihini ve gün sayısını girin.";
 
 return null;
@@ -444,7 +779,9 @@ return null;
 
 
 const gunSayisi =
-Number(gunDegeri);
+Number(
+gunDegeri
+);
 
 
 if(
@@ -452,7 +789,7 @@ if(
 gunSayisi < 0
 ){
 
-sonuc.innerHTML =
+sonuc.textContent =
 "Gün sayısı 0 veya daha büyük bir tam sayı olmalıdır.";
 
 return null;
@@ -464,36 +801,73 @@ const parca =
 tarihDegeri.split("-");
 
 
-const tarih =
-new Date(
-Number(parca[0]),
-Number(parca[1]) - 1,
-Number(parca[2]),
-12,
-0,
-0
+const yil =
+Number(
+parca[0]
+);
+
+const ay =
+Number(
+parca[1]
+) - 1;
+
+const gun =
+Number(
+parca[2]
 );
 
 
+const utc =
+Date.UTC(
+yil,
+ay,
+gun
+);
+
+
+if(
+!Number.isFinite(utc)
+){
+
+sonuc.textContent =
+"Lütfen geçerli bir başlangıç tarihi seçin.";
+
+return null;
+
+}
+
+
 return {
-tarih:tarih,
-gun:gunSayisi,
+
+tarihDegeri:tarihDegeri,
+utc:utc,
+gunSayisi:gunSayisi,
 sonuc:sonuc
+
 };
 
 }
 
 
-function tarihiYaz(tarih){
+function tarihiYazUTC(utc){
 
-return tarih.toLocaleDateString(
+const tarih =
+new Date(
+utc
+);
+
+
+return new Intl.DateTimeFormat(
 "tr-TR",
 {
 day:"numeric",
 month:"long",
 year:"numeric",
-weekday:"long"
+weekday:"long",
+timeZone:"UTC"
 }
+).format(
+tarih
 );
 
 }
@@ -504,27 +878,65 @@ function gunEkle(){
 const veri =
 bilgileriAl();
 
-if(!veri){
+
+if(
+!veri
+){
+
 return;
+
 }
 
 
-const yeniTarih =
-new Date(veri.tarih);
-
-yeniTarih.setDate(
-yeniTarih.getDate() +
-veri.gun
+const yeniUtc =
+veri.utc +
+(
+veri.gunSayisi *
+BIR_GUN
 );
 
 
 veri.sonuc.innerHTML =
 
 "<strong>" +
-veri.gun.toLocaleString("tr-TR") +
-" gün sonrası:</strong><br><br>" +
 
-tarihiYaz(yeniTarih);
+veri.gunSayisi.toLocaleString(
+"tr-TR"
+) +
+
+" gün sonrası:</strong>" +
+
+"<br><br>" +
+
+"<strong>" +
+
+tarihiYazUTC(
+yeniUtc
+) +
+
+"</strong>" +
+
+"<div class='result-detail'>" +
+
+"Başlangıç: <strong>" +
+
+tarihiYazUTC(
+veri.utc
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"İşlem: <strong>+" +
+
+veri.gunSayisi.toLocaleString(
+"tr-TR"
+) +
+
+" takvim günü</strong>" +
+
+"</div>";
 
 }
 
@@ -534,32 +946,74 @@ function gunCikar(){
 const veri =
 bilgileriAl();
 
-if(!veri){
+
+if(
+!veri
+){
+
 return;
+
 }
 
 
-const yeniTarih =
-new Date(veri.tarih);
-
-yeniTarih.setDate(
-yeniTarih.getDate() -
-veri.gun
+const yeniUtc =
+veri.utc -
+(
+veri.gunSayisi *
+BIR_GUN
 );
 
 
 veri.sonuc.innerHTML =
 
 "<strong>" +
-veri.gun.toLocaleString("tr-TR") +
-" gün öncesi:</strong><br><br>" +
 
-tarihiYaz(yeniTarih);
+veri.gunSayisi.toLocaleString(
+"tr-TR"
+) +
+
+" gün öncesi:</strong>" +
+
+"<br><br>" +
+
+"<strong>" +
+
+tarihiYazUTC(
+yeniUtc
+) +
+
+"</strong>" +
+
+"<div class='result-detail'>" +
+
+"Başlangıç: <strong>" +
+
+tarihiYazUTC(
+veri.utc
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"İşlem: <strong>−" +
+
+veri.gunSayisi.toLocaleString(
+"tr-TR"
+) +
+
+" takvim günü</strong>" +
+
+"</div>";
 
 }
 
 
-["tarih","gun"].forEach(function(id){
+[
+"tarih",
+"gun"
+]
+.forEach(function(id){
 
 document
 .getElementById(id)
@@ -567,8 +1021,12 @@ document
 "keydown",
 function(event){
 
-if(event.key === "Enter"){
+if(
+event.key === "Enter"
+){
+
 gunEkle();
+
 }
 
 }
@@ -577,7 +1035,9 @@ gunEkle();
 });
 
 
-document.getElementById("year").textContent =
+document
+.getElementById("year")
+.textContent =
 new Date().getFullYear();
 
 </script>
