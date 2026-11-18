@@ -7,8 +7,8 @@
 <title>Maaş Vergi Dilimi Hesaplama 2026 | Gelir Vergisi - Araclio</title>
 
 <meta
-  name="description"
-  content="2026 maaş vergi dilimi hesaplama aracı. Kümülatif ücret vergi matrahınızı girerek %15, %20, %27, %35 veya %40 vergi diliminizi ve tahmini kümülatif gelir verginizi hesaplayın."
+name="description"
+content="2026 maaş vergi dilimi hesaplama aracı. Kümülatif ücret vergi matrahınızı girerek %15, %20, %27, %35 veya %40 vergi diliminizi, kümülatif verginizi ve efektif vergi oranınızı hesaplayın."
 >
 
 <meta name="robots" content="index,follow">
@@ -16,193 +16,77 @@
 <meta name="google-adsense-account" content="ca-pub-7634654090472031">
 
 <script
-  async
-  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
-  crossorigin="anonymous">
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
 </script>
 
 <link rel="canonical" href="https://araclio.com/maas-vergi-dilimi-hesaplama.html">
 
+<link rel="stylesheet" href="style.css">
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="Maaş Vergi Dilimi Hesaplama 2026">
+<meta property="og:title" content="Maaş Vergi Dilimi Hesaplama 2026 | Araclio">
 <meta
-  property="og:description"
-  content="2026 ücret gelirleri için kümülatif vergi matrahından gelir vergisi diliminizi ücretsiz hesaplayın."
+property="og:description"
+content="2026 ücret gelirlerinde kümülatif vergi matrahınıza göre gelir vergisi diliminizi ve kümülatif verginizi hesaplayın."
 >
 <meta property="og:url" content="https://araclio.com/maas-vergi-dilimi-hesaplama.html">
 <meta property="og:site_name" content="Araclio">
 
 <style>
-*{box-sizing:border-box}
 
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:
-radial-gradient(circle at 50% -10%,#123b69 0,#071a30 32%,#04101f 65%,#020a14 100%);
-color:#fff;
-min-height:100vh;
-}
-
-.wrap{
-width:min(850px,calc(100% - 28px));
-margin:auto;
-}
-
-header{
-background:rgba(3,14,27,.95);
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.nav{
-height:70px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.brand{
-font-size:34px;
-font-weight:900;
-text-decoration:none;
-color:#fff;
-}
-
-.brand span{color:#ffd400}
-
-.tag{
-font-size:12px;
-color:#9db2c8;
-font-weight:bold;
-}
-
-.hero{
-padding:45px 0 25px;
-text-align:center;
-}
-
-.eyebrow{
-color:#ffd400;
-font-size:12px;
-font-weight:900;
-letter-spacing:1.5px;
-}
-
-h1{
-font-size:clamp(32px,6vw,48px);
-margin:12px 0;
-line-height:1.05;
-}
-
-.hero p{
-max-width:700px;
-margin:15px auto 0;
-color:#b7c7d8;
-line-height:1.65;
-}
-
-.card{
-margin:18px 0;
-padding:24px;
-border-radius:18px;
-background:linear-gradient(145deg,#102a44,#081a2d);
-border:1px solid rgba(255,255,255,.09);
-box-shadow:0 9px 28px rgba(0,0,0,.2);
-}
-
-.card h2{
-margin-top:0;
-font-size:24px;
-}
-
-.card h3{
-margin-top:25px;
-}
-
-.card p,
-.card li{
-color:#b4c3d2;
-line-height:1.7;
-}
-
-label{
-display:block;
-font-weight:bold;
+.result-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
 margin-top:18px;
 }
 
-input{
-width:100%;
-margin-top:8px;
-padding:15px;
-border:1px solid #29435d;
-border-radius:11px;
-background:#061526;
-color:#fff;
-font-size:16px;
-outline:none;
-}
-
-input:focus{
-border-color:#42aaff;
-}
-
-button{
-width:100%;
-margin-top:22px;
+.result-box{
 padding:16px;
-border:0;
-border-radius:12px;
-background:#ffd400;
-color:#071321;
-font-size:17px;
-font-weight:900;
-cursor:pointer;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
 }
 
-button:hover{
-filter:brightness(1.05);
+.result-box strong{
+display:block;
+margin-bottom:7px;
 }
 
-.result{
-margin-top:20px;
-padding:20px;
-border-radius:13px;
-background:#061526;
-border:1px solid #1d4567;
+.big-result{
+font-size:1.4rem;
+font-weight:700;
+}
+
+.info-box{
+padding:16px;
+margin:15px 0;
+background:#f5f5f5;
+border-radius:10px;
 line-height:1.8;
+color:#222;
 }
 
-.result-main{
-font-size:28px;
-font-weight:900;
-color:#ffd400;
-margin-bottom:12px;
+.warning-box{
+padding:16px;
+margin:15px 0;
+background:#fff8e1;
+border:1px solid #e7d28b;
+border-radius:10px;
+line-height:1.8;
+color:#4d3d00;
 }
 
-.row{
-display:flex;
-justify-content:space-between;
-gap:20px;
-padding:10px 0;
-border-bottom:1px solid rgba(255,255,255,.07);
-}
-
-.row span{
-color:#aebdcb;
-}
-
-.row strong{
-text-align:right;
-}
-
-.info{
-padding:17px;
-border-radius:12px;
-background:#061526;
-border-left:4px solid #ffd400;
-line-height:1.7;
-color:#b4c3d2;
+.source-box{
+padding:16px;
+margin:15px 0;
+background:#eef6ff;
+border:1px solid #bad9f5;
+border-radius:10px;
+line-height:1.8;
+color:#1f3550;
 }
 
 .table-wrap{
@@ -213,46 +97,28 @@ margin-top:15px;
 table{
 width:100%;
 border-collapse:collapse;
-min-width:560px;
+min-width:580px;
 }
 
-th,td{
-padding:14px;
-border-bottom:1px solid rgba(255,255,255,.09);
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
 text-align:left;
 }
 
-th{
-color:#ffd400;
-background:#061526;
-}
-
-td{
-color:#b4c3d2;
-}
-
 .rate{
-font-weight:900;
-color:#fff;
+font-weight:700;
 }
 
-a{
-color:#52b7ff;
+@media(max-width:650px){
+
+.result-grid{
+grid-template-columns:1fr;
 }
 
-footer{
-margin-top:40px;
-padding:30px 0;
-text-align:center;
-color:#8195a8;
-border-top:1px solid rgba(255,255,255,.08);
 }
 
-@media(max-width:600px){
-.card{padding:19px}
-.tag{display:none}
-.row{font-size:14px}
-}
 </style>
 
 <script type="application/ld+json">
@@ -264,7 +130,7 @@ border-top:1px solid rgba(255,255,255,.08);
   "applicationCategory":"FinanceApplication",
   "operatingSystem":"Any",
   "inLanguage":"tr-TR",
-  "description":"2026 ücret gelirleri için kümülatif vergi matrahından gelir vergisi dilimini ve kümülatif vergiyi hesaplayan ücretsiz araç.",
+  "description":"2026 ücret gelirleri için kümülatif ücret vergi matrahından marjinal gelir vergisi dilimini, kümülatif vergiyi ve efektif vergi oranını hesaplayan ücretsiz araç.",
   "offers":{
     "@type":"Offer",
     "price":"0",
@@ -306,10 +172,10 @@ border-top:1px solid rgba(255,255,255,.08);
   "mainEntity":[
     {
       "@type":"Question",
-      "name":"2026 ilk maaş vergi dilimi kaç TL?",
+      "name":"2026 ücret gelirlerinde ilk vergi dilimi kaç TL?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"2026 ücret gelirlerinde ilk vergi dilimi 190.000 TL'ye kadardır ve oran yüzde 15'tir."
+        "text":"2026 ücret gelirlerinde 190.000 TL'ye kadar olan vergi matrahı yüzde 15 oranına tabidir."
       }
     },
     {
@@ -317,15 +183,31 @@ border-top:1px solid rgba(255,255,255,.08);
       "name":"2026 yüzde 20 vergi dilimi ne zaman başlar?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Ücret vergi matrahının 190.000 TL'yi aşan ve 400.000 TL'ye kadar olan kısmı yüzde 20 oranına tabidir."
+        "text":"Kümülatif ücret vergi matrahının 190.000 TL'yi aşan ve 400.000 TL'ye kadar olan kısmı yüzde 20 oranına tabidir."
       }
     },
     {
       "@type":"Question",
-      "name":"2026 yüzde 27 vergi dilimi kaç TL?",
+      "name":"2026 yüzde 27 vergi dilimi ne zaman başlar?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Ücret gelirlerinde 400.000 TL'yi aşan ve 1.500.000 TL'ye kadar olan bölüm yüzde 27 oranına tabidir."
+        "text":"Ücret gelirlerinde kümülatif vergi matrahının 400.000 TL'yi aşan ve 1.500.000 TL'ye kadar olan kısmı yüzde 27 oranına tabidir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"2026 yüzde 35 vergi dilimi ne zaman başlar?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Ücret gelirlerinde 1.500.000 TL'yi aşan ve 5.300.000 TL'ye kadar olan matrah yüzde 35 oranına tabidir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"2026 yüzde 40 vergi dilimi ne zaman başlar?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Kümülatif ücret vergi matrahının 5.300.000 TL'yi aşan kısmı yüzde 40 oranına tabidir."
       }
     },
     {
@@ -333,15 +215,15 @@ border-top:1px solid rgba(255,255,255,.08);
       "name":"Vergi dilimine girince maaşın tamamı yüksek orandan mı vergilenir?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Hayır. Yalnızca ilgili vergi dilimi sınırını aşan matrah bölümü daha yüksek oranla vergilendirilir."
+        "text":"Hayır. Artan oranlı tarifede yalnızca ilgili dilim sınırını aşan matrah bölümü daha yüksek oranla vergilendirilir."
       }
     },
     {
       "@type":"Question",
-      "name":"Kümülatif vergi matrahı nedir?",
+      "name":"Marjinal vergi oranı ile efektif vergi oranı aynı mı?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Kümülatif ücret vergi matrahı aynı takvim yılı içinde gelir vergisine esas ücret matrahlarının birikimli toplamıdır."
+        "text":"Hayır. Marjinal oran, matrahın son bölümüne uygulanan vergi oranıdır. Efektif oran ise toplam hesaplanan verginin toplam matraha bölünmesiyle bulunur."
       }
     }
   ]
@@ -353,46 +235,48 @@ border-top:1px solid rgba(255,255,255,.08);
 <body>
 
 <header>
+
 <div class="wrap nav">
 
 <a class="brand" href="/">
-Arac<span>lio</span>
+Araclio
 </a>
 
 <span class="tag">
-ÜCRETSİZ HESAPLAMA ARAÇLARI
+Ücretsiz Online Araçlar
 </span>
 
 </div>
+
 </header>
 
 <main class="wrap">
 
 <section class="hero">
 
-<div class="eyebrow">
-2026 • MAAŞ • GELİR VERGİSİ
-</div>
+<p class="eyebrow">
+2026 • ÜCRET • GELİR VERGİSİ • VERGİ DİLİMİ
+</p>
 
 <h1>Maaş Vergi Dilimi Hesaplama 2026</h1>
 
 <p>
-Kümülatif ücret vergi matrahınızı girerek 2026 yılında
-%15, %20, %27, %35 veya %40 gelir vergisi dilimlerinden
-hangisinde olduğunuzu ve tarifeye göre hesaplanan
-kümülatif verginizi öğrenin.
+Kümülatif ücret vergi matrahınızı girerek
+2026 ücret gelir vergisi tarifesinde bulunduğunuz
+marjinal vergi dilimini, tarifeye göre hesaplanan
+kümülatif gelir vergisini ve efektif vergi oranını hesaplayın.
 </p>
 
 </section>
-
 
 <section class="card">
 
 <h2>2026 Vergi Dilimini Hesapla</h2>
 
 <p>
-Bordronuzdaki veya hesaplamanızdaki
-<strong>kümülatif ücret vergi matrahını</strong> aşağıya girin.
+Bordronuzda yer alan veya hesapladığınız
+<strong>kümülatif ücret gelir vergisi matrahını</strong>
+aşağıya girin.
 </p>
 
 <label for="matrah">
@@ -405,26 +289,73 @@ type="number"
 min="0"
 step="0.01"
 inputmode="decimal"
-placeholder="Örnek: 350000">
+placeholder="Örnek: 350000"
+>
 
 <button type="button" onclick="hesapla()">
 Vergi Dilimini Hesapla
 </button>
 
 <div id="sonuc" class="result" aria-live="polite">
-Kümülatif ücret vergi matrahınızı girerek hesaplama yapabilirsiniz.
+Kümülatif ücret vergi matrahınızı girin.
+</div>
+
+<div id="sonucKutulari" class="result-grid" style="display:none;">
+
+<div class="result-box">
+<strong>Marjinal Vergi Oranı</strong>
+<span id="oranSonuc" class="big-result">-</span>
+</div>
+
+<div class="result-box">
+<strong>Kümülatif Tarife Vergisi</strong>
+<span id="vergiSonuc" class="big-result">-</span>
+</div>
+
+<div class="result-box">
+<strong>Efektif Vergi Oranı</strong>
+<span id="efektifSonuc">-</span>
+</div>
+
+<div class="result-box">
+<strong>Sonraki Dilime Kalan</strong>
+<span id="kalanSonuc">-</span>
+</div>
+
+</div>
+
+<div class="warning-box">
+
+<strong>Bu hesap neyi gösteriyor?</strong>
+
+<br><br>
+
+Bu araç yalnızca girdiğiniz kümülatif
+<strong>ücret gelir vergisi matrahına</strong>
+2026 ücret gelir vergisi tarifesini uygular.
+
+<br><br>
+
+Burada gösterilen kümülatif tarife vergisi,
+bordroda o aya kadar fiilen kesilmiş toplam vergiyle
+birebir aynı olmak zorunda değildir.
+
+<br><br>
+
+Asgari ücret gelir vergisi istisnası ve diğer bordro
+unsurları gerçek kesintiyi değiştirebilir.
+
 </div>
 
 </section>
-
 
 <section class="card">
 
 <h2>2026 Maaş Vergi Dilimleri</h2>
 
 <p>
-2026 yılında ücret gelirleri için uygulanan gelir vergisi
-tarifesi aşağıdaki gibidir.
+Gelir İdaresi Başkanlığının 2026 ücret gelirleri
+için yayımladığı tarife şöyledir:
 </p>
 
 <div class="table-wrap">
@@ -446,22 +377,22 @@ tarifesi aşağıdaki gibidir.
 </tr>
 
 <tr>
-<td>190.000 TL – 400.000 TL</td>
+<td>190.000 TL'yi aşan – 400.000 TL'ye kadar</td>
 <td class="rate">%20</td>
 </tr>
 
 <tr>
-<td>400.000 TL – 1.500.000 TL</td>
+<td>400.000 TL'yi aşan – 1.500.000 TL'ye kadar</td>
 <td class="rate">%27</td>
 </tr>
 
 <tr>
-<td>1.500.000 TL – 5.300.000 TL</td>
+<td>1.500.000 TL'yi aşan – 5.300.000 TL'ye kadar</td>
 <td class="rate">%35</td>
 </tr>
 
 <tr>
-<td>5.300.000 TL üzeri</td>
+<td>5.300.000 TL'yi aşan</td>
 <td class="rate">%40</td>
 </tr>
 
@@ -473,213 +404,448 @@ tarifesi aşağıdaki gibidir.
 
 </section>
 
-
 <section class="card">
 
-<h2>2026 Gelir Vergisi Nasıl Hesaplanır?</h2>
+<h2>2026 Ücret Gelir Vergisi Nasıl Hesaplanır?</h2>
 
 <p>
-Vergi dilimi hesabında matrahın tamamına tek bir oran uygulanmaz.
-Gelirin her bölümü ait olduğu vergi diliminin oranına göre
-vergilendirilir.
+Türkiye'deki gelir vergisi tarifesi artan oranlıdır.
+Matrahın tamamına tek bir oran uygulanmaz.
 </p>
 
-<div class="info">
+<div class="info-box">
 
-<strong>190.000 TL'ye kadar:</strong><br>
+<strong>190.000 TL'ye kadar:</strong>
+
+<br>
+
 Matrah × %15
 
 <br><br>
 
-<strong>400.000 TL'ye kadar:</strong><br>
-28.500 TL + 190.000 TL'yi aşan kısmın %20'si
+<strong>190.000 TL'yi aşan ve 400.000 TL'ye kadar:</strong>
+
+<br>
+
+28.500 TL +
+190.000 TL'yi aşan kısmın %20'si
 
 <br><br>
 
-<strong>1.500.000 TL'ye kadar:</strong><br>
-70.500 TL + 400.000 TL'yi aşan kısmın %27'si
+<strong>400.000 TL'yi aşan ve ücret gelirlerinde 1.500.000 TL'ye kadar:</strong>
+
+<br>
+
+70.500 TL +
+400.000 TL'yi aşan kısmın %27'si
 
 <br><br>
 
-<strong>5.300.000 TL'ye kadar:</strong><br>
-367.500 TL + 1.500.000 TL'yi aşan kısmın %35'i
+<strong>1.500.000 TL'yi aşan ve 5.300.000 TL'ye kadar:</strong>
+
+<br>
+
+367.500 TL +
+1.500.000 TL'yi aşan kısmın %35'i
 
 <br><br>
 
-<strong>5.300.000 TL üzeri:</strong><br>
-1.697.500 TL + 5.300.000 TL'yi aşan kısmın %40'ı
+<strong>5.300.000 TL üzeri:</strong>
+
+<br>
+
+1.697.500 TL +
+5.300.000 TL'yi aşan kısmın %40'ı
 
 </div>
 
 </section>
 
+<section class="card">
+
+<h2>Marjinal Vergi Oranı Nedir?</h2>
+
+<p>
+Marjinal vergi oranı, kümülatif vergi matrahınızın
+ulaştığı son dilime uygulanan orandır.
+</p>
+
+<p>
+Örneğin kümülatif ücret vergi matrahınız
+<strong>500.000 TL</strong> ise marjinal vergi oranınız
+<strong>%27</strong>'dir.
+</p>
+
+<p>
+Ancak bu, 500.000 TL'nin tamamına %27 vergi
+uygulandığı anlamına gelmez.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Efektif Vergi Oranı Nedir?</h2>
+
+<p>
+Efektif vergi oranı, tarifeye göre hesaplanan toplam
+kümülatif verginin toplam kümülatif matraha oranıdır.
+</p>
+
+<div class="info-box">
+
+<strong>Efektif Vergi Oranı =</strong>
+
+<br><br>
+
+Kümülatif Tarife Vergisi ÷ Kümülatif Vergi Matrahı × 100
+
+</div>
+
+<p>
+Bu nedenle efektif oran genellikle içinde bulunulan
+marjinal vergi oranından daha düşüktür.
+</p>
+
+</section>
 
 <section class="card">
 
 <h2>300.000 TL Vergi Matrahında Vergi Ne Kadar?</h2>
 
-<p>
-300.000 TL kümülatif ücret vergi matrahında:
-</p>
+<div class="info-box">
 
-<p>
 İlk 190.000 TL:
-<strong>%15</strong>
-</p>
 
-<p>
-190.000 TL'yi aşan 110.000 TL:
-<strong>%20</strong>
-</p>
+<br>
 
-<p>
-Hesaplanan kümülatif gelir vergisi:
-</p>
+190.000 × %15 =
+28.500 TL
 
-<p>
-28.500 + 22.000 =
+<br><br>
+
+Kalan 110.000 TL:
+
+<br>
+
+110.000 × %20 =
+22.000 TL
+
+<br><br>
+
+Toplam kümülatif tarife vergisi:
+
+<br><br>
+
 <strong>50.500 TL</strong>
-</p>
+
+</div>
 
 <p>
-Bu nedenle 300.000 TL'nin tamamına %20 uygulanmaz.
+300.000 TL'nin tamamına %20 uygulanmaz.
 </p>
 
 </section>
-
 
 <section class="card">
 
 <h2>500.000 TL Vergi Matrahında Vergi Ne Kadar?</h2>
 
-<p>
-500.000 TL matrah, 2026 ücret tarifesinde
-<strong>%27 marjinal vergi dilimindedir.</strong>
-</p>
+<div class="info-box">
 
-<p>
-İlk 400.000 TL için hesaplanan vergi:
+İlk 400.000 TL'nin vergisi:
+
+<br><br>
+
 <strong>70.500 TL</strong>
-</p>
 
-<p>
-400.000 TL'yi aşan 100.000 TL için:
-</p>
+<br><br>
 
-<p>
+400.000 TL'yi aşan 100.000 TL:
+
+<br>
+
 100.000 × %27 =
-<strong>27.000 TL</strong>
-</p>
+27.000 TL
+
+<br><br>
+
+Toplam:
+
+<br><br>
+
+<strong>97.500 TL</strong>
+
+</div>
 
 <p>
-Toplam kümülatif vergi:
-<strong>97.500 TL</strong>
+500.000 TL kümülatif ücret matrahında marjinal
+vergi oranı %27'dir.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>1.000.000 TL Vergi Matrahında Vergi Ne Kadar?</h2>
+
+<div class="info-box">
+
+İlk 400.000 TL'nin vergisi:
+
+<br>
+
+70.500 TL
+
+<br><br>
+
+Kalan 600.000 TL:
+
+<br>
+
+600.000 × %27 =
+162.000 TL
+
+<br><br>
+
+Toplam:
+
+<br><br>
+
+<strong>232.500 TL</strong>
+
+</div>
+
+</section>
 
 <section class="card">
 
-<h2>Vergi Dilimine Girince Maaşın Tamamı Daha Fazla Vergilenir mi?</h2>
+<h2>2.000.000 TL Vergi Matrahında Vergi Ne Kadar?</h2>
+
+<div class="info-box">
+
+İlk 1.500.000 TL'nin vergisi:
+
+<br>
+
+367.500 TL
+
+<br><br>
+
+Kalan 500.000 TL:
+
+<br>
+
+500.000 × %35 =
+175.000 TL
+
+<br><br>
+
+Toplam:
+
+<br><br>
+
+<strong>542.500 TL</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Vergi Dilimine Girince Maaşın Tamamı Yüksek Orandan mı Vergilenir?</h2>
 
 <p>
 <strong>Hayır.</strong>
 </p>
 
 <p>
-Daha yüksek gelir vergisi dilimine geçildiğinde
-kümülatif matrahın tamamı yeni oran üzerinden vergilendirilmez.
+Bu konu maaş vergi dilimleriyle ilgili en sık
+karıştırılan noktalardan biridir.
 </p>
 
 <p>
-Sadece ilgili dilim sınırını aşan bölüm yeni vergi oranına tabi olur.
-Daha önceki dilimlerde kalan tutarlar kendi oranları üzerinden
-hesaplanmaya devam eder.
+Örneğin kümülatif matrah 190.000 TL'yi aştığında
+matrahın tamamına %20 uygulanmaz.
+</p>
+
+<p>
+İlk 190.000 TL %15 oranında kalır;
+yalnızca 190.000 TL'yi aşan bölüm %20 oranına geçer.
+</p>
+
+<p>
+Aynı yöntem sonraki vergi dilimlerinde de devam eder.
 </p>
 
 </section>
-
 
 <section class="card">
 
 <h2>Kümülatif Vergi Matrahı Nedir?</h2>
 
 <p>
-Kümülatif ücret vergi matrahı, çalışanın aynı takvim yılı içinde
-gelir vergisine esas ücret matrahlarının birikimli toplamıdır.
+Kümülatif ücret vergi matrahı, aynı takvim yılı
+içerisinde gelir vergisine esas ücret matrahlarının
+birikimli toplamıdır.
 </p>
 
 <p>
-Yıl ilerledikçe bu tutar artabilir. Matrah vergi tarifesindeki
-eşikleri geçtikçe aşan bölüm daha yüksek gelir vergisi oranına
-tabi olur.
+Örneğin Ocak ayındaki vergi matrahı ile Şubat ayındaki
+vergi matrahı toplanarak Şubat sonundaki kümülatif
+matrah oluşur.
+</p>
+
+<p>
+Yıl ilerledikçe bu tutar artar ve tarife sınırlarını
+aştıkça ücretin aşan bölümü daha yüksek vergi
+oranlarına geçebilir.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>2026 Vergi Dilimine Hangi Ayda Girilir?</h2>
+
+<p>
+Herkes için geçerli tek bir ay yoktur.
+</p>
+
+<p>
+Vergi dilimine geçiş çalışanın aylık vergi matrahına,
+prim ve ek ödemelerine ve yıl içindeki ücret değişikliklerine
+bağlıdır.
+</p>
+
+<div class="info-box">
+
+Kümülatif matrah:
+
+<br><br>
+
+<strong>190.000 TL'yi aşınca:</strong>
+aşan bölüm %20
+
+<br><br>
+
+<strong>400.000 TL'yi aşınca:</strong>
+aşan bölüm %27
+
+<br><br>
+
+<strong>1.500.000 TL'yi aşınca:</strong>
+aşan bölüm %35
+
+<br><br>
+
+<strong>5.300.000 TL'yi aşınca:</strong>
+aşan bölüm %40
+
+</div>
+
+</section>
 
 <section class="card">
 
-<h2>2026 Vergi Dilimine Ne Zaman Girilir?</h2>
+<h2>Tam Vergi Dilimi Sınırında Hangi Oran Geçerlidir?</h2>
 
 <p>
-Vergi dilimine geçiş sabit bir ayda gerçekleşmez.
-Çalışanın ücretine ve aylık gelir vergisi matrahına bağlıdır.
+Tarifedeki ifadeler “190.000 TL'ye kadar”,
+“400.000 TL'ye kadar” şeklindedir.
 </p>
 
 <p>
-Kümülatif ücret vergi matrahı:
+Bu nedenle:
 </p>
 
-<p>
-<strong>190.000 TL'yi aşınca:</strong> %20 dilime
-</p>
+<div class="info-box">
+
+<strong>Tam 190.000 TL:</strong>
+%15 diliminin üst sınırı
+
+<br><br>
+
+<strong>190.000 TL'yi aşan ilk bölüm:</strong>
+%20
+
+<br><br>
+
+<strong>Tam 400.000 TL:</strong>
+%20 diliminin üst sınırı
+
+<br><br>
+
+<strong>400.000 TL'yi aşan ilk bölüm:</strong>
+%27
+
+<br><br>
+
+<strong>Tam 1.500.000 TL:</strong>
+%27 diliminin üst sınırı
+
+<br><br>
+
+<strong>1.500.000 TL'yi aşan ilk bölüm:</strong>
+%35
+
+<br><br>
+
+<strong>Tam 5.300.000 TL:</strong>
+%35 diliminin üst sınırı
+
+<br><br>
+
+<strong>5.300.000 TL'yi aşan ilk bölüm:</strong>
+%40
+
+</div>
 
 <p>
-<strong>400.000 TL'yi aşınca:</strong> %27 dilime
-</p>
-
-<p>
-<strong>1.500.000 TL'yi aşınca:</strong> %35 dilime
-</p>
-
-<p>
-<strong>5.300.000 TL'yi aşınca:</strong> %40 dilime
-</p>
-
-<p>
-geçilir.
+Hesaplayıcı bu sınır mantığını doğrudan uygular.
 </p>
 
 </section>
 
-
 <section class="card">
 
-<h2>Asgari Ücret Gelir Vergisi İstisnası</h2>
+<h2>Asgari Ücret Vergi İstisnası</h2>
 
 <p>
 2026 yılında aylık brüt asgari ücret
 <strong>33.030 TL</strong>,
-net asgari ücret ise
+standart net asgari ücret ise
 <strong>28.075,50 TL</strong>'dir.
 </p>
 
 <p>
-Ücretlerde asgari ücret seviyesine ilişkin gelir vergisi
-ve damga vergisi istisnası bordro hesaplarında ayrıca
-dikkate alınır.
+Ücret bordrolarında asgari ücrete isabet eden gelir
+vergisi ve damga vergisi için istisna bulunmaktadır.
 </p>
 
+<div class="warning-box">
+
+Bu sayfadaki hesaplayıcı
+<strong>asgari ücret vergi istisnasını çıkarmadan</strong>
+2026 ücret gelir vergisi tarifesine göre teorik
+kümülatif tarife vergisini gösterir.
+
+<br><br>
+
+Bordroda fiilen kesilen gelir vergisini hesaplamak
+istiyorsanız
+<strong>Brüt Net Maaş Hesaplama</strong>
+aracını kullanmanız daha uygundur.
+
+</div>
+
 <p>
-Bu nedenle bu sayfadaki kümülatif tarife hesabı,
-bordroda o ay fiilen kesilecek gelir vergisi tutarıyla
-birebir aynı olmak zorunda değildir.
+<a href="/brut-net-maas-hesaplama.html">
+Brüt Net Maaş Hesaplama →
+</a>
 </p>
 
 </section>
-
 
 <section class="card">
 
@@ -690,18 +856,18 @@ Hayır.
 </p>
 
 <p>
-Bu araç, girdiğiniz <strong>kümülatif ücret vergi matrahı</strong>
-üzerinden tarifeye göre toplam kümülatif vergiyi hesaplar.
+Vergi dilimi, kümülatif matrahın tarifenin hangi
+bölümüne ulaştığını gösterir.
 </p>
 
 <p>
-Bordroda ilgili ay kesilecek gelir vergisi hesabında ise
-önceki dönem vergileri, asgari ücret istisnası ve diğer
-bordro unsurları ayrıca dikkate alınabilir.
+Aylık gelir vergisi kesintisi ise önceki aya kadar
+hesaplanan kümülatif vergi ile yeni kümülatif vergi
+arasındaki fark üzerinden bulunur ve bordroda
+uygulanabilecek istisnalar ayrıca dikkate alınır.
 </p>
 
 </section>
-
 
 <section class="card">
 
@@ -714,8 +880,9 @@ bordro unsurları ayrıca dikkate alınabilir.
 <thead>
 <tr>
 <th>Kümülatif Matrah</th>
-<th>Vergi Dilimi</th>
-<th>Kümülatif Vergi</th>
+<th>Marjinal Oran</th>
+<th>Kümülatif Tarife Vergisi</th>
+<th>Efektif Oran</th>
 </tr>
 </thead>
 
@@ -725,36 +892,42 @@ bordro unsurları ayrıca dikkate alınabilir.
 <td>100.000 TL</td>
 <td>%15</td>
 <td>15.000 TL</td>
+<td>%15,00</td>
 </tr>
 
 <tr>
 <td>200.000 TL</td>
 <td>%20</td>
 <td>30.500 TL</td>
+<td>%15,25</td>
 </tr>
 
 <tr>
 <td>300.000 TL</td>
 <td>%20</td>
 <td>50.500 TL</td>
+<td>%16,83</td>
 </tr>
 
 <tr>
 <td>500.000 TL</td>
 <td>%27</td>
 <td>97.500 TL</td>
+<td>%19,50</td>
 </tr>
 
 <tr>
 <td>1.000.000 TL</td>
 <td>%27</td>
 <td>232.500 TL</td>
+<td>%23,25</td>
 </tr>
 
 <tr>
 <td>2.000.000 TL</td>
 <td>%35</td>
 <td>542.500 TL</td>
+<td>%27,13</td>
 </tr>
 
 </tbody>
@@ -765,7 +938,6 @@ bordro unsurları ayrıca dikkate alınabilir.
 
 </section>
 
-
 <section class="card">
 
 <h2>Sık Sorulan Sorular</h2>
@@ -774,45 +946,82 @@ bordro unsurları ayrıca dikkate alınabilir.
 
 <p>
 2026 ücret gelirlerinde ilk vergi dilimi
-<strong>190.000 TL</strong>'ye kadardır ve oran
-<strong>%15</strong>'tir.
+<strong>190.000 TL'ye kadar</strong>
+ve oran %15'tir.
 </p>
 
-<h3>2026 %20 vergi dilimi kaç TL?</h3>
+<h3>2026 %20 vergi dilimi ne zaman başlar?</h3>
 
 <p>
-190.000 TL'yi aşan ve 400.000 TL'ye kadar olan
-ücret vergi matrahı bölümü %20 oranına tabidir.
+Kümülatif ücret vergi matrahının
+<strong>190.000 TL'yi aşan kısmı</strong>,
+400.000 TL'ye kadar %20 oranına tabidir.
 </p>
 
-<h3>2026 %27 vergi dilimi kaç TL?</h3>
+<h3>2026 %27 vergi dilimi ne zaman başlar?</h3>
 
 <p>
-400.000 TL'yi aşan ve 1.500.000 TL'ye kadar olan
-ücret matrahı bölümü %27 oranına tabidir.
+Ücret gelirlerinde 400.000 TL'yi aşan matrah
+1.500.000 TL'ye kadar %27 oranına tabidir.
 </p>
 
 <h3>2026 %35 vergi dilimi ne zaman başlar?</h3>
 
 <p>
-Kümülatif ücret vergi matrahının
-<strong>1.500.000 TL'yi aşan kısmı</strong>
-%35 oranına geçer.
+Ücret gelirlerinde kümülatif matrahın
+1.500.000 TL'yi aşan kısmı %35 oranına geçer.
 </p>
 
 <h3>2026 %40 vergi dilimi ne zaman başlar?</h3>
 
 <p>
 Kümülatif ücret vergi matrahının
-<strong>5.300.000 TL'yi aşan kısmı</strong>
-%40 oranına tabidir.
+5.300.000 TL'yi aşan kısmı %40 oranına tabidir.
 </p>
 
-<h3>Vergi dilimi aylık maaşa göre mi hesaplanır?</h3>
+<h3>190.000 TL matrah tam olarak hangi vergi dilimindedir?</h3>
 
 <p>
-Vergi dilimi doğrudan net maaşa göre değil,
-kümülatif gelir vergisi matrahına göre belirlenir.
+Tam 190.000 TL, %15 diliminin üst sınırıdır.
+190.000 TL'yi aşan bölüm %20 oranına geçer.
+</p>
+
+<h3>400.000 TL matrah hangi dilimdedir?</h3>
+
+<p>
+Tam 400.000 TL, %20 diliminin üst sınırıdır.
+400.000 TL'yi aşan bölüm ücret gelirlerinde %27
+oranına geçer.
+</p>
+
+<h3>Vergi dilimi yükselince maaşın tamamı yüksek orandan mı vergilenir?</h3>
+
+<p>
+Hayır. Yalnızca ilgili sınırı aşan matrah bölümü
+daha yüksek oranla vergilendirilir.
+</p>
+
+<h3>Marjinal vergi oranı nedir?</h3>
+
+<p>
+Kümülatif matrahın ulaştığı son vergi diliminde,
+son matrah bölümüne uygulanan vergi oranıdır.
+</p>
+
+<h3>Efektif vergi oranı nedir?</h3>
+
+<p>
+Tarifeye göre hesaplanan toplam kümülatif verginin
+toplam kümülatif vergi matrahına oranıdır.
+</p>
+
+<h3>Bu hesaplayıcı bordroda kesilecek vergiyi gösterir mi?</h3>
+
+<p>
+Hayır. Araç doğrudan 2026 ücret gelir vergisi
+tarifesini kümülatif matraha uygular. Asgari ücret
+istisnası ve diğer bordro unsurları fiili vergi
+kesintisini değiştirebilir.
 </p>
 
 <h3>Maaş vergi dilimi hesaplama ücretsiz mi?</h3>
@@ -824,48 +1033,103 @@ Evet. Araclio Maaş Vergi Dilimi Hesaplama aracı
 
 </section>
 
+<section class="card">
+
+<h2>Resmî Tarife ve Hesaplama Esası</h2>
+
+<div class="source-box">
+
+<strong>2026 ücret gelir vergisi tarifesi:</strong>
+
+<br><br>
+
+190.000 TL'ye kadar:
+%15
+
+<br><br>
+
+400.000 TL'nin 190.000 TL'si için
+28.500 TL, fazlası:
+%20
+
+<br><br>
+
+Ücret gelirlerinde 1.500.000 TL'nin
+400.000 TL'si için 70.500 TL, fazlası:
+%27
+
+<br><br>
+
+Ücret gelirlerinde 5.300.000 TL'nin
+1.500.000 TL'si için 367.500 TL, fazlası:
+%35
+
+<br><br>
+
+5.300.000 TL'den fazlasının ücret gelirlerindeki
+5.300.000 TL'si için 1.697.500 TL, fazlası:
+%40
+
+</div>
+
+<p>
+Hesaplama, Gelir İdaresi Başkanlığının
+2026 takvim yılı için yayımladığı ücret
+gelir vergisi tarifesine göre yapılmaktadır.
+</p>
+
+</section>
 
 <section class="card">
 
 <h2>Önemli Bilgilendirme</h2>
 
-<p>
-Bu araç genel bilgilendirme ve matematiksel hesaplama
-amacıyla hazırlanmıştır.
-</p>
+<div class="warning-box">
+
+Bu araç genel bilgilendirme ve matematiksel
+hesaplama amacıyla hazırlanmıştır.
+
+<br><br>
+
+Hesaplanan tutar, girdiğiniz kümülatif ücret vergi
+matrahına 2026 ücret gelir vergisi tarifesinin
+doğrudan uygulanmasıyla elde edilen teorik
+kümülatif tarife vergisidir.
+
+<br><br>
+
+Bordroda fiilen kesilen gelir vergisi;
+asgari ücret istisnası, önceki dönem hesapları,
+prim ve ikramiye, engellilik indirimi, özel sigorta
+ve diğer bordro unsurlarından etkilenebilir.
+
+<br><br>
+
+Kesin vergisel işlem için güncel Gelir İdaresi
+Başkanlığı mevzuatı ve gerektiğinde uzman görüşü
+esas alınmalıdır.
+
+</div>
 
 <p>
-Bordroda fiilen kesilecek gelir vergisi; önceki dönem
-matrahları, asgari ücret istisnası, primler, indirimler
-ve diğer bordro koşullarına göre farklılık gösterebilir.
-</p>
-
-<p>
-Kesin bordro veya vergisel işlem için güncel mevzuat,
-Gelir İdaresi Başkanlığı bilgileri ve gerektiğinde
-uzman görüşü esas alınmalıdır.
-</p>
-
-<p>
-<strong>Son güncelleme: Ekim 2026</strong>
+<strong>Son güncelleme: Kasım 2026</strong>
 </p>
 
 </section>
-
 
 <section class="card">
 
 <h2>Diğer Maaş ve Vergi Araçları</h2>
 
 <p>
-<a href="/netten-brute-maas-hesaplama.html">
-Netten Brüte Maaş Hesaplama →
+<a href="/brut-net-maas-hesaplama.html">
+Brüt Net Maaş Hesaplama →
 </a>
 </p>
 
 <p>
-<a href="/brut-net-maas-hesaplama.html">
-Brüt Net Maaş Hesaplama →
+<a href="/netten-brute-maas-hesaplama.html">
+Netten Brüte Maaş Hesaplama →
 </a>
 </p>
 
@@ -877,7 +1141,7 @@ Gelir Vergisi Hesaplama →
 
 <p>
 <a href="/asgari-ucret-hesaplama.html">
-Asgari Ücret Hesaplama 2026 →
+Asgari Ücret Hesaplama →
 </a>
 </p>
 
@@ -897,7 +1161,6 @@ Maaş Zam Hesaplama →
 
 </main>
 
-
 <footer>
 
 <div class="wrap">
@@ -912,6 +1175,8 @@ Maaş Zam Hesaplama →
 <a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
 •
 <a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
 </p>
 
 <p>
@@ -930,95 +1195,266 @@ Araclio • Ücretsiz Online Araçlar
 
 </footer>
 
-
 <script>
+
+const SINIR_1 =
+190000;
+
+const SINIR_2 =
+400000;
+
+const SINIR_3 =
+1500000;
+
+const SINIR_4 =
+5300000;
+
 
 function para(deger){
 
-return deger.toLocaleString("tr-TR",{
+return new Intl.NumberFormat(
+"tr-TR",
+{
 minimumFractionDigits:2,
 maximumFractionDigits:2
-});
+}
+).format(deger) +
+" TL";
+
+}
+
+
+function yuzde(deger){
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+}
+).format(deger) +
+"%";
 
 }
 
 
 function vergiHesapla(matrah){
 
-if(matrah <= 190000){
+if(
+!Number.isFinite(matrah) ||
+matrah <= 0
+){
 
-return matrah * 0.15;
+return 0;
 
 }
 
-if(matrah <= 400000){
+
+if(
+matrah <=
+SINIR_1
+){
+
+return matrah *
+0.15;
+
+}
+
+
+if(
+matrah <=
+SINIR_2
+){
 
 return 28500 +
-(matrah - 190000) * 0.20;
+(
+matrah -
+SINIR_1
+) *
+0.20;
 
 }
 
-if(matrah <= 1500000){
+
+if(
+matrah <=
+SINIR_3
+){
 
 return 70500 +
-(matrah - 400000) * 0.27;
+(
+matrah -
+SINIR_2
+) *
+0.27;
 
 }
 
-if(matrah <= 5300000){
+
+if(
+matrah <=
+SINIR_4
+){
 
 return 367500 +
-(matrah - 1500000) * 0.35;
+(
+matrah -
+SINIR_3
+) *
+0.35;
 
 }
 
+
 return 1697500 +
-(matrah - 5300000) * 0.40;
+(
+matrah -
+SINIR_4
+) *
+0.40;
 
 }
 
 
 function dilimBul(matrah){
 
-if(matrah <= 190000){
+if(
+matrah <=
+SINIR_1
+){
 
 return {
 oran:15,
-sonraki:190000
+alt:0,
+ust:SINIR_1,
+aciklama:"190.000 TL'ye kadar"
 };
 
 }
 
-if(matrah <= 400000){
+
+if(
+matrah <=
+SINIR_2
+){
 
 return {
 oran:20,
-sonraki:400000
+alt:SINIR_1,
+ust:SINIR_2,
+aciklama:"190.000 TL'yi aşan – 400.000 TL'ye kadar"
 };
 
 }
 
-if(matrah <= 1500000){
+
+if(
+matrah <=
+SINIR_3
+){
 
 return {
 oran:27,
-sonraki:1500000
+alt:SINIR_2,
+ust:SINIR_3,
+aciklama:"400.000 TL'yi aşan – 1.500.000 TL'ye kadar"
 };
 
 }
 
-if(matrah <= 5300000){
+
+if(
+matrah <=
+SINIR_4
+){
 
 return {
 oran:35,
-sonraki:5300000
+alt:SINIR_3,
+ust:SINIR_4,
+aciklama:"1.500.000 TL'yi aşan – 5.300.000 TL'ye kadar"
 };
 
 }
 
+
 return {
 oran:40,
-sonraki:null
+alt:SINIR_4,
+ust:null,
+aciklama:"5.300.000 TL'yi aşan"
+};
+
+}
+
+
+function vergiDagilimi(matrah){
+
+const d1 =
+Math.min(
+matrah,
+SINIR_1
+);
+
+
+const d2 =
+Math.max(
+0,
+Math.min(
+matrah,
+SINIR_2
+) -
+SINIR_1
+);
+
+
+const d3 =
+Math.max(
+0,
+Math.min(
+matrah,
+SINIR_3
+) -
+SINIR_2
+);
+
+
+const d4 =
+Math.max(
+0,
+Math.min(
+matrah,
+SINIR_4
+) -
+SINIR_3
+);
+
+
+const d5 =
+Math.max(
+0,
+matrah -
+SINIR_4
+);
+
+
+return {
+
+d1Matrah:d1,
+d1Vergi:d1 * 0.15,
+
+d2Matrah:d2,
+d2Vergi:d2 * 0.20,
+
+d3Matrah:d3,
+d3Vergi:d3 * 0.27,
+
+d4Matrah:d4,
+d4Vergi:d4 * 0.35,
+
+d5Matrah:d5,
+d5Vergi:d5 * 0.40
+
 };
 
 }
@@ -1027,23 +1463,37 @@ sonraki:null
 function hesapla(){
 
 const matrahInput =
-document.getElementById("matrah");
+document
+.getElementById("matrah");
 
 const matrah =
-Number(matrahInput.value);
+Number(
+matrahInput.value
+);
 
 const sonuc =
-document.getElementById("sonuc");
+document
+.getElementById("sonuc");
+
+const kutular =
+document
+.getElementById("sonucKutulari");
 
 
 if(
 matrahInput.value === "" ||
-!Number.isFinite(matrah) ||
-matrah < 0
+!Number.isFinite(
+matrah
+) ||
+matrah <
+0
 ){
 
-sonuc.innerHTML =
-"Lütfen geçerli bir kümülatif ücret vergi matrahı girin.";
+sonuc.textContent =
+"Lütfen sıfır veya daha büyük geçerli bir kümülatif ücret vergi matrahı girin.";
+
+kutular.style.display =
+"none";
 
 return;
 
@@ -1051,118 +1501,314 @@ return;
 
 
 const vergi =
-vergiHesapla(matrah);
+vergiHesapla(
+matrah
+);
+
 
 const dilim =
-dilimBul(matrah);
+dilimBul(
+matrah
+);
 
 
-let sonrakiMetin = "";
+const efektifOran =
+matrah >
+0
+?
+(
+vergi /
+matrah
+) *
+100
+:
+0;
 
-if(dilim.sonraki !== null){
+
+let kalanMetni;
+
+
+if(
+dilim.ust ===
+null
+){
+
+kalanMetni =
+"En üst vergi dilimi";
+
+}
+else{
 
 const kalan =
-Math.max(0,dilim.sonraki - matrah);
+Math.max(
+0,
+dilim.ust -
+matrah
+);
 
-sonrakiMetin =
 
-'<div class="row">' +
-'<span>Sonraki vergi dilimine kalan</span>' +
-'<strong>' +
-para(kalan) +
-' TL</strong>' +
-'</div>';
+if(
+kalan ===
+0
+){
 
-}else{
+kalanMetni =
+"Bu dilimin üst sınırındasınız";
 
-sonrakiMetin =
+}
+else{
 
-'<div class="row">' +
-'<span>Vergi tarifesi</span>' +
-'<strong>En üst dilim</strong>' +
-'</div>';
+kalanMetni =
+para(
+kalan
+);
+
+}
 
 }
 
 
-let aralik = "";
+document
+.getElementById("oranSonuc")
+.textContent =
+"%" +
+dilim.oran;
 
-if(dilim.oran === 15){
 
-aralik = "0 – 190.000 TL";
+document
+.getElementById("vergiSonuc")
+.textContent =
+para(
+vergi
+);
 
-}else if(dilim.oran === 20){
 
-aralik = "190.000 – 400.000 TL";
+document
+.getElementById("efektifSonuc")
+.textContent =
+yuzde(
+efektifOran
+);
 
-}else if(dilim.oran === 27){
 
-aralik = "400.000 – 1.500.000 TL";
+document
+.getElementById("kalanSonuc")
+.textContent =
+kalanMetni;
 
-}else if(dilim.oran === 35){
 
-aralik = "1.500.000 – 5.300.000 TL";
+const dagilim =
+vergiDagilimi(
+matrah
+);
 
-}else{
 
-aralik = "5.300.000 TL üzeri";
+let dagilimHtml =
+"";
+
+
+if(
+dagilim.d1Matrah >
+0
+){
+
+dagilimHtml +=
+
+"<div class='row'>" +
+"<span>%15 dilimindeki matrah</span>" +
+"<strong>" +
+para(
+dagilim.d1Matrah
+) +
+" → " +
+para(
+dagilim.d1Vergi
+) +
+" vergi</strong>" +
+"</div>";
+
+}
+
+
+if(
+dagilim.d2Matrah >
+0
+){
+
+dagilimHtml +=
+
+"<div class='row'>" +
+"<span>%20 dilimindeki matrah</span>" +
+"<strong>" +
+para(
+dagilim.d2Matrah
+) +
+" → " +
+para(
+dagilim.d2Vergi
+) +
+" vergi</strong>" +
+"</div>";
+
+}
+
+
+if(
+dagilim.d3Matrah >
+0
+){
+
+dagilimHtml +=
+
+"<div class='row'>" +
+"<span>%27 dilimindeki matrah</span>" +
+"<strong>" +
+para(
+dagilim.d3Matrah
+) +
+" → " +
+para(
+dagilim.d3Vergi
+) +
+" vergi</strong>" +
+"</div>";
+
+}
+
+
+if(
+dagilim.d4Matrah >
+0
+){
+
+dagilimHtml +=
+
+"<div class='row'>" +
+"<span>%35 dilimindeki matrah</span>" +
+"<strong>" +
+para(
+dagilim.d4Matrah
+) +
+" → " +
+para(
+dagilim.d4Vergi
+) +
+" vergi</strong>" +
+"</div>";
+
+}
+
+
+if(
+dagilim.d5Matrah >
+0
+){
+
+dagilimHtml +=
+
+"<div class='row'>" +
+"<span>%40 dilimindeki matrah</span>" +
+"<strong>" +
+para(
+dagilim.d5Matrah
+) +
+" → " +
+para(
+dagilim.d5Vergi
+) +
+" vergi</strong>" +
+"</div>";
 
 }
 
 
 sonuc.innerHTML =
 
-'<div class="result-main">%' +
+"<strong>Marjinal vergi oranı: %" +
+
 dilim.oran +
-' Vergi Dilimi</div>' +
 
-'<div class="row">' +
-'<span>Kümülatif vergi matrahı</span>' +
-'<strong>' +
-para(matrah) +
-' TL</strong>' +
-'</div>' +
+"</strong>" +
 
-'<div class="row">' +
-'<span>Bulunduğunuz dilim</span>' +
-'<strong>' +
-aralik +
-'</strong>' +
-'</div>' +
+"<br><br>" +
 
-'<div class="row">' +
-'<span>Marjinal vergi oranı</span>' +
-'<strong>%' +
-dilim.oran +
-'</strong>' +
-'</div>' +
+"Kümülatif ücret vergi matrahı: <strong>" +
 
-'<div class="row">' +
-'<span>Tarifeye göre kümülatif vergi</span>' +
-'<strong>' +
-para(vergi) +
-' TL</strong>' +
-'</div>' +
+para(
+matrah
+) +
 
-sonrakiMetin +
+"</strong>" +
 
-'<br><small>Bu sonuç bordroda o ay fiilen kesilecek gelir vergisi değildir; girilen kümülatif matrah üzerinden vergi tarifesi hesabıdır.</small>';
+"<br>" +
+
+"Bulunduğunuz tarife aralığı: <strong>" +
+
+dilim.aciklama +
+
+"</strong>" +
+
+"<br>" +
+
+"Tarifeye göre kümülatif vergi: <strong>" +
+
+para(
+vergi
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Efektif tarife oranı: <strong>" +
+
+yuzde(
+efektifOran
+) +
+
+"</strong>" +
+
+"<br><br>" +
+
+"<strong>Verginin dilimlere dağılımı:</strong>" +
+
+dagilimHtml +
+
+"<br><small>" +
+
+"Bu tutar 2026 ücret gelir vergisi tarifesinin doğrudan matraha uygulanmasıyla bulunan kümülatif tarife vergisidir. Bordroda fiilen kesilecek gelir vergisi değildir." +
+
+"</small>";
+
+
+kutular.style.display =
+"grid";
 
 }
 
 
 document
 .getElementById("matrah")
-.addEventListener("keydown",function(e){
+.addEventListener(
+"keydown",
+function(event){
 
-if(e.key === "Enter"){
+if(
+event.key ===
+"Enter"
+){
+
 hesapla();
+
 }
 
-});
+}
+);
 
 
-document.getElementById("year").textContent =
+document
+.getElementById("year")
+.textContent =
 new Date().getFullYear();
 
 </script>
