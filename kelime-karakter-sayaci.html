@@ -1,157 +1,919 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Kelime ve Karakter Sayacı | Online Kelime Sayma - Araclio</title>
+<title>Kelime ve Karakter Sayacı | Satır ve Paragraf Sayma - Araclio</title>
 
-  <meta name="description" content="Ücretsiz kelime ve karakter sayacı. Metninizdeki kelime, toplam karakter ve boşluksuz karakter sayısını anında öğrenin.">
+<meta
+name="description"
+content="Ücretsiz kelime ve karakter sayacı. Metindeki kelime, boşluklu ve boşluksuz karakter, satır, paragraf sayısını ve yaklaşık okuma süresini anında öğrenin."
+>
 
-  <meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
 
-  <link rel="canonical" href="https://araclio.com/kelime-karakter-sayaci.html">
-  <link rel="stylesheet" href="style.css">
+<meta
+name="google-adsense-account"
+content="ca-pub-7634654090472031"
+>
+
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
+
+<link
+rel="canonical"
+href="https://araclio.com/kelime-karakter-sayaci.html"
+>
+
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+
+<meta
+property="og:title"
+content="Kelime ve Karakter Sayacı | Araclio"
+>
+
+<meta
+property="og:description"
+content="Kelime, karakter, boşluksuz karakter, satır ve paragraf sayısını anında öğrenin."
+>
+
+<meta
+property="og:url"
+content="https://araclio.com/kelime-karakter-sayaci.html"
+>
+
+<meta property="og:site_name" content="Araclio">
+
+<style>
+
+textarea{
+width:100%;
+box-sizing:border-box;
+resize:vertical;
+min-height:220px;
+}
+
+.result-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:12px;
+margin-top:18px;
+}
+
+.result-box{
+background:#f5f5f5;
+padding:16px;
+border-radius:10px;
+color:#222;
+}
+
+.result-box strong{
+display:block;
+margin-bottom:7px;
+}
+
+.big-result{
+font-size:1.4rem;
+font-weight:700;
+}
+
+.info-box{
+margin:18px 0;
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.warning-box{
+margin:18px 0;
+padding:16px;
+border:1px solid #e7d28b;
+border-radius:10px;
+background:#fff8e1;
+color:#4d3d00;
+line-height:1.8;
+}
+
+@media(max-width:700px){
+
+.result-grid{
+grid-template-columns:1fr 1fr;
+}
+
+}
+
+@media(max-width:480px){
+
+.result-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Kelime ve Karakter Sayacı",
+  "url":"https://araclio.com/kelime-karakter-sayaci.html",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"Metindeki kelime, toplam karakter, boşluksuz karakter, satır ve paragraf sayısını hesaplayan ücretsiz online araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Kelime ve Karakter Sayacı",
+      "item":"https://araclio.com/kelime-karakter-sayaci.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"Kelime sayısı nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Metin boşluk karakterlerine göre kelimelere ayrılır. Birden fazla ardışık boşluk veya satır sonu tek ayırıcı olarak değerlendirilir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Karakter sayısına boşluklar dahil mi?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Toplam karakter sayısına boşluklar ve satır sonları dahildir. Boşluksuz karakter sayısı ayrıca gösterilir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Boşluksuz karakter sayısında neler çıkarılır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Boşluk, tab ve satır sonu gibi boşluk karakterleri çıkarılarak kalan karakterler sayılır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Paragraf sayısı nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Boş satırlarla ayrılmış dolu metin blokları paragraf olarak sayılır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Metin sunucuya gönderiliyor mu?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Bu sayfadaki sayaç işlemi tarayıcı üzerinde çalışır ve hesaplama için yazılan metni bir sunucuya göndermeye ihtiyaç duymaz."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Araclio</a>
-    <span class="tag">Ücretsiz Online Araçlar</span>
-  </div>
+
+<div class="wrap nav">
+
+<a class="brand" href="/">
+Araclio
+</a>
+
+<span class="tag">
+Ücretsiz Online Araçlar
+</span>
+
+</div>
+
 </header>
 
 <main class="wrap">
 
-  <section class="hero">
-    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+<section class="hero">
 
-    <h1>Kelime ve Karakter Sayacı</h1>
+<p class="eyebrow">
+KELİME • KARAKTER • SATIR • PARAGRAF
+</p>
 
-    <p>
-      Metninizi kutuya yazın veya yapıştırın. Kelime, toplam karakter
-      ve boşluksuz karakter sayısını anında görün.
-    </p>
-  </section>
+<h1>Kelime ve Karakter Sayacı</h1>
 
+<p>
+Metninizi yazın veya yapıştırın. Kelime sayısını,
+boşluklu ve boşluksuz karakter sayısını, satır ve paragraf
+sayısını anında görün.
+</p>
 
-  <section class="card">
-    <h2>Online Kelime ve Karakter Sayacı</h2>
+</section>
 
-    <label>
-      Metin
-      <textarea
-        id="metin"
-        rows="10"
-        placeholder="Metninizi buraya yazın veya yapıştırın..."
-        oninput="say()"></textarea>
-    </label>
+<section class="card">
 
-    <div id="sonuc" class="result">
-      Kelime: 0<br>
-      Karakter: 0<br>
-      Boşluksuz karakter: 0
-    </div>
-  </section>
+<h2>Online Kelime ve Karakter Sayacı</h2>
 
+<label for="metin">
+Metin
+</label>
 
-  <section class="card">
-    <h2>Kelime Sayacı Nasıl Kullanılır?</h2>
+<textarea
+id="metin"
+rows="10"
+placeholder="Metninizi buraya yazın veya yapıştırın..."
+></textarea>
 
-    <p>
-      Saymak istediğiniz metni yukarıdaki alana yazmanız veya
-      yapıştırmanız yeterlidir. Sonuçlar siz yazarken otomatik olarak
-      güncellenir.
-    </p>
+<div class="result-grid">
 
-    <p>
-      Araç metindeki kelime sayısını, boşluklar dahil toplam karakter
-      sayısını ve boşluk karakterleri çıkarıldıktan sonraki karakter
-      sayısını ayrı ayrı gösterir.
-    </p>
-  </section>
+<div class="result-box">
+<strong>Kelime</strong>
+<span id="kelimeSonuc" class="big-result">0</span>
+</div>
 
+<div class="result-box">
+<strong>Toplam Karakter</strong>
+<span id="karakterSonuc">0</span>
+</div>
 
-  <section class="card">
-    <h2>Kelime ve Karakter Sayacı Ne İşe Yarar?</h2>
+<div class="result-box">
+<strong>Boşluksuz Karakter</strong>
+<span id="bosluksuzSonuc">0</span>
+</div>
 
-    <p>
-      Kelime ve karakter sayımı; yazı, makale, ödev, açıklama,
-      sosyal medya metni, ürün açıklaması ve belirli uzunluk sınırı
-      bulunan içerikler hazırlanırken kullanılabilir.
-    </p>
+<div class="result-box">
+<strong>Satır</strong>
+<span id="satirSonuc">0</span>
+</div>
 
-    <p>
-      Metniniz tarayıcınızda hesaplanır. Aracı kullanmak için
-      üyelik oluşturmanız gerekmez.
-    </p>
-  </section>
+<div class="result-box">
+<strong>Paragraf</strong>
+<span id="paragrafSonuc">0</span>
+</div>
 
+<div class="result-box">
+<strong>Yaklaşık Okuma Süresi</strong>
+<span id="okumaSonuc">0 dk</span>
+</div>
 
-  <section class="card">
-    <h2>Kelime ve Karakter Arasındaki Fark Nedir?</h2>
+</div>
 
-    <p>
-      Kelime sayısı, metindeki ayrı kelimelerin toplamını gösterir.
-      Karakter sayısı ise harfler, rakamlar, noktalama işaretleri ve
-      boşluklar dahil metni oluşturan karakterleri sayar.
-    </p>
+<div id="sonuc" class="result" aria-live="polite">
+Metin girildiğinde sonuçlar otomatik güncellenir.
+</div>
 
-    <p>
-      Boşluksuz karakter sayısında boşluk, satır sonu ve benzeri
-      boşluk karakterleri hesaba katılmaz.
-    </p>
-  </section>
+</section>
 
+<section class="card">
 
-  <section class="card">
-    <h2>Diğer Ücretsiz Araçlar</h2>
+<h2>Kelime Sayısı Nasıl Hesaplanır?</h2>
 
-    <p><a href="/kdv-hesaplama.html">KDV Hesaplama →</a></p>
-    <p><a href="/yuzde-hesaplama.html">Yüzde Hesaplama →</a></p>
-    <p><a href="/kar-marji-hesaplama.html">Kâr Hesaplama →</a></p>
-    <p><a href="/indirim-hesaplama.html">İndirim Hesaplama →</a></p>
-    <p><a href="/zam-hesaplama.html">Zam Hesaplama →</a></p>
-    <p><a href="/desi-hesaplama.html">Desi Hesaplama →</a></p>
-    <p><a href="/basit-taksit-hesaplama.html">Taksit Hesaplama →</a></p>
-  </section>
+<p>
+Metindeki baştaki ve sondaki boşluklar çıkarılır.
+Ardından kelimeler bir veya daha fazla boşluk karakterine
+göre ayrılır.
+</p>
+
+<div class="info-box">
+
+<strong>Örnek:</strong>
+
+<br><br>
+
+“Bugün hava çok güzel.”
+
+<br><br>
+
+=
+
+<br><br>
+
+<strong>4 kelime</strong>
+
+</div>
+
+<p>
+Birden fazla boşluk, tab veya satır sonu kelime sayısını
+yapay olarak artırmaz.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Karakter Sayısı Nedir?</h2>
+
+<p>
+Karakter sayısı, metindeki her karakteri sayar.
+</p>
+
+<p>
+Buna harfler, rakamlar, noktalama işaretleri,
+boşluklar ve satır sonları dahildir.
+</p>
+
+<div class="info-box">
+
+<strong>“Merhaba dünya”</strong>
+
+<br><br>
+
+harflerin yanında iki kelime arasındaki boşluğu da içerir.
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Boşluksuz Karakter Sayısı Nedir?</h2>
+
+<p>
+Boşluksuz karakter sayısında boşluk, tab ve satır sonu
+gibi boşluk karakterleri çıkarılır.
+</p>
+
+<div class="info-box">
+
+<strong>Toplam karakter:</strong>
+boşluklar dahil
+
+<br><br>
+
+<strong>Boşluksuz karakter:</strong>
+boşluk, tab ve satır sonları hariç
+
+</div>
+
+<p>
+Noktalama işaretleri boşluksuz karakter sayısına dahildir.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Satır Sayısı Nasıl Hesaplanır?</h2>
+
+<p>
+Metindeki satır sonları dikkate alınarak satır sayısı bulunur.
+</p>
+
+<p>
+Metin tamamen boşsa sonuç 0 satırdır.
+Metinde içerik varsa ilk satır da sayılır.
+</p>
+
+<div class="info-box">
+
+Birinci satır
+
+<br>
+
+İkinci satır
+
+<br>
+
+Üçüncü satır
+
+<br><br>
+
+=
+
+<br><br>
+
+<strong>3 satır</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Paragraf Sayısı Nasıl Hesaplanır?</h2>
+
+<p>
+Bu araç paragrafı, bir veya daha fazla boş satırla
+ayrılmış dolu metin blokları olarak kabul eder.
+</p>
+
+<p>
+Sadece satır sonuna basarak alt satıra geçmek,
+arada boş satır yoksa yeni paragraf sayılmaz.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Yaklaşık Okuma Süresi Nasıl Hesaplanır?</h2>
+
+<p>
+Okuma süresi tahmini olarak dakikada
+<strong>200 kelime</strong>
+okuma hızına göre hesaplanır.
+</p>
+
+<div class="info-box">
+
+<strong>Yaklaşık Okuma Süresi =</strong>
+
+<br><br>
+
+Kelime Sayısı ÷ 200
+
+</div>
+
+<p>
+Gerçek okuma süresi metnin zorluğuna, okuyucunun hızına
+ve içeriğin türüne göre değişebilir.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Kelime ve Karakter Sayacı Nerelerde Kullanılır?</h2>
+
+<ul>
+
+<li>Makale ve blog yazılarında</li>
+<li>Ödev ve raporlarda</li>
+<li>Ürün açıklamalarında</li>
+<li>Sosyal medya gönderilerinde</li>
+<li>Reklam metinlerinde</li>
+<li>Başlık ve açıklama uzunluğunu kontrol ederken</li>
+<li>SEO içerik hazırlığında</li>
+<li>Formlarda karakter sınırını kontrol ederken</li>
+
+</ul>
+
+</section>
+
+<section class="card">
+
+<h2>Kelime Sayısı ile Karakter Sayısı Arasındaki Fark</h2>
+
+<p>
+Kelime sayısı metindeki ayrı kelime gruplarını,
+karakter sayısı ise metni oluşturan tek tek karakterleri ölçer.
+</p>
+
+<div class="info-box">
+
+<strong>Metin:</strong>
+
+<br>
+
+“Araclio ücretsiz araçlar sunar.”
+
+<br><br>
+
+Kelime sayısı ile karakter sayısı aynı ölçüm değildir.
+Boşluklar da toplam karakter sayısına dahildir.
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Metin Gizliliği</h2>
+
+<p>
+Sayaç JavaScript ile doğrudan tarayıcı üzerinde çalışır.
+</p>
+
+<div class="warning-box">
+
+Bu sayfadaki kelime ve karakter hesabı için yazdığınız
+metnin hesaplama amacıyla bir sunucuya gönderilmesine gerek yoktur.
+
+</div>
+
+<p>
+Yine de hassas veya kişisel verileri herhangi bir çevrim içi
+hizmete girerken kendi güvenlik gereksinimlerinizi ayrıca değerlendirin.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+<h3>Kelime sayısı nasıl hesaplanır?</h3>
+
+<p>
+Metin boşluk karakterlerine göre ayrılır.
+Birden fazla ardışık boşluk tek ayırıcı gibi değerlendirilir.
+</p>
+
+<h3>Karakter sayısına boşluk dahil mi?</h3>
+
+<p>
+Evet. “Toplam karakter” sonucunda boşluklar dahildir.
+</p>
+
+<h3>Boşluksuz karakter sayısına noktalama işaretleri dahil mi?</h3>
+
+<p>
+Evet. Nokta, virgül, soru işareti ve benzeri noktalama
+işaretleri karakter olarak sayılır.
+</p>
+
+<h3>Satır sonları karakter olarak sayılır mı?</h3>
+
+<p>
+Toplam karakter sayısında JavaScript metin değeri içinde bulunan
+satır sonu karakterleri de sayılır. Boşluksuz karakter hesabında
+ise boşluk karakterleri kaldırılır.
+</p>
+
+<h3>Boş metinde kaç kelime çıkar?</h3>
+
+<p>
+Boş metinde sonuç
+<strong>0 kelime</strong>
+olarak gösterilir.
+</p>
+
+<h3>Paragraf sayısı nasıl belirlenir?</h3>
+
+<p>
+Bir veya daha fazla boş satırla ayrılan dolu metin blokları
+ayrı paragraf olarak sayılır.
+</p>
+
+<h3>Okuma süresi kesin midir?</h3>
+
+<p>
+Hayır. Dakikada 200 kelimelik varsayıma dayanan yaklaşık bir sonuçtur.
+</p>
+
+<h3>Kelime ve karakter sayacı ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio Kelime ve Karakter Sayacı ücretsizdir
+ve üyelik gerektirmez.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Bilgilendirme</h2>
+
+<div class="warning-box">
+
+Kelime sınırlarının tanımı kullanılan dile ve yazım biçimine göre
+değişebilir.
+
+<br><br>
+
+Bu araç genel kullanım için boşluk tabanlı kelime sayımı yapar.
+Özel dilbilimsel tokenizasyon veya akademik metin çözümlemesi yapmaz.
+
+</div>
+
+<p>
+<strong>Son güncelleme: Kasım 2026</strong>
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Diğer Ücretsiz Araçlar</h2>
+
+<p>
+<a href="/yuzde-hesaplama.html">
+Yüzde Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/birim-fiyat-hesaplama.html">
+Birim Fiyat Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/agirlikli-ortalama-hesaplama.html">
+Ağırlıklı Ortalama Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/iki-tarih-arasi-gun-hesaplama.html">
+İki Tarih Arası Gün Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/desi-hesaplama.html">
+Desi Hesaplama →
+</a>
+</p>
+
+</section>
 
 </main>
 
-
 <footer>
-  <div class="wrap">
-    © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
-  </div>
+
+<div class="wrap">
+
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
+
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
+
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
+
+</div>
+
 </footer>
 
-
 <script>
-function say() {
-  const metin = document.getElementById("metin").value;
-  const sonucAlani = document.getElementById("sonuc");
 
-  const temizMetin = metin.trim();
+function formatla(sayi){
 
-  const kelimeSayisi =
-    temizMetin === ""
-      ? 0
-      : temizMetin.split(/\s+/).length;
+return new Intl.NumberFormat(
+"tr-TR"
+).format(sayi);
 
-  const karakterSayisi = metin.length;
-
-  const bosluksuzKarakterSayisi =
-    metin.replace(/\s/g, "").length;
-
-  sonucAlani.innerHTML =
-    "Kelime: <strong>" + kelimeSayisi + "</strong><br>" +
-    "Karakter: <strong>" + karakterSayisi + "</strong><br>" +
-    "Boşluksuz karakter: <strong>" +
-    bosluksuzKarakterSayisi +
-    "</strong>";
 }
+
+
+function say(){
+
+const metin =
+document
+.getElementById("metin")
+.value;
+
+
+const temizMetin =
+metin.trim();
+
+
+const kelimeSayisi =
+temizMetin === ""
+?
+0
+:
+temizMetin
+.split(/\s+/)
+.filter(Boolean)
+.length;
+
+
+const karakterSayisi =
+metin.length;
+
+
+const bosluksuzKarakterSayisi =
+metin
+.replace(/\s/g,"")
+.length;
+
+
+const satirSayisi =
+metin === ""
+?
+0
+:
+metin
+.split(/\r\n|\r|\n/)
+.length;
+
+
+let paragrafSayisi =
+0;
+
+
+if(
+temizMetin !== ""
+){
+
+paragrafSayisi =
+temizMetin
+.split(
+/(?:\r?\n)[\t ]*(?:\r?\n)+/
+)
+.filter(function(paragraf){
+
+return paragraf.trim() !== "";
+
+})
+.length;
+
+}
+
+
+const okumaDakika =
+kelimeSayisi === 0
+?
+0
+:
+kelimeSayisi / 200;
+
+
+let okumaMetni;
+
+
+if(
+okumaDakika === 0
+){
+
+okumaMetni =
+"0 dk";
+
+}
+else if(
+okumaDakika < 1
+){
+
+const saniye =
+Math.max(
+1,
+Math.round(
+okumaDakika *
+60
+)
+);
+
+okumaMetni =
+"≈ " +
+saniye +
+" sn";
+
+}
+else{
+
+const dakika =
+Math.ceil(
+okumaDakika
+);
+
+okumaMetni =
+"≈ " +
+dakika +
+" dk";
+
+}
+
+
+document
+.getElementById("kelimeSonuc")
+.textContent =
+formatla(
+kelimeSayisi
+);
+
+
+document
+.getElementById("karakterSonuc")
+.textContent =
+formatla(
+karakterSayisi
+);
+
+
+document
+.getElementById("bosluksuzSonuc")
+.textContent =
+formatla(
+bosluksuzKarakterSayisi
+);
+
+
+document
+.getElementById("satirSonuc")
+.textContent =
+formatla(
+satirSayisi
+);
+
+
+document
+.getElementById("paragrafSonuc")
+.textContent =
+formatla(
+paragrafSayisi
+);
+
+
+document
+.getElementById("okumaSonuc")
+.textContent =
+okumaMetni;
+
+
+document
+.getElementById("sonuc")
+.innerHTML =
+
+"<strong>" +
+formatla(
+kelimeSayisi
+) +
+" kelime</strong>" +
+
+" • " +
+
+formatla(
+karakterSayisi
+) +
+" karakter" +
+
+" • " +
+
+formatla(
+bosluksuzKarakterSayisi
+) +
+" boşluksuz karakter";
+
+}
+
+
+document
+.getElementById("metin")
+.addEventListener(
+"input",
+say
+);
+
+
+document
+.getElementById("year")
+.textContent =
+new Date().getFullYear();
+
+
+say();
+
 </script>
 
 </body>
