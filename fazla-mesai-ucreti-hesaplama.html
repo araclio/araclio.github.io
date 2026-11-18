@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Fazla Mesai Hesaplama 2026 | Mesai Ücreti Hesapla - Araclio</title>
+<title>Fazla Mesai Hesaplama 2026 | Fazla Çalışma Ücreti - Araclio</title>
 
 <meta
 name="description"
-content="2026 fazla mesai hesaplama aracı. Brüt maaş ve mesai saatinizi girerek %50 zamlı fazla çalışma veya %25 zamlı fazla sürelerle çalışma ücretinizi hesaplayın."
+content="2026 fazla mesai hesaplama aracı. %50 zamlı fazla çalışma ve %25 zamlı fazla sürelerle çalışma ücretini brüt olarak hesaplayın."
 >
 
 <meta name="robots" content="index,follow">
@@ -29,16 +29,18 @@ rel="canonical"
 href="https://araclio.com/fazla-mesai-ucreti-hesaplama.html"
 >
 
+<link rel="stylesheet" href="style.css">
+
 <meta property="og:type" content="website">
 
 <meta
 property="og:title"
-content="Fazla Mesai Hesaplama 2026 | Mesai Ücreti Hesapla"
+content="Fazla Mesai Hesaplama 2026 | Araclio"
 >
 
 <meta
 property="og:description"
-content="Brüt maaş ve çalışma saatinize göre %50 veya %25 zamlı tahmini brüt fazla mesai ücretinizi ücretsiz hesaplayın."
+content="%50 zamlı fazla çalışma ve %25 zamlı fazla sürelerle çalışma için tahmini brüt ücretinizi hesaplayın."
 >
 
 <meta
@@ -49,268 +51,88 @@ content="https://araclio.com/fazla-mesai-ucreti-hesaplama.html"
 <meta property="og:site_name" content="Araclio">
 
 <style>
-*{
-box-sizing:border-box;
-}
 
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:
-radial-gradient(circle at 50% -10%,#123b69 0,#071a30 32%,#04101f 65%,#020a14 100%);
-color:#fff;
-min-height:100vh;
-}
-
-.wrap{
-width:min(850px,calc(100% - 28px));
-margin:auto;
-}
-
-header{
-background:rgba(3,14,27,.95);
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.nav{
-height:70px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.brand{
-font-size:34px;
-font-weight:900;
-text-decoration:none;
-color:#fff;
-}
-
-.brand span{
-color:#ffd400;
-}
-
-.tag{
-font-size:12px;
-color:#9db2c8;
-font-weight:bold;
-}
-
-.hero{
-padding:45px 0 25px;
-text-align:center;
-}
-
-.eyebrow{
-color:#ffd400;
-font-size:12px;
-font-weight:900;
-letter-spacing:1.5px;
-}
-
-h1{
-font-size:clamp(32px,6vw,48px);
-margin:12px 0;
-line-height:1.05;
-}
-
-.hero p{
-max-width:700px;
-margin:15px auto 0;
-color:#b7c7d8;
-line-height:1.65;
-}
-
-.card{
-margin:18px 0;
-padding:24px;
-border-radius:18px;
-background:linear-gradient(145deg,#102a44,#081a2d);
-border:1px solid rgba(255,255,255,.09);
-box-shadow:0 9px 28px rgba(0,0,0,.2);
-}
-
-.card h2{
-margin-top:0;
-font-size:24px;
-}
-
-.card h3{
-margin-top:25px;
-}
-
-.card p,
-.card li{
-color:#b4c3d2;
-line-height:1.7;
-}
-
-label{
-display:block;
-font-weight:bold;
-margin-top:18px;
-}
-
-input,
-select{
-width:100%;
-margin-top:8px;
-padding:15px;
-border:1px solid #29435d;
-border-radius:11px;
-background:#061526;
-color:#fff;
-font-size:16px;
-outline:none;
-}
-
-input:focus,
-select:focus{
-border-color:#42aaff;
-}
-
-button{
-width:100%;
-margin-top:22px;
-padding:16px;
-border:0;
-border-radius:12px;
-background:#ffd400;
-color:#071321;
-font-size:17px;
-font-weight:900;
-cursor:pointer;
-}
-
-button:hover{
-filter:brightness(1.05);
-}
-
-.result{
-margin-top:20px;
-padding:20px;
-border-radius:13px;
-background:#061526;
-border:1px solid #1d4567;
-line-height:1.8;
-}
-
-.result-main{
-font-size:28px;
-font-weight:900;
-color:#ffd400;
-margin-bottom:12px;
-}
-
-.row{
-display:flex;
-justify-content:space-between;
-gap:20px;
-padding:10px 0;
-border-bottom:1px solid rgba(255,255,255,.07);
-}
-
-.row span{
-color:#aebdcb;
-}
-
-.row strong{
-text-align:right;
-}
-
-.info{
-padding:17px;
-border-radius:12px;
-background:#061526;
-border-left:4px solid #ffd400;
-line-height:1.7;
-color:#b4c3d2;
-}
-
-.warning{
-padding:17px;
-margin-top:16px;
-border-radius:12px;
-background:#171306;
-border:1px solid #6d5d12;
-line-height:1.7;
-color:#d9cf9c;
-}
-
-.two{
+.form-grid{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
+grid-template-columns:repeat(2,1fr);
+gap:14px;
 }
 
-.example-grid{
+.result-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:12px;
-margin-top:16px;
+margin-top:18px;
 }
 
-.example{
+.result-box{
+background:#f5f5f5;
 padding:16px;
-border-radius:12px;
-background:#061526;
-border:1px solid #1d4567;
+border-radius:10px;
+color:#222;
 }
 
-.example strong{
+.result-box strong{
 display:block;
-color:#ffd400;
-font-size:18px;
-margin-bottom:5px;
+margin-bottom:7px;
 }
 
-a{
-color:#52b7ff;
+.big-result{
+font-size:1.35rem;
+font-weight:700;
 }
 
-footer{
-margin-top:40px;
-padding:30px 0;
-text-align:center;
-color:#8195a8;
-border-top:1px solid rgba(255,255,255,.08);
-}
-
-footer p{
+.info-box{
+margin:18px 0;
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
 line-height:1.8;
 }
 
-footer a{
-color:#9db2c8;
-text-decoration:none;
+.warning-box{
+margin:18px 0;
+padding:16px;
+border:1px solid #e7d28b;
+border-radius:10px;
+background:#fff8e1;
+color:#4d3d00;
+line-height:1.8;
 }
 
-footer a:hover{
-color:#ffd400;
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
 }
 
-@media(max-width:600px){
-
-.card{
-padding:19px;
+table{
+width:100%;
+border-collapse:collapse;
+min-width:620px;
 }
 
-.tag{
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+#girdiSaatlik{
 display:none;
 }
 
-.two,
-.example-grid{
+@media(max-width:650px){
+
+.form-grid,
+.result-grid{
 grid-template-columns:1fr;
 }
 
-.row{
-font-size:14px;
 }
 
-}
 </style>
-
 
 <script type="application/ld+json">
 {
@@ -321,7 +143,7 @@ font-size:14px;
   "applicationCategory":"FinanceApplication",
   "operatingSystem":"Any",
   "inLanguage":"tr-TR",
-  "description":"Brüt maaş ve çalışma saatine göre yüzde 50 zamlı fazla çalışma veya yüzde 25 zamlı fazla sürelerle çalışma ücretini hesaplayan ücretsiz araç.",
+  "description":"Yüzde 50 zamlı fazla çalışma ve yüzde 25 zamlı fazla sürelerle çalışma için tahmini brüt ücret hesaplayan ücretsiz araç.",
   "offers":{
     "@type":"Offer",
     "price":"0",
@@ -334,7 +156,6 @@ font-size:14px;
   }
 }
 </script>
-
 
 <script type="application/ld+json">
 {
@@ -357,7 +178,6 @@ font-size:14px;
 }
 </script>
 
-
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -365,18 +185,10 @@ font-size:14px;
   "mainEntity":[
     {
       "@type":"Question",
-      "name":"Fazla mesai ücreti nasıl hesaplanır?",
+      "name":"Fazla çalışma ücreti yüzde kaç zamlıdır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Aylık brüt ücretin 225'e bölünmesiyle normal saatlik ücret bulunur. Haftalık 45 saati aşan fazla çalışma için saatlik ücret genel olarak yüzde 50 artırılır ve fazla çalışma saatiyle çarpılır."
-      }
-    },
-    {
-      "@type":"Question",
-      "name":"Fazla mesai yüzde kaç zamlıdır?",
-      "acceptedAnswer":{
-        "@type":"Answer",
-        "text":"4857 sayılı İş Kanunu kapsamında haftalık 45 saati aşan fazla çalışma için normal saatlik ücret genel olarak yüzde 50 artırılır."
+        "text":"4857 sayılı İş Kanununa göre fazla çalışmanın her saati için normal saatlik ücret yüzde 50 artırılarak ödenir."
       }
     },
     {
@@ -384,15 +196,31 @@ font-size:14px;
       "name":"Fazla sürelerle çalışma yüzde kaç zamlıdır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Haftalık çalışma süresi sözleşmeyle 45 saatin altında belirlenmişse, sözleşme süresini aşan ve 45 saate kadar olan fazla sürelerle çalışma için saatlik ücret genel olarak yüzde 25 artırılır."
+        "text":"Haftalık sözleşme süresinin 45 saatin altında olduğu durumda bu süreyi aşan ve 45 saate kadar yapılan fazla sürelerle çalışma için normal saatlik ücret yüzde 25 artırılır."
       }
     },
     {
       "@type":"Question",
-      "name":"Yıllık fazla mesai sınırı kaç saattir?",
+      "name":"Yıllık fazla çalışma sınırı kaç saattir?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"4857 sayılı İş Kanunu kapsamında fazla çalışma süresinin toplamı bir yılda 270 saatten fazla olamaz."
+        "text":"4857 sayılı İş Kanununa göre fazla çalışma süresinin toplamı bir yılda 270 saatten fazla olamaz."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Fazla çalışma yerine serbest zaman kullanılabilir mi?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Kanundaki şartlar kapsamında işçi zamlı ücret yerine fazla çalıştığı her saat için 1 saat 30 dakika, fazla sürelerle çalıştığı her saat için 1 saat 15 dakika serbest zaman kullanabilir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Resmi tatil çalışması normal fazla mesaiyle aynı mı?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Hayır. Ulusal bayram ve genel tatil günlerindeki ücret hakkı İş Kanununun 47. maddesinde ayrıca düzenlenmiştir."
       }
     }
   ]
@@ -408,40 +236,55 @@ font-size:14px;
 <div class="wrap nav">
 
 <a class="brand" href="/">
-Arac<span>lio</span>
+Araclio
 </a>
 
 <span class="tag">
-ÜCRETSİZ HESAPLAMA ARAÇLARI
+Ücretsiz Online Araçlar
 </span>
 
 </div>
 
 </header>
 
-
 <main class="wrap">
 
 <section class="hero">
 
-<div class="eyebrow">
-2026 • MAAŞ • ÇALIŞMA • MESAİ
-</div>
+<p class="eyebrow">
+2026 • MAAŞ • ÇALIŞMA • FAZLA MESAİ
+</p>
 
 <h1>Fazla Mesai Ücreti Hesaplama</h1>
 
 <p>
-Aylık brüt maaşınızı ve fazla çalışma saatinizi girerek
 %50 zamlı fazla çalışma veya %25 zamlı fazla sürelerle
-çalışma için tahmini brüt mesai ücretinizi hesaplayın.
+çalışma için tahmini brüt hak edişinizi hesaplayın.
 </p>
 
 </section>
 
-
 <section class="card">
 
 <h2>Fazla Mesai Hesapla</h2>
+
+<label for="hesapYontemi">
+Saatlik Ücret Hesaplama Yöntemi
+</label>
+
+<select id="hesapYontemi">
+
+<option value="225">
+Haftalık 45 saatlik aylık ücret — Maaş ÷ 225
+</option>
+
+<option value="saatlik">
+Normal saatlik brüt ücreti kendim gireceğim
+</option>
+
+</select>
+
+<div id="girdiMaas">
 
 <label for="maas">
 Aylık Brüt Maaş (TL)
@@ -456,26 +299,43 @@ inputmode="decimal"
 placeholder="Örnek: 45000"
 >
 
+</div>
 
-<div class="two">
+<div id="girdiSaatlik">
+
+<label for="saatlikUcret">
+Normal Saatlik Brüt Ücret (TL)
+</label>
+
+<input
+id="saatlikUcret"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 220"
+>
+
+</div>
+
+<div class="form-grid">
 
 <div>
 
 <label for="saat">
-Fazla Çalışma Saati
+Fazla Çalışma Süresi (saat)
 </label>
 
 <input
 id="saat"
 type="number"
 min="0.01"
-step="0.5"
+step="0.01"
 inputmode="decimal"
 placeholder="Örnek: 10"
 >
 
 </div>
-
 
 <div>
 
@@ -486,11 +346,11 @@ placeholder="Örnek: 10"
 <select id="tur">
 
 <option value="1.5">
-Fazla çalışma (%50 zamlı)
+Fazla çalışma — %50 zamlı
 </option>
 
 <option value="1.25">
-Fazla sürelerle çalışma (%25 zamlı)
+Fazla sürelerle çalışma — %25 zamlı
 </option>
 
 </select>
@@ -499,411 +359,681 @@ Fazla sürelerle çalışma (%25 zamlı)
 
 </div>
 
-
 <button type="button" onclick="hesapla()">
 Mesai Ücretini Hesapla
 </button>
 
-
 <div id="sonuc" class="result" aria-live="polite">
+Bilgileri girerek hesaplama yapın.
+</div>
 
-Maaşınızı ve fazla çalışma saatinizi girerek hesaplama yapabilirsiniz.
+<div id="sonucKutulari" class="result-grid" style="display:none;">
+
+<div class="result-box">
+<strong>Normal Saatlik Ücret</strong>
+<span id="normalSaatlik">-</span>
+</div>
+
+<div class="result-box">
+<strong>Zamlı Saatlik Ücret</strong>
+<span id="zamliSaatlik">-</span>
+</div>
+
+<div class="result-box">
+<strong>Çalışma Süresi</strong>
+<span id="sureSonuc">-</span>
+</div>
+
+<div class="result-box">
+<strong>Toplam Brüt Hak Ediş</strong>
+<span id="toplamSonuc" class="big-result">-</span>
+</div>
 
 </div>
 
+<div class="warning-box">
 
-<div class="warning">
+<strong>225 böleni uyarısı</strong>
 
-<strong>Önemli:</strong>
+<br><br>
 
-Bu araç genel uygulamadaki brüt matematiksel hesabı gösterir.
-Gerçek hak ediş; ücret yapısı, prim sistemi, iş sözleşmesi,
-toplu iş sözleşmesi, bordro kayıtları, denkleştirme uygulaması
-ve çalışmanın niteliğine göre farklı olabilir.
+Aylık brüt ücretin 225'e bölünmesi,
+haftalık 45 saatlik çalışma düzenindeki yaygın hesap yöntemidir.
+
+<br><br>
+
+Haftalık sözleşme süreniz 45 saatin altındaysa normal saatlik
+ücretiniz her durumda maaş ÷ 225 olmayabilir.
+
+<br><br>
+
+Bu durumda bordronuzdaki veya sözleşmenize göre belirlenen
+<strong>normal saatlik brüt ücreti</strong>
+kullanmanız daha uygundur.
 
 </div>
 
 </section>
 
-
 <section class="card">
 
-<h2>Fazla Mesai Ücreti Nasıl Hesaplanır?</h2>
+<h2>Fazla Çalışma Nedir?</h2>
 
-<div class="info">
+<p>
+4857 sayılı İş Kanununda, denkleştirme uygulamasına ilişkin
+istisnalar saklı olmak üzere haftalık
+<strong>45 saati aşan çalışmalar</strong>
+fazla çalışma olarak düzenlenmiştir.
+</p>
 
-<strong>Normal saatlik brüt ücret:</strong>
+<div class="info-box">
 
-<br>
-
-Aylık brüt maaş ÷ 225
-
-<br><br>
-
-<strong>%50 zamlı fazla çalışma:</strong>
-
-<br>
-
-Saatlik ücret × 1,50 × fazla çalışma saati
+<strong>Fazla çalışma:</strong>
 
 <br><br>
 
-<strong>%25 zamlı fazla sürelerle çalışma:</strong>
-
-<br>
-
-Saatlik ücret × 1,25 × çalışma saati
+Normal saatlik ücret × 1,50
 
 </div>
 
 <p>
-Aylık ücretli ve haftalık 45 saat çalışan işçiler için
-uygulamadaki hesaplamalarda aylık ücretin 225 saate
-bölünmesiyle saatlik ücretin bulunması yöntemi kullanılır.
+Yani her bir fazla çalışma saati normal saatlik ücretin
+<strong>%50 artırılmış</strong>
+tutarı üzerinden hesaplanır.
 </p>
 
 </section>
 
-
 <section class="card">
 
-<h2>%50 Zamlı Fazla Mesai Nedir?</h2>
+<h2>Fazla Sürelerle Çalışma Nedir?</h2>
 
 <p>
-4857 sayılı İş Kanunu kapsamında haftalık 45 saati aşan
-çalışmalar genel olarak fazla çalışma olarak değerlendirilir.
-</p>
-
-<p>
-Her bir fazla çalışma saati için normal saatlik ücretin
-genel olarak yüzde 50 artırılmış tutarı esas alınır.
-</p>
-
-<div class="info">
-
-Normal saatlik ücret:
-
-<strong>200 TL</strong>
-
-<br><br>
-
-%50 zamlı fazla çalışma ücreti:
-
-<br>
-
-200 × 1,50 =
-
-<strong>300 TL / saat</strong>
-
-</div>
-
-</section>
-
-
-<section class="card">
-
-<h2>%25 Zamlı Fazla Sürelerle Çalışma Nedir?</h2>
-
-<p>
-Haftalık çalışma süresi iş sözleşmesiyle 45 saatin altında
+Haftalık çalışma süresi sözleşmeyle 45 saatin altında
 belirlenmişse, sözleşmedeki haftalık süreyi aşan ancak
-45 saate kadar olan çalışmalar fazla sürelerle çalışma
-olarak değerlendirilir.
+45 saate kadar yapılan çalışmalar
+<strong>fazla sürelerle çalışma</strong>
+olarak adlandırılır.
 </p>
 
-<p>
-Bu çalışmalar için normal saatlik ücret genel olarak
-yüzde 25 artırılır.
-</p>
+<div class="info-box">
 
-<div class="info">
-
-Normal saatlik ücret:
-
-<strong>200 TL</strong>
+<strong>Fazla sürelerle çalışma:</strong>
 
 <br><br>
 
-%25 zamlı saatlik ücret:
+Normal saatlik ücret × 1,25
 
-<br>
+</div>
 
-200 × 1,25 =
+<p>
+Örneğin haftalık sözleşme süresi 40 saat olan bir işçinin
+44 saat çalışması halinde genel kural uyarınca 4 saat
+fazla sürelerle çalışma oluşur.
+</p>
 
-<strong>250 TL / saat</strong>
+</section>
+
+<section class="card">
+
+<h2>45 Saatlik Çalışmada 225 Saat Hesabı</h2>
+
+<p>
+Haftalık 45 saatlik normal çalışma düzeninde aylık maktu
+ücret üzerinden yapılan yaygın hesapta saatlik brüt ücret:
+</p>
+
+<div class="info-box">
+
+Aylık Brüt Ücret ÷ 225
+
+</div>
+
+<p>
+olarak hesaplanır.
+</p>
+
+<div class="info-box">
+
+Örnek:
+
+<br><br>
+
+45.000 TL ÷ 225
+
+<br><br>
+
+=
+
+<br><br>
+
+<strong>200 TL normal saatlik brüt ücret</strong>
 
 </div>
 
 </section>
 
+<section class="card">
+
+<h2>45 Saatten Az Sözleşmede Neden 225 Her Zaman Kullanılmaz?</h2>
+
+<p>
+Haftalık normal çalışma süresi iş sözleşmesiyle
+45 saatin altında belirlenmiş olabilir.
+</p>
+
+<p>
+Bu durumda işçinin normal saatlik ücretinin hesabında
+45 saat çalışıyormuş gibi otomatik şekilde 225 böleninin
+kullanılması her somut durumda doğru olmayabilir.
+</p>
+
+<div class="warning-box">
+
+Bu nedenle haftalık normal süreniz 45 saatin altındaysa,
+hesaplayıcıda
+<strong>“Normal saatlik brüt ücreti kendim gireceğim”</strong>
+seçeneğini kullanın.
+
+</div>
+
+</section>
 
 <section class="card">
 
-<h2>45.000 TL Maaşla 10 Saat Fazla Mesai Ne Kadar?</h2>
+<h2>45.000 TL Maaşla 10 Saat Fazla Çalışma</h2>
 
 <p>
-Aylık brüt ücretin
-<strong>45.000 TL</strong>
-olduğunu ve
-<strong>10 saat</strong>
-%50 zamlı fazla çalışma yapıldığını düşünelim.
+Haftalık 45 saatlik çalışma düzenindeki örnek:
 </p>
 
-<div class="info">
+<div class="info-box">
 
-45.000 ÷ 225 =
+45.000 ÷ 225
+
+=
 
 <strong>200 TL normal saatlik ücret</strong>
 
 <br><br>
 
-200 × 1,50 =
+200 × 1,50
 
-<strong>300 TL zamlı saatlik ücret</strong>
+=
+
+<strong>300 TL fazla çalışma saat ücreti</strong>
 
 <br><br>
 
-300 × 10 =
+300 × 10
 
-<strong>3.000 TL brüt fazla mesai</strong>
+=
 
-</div>
-
-</section>
-
-
-<section class="card">
-
-<h2>Fazla Mesai Hesaplama Örnekleri</h2>
-
-<div class="example-grid">
-
-<div class="example">
-<strong>30.000 TL Maaş</strong>
-10 saat %50 mesai:
-<br>
-<strong>2.000 TL</strong>
-</div>
-
-<div class="example">
-<strong>40.000 TL Maaş</strong>
-10 saat %50 mesai:
-<br>
-<strong>2.666,67 TL</strong>
-</div>
-
-<div class="example">
-<strong>45.000 TL Maaş</strong>
-10 saat %50 mesai:
-<br>
-<strong>3.000 TL</strong>
-</div>
-
-<div class="example">
-<strong>50.000 TL Maaş</strong>
-10 saat %50 mesai:
-<br>
-<strong>3.333,33 TL</strong>
-</div>
-
-<div class="example">
-<strong>60.000 TL Maaş</strong>
-10 saat %50 mesai:
-<br>
-<strong>4.000 TL</strong>
-</div>
-
-<div class="example">
-<strong>75.000 TL Maaş</strong>
-10 saat %50 mesai:
-<br>
-<strong>5.000 TL</strong>
-</div>
+<strong>3.000 TL brüt fazla çalışma ücreti</strong>
 
 </div>
 
 </section>
 
-
 <section class="card">
 
-<h2>Fazla Mesai Yıllık Sınırı Kaç Saat?</h2>
+<h2>%25 ve %50 Ne Zaman Kullanılır?</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+<th>Çalışma</th>
+<th>Genel Durum</th>
+<th>Zam</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>Fazla sürelerle çalışma</td>
+<td>Sözleşme süresinin üzeri, 45 saate kadar</td>
+<td>%25</td>
+</tr>
+
+<tr>
+<td>Fazla çalışma</td>
+<td>Haftalık 45 saatin üzeri</td>
+<td>%50</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
 
 <p>
-4857 sayılı İş Kanunu ve ilgili fazla çalışma düzenlemeleri
-kapsamında fazla çalışma süresinin toplamının bir yılda
-<strong>270 saatten fazla olmaması</strong> öngörülmektedir.
-</p>
-
-<p>
-Bu sınır işyeri veya yapılan iş için değil, çalışan bakımından
-değerlendirilir.
+İş veya toplu iş sözleşmesiyle işçi lehine daha yüksek
+oranlar belirlenmiş olabilir.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>Fazla Çalışma Sürelerinde Yuvarlama</h2>
+
+<p>
+Fazla Çalışma ve Fazla Sürelerle Çalışma Yönetmeliğine göre
+fazla çalışma sürelerinin hesabında:
+</p>
+
+<div class="info-box">
+
+<strong>Yarım saatten az süre:</strong>
+
+<br>
+
+30 dakika
+
+<br><br>
+
+<strong>Yarım saati aşan süre:</strong>
+
+<br>
+
+1 saat
+
+</div>
+
+<div class="warning-box">
+
+Bu hesaplayıcı girdiğiniz toplam saat değerini doğrudan kullanır.
+
+<br><br>
+
+Örneğin farklı günlerde yapılmış çok sayıda kısa çalışmanın
+mevzuattaki yuvarlama kuralına göre değerlendirilmesi gerekiyorsa
+bu süreleri tek toplam sayı olarak girmek resmî bordro hesabıyla
+aynı sonucu vermeyebilir.
+
+</div>
+
+</section>
 
 <section class="card">
 
-<h2>Fazla Mesai Yerine Serbest Zaman Kullanılabilir mi?</h2>
+<h2>Yıllık Fazla Çalışma Sınırı</h2>
 
 <p>
-Kanundaki şartlar kapsamında çalışan, yaptığı fazla çalışmanın
-zamlı ücretini almak yerine serbest zaman kullanmayı tercih edebilir.
+4857 sayılı İş Kanununa göre fazla çalışma süresinin toplamı
+bir yılda:
 </p>
 
+<div class="info-box">
+
+<strong>270 saatten fazla olamaz.</strong>
+
+</div>
+
 <p>
-Fazla çalışılan her saat karşılığında
-<strong>1 saat 30 dakika</strong>,
-fazla sürelerle çalışılan her saat karşılığında ise
-<strong>1 saat 15 dakika</strong>
-serbest zaman söz konusu olabilir.
+Bu sınır çalışan bazında değerlendirilir.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>Fazla Çalışma Yerine Serbest Zaman</h2>
+
+<p>
+Kanundaki şartlar kapsamında işçi, zamlı ücret yerine
+serbest zaman kullanmayı tercih edebilir.
+</p>
+
+<div class="info-box">
+
+<strong>1 saat fazla çalışma:</strong>
+
+<br>
+
+1 saat 30 dakika serbest zaman
+
+<br><br>
+
+<strong>1 saat fazla sürelerle çalışma:</strong>
+
+<br>
+
+1 saat 15 dakika serbest zaman
+
+</div>
+
+<p>
+Hak edilen serbest zaman genel olarak altı aylık süre
+içinde kullandırılır.
+</p>
+
+</section>
 
 <section class="card">
 
-<h2>Fazla Mesai Brüt mü Net mi Hesaplanır?</h2>
+<h2>Resmî Tatil Çalışması Fazla Mesaiyle Aynı mı?</h2>
 
 <p>
-Bu hesaplayıcı <strong>brüt tahmini fazla mesai hak edişini</strong>
-gösterir.
+Hayır.
 </p>
 
 <p>
-Çalışanın bordrosuna yansıyacak net ödeme; SGK primi,
-işsizlik sigortası primi, gelir vergisi matrahı ve diğer
-bordro unsurlarına göre değişebilir.
+Ulusal bayram ve genel tatil günü çalışması,
+İş Kanununun fazla çalışma hükmünden ayrı olarak
+47. maddede düzenlenmiştir.
+</p>
+
+<div class="info-box">
+
+Genel kural olarak işçi tatil gününde çalışmazsa o günün
+ücretine hak kazanır.
+
+<br><br>
+
+Tatil yapmayarak çalışırsa ayrıca çalıştığı her gün için
+<strong>bir günlük ücret</strong>
+ödenir.
+
+</div>
+
+<div class="warning-box">
+
+Bu nedenle yalnızca
+<strong>“resmî tatilde çalıştım”</strong>
+bilgisiyle bu sayfadaki %50 fazla çalışma formülünü
+otomatik olarak kullanmak doğru değildir.
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Hafta Tatili Çalışması</h2>
+
+<p>
+Hafta tatilindeki çalışma da yalnızca bu sayfadaki basit
+%50 formülüne indirgenmemelidir.
 </p>
 
 <p>
-Tahmini maaş hesabı için:
+Haftalık toplam çalışma süresi, hafta tatili hakkı,
+ücret türü ve somut çalışma düzeni birlikte değerlendirilmelidir.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Denkleştirme Fazla Mesaiyi Etkiler mi?</h2>
+
+<p>
+Evet.
+</p>
+
+<p>
+Kanundaki şartlara uygun bir denkleştirme uygulamasında,
+bazı haftalarda 45 saatin üzerinde çalışma yapılması tek başına
+otomatik fazla çalışma anlamına gelmeyebilir.
+</p>
+
+<p>
+Denkleştirme dönemindeki ortalama haftalık çalışma süresi
+ayrıca dikkate alınır.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Günlük Çalışma Süresi de Önemli mi?</h2>
+
+<p>
+Evet. Fazla çalışma değerlendirmesi yalnızca aylık toplam
+saat üzerinden yapılmaz.
+</p>
+
+<p>
+Günlük çalışma sınırları, gece çalışması ve mevzuatta
+fazla çalışma yapılamayacak işler gibi özel hükümler bulunabilir.
+</p>
+
+<div class="warning-box">
+
+Yer altı maden işleri gibi bazı çalışma türlerinde farklı
+süre ve zam oranları geçerlidir.
+
+<br><br>
+
+Bu genel hesaplayıcı bu özel çalışma türleri için
+kullanılmamalıdır.
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Fazla Mesai Brüt mü Net mi?</h2>
+
+<p>
+Bu hesaplayıcı
+<strong>brüt fazla çalışma hak edişini</strong>
+hesaplar.
+</p>
+
+<p>
+Net bordro ödemesi; SGK primi, işsizlik sigortası primi,
+gelir vergisi matrahı ve çalışanın o dönemdeki diğer bordro
+unsurlarına göre değişebilir.
+</p>
+
+<p>
+Maaş hesabı için:
 <a href="/brut-net-maas-hesaplama.html">
-Brüt Net Maaş Hesaplama
+Brüt Net Maaş Hesaplama →
 </a>
-aracını kullanabilirsiniz.
 </p>
 
 </section>
 
-
 <section class="card">
 
-<h2>225 Saat Nereden Geliyor?</h2>
+<h2>Fazla Mesai Örnekleri</h2>
 
-<p>
-Aylık ücretli ve haftalık 45 saat çalışma esasına göre yapılan
-yaygın hesaplamada günlük 7,5 saat üzerinden aylık 225 saatlik
-hesaplama süresi kullanılır.
-</p>
+<div class="table-wrap">
 
-<div class="info">
+<table>
 
-30 gün × 7,5 saat =
+<thead>
 
-<strong>225 saat</strong>
+<tr>
+<th>Aylık Brüt Ücret</th>
+<th>Normal Saatlik</th>
+<th>10 Saat %50</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+<td>30.000 TL</td>
+<td>133,33 TL</td>
+<td>2.000 TL</td>
+</tr>
+
+<tr>
+<td>40.000 TL</td>
+<td>177,78 TL</td>
+<td>2.666,67 TL</td>
+</tr>
+
+<tr>
+<td>45.000 TL</td>
+<td>200 TL</td>
+<td>3.000 TL</td>
+</tr>
+
+<tr>
+<td>50.000 TL</td>
+<td>222,22 TL</td>
+<td>3.333,33 TL</td>
+</tr>
+
+<tr>
+<td>60.000 TL</td>
+<td>266,67 TL</td>
+<td>4.000 TL</td>
+</tr>
+
+</tbody>
+
+</table>
 
 </div>
 
 <p>
-Bu nedenle normal saatlik ücretin belirlenmesinde uygulamada
-aylık brüt ücretin 225'e bölünmesi yöntemi kullanılmaktadır.
+Tablodaki örnekler haftalık 45 saatlik çalışma düzeninde
+<strong>maaş ÷ 225</strong>
+yöntemine göre hazırlanmıştır.
 </p>
 
 </section>
-
 
 <section class="card">
 
 <h2>Sık Sorulan Sorular</h2>
 
-
-<h3>40.000 TL maaşla 10 saat fazla mesai ne kadar?</h3>
+<h3>Fazla mesai yüzde kaç zamlıdır?</h3>
 
 <p>
-40.000 TL brüt ücret için normal saatlik ücret yaklaşık
-177,78 TL'dir. %50 zamlı 10 saatlik fazla çalışma yaklaşık
-<strong>2.666,67 TL brüt</strong>
-olur.
+Haftalık 45 saati aşan fazla çalışma için normal saatlik
+ücret genel olarak
+<strong>%50 artırılır.</strong>
 </p>
 
-
-<h3>50.000 TL maaşla 10 saat fazla mesai ne kadar?</h3>
+<h3>Fazla sürelerle çalışma yüzde kaç zamlıdır?</h3>
 
 <p>
-50.000 TL brüt ücret için normal saatlik ücret yaklaşık
-222,22 TL'dir. %50 zamlı 10 saatlik fazla çalışma yaklaşık
-<strong>3.333,33 TL brüt</strong>
-olur.
+Sözleşmedeki haftalık süre 45 saatin altındaysa,
+bu süreyi aşan ve 45 saate kadar yapılan çalışmalar için
+normal saatlik ücret
+<strong>%25 artırılır.</strong>
 </p>
 
-
-<h3>60.000 TL maaşla 10 saat fazla mesai ne kadar?</h3>
+<h3>Her maaş 225'e mi bölünür?</h3>
 
 <p>
-60.000 TL brüt ücret için normal saatlik ücret yaklaşık
-266,67 TL'dir. %50 zamlı 10 saat fazla çalışma yaklaşık
-<strong>4.000 TL brüt</strong>
-olur.
+Hayır. 225 böleni özellikle haftalık 45 saatlik aylık
+çalışma düzenindeki yaygın hesaplama içindir.
+Haftalık normal çalışma süresi daha düşükse saatlik ücret
+ayrıca değerlendirilmelidir.
 </p>
 
-
-<h3>Fazla mesai yüzde kaç zamlı?</h3>
+<h3>40 saatlik sözleşmede 44 saat çalışırsam ne olur?</h3>
 
 <p>
-Haftalık 45 saati aşan fazla çalışma için normal saatlik ücret
-genel olarak yüzde 50 artırılır.
+Genel kurala göre 40 ile 44 saat arasındaki 4 saat
+fazla sürelerle çalışma niteliğindedir ve normal saatlik
+ücret %25 artırılarak hesaplanır.
 </p>
 
-
-<h3>Fazla sürelerle çalışma yüzde kaç zamlı?</h3>
+<h3>Yıllık fazla çalışma sınırı kaç saat?</h3>
 
 <p>
-Sözleşmedeki haftalık çalışma süresi 45 saatin altındaysa,
-bu süreyi aşan ve 45 saate kadar olan çalışma için saatlik
-ücret genel olarak yüzde 25 artırılır.
+Genel sınır
+<strong>270 saattir.</strong>
 </p>
 
-
-<h3>Yıllık fazla mesai sınırı kaç saat?</h3>
+<h3>Fazla çalışma yerine izin kullanılabilir mi?</h3>
 
 <p>
-Fazla çalışma süresinin toplamı genel olarak yılda
-<strong>270 saatten fazla olamaz.</strong>
+Kanundaki şartlar kapsamında evet. Fazla çalışma için
+her saate 1 saat 30 dakika, fazla sürelerle çalışma için
+her saate 1 saat 15 dakika serbest zaman söz konusu olabilir.
 </p>
 
-
-<h3>Fazla mesai hesaplama aracı ücretsiz mi?</h3>
+<h3>Resmî tatil çalışması %50 fazla mesai midir?</h3>
 
 <p>
-Evet. Araclio Fazla Mesai Hesaplama aracı ücretsizdir
-ve üyelik gerektirmez.
+Doğrudan böyle kabul edilmez. Ulusal bayram ve genel tatil
+ücreti İş Kanununun 47. maddesinde ayrıca düzenlenmiştir.
+</p>
+
+<h3>Bu araç net fazla mesai ücretini hesaplar mı?</h3>
+
+<p>
+Hayır. Araç brüt tahmini hak edişi hesaplar.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>Kaynak ve Bilgilendirme</h2>
+
+<div class="warning-box">
+
+Bu hesaplayıcı genel nitelikte bilgilendirme ve
+matematiksel hesaplama amacıyla hazırlanmıştır.
+
+<br><br>
+
+Gerçek alacak; işçinin haftalık normal çalışma süresi,
+fiili çalışma saatleri, denkleştirme, çalışma günü,
+gece çalışması, hafta tatili, ulusal bayram ve genel tatil,
+iş veya toplu iş sözleşmesi ve özel çalışma hükümlerine
+göre değişebilir.
+
+<br><br>
+
+Uyuşmazlıklarda somut çalışma kayıtları ve yürürlükteki
+mevzuat esas alınmalıdır.
+
+</div>
+
+<p>
+<strong>Kaynaklar:</strong>
+4857 sayılı İş Kanunu;
+İş Kanununa İlişkin Fazla Çalışma ve Fazla Sürelerle
+Çalışma Yönetmeliği;
+Çalışma ve Sosyal Güvenlik Bakanlığı bilgilendirmeleri.
+</p>
+
+<p>
+<strong>Son güncelleme: Kasım 2026</strong>
+</p>
+
+</section>
 
 <section class="card">
 
 <h2>Diğer Maaş ve Çalışma Araçları</h2>
 
 <p>
+<a href="/brut-net-maas-hesaplama.html">
+Brüt Net Maaş Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/saatlik-gunluk-maas-hesaplama.html">
+Saatlik ve Günlük Maaş Hesaplama →
+</a>
+</p>
+
+<p>
 <a href="/maas-zam-hesaplama.html">
 Maaş Zam Hesaplama →
-</a>
-</p>
-
-<p>
-<a href="/asgari-ucret-hesaplama.html">
-Asgari Ücret Hesaplama 2026 →
-</a>
-</p>
-
-<p>
-<a href="/yillik-izin-ucreti-hesaplama.html">
-Yıllık İzin Ücreti Hesaplama →
 </a>
 </p>
 
@@ -920,54 +1050,20 @@ Kıdem Tazminatı Hesaplama →
 </p>
 
 <p>
+<a href="/yillik-izin-ucreti-hesaplama.html">
+Yıllık İzin Ücreti Hesaplama →
+</a>
+</p>
+
+<p>
 <a href="/issizlik-maasi-hesaplama.html">
 İşsizlik Maaşı Hesaplama →
 </a>
 </p>
 
-<p>
-<a href="/brut-net-maas-hesaplama.html">
-Brüt Net Maaş Hesaplama →
-</a>
-</p>
-
-<p>
-<a href="/saatlik-gunluk-aylik-maas.html">
-Saatlik, Günlük ve Aylık Maaş →
-</a>
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>Bilgilendirme</h2>
-
-<div class="warning">
-
-Bu araç genel bilgilendirme amacıyla hazırlanmış
-<strong>brüt tahmini hesaplama</strong>
-sonucu verir.
-
-<br><br>
-
-Çalışanın gerçek fazla çalışma alacağı; çalışma dönemi,
-ücret şekli, prim sistemi, sözleşme hükümleri, toplu iş
-sözleşmesi, denkleştirme, bordro kayıtları ve diğer hukuki
-koşullara göre farklılık gösterebilir.
-
-<br><br>
-
-Uyuşmazlık veya resmî işlem halinde yürürlükteki mevzuat,
-bordro kayıtları ve somut çalışma koşulları esas alınmalıdır.
-
-</div>
-
 </section>
 
 </main>
-
 
 <footer>
 
@@ -1003,7 +1099,6 @@ Araclio • Ücretsiz Online Araçlar
 
 </footer>
 
-
 <script>
 
 function para(deger){
@@ -1014,48 +1109,36 @@ return new Intl.NumberFormat(
 minimumFractionDigits:2,
 maximumFractionDigits:2
 }
-).format(deger);
+).format(deger) +
+" TL";
 
 }
 
 
 function hesapla(){
 
-const maasInput =
-document.getElementById("maas");
+const yontem =
+document.getElementById("hesapYontemi").value;
 
 const saatInput =
 document.getElementById("saat");
 
-const turInput =
-document.getElementById("tur");
+const tur =
+Number(
+document.getElementById("tur").value
+);
 
 const sonuc =
 document.getElementById("sonuc");
 
+const kutular =
+document.getElementById("sonucKutulari");
 
-const maas =
-Number(maasInput.value);
 
 const saat =
-Number(saatInput.value);
-
-const katsayi =
-Number(turInput.value);
-
-
-if(
-maasInput.value === "" ||
-!Number.isFinite(maas) ||
-maas <= 0
-){
-
-sonuc.innerHTML =
-"Lütfen sıfırdan büyük geçerli bir aylık brüt maaş girin.";
-
-return;
-
-}
+Number(
+saatInput.value
+);
 
 
 if(
@@ -1064,117 +1147,262 @@ saatInput.value === "" ||
 saat <= 0
 ){
 
-sonuc.innerHTML =
-"Lütfen sıfırdan büyük geçerli bir fazla çalışma saati girin.";
+sonuc.textContent =
+"Lütfen sıfırdan büyük geçerli bir çalışma süresi girin.";
+
+kutular.style.display =
+"none";
 
 return;
+
+}
+
+
+let normalSaatlik;
+
+
+if(
+yontem === "225"
+){
+
+const maasInput =
+document.getElementById("maas");
+
+const maas =
+Number(
+maasInput.value
+);
+
+
+if(
+maasInput.value === "" ||
+!Number.isFinite(maas) ||
+maas <= 0
+){
+
+sonuc.textContent =
+"Lütfen sıfırdan büyük geçerli bir aylık brüt maaş girin.";
+
+kutular.style.display =
+"none";
+
+return;
+
+}
+
+
+normalSaatlik =
+maas /
+225;
+
+}
+else{
+
+const saatlikInput =
+document.getElementById("saatlikUcret");
+
+const saatlik =
+Number(
+saatlikInput.value
+);
+
+
+if(
+saatlikInput.value === "" ||
+!Number.isFinite(saatlik) ||
+saatlik <= 0
+){
+
+sonuc.textContent =
+"Lütfen sıfırdan büyük geçerli bir normal saatlik brüt ücret girin.";
+
+kutular.style.display =
+"none";
+
+return;
+
+}
+
+
+normalSaatlik =
+saatlik;
 
 }
 
 
 if(
-katsayi !== 1.5 &&
-katsayi !== 1.25
+tur !== 1.5 &&
+tur !== 1.25
 ){
 
-sonuc.innerHTML =
+sonuc.textContent =
 "Çalışma türünü kontrol edin.";
+
+kutular.style.display =
+"none";
 
 return;
 
 }
 
 
-const saatlik =
-maas / 225;
-
-
 const zamliSaatlik =
-saatlik * katsayi;
+normalSaatlik *
+tur;
 
 
 const toplam =
-zamliSaatlik * saat;
-
-
-const zamOrani =
-katsayi === 1.5
-? "%50"
-: "%25";
+zamliSaatlik *
+saat;
 
 
 const turAdi =
-katsayi === 1.5
-? "Fazla çalışma"
-: "Fazla sürelerle çalışma";
+tur === 1.5
+?
+"Fazla çalışma (%50)"
+:
+"Fazla sürelerle çalışma (%25)";
+
+
+document
+.getElementById("normalSaatlik")
+.textContent =
+para(
+normalSaatlik
+);
+
+
+document
+.getElementById("zamliSaatlik")
+.textContent =
+para(
+zamliSaatlik
+);
+
+
+document
+.getElementById("sureSonuc")
+.textContent =
+new Intl.NumberFormat(
+"tr-TR",
+{
+maximumFractionDigits:2
+}
+).format(
+saat
+) +
+" saat";
+
+
+document
+.getElementById("toplamSonuc")
+.textContent =
+para(
+toplam
+);
 
 
 sonuc.innerHTML =
 
-'<div class="result-main">' +
-para(toplam) +
-' TL</div>' +
+"<strong>" +
 
-'<div class="row">' +
-'<span>Aylık brüt maaş</span>' +
-'<strong>' +
-para(maas) +
-' TL</strong>' +
-'</div>' +
-
-'<div class="row">' +
-'<span>Normal saatlik ücret</span>' +
-'<strong>' +
-para(saatlik) +
-' TL</strong>' +
-'</div>' +
-
-'<div class="row">' +
-'<span>Çalışma türü</span>' +
-'<strong>' +
 turAdi +
-'</strong>' +
-'</div>' +
 
-'<div class="row">' +
-'<span>Zam oranı</span>' +
-'<strong>' +
-zamOrani +
-'</strong>' +
-'</div>' +
+"</strong>" +
 
-'<div class="row">' +
-'<span>Zamlı saatlik ücret</span>' +
-'<strong>' +
-para(zamliSaatlik) +
-' TL</strong>' +
-'</div>' +
+"<br><br>" +
 
-'<div class="row">' +
-'<span>Fazla çalışma süresi</span>' +
-'<strong>' +
-saat.toLocaleString("tr-TR") +
-' saat</strong>' +
-'</div>' +
+"Normal saatlik brüt ücret: <strong>" +
 
-'<div class="row">' +
-'<span>Toplam brüt mesai ücreti</span>' +
-'<strong>' +
-para(toplam) +
-' TL</strong>' +
-'</div>' +
+para(
+normalSaatlik
+) +
 
-'<br>' +
+"</strong>" +
 
-'<small>' +
-'Sonuç brüt tahmini hak ediştir. Net bordro tutarı kişisel kesintilere ve çalışma koşullarına göre değişebilir.' +
-'</small>';
+"<br>" +
+
+"Zamlı saatlik brüt ücret: <strong>" +
+
+para(
+zamliSaatlik
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Çalışma süresi: <strong>" +
+
+new Intl.NumberFormat(
+"tr-TR",
+{
+maximumFractionDigits:2
+}
+).format(
+saat
+) +
+
+" saat</strong>" +
+
+"<br><br>" +
+
+"Toplam tahmini brüt hak ediş: <strong>" +
+
+para(
+toplam
+) +
+
+"</strong>";
+
+
+kutular.style.display =
+"grid";
 
 }
 
 
+document
+.getElementById("hesapYontemi")
+.addEventListener(
+"change",
+function(){
+
+const maas =
+document.getElementById("girdiMaas");
+
+const saatlik =
+document.getElementById("girdiSaatlik");
+
+
+if(
+this.value === "225"
+){
+
+maas.style.display =
+"block";
+
+saatlik.style.display =
+"none";
+
+}
+else{
+
+maas.style.display =
+"none";
+
+saatlik.style.display =
+"block";
+
+}
+
+}
+);
+
+
 [
 "maas",
+"saatlikUcret",
 "saat"
 ]
 .forEach(function(id){
@@ -1185,8 +1413,12 @@ document
 "keydown",
 function(event){
 
-if(event.key === "Enter"){
+if(
+event.key === "Enter"
+){
+
 hesapla();
+
 }
 
 }
@@ -1201,21 +1433,11 @@ document
 "change",
 function(){
 
-const maas =
-Number(
-document.getElementById("maas").value
-);
-
 const saat =
-Number(
-document.getElementById("saat").value
-);
+document.getElementById("saat").value;
 
 if(
-Number.isFinite(maas) &&
-maas > 0 &&
-Number.isFinite(saat) &&
-saat > 0
+saat !== ""
 ){
 
 hesapla();
