@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Kâr Zarar Hesaplama | Kâr Oranı ve Marj - Araclio</title>
+<title>Kâr Zarar Hesaplama | Ciro, Gider ve Net Kâr - Araclio</title>
 
 <meta
 name="description"
-content="Ücretsiz kâr zarar hesaplama aracı. Alış ve satış fiyatını girerek kâr veya zarar tutarını, maliyet üzerinden kâr oranını ve satış fiyatı üzerinden kâr marjını hesaplayın."
+content="Kâr zarar hesaplama aracı. Toplam ciro, ürün maliyeti ve diğer giderleri girerek net kâr veya zararı, kâr marjını, gider oranını ve başabaş durumunu hesaplayın."
 >
 
 <meta name="robots" content="index,follow">
@@ -35,12 +35,12 @@ href="https://araclio.com/kar-zarar-hesaplama.html"
 
 <meta
 property="og:title"
-content="Kâr Zarar Hesaplama | Kâr Oranı ve Marj"
+content="Kâr Zarar Hesaplama | Ciro, Gider ve Net Kâr"
 >
 
 <meta
 property="og:description"
-content="Alış ve satış fiyatından kâr veya zararı, kâr oranını ve kâr marjını ücretsiz hesaplayın."
+content="Ciro ve giderlerden net kâr veya zararı, net kâr marjını ve toplam gider oranını hesaplayın."
 >
 
 <meta
@@ -77,7 +77,7 @@ font-weight:700;
 }
 
 .info-box{
-margin-top:18px;
+margin:16px 0;
 padding:16px;
 border-radius:10px;
 background:#f5f5f5;
@@ -86,12 +86,12 @@ line-height:1.8;
 }
 
 .warning-box{
-margin-top:18px;
+margin:18px 0;
 padding:16px;
-border:2px solid #b26a00;
+border:1px solid #e7d28b;
 border-radius:10px;
-background:#fff8e8;
-color:#6b4300;
+background:#fff8e1;
+color:#4d3d00;
 line-height:1.8;
 }
 
@@ -103,7 +103,7 @@ margin-top:15px;
 table{
 width:100%;
 border-collapse:collapse;
-min-width:560px;
+min-width:600px;
 }
 
 th,
@@ -132,7 +132,7 @@ grid-template-columns:1fr;
   "applicationCategory":"FinanceApplication",
   "operatingSystem":"Any",
   "inLanguage":"tr-TR",
-  "description":"Alış ve satış fiyatına göre kâr veya zarar tutarını, maliyet üzerinden kâr oranını ve satış fiyatı üzerinden kâr marjını hesaplayan ücretsiz online araç.",
+  "description":"Toplam ciro, ürün veya hizmet maliyeti ve diğer giderlerden net kâr veya zararı, net kâr marjını ve gider oranını hesaplayan ücretsiz araç.",
   "offers":{
     "@type":"Offer",
     "price":"0",
@@ -174,34 +174,42 @@ grid-template-columns:1fr;
   "mainEntity":[
     {
       "@type":"Question",
-      "name":"Kâr nasıl hesaplanır?",
+      "name":"Net kâr nasıl hesaplanır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Kâr, satış fiyatından alış maliyetinin çıkarılmasıyla hesaplanır."
+        "text":"Net kâr, toplam cirodan ürün veya hizmet maliyetleri ile diğer giderlerin çıkarılmasıyla hesaplanır."
       }
     },
     {
       "@type":"Question",
-      "name":"Kâr yüzdesi nasıl hesaplanır?",
+      "name":"Net kâr marjı nasıl hesaplanır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Maliyet üzerinden kâr oranı, kâr tutarının alış maliyetine bölünüp 100 ile çarpılmasıyla bulunur."
+        "text":"Net kâr marjı, net kârın toplam ciroya bölünüp 100 ile çarpılmasıyla hesaplanır."
       }
     },
     {
       "@type":"Question",
-      "name":"Kâr marjı nasıl hesaplanır?",
+      "name":"Ciro ile kâr aynı şey mi?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Kâr marjı, kâr tutarının satış fiyatına bölünüp 100 ile çarpılmasıyla hesaplanır."
+        "text":"Hayır. Ciro satışlardan elde edilen toplam geliri, kâr ise gelirlerden ilgili maliyet ve giderler çıkarıldıktan sonra kalan tutarı ifade eder."
       }
     },
     {
       "@type":"Question",
-      "name":"Kâr oranı ile kâr marjı aynı mı?",
+      "name":"Başabaş noktası nedir?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Hayır. Kâr oranı genellikle maliyet üzerinden, kâr marjı ise satış fiyatı üzerinden hesaplanır."
+        "text":"Toplam gelir ile toplam giderin eşit olduğu ve kâr ya da zarar oluşmadığı durum başabaş noktasıdır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Zarar oranı nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Net sonuç negatifse zarar tutarının ciroya oranı hesaplanarak ciroya göre zarar marjı bulunabilir."
       }
     }
   ]
@@ -234,15 +242,15 @@ Araclio
 <section class="hero">
 
 <p class="eyebrow">
-KÂR • ZARAR • ORAN • MARJ
+CİRO • GİDER • KÂR • ZARAR
 </p>
 
 <h1>Kâr Zarar Hesaplama</h1>
 
 <p>
-Alış maliyeti ile satış fiyatını girerek işleminizde
-kaç TL kâr veya zarar oluştuğunu, maliyet üzerinden oranı
-ve satış fiyatı üzerinden kâr marjını anında hesaplayın.
+Toplam cironuzu, ürün veya hizmet maliyetinizi ve
+diğer işletme giderlerinizi girerek net kâr veya zararınızı,
+net kâr marjınızı ve giderlerin cironuza oranını hesaplayın.
 </p>
 
 </section>
@@ -250,68 +258,101 @@ ve satış fiyatı üzerinden kâr marjını anında hesaplayın.
 
 <section class="card">
 
-<h2>Kâr / Zarar Hesapla</h2>
+<h2>İşletme Kâr / Zararını Hesapla</h2>
 
-<label for="alis">
-Alış Fiyatı / Maliyet (TL)
+<label for="ciro">
+Toplam Ciro / Satış Geliri (TL)
 </label>
 
 <input
-id="alis"
-type="number"
-min="0.01"
-step="0.01"
-inputmode="decimal"
-placeholder="Örnek: 500"
->
-
-
-<label for="satis">
-Satış Fiyatı (TL)
-</label>
-
-<input
-id="satis"
+id="ciro"
 type="number"
 min="0"
 step="0.01"
 inputmode="decimal"
-placeholder="Örnek: 650"
+placeholder="Örnek: 100000"
 >
 
 
+<label for="malMaliyeti">
+Ürün / Mal / Hizmet Maliyeti (TL)
+</label>
+
+<input
+id="malMaliyeti"
+type="number"
+min="0"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 55000"
+>
+
+
+<label for="digerGider">
+Diğer Giderler (TL)
+</label>
+
+<input
+id="digerGider"
+type="number"
+min="0"
+step="0.01"
+inputmode="decimal"
+value="0"
+placeholder="Örnek: 20000"
+>
+
+<p>
+<small>
+Kargo, komisyon, reklam, kira, personel, paketleme,
+ödeme sistemi, operasyon ve benzeri giderleri bu alanda
+toplayabilirsiniz.
+</small>
+</p>
+
+
 <button type="button" onclick="hesapla()">
-Hesapla
+Kâr / Zararı Hesapla
 </button>
 
 
 <div id="sonuc" class="result" aria-live="polite">
-Alış ve satış fiyatını girin.
+Ciro ve gider bilgilerini girin.
 </div>
 
 
 <div id="sonucKutulari" class="result-grid" style="display:none;">
 
 <div class="result-box">
-<strong>Sonuç</strong>
+<strong>Durum</strong>
 <span id="durumSonuc" class="big-result">-</span>
 </div>
 
 <div class="result-box">
-<strong>Kâr / Zarar Tutarı</strong>
-<span id="farkSonuc">0 TL</span>
+<strong>Net Kâr / Zarar</strong>
+<span id="netSonuc" class="big-result">-</span>
 </div>
 
 <div class="result-box">
-<strong>Maliyet Üzerinden Oran</strong>
-<span id="maliyetOraniSonuc">%0</span>
+<strong>Toplam Gider</strong>
+<span id="toplamGiderSonuc">-</span>
 </div>
 
 <div class="result-box">
-<strong>Satış Üzerinden Marj</strong>
+<strong>Net Kâr / Zarar Marjı</strong>
 <span id="marjSonuc">-</span>
 </div>
 
+<div class="result-box">
+<strong>Gider / Ciro Oranı</strong>
+<span id="giderOraniSonuc">-</span>
+</div>
+
+<div class="result-box">
+<strong>Cirodan Gider Sonrası Kalan</strong>
+<span id="kalanSonuc">-</span>
+</div>
+
 </div>
 
 </section>
@@ -319,130 +360,107 @@ Alış ve satış fiyatını girin.
 
 <section class="card">
 
-<h2>Kâr Nasıl Hesaplanır?</h2>
+<h2>Net Kâr Nasıl Hesaplanır?</h2>
 
 <p>
-Satış fiyatı alış maliyetinden yüksekse aradaki fark kârdır.
+İşletmenin temel kâr/zarar hesabında toplam satış gelirinden
+ilgili maliyet ve giderler çıkarılır.
 </p>
 
 <div class="info-box">
 
-<strong>
-Kâr = Satış Fiyatı − Alış Fiyatı
-</strong>
+<strong>Net Sonuç =</strong>
 
 <br><br>
 
-Örnek:
-
-<br><br>
-
-650 − 500 =
-
-<strong>150 TL kâr</strong>
+Toplam Ciro − Ürün/Hizmet Maliyeti − Diğer Giderler
 
 </div>
+
+<p>
+Sonuç pozitifse kâr, negatifse zarar oluşur.
+</p>
 
 </section>
 
 
 <section class="card">
 
-<h2>Kâr Yüzdesi Nasıl Hesaplanır?</h2>
+<h2>Ciro ile Kâr Aynı Şey mi?</h2>
 
 <p>
-Bu araç maliyet üzerinden kâr oranını ayrıca hesaplar.
+Hayır.
+</p>
+
+<p>
+<strong>Ciro</strong>, belirli bir dönemde yapılan satışlardan
+elde edilen toplam gelirdir.
+</p>
+
+<p>
+<strong>Kâr</strong> ise bu gelirden maliyet ve giderler
+çıkarıldıktan sonra kalan tutardır.
 </p>
 
 <div class="info-box">
 
-<strong>
-Kâr Oranı =
-Kâr ÷ Alış Maliyeti × 100
-</strong>
+Ciro:
+<strong>100.000 TL</strong>
 
 <br><br>
 
-500 TL maliyet ve 150 TL kâr:
+Toplam gider:
+<strong>75.000 TL</strong>
 
 <br><br>
 
-150 ÷ 500 × 100 =
-
-<strong>%30</strong>
+Net kâr:
+<strong>25.000 TL</strong>
 
 </div>
+
+<p>
+Bu örnekte işletmenin 100.000 TL cirosu olması,
+100.000 TL kâr ettiği anlamına gelmez.
+</p>
 
 </section>
 
 
 <section class="card">
 
-<h2>Kâr Marjı Nasıl Hesaplanır?</h2>
+<h2>Net Kâr Marjı Nasıl Hesaplanır?</h2>
 
 <p>
-Kâr marjı, kâr tutarının satış fiyatına oranıdır.
+Net kâr marjı, elde edilen net kârın cironun yüzde
+kaçı olduğunu gösterir.
 </p>
 
 <div class="info-box">
 
-<strong>
-Kâr Marjı =
-Kâr ÷ Satış Fiyatı × 100
-</strong>
+<strong>Net Kâr Marjı (%) =</strong>
 
 <br><br>
 
-500 TL'ye alınan ürün 650 TL'ye satılırsa:
-
-<br><br>
-
-150 ÷ 650 × 100 ≈
-
-<strong>%23,08</strong>
+Net Kâr ÷ Ciro × 100
 
 </div>
 
-</section>
-
-
-<section class="card">
-
-<h2>Kâr Oranı ile Kâr Marjı Arasındaki Fark</h2>
-
 <p>
-Bu iki kavram sıkça birbirine karıştırılır.
+Örneğin 100.000 TL cirodan 25.000 TL kâr kalıyorsa:
 </p>
 
-<div class="table-wrap">
+<div class="info-box">
 
-<table>
+25.000 ÷ 100.000 × 100
 
-<thead>
-<tr>
-<th>Hesaplama</th>
-<th>Payda</th>
-<th>500 → 650 Örneği</th>
-</tr>
-</thead>
+<br><br>
 
-<tbody>
+=
 
-<tr>
-<td>Kâr Oranı</td>
-<td>Alış maliyeti</td>
-<td>%30</td>
-</tr>
+<br><br>
 
-<tr>
-<td>Kâr Marjı</td>
-<td>Satış fiyatı</td>
-<td>%23,08</td>
-</tr>
-
-</tbody>
-
-</table>
+<strong>%25 net kâr marjı</strong>
 
 </div>
 
@@ -454,34 +472,47 @@ Bu iki kavram sıkça birbirine karıştırılır.
 <h2>Zarar Nasıl Hesaplanır?</h2>
 
 <p>
-Satış fiyatı alış maliyetinden düşükse zarar oluşur.
+Toplam giderler toplam cirodan yüksekse işletme
+zarar eder.
 </p>
 
 <div class="info-box">
 
-Alış maliyeti:
-
-<strong>1.000 TL</strong>
+Ciro:
 
 <br>
 
-Satış fiyatı:
-
-<strong>800 TL</strong>
+<strong>80.000 TL</strong>
 
 <br><br>
 
-Zarar:
+Toplam gider:
 
-<strong>200 TL</strong>
+<br>
+
+<strong>95.000 TL</strong>
 
 <br><br>
 
-Zarar oranı:
+Net sonuç:
 
-<strong>%20</strong>
+<br>
+
+80.000 − 95.000
+
+<br><br>
+
+=
+
+<br><br>
+
+<strong>−15.000 TL</strong>
 
 </div>
+
+<p>
+Bu durumda işletme 15.000 TL zarar etmiştir.
+</p>
 
 </section>
 
@@ -491,26 +522,142 @@ Zarar oranı:
 <h2>Başabaş Noktası Nedir?</h2>
 
 <p>
-Satış fiyatı alış maliyetine eşitse kâr veya zarar oluşmaz.
+Gelir ile giderlerin birbirine eşit olduğu durumda
+kâr veya zarar oluşmaz.
 </p>
 
 <div class="info-box">
 
-Alış:
-
-<strong>1.000 TL</strong>
-
-<br>
-
-Satış:
-
-<strong>1.000 TL</strong>
+Toplam ciro:
+<strong>75.000 TL</strong>
 
 <br><br>
 
-Sonuç:
+Toplam gider:
+<strong>75.000 TL</strong>
 
-<strong>0 TL kâr / zarar</strong>
+<br><br>
+
+Net sonuç:
+<strong>0 TL</strong>
+
+<br><br>
+
+Durum:
+<strong>Başabaş</strong>
+
+</div>
+
+<p>
+Bu hesaplayıcıdaki basit başabaş kontrolünde,
+mevcut toplam giderin karşılanması için gereken
+minimum ciro toplam gider tutarına eşittir.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Gider / Ciro Oranı Nedir?</h2>
+
+<p>
+Toplam giderlerin cironun ne kadarını tükettiğini
+göstermek için gider/ciro oranı kullanılabilir.
+</p>
+
+<div class="info-box">
+
+<strong>Gider / Ciro Oranı =</strong>
+
+<br><br>
+
+Toplam Gider ÷ Ciro × 100
+
+</div>
+
+<p>
+Örneğin 100.000 TL ciroya karşılık 75.000 TL
+toplam gider varsa:
+</p>
+
+<div class="info-box">
+
+75.000 ÷ 100.000 × 100
+
+<br><br>
+
+=
+
+<br><br>
+
+<strong>%75</strong>
+
+</div>
+
+<p>
+Yani cironun %75'i giderleri karşılamak için kullanılmış,
+%25'i kâr olarak kalmıştır.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>100.000 TL Ciro Örneği</h2>
+
+<p>
+Örnek bir işletmenin bir aylık sonuçlarını düşünelim:
+</p>
+
+<div class="info-box">
+
+<strong>Ciro:</strong>
+
+<br>
+
+100.000 TL
+
+<br><br>
+
+<strong>Ürün maliyeti:</strong>
+
+<br>
+
+55.000 TL
+
+<br><br>
+
+<strong>Diğer giderler:</strong>
+
+<br>
+
+20.000 TL
+
+<br><br>
+
+<strong>Toplam gider:</strong>
+
+<br>
+
+75.000 TL
+
+<br><br>
+
+<strong>Net kâr:</strong>
+
+<br>
+
+25.000 TL
+
+<br><br>
+
+<strong>Net kâr marjı:</strong>
+
+<br>
+
+%25
 
 </div>
 
@@ -519,7 +666,11 @@ Sonuç:
 
 <section class="card">
 
-<h2>Kâr Zarar Hesaplama Örnekleri</h2>
+<h2>Ürün Maliyeti ile Diğer Gider Arasındaki Fark</h2>
+
+<p>
+Bu hesaplayıcı maliyetleri iki temel grupta toplar.
+</p>
 
 <div class="table-wrap">
 
@@ -527,41 +678,21 @@ Sonuç:
 
 <thead>
 <tr>
-<th>Alış</th>
-<th>Satış</th>
-<th>Sonuç</th>
-<th>Maliyet Oranı</th>
+<th>Kalem</th>
+<th>Örnekler</th>
 </tr>
 </thead>
 
 <tbody>
 
 <tr>
-<td>500 TL</td>
-<td>650 TL</td>
-<td>150 TL kâr</td>
-<td>%30</td>
+<td>Ürün / Hizmet Maliyeti</td>
+<td>Mal alış bedeli, üretim maliyeti, doğrudan hizmet maliyeti</td>
 </tr>
 
 <tr>
-<td>1.000 TL</td>
-<td>1.200 TL</td>
-<td>200 TL kâr</td>
-<td>%20</td>
-</tr>
-
-<tr>
-<td>1.000 TL</td>
-<td>800 TL</td>
-<td>200 TL zarar</td>
-<td>%20 zarar</td>
-</tr>
-
-<tr>
-<td>750 TL</td>
-<td>750 TL</td>
-<td>Başabaş</td>
-<td>%0</td>
+<td>Diğer Giderler</td>
+<td>Kargo, komisyon, reklam, kira, personel, paketleme, yazılım, ödeme sistemi, operasyon</td>
 </tr>
 
 </tbody>
@@ -570,76 +701,9 @@ Sonuç:
 
 </div>
 
-</section>
-
-
-<section class="card">
-
-<h2>Satış Fiyatı 0 Olursa Ne Olur?</h2>
-
 <p>
-Satış fiyatı 0 TL ise ürünün tüm alış maliyeti zarar olarak görünür.
-</p>
-
-<p>
-Ancak satış fiyatı 0 olduğunda satış fiyatı üzerinden kâr marjı
-hesabında payda 0 olacağı için marj matematiksel olarak tanımlanamaz.
-</p>
-
-<div class="info-box">
-
-Örneğin:
-
-<br><br>
-
-Alış maliyeti:
-<strong>500 TL</strong>
-
-<br>
-
-Satış:
-<strong>0 TL</strong>
-
-<br><br>
-
-Zarar:
-<strong>500 TL</strong>
-
-<br>
-
-Maliyet üzerinden zarar:
-<strong>%100</strong>
-
-<br>
-
-Satış üzerinden marj:
-<strong>Tanımsız</strong>
-
-</div>
-
-</section>
-
-
-<section class="card">
-
-<h2>Kâr Zarar Hesabı Nerelerde Kullanılır?</h2>
-
-<p>
-Kâr ve zarar hesabı özellikle:
-</p>
-
-<p>
-* Ürün satışlarında<br>
-* E-ticarette<br>
-* Toptan ve perakende satışta<br>
-* Alım-satım işlemlerinde<br>
-* Fiyatlandırmada<br>
-* Ticari performans analizinde<br>
-* Maliyet karşılaştırmalarında
-</p>
-
-<p>
-kullanılabilir.
+İşletmenizin muhasebe sınıflandırması bundan daha ayrıntılı
+olabilir. Buradaki ayrım pratik hesaplama içindir.
 </p>
 
 </section>
@@ -647,36 +711,100 @@ kullanılabilir.
 
 <section class="card">
 
-<h2>Gerçek Ticari Kâr Neden Farklı Olabilir?</h2>
+<h2>Ciro Yüksek Olduğu Halde Neden Kâr Düşük Olabilir?</h2>
 
 <p>
-Bu araç yalnızca girilen alış ve satış fiyatlarını karşılaştırır.
+Yüksek satış hacmi tek başına yüksek kâr anlamına gelmez.
 </p>
 
 <p>
-Gerçek işletme kârında kargo, komisyon, reklam, vergi,
-ödeme sistemi kesintileri, personel, kira ve diğer giderler de
-dikkate alınabilir.
+Aşağıdaki giderler cironun önemli bölümünü tüketebilir:
+</p>
+
+<ul>
+
+<li>Ürün veya üretim maliyeti</li>
+<li>Pazaryeri komisyonları</li>
+<li>Kargo giderleri</li>
+<li>Reklam harcamaları</li>
+<li>İade ve değişim maliyetleri</li>
+<li>Personel giderleri</li>
+<li>Kira ve işletme giderleri</li>
+<li>Ödeme sistemi kesintileri</li>
+<li>Vergi ve diğer yükümlülükler</li>
+
+</ul>
+
+<p>
+Bu nedenle işletme performansını değerlendirirken yalnızca
+ciroya değil, gider sonrası kalan tutara da bakılmalıdır.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Kâr Marjı ile Ürün Kâr Marjı Aynı mı?</h2>
+
+<p>
+Bu sayfadaki net kâr marjı,
+<strong>toplam işletme sonucu ile ciro arasındaki oranı</strong>
+gösterir.
+</p>
+
+<p>
+Tek bir ürünün alış ve satış fiyatı arasındaki marjı
+hesaplamak istiyorsanız:
+</p>
+
+<p>
+<a href="/kar-marji-hesaplama.html">
+Kâr Marjı Hesaplama →
+</a>
 </p>
 
 <div class="warning-box">
 
-<strong>Bilgilendirme:</strong>
-
-Bu hesaplayıcı basit alış-satış kâr/zarar hesabı yapar.
+<strong>Bu iki hesap farklı amaçlara sahiptir.</strong>
 
 <br><br>
 
-Tüm işletme giderlerini içeren net ticari kâr hesabı değildir.
+Kâr Marjı Hesaplama sayfası tek bir ürün veya satışın
+maliyet-satış ilişkisini inceler.
+
+<br><br>
+
+Bu Kâr Zarar Hesaplama sayfası ise ciro ve toplam giderler
+üzerinden işletme veya dönem sonucu hesaplar.
 
 </div>
 
+</section>
+
+
+<section class="card">
+
+<h2>E-Ticarette Kâr Zarar Hesabı</h2>
+
 <p>
-Daha ayrıntılı satış giderleri için:
+E-ticarette yalnızca ürün alış maliyetini düşmek çoğu zaman
+gerçek kârlılığı göstermez.
+</p>
+
+<p>
+Pazaryeri komisyonu, kargo, reklam, paketleme ve iade
+maliyetleri de hesaba dahil edilmelidir.
+</p>
+
+<p>
+Ürün bazında daha ayrıntılı e-ticaret hesabı için:
+</p>
+
+<p>
 <a href="/e-ticaret-kar-hesaplama.html">
-E-Ticaret Kâr Hesaplama
+E-Ticaret Kâr Hesaplama →
 </a>
-aracını kullanabilirsiniz.
 </p>
 
 </section>
@@ -686,54 +814,108 @@ aracını kullanabilirsiniz.
 
 <h2>Sık Sorulan Sorular</h2>
 
-<h3>500 TL'ye alınan ürün 650 TL'ye satılırsa kâr ne kadar?</h3>
+<h3>Net kâr nasıl hesaplanır?</h3>
 
 <p>
-Kâr
-<strong>150 TL</strong>,
-maliyet üzerinden kâr oranı
-<strong>%30</strong>
-olur.
+Toplam cirodan ürün/hizmet maliyeti ve diğer giderler
+çıkarılır.
 </p>
 
 
-<h3>1.000 TL'ye alınan ürün 800 TL'ye satılırsa zarar ne kadar?</h3>
+<h3>Ciro ile kâr aynı mı?</h3>
 
 <p>
-<strong>200 TL zarar</strong>
-ve maliyet üzerinden
-<strong>%20 zarar</strong>
-oluşur.
+Hayır. Ciro toplam satış geliridir; kâr ise giderlerden
+sonra kalan tutardır.
 </p>
 
 
-<h3>Kâr oranı ve kâr marjı aynı mı?</h3>
+<h3>Net kâr marjı nasıl hesaplanır?</h3>
 
 <p>
-Hayır. Kâr oranı maliyet üzerinden, kâr marjı ise satış fiyatı
-üzerinden hesaplanır.
+Net kârın toplam ciroya bölünüp 100 ile çarpılmasıyla
+hesaplanır.
 </p>
 
 
-<h3>Kâr marjı neden kâr oranından düşük olabilir?</h3>
+<h3>100.000 TL ciro ve 75.000 TL gider varsa kâr ne kadar?</h3>
 
 <p>
-Çünkü aynı kâr tutarı için kâr marjının paydasında satış fiyatı,
-kâr oranının paydasında ise daha düşük olan alış maliyeti kullanılır.
+Net kâr <strong>25.000 TL</strong>,
+net kâr marjı ise <strong>%25</strong> olur.
 </p>
 
 
-<h3>Satış fiyatı alış fiyatına eşitse ne olur?</h3>
+<h3>Giderler cirodan yüksekse ne olur?</h3>
 
 <p>
-Kâr veya zarar oluşmaz; işlem başabaş olur.
+Net sonuç negatif olur ve işletme zarar gösterir.
+</p>
+
+
+<h3>Başabaş ne demektir?</h3>
+
+<p>
+Toplam gelir ile toplam giderin eşit olduğu,
+kâr veya zarar bulunmayan durumdur.
+</p>
+
+
+<h3>Kâr zarar hesabına vergi dahil mi?</h3>
+
+<p>
+Yalnızca sizin gider alanına eklediğiniz tutarlar hesaba
+dahil edilir. Araç vergi veya başka giderleri otomatik eklemez.
+</p>
+
+
+<h3>Bu hesap gerçek muhasebe kârı mıdır?</h3>
+
+<p>
+Hayır. Bu araç genel bir yönetim ve matematiksel hesaplama
+aracıdır. Resmî muhasebe veya vergi matrahı hesabı değildir.
 </p>
 
 
 <h3>Kâr zarar hesaplama ücretsiz mi?</h3>
 
 <p>
-Evet. Araclio Kâr Zarar Hesaplama aracı ücretsizdir ve üyelik gerektirmez.
+Evet. Araclio Kâr Zarar Hesaplama aracı ücretsizdir
+ve üyelik gerektirmez.
+</p>
+
+</section>
+
+
+<section class="card">
+
+<h2>Önemli Bilgilendirme</h2>
+
+<div class="warning-box">
+
+Bu araç genel matematiksel ve işletme analizi amacıyla
+hazırlanmıştır.
+
+<br><br>
+
+Hesaplanan “net kâr”, yalnızca kullanıcının girdiği
+ciro ve giderler arasındaki farktır.
+
+<br><br>
+
+Amortisman, finansman giderleri, vergi, kur farkı,
+stok değişimleri, tahakkuklar ve muhasebe mevzuatındaki
+diğer kalemler otomatik olarak hesaplanmaz.
+
+<br><br>
+
+Bu nedenle sonuç resmî gelir tablosu, vergi matrahı
+veya muhasebe kârı olarak kullanılmamalıdır.
+
+</div>
+
+<p>
+<strong>Son güncelleme: Kasım 2026</strong>
 </p>
 
 </section>
@@ -835,12 +1017,13 @@ return new Intl.NumberFormat(
 minimumFractionDigits:2,
 maximumFractionDigits:2
 }
-).format(sayi) + " TL";
+).format(sayi) +
+" TL";
 
 }
 
 
-function oranFormatla(sayi){
+function yuzde(sayi){
 
 return new Intl.NumberFormat(
 "tr-TR",
@@ -848,44 +1031,65 @@ return new Intl.NumberFormat(
 minimumFractionDigits:2,
 maximumFractionDigits:2
 }
-).format(sayi);
+).format(sayi) +
+"%";
 
 }
 
 
 function hesapla(){
 
-const alisInput =
-document.getElementById("alis");
+const ciroInput =
+document
+.getElementById("ciro");
 
-const satisInput =
-document.getElementById("satis");
+const maliyetInput =
+document
+.getElementById("malMaliyeti");
+
+const giderInput =
+document
+.getElementById("digerGider");
 
 const sonuc =
-document.getElementById("sonuc");
+document
+.getElementById("sonuc");
 
 const kutular =
-document.getElementById("sonucKutulari");
+document
+.getElementById("sonucKutulari");
 
 
-const alis =
-Number(alisInput.value);
+const ciro =
+Number(
+ciroInput.value
+);
 
-const satis =
-Number(satisInput.value);
+const malMaliyeti =
+Number(
+maliyetInput.value
+);
+
+const digerGider =
+giderInput.value === ""
+?
+0
+:
+Number(
+giderInput.value
+);
 
 
 if(
-alisInput.value === "" ||
-satisInput.value === "" ||
-!Number.isFinite(alis) ||
-!Number.isFinite(satis) ||
-alis <= 0 ||
-satis < 0
+ciroInput.value === "" ||
+!Number.isFinite(
+ciro
+) ||
+ciro < 0
 ){
 
-sonuc.innerHTML =
-"Lütfen geçerli alış ve satış fiyatı girin.";
+sonuc.textContent =
+"Lütfen sıfır veya daha büyük geçerli bir ciro girin.";
 
 kutular.style.display =
 "none";
@@ -895,72 +1099,109 @@ return;
 }
 
 
-const fark =
-satis - alis;
+if(
+maliyetInput.value === "" ||
+!Number.isFinite(
+malMaliyeti
+) ||
+malMaliyeti < 0
+){
+
+sonuc.textContent =
+"Lütfen sıfır veya daha büyük geçerli bir ürün veya hizmet maliyeti girin.";
+
+kutular.style.display =
+"none";
+
+return;
+
+}
 
 
-const maliyetOrani =
-(fark / alis) * 100;
+if(
+!Number.isFinite(
+digerGider
+) ||
+digerGider < 0
+){
+
+sonuc.textContent =
+"Diğer giderler sıfır veya daha büyük olmalıdır.";
+
+kutular.style.display =
+"none";
+
+return;
+
+}
 
 
-let marj = null;
+const toplamGider =
+malMaliyeti +
+digerGider;
 
 
-if(satis > 0){
+const net =
+ciro -
+toplamGider;
+
+
+let marj =
+null;
+
+
+let giderOrani =
+null;
+
+
+if(
+ciro >
+0
+){
 
 marj =
-(fark / satis) * 100;
+(
+net /
+ciro
+) *
+100;
+
+
+giderOrani =
+(
+toplamGider /
+ciro
+) *
+100;
 
 }
 
 
 let durum;
 
-let farkMetni;
 
-let oranMetni;
-
-
-if(fark > 0){
+if(
+net >
+0
+){
 
 durum =
 "Kâr";
 
-farkMetni =
-para(fark);
-
-oranMetni =
-"%" +
-oranFormatla(
-maliyetOrani
-);
-
-}else if(fark < 0){
+}
+else if(
+net <
+0
+){
 
 durum =
 "Zarar";
 
-farkMetni =
-para(
-Math.abs(fark)
-);
-
-oranMetni =
-"%" +
-oranFormatla(
-Math.abs(maliyetOrani)
-);
-
-}else{
+}
+else{
 
 durum =
 "Başabaş";
-
-farkMetni =
-para(0);
-
-oranMetni =
-"%0,00";
 
 }
 
@@ -972,96 +1213,200 @@ durum;
 
 
 document
-.getElementById("farkSonuc")
+.getElementById("netSonuc")
 .textContent =
-farkMetni;
-
-
-document
-.getElementById("maliyetOraniSonuc")
-.textContent =
-oranMetni;
-
-
-if(marj === null){
-
-document
-.getElementById("marjSonuc")
-.textContent =
-"Tanımsız";
-
-}else{
-
-document
-.getElementById("marjSonuc")
-.textContent =
-(
-marj >= 0
-? "%"
-: "-%"
-) +
-oranFormatla(
-Math.abs(marj)
+net >= 0
+?
+para(
+net
+)
+:
+"-" +
+para(
+Math.abs(
+net
+)
 );
+
+
+document
+.getElementById("toplamGiderSonuc")
+.textContent =
+para(
+toplamGider
+);
+
+
+document
+.getElementById("marjSonuc")
+.textContent =
+marj ===
+null
+?
+"Hesaplanamaz"
+:
+yuzde(
+marj
+);
+
+
+document
+.getElementById("giderOraniSonuc")
+.textContent =
+giderOrani ===
+null
+?
+"Hesaplanamaz"
+:
+yuzde(
+giderOrani
+);
+
+
+document
+.getElementById("kalanSonuc")
+.textContent =
+net >= 0
+?
+para(
+net
+)
+:
+"-" +
+para(
+Math.abs(
+net
+)
+);
+
+
+let marjMetni =
+marj ===
+null
+?
+"Hesaplanamaz (ciro 0 TL)"
+:
+yuzde(
+marj
+);
+
+
+let giderOraniMetni =
+giderOrani ===
+null
+?
+"Hesaplanamaz (ciro 0 TL)"
+:
+yuzde(
+giderOrani
+);
+
+
+let anaMetin;
+
+
+if(
+net >
+0
+){
+
+anaMetin =
+
+"<strong>Net kâr: " +
+
+para(
+net
+) +
+
+"</strong>";
+
+}
+else if(
+net <
+0
+){
+
+anaMetin =
+
+"<strong>Net zarar: " +
+
+para(
+Math.abs(
+net
+)
+) +
+
+"</strong>";
+
+}
+else{
+
+anaMetin =
+
+"<strong>Başabaş: Kâr veya zarar yok.</strong>";
 
 }
 
 
-if(fark > 0){
-
 sonuc.innerHTML =
 
-"<strong>Kâr: " +
-para(fark) +
-"</strong>" +
+anaMetin +
 
 "<br><br>" +
 
-"Maliyet üzerinden kâr oranı: <strong>%" +
-oranFormatla(maliyetOrani) +
+"Toplam ciro: <strong>" +
+
+para(
+ciro
+) +
+
 "</strong>" +
 
 "<br>" +
 
-"Satış fiyatı üzerinden kâr marjı: <strong>%" +
-oranFormatla(marj) +
+"Ürün / hizmet maliyeti: <strong>" +
+
+para(
+malMaliyeti
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Diğer giderler: <strong>" +
+
+para(
+digerGider
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Toplam gider: <strong>" +
+
+para(
+toplamGider
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Net kâr / zarar marjı: <strong>" +
+
+marjMetni +
+
+"</strong>" +
+
+"<br>" +
+
+"Gider / ciro oranı: <strong>" +
+
+giderOraniMetni +
+
 "</strong>";
-
-}else if(fark < 0){
-
-sonuc.innerHTML =
-
-"<strong>Zarar: " +
-para(Math.abs(fark)) +
-"</strong>" +
-
-"<br><br>" +
-
-"Maliyet üzerinden zarar oranı: <strong>%" +
-oranFormatla(Math.abs(maliyetOrani)) +
-"</strong>" +
-
-(
-marj !== null
-?
-"<br>Satış fiyatına göre negatif marj: <strong>-%" +
-oranFormatla(Math.abs(marj)) +
-"</strong>"
-:
-""
-);
-
-}else{
-
-sonuc.innerHTML =
-
-"<strong>Başabaş: Kâr veya zarar yok.</strong>" +
-
-"<br><br>" +
-
-"Alış maliyeti ve satış fiyatı birbirine eşittir.";
-
-}
 
 
 kutular.style.display =
@@ -1071,8 +1416,9 @@ kutular.style.display =
 
 
 [
-"alis",
-"satis"
+"ciro",
+"malMaliyeti",
+"digerGider"
 ]
 .forEach(function(id){
 
@@ -1082,8 +1428,13 @@ document
 "keydown",
 function(event){
 
-if(event.key === "Enter"){
+if(
+event.key ===
+"Enter"
+){
+
 hesapla();
+
 }
 
 }
