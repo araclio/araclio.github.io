@@ -26,7 +26,7 @@ crossorigin="anonymous">
 <link rel="stylesheet" href="style.css">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Kıdem Tazminatı Hesaplama 2026">
+<meta property="og:title" content="Kıdem Tazminatı Hesaplama 2026 | Brüt ve Net">
 <meta
 property="og:description"
 content="2026 kıdem tazminatı tavanına göre tahmini brüt ve net kıdem tazminatınızı ücretsiz hesaplayın."
@@ -35,6 +35,7 @@ content="2026 kıdem tazminatı tavanına göre tahmini brüt ve net kıdem tazm
 <meta property="og:site_name" content="Araclio">
 
 <style>
+
 .result-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
@@ -78,13 +79,43 @@ line-height:1.8;
 color:#222;
 }
 
+.source-box{
+padding:16px;
+margin:15px 0;
+background:#eef6ff;
+border:1px solid #b9d8f5;
+border-radius:10px;
+line-height:1.8;
+color:#1f3550;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:560px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
 @media(max-width:650px){
+
 .result-grid{
 grid-template-columns:1fr;
 }
-}
-</style>
 
+}
+
+</style>
 
 <script type="application/ld+json">
 {
@@ -109,7 +140,6 @@ grid-template-columns:1fr;
 }
 </script>
 
-
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -131,7 +161,6 @@ grid-template-columns:1fr;
 }
 </script>
 
-
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -150,7 +179,7 @@ grid-template-columns:1fr;
       "name":"Kıdem tazminatı nasıl hesaplanır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Genel hesaplamada kıdem tazminatına hak kazanan çalışan için her tam hizmet yılı karşılığında 30 günlük giydirilmiş brüt ücret esas alınır. Bir yıldan artan süreler de orantılı olarak hesaplanır ve kıdem tazminatı tavanı uygulanır."
+        "text":"Kıdem tazminatına hak kazanan çalışan için genel hesaplamada her tam hizmet yılı karşılığında 30 günlük giydirilmiş brüt ücret esas alınır. Bir yıldan artan süreler de orantılı olarak hesaplamaya dahil edilir ve yürürlükteki kıdem tazminatı tavanı uygulanır."
       }
     },
     {
@@ -158,15 +187,15 @@ grid-template-columns:1fr;
       "name":"Kıdem tazminatında hangi ücret esas alınır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Kıdem tazminatı hesabında giydirilmiş brüt ücret esas alınabilir. Ancak her hizmet yılı için dikkate alınabilecek ücret yürürlükteki kıdem tazminatı tavanını aşamaz."
+        "text":"Kıdem tazminatı hesabında son giydirilmiş brüt ücret dikkate alınır. Süreklilik gösteren ve para ile ölçülebilen bazı düzenli menfaatler somut duruma göre bu ücrete dahil edilebilir. Hesaba esas tutar yürürlükteki kıdem tazminatı tavanını aşamaz."
       }
     },
     {
       "@type":"Question",
-      "name":"Kıdem tazminatından hangi vergi kesilir?",
+      "name":"Kıdem tazminatından gelir vergisi kesilir mi?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Kıdem tazminatı hesabında gelir vergisi uygulanmaz; damga vergisi kesintisi dikkate alınır."
+        "text":"Kıdem tazminatında gelir vergisi kesintisi uygulanmaz. Hesaplamada damga vergisi kesintisi dikkate alınır."
       }
     },
     {
@@ -174,7 +203,7 @@ grid-template-columns:1fr;
       "name":"Bir yıldan az çalışan kıdem tazminatı alır mı?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Genel kural olarak kıdem tazminatı için aynı işverene bağlı en az bir yıllık çalışma şartı aranır. Hak kazanma durumu iş sözleşmesinin sona erme nedenine göre ayrıca değerlendirilir."
+        "text":"Genel kural olarak kıdem tazminatına hak kazanabilmek için aynı işverene bağlı en az bir yıllık çalışma şartı aranır. Ayrıca iş sözleşmesinin sona erme nedeni de hak kazanma açısından önemlidir."
       }
     }
   ]
@@ -186,6 +215,7 @@ grid-template-columns:1fr;
 <body>
 
 <header>
+
 <div class="wrap nav">
 
 <a class="brand" href="/">
@@ -197,8 +227,8 @@ Araclio
 </span>
 
 </div>
-</header>
 
+</header>
 
 <main class="wrap">
 
@@ -219,24 +249,32 @@ brüt ve net kıdem tazminatınızı hesaplayın.
 
 </section>
 
-
 <section class="card">
 
 <h2>Kıdem Tazminatını Hesapla</h2>
 
 <div class="legal-warning">
 
-<strong>Önemli:</strong><br>
+<strong>Önemli:</strong>
 
-Bu araç yalnızca matematiksel ve genel bilgilendirme amaçlı
+<br><br>
+
+Bu araç yalnızca kullanıcı tarafından girilen bilgiler
+üzerinden matematiksel ve genel bilgilendirme amaçlı
 tahmini hesaplama yapar.
 
-Kıdem tazminatına hak kazanılması; iş sözleşmesinin sona
-erme şekline, çalışma süresine ve somut hukuki koşullara
-bağlıdır.
+<br><br>
+
+Kıdem tazminatına hak kazanılması; çalışma süresi,
+iş sözleşmesinin sona erme şekli ve somut hukuki
+koşullara bağlıdır.
+
+<br><br>
+
+Hesaplama sonucu tek başına kıdem tazminatına
+hak kazanıldığını göstermez.
 
 </div>
-
 
 <label for="baslangic">
 İşe Giriş Tarihi
@@ -247,7 +285,6 @@ id="baslangic"
 type="date"
 >
 
-
 <label for="bitis">
 İşten Ayrılış Tarihi
 </label>
@@ -257,7 +294,6 @@ id="bitis"
 type="date"
 >
 
-
 <label for="brut">
 Son Giydirilmiş Brüt Aylık Ücret (TL)
 </label>
@@ -265,12 +301,11 @@ Son Giydirilmiş Brüt Aylık Ücret (TL)
 <input
 id="brut"
 type="number"
-min="0"
+min="0.01"
 step="0.01"
 inputmode="decimal"
 placeholder="Örnek: 50000"
 >
-
 
 <div id="tavanBilgi" class="info-box">
 
@@ -279,16 +314,13 @@ tavanı otomatik olarak belirlenecek.
 
 </div>
 
-
 <button type="button" onclick="hesapla()">
 Kıdem Tazminatını Hesapla
 </button>
 
-
 <div id="uyari" class="result" aria-live="polite">
 Bilgileri girip hesaplama butonuna basın.
 </div>
-
 
 <div id="sonuclar" class="result-grid" style="display:none;">
 
@@ -299,14 +331,12 @@ Bilgileri girip hesaplama butonuna basın.
 </span>
 </div>
 
-
 <div class="result-box">
 <strong>Yaklaşık Net Kıdem</strong>
 <span id="netKidem" class="big-result">
 0 TL
 </span>
 </div>
-
 
 <div class="result-box">
 <strong>Hizmet Süresi</strong>
@@ -315,14 +345,12 @@ Bilgileri girip hesaplama butonuna basın.
 </span>
 </div>
 
-
 <div class="result-box">
-<strong>Toplam Hizmet Günü</strong>
+<strong>Toplam Takvim Günü</strong>
 <span id="hizmetGun">
 -
 </span>
 </div>
-
 
 <div class="result-box">
 <strong>Hesaba Esas Aylık Ücret</strong>
@@ -331,14 +359,12 @@ Bilgileri girip hesaplama butonuna basın.
 </span>
 </div>
 
-
 <div class="result-box">
 <strong>Uygulanan Tavan</strong>
 <span id="uygulananTavan">
 0 TL
 </span>
 </div>
-
 
 <div class="result-box">
 <strong>Damga Vergisi</strong>
@@ -347,9 +373,8 @@ Bilgileri girip hesaplama butonuna basın.
 </span>
 </div>
 
-
 <div class="result-box">
-<strong>Tavan Uygulaması</strong>
+<strong>Tavan Durumu</strong>
 <span id="tavanDurumu">
 -
 </span>
@@ -359,41 +384,61 @@ Bilgileri girip hesaplama butonuna basın.
 
 </section>
 
-
 <section class="card">
 
-<h2>2026 Kıdem Tazminatı Tavanı Ne Kadar?</h2>
+<h2>2026 Kıdem Tazminatı Tavanı</h2>
 
 <p>
-2026 yılında kıdem tazminatı tavanı iki farklı dönem
-için uygulanmaktadır.
+Kıdem tazminatı tavanı yıl içinde iki dönem halinde uygulanır.
+2026 yılı için kullanılan tutarlar şöyledir:
 </p>
 
-<div class="info-box">
+<div class="table-wrap">
 
-<strong>1 Ocak 2026 – 30 Haziran 2026</strong>
+<table>
 
-<br>
+<thead>
+<tr>
+<th>Dönem</th>
+<th>Kıdem Tazminatı Tavanı</th>
+</tr>
+</thead>
 
-64.948,77 TL
+<tbody>
 
-<br><br>
+<tr>
+<td>1 Ocak 2026 – 30 Haziran 2026</td>
+<td><strong>64.948,77 TL</strong></td>
+</tr>
 
-<strong>1 Temmuz 2026 – 31 Aralık 2026</strong>
+<tr>
+<td>1 Temmuz 2026 – 31 Aralık 2026</td>
+<td><strong>73.729,87 TL</strong></td>
+</tr>
 
-<br>
+</tbody>
 
-73.729,87 TL
+</table>
 
 </div>
 
 <p>
-Hesaplama yapılırken iş sözleşmesinin sona erdiği
-tarihte geçerli kıdem tazminatı tavanı esas alınır.
+Hesaplamada iş sözleşmesinin sona erdiği tarihte
+geçerli olan kıdem tazminatı tavanı dikkate alınır.
 </p>
 
-</section>
+<div class="source-box">
 
+<strong>Veri kaynağı:</strong>
+
+2026 kıdem tazminatı tavan tutarları
+T.C. Çalışma ve Sosyal Güvenlik Bakanlığı tarafından
+yayımlanan 2026 kıdem tazminatı verileri esas alınarak
+sayfaya aktarılmıştır.
+
+</div>
+
+</section>
 
 <section class="card">
 
@@ -401,289 +446,564 @@ tarihte geçerli kıdem tazminatı tavanı esas alınır.
 
 <p>
 Genel hesaplama yaklaşımında kıdem tazminatına hak kazanan
-çalışan için her tam hizmet yılı karşılığında yaklaşık
-30 günlük giydirilmiş brüt ücret dikkate alınır.
+çalışanın her tam hizmet yılı için 30 günlük
+giydirilmiş brüt ücreti dikkate alınır.
 </p>
 
 <p>
-Bir yıldan artan çalışma süreleri de orantılı biçimde
-hesaplamaya dahil edilir.
+Tam yılı aşan ay ve günler de hizmet süresiyle
+orantılı şekilde hesaplamaya dahil edilir.
 </p>
 
 <div class="info-box">
 
-<strong>Basitleştirilmiş formül:</strong>
+<strong>Temel yaklaşım:</strong>
 
 <br><br>
 
-Hesaba Esas Aylık Ücret × Hizmet Süresi
+Tam yıllar:
+<br>
+Hesaba Esas Aylık Ücret × Tam Yıl
 
 <br><br>
 
-Ancak hesaba esas aylık ücret, işten ayrılış tarihinde
-geçerli kıdem tazminatı tavanını geçemez.
+Artan aylar:
+<br>
+Hesaba Esas Aylık Ücret ÷ 12 × Ay
+
+<br><br>
+
+Artan günler:
+<br>
+Hesaba Esas Aylık Ücret ÷ 365 × Gün
 
 </div>
 
-</section>
+<p>
+Ancak her hizmet yılı için hesaplamaya esas alınabilecek
+aylık tutar, işten ayrılış tarihinde yürürlükte bulunan
+kıdem tazminatı tavanını aşamaz.
+</p>
 
+</section>
 
 <section class="card">
 
 <h2>Giydirilmiş Brüt Ücret Nedir?</h2>
 
 <p>
-Kıdem tazminatı hesabında yalnızca çıplak brüt maaşın
-dikkate alınması her durumda yeterli olmayabilir.
+Kıdem tazminatı hesabında yalnızca çıplak brüt maaş
+her durumda tek başına yeterli olmayabilir.
 </p>
 
 <p>
-Süreklilik gösteren ve para ile ölçülebilen bazı yan
-menfaatler somut duruma göre giydirilmiş brüt ücrete
-dahil edilebilir.
+Süreklilik gösteren ve para veya para ile ölçülebilen
+bazı menfaatler somut çalışma koşullarına göre
+giydirilmiş brüt ücrete dahil edilebilir.
 </p>
 
 <p>
-Bunlara koşullara bağlı olarak düzenli yemek, yol,
-ikramiye veya benzeri ödemeler dahil olabilir.
+Örneğin koşulları oluştuğunda düzenli olarak sağlanan:
 </p>
 
+<ul>
+<li>Yemek yardımı</li>
+<li>Yol yardımı</li>
+<li>Düzenli ikramiyeler</li>
+<li>Düzenli prim niteliğindeki bazı ödemeler</li>
+<li>Para ile ölçülebilen sürekli yan menfaatler</li>
+</ul>
+
 <p>
-Bu nedenle hesaplama alanına mümkünse
-<strong>son giydirilmiş brüt aylık ücret</strong>
-girilmelidir.
+hesaba dahil edilebilecek unsurlar arasında olabilir.
+Her ödemenin niteliği ayrıca değerlendirilmelidir.
 </p>
 
 </section>
-
 
 <section class="card">
 
 <h2>Kıdem Tazminatı Tavanı Nasıl Uygulanır?</h2>
 
 <p>
-Çalışanın giydirilmiş brüt aylık ücreti ilgili dönem
-kıdem tazminatı tavanının altındaysa gerçek ücret
-hesaplamaya esas alınır.
+Çalışanın son giydirilmiş brüt aylık ücreti,
+işten ayrılış tarihinde geçerli kıdem tazminatı
+tavanından düşükse hesapta çalışanın ücreti kullanılır.
 </p>
 
 <p>
-Ücret tavanın üzerindeyse her hizmet yılı için hesaplamada
-kıdem tazminatı tavanı kullanılır.
+Giydirilmiş brüt ücret tavanı aşıyorsa,
+hesaba esas aylık ücret tavanla sınırlandırılır.
 </p>
 
-<p>
-Örneğin 2026 yılının ikinci yarısında işten ayrılan
-bir çalışanın giydirilmiş brüt maaşı 100.000 TL ise,
-hesaplamaya esas aylık ücret en fazla
-<strong>73.729,87 TL</strong> olur.
-</p>
+<div class="info-box">
+
+<strong>Örnek:</strong>
+
+<br><br>
+
+İşten ayrılış tarihi:
+1 Temmuz 2026 sonrası
+
+<br><br>
+
+Giydirilmiş brüt ücret:
+100.000 TL
+
+<br><br>
+
+2026 ikinci yarı tavanı:
+73.729,87 TL
+
+<br><br>
+
+Hesaba esas aylık ücret:
+
+<br>
+
+<strong>73.729,87 TL</strong>
+
+</div>
 
 </section>
 
-
 <section class="card">
 
-<h2>1 Yıllık Kıdem Tazminatı Nasıl Hesaplanır?</h2>
-
-<p>
-Örneğin çalışanın giydirilmiş brüt aylık ücreti
-50.000 TL ve ücret tavanın altında ise:
-</p>
-
-<p>
-Yaklaşık 1 yıllık brüt kıdem tazminatı:
-</p>
-
-<p>
-<strong>50.000 TL</strong>
-</p>
-
-<p>
-Brüt kıdem tazminatından uygulanması gereken damga
-vergisi düşüldüğünde tahmini net tutar bulunur.
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>5 Yıllık Kıdem Tazminatı Nasıl Hesaplanır?</h2>
+<h2>1 Yıllık Kıdem Tazminatı Örneği</h2>
 
 <p>
 Giydirilmiş brüt aylık ücretin 50.000 TL olduğunu
-ve ücretin tavanın altında kaldığını varsayalım.
+ve bu ücretin ilgili dönem kıdem tazminatı tavanını
+aşmadığını varsayalım.
 </p>
 
-<p>
-50.000 × 5 =
-<strong>250.000 TL yaklaşık brüt kıdem tazminatı</strong>
-</p>
+<div class="info-box">
+
+50.000 × 1 yıl =
+
+<br><br>
+
+<strong>50.000 TL brüt kıdem tazminatı</strong>
+
+</div>
 
 <p>
-Bu tutardan damga vergisi kesintisi sonrasında
-yaklaşık net kıdem tazminatı bulunur.
+Brüt tutardan damga vergisi düşüldükten sonra
+yaklaşık net tutar hesaplanır.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>5 Yıllık Kıdem Tazminatı Örneği</h2>
+
+<p>
+Giydirilmiş brüt aylık ücret 50.000 TL ve ücret
+kıdem tazminatı tavanının altında ise:
+</p>
+
+<div class="info-box">
+
+50.000 × 5 =
+
+<br><br>
+
+<strong>250.000 TL brüt kıdem tazminatı</strong>
+
+</div>
+
+<p>
+Damga vergisi düşüldükten sonra yaklaşık net kıdem
+tazminatı elde edilir.
+</p>
+
+</section>
 
 <section class="card">
 
-<h2>10 Yıllık Kıdem Tazminatı Nasıl Hesaplanır?</h2>
+<h2>10 Yıllık Kıdem Tazminatı Örneği</h2>
 
 <p>
 Giydirilmiş brüt ücret 50.000 TL ve ilgili dönem
 tavanının altında ise:
 </p>
 
-<p>
+<div class="info-box">
+
 50.000 × 10 =
-<strong>500.000 TL yaklaşık brüt kıdem tazminatı</strong>
-</p>
+
+<br><br>
+
+<strong>500.000 TL brüt kıdem tazminatı</strong>
+
+</div>
 
 <p>
-Ücret tavanın üzerindeyse hesaplama gerçek ücret yerine
-ilgili dönem kıdem tazminatı tavanı üzerinden yapılır.
+Ücret tavanın üzerinde olduğunda hesaplama gerçek
+ücret yerine ilgili dönem kıdem tazminatı tavanı
+üzerinden sınırlandırılır.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>3 Yıl 6 Ay Çalışan İçin Nasıl Hesaplanır?</h2>
+
+<p>
+Örneğin hesaba esas aylık ücretin 40.000 TL olduğunu
+varsayalım.
+</p>
+
+<div class="info-box">
+
+3 tam yıl:
+
+<br>
+
+40.000 × 3 =
+120.000 TL
+
+<br><br>
+
+6 ay:
+
+<br>
+
+40.000 ÷ 12 × 6 =
+20.000 TL
+
+<br><br>
+
+Toplam yaklaşık brüt kıdem:
+
+<br>
+
+<strong>140.000 TL</strong>
+
+</div>
+
+<p>
+Bu örnek yalnızca hesaplama yöntemini göstermek amacıyla verilmiştir.
+Hak kazanma şartları ayrıca değerlendirilmelidir.
+</p>
+
+</section>
 
 <section class="card">
 
 <h2>Kıdem Tazminatından Vergi Kesilir mi?</h2>
 
 <p>
-Kıdem tazminatında hesaplama bakımından gelir vergisi
-yerine damga vergisi kesintisi dikkate alınır.
+Kıdem tazminatının yasal kapsamındaki tutarı için
+gelir vergisi kesintisi uygulanmaz.
 </p>
 
 <p>
-Bu araçta damga vergisi hesabı için
-<strong>binde 7,59</strong> oranı kullanılmaktadır.
+Hesaplamada damga vergisi kesintisi dikkate alınır.
+Bu araçta damga vergisi için:
 </p>
 
+<div class="info-box">
+
+<strong>Binde 7,59</strong>
+
+<br><br>
+
+yani
+
+<br><br>
+
+<strong>%0,759</strong>
+
+</div>
+
 <p>
-Vergi uygulamalarında mevzuat değişebileceğinden kesin
-ödeme öncesinde güncel uygulamanın kontrol edilmesi gerekir.
+oranı kullanılmaktadır.
 </p>
+
+<div class="legal-warning">
+
+Vergi ve ücret uygulamaları zaman içinde değişebilir.
+Kesin ödeme veya bordro işlemi öncesinde güncel resmî
+uygulamanın kontrol edilmesi gerekir.
+
+</div>
 
 </section>
-
 
 <section class="card">
 
 <h2>Bir Yıldan Az Çalışan Kıdem Tazminatı Alabilir mi?</h2>
 
 <p>
-Genel kural bakımından kıdem tazminatı için aynı
-işverene bağlı çalışma süresinin en az
-<strong>1 yıl</strong> olması gerekir.
+Genel kural olarak kıdem tazminatına hak kazanılabilmesi
+için aynı işverene bağlı çalışma süresinin en az
+<strong>1 yıl</strong>
+olması gerekir.
 </p>
 
 <p>
-Bu nedenle araçta bir yıldan kısa hizmet süresi
-girildiğinde kıdem hesaplaması yapılmaz ve kullanıcıya
-uyarı gösterilir.
+Bu nedenle hesaplayıcı bir yıldan kısa çalışma süresi
+girildiğinde kıdem tutarı üretmek yerine uyarı verir.
+</p>
+
+<p>
+Bunun yanında bir yıllık sürenin tamamlanmış olması
+tek başına kıdem tazminatına hak kazanıldığı anlamına gelmez.
 </p>
 
 </section>
-
 
 <section class="card">
 
-<h2>Kıdem Tazminatına Kimler Hak Kazanır?</h2>
+<h2>Kıdem Tazminatına Kimler Hak Kazanabilir?</h2>
 
 <p>
-Bir çalışanın kıdem tazminatı alıp alamayacağı yalnızca
-çalışma süresine göre belirlenmez.
+Kıdem tazminatına hak kazanılması yalnızca çalışma
+süresine bağlı değildir.
 </p>
 
 <p>
-İş sözleşmesinin hangi nedenle sona erdiği,
-çalışanın veya işverenin fesih nedeni, emeklilik,
-askerlik, evlilik nedeniyle ayrılma gibi hukuki durumlar
-sonucu etkileyebilir.
+İş sözleşmesinin sona erme nedeni de belirleyicidir.
+Örneğin somut koşullara göre:
 </p>
 
+<ul>
+<li>İşveren tarafından yapılan bazı fesihler</li>
+<li>İşçinin haklı nedenle feshi</li>
+<li>Emeklilik veya emeklilik için gereken bazı şartların tamamlanması</li>
+<li>Askerlik nedeniyle ayrılma</li>
+<li>Kanundaki şartları sağlayan kadın işçinin evlilik nedeniyle ayrılması</li>
+<li>İşçinin ölümü</li>
+</ul>
+
 <p>
-Bu nedenle bu hesaplayıcı yalnızca
-<strong>tutar hesabı</strong> yapar; kıdem tazminatına
-hak kazanıldığını tespit etmez.
+gibi durumlarda kıdem tazminatı gündeme gelebilir.
+Her olay kendi hukuki koşullarına göre değerlendirilmelidir.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>İstifa Eden Çalışan Kıdem Tazminatı Alır mı?</h2>
+
+<p>
+Sıradan bir istifa halinde genel olarak kıdem
+tazminatı hakkı doğmaz.
+</p>
+
+<p>
+Ancak kanunda kıdem tazminatına hak kazandıran bazı
+özel ayrılma veya fesih nedenleri bulunduğundan,
+yalnızca “çalışan kendisi ayrıldı” bilgisine bakılarak
+her durumda aynı sonuca varılamaz.
+</p>
+
+<p>
+Bu hesaplayıcı hukuki hak kazanma değerlendirmesi
+yapmadığı için kullanıcıdan yalnızca tutar hesabında
+gerekli olan tarih ve ücret bilgilerini ister.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Kıdem Tazminatı Hesaplamasında Hangi Tarih Kullanılır?</h2>
+
+<p>
+Hesaplama aracı işe giriş tarihi ile işten ayrılış
+tarihi arasındaki hizmet süresini esas alır.
+</p>
+
+<p>
+Kıdem tazminatı tavanının belirlenmesinde ise
+iş sözleşmesinin sona erdiği tarihte geçerli olan
+2026 dönemi kullanılır.
+</p>
+
+<div class="info-box">
+
+30 Haziran 2026 tarihinde ayrılış:
+
+<br>
+
+<strong>64.948,77 TL tavan</strong>
+
+<br><br>
+
+1 Temmuz 2026 tarihinde ayrılış:
+
+<br>
+
+<strong>73.729,87 TL tavan</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>2026 Kıdem Tazminatı Hesaplama Örnekleri</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Hesaba Esas Ücret</th>
+<th>Hizmet Süresi</th>
+<th>Yaklaşık Brüt Kıdem</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>30.000 TL</td>
+<td>1 yıl</td>
+<td>30.000 TL</td>
+</tr>
+
+<tr>
+<td>40.000 TL</td>
+<td>3 yıl</td>
+<td>120.000 TL</td>
+</tr>
+
+<tr>
+<td>50.000 TL</td>
+<td>5 yıl</td>
+<td>250.000 TL</td>
+</tr>
+
+<tr>
+<td>60.000 TL</td>
+<td>10 yıl</td>
+<td>600.000 TL</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<p>
+Tablodaki örneklerde ücretin ilgili dönem kıdem
+tazminatı tavanını aşmadığı varsayılmıştır.
+</p>
+
+</section>
 
 <section class="card">
 
 <h2>Sık Sorulan Sorular</h2>
-
 
 <h3>2026 kıdem tazminatı tavanı ne kadar?</h3>
 
 <p>
 1 Ocak–30 Haziran 2026 döneminde
 <strong>64.948,77 TL</strong>,
-1 Temmuz–31 Aralık 2026 döneminde ise
+1 Temmuz–31 Aralık 2026 döneminde
 <strong>73.729,87 TL</strong>'dir.
 </p>
-
 
 <h3>Kıdem tazminatı hangi maaş üzerinden hesaplanır?</h3>
 
 <p>
-Hesaplamada son giydirilmiş brüt ücret dikkate alınabilir.
-Ancak her hizmet yılı için esas alınabilecek tutar ilgili
-dönemin kıdem tazminatı tavanını geçemez.
+Genel hesaplamada son giydirilmiş brüt ücret dikkate alınır.
+Ancak her hizmet yılı için esas alınabilecek aylık tutar
+yürürlükteki kıdem tazminatı tavanını aşamaz.
 </p>
 
-
-<h3>Kıdem tazminatında 1 yıl nasıl hesaplanır?</h3>
+<h3>Kıdem tazminatında bir yıl nasıl hesaplanır?</h3>
 
 <p>
-Genel hesapta her tam hizmet yılı için yaklaşık bir
-aylık giydirilmiş brüt ücret esas alınır.
+Her tam hizmet yılı için genel olarak 30 günlük
+hesaba esas ücret üzerinden kıdem tazminatı hesaplanır.
 </p>
 
-
-<h3>Bir yıldan artan süre hesaba katılır mı?</h3>
+<h3>Artan aylar kıdem tazminatına dahil edilir mi?</h3>
 
 <p>
-Evet. Bir tam yılı aşan süreler de hizmet süresiyle
-orantılı olarak kıdem tazminatı hesabına dahil edilir.
+Evet. Tam yılları aşan ay ve günler de hizmet süresiyle
+orantılı olarak hesaplamaya dahil edilir.
 </p>
-
 
 <h3>Kıdem tazminatından gelir vergisi kesilir mi?</h3>
 
 <p>
-Kıdem tazminatında gelir vergisi yerine damga vergisi
+Kıdem tazminatının yasal kapsamındaki tutarında
+gelir vergisi kesintisi uygulanmaz. Damga vergisi
 kesintisi dikkate alınır.
 </p>
 
+<h3>Bir yıldan az çalışanın kıdem tazminatı hesaplanır mı?</h3>
+
+<p>
+Genel kural olarak aynı işverene bağlı en az bir yıllık
+çalışma şartı bulunduğundan bu hesaplayıcı bir yıldan
+kısa sürelerde kıdem tutarı üretmez.
+</p>
 
 <h3>İstifa eden herkes kıdem tazminatı alır mı?</h3>
 
 <p>
-Hayır. Kıdem tazminatına hak kazanma, iş sözleşmesinin
-sona erme nedenine ve mevzuattaki şartlara bağlıdır.
+Hayır. Normal istifa genel olarak kıdem tazminatı
+hakkı doğurmaz. Ancak mevzuatta özel hak kazanma
+halleri bulunduğundan somut ayrılma nedeni ayrıca
+değerlendirilmelidir.
 </p>
 
-
-<h3>Bu hesaplama kesin sonuç mudur?</h3>
+<h3>Hesaplama kesin sonuç mudur?</h3>
 
 <p>
-Hayır. Araclio tarafından hesaplanan tutar kullanıcı
-girdilerine dayalı tahmini bir matematiksel sonuçtur.
-Kesin hesaplama somut çalışma ve hukuki koşullara göre
-farklılaşabilir.
+Hayır. Sonuç kullanıcı tarafından girilen tarih ve
+ücret bilgilerine göre oluşturulan tahmini matematiksel
+hesaptır. Kesin tutar bordro kayıtları, çalışma koşulları
+ve hukuki duruma göre farklılaşabilir.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>Resmî Veri ve Hesaplama Yaklaşımı</h2>
+
+<div class="source-box">
+
+<strong>2026 tavan verisi:</strong>
+
+<br><br>
+
+T.C. Çalışma ve Sosyal Güvenlik Bakanlığı'nın
+2026 yılı kıdem tazminatı tavan verileri esas alınmıştır.
+
+<br><br>
+
+<strong>1 Ocak – 30 Haziran 2026:</strong>
+64.948,77 TL
+
+<br>
+
+<strong>1 Temmuz – 31 Aralık 2026:</strong>
+73.729,87 TL
+
+</div>
+
+<p>
+Araclio, hesaplamayı kullanıcı tarafından girilen
+bilgilere göre otomatik olarak gerçekleştirir.
+Resmî bir kurum değildir ve hesaplama sonucu resmî
+belge niteliği taşımaz.
+</p>
+
+</section>
 
 <section class="card">
 
@@ -691,28 +1011,34 @@ farklılaşabilir.
 
 <div class="legal-warning">
 
-Bu araç hukuki danışmanlık veya resmî bordro hizmeti değildir.
+Bu araç hukuki danışmanlık, mali müşavirlik veya
+resmî bordro hizmeti değildir.
 
 <br><br>
 
 Hesaplama sonucu çalışanın kıdem tazminatına hak
-kazandığını veya işverenin bu tutarı kesin olarak ödemek
-zorunda olduğunu göstermez.
+kazandığını veya işverenin hesaplanan tutarı kesin
+olarak ödemek zorunda olduğunu göstermez.
+
+<br><br>
+
+Ücret unsurları, çalışma süresinin hukuken dikkate
+alınacak bölümleri, fesih nedeni, işveren değişiklikleri,
+işyeri devri ve diğer özel durumlar sonucu değiştirebilir.
 
 <br><br>
 
 Uyuşmazlık veya kesin hesaplama gereken durumlarda
-güncel mevzuat, bordro kayıtları ve somut çalışma koşulları
-bir uzman tarafından değerlendirilmelidir.
+güncel mevzuat, bordrolar, iş sözleşmesi ve somut
+çalışma koşulları birlikte değerlendirilmelidir.
 
 </div>
 
 <p>
-<strong>Son güncelleme: Ekim 2026</strong>
+<strong>Son güncelleme: Kasım 2026</strong>
 </p>
 
 </section>
-
 
 <section class="card">
 
@@ -754,10 +1080,15 @@ Maaş Vergi Dilimi Hesaplama →
 </a>
 </p>
 
+<p>
+<a href="/yillik-izin-ucreti-hesaplama.html">
+Yıllık İzin Ücreti Hesaplama →
+</a>
+</p>
+
 </section>
 
 </main>
-
 
 <footer>
 
@@ -793,7 +1124,6 @@ Araclio • Ücretsiz Online Araçlar
 
 </footer>
 
-
 <script>
 
 const TAVAN_2026_ILK =
@@ -802,8 +1132,8 @@ const TAVAN_2026_ILK =
 const TAVAN_2026_IKINCI =
 73729.87;
 
-const DAMGA_BINDE =
-7.59;
+const DAMGA_ORANI =
+0.00759;
 
 
 function para(sayi){
@@ -819,70 +1149,101 @@ maximumFractionDigits:2
 }
 
 
-function tarihUTC(deger){
+function tarihParcala(deger){
 
-const parca =
+const p =
 deger.split("-");
+
+return {
+yil:Number(p[0]),
+ay:Number(p[1]),
+gun:Number(p[2])
+};
+
+}
+
+
+function utcTarih(deger){
+
+const p =
+tarihParcala(deger);
 
 return Date.UTC(
-Number(parca[0]),
-Number(parca[1]) - 1,
-Number(parca[2])
+p.yil,
+p.ay - 1,
+p.gun
 );
 
 }
 
 
-function tarihNesnesi(deger){
-
-const parca =
-deger.split("-");
-
-return new Date(
-Number(parca[0]),
-Number(parca[1]) - 1,
-Number(parca[2])
-);
-
-}
-
-
-function hizmetMetni(
+function gunSayisi(
 baslangicDeger,
 bitisDeger
 ){
 
 const bas =
-tarihNesnesi(baslangicDeger);
+utcTarih(baslangicDeger);
 
 const bit =
-tarihNesnesi(bitisDeger);
+utcTarih(bitisDeger);
+
+return Math.floor(
+(bit - bas) /
+86400000
+);
+
+}
+
+
+function hizmetSuresi(
+baslangicDeger,
+bitisDeger
+){
+
+const b =
+tarihParcala(baslangicDeger);
+
+const s =
+tarihParcala(bitisDeger);
+
 
 let yil =
-bit.getFullYear() -
-bas.getFullYear();
+s.yil - b.yil;
 
 let ay =
-bit.getMonth() -
-bas.getMonth();
+s.ay - b.ay;
 
 let gun =
-bit.getDate() -
-bas.getDate();
+s.gun - b.gun;
 
 
 if(gun < 0){
 
 ay--;
 
-const oncekiAyGun =
+const oncekiAy =
+s.ay - 1;
+
+const oncekiAyYil =
+oncekiAy === 0
+? s.yil - 1
+: s.yil;
+
+const oncekiAyNo =
+oncekiAy === 0
+? 12
+: oncekiAy;
+
+const oncekiAyGunSayisi =
 new Date(
-bit.getFullYear(),
-bit.getMonth(),
+oncekiAyYil,
+oncekiAyNo,
 0
 ).getDate();
 
-gun += oncekiAyGun;
+gun +=
+oncekiAyGunSayisi;
 
 }
 
@@ -896,35 +1257,41 @@ ay += 12;
 }
 
 
+return {
+yil:yil,
+ay:ay,
+gun:gun
+};
+
+}
+
+
+function hizmetMetni(sure){
+
 return (
-yil +
+sure.yil +
 " yıl " +
-ay +
+sure.ay +
 " ay " +
-gun +
+sure.gun +
 " gün"
 );
 
 }
 
 
-function tavanBul(
-bitisDeger
-){
+function tavanBul(bitisDeger){
 
-const parca =
-bitisDeger.split("-");
-
-const yil =
-Number(parca[0]);
-
-const ay =
-Number(parca[1]);
+const p =
+tarihParcala(bitisDeger);
 
 
-if(yil === 2026){
+if(p.yil !== 2026){
+return null;
+}
 
-if(ay <= 6){
+
+if(p.ay <= 6){
 
 return {
 tutar:TAVAN_2026_ILK,
@@ -932,6 +1299,7 @@ donem:"1 Ocak – 30 Haziran 2026"
 };
 
 }
+
 
 return {
 tutar:TAVAN_2026_IKINCI,
@@ -941,18 +1309,16 @@ donem:"1 Temmuz – 31 Aralık 2026"
 }
 
 
-return null;
-
-}
-
-
 function tavanBilgisiniGuncelle(){
 
 const bitisDeger =
-document.getElementById("bitis").value;
+document
+.getElementById("bitis")
+.value;
 
 const alan =
-document.getElementById("tavanBilgi");
+document
+.getElementById("tavanBilgi");
 
 
 if(!bitisDeger){
@@ -972,8 +1338,14 @@ tavanBul(bitisDeger);
 if(!tavan){
 
 alan.innerHTML =
-"<strong>Uyarı:</strong> Bu sayfa 2026 hesaplaması için hazırlanmıştır. " +
-"2026 dışındaki ayrılış tarihleri için ilgili dönemin kıdem tazminatı tavanı ayrıca kontrol edilmelidir.";
+
+"<strong>Uyarı:</strong> " +
+
+"Bu hesaplayıcı 2026 yılı için hazırlanmıştır. " +
+
+"2026 dışındaki işten ayrılış tarihleri için ilgili dönemin " +
+
+"kıdem tazminatı tavanı ayrıca kontrol edilmelidir.";
 
 return;
 
@@ -982,11 +1354,15 @@ return;
 
 alan.innerHTML =
 
-"<strong>Uygulanacak 2026 kıdem tazminatı tavanı:</strong><br>" +
+"<strong>Uygulanacak kıdem tazminatı tavanı:</strong>" +
+
+"<br><br>" +
 
 tavan.donem +
 
-"<br><strong>" +
+"<br>" +
+
+"<strong>" +
 para(tavan.tutar) +
 "</strong>";
 
@@ -996,22 +1372,29 @@ para(tavan.tutar) +
 function hesapla(){
 
 const baslangicDeger =
-document.getElementById("baslangic").value;
+document
+.getElementById("baslangic")
+.value;
 
 const bitisDeger =
-document.getElementById("bitis").value;
+document
+.getElementById("bitis")
+.value;
 
 const brutInput =
-document.getElementById("brut");
+document
+.getElementById("brut");
 
 const brut =
 Number(brutInput.value);
 
 const uyari =
-document.getElementById("uyari");
+document
+.getElementById("uyari");
 
 const sonuclar =
-document.getElementById("sonuclar");
+document
+.getElementById("sonuclar");
 
 
 if(
@@ -1030,15 +1413,16 @@ return;
 }
 
 
-const baslangic =
-tarihUTC(baslangicDeger);
+const baslangicUTC =
+utcTarih(baslangicDeger);
 
-const bitis =
-tarihUTC(bitisDeger);
+const bitisUTC =
+utcTarih(bitisDeger);
 
 
 if(
-bitis <= baslangic
+bitisUTC <=
+baslangicUTC
 ){
 
 uyari.textContent =
@@ -1076,7 +1460,11 @@ tavanBul(bitisDeger);
 if(!tavanBilgi){
 
 uyari.innerHTML =
-"<strong>Bu hesaplayıcı 2026 yılı için hazırlanmıştır.</strong><br>" +
+
+"<strong>Bu hesaplayıcı 2026 yılı için hazırlanmıştır.</strong>" +
+
+"<br><br>" +
+
 "Lütfen 2026 yılı içinde bir işten ayrılış tarihi seçin.";
 
 sonuclar.style.display =
@@ -1087,30 +1475,35 @@ return;
 }
 
 
-const gunFarki =
-Math.round(
-(bitis - baslangic) /
-86400000
+const sure =
+hizmetSuresi(
+baslangicDeger,
+bitisDeger
 );
 
 
-/*
-Genel oransal hizmet yılı hesabı
-*/
+const toplamGun =
+gunSayisi(
+baslangicDeger,
+bitisDeger
+);
 
-const hizmetYili =
-gunFarki / 365;
 
-
-if(
-hizmetYili < 1
-){
+if(sure.yil < 1){
 
 uyari.innerHTML =
 
-"<strong>Dikkat:</strong> Girilen tarihlere göre çalışma süresi " +
-"bir yıldan az görünüyor. Genel kıdem tazminatı hesabında en az " +
-"bir yıllık çalışma şartı dikkate alınır. Hak kazanma koşulları ayrıca değerlendirilmelidir.";
+"<strong>Dikkat:</strong> " +
+
+"Girilen tarihlere göre çalışma süresi bir yıldan az görünüyor." +
+
+"<br><br>" +
+
+"Genel kıdem tazminatı uygulamasında aynı işverene bağlı " +
+
+"en az bir yıllık çalışma şartı aranır. " +
+
+"Hak kazanma koşulları ayrıca değerlendirilmelidir.";
 
 sonuclar.style.display =
 "none";
@@ -1131,19 +1524,41 @@ tavan
 );
 
 
-const brutKidem =
+/*
+Tam yıl + artan ay + artan gün
+üzerinden yaklaşık kıdem hesabı
+*/
+
+const yilTutari =
 esasUcret *
-hizmetYili;
+sure.yil;
 
 
-const damgaOrani =
-DAMGA_BINDE /
-1000;
+const ayTutari =
+(
+esasUcret /
+12
+) *
+sure.ay;
+
+
+const gunTutari =
+(
+esasUcret /
+365
+) *
+sure.gun;
+
+
+const brutKidem =
+yilTutari +
+ayTutari +
+gunTutari;
 
 
 const damgaTutari =
 brutKidem *
-damgaOrani;
+DAMGA_ORANI;
 
 
 const netKidem =
@@ -1166,16 +1581,13 @@ para(netKidem);
 document
 .getElementById("hizmet")
 .textContent =
-hizmetMetni(
-baslangicDeger,
-bitisDeger
-);
+hizmetMetni(sure);
 
 
 document
 .getElementById("hizmetGun")
 .textContent =
-gunFarki.toLocaleString("tr-TR") +
+toplamGun.toLocaleString("tr-TR") +
 " gün";
 
 
@@ -1210,16 +1622,35 @@ brut > tavan
 
 uyari.innerHTML =
 
-"<strong>Yaklaşık sonuç:</strong> Girilen bilgilere göre " +
-"tahmini net kıdem tazminatı <strong>" +
+"<strong>Yaklaşık net kıdem tazminatı: " +
+
 para(netKidem) +
-"</strong> olarak hesaplandı.<br><br>" +
+
+"</strong>" +
+
+"<br><br>" +
+
+"Hizmet süresi: <strong>" +
+
+hizmetMetni(sure) +
+
+"</strong>" +
+
+"<br>" +
 
 "Uygulanan dönem: <strong>" +
-tavanBilgi.donem +
-"</strong>.<br><br>" +
 
-"<small>Bu sonuç kıdem tazminatına hak kazanıldığını göstermez.</small>";
+tavanBilgi.donem +
+
+"</strong>" +
+
+"<br><br>" +
+
+"<small>" +
+
+"Bu sonuç kıdem tazminatına hukuken hak kazanıldığını göstermez." +
+
+"</small>";
 
 
 sonuclar.style.display =
@@ -1236,28 +1667,42 @@ tavanBilgisiniGuncelle
 );
 
 
-["baslangic","bitis","brut"].forEach(
+[
+"baslangic",
+"bitis",
+"brut"
+]
+.forEach(
 function(id){
 
 document
 .getElementById(id)
 .addEventListener(
 "keydown",
-function(e){
+function(event){
 
-if(e.key === "Enter"){
+if(
+event.key === "Enter"
+){
+
 hesapla();
-}
 
 }
-);
 
 }
 );
 
+}
+);
 
-document.getElementById("year").textContent =
+
+document
+.getElementById("year")
+.textContent =
 new Date().getFullYear();
+
+
+tavanBilgisiniGuncelle();
 
 </script>
 
