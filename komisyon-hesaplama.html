@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Komisyon Hesaplama | Banka, POS ve Pazaryeri Komisyonu - Araclio</title>
+<title>Komisyon Hesaplama | Net Tutar ve Ters Komisyon - Araclio</title>
 
 <meta
 name="description"
-content="Ücretsiz komisyon hesaplama aracı. Satış veya işlem tutarı ile komisyon oranını girerek komisyon kesintisini ve net kalan tutarı hesaplayın."
+content="Komisyon hesaplama aracı. İşlem tutarı, komisyon oranı, ek kesinti ve sabit ücretten toplam kesintiyi ve net tutarı hesaplayın. Hedef net tutardan gerekli brüt tutarı bulun."
 >
 
 <meta name="robots" content="index,follow">
@@ -35,12 +35,12 @@ href="https://araclio.com/komisyon-hesaplama.html"
 
 <meta
 property="og:title"
-content="Komisyon Hesaplama | Banka, POS ve Pazaryeri"
+content="Komisyon Hesaplama | Net Tutar ve Ters Hesap"
 >
 
 <meta
 property="og:description"
-content="Komisyon oranından kesinti tutarını ve elinize kalacak net tutarı ücretsiz hesaplayın."
+content="Komisyon, ek kesinti ve sabit işlem ücretinden net kalan tutarı veya hedef net tutar için gerekli brüt tutarı hesaplayın."
 >
 
 <meta
@@ -77,7 +77,7 @@ font-weight:700;
 }
 
 .info-box{
-margin-top:18px;
+margin:16px 0;
 padding:16px;
 border-radius:10px;
 background:#f5f5f5;
@@ -86,12 +86,12 @@ line-height:1.8;
 }
 
 .warning-box{
-margin-top:18px;
+margin:18px 0;
 padding:16px;
-border:2px solid #b26a00;
+border:1px solid #e7d28b;
 border-radius:10px;
-background:#fff8e8;
-color:#6b4300;
+background:#fff8e1;
+color:#4d3d00;
 line-height:1.8;
 }
 
@@ -115,7 +115,7 @@ margin-top:15px;
 table{
 width:100%;
 border-collapse:collapse;
-min-width:560px;
+min-width:600px;
 }
 
 th,
@@ -123,6 +123,21 @@ td{
 padding:12px;
 border-bottom:1px solid rgba(127,127,127,.25);
 text-align:left;
+}
+
+.mode-buttons{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin:12px 0 20px;
+}
+
+.mode-buttons button{
+width:auto;
+}
+
+.hidden{
+display:none;
 }
 
 @media(max-width:650px){
@@ -144,7 +159,7 @@ grid-template-columns:1fr;
   "applicationCategory":"FinanceApplication",
   "operatingSystem":"Any",
   "inLanguage":"tr-TR",
-  "description":"Satış veya işlem tutarı ve komisyon oranından komisyon kesintisini ve net kalan tutarı hesaplayan ücretsiz online araç.",
+  "description":"İşlem tutarı, komisyon oranı, ek yüzdesel kesinti ve sabit işlem ücretinden net tutarı veya hedef net tutardan gerekli brüt tutarı hesaplayan ücretsiz araç.",
   "offers":{
     "@type":"Offer",
     "price":"0",
@@ -197,7 +212,15 @@ grid-template-columns:1fr;
       "name":"Komisyon sonrası net tutar nasıl hesaplanır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"İşlem tutarından hesaplanan komisyon tutarı çıkarılarak net kalan tutar bulunur."
+        "text":"İşlem tutarından komisyon, ek yüzdesel kesinti ve sabit işlem ücreti çıkarılarak net kalan tutar bulunur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Hedef net tutardan gerekli brüt tutar nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Hedef net tutara sabit ücret eklenir ve sonuç 1 eksi toplam yüzdesel kesinti oranına bölünür."
       }
     },
     {
@@ -205,15 +228,15 @@ grid-template-columns:1fr;
       "name":"10.000 TL'de yüzde 15 komisyon ne kadar?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"10.000 TL'nin yüzde 15 komisyonu 1.500 TL'dir. Komisyon sonrası 8.500 TL kalır."
+        "text":"Başka kesinti yoksa 10.000 TL'nin yüzde 15 komisyonu 1.500 TL'dir ve 8.500 TL net kalır."
       }
     },
     {
       "@type":"Question",
-      "name":"Banka veya POS komisyonu bu araçla hesaplanabilir mi?",
+      "name":"Sabit işlem ücreti komisyon hesabına eklenebilir mi?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Yüzde bazlı komisyon bu araçla hesaplanabilir. Sabit ücret, vergi veya diğer ek kesintiler ayrıca değerlendirilmelidir."
+        "text":"Evet. Sabit işlem ücreti yüzdesel kesintilerden ayrı olarak toplam kesintiye eklenebilir."
       }
     }
   ]
@@ -225,6 +248,7 @@ grid-template-columns:1fr;
 <body>
 
 <header>
+
 <div class="wrap nav">
 
 <a class="brand" href="/">
@@ -236,8 +260,8 @@ Araclio
 </span>
 
 </div>
-</header>
 
+</header>
 
 <main class="wrap">
 
@@ -250,17 +274,43 @@ KOMİSYON • NET TUTAR • POS • PAZARYERİ
 <h1>Komisyon Hesaplama</h1>
 
 <p>
-Satış veya işlem tutarı ile komisyon oranını girerek
-kesilecek komisyon tutarını ve komisyon sonrası
-elinize kalacak net tutarı saniyeler içinde hesaplayın.
+İşlem tutarı, komisyon oranı, ek yüzdesel kesinti
+ve sabit işlem ücretini girerek toplam kesintiyi ve
+elinize kalacak net tutarı hesaplayın. İsterseniz
+hedef net tutardan gerekli brüt işlem tutarını da bulun.
 </p>
 
 </section>
 
-
 <section class="card">
 
-<h2>Komisyon Hesapla</h2>
+<h2>Komisyon Hesaplama Türü</h2>
+
+<div class="mode-buttons">
+
+<button
+type="button"
+id="normalBtn"
+onclick="modDegistir('normal')"
+>
+Brütten Nete Hesapla
+</button>
+
+<button
+type="button"
+id="tersBtn"
+onclick="modDegistir('ters')"
+>
+Netten Brüte Hesapla
+</button>
+
+</div>
+
+</section>
+
+<section class="card" id="normalBolum">
+
+<h2>Brütten Nete Komisyon Hesapla</h2>
 
 <label for="tutar">
 Satış / İşlem Tutarı (TL)
@@ -275,169 +325,272 @@ inputmode="decimal"
 placeholder="Örnek: 10000"
 >
 
-
 <label for="oran">
-Komisyon Oranı (%)
+Ana Komisyon Oranı (%)
 </label>
 
 <input
 id="oran"
 type="number"
 min="0"
-max="100"
+max="99.99"
 step="0.01"
 inputmode="decimal"
+value="0"
 placeholder="Örnek: 15"
 >
 
-
 <div class="quick-buttons">
 
-<button type="button" onclick="oranSec(5)">
-%5
-</button>
-
-<button type="button" onclick="oranSec(10)">
-%10
-</button>
-
-<button type="button" onclick="oranSec(15)">
-%15
-</button>
-
-<button type="button" onclick="oranSec(20)">
-%20
-</button>
-
-<button type="button" onclick="oranSec(25)">
-%25
-</button>
+<button type="button" onclick="oranSec(5)">%5</button>
+<button type="button" onclick="oranSec(10)">%10</button>
+<button type="button" onclick="oranSec(15)">%15</button>
+<button type="button" onclick="oranSec(20)">%20</button>
+<button type="button" onclick="oranSec(25)">%25</button>
 
 </div>
 
+<label for="ekOran">
+Ek Yüzdesel Kesinti (%)
+</label>
+
+<input
+id="ekOran"
+type="number"
+min="0"
+max="99.99"
+step="0.01"
+inputmode="decimal"
+value="0"
+placeholder="Örnek: 2"
+>
+
+<p>
+<small>
+Varsa ek hizmet bedeli, ikinci komisyon veya
+başka yüzdesel kesintiyi buraya girebilirsiniz.
+</small>
+</p>
+
+<label for="sabitUcret">
+Sabit İşlem Ücreti (TL)
+</label>
+
+<input
+id="sabitUcret"
+type="number"
+min="0"
+step="0.01"
+inputmode="decimal"
+value="0"
+placeholder="Örnek: 3.50"
+>
 
 <button type="button" onclick="hesapla()">
 Komisyonu Hesapla
 </button>
 
-
 <div id="sonuc" class="result" aria-live="polite">
-Tutar ve komisyon oranını girin.
+İşlem tutarı ve kesinti bilgilerini girin.
 </div>
-
 
 <div id="sonucKutulari" class="result-grid" style="display:none;">
 
 <div class="result-box">
-<strong>Komisyon Tutarı</strong>
-<span id="komisyonSonuc" class="big-result">0 TL</span>
+<strong>Ana Komisyon</strong>
+<span id="komisyonSonuc" class="big-result">-</span>
+</div>
+
+<div class="result-box">
+<strong>Ek Yüzdesel Kesinti</strong>
+<span id="ekKesintiSonuc">-</span>
+</div>
+
+<div class="result-box">
+<strong>Sabit İşlem Ücreti</strong>
+<span id="sabitSonuc">-</span>
+</div>
+
+<div class="result-box">
+<strong>Toplam Kesinti</strong>
+<span id="toplamKesintiSonuc" class="big-result">-</span>
 </div>
 
 <div class="result-box">
 <strong>Net Kalan Tutar</strong>
-<span id="netSonuc" class="big-result">0 TL</span>
+<span id="netSonuc" class="big-result">-</span>
 </div>
 
 <div class="result-box">
-<strong>İşlem Tutarı</strong>
-<span id="tutarSonuc">0 TL</span>
-</div>
-
-<div class="result-box">
-<strong>Komisyon Oranı</strong>
-<span id="oranSonuc">%0</span>
+<strong>Toplam Kesinti Oranı</strong>
+<span id="toplamOranSonuc">-</span>
 </div>
 
 </div>
 
 </section>
 
+<section class="card hidden" id="tersBolum">
+
+<h2>Netten Brüte Komisyon Hesapla</h2>
+
+<p>
+Kesintilerden sonra elinize geçmesini istediğiniz net
+tutarı girin. Araç gerekli brüt işlem tutarını hesaplasın.
+</p>
+
+<label for="hedefNet">
+Hedef Net Tutar (TL)
+</label>
+
+<input
+id="hedefNet"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 10000"
+>
+
+<label for="tersOran">
+Ana Komisyon Oranı (%)
+</label>
+
+<input
+id="tersOran"
+type="number"
+min="0"
+max="99.99"
+step="0.01"
+inputmode="decimal"
+value="0"
+placeholder="Örnek: 15"
+>
+
+<label for="tersEkOran">
+Ek Yüzdesel Kesinti (%)
+</label>
+
+<input
+id="tersEkOran"
+type="number"
+min="0"
+max="99.99"
+step="0.01"
+inputmode="decimal"
+value="0"
+>
+
+<label for="tersSabit">
+Sabit İşlem Ücreti (TL)
+</label>
+
+<input
+id="tersSabit"
+type="number"
+min="0"
+step="0.01"
+inputmode="decimal"
+value="0"
+>
+
+<button type="button" onclick="tersHesapla()">
+Gerekli Brüt Tutarı Hesapla
+</button>
+
+<div id="tersSonuc" class="result" aria-live="polite">
+Hedef net tutarı ve kesinti oranlarını girin.
+</div>
+
+<div id="tersKutular" class="result-grid" style="display:none;">
+
+<div class="result-box">
+<strong>Gerekli Brüt Tutar</strong>
+<span id="brutSonuc" class="big-result">-</span>
+</div>
+
+<div class="result-box">
+<strong>Toplam Kesinti</strong>
+<span id="tersToplamKesinti">-</span>
+</div>
+
+<div class="result-box">
+<strong>Hedef Net Tutar</strong>
+<span id="hedefNetSonuc">-</span>
+</div>
+
+<div class="result-box">
+<strong>Toplam Yüzdesel Kesinti</strong>
+<span id="tersToplamOran">-</span>
+</div>
+
+</div>
+
+</section>
 
 <section class="card">
 
 <h2>Komisyon Nasıl Hesaplanır?</h2>
 
-<p>
-Komisyon tutarı, işlem veya satış tutarının belirlenen
-komisyon oranıyla çarpılmasıyla bulunur.
-</p>
-
 <div class="info-box">
 
-<strong>
-Komisyon =
-İşlem Tutarı × Komisyon Oranı ÷ 100
-</strong>
+<strong>Ana Komisyon =</strong>
 
 <br><br>
 
-<strong>
-Net Tutar =
-İşlem Tutarı − Komisyon
-</strong>
+İşlem Tutarı × Komisyon Oranı ÷ 100
+
+<br><br>
+
+<strong>Ek Yüzdesel Kesinti =</strong>
+
+<br><br>
+
+İşlem Tutarı × Ek Kesinti Oranı ÷ 100
+
+<br><br>
+
+<strong>Toplam Kesinti =</strong>
+
+<br><br>
+
+Ana Komisyon + Ek Kesinti + Sabit İşlem Ücreti
+
+<br><br>
+
+<strong>Net Tutar =</strong>
+
+<br><br>
+
+İşlem Tutarı − Toplam Kesinti
 
 </div>
 
 </section>
-
 
 <section class="card">
 
 <h2>10.000 TL'de %15 Komisyon Ne Kadar?</h2>
 
-<div class="info-box">
-
-İşlem tutarı:
-
-<strong>10.000 TL</strong>
-
-<br>
-
-Komisyon oranı:
-
-<strong>%15</strong>
-
-<br><br>
-
-Komisyon:
-
-<strong>1.500 TL</strong>
-
-<br>
-
-Net kalan:
-
-<strong>8.500 TL</strong>
-
-</div>
-
-</section>
-
-
-<section class="card">
-
-<h2>Banka Komisyonu Nasıl Hesaplanır?</h2>
-
 <p>
-Banka veya ödeme kuruluşunun komisyonu yüzde olarak belirtilmişse
-aynı temel formül kullanılabilir.
+Başka kesinti veya sabit ücret olmadığını varsayalım.
 </p>
 
 <div class="info-box">
 
-Örneğin:
+İşlem tutarı:
+<strong>10.000 TL</strong>
 
 <br><br>
 
-50.000 TL işlem
-
-<br>
-
-%3 komisyon
+Komisyon:
+<strong>%15</strong>
 
 <br><br>
 
-50.000 × 3 ÷ 100 =
+10.000 × 0,15 =
+
+<br><br>
 
 <strong>1.500 TL komisyon</strong>
 
@@ -445,34 +598,137 @@ aynı temel formül kullanılabilir.
 
 Net kalan:
 
-<strong>48.500 TL</strong>
+<br>
+
+10.000 − 1.500 =
+
+<br><br>
+
+<strong>8.500 TL</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Sabit İşlem Ücreti Nasıl Hesaplanır?</h2>
+
+<p>
+Bazı sistemlerde yüzdesel komisyona ek olarak işlem
+başına sabit ücret uygulanabilir.
+</p>
+
+<p>
+Örneğin 1.000 TL işlemde %5 komisyon ve 3 TL
+sabit işlem ücreti varsa:
+</p>
+
+<div class="info-box">
+
+Yüzdesel komisyon:
+
+<br>
+
+1.000 × %5 =
+<strong>50 TL</strong>
+
+<br><br>
+
+Sabit ücret:
+
+<br>
+
+<strong>3 TL</strong>
+
+<br><br>
+
+Toplam kesinti:
+
+<br>
+
+<strong>53 TL</strong>
+
+<br><br>
+
+Net:
+
+<br>
+
+<strong>947 TL</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Netten Brüte Komisyon Nasıl Hesaplanır?</h2>
+
+<p>
+Kesintilerden sonra belirli bir net tutarın elinizde
+kalmasını istiyorsanız işlem tersine çevrilebilir.
+</p>
+
+<div class="info-box">
+
+<strong>Gerekli Brüt Tutar =</strong>
+
+<br><br>
+
+(Hedef Net + Sabit Ücret)
+
+<br>
+
+÷
+
+<br>
+
+(1 − Toplam Yüzdesel Kesinti)
 
 </div>
 
 <p>
-Ancak bankanın sabit işlem ücreti, BSMV veya başka bir masrafı varsa
-bunların ayrıca değerlendirilmesi gerekir.
+Örneğin %10 toplam kesinti altında elinize
+9.000 TL geçmesini istiyorsanız:
 </p>
 
-</section>
+<div class="info-box">
 
+9.000 ÷ 0,90
+
+<br><br>
+
+=
+
+<br><br>
+
+<strong>10.000 TL brüt işlem tutarı</strong>
+
+</div>
+
+</section>
 
 <section class="card">
 
 <h2>POS Komisyonu Nasıl Hesaplanır?</h2>
 
 <p>
-POS işlemlerinde bankanın veya ödeme kuruluşunun uyguladığı
-yüzde bazlı kesinti, işlem tutarı üzerinden hesaplanabilir.
+POS işlemlerinde banka veya ödeme kuruluşu yüzde bazlı
+komisyon ve bazı ürünlerde ek ücretler uygulayabilir.
+</p>
+
+<p>
+Örneğin:
 </p>
 
 <div class="info-box">
 
 10.000 TL işlem
 
-<br>
+<br><br>
 
-%2,5 POS komisyonu
+%2,5 komisyon
 
 <br><br>
 
@@ -480,31 +736,35 @@ Komisyon:
 
 <strong>250 TL</strong>
 
-<br>
+<br><br>
 
-Komisyon sonrası:
+Başka kesinti yoksa net:
 
 <strong>9.750 TL</strong>
 
 </div>
 
-</section>
+<p>
+Gerçek POS maliyetinde oran, taksit sayısı, valör,
+işlem tipi ve sözleşme şartları farklı olabilir.
+</p>
 
+</section>
 
 <section class="card">
 
 <h2>Pazaryeri Komisyonu Nasıl Hesaplanır?</h2>
 
 <p>
-Pazaryerlerinde satış fiyatı üzerinden kategoriye göre
-belirli bir komisyon oranı uygulanabilir.
+Pazaryerlerinde komisyon çoğunlukla satış bedeline
+uygulanan yüzdesel oran şeklinde ifade edilir.
 </p>
 
 <div class="info-box">
 
 2.000 TL satış
 
-<br>
+<br><br>
 
 %20 komisyon
 
@@ -514,21 +774,20 @@ Komisyon:
 
 <strong>400 TL</strong>
 
-<br>
+<br><br>
 
-Komisyon sonrası:
+Yalnızca bu komisyon varsa net:
 
 <strong>1.600 TL</strong>
 
 </div>
 
 <p>
-Bu yalnızca komisyon hesabıdır. Gerçek pazaryeri ödemelerinde
-hizmet bedeli, kargo, reklam, vergi veya başka kesintiler olabilir.
+Hizmet bedeli, kargo, reklam, kampanya kesintisi ve diğer
+giderler ayrıca bulunabilir.
 </p>
 
 </section>
-
 
 <section class="card">
 
@@ -540,10 +799,10 @@ hizmet bedeli, kargo, reklam, vergi veya başka kesintiler olabilir.
 
 <thead>
 <tr>
-<th>İşlem Tutarı</th>
+<th>İşlem</th>
 <th>Komisyon</th>
 <th>Kesinti</th>
-<th>Net Kalan</th>
+<th>Net</th>
 </tr>
 </thead>
 
@@ -584,13 +843,6 @@ hizmet bedeli, kargo, reklam, vergi veya başka kesintiler olabilir.
 <td>8.000 TL</td>
 </tr>
 
-<tr>
-<td>50.000 TL</td>
-<td>%10</td>
-<td>5.000 TL</td>
-<td>45.000 TL</td>
-</tr>
-
 </tbody>
 
 </table>
@@ -599,56 +851,81 @@ hizmet bedeli, kargo, reklam, vergi veya başka kesintiler olabilir.
 
 </section>
 
-
 <section class="card">
 
-<h2>%10 Komisyon Ne Kadar?</h2>
+<h2>Ek Yüzdesel Kesinti Ne İçin Kullanılır?</h2>
+
+<p>
+Ana komisyona ek olarak ikinci bir yüzdesel kesinti
+bulunuyorsa ayrı alana girilebilir.
+</p>
+
+<p>
+Örneğin:
+</p>
 
 <div class="info-box">
 
-1.000 TL → <strong>100 TL</strong>
+Ana komisyon:
+<strong>%10</strong>
 
-<br>
+<br><br>
 
-5.000 TL → <strong>500 TL</strong>
+Ek yüzdesel kesinti:
+<strong>%2</strong>
 
-<br>
+<br><br>
 
-10.000 TL → <strong>1.000 TL</strong>
+Toplam yüzdesel kesinti:
+<strong>%12</strong>
 
-<br>
+</div>
 
-50.000 TL → <strong>5.000 TL</strong>
+<div class="warning-box">
+
+Ek kesintinin gerçekten işlem tutarının tamamı üzerinden
+hesaplanıp hesaplanmadığını sözleşmenizden kontrol edin.
+
+<br><br>
+
+Bazı ücretler komisyon tutarı üzerinden, bazıları işlem
+tutarı üzerinden veya farklı bir matrah üzerinden
+hesaplanabilir. Böyle durumlarda bu basit yüzde modeli
+birebir sonuç vermeyebilir.
 
 </div>
 
 </section>
 
-
 <section class="card">
 
-<h2>%20 Komisyon Ne Kadar?</h2>
+<h2>KDV, BSMV ve Diğer Vergiler</h2>
 
-<div class="info-box">
+<p>
+Vergi ve yasal kesintiler her işlemde aynı şekilde
+uygulanmayabilir.
+</p>
 
-1.000 TL → <strong>200 TL</strong>
+<p>
+Bu nedenle araç herhangi bir KDV, BSMV veya başka
+vergi oranını otomatik olarak komisyona eklemez.
+</p>
 
-<br>
+<div class="warning-box">
 
-5.000 TL → <strong>1.000 TL</strong>
+Elinizdeki banka, POS, ödeme kuruluşu veya pazaryeri
+sözleşmesinde ayrıca yüzde bazlı bir kesinti belirtilmişse
+<strong>Ek Yüzdesel Kesinti</strong> alanını kullanabilirsiniz.
 
-<br>
+<br><br>
 
-10.000 TL → <strong>2.000 TL</strong>
-
-<br>
-
-50.000 TL → <strong>10.000 TL</strong>
+Sabit bir ücret varsa
+<strong>Sabit İşlem Ücreti</strong>
+alanına yazabilirsiniz.
 
 </div>
 
 </section>
-
 
 <section class="card">
 
@@ -659,49 +936,31 @@ Hayır.
 </p>
 
 <p>
-Komisyon, satış veya işlem tutarından yapılan kesintidir.
-Kâr hesabında ise alış maliyeti, satış fiyatı ve diğer giderler
-dikkate alınabilir.
+Komisyon, satış veya işlem tutarından yapılan bir kesintidir.
+Kâr hesabında ürün maliyeti ve diğer giderler de dikkate alınır.
 </p>
 
 <p>
-Kâr hesabı için:
-<a href="/kar-zarar-hesaplama.html">
-Kâr Zarar Hesaplama
+Ürün kârlılığı için:
+</p>
+
+<p>
+<a href="/kar-marji-hesaplama.html">
+Kâr Marjı Hesaplama →
 </a>
-aracını kullanabilirsiniz.
 </p>
-
-</section>
-
-
-<section class="card">
-
-<h2>Gerçek Net Tutar Neden Farklı Olabilir?</h2>
 
 <p>
-Bu araç yalnızca girdiğiniz yüzde üzerinden komisyonu hesaplar.
+E-ticaret giderleri için:
 </p>
 
-<div class="warning-box">
-
-Aşağıdaki kalemler otomatik olarak dahil değildir:
-
-<br><br>
-
-* KDV veya diğer vergiler<br>
-* Banka vergileri ve yasal kesintiler<br>
-* Sabit işlem ücretleri<br>
-* Pazaryeri hizmet bedeli<br>
-* Kargo gideri<br>
-* Reklam gideri<br>
-* Ödeme kuruluşu ücretleri<br>
-* Platforma özel diğer kesintiler
-
-</div>
+<p>
+<a href="/e-ticaret-kar-hesaplama.html">
+E-Ticaret Kâr Hesaplama →
+</a>
+</p>
 
 </section>
-
 
 <section class="card">
 
@@ -713,52 +972,55 @@ Aşağıdaki kalemler otomatik olarak dahil değildir:
 İşlem tutarı komisyon oranıyla çarpılır ve 100'e bölünür.
 </p>
 
-
 <h3>10.000 TL'de %15 komisyon ne kadar?</h3>
 
 <p>
-Komisyon
-<strong>1.500 TL</strong>,
-net kalan
-<strong>8.500 TL</strong>
-olur.
+Başka kesinti yoksa komisyon 1.500 TL,
+net kalan 8.500 TL'dir.
 </p>
 
-
-<h3>10.000 TL'de %20 komisyon ne kadar?</h3>
+<h3>Sabit işlem ücreti dahil edilebilir mi?</h3>
 
 <p>
-Komisyon
-<strong>2.000 TL</strong>,
-net kalan
-<strong>8.000 TL</strong>
-olur.
+Evet. Yüzdesel komisyona ek sabit işlem ücretini
+ayrı alana girebilirsiniz.
 </p>
 
-
-<h3>Banka komisyonu nasıl hesaplanır?</h3>
+<h3>İki farklı yüzde kesinti hesaplanabilir mi?</h3>
 
 <p>
-Yüzde bazlı komisyon, işlem tutarı × komisyon oranı ÷ 100
-formülüyle hesaplanabilir.
+Evet. Ana komisyon ve ek yüzdesel kesinti ayrı ayrı
+girilebilir.
 </p>
 
+<h3>Netten brüte komisyon hesabı yapılabilir mi?</h3>
+
+<p>
+Evet. Hedef net tutarı girerek kesintiler sonrasında
+bu tutarın kalması için gereken brüt işlem tutarını
+hesaplayabilirsiniz.
+</p>
 
 <h3>POS komisyonu hesaplanabilir mi?</h3>
 
 <p>
-Evet. Yüzde bazlı POS komisyonunu hesaplayabilirsiniz.
-Ek ücretler varsa ayrıca eklenmelidir.
+Evet. Yüzde ve sabit ücret bilgileri biliniyorsa
+matematiksel kesinti hesaplanabilir.
 </p>
-
 
 <h3>Pazaryeri komisyonu hesaplanabilir mi?</h3>
 
 <p>
-Evet. Satış tutarı ve pazaryerinin komisyon oranı girilerek
-matematiksel komisyon hesaplanabilir.
+Evet. Ancak pazaryerinin diğer hizmet, kargo,
+kampanya ve reklam kesintileri ayrıca değerlendirilmelidir.
 </p>
 
+<h3>Vergiler otomatik dahil mi?</h3>
+
+<p>
+Hayır. Araç herhangi bir vergi oranını otomatik
+olarak varsaymaz.
+</p>
 
 <h3>Komisyon hesaplama ücretsiz mi?</h3>
 
@@ -769,6 +1031,31 @@ ve üyelik gerektirmez.
 
 </section>
 
+<section class="card">
+
+<h2>Önemli Bilgilendirme</h2>
+
+<div class="warning-box">
+
+Bu araç genel matematiksel komisyon hesabı yapar.
+
+<br><br>
+
+Banka, POS, pazaryeri ve ödeme kuruluşlarının gerçek
+kesinti yöntemi; işlem türüne, kategoriye, taksit sayısına,
+sözleşmeye, vergi uygulamasına ve ek ücretlere göre değişebilir.
+
+<br><br>
+
+Araç yalnızca sizin girdiğiniz oran ve ücretleri kullanır.
+
+</div>
+
+<p>
+<strong>Son güncelleme: Kasım 2026</strong>
+</p>
+
+</section>
 
 <section class="card">
 
@@ -814,7 +1101,6 @@ KDV Hesaplama →
 
 </main>
 
-
 <footer>
 
 <div class="wrap">
@@ -849,7 +1135,6 @@ Araclio • Ücretsiz Online Araçlar
 
 </footer>
 
-
 <script>
 
 function para(sayi){
@@ -860,7 +1145,8 @@ return new Intl.NumberFormat(
 minimumFractionDigits:2,
 maximumFractionDigits:2
 }
-).format(sayi) + " TL";
+).format(sayi) +
+" TL";
 
 }
 
@@ -870,9 +1156,51 @@ function yuzde(sayi){
 return new Intl.NumberFormat(
 "tr-TR",
 {
+minimumFractionDigits:0,
 maximumFractionDigits:2
 }
-).format(sayi);
+).format(sayi) +
+"%";
+
+}
+
+
+function modDegistir(mod){
+
+const normal =
+document
+.getElementById("normalBolum");
+
+const ters =
+document
+.getElementById("tersBolum");
+
+
+if(
+mod ===
+"normal"
+){
+
+normal.classList.remove(
+"hidden"
+);
+
+ters.classList.add(
+"hidden"
+);
+
+}
+else{
+
+normal.classList.add(
+"hidden"
+);
+
+ters.classList.remove(
+"hidden"
+);
+
+}
 
 }
 
@@ -884,6 +1212,7 @@ document
 .value =
 deger;
 
+
 const tutar =
 Number(
 document
@@ -891,9 +1220,13 @@ document
 .value
 );
 
+
 if(
-Number.isFinite(tutar) &&
-tutar > 0
+Number.isFinite(
+tutar
+) &&
+tutar >
+0
 ){
 
 hesapla();
@@ -903,40 +1236,128 @@ hesapla();
 }
 
 
-function hesapla(){
+function okuOpsiyonel(id){
 
-const tutarInput =
-document.getElementById("tutar");
-
-const oranInput =
-document.getElementById("oran");
-
-const sonuc =
-document.getElementById("sonuc");
-
-const kutular =
-document.getElementById("sonucKutulari");
-
-
-const tutar =
-Number(tutarInput.value);
-
-const oran =
-Number(oranInput.value);
+const input =
+document
+.getElementById(id);
 
 
 if(
-tutarInput.value === "" ||
-oranInput.value === "" ||
-!Number.isFinite(tutar) ||
-!Number.isFinite(oran) ||
-tutar <= 0 ||
-oran < 0 ||
-oran > 100
+input.value ===
+""
 ){
 
-sonuc.innerHTML =
-"Lütfen geçerli bir tutar ve %0 ile %100 arasında komisyon oranı girin.";
+return 0;
+
+}
+
+
+return Number(
+input.value
+);
+
+}
+
+
+function hesapla(){
+
+const tutarInput =
+document
+.getElementById("tutar");
+
+const sonuc =
+document
+.getElementById("sonuc");
+
+const kutular =
+document
+.getElementById("sonucKutulari");
+
+
+const tutar =
+Number(
+tutarInput.value
+);
+
+const oran =
+okuOpsiyonel(
+"oran"
+);
+
+const ekOran =
+okuOpsiyonel(
+"ekOran"
+);
+
+const sabit =
+okuOpsiyonel(
+"sabitUcret"
+);
+
+
+if(
+tutarInput.value ===
+"" ||
+!Number.isFinite(
+tutar
+) ||
+tutar <=
+0
+){
+
+sonuc.textContent =
+"Lütfen sıfırdan büyük geçerli bir işlem tutarı girin.";
+
+kutular.style.display =
+"none";
+
+return;
+
+}
+
+
+if(
+!Number.isFinite(
+oran
+) ||
+!Number.isFinite(
+ekOran
+) ||
+!Number.isFinite(
+sabit
+) ||
+oran <
+0 ||
+ekOran <
+0 ||
+sabit <
+0
+){
+
+sonuc.textContent =
+"Lütfen komisyon ve ücret alanlarını kontrol edin.";
+
+kutular.style.display =
+"none";
+
+return;
+
+}
+
+
+const toplamOran =
+oran +
+ekOran;
+
+
+if(
+toplamOran >=
+100
+){
+
+sonuc.textContent =
+"Toplam yüzdesel kesinti %100'den küçük olmalıdır.";
 
 kutular.style.display =
 "none";
@@ -947,54 +1368,376 @@ return;
 
 
 const komisyon =
-tutar * oran / 100;
+tutar *
+oran /
+100;
+
+
+const ekKesinti =
+tutar *
+ekOran /
+100;
+
+
+const toplamKesinti =
+komisyon +
+ekKesinti +
+sabit;
 
 
 const net =
-tutar - komisyon;
+tutar -
+toplamKesinti;
+
+
+const efektifKesintiOrani =
+(
+toplamKesinti /
+tutar
+) *
+100;
 
 
 document
 .getElementById("komisyonSonuc")
 .textContent =
-para(komisyon);
+para(
+komisyon
+);
+
+
+document
+.getElementById("ekKesintiSonuc")
+.textContent =
+para(
+ekKesinti
+);
+
+
+document
+.getElementById("sabitSonuc")
+.textContent =
+para(
+sabit
+);
+
+
+document
+.getElementById("toplamKesintiSonuc")
+.textContent =
+para(
+toplamKesinti
+);
 
 
 document
 .getElementById("netSonuc")
 .textContent =
-para(net);
+net >=
+0
+?
+para(
+net
+)
+:
+"-" +
+para(
+Math.abs(
+net
+)
+);
 
 
 document
-.getElementById("tutarSonuc")
+.getElementById("toplamOranSonuc")
 .textContent =
-para(tutar);
-
-
-document
-.getElementById("oranSonuc")
-.textContent =
-"%" +
-yuzde(oran);
+yuzde(
+efektifKesintiOrani
+);
 
 
 sonuc.innerHTML =
 
-"<strong>Net kalan: " +
-para(net) +
+"<strong>Net kalan tutar: " +
+
+(
+net >=
+0
+?
+para(
+net
+)
+:
+"-" +
+para(
+Math.abs(
+net
+)
+)
+) +
+
 "</strong>" +
 
 "<br><br>" +
 
-"Komisyon tutarı: <strong>" +
-para(komisyon) +
+"Ana komisyon: <strong>" +
+
+para(
+komisyon
+) +
+
 "</strong>" +
 
 "<br>" +
 
-"Komisyon oranı: <strong>%" +
-yuzde(oran) +
+"Ek yüzdesel kesinti: <strong>" +
+
+para(
+ekKesinti
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Sabit işlem ücreti: <strong>" +
+
+para(
+sabit
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Toplam kesinti: <strong>" +
+
+para(
+toplamKesinti
+) +
+
+"</strong>";
+
+
+kutular.style.display =
+"grid";
+
+}
+
+
+function tersHesapla(){
+
+const netInput =
+document
+.getElementById("hedefNet");
+
+const sonuc =
+document
+.getElementById("tersSonuc");
+
+const kutular =
+document
+.getElementById("tersKutular");
+
+
+const hedefNet =
+Number(
+netInput.value
+);
+
+const oran =
+okuOpsiyonel(
+"tersOran"
+);
+
+const ekOran =
+okuOpsiyonel(
+"tersEkOran"
+);
+
+const sabit =
+okuOpsiyonel(
+"tersSabit"
+);
+
+
+if(
+netInput.value ===
+"" ||
+!Number.isFinite(
+hedefNet
+) ||
+hedefNet <=
+0
+){
+
+sonuc.textContent =
+"Lütfen sıfırdan büyük geçerli bir hedef net tutar girin.";
+
+kutular.style.display =
+"none";
+
+return;
+
+}
+
+
+if(
+!Number.isFinite(
+oran
+) ||
+!Number.isFinite(
+ekOran
+) ||
+!Number.isFinite(
+sabit
+) ||
+oran <
+0 ||
+ekOran <
+0 ||
+sabit <
+0
+){
+
+sonuc.textContent =
+"Lütfen komisyon ve ücret alanlarını kontrol edin.";
+
+kutular.style.display =
+"none";
+
+return;
+
+}
+
+
+const toplamOran =
+oran +
+ekOran;
+
+
+if(
+toplamOran >=
+100
+){
+
+sonuc.textContent =
+"Toplam yüzdesel kesinti %100'den küçük olmalıdır.";
+
+kutular.style.display =
+"none";
+
+return;
+
+}
+
+
+const oranOndalik =
+toplamOran /
+100;
+
+
+const brut =
+(
+hedefNet +
+sabit
+) /
+(
+1 -
+oranOndalik
+);
+
+
+const yuzdeselKesinti =
+brut *
+oranOndalik;
+
+
+const toplamKesinti =
+yuzdeselKesinti +
+sabit;
+
+
+document
+.getElementById("brutSonuc")
+.textContent =
+para(
+brut
+);
+
+
+document
+.getElementById("tersToplamKesinti")
+.textContent =
+para(
+toplamKesinti
+);
+
+
+document
+.getElementById("hedefNetSonuc")
+.textContent =
+para(
+hedefNet
+);
+
+
+document
+.getElementById("tersToplamOran")
+.textContent =
+yuzde(
+toplamOran
+);
+
+
+sonuc.innerHTML =
+
+"<strong>Gerekli brüt işlem tutarı: " +
+
+para(
+brut
+) +
+
+"</strong>" +
+
+"<br><br>" +
+
+"Hedef net tutar: <strong>" +
+
+para(
+hedefNet
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Toplam yüzdesel kesinti: <strong>" +
+
+yuzde(
+toplamOran
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Sabit işlem ücreti: <strong>" +
+
+para(
+sabit
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Toplam tahmini kesinti: <strong>" +
+
+para(
+toplamKesinti
+) +
+
 "</strong>";
 
 
@@ -1006,7 +1749,9 @@ kutular.style.display =
 
 [
 "tutar",
-"oran"
+"oran",
+"ekOran",
+"sabitUcret"
 ]
 .forEach(function(id){
 
@@ -1016,8 +1761,42 @@ document
 "keydown",
 function(event){
 
-if(event.key === "Enter"){
+if(
+event.key ===
+"Enter"
+){
+
 hesapla();
+
+}
+
+}
+);
+
+});
+
+
+[
+"hedefNet",
+"tersOran",
+"tersEkOran",
+"tersSabit"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(
+event.key ===
+"Enter"
+){
+
+tersHesapla();
+
 }
 
 }
