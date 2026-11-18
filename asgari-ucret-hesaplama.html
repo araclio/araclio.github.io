@@ -8,7 +8,7 @@
 
 <meta
 name="description"
-content="2026 asgari ücret hesaplama aracı. 33.030 TL brüt ve 28.075,50 TL net asgari ücret üzerinden günlük, aylık, SGK ve işsizlik sigortası kesintilerini hesaplayın."
+content="2026 asgari ücret hesaplama aracı. 33.030 TL brüt ve 28.075,50 TL net asgari ücret üzerinden günlük ücret, SGK, işsizlik primi ve işveren maliyetini inceleyin."
 >
 
 <meta name="robots" content="index,follow">
@@ -23,216 +23,96 @@ crossorigin="anonymous">
 
 <link rel="canonical" href="https://araclio.com/asgari-ucret-hesaplama.html">
 
+<link rel="stylesheet" href="style.css">
+
 <meta property="og:type" content="website">
-<meta property="og:title" content="Asgari Ücret Hesaplama 2026 | Net ve Brüt">
+<meta property="og:title" content="Asgari Ücret Hesaplama 2026 | Net, Brüt ve Günlük">
 <meta
 property="og:description"
-content="2026 net ve brüt asgari ücretini, günlük ücreti ve çalışan kesintilerini ücretsiz hesaplayın."
+content="2026 net ve brüt asgari ücretini, günlük karşılığını, çalışan kesintilerini ve işveren maliyetini inceleyin."
 >
 <meta property="og:url" content="https://araclio.com/asgari-ucret-hesaplama.html">
 <meta property="og:site_name" content="Araclio">
 
 <style>
-*{box-sizing:border-box}
-
-body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:
-radial-gradient(circle at 50% -10%,#123b69 0,#071a30 32%,#04101f 65%,#020a14 100%);
-color:#fff;
-min-height:100vh;
-}
-
-.wrap{
-width:min(850px,calc(100% - 28px));
-margin:auto;
-}
-
-header{
-background:rgba(3,14,27,.95);
-border-bottom:1px solid rgba(255,255,255,.08);
-}
-
-.nav{
-height:70px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-}
-
-.brand{
-font-size:34px;
-font-weight:900;
-text-decoration:none;
-color:#fff;
-}
-
-.brand span{
-color:#ffd400;
-}
-
-.tag{
-font-size:12px;
-color:#9db2c8;
-font-weight:bold;
-}
-
-.hero{
-padding:45px 0 25px;
-text-align:center;
-}
-
-.eyebrow{
-color:#ffd400;
-font-size:12px;
-font-weight:900;
-letter-spacing:1.5px;
-}
-
-h1{
-font-size:clamp(32px,6vw,48px);
-margin:12px 0;
-line-height:1.05;
-}
-
-.hero p{
-max-width:700px;
-margin:15px auto 0;
-color:#b7c7d8;
-line-height:1.65;
-}
 
 .summary{
 display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns:repeat(2,1fr);
 gap:12px;
 margin:20px 0;
 }
 
 .summary-box{
 padding:20px;
-background:#061526;
-border:1px solid #1d4567;
-border-radius:14px;
+background:#f5f5f5;
+border-radius:12px;
 text-align:center;
+color:#222;
 }
 
 .summary-box span{
 display:block;
-color:#9fb2c4;
-font-size:13px;
+font-size:.9rem;
+margin-bottom:7px;
 }
 
 .summary-box strong{
 display:block;
-color:#ffd400;
-font-size:25px;
-margin-top:7px;
+font-size:1.45rem;
 }
 
-.card{
-margin:18px 0;
-padding:24px;
-border-radius:18px;
-background:linear-gradient(145deg,#102a44,#081a2d);
-border:1px solid rgba(255,255,255,.09);
-box-shadow:0 9px 28px rgba(0,0,0,.2);
-}
-
-.card h2{
-margin-top:0;
-font-size:24px;
-}
-
-.card h3{
-margin-top:25px;
-}
-
-.card p,
-.card li{
-color:#b4c3d2;
-line-height:1.7;
-}
-
-label{
-display:block;
-font-weight:bold;
+.result-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
 margin-top:18px;
 }
 
-input{
-width:100%;
-margin-top:8px;
-padding:15px;
-border:1px solid #29435d;
-border-radius:11px;
-background:#061526;
-color:#fff;
-font-size:16px;
-outline:none;
-}
-
-input:focus{
-border-color:#42aaff;
-}
-
-button{
-width:100%;
-margin-top:22px;
+.result-box{
+background:#f5f5f5;
 padding:16px;
-border:0;
-border-radius:12px;
-background:#ffd400;
-color:#071321;
-font-size:17px;
-font-weight:900;
-cursor:pointer;
+border-radius:10px;
+color:#222;
 }
 
-button:hover{
-filter:brightness(1.05);
+.result-box strong{
+display:block;
+margin-bottom:7px;
 }
 
-.result{
-margin-top:20px;
-padding:20px;
-border-radius:13px;
-background:#061526;
-border:1px solid #1d4567;
+.big-result{
+font-size:1.3rem;
+font-weight:700;
+}
+
+.info-box{
+margin-top:18px;
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
 line-height:1.8;
 }
 
-.result-main{
-font-size:28px;
-font-weight:900;
-color:#ffd400;
-margin-bottom:12px;
+.warning-box{
+margin-top:18px;
+padding:16px;
+border-radius:10px;
+background:#fff8e1;
+border:1px solid #e7d28b;
+color:#332b15;
+line-height:1.8;
 }
 
-.row{
-display:flex;
-justify-content:space-between;
-gap:20px;
-padding:10px 0;
-border-bottom:1px solid rgba(255,255,255,.07);
-}
-
-.row span{
-color:#aebdcb;
-}
-
-.row strong{
-text-align:right;
-}
-
-.info{
-padding:17px;
-border-radius:12px;
-background:#061526;
-border-left:4px solid #ffd400;
-line-height:1.7;
-color:#b4c3d2;
+.source-box{
+margin-top:18px;
+padding:16px;
+border-radius:10px;
+background:#eef6ff;
+border:1px solid #bad9f5;
+color:#1f3550;
+line-height:1.8;
 }
 
 .table-wrap{
@@ -243,55 +123,25 @@ margin-top:15px;
 table{
 width:100%;
 border-collapse:collapse;
-min-width:520px;
+min-width:560px;
 }
 
-th,td{
-padding:14px;
-border-bottom:1px solid rgba(255,255,255,.09);
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
 text-align:left;
 }
 
-th{
-color:#ffd400;
-background:#061526;
-}
+@media(max-width:650px){
 
-td{
-color:#b4c3d2;
-}
-
-a{
-color:#52b7ff;
-}
-
-footer{
-margin-top:40px;
-padding:30px 0;
-text-align:center;
-color:#8195a8;
-border-top:1px solid rgba(255,255,255,.08);
-}
-
-@media(max-width:600px){
-
-.card{
-padding:19px;
-}
-
-.tag{
-display:none;
-}
-
-.summary{
+.summary,
+.result-grid{
 grid-template-columns:1fr;
 }
 
-.row{
-font-size:14px;
 }
 
-}
 </style>
 
 <script type="application/ld+json">
@@ -303,7 +153,7 @@ font-size:14px;
   "applicationCategory":"FinanceApplication",
   "operatingSystem":"Any",
   "inLanguage":"tr-TR",
-  "description":"2026 net, brüt ve günlük asgari ücret ile SGK ve işsizlik sigortası kesintilerini hesaplayan ücretsiz araç.",
+  "description":"2026 net ve brüt asgari ücret ile günlük oransal ücret, SGK ve işsizlik sigortası işçi primi hesaplayan ücretsiz araç.",
   "offers":{
     "@type":"Offer",
     "price":"0",
@@ -364,7 +214,7 @@ font-size:14px;
       "name":"2026 günlük brüt asgari ücret ne kadar?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Aylık 33.030 TL brüt asgari ücretin 30 günlük hesapta günlük karşılığı 1.101 TL'dir."
+        "text":"30 günlük aylık brüt asgari ücret üzerinden basit günlük karşılık 1.101,00 TL'dir."
       }
     },
     {
@@ -372,7 +222,15 @@ font-size:14px;
       "name":"Asgari ücretten SGK primi kesilir mi?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Evet. Standart çalışan hesabında brüt asgari ücret üzerinden yüzde 14 SGK işçi primi ve yüzde 1 işsizlik sigortası işçi primi kesilir."
+        "text":"Standart çalışan hesabında brüt ücret üzerinden yüzde 14 SGK işçi primi ve yüzde 1 işsizlik sigortası işçi primi hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"2026 asgari ücretin işverene maliyeti ne kadar?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Çalışma ve Sosyal Güvenlik Bakanlığının 2026 verilerine göre aylık işveren maliyeti 5 puan SGK prim indirimi uygulanan imalat sektöründe 39.223,13 TL, 2 puan indirim uygulanan diğer sektörlerde 40.214,03 TL ve indirim uygulanmadığında 40.874,63 TL'dir."
       }
     },
     {
@@ -380,7 +238,7 @@ font-size:14px;
       "name":"15 günlük asgari ücret nasıl hesaplanır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Basit oransal hesapta aylık brüt asgari ücret 30'a bölünerek günlük brüt ücret bulunur ve çalışılan gün sayısıyla çarpılır."
+        "text":"Basit oransal hesapta aylık brüt tutar 30'a bölünür ve çalışılan gün sayısıyla çarpılır. Gerçek bordro hesabında eksik gün ve diğer bordro koşulları ayrıca dikkate alınabilir."
       }
     }
   ]
@@ -392,38 +250,39 @@ font-size:14px;
 <body>
 
 <header>
+
 <div class="wrap nav">
 
 <a class="brand" href="/">
-Arac<span>lio</span>
+Araclio
 </a>
 
 <span class="tag">
-ÜCRETSİZ HESAPLAMA ARAÇLARI
+Ücretsiz Online Araçlar
 </span>
 
 </div>
+
 </header>
 
 <main class="wrap">
 
 <section class="hero">
 
-<div class="eyebrow">
-2026 • GÜNCEL ASGARİ ÜCRET
-</div>
+<p class="eyebrow">
+2026 • NET • BRÜT • GÜNLÜK
+</p>
 
 <h1>Asgari Ücret Hesaplama 2026</h1>
 
 <p>
-2026 net ve brüt asgari ücret tutarlarını görün.
-Çalışılan gün sayısını girerek brüt ücret,
-SGK primi, işsizlik sigortası primi ve
-tahmini net ücretinizi hesaplayın.
+2026 net ve brüt asgari ücret tutarlarını inceleyin.
+Çalışılan gün sayısını girerek aylık tutarın basit
+oransal günlük karşılığını, SGK ve işsizlik sigortası
+işçi primi kesintilerini hesaplayın.
 </p>
 
 </section>
-
 
 <div class="summary">
 
@@ -439,17 +298,18 @@ tahmini net ücretinizi hesaplayın.
 
 </div>
 
-
 <section class="card">
 
-<h2>2026 Asgari Ücret Hesapla</h2>
+<h2>2026 Asgari Ücret Günlük Hesaplama</h2>
 
 <p>
-1 ile 30 arasında çalışılan gün sayısını girin.
+1 ile 30 arasında gün sayısı girin. Sonuçlar,
+30 günlük aylık asgari ücretin matematiksel olarak
+orantılanmasıyla hesaplanır.
 </p>
 
 <label for="gun">
-Çalışılan Gün Sayısı
+Gün Sayısı
 </label>
 
 <input
@@ -460,175 +320,290 @@ max="30"
 step="1"
 value="30"
 inputmode="numeric"
-placeholder="1 - 30 gün">
-
+placeholder="1 - 30"
+>
 
 <button type="button" onclick="hesapla()">
-Asgari Ücreti Hesapla
+Hesapla
 </button>
 
-
 <div id="sonuc" class="result" aria-live="polite">
-30 günlük asgari ücret hesabı gösterilecek.
+Gün sayısını girin.
+</div>
+
+<div id="sonucKutulari" class="result-grid">
+
+<div class="result-box">
+<strong>Oransal Brüt Ücret</strong>
+<span id="brutSonuc" class="big-result">
+33.030,00 TL
+</span>
+</div>
+
+<div class="result-box">
+<strong>Oransal Net Karşılık</strong>
+<span id="netSonuc" class="big-result">
+28.075,50 TL
+</span>
+</div>
+
+<div class="result-box">
+<strong>SGK İşçi Primi (%14)</strong>
+<span id="sgkSonuc">
+4.624,20 TL
+</span>
+</div>
+
+<div class="result-box">
+<strong>İşsizlik Sigortası İşçi Primi (%1)</strong>
+<span id="issizlikSonuc">
+330,30 TL
+</span>
+</div>
+
+</div>
+
+<div class="warning-box">
+
+<strong>Önemli:</strong>
+
+Bu günlük hesaplama bir bordro motoru değildir.
+Sonuçlar aylık tutarların basit matematiksel orantısını gösterir.
+
+<br><br>
+
+İşe giriş veya çıkış, eksik gün, ücretsiz izin, rapor,
+prim günü, vergi istisnasının bordroya uygulanma şekli ve
+diğer ücret unsurları gerçek bordro sonucunu değiştirebilir.
+
 </div>
 
 </section>
-
 
 <section class="card">
 
 <h2>2026 Asgari Ücret Ne Kadar?</h2>
 
 <p>
-1 Ocak 2026 ile 31 Aralık 2026 arasında geçerli olmak üzere
-aylık brüt asgari ücret
+2026 yılı için 1 Ocak 2026 ile 31 Aralık 2026 arasında
+geçerli aylık brüt asgari ücret
 <strong>33.030,00 TL</strong>,
 aylık net asgari ücret ise
 <strong>28.075,50 TL</strong>'dir.
 </p>
 
-<div class="info">
+<div class="table-wrap">
 
-<strong>30 günlük çalışan hesabı:</strong>
+<table>
 
-<br><br>
+<thead>
+<tr>
+<th>Kalem</th>
+<th>Aylık Tutar</th>
+</tr>
+</thead>
 
-Brüt asgari ücret:
-<strong>33.030,00 TL</strong>
+<tbody>
 
-<br><br>
+<tr>
+<td>Brüt Asgari Ücret</td>
+<td><strong>33.030,00 TL</strong></td>
+</tr>
 
-SGK işçi primi (%14):
-<strong>4.624,20 TL</strong>
+<tr>
+<td>SGK İşçi Primi (%14)</td>
+<td>4.624,20 TL</td>
+</tr>
 
-<br><br>
+<tr>
+<td>İşsizlik Sigortası İşçi Primi (%1)</td>
+<td>330,30 TL</td>
+</tr>
 
-İşsizlik sigortası işçi primi (%1):
-<strong>330,30 TL</strong>
+<tr>
+<td>Toplam Çalışan Kesintisi</td>
+<td>4.954,50 TL</td>
+</tr>
 
-<br><br>
+<tr>
+<td>Net Asgari Ücret</td>
+<td><strong>28.075,50 TL</strong></td>
+</tr>
 
-Toplam çalışan kesintisi:
-<strong>4.954,50 TL</strong>
+</tbody>
 
-<br><br>
+</table>
 
-Net asgari ücret:
-<strong>28.075,50 TL</strong>
+</div>
+
+<div class="source-box">
+
+<strong>Resmî veri:</strong>
+
+2026 asgari ücret rakamları T.C. Çalışma ve Sosyal
+Güvenlik Bakanlığının 01.01.2026–31.12.2026 dönemi
+için yayımladığı asgari ücret hesaplaması esas alınarak
+sayfaya aktarılmıştır.
 
 </div>
 
 </section>
-
 
 <section class="card">
 
 <h2>2026 Asgari Ücret Nasıl Hesaplanır?</h2>
 
 <p>
-Standart çalışan hesabında brüt asgari ücret üzerinden
-SGK işçi primi ve işsizlik sigortası işçi primi hesaplanır.
+Bakanlığın yayımladığı standart aylık çalışan hesabında
+brüt asgari ücret üzerinden:
 </p>
 
+<ul>
+<li>SGK işçi primi: <strong>%14</strong></li>
+<li>İşsizlik sigortası işçi primi: <strong>%1</strong></li>
+</ul>
+
 <p>
+hesaplanmaktadır.
+</p>
+
+<div class="info-box">
+
 <strong>SGK işçi primi:</strong>
-%14
-</p>
 
-<p>
-<strong>İşsizlik sigortası işçi primi:</strong>
-%1
-</p>
+<br><br>
 
-<p>
-Toplam temel çalışan kesintisi:
-<strong>%15</strong>
-</p>
-
-<p>
 33.030 × %14 =
 <strong>4.624,20 TL</strong>
-</p>
 
-<p>
+<br><br>
+
+<strong>İşsizlik sigortası işçi primi:</strong>
+
+<br><br>
+
 33.030 × %1 =
 <strong>330,30 TL</strong>
-</p>
 
-<p>
+<br><br>
+
+<strong>Net hesap:</strong>
+
+<br><br>
+
 33.030 − 4.624,20 − 330,30 =
+
+<br><br>
+
 <strong>28.075,50 TL</strong>
-</p>
+
+</div>
 
 </section>
-
 
 <section class="card">
 
-<h2>2026 Günlük Asgari Ücret Ne Kadar?</h2>
+<h2>2026 Günlük Brüt Asgari Ücret</h2>
 
 <p>
-30 günlük aylık brüt tutar esas alınarak günlük brüt
-asgari ücret:
+Aylık 33.030 TL brüt tutarın 30 günlük basit karşılığı:
 </p>
 
-<p>
+<div class="info-box">
+
 33.030 ÷ 30 =
+
+<br><br>
+
 <strong>1.101,00 TL</strong>
-</p>
+
+</div>
 
 <p>
-30 günlük net tutarın basit günlük karşılığı:
-</p>
-
-<p>
-28.075,50 ÷ 30 =
-<strong>935,85 TL</strong>
-</p>
-
-<p>
-Bu günlük net rakam, aylık net tutarın basit oransal
-karşılığıdır. Fiili bordro hesabında işe giriş-çıkış,
-eksik gün ve diğer bordro unsurları sonucu değiştirebilir.
+Bu değer aylık brüt tutarın 30'a bölünmesiyle bulunan
+matematiksel günlük karşılıktır.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>2026 Günlük Net Asgari Ücret</h2>
+
+<p>
+Aylık net asgari ücretin 30'a bölünmesiyle bulunan
+basit günlük karşılık:
+</p>
+
+<div class="info-box">
+
+28.075,50 ÷ 30 =
+
+<br><br>
+
+<strong>935,85 TL</strong>
+
+</div>
+
+<p>
+Bu tutar gerçek günlük bordro tutarı olarak değil,
+aylık net ücretin matematiksel oransal karşılığı
+olarak değerlendirilmelidir.
+</p>
+
+</section>
 
 <section class="card">
 
 <h2>15 Günlük Asgari Ücret Ne Kadar?</h2>
 
 <p>
-Basit oransal hesapta:
+Basit oransal hesaplamada:
 </p>
 
-<p>
-15 günlük brüt ücret:
-</p>
+<div class="info-box">
 
-<p>
+<strong>15 günlük brüt:</strong>
+
+<br>
+
 1.101 × 15 =
-<strong>16.515,00 TL</strong>
-</p>
+16.515,00 TL
+
+<br><br>
+
+<strong>SGK işçi primi:</strong>
+
+<br>
+
+16.515 × %14 =
+2.312,10 TL
+
+<br><br>
+
+<strong>İşsizlik sigortası işçi primi:</strong>
+
+<br>
+
+16.515 × %1 =
+165,15 TL
+
+<br><br>
+
+<strong>Basit oransal net karşılık:</strong>
+
+<br>
+
+14.037,75 TL
+
+</div>
 
 <p>
-SGK işçi primi:
-<strong>2.312,10 TL</strong>
-</p>
-
-<p>
-İşsizlik sigortası işçi primi:
-<strong>165,15 TL</strong>
-</p>
-
-<p>
-Tahmini net:
-<strong>14.037,75 TL</strong>
+Gerçek bir 15 günlük bordroda çalışanın işe giriş-çıkış
+tarihi ve bordro koşulları ayrıca dikkate alınmalıdır.
 </p>
 
 </section>
-
 
 <section class="card">
 
@@ -641,8 +616,8 @@ Tahmini net:
 <thead>
 <tr>
 <th>Gün</th>
-<th>Brüt</th>
-<th>Tahmini Net</th>
+<th>Oransal Brüt</th>
+<th>Oransal Net</th>
 </tr>
 </thead>
 
@@ -698,81 +673,209 @@ Tahmini net:
 
 </section>
 
+<section class="card">
+
+<h2>2026 Asgari Ücretin İşverene Maliyeti</h2>
+
+<p>
+İşverene aylık maliyet, yararlanılan SGK prim indirimi
+ve sektör durumuna göre farklılaşmaktadır.
+</p>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Durum</th>
+<th>2026 Aylık Maliyet</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>İmalat sektörü – 5 puan SGK prim indirimi</td>
+<td><strong>39.223,13 TL</strong></td>
+</tr>
+
+<tr>
+<td>Diğer sektörler – 2 puan SGK prim indirimi</td>
+<td><strong>40.214,03 TL</strong></td>
+</tr>
+
+<tr>
+<td>SGK prim indirimi uygulanmayan</td>
+<td><strong>40.874,63 TL</strong></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<p>
+Bakanlığın yayımladığı hesapta imalat sektörü için
+işveren SGK payı %16,75; diğer sektörlerde 2 puan
+indirim uygulanmış hesapta %19,75 olarak gösterilmektedir.
+İşveren işsizlik sigortası primi ise %2'dir.
+</p>
+
+<div class="info-box">
+
+<strong>İmalat sektörü örneği:</strong>
+
+<br><br>
+
+Brüt ücret:
+33.030,00 TL
+
+<br><br>
+
+İşveren SGK primi (%16,75):
+5.532,53 TL
+
+<br><br>
+
+İşveren işsizlik sigortası primi (%2):
+660,60 TL
+
+<br><br>
+
+<strong>Toplam:
+39.223,13 TL</strong>
+
+</div>
+
+</section>
 
 <section class="card">
 
-<h2>2026 Asgari Ücretten Hangi Kesintiler Yapılıyor?</h2>
+<h2>Net ve Brüt Asgari Ücret Arasındaki Fark</h2>
 
 <p>
-Standart asgari ücret hesabında çalışan açısından temel
-kesintiler şunlardır:
+<strong>Brüt ücret</strong>, çalışan adına kesintiler
+yapılmadan önceki ücret tutarıdır.
 </p>
+
+<p>
+<strong>Net ücret</strong>, çalışan payına ait kesintiler
+sonrasında çalışanın eline geçen ücret tutarını ifade eder.
+</p>
+
+<div class="info-box">
+
+33.030,00 − 28.075,50 =
+
+<br><br>
+
+<strong>4.954,50 TL</strong>
+
+</div>
+
+<p>
+Bu fark 2026 standart asgari ücret hesabında SGK işçi
+primi ile işsizlik sigortası işçi priminden oluşmaktadır.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>2025 ile 2026 Asgari Ücret Karşılaştırması</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Kalem</th>
+<th>2025</th>
+<th>2026</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Brüt Asgari Ücret</td>
+<td>26.005,50 TL</td>
+<td>33.030,00 TL</td>
+</tr>
+
+<tr>
+<td>Net Asgari Ücret</td>
+<td>22.104,67 TL</td>
+<td>28.075,50 TL</td>
+</tr>
+
+<tr>
+<td>İndirimsiz İşveren Maliyeti</td>
+<td>30.621,43 TL</td>
+<td>40.874,63 TL</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<p>
+Çalışma ve Sosyal Güvenlik Bakanlığının yayımladığı
+karşılaştırmada 2026 brüt ve net asgari ücrette
+2025'e göre nominal artış yaklaşık
+<strong>%27,01</strong> olarak gösterilmektedir.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Asgari Ücrette Gelir Vergisi ve Damga Vergisi</h2>
+
+<p>
+Asgari ücret düzeyine ilişkin gelir vergisi ve
+damga vergisi istisnası, standart 2026 asgari ücret
+net hesabında dikkate alınmaktadır.
+</p>
+
+<p>
+Bu nedenle Bakanlığın standart aylık hesaplamasında
+çalışan açısından net tutara ulaşılırken temel kesintiler
+SGK işçi primi ve işsizlik sigortası işçi primi olarak
+gösterilmektedir.
+</p>
+
+<div class="warning-box">
+
+Ücret asgari ücretin üzerine çıktığında veya bordroda
+prim, ikramiye, ek ödeme ya da farklı ücret unsurları
+bulunduğunda vergi ve bordro hesabı bu basit asgari
+ücret hesabından farklı olabilir.
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Asgari Ücret Hesabı Nerelerde Kullanılabilir?</h2>
 
 <ul>
-<li>SGK işçi primi: %14</li>
-<li>İşsizlik sigortası işçi primi: %1</li>
+<li>Aylık net ve brüt asgari ücret bilgisini kontrol etmede</li>
+<li>Günlük matematiksel ücret karşılığını bulmada</li>
+<li>SGK işçi primi hesaplamasında</li>
+<li>İşsizlik sigortası işçi primi hesaplamasında</li>
+<li>Eksik ay için yaklaşık ücret karşılaştırmasında</li>
+<li>İşveren maliyetlerini karşılaştırmada</li>
+<li>2025 ve 2026 ücretlerini karşılaştırmada</li>
 </ul>
 
-<p>
-Asgari ücret seviyesine ilişkin gelir vergisi ve
-damga vergisi istisnası nedeniyle bu temel hesapta
-çalışanın net asgari ücreti 28.075,50 TL olmaktadır.
-</p>
-
 </section>
-
-
-<section class="card">
-
-<h2>2026 Asgari Ücret İşverene Maliyeti</h2>
-
-<p>
-İşverene toplam maliyet, işverenin yararlandığı SGK
-prim indirimi ve sektörüne göre farklılaşabilir.
-</p>
-
-<p>
-Çalışma ve Sosyal Güvenlik Bakanlığının 2026 hesabında
-örneğin imalat sektörü ile diğer sektörlerde farklı
-SGK prim indirimi oranları nedeniyle farklı maliyetler
-bulunmaktadır.
-</p>
-
-<p>
-Bu sayfadaki hesaplama aracı çalışan açısından
-<strong>net ve brüt asgari ücret hesabına</strong>
-odaklanmaktadır.
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>Net Asgari Ücret ile Brüt Asgari Ücret Arasındaki Fark</h2>
-
-<p>
-<strong>Brüt asgari ücret</strong>, çalışanın yasal
-kesintiler yapılmadan önceki ücretidir.
-</p>
-
-<p>
-<strong>Net asgari ücret</strong>, çalışan payına düşen
-SGK ve işsizlik sigortası primi gibi kesintilerden sonra
-çalışanın eline geçen tutardır.
-</p>
-
-<p>
-2026 yılında bu fark:
-</p>
-
-<p>
-33.030,00 − 28.075,50 =
-<strong>4.954,50 TL</strong>
-</p>
-
-</section>
-
 
 <section class="card">
 
@@ -785,7 +888,6 @@ SGK ve işsizlik sigortası primi gibi kesintilerden sonra
 <strong>28.075,50 TL</strong>'dir.
 </p>
 
-
 <h3>2026 brüt asgari ücret ne kadar?</h3>
 
 <p>
@@ -793,82 +895,126 @@ SGK ve işsizlik sigortası primi gibi kesintilerden sonra
 <strong>33.030,00 TL</strong>'dir.
 </p>
 
-
 <h3>2026 günlük brüt asgari ücret ne kadar?</h3>
 
 <p>
-30 günlük aylık hesapta günlük brüt asgari ücret
+Aylık brüt tutarın 30'a bölünmesiyle bulunan
+basit günlük karşılık
 <strong>1.101,00 TL</strong>'dir.
 </p>
-
 
 <h3>2026 günlük net asgari ücret ne kadar?</h3>
 
 <p>
-Aylık net asgari ücretin 30'a bölünmesiyle elde edilen
-basit günlük karşılık <strong>935,85 TL</strong>'dir.
+Aylık net tutarın 30'a bölünmesiyle bulunan basit
+oransal günlük karşılık
+<strong>935,85 TL</strong>'dir.
 </p>
-
 
 <h3>15 günlük asgari ücret ne kadar?</h3>
 
 <p>
-Basit oransal hesapta 15 günlük brüt ücret
-<strong>16.515 TL</strong>,
-tahmini net ücret ise
+Basit matematiksel orantıda 15 günlük brüt tutar
+<strong>16.515,00 TL</strong>,
+net karşılık ise
 <strong>14.037,75 TL</strong>'dir.
+Gerçek bordro sonucu farklı olabilir.
 </p>
-
 
 <h3>Asgari ücretten SGK kesilir mi?</h3>
 
 <p>
-Evet. Standart çalışan hesabında SGK işçi primi
+Evet. Bakanlığın standart 2026 çalışan hesabında
+SGK işçi primi
 <strong>%14</strong>'tür.
 </p>
 
-
-<h3>İşsizlik sigortası primi yüzde kaç?</h3>
+<h3>İşsizlik sigortası işçi primi yüzde kaç?</h3>
 
 <p>
-Çalışanın işsizlik sigortası prim payı
+Standart çalışan payı
 <strong>%1</strong>'dir.
 </p>
 
-
-<h3>Bu hesaplama kesin bordro sonucu mudur?</h3>
+<h3>2026 asgari ücretin işverene maliyeti ne kadar?</h3>
 
 <p>
-Hayır. Eksik gün, ücretsiz izin, işe giriş veya çıkış,
-ek ödeme ve kişisel bordro koşulları gerçek sonucu
-değiştirebilir.
+Bakanlığın hesabına göre aylık maliyet;
+imalat sektöründe 5 puan SGK prim indirimi uygulanırsa
+<strong>39.223,13 TL</strong>,
+diğer sektörlerde 2 puan indirim uygulanırsa
+<strong>40.214,03 TL</strong>,
+indirim uygulanmazsa
+<strong>40.874,63 TL</strong>'dir.
+</p>
+
+<h3>Günlük hesaplama gerçek bordro sonucu mudur?</h3>
+
+<p>
+Hayır. Gün bazlı sonuçlar aylık asgari ücretin
+basit matematiksel orantısını gösterir.
+Gerçek bordro; eksik gün, işe giriş-çıkış, rapor,
+izin ve diğer koşullara göre değişebilir.
+</p>
+
+<h3>Asgari ücret hesaplama aracı ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio Asgari Ücret Hesaplama aracı ücretsizdir
+ve üyelik gerektirmez.
 </p>
 
 </section>
-
 
 <section class="card">
 
-<h2>Bilgilendirme</h2>
+<h2>Resmî Veri ve Bilgilendirme</h2>
+
+<div class="source-box">
+
+<strong>2026 resmî verileri:</strong>
+
+<br><br>
+
+Brüt:
+33.030,00 TL
+
+<br>
+
+Net:
+28.075,50 TL
+
+<br>
+
+Yürürlük dönemi:
+01.01.2026 – 31.12.2026
+
+<br><br>
+
+Veriler T.C. Çalışma ve Sosyal Güvenlik Bakanlığının
+2026 asgari ücret hesaplaması esas alınarak hazırlanmıştır.
+
+</div>
+
+<div class="warning-box">
+
+Bu sayfa genel bilgilendirme ve matematiksel hesaplama
+amacıyla hazırlanmıştır.
+
+<br><br>
+
+Gün bazlı hesaplama resmî bordro hesabı değildir.
+Çalışanın kişisel ve hukuki durumu, prim günü,
+eksik gün nedeni, ücret unsurları ve diğer bordro
+verileri gerçek net ücreti değiştirebilir.
+
+</div>
 
 <p>
-Bu hesaplama aracı genel bilgilendirme amacıyla
-hazırlanmıştır.
-</p>
-
-<p>
-Gün bazlı sonuçlar, 30 günlük aylık asgari ücretin
-basit oransal dağılımını gösterir. Gerçek bordro ve
-SGK hesabında çalışanın durumuna göre farklı kurallar
-uygulanabilir.
-</p>
-
-<p>
-<strong>Son güncelleme: Ekim 2026</strong>
+<strong>Son güncelleme: Kasım 2026</strong>
 </p>
 
 </section>
-
 
 <section class="card">
 
@@ -905,6 +1051,12 @@ Kıdem Tazminatı Hesaplama →
 </p>
 
 <p>
+<a href="/ihbar-tazminati-hesaplama.html">
+İhbar Tazminatı Hesaplama →
+</a>
+</p>
+
+<p>
 <a href="/maas-zam-hesaplama.html">
 Maaş Zam Hesaplama →
 </a>
@@ -913,7 +1065,6 @@ Maaş Zam Hesaplama →
 </section>
 
 </main>
-
 
 <footer>
 
@@ -929,6 +1080,8 @@ Maaş Zam Hesaplama →
 <a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
 •
 <a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
 </p>
 
 <p>
@@ -947,22 +1100,31 @@ Araclio • Ücretsiz Online Araçlar
 
 </footer>
 
-
 <script>
 
-const BRUT = 33030;
-const NET = 28075.50;
+const BRUT =
+33030;
 
-const SGK_ORAN = 0.14;
-const ISSIZLIK_ORAN = 0.01;
+const NET =
+28075.50;
+
+const SGK_ORAN =
+0.14;
+
+const ISSIZLIK_ORAN =
+0.01;
 
 
 function para(deger){
 
-return deger.toLocaleString("tr-TR",{
+return new Intl.NumberFormat(
+"tr-TR",
+{
 minimumFractionDigits:2,
 maximumFractionDigits:2
-});
+}
+).format(deger) +
+" TL";
 
 }
 
@@ -982,120 +1144,126 @@ document.getElementById("sonuc");
 if(
 gunInput.value === "" ||
 !Number.isFinite(gun) ||
+!Number.isInteger(gun) ||
 gun < 1 ||
-gun > 30 ||
-!Number.isInteger(gun)
+gun > 30
 ){
 
-sonuc.innerHTML =
-"Lütfen 1 ile 30 arasında tam sayı olarak geçerli bir çalışma günü girin.";
+sonuc.textContent =
+"Lütfen 1 ile 30 arasında tam sayı olarak geçerli bir gün sayısı girin.";
+
+document
+.getElementById("sonucKutulari")
+.style.display =
+"none";
 
 return;
 
 }
 
 
-const brutGunluk =
-BRUT / 30;
+const oran =
+gun /
+30;
 
-const netGunluk =
-NET / 30;
 
 const brut =
-brutGunluk * gun;
+BRUT *
+oran;
+
 
 const sgk =
-brut * SGK_ORAN;
+brut *
+SGK_ORAN;
+
 
 const issizlik =
-brut * ISSIZLIK_ORAN;
+brut *
+ISSIZLIK_ORAN;
 
-const kesinti =
-sgk + issizlik;
 
 const net =
-brut - kesinti;
+brut -
+sgk -
+issizlik;
+
+
+const aylikNetOransal =
+NET *
+oran;
+
+
+document
+.getElementById("brutSonuc")
+.textContent =
+para(brut);
+
+
+document
+.getElementById("netSonuc")
+.textContent =
+para(aylikNetOransal);
+
+
+document
+.getElementById("sgkSonuc")
+.textContent =
+para(sgk);
+
+
+document
+.getElementById("issizlikSonuc")
+.textContent =
+para(issizlik);
+
+
+document
+.getElementById("sonucKutulari")
+.style.display =
+"grid";
 
 
 sonuc.innerHTML =
 
-'<div class="result-main">' +
-para(net) +
-' TL Tahmini Net</div>' +
-
-'<div class="row">' +
-'<span>Çalışılan gün</span>' +
-'<strong>' +
+"<strong>" +
 gun +
-' gün</strong>' +
-'</div>' +
+" günlük basit oransal net karşılık: " +
+para(aylikNetOransal) +
+"</strong>" +
 
-'<div class="row">' +
-'<span>Günlük brüt ücret</span>' +
-'<strong>' +
-para(brutGunluk) +
-' TL</strong>' +
-'</div>' +
+"<br><br>" +
 
-'<div class="row">' +
-'<span>Günlük net karşılık</span>' +
-'<strong>' +
-para(netGunluk) +
-' TL</strong>' +
-'</div>' +
-
-'<div class="row">' +
-'<span>Brüt ücret</span>' +
-'<strong>' +
-para(brut) +
-' TL</strong>' +
-'</div>' +
-
-'<div class="row">' +
-'<span>SGK işçi primi (%14)</span>' +
-'<strong>− ' +
-para(sgk) +
-' TL</strong>' +
-'</div>' +
-
-'<div class="row">' +
-'<span>İşsizlik sigortası (%1)</span>' +
-'<strong>− ' +
-para(issizlik) +
-' TL</strong>' +
-'</div>' +
-
-'<div class="row">' +
-'<span>Toplam temel kesinti</span>' +
-'<strong>− ' +
-para(kesinti) +
-' TL</strong>' +
-'</div>' +
-
-'<div class="row">' +
-'<span>Tahmini net ücret</span>' +
-'<strong>' +
+"Brüt ücretin %14 SGK ve %1 işsizlik primi çıkarılarak " +
+"elde edilen matematiksel değer: <strong>" +
 para(net) +
-' TL</strong>' +
-'</div>' +
+"</strong>." +
 
-'<br><small>Gün bazlı sonuçlar 30 günlük aylık tutarın oransal karşılığıdır. Gerçek bordro koşullarına göre farklılık oluşabilir.</small>';
+"<br><br>" +
+
+"<small>" +
+"Bu sonuç resmî bordro hesabı değildir. Günlük sonuçlar aylık tutarların matematiksel orantısını gösterir." +
+"</small>";
 
 }
 
 
 document
 .getElementById("gun")
-.addEventListener("keydown",function(e){
+.addEventListener(
+"keydown",
+function(event){
 
-if(e.key === "Enter"){
+if(event.key === "Enter"){
 hesapla();
 }
 
-});
+}
+);
 
 
-document.getElementById("year").textContent =
+document
+.getElementById("year")
+.textContent =
 new Date().getFullYear();
 
 
