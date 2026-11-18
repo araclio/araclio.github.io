@@ -1,739 +1,1392 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>Kira Artış Hesaplama 2026 | Yeni Kira Hesapla - Araclio</title>
+<title>Kira Artış Hesaplama 2026 | TÜFE ile Yeni Kira - Araclio</title>
 
-  <meta
-    name="description"
-    content="Kira artış hesaplama aracı ile mevcut kira tutarınızı ve artış oranını girerek yeni kira bedelini, aylık farkı ve yıllık toplam farkı ücretsiz hesaplayın."
-  >
+<meta
+name="description"
+content="2026 kira artış hesaplama aracı. Mevcut kira, TÜFE 12 aylık ortalama üst sınırı ve uygulanacak artış oranına göre yeni kira bedelini hesaplayın."
+>
 
-  <meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
 
-  <meta name="google-adsense-account" content="ca-pub-7634654090472031">
+<meta name="google-adsense-account" content="ca-pub-7634654090472031">
 
-  <script
-    async
-    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
-    crossorigin="anonymous">
-  </script>
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
 
-  <link rel="canonical" href="https://araclio.com/kira-artis-hesaplama.html">
+<link rel="canonical" href="https://araclio.com/kira-artis-hesaplama.html">
 
-  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Kira Artış Hesaplama 2026 | Araclio">
-  <meta
-    property="og:description"
-    content="Mevcut kira tutarı ve artış oranına göre yeni aylık kira bedelini ve yıllık farkı hesaplayın."
-  >
-  <meta property="og:url" content="https://araclio.com/kira-artis-hesaplama.html">
-  <meta property="og:site_name" content="Araclio">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kira Artış Hesaplama 2026 | Araclio">
+<meta
+property="og:description"
+content="TÜFE 12 aylık ortalama oranını dikkate alarak yeni kira bedelini, aylık ve yıllık farkı hesaplayın."
+>
+<meta property="og:url" content="https://araclio.com/kira-artis-hesaplama.html">
+<meta property="og:site_name" content="Araclio">
 
-  <style>
-    .result-grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:12px;
-      margin-top:18px;
-    }
+<style>
 
-    .result-box{
-      background:#f5f5f5;
-      padding:16px;
-      border-radius:10px;
-      color:#222;
-    }
+.result-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:18px;
+}
 
-    .result-box strong{
-      display:block;
-      margin-bottom:7px;
-    }
+.result-box{
+background:#f5f5f5;
+padding:16px;
+border-radius:10px;
+color:#222;
+}
 
-    .big-result{
-      font-size:1.4rem;
-      font-weight:700;
-    }
+.result-box strong{
+display:block;
+margin-bottom:7px;
+}
 
-    .rate-box{
-      padding:16px;
-      margin:15px 0;
-      background:#f5f5f5;
-      border-radius:10px;
-      line-height:1.7;
-      color:#222;
-    }
+.big-result{
+font-size:1.4rem;
+font-weight:700;
+}
 
-    .info-box{
-      padding:16px;
-      margin:15px 0;
-      background:#f5f5f5;
-      border-radius:10px;
-      line-height:1.8;
-      color:#222;
-    }
+.info-box{
+padding:16px;
+margin:15px 0;
+background:#f5f5f5;
+border-radius:10px;
+line-height:1.8;
+color:#222;
+}
 
-    @media(max-width:650px){
-      .result-grid{
-        grid-template-columns:1fr;
-      }
-    }
-  </style>
+.warning-box{
+padding:16px;
+margin:15px 0;
+background:#fff8e1;
+border:1px solid #e7d28b;
+border-radius:10px;
+line-height:1.8;
+color:#4d3d00;
+}
 
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebApplication",
-    "name":"Kira Artış Hesaplama",
-    "url":"https://araclio.com/kira-artis-hesaplama.html",
-    "applicationCategory":"FinanceApplication",
-    "operatingSystem":"Any",
-    "inLanguage":"tr-TR",
-    "description":"Mevcut kira tutarı ve artış oranına göre yeni kira bedelini hesaplayan ücretsiz online araç.",
-    "offers":{
-      "@type":"Offer",
-      "price":"0",
-      "priceCurrency":"TRY"
+.source-box{
+padding:16px;
+margin:15px 0;
+background:#eef6ff;
+border:1px solid #bad9f5;
+border-radius:10px;
+line-height:1.8;
+color:#1f3550;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:580px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+@media(max-width:650px){
+
+.result-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Kira Artış Hesaplama 2026",
+  "url":"https://araclio.com/kira-artis-hesaplama.html",
+  "applicationCategory":"FinanceApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"Mevcut kira, TÜFE on iki aylık ortalama üst sınırı ve uygulanacak artış oranına göre yeni kira bedelini hesaplayan ücretsiz araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
     },
-    "isPartOf":{
-      "@type":"WebSite",
-      "name":"Araclio",
-      "url":"https://araclio.com/"
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"Kira Artış Hesaplama 2026",
+      "item":"https://araclio.com/kira-artis-hesaplama.html"
     }
-  }
-  </script>
+  ]
+}
+</script>
 
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"BreadcrumbList",
-    "itemListElement":[
-      {
-        "@type":"ListItem",
-        "position":1,
-        "name":"Ana Sayfa",
-        "item":"https://araclio.com/"
-      },
-      {
-        "@type":"ListItem",
-        "position":2,
-        "name":"Kira Artış Hesaplama",
-        "item":"https://araclio.com/kira-artis-hesaplama.html"
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"2026 kira artış oranı nasıl belirlenir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Standart konut ve çatılı işyeri kira yenilemelerinde Türk Borçlar Kanunu madde 344 kapsamında tüketici fiyat endeksindeki on iki aylık ortalamalara göre değişim oranı üst sınır olarak dikkate alınır."
       }
-    ]
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"Kira artışı nasıl hesaplanır?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Mevcut kira bedeli artış oranıyla çarpılır ve 100'e bölünür. Bulunan artış tutarı mevcut kiraya eklenerek yeni kira hesaplanır."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"20.000 TL kiraya yüzde 31,79 artış yapılırsa yeni kira ne olur?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"20.000 TL kiraya yüzde 31,79 artış uygulanırsa artış tutarı 6.358 TL, yeni aylık kira ise 26.358 TL olur."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"Kira artış oranı her ay değişebilir mi?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"TÜFE verileri aylık olarak yayımlandığı için ilgili dönemlerde kullanılan oran değişebilir. Sözleşme ve yürürlükteki mevzuat ayrıca dikkate alınmalıdır."
-        }
+    },
+    {
+      "@type":"Question",
+      "name":"Kasım 2026 kira artış oranı kaç?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"TÜİK tarafından açıklanan Ekim 2026 TÜFE verisinde on iki aylık ortalamalara göre değişim oranı yüzde 31,23'tür."
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type":"Question",
+      "name":"Konut kira artışında yüzde 25 sınırı devam ediyor mu?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Hayır. Konut kiralarına ilişkin geçici yüzde 25 artış sınırı 1 Temmuz 2024 itibarıyla sona ermiştir."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"İşyeri kira artışında TÜFE sınırı uygulanır mı?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Konut ve çatılı işyeri kira sözleşmelerindeki olağan yenilemelerde Türk Borçlar Kanunu madde 344 hükümleri çerçevesinde TÜFE on iki aylık ortalama değişim oranı dikkate alınır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Beş yıldan uzun süren kirada artış yalnız TÜFE'ye göre mi yapılır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Beş yıldan uzun süreli veya beş yıldan sonra yenilenen kira sözleşmelerinde kira bedelinin tespitinde TÜFE yanında kiralananın durumu ve emsal kira bedelleri de dikkate alınabilir."
+      }
+    }
+  ]
+}
+</script>
 
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Araclio</a>
-    <span class="tag">Ücretsiz Online Araçlar</span>
-  </div>
+
+<div class="wrap nav">
+
+<a class="brand" href="/">
+Araclio
+</a>
+
+<span class="tag">
+Ücretsiz Online Araçlar
+</span>
+
+</div>
+
 </header>
 
 <main class="wrap">
 
-  <section class="hero">
+<section class="hero">
+
+<p class="eyebrow">
+2026 • KİRA • TÜFE • ARTIŞ
+</p>
+
+<h1>Kira Artış Hesaplama 2026</h1>
+
+<p>
+Mevcut kira bedelinizi, TÜFE on iki aylık ortalama
+üst sınırını ve uygulanacak artış oranını girerek
+yeni aylık kirayı, aylık artışı ve yıllık farkı hesaplayın.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Yeni Kira Bedelini Hesapla</h2>
+
+<div class="source-box">
+
+<strong>Kasım 2026 yenilemeleri için güncel TÜFE verisi</strong>
+
+<br><br>
+
+TÜİK tarafından 3 Kasım 2026 tarihinde açıklanan
+Ekim 2026 TÜFE verisinde:
+
+<br><br>
+
+<strong>On iki aylık ortalamalara göre değişim:
+%31,23</strong>
+
+<br><br>
+
+Bu oran standart konut ve çatılı işyeri kira
+yenilemelerinde TBK 344 bakımından dikkate alınan
+üst sınırdır.
+
+</div>
+
+<label for="kira">
+Mevcut Aylık Kira (TL)
+</label>
+
+<input
+id="kira"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 20000"
+>
 
-    <p class="eyebrow">
-      KİRA • ARTIŞ • HESAPLAMA
-    </p>
+<label for="tufe">
+TÜFE 12 Aylık Ortalama Üst Sınırı (%)
+</label>
+
+<input
+id="tufe"
+type="number"
+min="0"
+step="0.01"
+inputmode="decimal"
+value="31.23"
+>
 
-    <h1>Kira Artış Hesaplama 2026</h1>
+<p>
+<small>
+Varsayılan %31,23 oranı Kasım 2026 döneminde
+kullanılabilecek güncel Ekim 2026 TÜFE
+12 aylık ortalama değişim oranıdır.
+Farklı yenileme ayı için ilgili dönemin oranını girin.
+</small>
+</p>
 
-    <p>
-      Mevcut kira tutarınızı ve uygulanacak artış oranını girerek
-      kira artış tutarını, yeni aylık kirayı, yıllık toplam kira
-      bedelini ve yıllık farkı saniyeler içinde hesaplayın.
-    </p>
+<label for="oran">
+Sözleşmeye / Duruma Göre Uygulanacak Artış Oranı (%)
+</label>
 
-  </section>
+<input
+id="oran"
+type="number"
+min="0"
+step="0.01"
+inputmode="decimal"
+value="31.23"
+>
 
+<p>
+<small>
+Sözleşmede daha düşük bir oran kararlaştırılmışsa
+ilgili oranı buraya yazabilirsiniz.
+Standart yenilemede TÜFE üst sınırını aşan oran
+otomatik olarak uygulanmaz.
+</small>
+</p>
 
-  <section>
+<button type="button" onclick="hesapla()">
+Yeni Kirayı Hesapla
+</button>
 
-    <article class="card">
+<div id="uyari" class="result" aria-live="polite">
+Mevcut kira bedelini girerek hesaplama yapabilirsiniz.
+</div>
 
-      <h2>Yeni Kira Bedelini Hesapla</h2>
+<div id="sonuclar" class="result-grid" style="display:none;">
 
-      <div class="rate-box">
+<div class="result-box">
+<strong>Yeni Aylık Kira</strong>
+<span id="yeniKira" class="big-result">-</span>
+</div>
 
-        <strong>Örnek TÜFE verisi:</strong>
+<div class="result-box">
+<strong>Aylık Artış Tutarı</strong>
+<span id="aylikFark" class="big-result">-</span>
+</div>
 
-        Ağustos 2026 dönemi için on iki aylık ortalamalara göre
-        değişim oranı %31,79 olarak açıklanmıştır.
+<div class="result-box">
+<strong>Eski Yıllık Kira</strong>
+<span id="eskiYillik">-</span>
+</div>
 
-        <br><br>
+<div class="result-box">
+<strong>Yeni Yıllık Kira</strong>
+<span id="yeniYillik">-</span>
+</div>
 
-        <small>
-          Bu oran yalnızca örnek değer olarak hesaplama alanına
-          yazılmıştır. Kendi kira yenileme tarihinize uygulanacak
-          oranı kontrol ederek aşağıdaki alanı değiştirebilirsiniz.
-        </small>
+<div class="result-box">
+<strong>Yıllık Toplam Fark</strong>
+<span id="yillikFark">-</span>
+</div>
 
-      </div>
+<div class="result-box">
+<strong>Hesapta Kullanılan Oran</strong>
+<span id="uygulananOran">-</span>
+</div>
 
+</div>
 
-      <label for="kira">
-        Mevcut aylık kira (TL)
-      </label>
+<div class="warning-box">
 
-      <input
-        id="kira"
-        type="number"
-        min="0"
-        step="0.01"
-        inputmode="decimal"
-        placeholder="Örnek: 20000"
-      >
+<strong>Standart yenileme hesabı</strong>
 
+<br><br>
 
-      <label for="oran">
-        Artış oranı (%)
-      </label>
+Bu araç normal yıllık yenileme hesabında,
+girdiğiniz uygulanacak oran TÜFE 12 aylık ortalama
+üst sınırından yüksekse hesaplamayı
+<strong>TÜFE üst sınırıyla</strong> yapar.
 
-      <input
-        id="oran"
-        type="number"
-        min="0"
-        step="0.01"
-        inputmode="decimal"
-        value="31.79"
-      >
+<br><br>
 
+Beş yılı aşan kira ilişkilerinde kira tespiti,
+yabancı para üzerinden kararlaştırılmış kira,
+dava veya taraflar arasında özel hukuki durumlar
+ayrıca değerlendirilmelidir.
 
-      <button type="button" onclick="hesapla()">
-        Yeni Kirayı Hesapla
-      </button>
+</div>
 
+</section>
 
-      <div id="uyari" class="result" aria-live="polite">
-        Mevcut kira tutarını girip hesaplama butonuna basın.
-      </div>
+<section class="card">
 
+<h2>2026 Kira Artışında Hangi TÜFE Oranı Kullanılır?</h2>
 
-      <div id="sonuclar" class="result-grid" style="display:none;">
+<p>
+Türk Borçlar Kanunu'nun 344. maddesinde,
+yenilenen kira döneminde uygulanacak artış bakımından
+<strong>tüketici fiyat endeksindeki on iki aylık
+ortalamalara göre değişim oranı</strong>
+esas alınmaktadır.
+</p>
 
-        <div class="result-box">
-          <strong>Yeni Aylık Kira</strong>
-          <span id="yeniKira" class="big-result">
-            0 TL
-          </span>
-        </div>
+<div class="warning-box">
 
-        <div class="result-box">
-          <strong>Aylık Artış Tutarı</strong>
-          <span id="aylikFark" class="big-result">
-            0 TL
-          </span>
-        </div>
+TÜİK bülteninde birden fazla enflasyon oranı bulunur:
 
-        <div class="result-box">
-          <strong>Eski Yıllık Kira</strong>
-          <span id="eskiYillik">
-            0 TL
-          </span>
-        </div>
+<br><br>
 
-        <div class="result-box">
-          <strong>Yeni Yıllık Kira</strong>
-          <span id="yeniYillik">
-            0 TL
-          </span>
-        </div>
+* Aylık TÜFE
 
-        <div class="result-box">
-          <strong>Yıllık Toplam Fark</strong>
-          <span id="yillikFark">
-            0 TL
-          </span>
-        </div>
+<br>
 
-        <div class="result-box">
-          <strong>Uygulanan Artış</strong>
-          <span id="uygulananOran">
-            %0
-          </span>
-        </div>
+* Bir önceki yılın aynı ayına göre yıllık TÜFE
 
-      </div>
+<br>
 
-    </article>
+* On iki aylık ortalamalara göre TÜFE
 
-  </section>
+<br><br>
 
+Kira artışında TBK 344 açısından önemli olan
+<strong>on iki aylık ortalamalara göre değişim oranıdır.</strong>
 
-  <section class="card">
+</div>
 
-    <h2>Kira Artışı Nasıl Hesaplanır?</h2>
+</section>
 
-    <p>
-      Kira artış hesabında mevcut aylık kira bedeli ile
-      uygulanacak artış oranı kullanılır.
-    </p>
+<section class="card">
 
-    <div class="info-box">
+<h2>Kasım 2026 Kira Artış Oranı Kaç?</h2>
 
-      <strong>Kira artış tutarı:</strong><br>
-      Mevcut Kira × Artış Oranı ÷ 100
+<p>
+TÜİK'in 3 Kasım 2026 tarihinde yayımladığı
+Ekim 2026 TÜFE verilerine göre on iki aylık
+ortalamalara göre değişim:
+</p>
 
-      <br><br>
+<div class="info-box">
 
-      <strong>Yeni kira:</strong><br>
-      Mevcut Kira + Kira Artış Tutarı
+<strong>%31,23</strong>
 
-    </div>
+</div>
 
-  </section>
+<p>
+Bu nedenle Kasım 2026 dönemindeki standart kira
+yenilemelerinde %31,23 oranı TÜFE bakımından
+referans üst sınır olarak kullanılmaktadır.
+</p>
 
+</section>
 
-  <section class="card">
+<section class="card">
 
-    <h2>20.000 TL Kira İçin Örnek Hesaplama</h2>
+<h2>Ağustos 2026 TÜFE Oranı %31,79 muydu?</h2>
 
-    <p>
-      Mevcut kira 20.000 TL ve artış oranı %31,79 olarak
-      girildiğinde aylık artış tutarı 6.358 TL olur.
-    </p>
+<p>
+Evet.
+</p>
 
-    <p>
-      Buna göre yeni aylık kira:
-      <strong>26.358 TL</strong> olur.
-    </p>
+<p>
+TÜİK'in Ağustos 2026 verisinde on iki aylık
+ortalamalara göre değişim oranı
+<strong>%31,79</strong> olarak açıklanmıştı.
+</p>
 
-    <div class="info-box">
+<p>
+Ancak TÜFE verileri her ay değiştiği için bu oran
+Kasım 2026 için güncel oran değildir.
+</p>
 
-      Mevcut kira:
-      <strong>20.000 TL</strong>
+<div class="info-box">
 
-      <br>
+Ağustos 2026:
+<strong>%31,79</strong>
 
-      Artış oranı:
-      <strong>%31,79</strong>
+<br><br>
 
-      <br>
+Eylül 2026:
+<strong>%31,49</strong>
 
-      Aylık artış:
-      <strong>6.358 TL</strong>
+<br><br>
 
-      <br>
+Ekim 2026:
+<strong>%31,23</strong>
 
-      Yeni aylık kira:
-      <strong>26.358 TL</strong>
+</div>
 
-    </div>
+</section>
 
-  </section>
+<section class="card">
 
+<h2>Kira Artışı Nasıl Hesaplanır?</h2>
 
-  <section class="card">
+<div class="info-box">
 
-    <h2>Kira Artış Oranı Hakkında</h2>
+<strong>Artış Tutarı:</strong>
 
-    <p>
-      Kira yenilemelerinde kullanılabilecek oran;
-      sözleşmenin niteliğine, yenileme tarihine ve yürürlükteki
-      mevzuata göre değerlendirilmelidir.
-    </p>
+<br><br>
 
-    <p>
-      TÜFE verileri her ay yayımlandığından farklı yenileme
-      tarihlerinde farklı oranlarla karşılaşılabilir.
-    </p>
+Mevcut Kira × Uygulanacak Artış Oranı ÷ 100
 
-    <p>
-      Bu nedenle hesaplama yaparken kira sözleşmenizin yenileme
-      dönemine uygun güncel oranı kontrol etmeniz gerekir.
-    </p>
+<br><br>
 
-  </section>
+<strong>Yeni Kira:</strong>
 
+<br><br>
 
-  <section class="card">
+Mevcut Kira + Artış Tutarı
 
-    <h2>Kira Artışında Aylık ve Yıllık Fark</h2>
+</div>
 
-    <p>
-      Araclio yalnızca yeni aylık kira bedelini hesaplamaz.
-      Aynı zamanda eski ve yeni kira arasındaki aylık farkı
-      ve bu farkın 12 aylık toplamını da gösterir.
-    </p>
+</section>
 
-    <p>
-      Böylece kira artışının yıllık bütçenize yaklaşık
-      etkisini tek hesaplama üzerinden görebilirsiniz.
-    </p>
+<section class="card">
 
-  </section>
+<h2>20.000 TL Kiraya %31,23 Artış Yapılırsa Ne Olur?</h2>
 
+<div class="info-box">
 
-  <section class="card">
+Mevcut kira:
 
-    <h2>Sık Sorulan Sorular</h2>
+<br>
 
-    <h3>Kira artışı nasıl hesaplanır?</h3>
+20.000 TL
 
-    <p>
-      Mevcut kira bedeli artış oranıyla çarpılıp 100'e
-      bölünerek artış tutarı bulunur. Bu tutar mevcut
-      kiraya eklenir.
-    </p>
+<br><br>
 
+Artış oranı:
 
-    <h3>20.000 TL kiraya %31,79 artış yapılırsa ne olur?</h3>
+<br>
 
-    <p>
-      Aylık artış 6.358 TL, yeni kira ise
-      26.358 TL olur.
-    </p>
+%31,23
 
+<br><br>
 
-    <h3>Kira artış oranı her ay değişebilir mi?</h3>
+Artış:
 
-    <p>
-      TÜFE verileri aylık yayımlandığı için farklı dönemlerde
-      farklı oranlarla karşılaşılabilir.
-    </p>
+<br>
 
+20.000 × 31,23 ÷ 100 =
 
-    <h3>İstediğim oranı girebilir miyim?</h3>
+<br>
 
-    <p>
-      Evet. Hesaplayıcıdaki artış oranı alanını değiştirerek
-      istediğiniz oran üzerinden matematiksel hesaplama
-      yapabilirsiniz.
-    </p>
+<strong>6.246 TL</strong>
 
+<br><br>
 
-    <h3>Bu hesaplama hukuki danışmanlık yerine geçer mi?</h3>
+Yeni aylık kira:
 
-    <p>
-      Hayır. Araç yalnızca matematiksel hesaplama ve genel
-      bilgilendirme amacıyla hazırlanmıştır.
-    </p>
+<br>
 
-  </section>
+20.000 + 6.246 =
 
+<br>
 
-  <section class="card">
+<strong>26.246 TL</strong>
 
-    <h2>Önemli Bilgilendirme</h2>
+</div>
 
-    <p>
-      Bu araç yalnızca matematiksel hesaplama ve genel
-      bilgilendirme amacıyla hazırlanmıştır.
-    </p>
+<p>
+Yeni yıllık kira toplamı yaklaşık
+<strong>314.952 TL</strong> olur.
+</p>
 
-    <p>
-      Kira sözleşmesinin türü, yenileme tarihi, sözleşme
-      hükümleri, tarafların durumu ve yürürlükteki mevzuat
-      uygulanacak kira bedelini etkileyebilir.
-    </p>
+</section>
 
-    <p>
-      Resmî veya hukuki işlem öncesinde güncel mevzuatın
-      ve ilgili döneme ait verilerin kontrol edilmesi önerilir.
-    </p>
+<section class="card">
 
-    <p>
-      <strong>Son güncelleme: Kasım 2026</strong>
-    </p>
+<h2>Sözleşmede Daha Düşük Artış Oranı Varsa Ne Olur?</h2>
 
-  </section>
+<p>
+TBK 344'e göre tarafların yenilenen kira dönemine
+ilişkin artış anlaşması TÜFE 12 aylık ortalama
+değişim oranını aşmamak koşuluyla geçerlidir.
+</p>
 
+<p>
+Örneğin TÜFE üst sınırı %31,23 iken kira
+sözleşmesinde %20 artış öngörülmüşse standart
+durumda sözleşmedeki daha düşük oran önem taşır.
+</p>
 
-  <section class="card">
+<div class="info-box">
 
-    <h2>Diğer Hesaplama Araçları</h2>
+TÜFE üst sınırı:
+<strong>%31,23</strong>
 
-    <p>
-      <a href="/yuzde-hesaplama.html">
-        Yüzde Hesaplama →
-      </a>
-    </p>
+<br><br>
 
-    <p>
-      <a href="/yuzde-degisim-hesaplama.html">
-        Yüzde Değişim Hesaplama →
-      </a>
-    </p>
+Sözleşmedeki artış:
+<strong>%20</strong>
 
-    <p>
-      <a href="/zam-hesaplama.html">
-        Zam Hesaplama →
-      </a>
-    </p>
+<br><br>
 
-    <p>
-      <a href="/kira-stopaji-hesaplama.html">
-        Kira Stopajı Hesaplama →
-      </a>
-    </p>
+Hesapta uygulanacak oran:
+<strong>%20</strong>
 
-    <p>
-      <a href="/kredi-hesaplama.html">
-        Kredi Hesaplama →
-      </a>
-    </p>
+</div>
 
-    <p>
-      <a href="/">
-        Tüm Hesaplama Araçları →
-      </a>
-    </p>
+</section>
 
-  </section>
+<section class="card">
+
+<h2>TÜFE'den Daha Yüksek Oran Girersem Ne Olur?</h2>
+
+<p>
+Bu hesaplayıcı standart yıllık kira yenilemesini
+esas alır.
+</p>
+
+<p>
+Girdiğiniz artış oranı TÜFE 12 aylık ortalama
+üst sınırını aşarsa hesaplama üst sınır üzerinden
+yapılır.
+</p>
+
+<div class="info-box">
+
+Örnek:
+
+<br><br>
+
+TÜFE üst sınırı:
+%31,23
+
+<br>
+
+Girilen oran:
+%40
+
+<br><br>
+
+Standart hesapta kullanılan oran:
+
+<br>
+
+<strong>%31,23</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Konut ve İşyeri Kira Artışı Aynı mı?</h2>
+
+<p>
+Türk Borçlar Kanunu'nun konut ve çatılı işyeri
+kiralarına ilişkin kira bedeli düzenlemelerinde
+TÜFE on iki aylık ortalama değişim oranı
+üst sınırı esas alınmaktadır.
+</p>
+
+<p>
+İşyeri kiraları bakımından TBK 344 hükümlerinin
+uygulanmasına ilişkin geçmişte bulunan erteleme de
+1 Temmuz 2020 itibarıyla sona ermiştir.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>%25 Kira Artış Sınırı Devam Ediyor mu?</h2>
+
+<p>
+<strong>Hayır.</strong>
+</p>
+
+<p>
+Konut kiralarına yönelik geçici %25 kira artış
+sınırlaması 1 Temmuz 2024 itibarıyla sona ermiştir.
+</p>
+
+<p>
+Bu nedenle 2026 yılında standart konut kira
+yenilemelerinde artık %25 sabit sınır yerine
+TBK 344 kapsamındaki TÜFE 12 aylık ortalama
+değişim oranı dikkate alınmaktadır.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>5 Yılı Geçen Kiralarda Durum Farklı mı?</h2>
+
+<p>
+Evet.
+</p>
+
+<p>
+TBK 344'e göre beş yıldan uzun süreli veya
+beş yıldan sonra yenilenen kira sözleşmelerinde
+ve sonraki her beş yılın sonunda kira bedelinin
+tespitinde yalnızca TÜFE oranına bakılmaz.
+</p>
+
+<p>
+Hâkim tarafından:
+</p>
+
+<ul>
+<li>TÜFE on iki aylık ortalama değişim oranı,</li>
+<li>Kiralananın durumu,</li>
+<li>Emsal kira bedelleri</li>
+</ul>
+
+<p>
+göz önünde bulundurularak hakkaniyete uygun
+kira bedeli belirlenebilir.
+</p>
+
+<div class="warning-box">
+
+Bu nedenle 5 yılı aşan kira ilişkilerindeki
+<strong>kira tespit davası</strong>
+ile normal yıllık kira artışı aynı işlem değildir.
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Kira Artış Oranı Her Ay Neden Değişiyor?</h2>
+
+<p>
+TÜİK TÜFE verilerini her ay yayımlar.
+</p>
+
+<p>
+On iki aylık ortalamalara göre değişim oranı da
+yeni veri geldikçe değiştiğinden kira yenileme
+dönemlerine göre kullanılan oran farklılaşabilir.
+</p>
+
+<p>
+Bu nedenle eski bir internet haberindeki oranı
+doğrudan kullanmak yerine sözleşmenin yenileme
+dönemine karşılık gelen güncel TÜİK verisi
+kontrol edilmelidir.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Yıllık Kira Farkı Nasıl Hesaplanır?</h2>
+
+<p>
+Araç yeni aylık kira bedelinin yanında artışın
+12 aylık yaklaşık etkisini de gösterir.
+</p>
+
+<div class="info-box">
+
+<strong>Eski yıllık kira:</strong>
+
+<br>
+
+Eski Aylık Kira × 12
+
+<br><br>
+
+<strong>Yeni yıllık kira:</strong>
+
+<br>
+
+Yeni Aylık Kira × 12
+
+<br><br>
+
+<strong>Yıllık fark:</strong>
+
+<br>
+
+Aylık Artış × 12
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+<h3>Kasım 2026 kira artış oranı kaç?</h3>
+
+<p>
+Ekim 2026 TÜFE verisinde on iki aylık ortalamalara
+göre değişim <strong>%31,23</strong> olarak açıklanmıştır.
+</p>
+
+<h3>Kira artışında yıllık enflasyon mu kullanılır?</h3>
+
+<p>
+TBK 344 bakımından esas alınan veri bir önceki yılın
+aynı ayına göre yıllık TÜFE değil,
+<strong>on iki aylık ortalamalara göre değişim oranıdır.</strong>
+</p>
+
+<h3>Konut kira artışında %25 sınırı var mı?</h3>
+
+<p>
+Hayır. Geçici %25 konut kira artış sınırı
+1 Temmuz 2024 itibarıyla sona ermiştir.
+</p>
+
+<h3>İşyeri kirasında TÜFE sınırı uygulanır mı?</h3>
+
+<p>
+Standart konut ve çatılı işyeri kira
+yenilemelerinde TBK 344 hükümleri dikkate alınır.
+</p>
+
+<h3>Sözleşmede %10 yazıyorsa TÜFE kadar artırılabilir mi?</h3>
+
+<p>
+Sözleşmenin hükümleri ve somut durum önemlidir.
+Standart yenilemede tarafların kararlaştırdığı artış
+TÜFE üst sınırını aşamaz; sözleşmedeki daha düşük
+oran ayrıca dikkate alınmalıdır.
+</p>
+
+<h3>TÜFE oranından daha yüksek zam yapılabilir mi?</h3>
+
+<p>
+Standart yıllık yenileme bakımından TBK 344'teki
+TÜFE on iki aylık ortalama değişim oranı üst sınırdır.
+Beş yılı aşan kira tespiti gibi durumlar farklıdır.
+</p>
+
+<h3>5 yıllık kirada sadece TÜFE mi uygulanır?</h3>
+
+<p>
+Hayır. Beş yılı aşan kira ilişkilerindeki kira
+tespitinde emsal kira bedelleri ve kiralananın
+durumu gibi unsurlar da dikkate alınabilir.
+</p>
+
+<h3>Kira artış hesaplama ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio Kira Artış Hesaplama aracı
+ücretsizdir ve üyelik gerektirmez.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Resmî Veri ve Hukuki Esas</h2>
+
+<div class="source-box">
+
+<strong>Ekim 2026 TÜFE:</strong>
+
+<br><br>
+
+Aylık değişim:
+%2,58
+
+<br><br>
+
+Bir önceki yılın aynı ayına göre:
+%29,77
+
+<br><br>
+
+<strong>On iki aylık ortalamalara göre:
+%31,23</strong>
+
+</div>
+
+<p>
+TÜFE verisi Türkiye İstatistik Kurumunun
+3 Kasım 2026 tarihli Ekim 2026 Tüketici Fiyat
+Endeksi bültenine dayanmaktadır.
+</p>
+
+<p>
+Konut ve çatılı işyeri kira bedelinin yenilenmesine
+ilişkin temel üst sınır Türk Borçlar Kanunu
+madde 344'te düzenlenmektedir.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Önemli Bilgilendirme</h2>
+
+<div class="warning-box">
+
+Bu araç standart yıllık kira yenilemesinde
+matematiksel hesaplama ve genel bilgilendirme
+amacıyla hazırlanmıştır.
+
+<br><br>
+
+Kira sözleşmesinin başlangıç ve yenileme tarihi,
+sözleşmedeki artış hükmü, kira ilişkisinin süresi,
+beş yıllık kira tespiti, dava veya arabuluculuk
+süreci ve diğer özel hukuki durumlar sonucu
+değiştirebilir.
+
+<br><br>
+
+TÜFE oranı her ay değiştiği için kendi yenileme
+döneminize ait TÜİK verisini kontrol edin.
+
+<br><br>
+
+Hukuki uyuşmazlık halinde somut kira sözleşmesi
+ve yürürlükteki mevzuat esas alınmalıdır.
+
+</div>
+
+<p>
+<strong>Son güncelleme: Kasım 2026</strong>
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Diğer Hesaplama Araçları</h2>
+
+<p>
+<a href="/kira-stopaji-hesaplama.html">
+Kira Stopajı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/yuzde-hesaplama.html">
+Yüzde Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/yuzde-degisim-hesaplama.html">
+Yüzde Değişim Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/zam-hesaplama.html">
+Zam Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kredi-hesaplama.html">
+Kredi Hesaplama →
+</a>
+</p>
+
+</section>
 
 </main>
 
-
 <footer>
 
-  <div class="wrap">
+<div class="wrap">
 
-    <p>
-      <a href="/">Ana Sayfa</a>
-      •
-      <a href="/hakkimizda.html">Hakkımızda</a>
-      •
-      <a href="/iletisim.html">İletişim</a>
-      •
-      <a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
-      •
-      <a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
-      •
-      <a href="/en/">English</a>
-    </p>
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
 
-    <p>
-      İletişim:
-      <a href="mailto:araclioiletisim@gmail.com">
-        araclioiletisim@gmail.com
-      </a>
-    </p>
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
 
-    <p>
-      © <span id="year"></span>
-      Araclio • Ücretsiz Online Araçlar
-    </p>
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
 
-  </div>
+</div>
 
 </footer>
-
 
 <script>
 
 function para(sayi){
 
-  return new Intl.NumberFormat(
-    "tr-TR",
-    {
-      minimumFractionDigits:2,
-      maximumFractionDigits:2
-    }
-  ).format(sayi) + " TL";
+return new Intl.NumberFormat(
+"tr-TR",
+{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+}
+).format(sayi) +
+" TL";
+
+}
+
+
+function yuzde(sayi){
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+}
+).format(sayi) +
+"%";
 
 }
 
 
 function hesapla(){
 
-  const kira =
-    Number(
-      document.getElementById("kira").value
-    );
+const kiraInput =
+document
+.getElementById("kira");
 
-  const oran =
-    Number(
-      document.getElementById("oran").value
-    );
+const tufeInput =
+document
+.getElementById("tufe");
 
-  const uyari =
-    document.getElementById("uyari");
+const oranInput =
+document
+.getElementById("oran");
 
-  const sonuclar =
-    document.getElementById("sonuclar");
+const kira =
+Number(
+kiraInput.value
+);
 
+const tufe =
+Number(
+tufeInput.value
+);
 
-  if(
-    !Number.isFinite(kira) ||
-    kira <= 0
-  ){
+const istenenOran =
+Number(
+oranInput.value
+);
 
-    uyari.textContent =
-      "Lütfen sıfırdan büyük bir mevcut kira tutarı girin.";
+const uyari =
+document
+.getElementById("uyari");
 
-    sonuclar.style.display =
-      "none";
-
-    return;
-
-  }
-
-
-  if(
-    !Number.isFinite(oran) ||
-    oran < 0
-  ){
-
-    uyari.textContent =
-      "Lütfen geçerli bir artış oranı girin.";
-
-    sonuclar.style.display =
-      "none";
-
-    return;
-
-  }
+const sonuclar =
+document
+.getElementById("sonuclar");
 
 
-  const aylikFark =
-    kira * (oran / 100);
+if(
+kiraInput.value === "" ||
+!Number.isFinite(
+kira
+) ||
+kira <= 0
+){
 
-  const yeniKira =
-    kira + aylikFark;
+uyari.textContent =
+"Lütfen sıfırdan büyük geçerli bir mevcut kira tutarı girin.";
 
-  const eskiYillik =
-    kira * 12;
+sonuclar.style.display =
+"none";
 
-  const yeniYillik =
-    yeniKira * 12;
-
-  const yillikFark =
-    aylikFark * 12;
-
-
-  document
-    .getElementById("yeniKira")
-    .textContent =
-      para(yeniKira);
-
-
-  document
-    .getElementById("aylikFark")
-    .textContent =
-      para(aylikFark);
-
-
-  document
-    .getElementById("eskiYillik")
-    .textContent =
-      para(eskiYillik);
-
-
-  document
-    .getElementById("yeniYillik")
-    .textContent =
-      para(yeniYillik);
-
-
-  document
-    .getElementById("yillikFark")
-    .textContent =
-      para(yillikFark);
-
-
-  document
-    .getElementById("uygulananOran")
-    .textContent =
-      "%" +
-      oran.toLocaleString(
-        "tr-TR",
-        {
-          minimumFractionDigits:2,
-          maximumFractionDigits:2
-        }
-      );
-
-
-  uyari.innerHTML =
-    "<strong>Sonuç:</strong> " +
-    para(kira) +
-    " olan aylık kira, %" +
-    oran.toLocaleString("tr-TR") +
-    " artışla yaklaşık <strong>" +
-    para(yeniKira) +
-    "</strong> olur.";
-
-
-  sonuclar.style.display =
-    "grid";
+return;
 
 }
 
 
+if(
+tufeInput.value === "" ||
+!Number.isFinite(
+tufe
+) ||
+tufe < 0
+){
+
+uyari.textContent =
+"Lütfen geçerli bir TÜFE 12 aylık ortalama oranı girin.";
+
+sonuclar.style.display =
+"none";
+
+return;
+
+}
+
+
+if(
+oranInput.value === "" ||
+!Number.isFinite(
+istenenOran
+) ||
+istenenOran < 0
+){
+
+uyari.textContent =
+"Lütfen geçerli bir uygulanacak artış oranı girin.";
+
+sonuclar.style.display =
+"none";
+
+return;
+
+}
+
+
+/*
+Standart TBK 344 yenileme hesabında
+uygulanacak oran TÜFE üst sınırını aşmaz.
+*/
+
+const uygulananOran =
+Math.min(
+istenenOran,
+tufe
+);
+
+
+const aylikFark =
+kira *
+(
+uygulananOran /
+100
+);
+
+
+const yeniKira =
+kira +
+aylikFark;
+
+
+const eskiYillik =
+kira *
+12;
+
+
+const yeniYillik =
+yeniKira *
+12;
+
+
+const yillikFark =
+aylikFark *
+12;
+
+
 document
-  .getElementById("kira")
-  .addEventListener(
-    "keydown",
-    function(event){
-
-      if(event.key === "Enter"){
-        hesapla();
-      }
-
-    }
-  );
+.getElementById("yeniKira")
+.textContent =
+para(
+yeniKira
+);
 
 
 document
-  .getElementById("oran")
-  .addEventListener(
-    "keydown",
-    function(event){
-
-      if(event.key === "Enter"){
-        hesapla();
-      }
-
-    }
-  );
+.getElementById("aylikFark")
+.textContent =
+para(
+aylikFark
+);
 
 
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+document
+.getElementById("eskiYillik")
+.textContent =
+para(
+eskiYillik
+);
+
+
+document
+.getElementById("yeniYillik")
+.textContent =
+para(
+yeniYillik
+);
+
+
+document
+.getElementById("yillikFark")
+.textContent =
+para(
+yillikFark
+);
+
+
+document
+.getElementById("uygulananOran")
+.textContent =
+yuzde(
+uygulananOran
+);
+
+
+let oranNotu =
+"";
+
+
+if(
+istenenOran >
+tufe
+){
+
+oranNotu =
+
+"<br><br><strong>Üst sınır uyarısı:</strong> " +
+
+"Girdiğiniz " +
+
+yuzde(
+istenenOran
+) +
+
+" oranı TÜFE 12 aylık ortalama üst sınırı olan " +
+
+yuzde(
+tufe
+) +
+
+" oranını aştığı için standart yenileme hesabında " +
+
+yuzde(
+tufe
+) +
+
+" kullanıldı.";
+
+}
+else if(
+istenenOran <
+tufe
+){
+
+oranNotu =
+
+"<br><br>Girdiğiniz artış oranı TÜFE üst sınırından düşük olduğu için hesaplama " +
+
+yuzde(
+istenenOran
+) +
+
+" üzerinden yapıldı.";
+
+}
+else{
+
+oranNotu =
+
+"<br><br>Girilen artış oranı TÜFE üst sınırıyla aynı olduğu için " +
+
+yuzde(
+uygulananOran
+) +
+
+" kullanıldı.";
+
+}
+
+
+uyari.innerHTML =
+
+"<strong>Yeni aylık kira: " +
+
+para(
+yeniKira
+) +
+
+"</strong>" +
+
+"<br><br>" +
+
+"Mevcut kira: <strong>" +
+
+para(
+kira
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"TÜFE üst sınırı: <strong>" +
+
+yuzde(
+tufe
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Girilen artış oranı: <strong>" +
+
+yuzde(
+istenenOran
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Hesapta kullanılan oran: <strong>" +
+
+yuzde(
+uygulananOran
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Aylık artış: <strong>" +
+
+para(
+aylikFark
+) +
+
+"</strong>" +
+
+oranNotu +
+
+"<br><br><small>" +
+
+"Bu hesap standart yıllık kira yenilemesi içindir. Beş yılı aşan kira tespiti ve diğer özel hukuki durumlar ayrıca değerlendirilmelidir." +
+
+"</small>";
+
+
+sonuclar.style.display =
+"grid";
+
+}
+
+
+[
+"kira",
+"tufe",
+"oran"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(
+event.key ===
+"Enter"
+){
+
+hesapla();
+
+}
+
+}
+);
+
+});
+
+
+document
+.getElementById("year")
+.textContent =
+new Date().getFullYear();
 
 </script>
 
