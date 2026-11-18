@@ -1,371 +1,1523 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <title>İndirim Hesaplama 2026 | Yüzde İndirimli Fiyat - Araclio</title>
+<title>İndirim Hesaplama | İndirimli Fiyat ve İndirim Oranı - Araclio</title>
 
-  <meta name="description" content="İndirim hesaplama aracı ile etiket fiyatı ve indirim oranını girerek indirim tutarını ve indirimli fiyatı ücretsiz hesaplayın. Yüzde indirim hesaplama.">
+<meta
+name="description"
+content="İndirim hesaplama aracı. Etiket fiyatı ve indirim oranından indirimli fiyatı hesaplayın; eski ve yeni fiyattan indirim oranını veya indirimli fiyattan eski fiyatı bulun."
+>
 
-  <meta name="robots" content="index,follow">
+<meta name="robots" content="index,follow">
 
-  <link rel="canonical" href="https://araclio.com/indirim-hesaplama.html">
-  <link rel="stylesheet" href="style.css">
+<meta
+name="google-adsense-account"
+content="ca-pub-7634654090472031"
+>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "İndirim Hesaplama",
-    "url": "https://araclio.com/indirim-hesaplama.html",
-    "applicationCategory": "UtilitiesApplication",
-    "operatingSystem": "Any",
-    "description": "Etiket fiyatı ve indirim oranına göre indirim tutarını ve indirimli fiyatı hesaplayan ücretsiz online araç.",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "TRY"
-    }
+<script
+async
+src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7634654090472031"
+crossorigin="anonymous">
+</script>
+
+<link
+rel="canonical"
+href="https://araclio.com/indirim-hesaplama.html"
+>
+
+<link rel="stylesheet" href="style.css">
+
+<meta property="og:type" content="website">
+<meta
+property="og:title"
+content="İndirim Hesaplama | İndirimli Fiyat ve Oran"
+>
+<meta
+property="og:description"
+content="Etiket fiyatından indirimli fiyatı, eski-yeni fiyattan indirim oranını ve indirimli fiyattan eski fiyatı hesaplayın."
+>
+<meta
+property="og:url"
+content="https://araclio.com/indirim-hesaplama.html"
+>
+<meta property="og:site_name" content="Araclio">
+
+<style>
+
+.result-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:18px;
+}
+
+.result-box{
+background:#f5f5f5;
+padding:16px;
+border-radius:10px;
+color:#222;
+}
+
+.result-box strong{
+display:block;
+margin-bottom:7px;
+}
+
+.big-result{
+font-size:1.35rem;
+font-weight:700;
+}
+
+.info-box{
+margin:16px 0;
+padding:16px;
+border-radius:10px;
+background:#f5f5f5;
+color:#222;
+line-height:1.8;
+}
+
+.warning-box{
+margin:18px 0;
+padding:16px;
+border:1px solid #e7d28b;
+border-radius:10px;
+background:#fff8e1;
+color:#4d3d00;
+line-height:1.8;
+}
+
+.quick-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin:12px 0 18px;
+}
+
+.quick-buttons button{
+width:auto;
+padding:9px 13px;
+}
+
+.table-wrap{
+overflow-x:auto;
+margin-top:15px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+min-width:560px;
+}
+
+th,
+td{
+padding:12px;
+border-bottom:1px solid rgba(127,127,127,.25);
+text-align:left;
+}
+
+@media(max-width:650px){
+
+.result-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"İndirim Hesaplama",
+  "url":"https://araclio.com/indirim-hesaplama.html",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Any",
+  "inLanguage":"tr-TR",
+  "description":"Etiket fiyatı ve indirim oranından indirimli fiyatı, eski ve yeni fiyattan indirim oranını ve indirimli fiyattan eski fiyatı hesaplayan ücretsiz online araç.",
+  "offers":{
+    "@type":"Offer",
+    "price":"0",
+    "priceCurrency":"TRY"
+  },
+  "isPartOf":{
+    "@type":"WebSite",
+    "name":"Araclio",
+    "url":"https://araclio.com/"
   }
-  </script>
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"BreadcrumbList",
+  "itemListElement":[
+    {
+      "@type":"ListItem",
+      "position":1,
+      "name":"Ana Sayfa",
+      "item":"https://araclio.com/"
+    },
+    {
+      "@type":"ListItem",
+      "position":2,
+      "name":"İndirim Hesaplama",
+      "item":"https://araclio.com/indirim-hesaplama.html"
+    }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {
+      "@type":"Question",
+      "name":"İndirimli fiyat nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"İndirim tutarı etiket fiyatının indirim oranıyla çarpılıp 100'e bölünmesiyle bulunur. İndirimli fiyat, etiket fiyatından indirim tutarı çıkarılarak hesaplanır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Eski ve yeni fiyattan indirim oranı nasıl hesaplanır?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Eski fiyat ile yeni fiyat arasındaki fark eski fiyata bölünür ve 100 ile çarpılır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"İndirimli fiyattan eski fiyat nasıl bulunur?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"İndirimli fiyat, 1 eksi indirim oranının ondalık karşılığına bölünerek eski etiket fiyatı bulunur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"1000 TL ürün yüzde 20 indirimle kaç TL olur?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"1000 TL'nin yüzde 20'si 200 TL'dir. İndirimli fiyat 800 TL olur."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"800 TL'ye düşen 1000 TL ürün yüzde kaç indirimlidir?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Fiyat 200 TL düşmüştür. 200 TL'nin 1000 TL'ye oranı yüzde 20 olduğundan indirim oranı yüzde 20'dir."
+      }
+    }
+  ]
+}
+</script>
+
 </head>
 
 <body>
 
 <header>
-  <div class="wrap nav">
-    <a class="brand" href="/">Araclio</a>
-    <span class="tag">Ücretsiz Online Araçlar</span>
-  </div>
+
+<div class="wrap nav">
+
+<a class="brand" href="/">
+Araclio
+</a>
+
+<span class="tag">
+Ücretsiz Online Araçlar
+</span>
+
+</div>
+
 </header>
 
 <main class="wrap">
 
-  <section class="hero">
-    <p class="eyebrow">HIZLI • ÜCRETSİZ • ÜYELİKSİZ</p>
+<section class="hero">
 
-    <h1>İndirim Hesaplama - İndirimli Fiyat Hesapla</h1>
+<p class="eyebrow">
+İNDİRİM • ETİKET FİYATI • TASARRUF
+</p>
 
-    <p>
-      Etiket fiyatını ve yüzde indirim oranını girerek indirim
-      tutarını ve ödeyeceğiniz indirimli fiyatı saniyeler içinde hesaplayın.
-    </p>
-  </section>
+<h1>İndirim Hesaplama</h1>
 
+<p>
+Etiket fiyatı ve indirim oranından ödeyeceğiniz yeni fiyatı
+hesaplayın. İsterseniz eski ve yeni fiyattan gerçek indirim
+oranını veya indirimli fiyattan eski etiket fiyatını bulun.
+</p>
 
-  <section class="card">
-    <h2>Yüzde İndirim Hesaplama Aracı</h2>
+</section>
 
-    <label>
-      Etiket Fiyatı (TL)
-      <input
-        id="fiyat"
-        type="number"
-        min="0"
-        step="0.01"
-        inputmode="decimal"
-        placeholder="Örnek: 1000">
-    </label>
+<section class="card">
 
-    <label>
-      İndirim Oranı (%)
-      <input
-        id="oran"
-        type="number"
-        min="0"
-        max="100"
-        step="0.01"
-        inputmode="decimal"
-        placeholder="Örnek: 20">
-    </label>
+<h2>Etiket Fiyatından İndirimli Fiyat Hesapla</h2>
 
-    <div class="buttons">
-      <button type="button" onclick="indirimHesapla()">İndirimi Hesapla</button>
-    </div>
+<label for="fiyat">
+Etiket Fiyatı (TL)
+</label>
 
-    <div id="sonuc" class="result" aria-live="polite">
-      Sonuç burada görünecek.
-    </div>
-  </section>
+<input
+id="fiyat"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 1000"
+>
 
+<label for="oran">
+İndirim Oranı (%)
+</label>
 
-  <section class="card">
-    <h2>İndirim Nasıl Hesaplanır?</h2>
+<input
+id="oran"
+type="number"
+min="0"
+max="100"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 20"
+>
 
-    <p>
-      Bir ürünün indirim tutarını hesaplamak için etiket fiyatı
-      indirim oranıyla çarpılır ve sonuç 100'e bölünür.
-    </p>
+<div class="quick-buttons">
 
-    <p>
-      <strong>İndirim tutarı formülü:</strong><br>
-      Etiket Fiyatı × İndirim Oranı ÷ 100
-    </p>
+<button type="button" onclick="oranSec(10)">%10</button>
+<button type="button" onclick="oranSec(20)">%20</button>
+<button type="button" onclick="oranSec(25)">%25</button>
+<button type="button" onclick="oranSec(30)">%30</button>
+<button type="button" onclick="oranSec(50)">%50</button>
 
-    <p>
-      Bulunan indirim tutarı ürünün ilk fiyatından çıkarıldığında
-      indirim sonrası ödenecek fiyat bulunur.
-    </p>
+</div>
 
-    <p>
-      <strong>İndirimli fiyat formülü:</strong><br>
-      Etiket Fiyatı − İndirim Tutarı
-    </p>
+<button type="button" onclick="indirimHesapla()">
+İndirimli Fiyatı Hesapla
+</button>
 
-    <p>
-      Örneğin 1.000 TL fiyatlı bir üründe %20 indirim varsa:
-    </p>
+<div id="sonuc" class="result" aria-live="polite">
+Etiket fiyatı ve indirim oranını girin.
+</div>
 
-    <p>
-      <strong>1.000 × 20 ÷ 100 = 200 TL indirim</strong><br>
-      <strong>1.000 − 200 = 800 TL indirimli fiyat</strong>
-    </p>
-  </section>
+<div id="sonucKutulari" class="result-grid" style="display:none;">
 
+<div class="result-box">
+<strong>İndirim Tutarı</strong>
+<span id="indirimTutariSonuc">-</span>
+</div>
 
-  <section class="card">
-    <h2>%10 İndirim Nasıl Hesaplanır?</h2>
+<div class="result-box">
+<strong>Ödenecek Fiyat</strong>
+<span id="indirimliFiyatSonuc" class="big-result">-</span>
+</div>
 
-    <p>
-      Bir fiyatın %10 indirim tutarını bulmak için fiyatı
-      10 ile çarpıp 100'e bölebilirsiniz.
-    </p>
+<div class="result-box">
+<strong>Etiket Fiyatı</strong>
+<span id="etiketSonuc">-</span>
+</div>
 
-    <p>
-      Örneğin 500 TL'nin %10'u 50 TL'dir.
-      Bu nedenle 500 TL'lik bir ürün %10 indirimle
-      <strong>450 TL</strong> olur.
-    </p>
-  </section>
+<div class="result-box">
+<strong>İndirim Oranı</strong>
+<span id="oranSonuc">-</span>
+</div>
 
+</div>
 
-  <section class="card">
-    <h2>%20 İndirim Nasıl Hesaplanır?</h2>
+</section>
 
-    <p>
-      %20 indirim hesaplamak için etiket fiyatının %20'si bulunur
-      ve bu tutar başlangıç fiyatından çıkarılır.
-    </p>
+<section class="card">
 
-    <p>
-      Örneğin 1.000 TL'nin %20'si 200 TL'dir.
-      1.000 TL − 200 TL işlemi sonucunda indirimli fiyat
-      <strong>800 TL</strong> olur.
-    </p>
-  </section>
+<h2>Eski ve Yeni Fiyattan İndirim Oranı Hesapla</h2>
 
+<p>
+Bir ürünün eski fiyatını ve kampanyalı yeni fiyatını biliyorsanız,
+gerçek yüzde indirimi hesaplayabilirsiniz.
+</p>
 
-  <section class="card">
-    <h2>%25 İndirim Nasıl Hesaplanır?</h2>
+<label for="eskiFiyat">
+Eski / Etiket Fiyatı (TL)
+</label>
 
-    <p>
-      %25 indirim, başlangıç fiyatının dörtte biri kadar indirim
-      uygulanması anlamına gelir.
-    </p>
+<input
+id="eskiFiyat"
+type="number"
+min="0.01"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 1000"
+>
 
-    <p>
-      Örneğin 2.000 TL'nin %25'i 500 TL'dir.
-      Bu durumda indirimli fiyat
-      <strong>1.500 TL</strong> olur.
-    </p>
-  </section>
+<label for="yeniFiyat">
+Yeni / İndirimli Fiyat (TL)
+</label>
 
+<input
+id="yeniFiyat"
+type="number"
+min="0"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 800"
+>
 
-  <section class="card">
-    <h2>%30 İndirim Nasıl Hesaplanır?</h2>
+<button type="button" onclick="oranBul()">
+İndirim Oranını Bul
+</button>
 
-    <p>
-      Örneğin 1.000 TL fiyatlı bir üründe %30 indirim uygulanırsa
-      indirim tutarı 300 TL olur.
-    </p>
+<div id="oranBulSonuc" class="result" aria-live="polite">
+Eski ve yeni fiyatı girin.
+</div>
 
-    <p>
-      Buna göre ödenecek indirimli fiyat
-      <strong>700 TL</strong> olarak hesaplanır.
-    </p>
-  </section>
+</section>
 
+<section class="card">
 
-  <section class="card">
-    <h2>%50 İndirim Nasıl Hesaplanır?</h2>
+<h2>İndirimli Fiyattan Eski Fiyatı Bul</h2>
 
-    <p>
-      %50 indirim, ürünün başlangıç fiyatının yarısının düşülmesi
-      anlamına gelir.
-    </p>
+<p>
+İndirim oranı ve kampanyalı fiyat biliniyorsa indirimsiz
+eski fiyatı ters hesaplayabilirsiniz.
+</p>
 
-    <p>
-      Örneğin 800 TL fiyatlı bir üründe %50 indirim uygulanırsa
-      400 TL indirim yapılır ve yeni fiyat
-      <strong>400 TL</strong> olur.
-    </p>
-  </section>
+<label for="kampanyaliFiyat">
+İndirimli Fiyat (TL)
+</label>
 
+<input
+id="kampanyaliFiyat"
+type="number"
+min="0"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 800"
+>
 
-  <section class="card">
-    <h2>İndirim Hesaplama Örnekleri</h2>
+<label for="tersOran">
+İndirim Oranı (%)
+</label>
 
-    <p>
-      <strong>1.000 TL üründe %10 indirim:</strong><br>
-      İndirim tutarı: 100 TL<br>
-      Ödenecek fiyat: 900 TL
-    </p>
+<input
+id="tersOran"
+type="number"
+min="0"
+max="99.99"
+step="0.01"
+inputmode="decimal"
+placeholder="Örnek: 20"
+>
 
-    <p>
-      <strong>1.000 TL üründe %20 indirim:</strong><br>
-      İndirim tutarı: 200 TL<br>
-      Ödenecek fiyat: 800 TL
-    </p>
+<button type="button" onclick="eskiFiyatBul()">
+Eski Fiyatı Hesapla
+</button>
 
-    <p>
-      <strong>2.000 TL üründe %25 indirim:</strong><br>
-      İndirim tutarı: 500 TL<br>
-      Ödenecek fiyat: 1.500 TL
-    </p>
+<div id="eskiFiyatSonuc" class="result" aria-live="polite">
+İndirimli fiyat ve indirim oranını girin.
+</div>
 
-    <p>
-      <strong>1.500 TL üründe %30 indirim:</strong><br>
-      İndirim tutarı: 450 TL<br>
-      Ödenecek fiyat: 1.050 TL
-    </p>
+</section>
 
-    <p>
-      <strong>800 TL üründe %50 indirim:</strong><br>
-      İndirim tutarı: 400 TL<br>
-      Ödenecek fiyat: 400 TL
-    </p>
-  </section>
+<section class="card">
 
+<h2>İndirim Nasıl Hesaplanır?</h2>
 
-  <section class="card">
-    <h2>İndirim Hesaplama Nerelerde Kullanılır?</h2>
+<div class="info-box">
 
-    <p>
-      İndirim hesabı; mağaza kampanyaları, internet alışverişleri,
-      sezon indirimleri, kuponlar ve fiyat karşılaştırmalarında
-      ödenecek yeni tutarı hızlıca görmek için kullanılabilir.
-    </p>
+<strong>İndirim Tutarı =</strong>
 
-    <p>
-      Özellikle bir üründe yalnızca indirim yüzdesi gösterildiğinde
-      gerçek indirim tutarını ve kasada ödenecek fiyatı hesaplamak
-      için yukarıdaki ücretsiz aracı kullanabilirsiniz.
-    </p>
-  </section>
+<br><br>
 
+Etiket Fiyatı × İndirim Oranı ÷ 100
 
-  <section class="card">
-    <h2>Sık Sorulan Sorular</h2>
+<br><br>
 
-    <h3>Bir fiyatın yüzde indirimi nasıl hesaplanır?</h3>
-    <p>
-      Etiket fiyatı indirim yüzdesiyle çarpılır ve 100'e bölünür.
-      Bulunan tutar etiket fiyatından çıkarılır.
-    </p>
+<strong>İndirimli Fiyat =</strong>
 
-    <h3>1.000 TL'nin %20 indirimli fiyatı nedir?</h3>
-    <p>
-      1.000 TL'nin %20'si 200 TL'dir. 200 TL indirim
-      çıkarıldığında ödenecek fiyat 800 TL olur.
-    </p>
+<br><br>
 
-    <h3>500 TL'nin %30 indirimi ne kadar?</h3>
-    <p>
-      500 TL'nin %30'u 150 TL'dir. İndirim sonrası fiyat
-      350 TL olur.
-    </p>
+Etiket Fiyatı − İndirim Tutarı
 
-    <h3>%50 indirim ne demek?</h3>
-    <p>
-      %50 indirim başlangıç fiyatının yarısının düşülmesi demektir.
-      Örneğin 1.000 TL fiyatlı bir ürün %50 indirimle 500 TL olur.
-    </p>
+</div>
 
-    <h3>İndirim hesaplama aracı ücretsiz mi?</h3>
-    <p>
-      Evet. Araclio indirim hesaplama aracını ücretsiz ve
-      üyelik gerektirmeden kullanabilirsiniz.
-    </p>
-  </section>
+<p>
+Örneğin 1.000 TL fiyatlı ürün %20 indirimliyse:
+</p>
 
+<div class="info-box">
 
-  <section class="card">
-    <h2>Diğer Ücretsiz Hesaplama Araçları</h2>
+1.000 × 0,20 =
+<strong>200 TL indirim</strong>
 
-    <p><a href="/kdv-hesaplama.html">KDV Hesaplama →</a></p>
+<br><br>
 
-    <p><a href="/yuzde-hesaplama.html">Yüzde Hesaplama →</a></p>
+1.000 − 200 =
+<strong>800 TL ödenecek fiyat</strong>
 
-    <p><a href="/kar-marji-hesaplama.html">Kâr Marjı Hesaplama →</a></p>
+</div>
 
-    <p><a href="/zam-hesaplama.html">Zam Hesaplama →</a></p>
+</section>
 
-    <p><a href="/desi-hesaplama.html">Desi Hesaplama →</a></p>
+<section class="card">
 
-    <p><a href="/basit-taksit-hesaplama.html">Taksit Hesaplama →</a></p>
+<h2>Eski ve Yeni Fiyattan Yüzde İndirim Nasıl Bulunur?</h2>
 
-    <p><a href="/kelime-karakter-sayaci.html">Kelime &amp; Karakter Sayacı →</a></p>
-  </section>
+<div class="info-box">
+
+<strong>İndirim Oranı (%) =</strong>
+
+<br><br>
+
+(Eski Fiyat − Yeni Fiyat)
+
+<br>
+
+÷ Eski Fiyat
+
+<br>
+
+× 100
+
+</div>
+
+<p>
+Örneğin ürün 1.000 TL'den 750 TL'ye düştüyse:
+</p>
+
+<div class="info-box">
+
+Fiyat farkı:
+
+<br>
+
+1.000 − 750 =
+<strong>250 TL</strong>
+
+<br><br>
+
+250 ÷ 1.000 × 100
+
+<br><br>
+
+=
+
+<br><br>
+
+<strong>%25 indirim</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>İndirimli Fiyattan Eski Fiyat Nasıl Hesaplanır?</h2>
+
+<div class="info-box">
+
+<strong>Eski Fiyat =</strong>
+
+<br><br>
+
+İndirimli Fiyat
+
+<br>
+
+÷
+
+<br>
+
+(1 − İndirim Oranı ÷ 100)
+
+</div>
+
+<p>
+Örneğin %20 indirim sonrası fiyat 800 TL ise:
+</p>
+
+<div class="info-box">
+
+800 ÷ 0,80
+
+<br><br>
+
+=
+
+<br><br>
+
+<strong>1.000 TL eski fiyat</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>%10, %20, %30 ve %50 İndirim Örnekleri</h2>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Etiket Fiyatı</th>
+<th>İndirim</th>
+<th>İndirim Tutarı</th>
+<th>Yeni Fiyat</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>1.000 TL</td>
+<td>%10</td>
+<td>100 TL</td>
+<td>900 TL</td>
+</tr>
+
+<tr>
+<td>1.000 TL</td>
+<td>%20</td>
+<td>200 TL</td>
+<td>800 TL</td>
+</tr>
+
+<tr>
+<td>1.000 TL</td>
+<td>%30</td>
+<td>300 TL</td>
+<td>700 TL</td>
+</tr>
+
+<tr>
+<td>1.000 TL</td>
+<td>%50</td>
+<td>500 TL</td>
+<td>500 TL</td>
+</tr>
+
+<tr>
+<td>2.000 TL</td>
+<td>%25</td>
+<td>500 TL</td>
+<td>1.500 TL</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>%20 İndirim Ne Demek?</h2>
+
+<p>
+%20 indirim, ürünün mevcut etiket fiyatının %20'sinin
+fiyattan düşülmesi anlamına gelir.
+</p>
+
+<p>
+1.500 TL'lik üründe:
+</p>
+
+<div class="info-box">
+
+1.500 × %20 =
+<strong>300 TL indirim</strong>
+
+<br><br>
+
+1.500 − 300 =
+
+<br><br>
+
+<strong>1.200 TL ödenecek fiyat</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>%50 İndirim Ne Demek?</h2>
+
+<p>
+%50 indirim, etiket fiyatının yarısının düşülmesidir.
+</p>
+
+<div class="info-box">
+
+800 TL ürün
+
+<br><br>
+
+%50 indirim =
+<strong>400 TL</strong>
+
+<br><br>
+
+Ödenecek fiyat =
+<strong>400 TL</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>İndirim ile İskonto Arasındaki Fark</h2>
+
+<p>
+Günlük kullanımda iki ifade benzer anlam taşısa da bu sitede
+iki aracı farklı amaçlarla ayırıyoruz.
+</p>
+
+<div class="info-box">
+
+<strong>İndirim Hesaplama:</strong>
+
+<br>
+
+Alışverişte etiket fiyatı, kampanya yüzdesi, eski fiyat ve
+yeni fiyat gibi tüketici odaklı hesaplar için.
+
+<br><br>
+
+<strong>İskonto Hesaplama:</strong>
+
+<br>
+
+Ticari işlemlerde tek veya birden fazla ardışık iskonto
+oranını uygulamak için.
+
+</div>
+
+<p>
+Ardışık %20 + %10 gibi çoklu iskonto hesabı için:
+</p>
+
+<p>
+<a href="/iskonto-hesaplama.html">
+İskonto Hesaplama →
+</a>
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>İki İndirim Oranı Toplanır mı?</h2>
+
+<p>
+Bir kampanyada indirimler art arda uygulanıyorsa oranları
+doğrudan toplamak doğru değildir.
+</p>
+
+<p>
+Örneğin önce %20, sonra kalan tutara %10 indirim uygulanırsa
+toplam efektif indirim %30 değil, %28 olur.
+</p>
+
+<div class="warning-box">
+
+Çoklu veya ardışık indirim hesabı için bu sayfadaki tek
+indirim aracı yerine
+<a href="/iskonto-hesaplama.html">İskonto Hesaplama</a>
+aracını kullanın.
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>İndirim Hesaplama Nerelerde Kullanılır?</h2>
+
+<ul>
+
+<li>Mağaza kampanyalarında</li>
+<li>Online alışverişlerde</li>
+<li>Sezon indirimlerinde</li>
+<li>Kupon ve promosyonlarda</li>
+<li>Eski fiyat ile kampanyalı fiyatı karşılaştırırken</li>
+<li>Gerçek indirim yüzdesini kontrol ederken</li>
+<li>İndirimli fiyattan eski fiyatı bulurken</li>
+
+</ul>
+
+</section>
+
+<section class="card">
+
+<h2>KDV İndirim Hesabına Dahil mi?</h2>
+
+<p>
+Bu araç matematiksel fiyat indirimi hesabı yapar.
+</p>
+
+<p>
+Etiket fiyatına KDV dahilse hesap o fiyat üzerinden;
+KDV hariç fiyat girilmişse KDV hariç tutar üzerinden yapılır.
+</p>
+
+<div class="warning-box">
+
+Bir fiyatın KDV dahil, diğerinin KDV hariç olması
+karşılaştırmayı hatalı hale getirebilir.
+
+<br><br>
+
+Eski ve yeni fiyatı karşılaştırırken aynı fiyat esasını kullanın.
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Sık Sorulan Sorular</h2>
+
+<h3>1.000 TL'nin %20 indirimli fiyatı kaç TL?</h3>
+
+<p>
+%20 indirim 200 TL'dir. Ödenecek fiyat
+<strong>800 TL</strong> olur.
+</p>
+
+<h3>500 TL'nin %30 indirimi ne kadar?</h3>
+
+<p>
+İndirim tutarı <strong>150 TL</strong>,
+indirimli fiyat ise <strong>350 TL</strong> olur.
+</p>
+
+<h3>1.000 TL'den 800 TL'ye düşen ürün yüzde kaç indirimlidir?</h3>
+
+<p>
+Fiyat 200 TL düştüğü için indirim oranı
+<strong>%20</strong> olur.
+</p>
+
+<h3>%25 indirimle 750 TL olan ürünün eski fiyatı kaç TL?</h3>
+
+<p>
+750 ÷ 0,75 hesabıyla eski fiyat
+<strong>1.000 TL</strong> bulunur.
+</p>
+
+<h3>%50 indirim ne demek?</h3>
+
+<p>
+Etiket fiyatının yarısının düşülmesi anlamına gelir.
+</p>
+
+<h3>İki indirim oranı doğrudan toplanır mı?</h3>
+
+<p>
+Ardışık uygulanıyorsa hayır. Her indirim kalan fiyat
+üzerinden uygulanmalıdır.
+</p>
+
+<h3>İndirim hesaplama ücretsiz mi?</h3>
+
+<p>
+Evet. Araclio İndirim Hesaplama aracı ücretsizdir
+ve üyelik gerektirmez.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Önemli Bilgilendirme</h2>
+
+<div class="warning-box">
+
+Bu araç yalnızca matematiksel fiyat indirimi hesabı yapar.
+
+<br><br>
+
+Kargo, kupon şartları, minimum sepet tutarı, ödeme yöntemi
+indirimi, KDV, komisyon ve platforma özel kampanya kuralları
+otomatik olarak hesaplanmaz.
+
+</div>
+
+<p>
+<strong>Son güncelleme: Kasım 2026</strong>
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Diğer Hesaplama Araçları</h2>
+
+<p>
+<a href="/iskonto-hesaplama.html">
+İskonto Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/yuzde-hesaplama.html">
+Yüzde Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kar-marji-hesaplama.html">
+Kâr Marjı Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/komisyon-hesaplama.html">
+Komisyon Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/kdv-hesaplama.html">
+KDV Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/zam-hesaplama.html">
+Zam Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/basit-taksit-hesaplama.html">
+Taksit Hesaplama →
+</a>
+</p>
+
+</section>
 
 </main>
 
-
 <footer>
-  <div class="wrap">
-    © <span id="year"></span> Araclio • Ücretsiz Online Araçlar
-  </div>
+
+<div class="wrap">
+
+<p>
+<a href="/">Ana Sayfa</a>
+•
+<a href="/hakkimizda.html">Hakkımızda</a>
+•
+<a href="/iletisim.html">İletişim</a>
+•
+<a href="/gizlilik-politikasi.html">Gizlilik Politikası</a>
+•
+<a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+•
+<a href="/en/">English</a>
+</p>
+
+<p>
+İletişim:
+<a href="mailto:araclioiletisim@gmail.com">
+araclioiletisim@gmail.com
+</a>
+</p>
+
+<p>
+© <span id="year"></span>
+Araclio • Ücretsiz Online Araçlar
+</p>
+
+</div>
+
 </footer>
 
-
 <script>
-function formatTL(deger) {
-  return deger.toLocaleString("tr-TR", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  }) + " TL";
+
+function para(deger){
+
+return new Intl.NumberFormat(
+"tr-TR",
+{
+minimumFractionDigits:2,
+maximumFractionDigits:2
+}
+).format(deger) +
+" TL";
+
 }
 
-function indirimHesapla() {
-  const fiyat = parseFloat(document.getElementById("fiyat").value);
-  const oran = parseFloat(document.getElementById("oran").value);
-  const sonucAlani = document.getElementById("sonuc");
 
-  if (
-    isNaN(fiyat) ||
-    isNaN(oran) ||
-    fiyat < 0 ||
-    oran < 0 ||
-    oran > 100
-  ) {
-    sonucAlani.innerHTML =
-      "Lütfen geçerli bir fiyat ve 0 ile 100 arasında indirim oranı girin.";
-    return;
-  }
+function yuzde(deger){
 
-  const indirimTutari = fiyat * oran / 100;
-  const indirimliFiyat = fiyat - indirimTutari;
+return new Intl.NumberFormat(
+"tr-TR",
+{
+minimumFractionDigits:0,
+maximumFractionDigits:2
+}
+).format(deger) +
+"%";
 
-  sonucAlani.innerHTML =
-    "Etiket fiyatı: <strong>" + formatTL(fiyat) + "</strong><br>" +
-    "İndirim oranı: <strong>%" +
-    oran.toLocaleString("tr-TR", {
-      maximumFractionDigits: 2
-    }) +
-    "</strong><br>" +
-    "İndirim tutarı: <strong>" + formatTL(indirimTutari) + "</strong><br>" +
-    "Ödenecek fiyat: <strong>" + formatTL(indirimliFiyat) + "</strong>";
 }
 
-document.getElementById("year").textContent = new Date().getFullYear();
 
-["fiyat", "oran"].forEach(function(id) {
-  document.getElementById(id).addEventListener("keydown", function(e) {
-    if (e.key === "Enter") {
-      indirimHesapla();
-    }
-  });
+function oranSec(deger){
+
+document
+.getElementById("oran")
+.value =
+deger;
+
+
+const fiyat =
+Number(
+document
+.getElementById("fiyat")
+.value
+);
+
+
+if(
+Number.isFinite(fiyat) &&
+fiyat > 0
+){
+
+indirimHesapla();
+
+}
+
+}
+
+
+function indirimHesapla(){
+
+const fiyatInput =
+document
+.getElementById("fiyat");
+
+const oranInput =
+document
+.getElementById("oran");
+
+const sonuc =
+document
+.getElementById("sonuc");
+
+const kutular =
+document
+.getElementById("sonucKutulari");
+
+
+const fiyat =
+Number(
+fiyatInput.value
+);
+
+const oran =
+Number(
+oranInput.value
+);
+
+
+if(
+fiyatInput.value === "" ||
+!Number.isFinite(fiyat) ||
+fiyat <= 0
+){
+
+sonuc.textContent =
+"Lütfen sıfırdan büyük geçerli bir etiket fiyatı girin.";
+
+kutular.style.display =
+"none";
+
+return;
+
+}
+
+
+if(
+oranInput.value === "" ||
+!Number.isFinite(oran) ||
+oran < 0 ||
+oran > 100
+){
+
+sonuc.textContent =
+"Lütfen %0 ile %100 arasında geçerli bir indirim oranı girin.";
+
+kutular.style.display =
+"none";
+
+return;
+
+}
+
+
+const indirimTutari =
+fiyat *
+oran /
+100;
+
+
+const indirimliFiyat =
+fiyat -
+indirimTutari;
+
+
+document
+.getElementById("indirimTutariSonuc")
+.textContent =
+para(
+indirimTutari
+);
+
+
+document
+.getElementById("indirimliFiyatSonuc")
+.textContent =
+para(
+indirimliFiyat
+);
+
+
+document
+.getElementById("etiketSonuc")
+.textContent =
+para(
+fiyat
+);
+
+
+document
+.getElementById("oranSonuc")
+.textContent =
+yuzde(
+oran
+);
+
+
+sonuc.innerHTML =
+
+"<strong>Ödenecek fiyat: " +
+
+para(
+indirimliFiyat
+) +
+
+"</strong>" +
+
+"<br><br>" +
+
+"Etiket fiyatı: <strong>" +
+
+para(
+fiyat
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"İndirim oranı: <strong>" +
+
+yuzde(
+oran
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"İndirim tutarı: <strong>" +
+
+para(
+indirimTutari
+) +
+
+"</strong>";
+
+
+kutular.style.display =
+"grid";
+
+}
+
+
+function oranBul(){
+
+const eskiInput =
+document
+.getElementById("eskiFiyat");
+
+const yeniInput =
+document
+.getElementById("yeniFiyat");
+
+const sonuc =
+document
+.getElementById("oranBulSonuc");
+
+
+const eski =
+Number(
+eskiInput.value
+);
+
+const yeni =
+Number(
+yeniInput.value
+);
+
+
+if(
+eskiInput.value === "" ||
+!Number.isFinite(eski) ||
+eski <= 0
+){
+
+sonuc.textContent =
+"Lütfen sıfırdan büyük geçerli bir eski fiyat girin.";
+
+return;
+
+}
+
+
+if(
+yeniInput.value === "" ||
+!Number.isFinite(yeni) ||
+yeni < 0
+){
+
+sonuc.textContent =
+"Lütfen sıfır veya daha büyük geçerli bir yeni fiyat girin.";
+
+return;
+
+}
+
+
+const fark =
+eski -
+yeni;
+
+
+const oran =
+(
+fark /
+eski
+) *
+100;
+
+
+if(
+fark >= 0
+){
+
+sonuc.innerHTML =
+
+"<strong>İndirim oranı: " +
+
+yuzde(
+oran
+) +
+
+"</strong>" +
+
+"<br><br>" +
+
+"Eski fiyat: <strong>" +
+
+para(
+eski
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Yeni fiyat: <strong>" +
+
+para(
+yeni
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Tasarruf: <strong>" +
+
+para(
+fark
+) +
+
+"</strong>";
+
+}
+else{
+
+const artis =
+Math.abs(
+oran
+);
+
+
+sonuc.innerHTML =
+
+"<strong>Bu işlem indirim değil, fiyat artışıdır.</strong>" +
+
+"<br><br>" +
+
+"Eski fiyat: <strong>" +
+
+para(
+eski
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Yeni fiyat: <strong>" +
+
+para(
+yeni
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Fiyat artışı: <strong>" +
+
+yuzde(
+artis
+) +
+
+"</strong>";
+
+}
+
+}
+
+
+function eskiFiyatBul(){
+
+const fiyatInput =
+document
+.getElementById("kampanyaliFiyat");
+
+const oranInput =
+document
+.getElementById("tersOran");
+
+const sonuc =
+document
+.getElementById("eskiFiyatSonuc");
+
+
+const yeniFiyat =
+Number(
+fiyatInput.value
+);
+
+const oran =
+Number(
+oranInput.value
+);
+
+
+if(
+fiyatInput.value === "" ||
+!Number.isFinite(yeniFiyat) ||
+yeniFiyat < 0
+){
+
+sonuc.textContent =
+"Lütfen sıfır veya daha büyük geçerli bir indirimli fiyat girin.";
+
+return;
+
+}
+
+
+if(
+oranInput.value === "" ||
+!Number.isFinite(oran) ||
+oran < 0 ||
+oran >= 100
+){
+
+sonuc.textContent =
+"Lütfen %0 dahil, %100 hariç geçerli bir indirim oranı girin.";
+
+return;
+
+}
+
+
+const kalanOran =
+1 -
+oran /
+100;
+
+
+const eskiFiyat =
+yeniFiyat /
+kalanOran;
+
+
+const indirimTutari =
+eskiFiyat -
+yeniFiyat;
+
+
+sonuc.innerHTML =
+
+"<strong>Tahmini eski fiyat: " +
+
+para(
+eskiFiyat
+) +
+
+"</strong>" +
+
+"<br><br>" +
+
+"İndirimli fiyat: <strong>" +
+
+para(
+yeniFiyat
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"İndirim oranı: <strong>" +
+
+yuzde(
+oran
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"İndirim tutarı: <strong>" +
+
+para(
+indirimTutari
+) +
+
+"</strong>";
+
+}
+
+
+[
+"fiyat",
+"oran"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(
+event.key === "Enter"
+){
+
+indirimHesapla();
+
+}
+
+}
+);
+
 });
+
+
+[
+"eskiFiyat",
+"yeniFiyat"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(
+event.key === "Enter"
+){
+
+oranBul();
+
+}
+
+}
+);
+
+});
+
+
+[
+"kampanyaliFiyat",
+"tersOran"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"keydown",
+function(event){
+
+if(
+event.key === "Enter"
+){
+
+eskiFiyatBul();
+
+}
+
+}
+);
+
+});
+
+
+document
+.getElementById("year")
+.textContent =
+new Date().getFullYear();
+
 </script>
 
 </body>
