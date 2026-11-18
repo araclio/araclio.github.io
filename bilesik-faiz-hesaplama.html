@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Bileşik Faiz Hesaplama | Aylık ve Yıllık Getiri - Araclio</title>
+<title>Bileşik Faiz Hesaplama | Efektif Faiz ve Düzenli Birikim - Araclio</title>
 
 <meta
 name="description"
-content="Ücretsiz bileşik faiz hesaplama aracı. Başlangıç tutarı, yıllık faiz oranı, süre, bileşikleşme sıklığı ve aylık düzenli eklemelere göre toplam birikimi ve getiriyi hesaplayın."
+content="Bileşik faiz hesaplama aracı. Başlangıç tutarı, yıllık nominal oran, süre, bileşikleşme sıklığı ve aylık düzenli eklemelerle toplam birikimi ve efektif yıllık oranı hesaplayın."
 >
 
 <meta name="robots" content="index,follow">
@@ -29,12 +29,23 @@ crossorigin="anonymous">
 <meta property="og:title" content="Bileşik Faiz Hesaplama | Araclio">
 <meta
 property="og:description"
-content="Başlangıç tutarı, faiz oranı ve süreye göre bileşik getiri ve toplam birikimi ücretsiz hesaplayın."
+content="Nominal faiz, bileşikleşme sıklığı ve düzenli eklemelere göre toplam birikimi ve efektif yıllık getiriyi hesaplayın."
 >
 <meta property="og:url" content="https://araclio.com/bilesik-faiz-hesaplama.html">
 <meta property="og:site_name" content="Araclio">
 
 <style>
+
+select{
+width:100%;
+margin-top:8px;
+padding:15px;
+border:1px solid rgba(127,127,127,.35);
+border-radius:10px;
+font-size:16px;
+background:inherit;
+color:inherit;
+}
 
 .result-grid{
 display:grid;
@@ -76,7 +87,7 @@ background:#fff8e1;
 border:1px solid #e7d28b;
 border-radius:10px;
 line-height:1.75;
-color:#332b15;
+color:#4d3d00;
 }
 
 .table-wrap{
@@ -87,7 +98,7 @@ margin-top:15px;
 table{
 width:100%;
 border-collapse:collapse;
-min-width:520px;
+min-width:560px;
 }
 
 th,
@@ -107,7 +118,6 @@ grid-template-columns:1fr;
 
 </style>
 
-
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -117,7 +127,7 @@ grid-template-columns:1fr;
   "applicationCategory":"FinanceApplication",
   "operatingSystem":"Any",
   "inLanguage":"tr-TR",
-  "description":"Başlangıç tutarı, faiz veya getiri oranı, süre ve düzenli eklemelere göre bileşik getiri hesaplayan ücretsiz online araç.",
+  "description":"Başlangıç tutarı, nominal yıllık oran, bileşikleşme sıklığı, süre ve düzenli aylık eklemeler üzerinden bileşik büyümeyi hesaplayan ücretsiz araç.",
   "offers":{
     "@type":"Offer",
     "price":"0",
@@ -130,7 +140,6 @@ grid-template-columns:1fr;
   }
 }
 </script>
-
 
 <script type="application/ld+json">
 {
@@ -153,7 +162,6 @@ grid-template-columns:1fr;
 }
 </script>
 
-
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
@@ -164,39 +172,39 @@ grid-template-columns:1fr;
       "name":"Bileşik faiz nasıl hesaplanır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Bileşik faiz hesabında anapara, dönemsel faiz oranı ve bileşikleşme sayısı kullanılır. Temel formül A = P × (1 + r/n)^(n×t) şeklindedir."
+        "text":"Temel bileşik faiz formülü A = P × (1 + r/n)^(n×t) şeklindedir. P anapara, r nominal yıllık oran, n yıldaki bileşikleşme sayısı ve t yıl cinsinden süredir."
       }
     },
     {
       "@type":"Question",
-      "name":"Bileşik faiz ile basit faiz arasındaki fark nedir?",
+      "name":"Nominal faiz ile efektif faiz arasındaki fark nedir?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Basit faizde getiri yalnızca anapara üzerinden hesaplanırken bileşik faizde önceki dönemlerde oluşan getiriler de sonraki dönemlerde getiri üretir."
+        "text":"Nominal oran ilan edilen yıllık orandır. Efektif yıllık oran ise yıl içindeki bileşikleşmenin etkisini de içerir."
       }
     },
     {
       "@type":"Question",
-      "name":"Aylık bileşik faiz nasıl hesaplanır?",
+      "name":"Yıllık yüzde 12 faiz aylık bileşirse efektif oran kaç olur?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Yıllık nominal oran 12 döneme bölünür ve faiz her ay bakiyeye eklenerek sonraki ayın hesabına dahil edilir."
+        "text":"Yıllık nominal yüzde 12 oran aylık bileşikleştiğinde efektif yıllık matematiksel oran yaklaşık yüzde 12,68 olur."
       }
     },
     {
       "@type":"Question",
-      "name":"Efektif yıllık faiz oranı nedir?",
+      "name":"Aylık düzenli para ekleme hesaplanabilir mi?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Efektif yıllık oran, yıl içindeki bileşikleşmenin etkisini de içeren gerçek yıllık matematiksel oranı ifade eder."
+        "text":"Evet. Araç, seçilen bileşikleşme yapısından türetilen eşdeğer aylık büyüme oranıyla aylık düzenli eklemeleri hesaplar."
       }
     },
     {
       "@type":"Question",
-      "name":"Düzenli aylık ödeme bileşik faiz hesabına eklenebilir mi?",
+      "name":"Aylık ekleme ay başında mı sonunda mı yapılır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Evet. Bu araç aylık düzenli eklemeleri her ay sonunda bakiyeye ekleyerek bileşik getiri hesabına dahil edebilir."
+        "text":"Kullanıcı aylık düzenli eklemenin ay başında veya ay sonunda yapıldığını seçebilir. Ay başındaki ekleme bir dönem daha fazla büyür."
       }
     }
   ]
@@ -208,6 +216,7 @@ grid-template-columns:1fr;
 <body>
 
 <header>
+
 <div class="wrap nav">
 
 <a class="brand" href="/">
@@ -219,8 +228,8 @@ Araclio
 </span>
 
 </div>
-</header>
 
+</header>
 
 <main class="wrap">
 
@@ -233,14 +242,13 @@ FAİZ • GETİRİ • BİRİKİM
 <h1>Bileşik Faiz Hesaplama</h1>
 
 <p>
-Başlangıç tutarınızı, yıllık faiz veya getiri oranını,
-yatırım süresini, bileşikleşme sıklığını ve aylık
-düzenli eklemeleri girerek tahmini toplam birikimi
-ve matematiksel getiriyi hesaplayın.
+Başlangıç tutarınızı, yıllık nominal faiz veya getiri
+oranını, süreyi, bileşikleşme sıklığını ve düzenli
+aylık eklemeleri girerek toplam birikimi,
+matematiksel getiriyi ve efektif yıllık oranı hesaplayın.
 </p>
 
 </section>
-
 
 <section class="card">
 
@@ -248,17 +256,19 @@ ve matematiksel getiriyi hesaplayın.
 
 <div class="warning-box">
 
-<strong>Finansal bilgilendirme:</strong><br>
+<strong>Matematiksel hesaplama aracı</strong>
 
-Bu hesaplayıcı yalnızca girdiğiniz varsayımsal oranlarla
-matematiksel hesaplama yapar.
+<br><br>
 
-Gerçek bir banka, mevduat veya yatırım ürününün gelecekteki
-getirisini garanti etmez. Vergi, stopaj, komisyon ve diğer
-masraflar hesaba dahil değildir.
+Bu araç herhangi bir bankanın veya yatırım ürününün
+gelecekte sağlayacağı getiriyi tahmin veya garanti etmez.
+
+<br><br>
+
+Vergi, stopaj, komisyon, fon gideri, yönetim ücreti
+ve diğer maliyetler otomatik olarak hesaba katılmaz.
 
 </div>
-
 
 <label for="anapara">
 Başlangıç Tutarı (TL)
@@ -273,7 +283,6 @@ inputmode="decimal"
 placeholder="Örnek: 100000"
 >
 
-
 <label for="oran">
 Yıllık Nominal Faiz / Getiri Oranı (%)
 </label>
@@ -283,9 +292,8 @@ id="oran"
 type="number"
 step="0.01"
 inputmode="decimal"
-placeholder="Örnek: 30"
+placeholder="Örnek: 12"
 >
-
 
 <label for="sure">
 Süre
@@ -294,12 +302,11 @@ Süre
 <input
 id="sure"
 type="number"
-min="0"
+min="0.01"
 step="0.01"
 inputmode="decimal"
 placeholder="Örnek: 5"
 >
-
 
 <label for="sureBirimi">
 Süre Birimi
@@ -317,9 +324,8 @@ Ay
 
 </select>
 
-
 <label for="siklik">
-Faiz Ne Sıklıkla Bileşsin?
+Bileşikleşme Sıklığı
 </label>
 
 <select id="siklik">
@@ -346,7 +352,6 @@ Günlük
 
 </select>
 
-
 <label for="aylikEkleme">
 Her Ay Düzenli Eklenecek Tutar (TL)
 </label>
@@ -361,52 +366,70 @@ value="0"
 placeholder="Örnek: 5000"
 >
 
+<label for="eklemeZamani">
+Aylık Ekleme Zamanı
+</label>
+
+<select id="eklemeZamani">
+
+<option value="son" selected>
+Ay Sonunda
+</option>
+
+<option value="bas">
+Ay Başında
+</option>
+
+</select>
 
 <button type="button" onclick="hesapla()">
 Bileşik Faizi Hesapla
 </button>
 
-
 <div id="uyari" class="result" aria-live="polite">
 Değerleri girip hesaplama butonuna basın.
 </div>
-
 
 <div id="sonuclar" class="result-grid" style="display:none;">
 
 <div class="result-box">
 <strong>Tahmini Toplam Birikim</strong>
-<span id="toplamBirikim" class="big-result">0 TL</span>
+<span id="toplamBirikim" class="big-result">-</span>
 </div>
 
 <div class="result-box">
-<strong>Toplam Getiri</strong>
-<span id="toplamGetiri" class="big-result">0 TL</span>
+<strong>Toplam Matematiksel Getiri</strong>
+<span id="toplamGetiri" class="big-result">-</span>
 </div>
 
 <div class="result-box">
 <strong>Toplam Yatırılan Para</strong>
-<span id="toplamYatirilan">0 TL</span>
-</div>
-
-<div class="result-box">
-<strong>Başlangıç Tutarı</strong>
-<span id="baslangicSonuc">0 TL</span>
+<span id="toplamYatirilan">-</span>
 </div>
 
 <div class="result-box">
 <strong>Düzenli Eklemeler Toplamı</strong>
-<span id="eklemelerToplami">0 TL</span>
-</div>
-
-<div class="result-box">
-<strong>Efektif Yıllık Oran</strong>
-<span id="efektifOran">%0</span>
+<span id="eklemelerToplami">-</span>
 </div>
 
 <div class="result-box">
 <strong>Nominal Yıllık Oran</strong>
-<span id="nominalSonuc">%0</span>
+<span id="nominalSonuc">-</span>
+</div>
+
+<div class="result-box">
+<strong>Efektif Yıllık Oran</strong>
+<span id="efektifOran">-</span>
+</div>
+
+<div class="result-box">
+<strong>Eşdeğer Aylık Oran</strong>
+<span id="aylikEsdegerSonuc">-</span>
+</div>
+
+<div class="result-box">
+<strong>Bileşikleşme</strong>
+<span id="siklikSonuc">-</span>
 </div>
 
 <div class="result-box">
@@ -414,29 +437,28 @@ Değerleri girip hesaplama butonuna basın.
 <span id="sureSonuc">-</span>
 </div>
 
+<div class="result-box">
+<strong>Aylık Ekleme Zamanı</strong>
+<span id="eklemeZamaniSonuc">-</span>
+</div>
+
 </div>
 
 </section>
-
 
 <section class="card">
 
 <h2>Bileşik Faiz Nedir?</h2>
 
 <p>
-Bileşik faiz, başlangıç anaparasının yanı sıra daha önce
-oluşmuş faiz veya getirinin de sonraki dönemlerde
-getiri üretmesi esasına dayanır.
-</p>
-
-<p>
-Başka bir ifadeyle kazanç bakiyeye eklenir ve sonraki
-dönemin hesabı daha yüksek bakiye üzerinden yapılır.
+Bileşik faiz, yalnızca başlangıç anaparasının değil,
+önceki dönemlerde oluşmuş kazançların da sonraki
+dönemlerde getiri üretmesi esasına dayanır.
 </p>
 
 <div class="info-box">
 
-<strong>Temel bileşik faiz formülü:</strong>
+<strong>Temel formül:</strong>
 
 <br><br>
 
@@ -444,95 +466,50 @@ A = P × (1 + r / n)<sup>n × t</sup>
 
 <br><br>
 
-<strong>P:</strong> Başlangıç anaparası<br>
-<strong>r:</strong> Yıllık nominal oran<br>
-<strong>n:</strong> Yıldaki bileşikleşme sayısı<br>
-<strong>t:</strong> Süre (yıl)<br>
-<strong>A:</strong> Dönem sonu tutarı
+<strong>P:</strong>
+Başlangıç anaparası
+
+<br>
+
+<strong>r:</strong>
+Nominal yıllık oran
+
+<br>
+
+<strong>n:</strong>
+Yıldaki bileşikleşme sayısı
+
+<br>
+
+<strong>t:</strong>
+Yıl cinsinden süre
+
+<br>
+
+<strong>A:</strong>
+Dönem sonu tutarı
 
 </div>
 
 </section>
 
-
 <section class="card">
 
-<h2>Bileşik Faiz Örneği</h2>
+<h2>Nominal Faiz ile Efektif Faiz Arasındaki Fark</h2>
 
 <p>
-100.000 TL başlangıç tutarı, yıllık %12 nominal oran,
-1 yıl süre ve aylık bileşikleşme seçildiğini varsayalım.
+Nominal yıllık oran, yıllık olarak ifade edilen
+temel faiz veya getiri oranıdır.
 </p>
 
 <p>
-Aylık dönem oranı:
-</p>
-
-<p>
-%12 ÷ 12 =
-<strong>%1</strong>
-</p>
-
-<p>
-12 ay sonunda:
-</p>
-
-<p>
-100.000 × (1 + 0,12 ÷ 12)<sup>12</sup>
-</p>
-
-<p>
-Yaklaşık sonuç:
-<strong>112.682,50 TL</strong>
-</p>
-
-<p>
-Yaklaşık matematiksel getiri:
-<strong>12.682,50 TL</strong>
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>Aylık Bileşik Faiz Nasıl Hesaplanır?</h2>
-
-<p>
-Aylık bileşikleşmede yıllık nominal faiz oranı
-12 döneme bölünür.
-</p>
-
-<p>
-Her ay oluşan getiri bakiyeye eklenir ve sonraki ay
-yeni bakiye üzerinden hesaplama yapılır.
-</p>
-
-<p>
-Örneğin yıllık nominal oran %24 ise aylık dönem oranı:
-</p>
-
-<p>
-24 ÷ 12 =
-<strong>%2</strong>
-</p>
-
-</section>
-
-
-<section class="card">
-
-<h2>Efektif Yıllık Faiz Oranı Nedir?</h2>
-
-<p>
-Nominal yıllık faiz oranı yıl içinde birden fazla kez
-bileştiğinde, bileşikleşmenin etkisi nedeniyle yıl
-sonunda elde edilen efektif oran farklı olabilir.
+Faiz yıl içinde birden fazla kez bileşirse
+efektif yıllık oran nominal orandan farklı olabilir.
 </p>
 
 <div class="info-box">
 
-<strong>Efektif yıllık oran formülü:</strong>
+<strong>Efektif Yıllık Oran =</strong>
 
 <br><br>
 
@@ -541,55 +518,292 @@ sonunda elde edilen efektif oran farklı olabilir.
 </div>
 
 <p>
-Örneğin yıllık nominal %12 oran aylık bileşirse
-efektif yıllık oran yaklaşık
-<strong>%12,68</strong>
-olur.
+Örneğin nominal yıllık %12 oran aylık bileşikleşirse:
 </p>
 
-</section>
+<div class="info-box">
 
+Aylık dönem oranı:
+
+<br>
+
+%12 ÷ 12 =
+<strong>%1</strong>
+
+<br><br>
+
+Efektif yıllık oran:
+
+<br>
+
+(1,01)<sup>12</sup> − 1
+
+<br><br>
+
+≈ <strong>%12,68</strong>
+
+</div>
+
+</section>
 
 <section class="card">
 
-<h2>Düzenli Aylık Para Ekleme Nasıl Hesaplanıyor?</h2>
+<h2>Eşdeğer Aylık Oran Nedir?</h2>
 
 <p>
-Aylık düzenli ekleme girildiğinde araç hesabı ay ay
-ilerletir.
+Düzenli aylık para eklemelerinin hesaplanabilmesi için
+seçilen nominal oran ve bileşikleşme sıklığından oluşan
+efektif yıllık büyüme, matematiksel olarak aylık eşdeğer
+orana çevrilir.
+</p>
+
+<div class="info-box">
+
+<strong>Eşdeğer Aylık Oran =</strong>
+
+<br><br>
+
+(1 + Efektif Yıllık Oran)<sup>1/12</sup> − 1
+
+</div>
+
+<p>
+Bu yöntem farklı bileşikleşme sıklıkları seçildiğinde
+düzenli aylık eklemelerin tek bir tutarlı aylık zaman
+çizelgesinde hesaplanmasını sağlar.
+</p>
+
+<div class="warning-box">
+
+Eşdeğer aylık oran, bankanın veya yatırım ürününün
+gerçekte her ay faiz tahakkuk ettirdiği anlamına gelmez.
+
+<br><br>
+
+Bu, düzenli aylık eklemelerin matematiksel modellemesi
+için kullanılan eşdeğer büyüme oranıdır.
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>100.000 TL Bileşik Faiz Örneği</h2>
+
+<p>
+100.000 TL başlangıç tutarı, nominal yıllık %12,
+1 yıl ve aylık bileşikleşme seçildiğini varsayalım.
+</p>
+
+<div class="info-box">
+
+Nominal yıllık oran:
+
+<br>
+
+<strong>%12</strong>
+
+<br><br>
+
+Aylık dönem oranı:
+
+<br>
+
+%12 ÷ 12 =
+<strong>%1</strong>
+
+<br><br>
+
+Dönem sayısı:
+
+<br>
+
+<strong>12</strong>
+
+<br><br>
+
+Hesap:
+
+<br>
+
+100.000 × (1,01)<sup>12</sup>
+
+<br><br>
+
+Dönem sonu:
+
+<br>
+
+<strong>112.682,50 TL</strong>
+
+<br><br>
+
+Toplam matematiksel getiri:
+
+<br>
+
+<strong>12.682,50 TL</strong>
+
+</div>
+
+</section>
+
+<section class="card">
+
+<h2>Düzenli Aylık Para Ekleme Nasıl Hesaplanır?</h2>
+
+<p>
+Aylık düzenli ekleme seçildiğinde araç her tamamlanan
+ay için eşdeğer aylık büyüme oranını kullanır.
 </p>
 
 <p>
-Her tamamlanan ayda:
+Aylık eklemenin ay sonunda veya ay başında yapıldığı
+ayrıca seçilebilir.
 </p>
 
-<p>
-1. Mevcut bakiyeye aylık eşdeğer getiri uygulanır.<br>
-2. Daha sonra o aya ait düzenli ekleme bakiyeye eklenir.
-</p>
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Ekleme Zamanı</th>
+<th>Hesaplama Mantığı</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Ay Sonunda</td>
+<td>Önce mevcut bakiye büyür, daha sonra aylık ekleme yapılır.</td>
+</tr>
+
+<tr>
+<td>Ay Başında</td>
+<td>Aylık ekleme önce yapılır ve o ayın büyümesine katılır.</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
 
 <p>
-Bu nedenle hesaplama, aylık eklemelerin
-<strong>ayın sonunda yapıldığı</strong>
-varsayımına dayanır.
+Aynı tutar ve oranlarda ay başında yapılan düzenli
+eklemeler, ay sonunda yapılan eklemelere göre biraz
+daha yüksek dönem sonu değeri oluşturur.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>Düzenli Ekleme Formülü</h2>
+
+<p>
+Ay sonunda yapılan eşit aylık ödemelerin gelecek
+değeri, standart dönemsel birikim formülüyle hesaplanabilir.
+</p>
+
+<div class="info-box">
+
+<strong>Ay Sonu Ödemeleri:</strong>
+
+<br><br>
+
+PMT ×
+[((1 + i)<sup>m</sup> − 1) ÷ i]
+
+<br><br>
+
+<strong>PMT:</strong>
+Aylık ekleme
+
+<br>
+
+<strong>i:</strong>
+Eşdeğer aylık oran
+
+<br>
+
+<strong>m:</strong>
+Tamamlanan ay sayısı
+
+</div>
+
+<p>
+Ay başında yapılan ödemelerde bulunan değer ayrıca
+bir dönem daha büyütülür.
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>Bileşikleşme Sıklığı Sonucu Nasıl Etkiler?</h2>
+
+<p>
+Aynı nominal yıllık oran altında faiz daha sık
+bileşikleştiğinde efektif yıllık oran genellikle artar.
+</p>
+
+<p>
+Örneğin nominal %12 için:
+</p>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Bileşikleşme</th>
+<th>Yaklaşık Efektif Yıllık Oran</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Yıllık</td>
+<td>%12,00</td>
+</tr>
+
+<tr>
+<td>6 Ayda Bir</td>
+<td>%12,36</td>
+</tr>
+
+<tr>
+<td>3 Ayda Bir</td>
+<td>%12,55</td>
+</tr>
+
+<tr>
+<td>Aylık</td>
+<td>%12,68</td>
+</tr>
+
+<tr>
+<td>Günlük</td>
+<td>Yaklaşık %12,75</td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
 
 <section class="card">
 
 <h2>Basit Faiz ile Bileşik Faiz Arasındaki Fark</h2>
-
-<p>
-Basit faiz hesabında getiri temel olarak başlangıç
-anaparası üzerinden hesaplanır.
-</p>
-
-<p>
-Bileşik faizde ise önceki dönemlerde oluşan kazançlar
-da anaparaya eklenerek sonraki dönemlerde getiri üretir.
-</p>
 
 <div class="table-wrap">
 
@@ -606,21 +820,27 @@ da anaparaya eklenerek sonraki dönemlerde getiri üretir.
 <tbody>
 
 <tr>
-<td>Getirinin temeli</td>
-<td>Başlangıç anaparası</td>
-<td>Anapara + önceki getiriler</td>
+<td>Getiri hesabı</td>
+<td>Başlangıç anaparası üzerinden</td>
+<td>Anapara ve önceki getiriler üzerinden</td>
 </tr>
 
 <tr>
-<td>Getiri yeniden değerlendirilir mi?</td>
+<td>Önceki getiri yeniden büyür mü?</td>
 <td>Hayır</td>
 <td>Evet</td>
 </tr>
 
 <tr>
-<td>Uzun sürede bileşikleşme etkisi</td>
+<td>Bileşikleşme etkisi</td>
 <td>Yok</td>
 <td>Var</td>
+</tr>
+
+<tr>
+<td>Uzun sürede büyüme</td>
+<td>Doğrusal yapı</td>
+<td>Üstel yapı</td>
 </tr>
 
 </tbody>
@@ -631,14 +851,13 @@ da anaparaya eklenerek sonraki dönemlerde getiri üretir.
 
 </section>
 
-
 <section class="card">
 
-<h2>100.000 TL Bileşik Faiz Örneği</h2>
+<h2>100.000 TL'nin 1 Yıllık Bileşik Getiri Örnekleri</h2>
 
 <p>
-100.000 TL'nin farklı varsayımsal yıllık nominal oranlarla
-1 yıl boyunca aylık bileşikleştiğini düşünelim.
+Aşağıdaki değerlerde aylık bileşikleşme varsayılmıştır.
+Vergi ve kesintiler dahil değildir.
 </p>
 
 <div class="table-wrap">
@@ -647,7 +866,7 @@ da anaparaya eklenerek sonraki dönemlerde getiri üretir.
 
 <thead>
 <tr>
-<th>Nominal Oran</th>
+<th>Nominal Yıllık Oran</th>
 <th>Yaklaşık 1 Yıl Sonu</th>
 </tr>
 </thead>
@@ -656,22 +875,22 @@ da anaparaya eklenerek sonraki dönemlerde getiri üretir.
 
 <tr>
 <td>%10</td>
-<td>110.471 TL</td>
+<td>110.471,31 TL</td>
 </tr>
 
 <tr>
 <td>%12</td>
-<td>112.683 TL</td>
+<td>112.682,50 TL</td>
 </tr>
 
 <tr>
 <td>%20</td>
-<td>121.939 TL</td>
+<td>121.939,11 TL</td>
 </tr>
 
 <tr>
 <td>%30</td>
-<td>134.489 TL</td>
+<td>134.488,89 TL</td>
 </tr>
 
 </tbody>
@@ -680,98 +899,109 @@ da anaparaya eklenerek sonraki dönemlerde getiri üretir.
 
 </div>
 
-<p>
-Bu rakamlar yalnızca matematiksel örneklerdir ve vergi,
-stopaj veya diğer maliyetleri içermez.
-</p>
-
 </section>
-
 
 <section class="card">
 
-<h2>Bileşik Faiz Nerelerde Kullanılır?</h2>
+<h2>Bileşik Faiz Hesabı Mevduat Hesabı ile Aynı mı?</h2>
 
 <p>
-Bileşik büyüme hesabı farklı finansal ve matematiksel
-senaryolarda kullanılabilir.
+Her zaman değil.
 </p>
 
 <p>
-* Uzun vadeli birikim tahmini<br>
-* Mevduat benzeri matematiksel senaryolar<br>
-* Düzenli tasarruf hesapları<br>
-* Yatırım büyüme senaryoları<br>
-* Eğitim amaçlı faiz hesapları<br>
-* Farklı bileşikleşme sıklıklarının karşılaştırılması
+Bu sayfa genel bir
+<strong>matematiksel bileşik büyüme hesaplayıcısıdır.</strong>
+</p>
+
+<p>
+Gerçek vadeli mevduatta faiz tahakkuku, vade,
+stopaj ve bankanın ürün koşulları ayrıca uygulanır.
+</p>
+
+<p>
+TL vadeli mevduat için doğrudan vergi ve stopaj
+hesabı yapmak istiyorsanız:
+</p>
+
+<p>
+<a href="/mevduat-faizi-hesaplama.html">
+Mevduat Faizi Hesaplama →
+</a>
 </p>
 
 </section>
-
 
 <section class="card">
 
 <h2>Sık Sorulan Sorular</h2>
 
-
 <h3>Bileşik faiz nasıl hesaplanır?</h3>
 
 <p>
-Başlangıç anaparası, yıllık nominal oran, bileşikleşme
-sayısı ve süre kullanılarak hesaplanır.
+Anapara, nominal yıllık oran, bileşikleşme sıklığı
+ve süre kullanılarak
+<strong>A = P × (1 + r/n)<sup>nt</sup></strong>
+formülü uygulanır.
 </p>
 
-
-<h3>Aylık bileşik faiz ne demek?</h3>
+<h3>Nominal faiz ile efektif faiz aynı mı?</h3>
 
 <p>
-Faizin veya getirinin her ay sonunda bakiyeye eklenmesi
-ve sonraki ayın hesabının yeni bakiye üzerinden yapılmasıdır.
+Hayır. Efektif oran yıl içindeki bileşikleşmenin
+etkisini de içerir.
 </p>
 
-
-<h3>Yıllık %12 aylık bileşirse efektif oran kaç olur?</h3>
+<h3>Yıllık %12 aylık bileşirse efektif oran kaç?</h3>
 
 <p>
-Yaklaşık
-<strong>%12,68</strong>
-efektif yıllık orana karşılık gelir.
+Yaklaşık <strong>%12,68</strong> olur.
 </p>
 
-
-<h3>Düzenli para ekleyebilir miyim?</h3>
+<h3>Daha sık bileşikleşme daha yüksek sonuç verir mi?</h3>
 
 <p>
-Evet. Araç her ay düzenli olarak eklenecek bir tutarı
-hesaba dahil edebilir.
+Pozitif nominal oran aynı kaldığında genellikle evet.
+Bileşikleşme sıklığı arttıkça efektif yıllık oran yükselir.
 </p>
 
-
-<h3>Aylık ekleme ne zaman yapılmış kabul ediliyor?</h3>
+<h3>Düzenli aylık ekleme yapılabilir mi?</h3>
 
 <p>
-Araç düzenli eklemenin her tamamlanan ayın sonunda
-yapıldığını varsayar.
+Evet. Aylık tutarı girerek düzenli birikimin dönem
+sonu değerini hesaplayabilirsiniz.
 </p>
 
+<h3>Ay başı ile ay sonu ekleme fark eder mi?</h3>
+
+<p>
+Evet. Ay başında eklenen tutar bir dönem daha uzun
+büyüdüğü için sonuç genellikle daha yüksek olur.
+</p>
 
 <h3>Vergi ve stopaj dahil mi?</h3>
 
 <p>
-Hayır. Sonuçlar vergi, stopaj, komisyon ve diğer
-kesintiler hariç matematiksel sonuçlardır.
+Hayır. Bu araç genel matematiksel bileşik büyüme
+hesabı yapar.
 </p>
 
-
-<h3>Bu hesaplama yatırım tavsiyesi midir?</h3>
+<h3>Negatif oran girilebilir mi?</h3>
 
 <p>
-Hayır. Araç yalnızca kullanıcı tarafından girilen
-varsayımlar üzerinden matematiksel hesap yapar.
+Matematiksel olarak dönemsel çarpan sıfırdan büyük
+olduğu sürece negatif oran girilebilir. Bu durumda
+hesap büyüme yerine değer kaybı senaryosunu gösterir.
+</p>
+
+<h3>Bu hesap yatırım tavsiyesi mi?</h3>
+
+<p>
+Hayır. Sonuç yalnızca girilen varsayımların
+matematiksel sonucudur.
 </p>
 
 </section>
-
 
 <section class="card">
 
@@ -779,28 +1009,33 @@ varsayımlar üzerinden matematiksel hesap yapar.
 
 <div class="warning-box">
 
-Bu sayfadaki sonuçlar herhangi bir yatırım aracının
-gelecekte sağlayacağı kazancı garanti etmez.
+Bu hesaplayıcı genel matematiksel senaryolar içindir.
 
 <br><br>
 
-Gerçek finansal ürünlerde faiz hesaplama yöntemi,
-vade, valör, vergi, stopaj, komisyon ve masraflar
-farklı olabilir.
+Gösterilen nominal ve efektif oranlar gerçek bir banka,
+fon, mevduat veya yatırım ürününün gelecekte sağlayacağı
+getiriyi garanti etmez.
 
 <br><br>
 
-Bu araç finansal danışmanlık veya yatırım tavsiyesi
-niteliğinde değildir.
+Gerçek finansal ürünlerde vergi, stopaj, komisyon,
+işletim gideri, yönetim ücreti, vade, valör ve ürün
+kuralları sonucu değiştirebilir.
+
+<br><br>
+
+Düzenli aylık ekleme hesabında seçilen nominal oran ve
+bileşikleşme sıklığından türetilmiş eşdeğer aylık büyüme
+oranı kullanılır.
 
 </div>
 
 <p>
-<strong>Son güncelleme: Ekim 2026</strong>
+<strong>Son güncelleme: Kasım 2026</strong>
 </p>
 
 </section>
-
 
 <section class="card">
 
@@ -815,6 +1050,12 @@ Mevduat Faizi Hesaplama →
 <p>
 <a href="/kredi-hesaplama.html">
 Kredi Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/vade-farki-hesaplama.html">
+Vade Farkı Hesaplama →
 </a>
 </p>
 
@@ -836,16 +1077,9 @@ Kâr Marjı Hesaplama →
 </a>
 </p>
 
-<p>
-<a href="/yuzde-hesaplama.html">
-Yüzde Hesaplama →
-</a>
-</p>
-
 </section>
 
 </main>
-
 
 <footer>
 
@@ -881,7 +1115,6 @@ Araclio • Ücretsiz Online Araçlar
 
 </footer>
 
-
 <script>
 
 function para(sayi){
@@ -892,7 +1125,8 @@ return new Intl.NumberFormat(
 minimumFractionDigits:2,
 maximumFractionDigits:2
 }
-).format(sayi) + " TL";
+).format(sayi) +
+" TL";
 
 }
 
@@ -904,7 +1138,7 @@ new Intl.NumberFormat(
 "tr-TR",
 {
 minimumFractionDigits:2,
-maximumFractionDigits:2
+maximumFractionDigits:4
 }
 ).format(sayi);
 
@@ -941,54 +1175,81 @@ return siklik + " kez/yıl";
 function hesapla(){
 
 const anaparaInput =
-document.getElementById("anapara");
+document
+.getElementById("anapara");
 
 const oranInput =
-document.getElementById("oran");
+document
+.getElementById("oran");
 
 const sureInput =
-document.getElementById("sure");
+document
+.getElementById("sure");
 
 const aylikInput =
-document.getElementById("aylikEkleme");
-
+document
+.getElementById("aylikEkleme");
 
 const anapara =
-Number(anaparaInput.value);
+Number(
+anaparaInput.value
+);
 
-const oran =
-Number(oranInput.value);
+const nominalYuzde =
+Number(
+oranInput.value
+);
 
 const sure =
-Number(sureInput.value);
+Number(
+sureInput.value
+);
 
 const sureBirimi =
-document.getElementById("sureBirimi").value;
+document
+.getElementById("sureBirimi")
+.value;
 
 const siklik =
 Number(
-document.getElementById("siklik").value
+document
+.getElementById("siklik")
+.value
 );
 
 const aylikEkleme =
-Number(aylikInput.value || 0);
+aylikInput.value === ""
+?
+0
+:
+Number(
+aylikInput.value
+);
 
+const eklemeZamani =
+document
+.getElementById("eklemeZamani")
+.value;
 
 const uyari =
-document.getElementById("uyari");
+document
+.getElementById("uyari");
 
 const sonuclar =
-document.getElementById("sonuclar");
+document
+.getElementById("sonuclar");
 
 
 if(
 anaparaInput.value === "" ||
-!Number.isFinite(anapara) ||
+!Number.isFinite(
+anapara
+) ||
 anapara < 0
 ){
 
 uyari.textContent =
-"Lütfen sıfır veya sıfırdan büyük geçerli bir başlangıç tutarı girin.";
+"Lütfen sıfır veya daha büyük geçerli bir başlangıç tutarı girin.";
 
 sonuclar.style.display =
 "none";
@@ -1000,34 +1261,13 @@ return;
 
 if(
 oranInput.value === "" ||
-!Number.isFinite(oran)
+!Number.isFinite(
+nominalYuzde
+)
 ){
 
 uyari.textContent =
-"Lütfen geçerli bir yıllık faiz/getiri oranı girin.";
-
-sonuclar.style.display =
-"none";
-
-return;
-
-}
-
-
-const nominal =
-oran / 100;
-
-
-/*
-1 + r/n değeri sıfırdan büyük olmalıdır.
-*/
-
-if(
-1 + nominal / siklik <= 0
-){
-
-uyari.textContent =
-"Bu faiz oranı ve bileşikleşme sıklığı matematiksel olarak geçerli değildir.";
+"Lütfen geçerli bir nominal yıllık faiz veya getiri oranı girin.";
 
 sonuclar.style.display =
 "none";
@@ -1039,7 +1279,9 @@ return;
 
 if(
 sureInput.value === "" ||
-!Number.isFinite(sure) ||
+!Number.isFinite(
+sure
+) ||
 sure <= 0
 ){
 
@@ -1055,12 +1297,40 @@ return;
 
 
 if(
-!Number.isFinite(aylikEkleme) ||
+!Number.isFinite(
+aylikEkleme
+) ||
 aylikEkleme < 0
 ){
 
 uyari.textContent =
-"Aylık düzenli ekleme tutarı negatif olamaz.";
+"Aylık düzenli ekleme sıfır veya daha büyük olmalıdır.";
+
+sonuclar.style.display =
+"none";
+
+return;
+
+}
+
+
+const nominal =
+nominalYuzde /
+100;
+
+
+const donemCarpani =
+1 +
+nominal /
+siklik;
+
+
+if(
+donemCarpani <= 0
+){
+
+uyari.textContent =
+"Bu nominal oran ve bileşikleşme sıklığı matematiksel olarak geçerli değildir.";
 
 sonuclar.style.display =
 "none";
@@ -1071,119 +1341,179 @@ return;
 
 
 /*
-Süreyi yıl cinsine çevir.
-*/
-
-const toplamYil =
-sureBirimi === "ay"
-? sure / 12
-: sure;
-
-
-/*
-Efektif yıllık oran
+Efektif yıllık oran.
 */
 
 const efektifYillik =
 Math.pow(
-1 + nominal / siklik,
+donemCarpani,
 siklik
-) - 1;
-
-
-let bakiye =
-anapara;
-
-
-let tamamlananAy =
-0;
+) -
+1;
 
 
 /*
-Düzenli aylık ekleme varsa,
-tamamlanan aylar üzerinden ilerlenir.
+Efektif yıllık orandan
+eşdeğer aylık oran.
 */
 
-if(
-aylikEkleme > 0
-){
+const aylikEsdeger =
+Math.pow(
+1 +
+efektifYillik,
+1 / 12
+) -
+1;
 
-const toplamAyKesirli =
-toplamYil * 12;
 
-tamamlananAy =
+/*
+Süreyi ay cinsinden hesapla.
+*/
+
+const toplamAy =
+sureBirimi ===
+"ay"
+?
+sure
+:
+sure *
+12;
+
+
+const tamamlananAy =
 Math.floor(
-toplamAyKesirli + 0.000000001
+toplamAy +
+1e-10
 );
 
 
-const aylikEsdegerOran =
-Math.pow(
-1 + efektifYillik,
-1 / 12
-) - 1;
-
-
-for(
-let i = 0;
-i < tamamlananAy;
-i++
-){
-
-bakiye *=
-1 + aylikEsdegerOran;
-
-bakiye +=
-aylikEkleme;
-
-}
-
-
-/*
-Tam aya denk gelmeyen kalan süre.
-*/
-
-const kullanilanYil =
-tamamlananAy / 12;
-
-const kalanYil =
+const kalanAy =
 Math.max(
 0,
-toplamYil - kullanilanYil
+toplamAy -
+tamamlananAy
 );
+
+
+/*
+Başlangıç anaparasının tamamlanan
+aylardaki büyümesi.
+*/
+
+let bakiye;
 
 
 if(
-kalanYil > 0
+aylikEsdeger ===
+0
 ){
 
-bakiye *=
-Math.pow(
-1 + nominal / siklik,
-siklik * kalanYil
-);
+bakiye =
+anapara;
 
 }
-
-}else{
-
-/*
-Düzenli ekleme yoksa doğrudan
-standart bileşik faiz formülü.
-*/
+else{
 
 bakiye =
 anapara *
 Math.pow(
-1 + nominal / siklik,
-siklik * toplamYil
+1 +
+aylikEsdeger,
+tamamlananAy
 );
 
 }
 
 
 /*
-Yatırılan toplam tutar
+Düzenli aylık ödemelerin gelecek değeri.
+*/
+
+let eklemelerinGelecekDegeri =
+0;
+
+
+if(
+aylikEkleme >
+0 &&
+tamamlananAy >
+0
+){
+
+if(
+Math.abs(
+aylikEsdeger
+) <
+1e-15
+){
+
+eklemelerinGelecekDegeri =
+aylikEkleme *
+tamamlananAy;
+
+}
+else{
+
+eklemelerinGelecekDegeri =
+
+aylikEkleme *
+(
+(
+Math.pow(
+1 +
+aylikEsdeger,
+tamamlananAy
+) -
+1
+) /
+aylikEsdeger
+);
+
+
+if(
+eklemeZamani ===
+"bas"
+){
+
+eklemelerinGelecekDegeri *=
+1 +
+aylikEsdeger;
+
+}
+
+}
+
+
+bakiye +=
+eklemelerinGelecekDegeri;
+
+}
+
+
+/*
+Tam aya denk gelmeyen kalan süre varsa
+mevcut bakiyeyi eşdeğer aylık oranla
+kesirli ay kadar büyüt.
+*/
+
+if(
+kalanAy >
+0
+){
+
+bakiye *=
+Math.pow(
+1 +
+aylikEsdeger,
+kalanAy
+);
+
+}
+
+
+/*
+Toplam yatırılan nakit.
+Yalnız tamamlanmış aylarda düzenli ekleme yapılır.
 */
 
 const eklemelerToplami =
@@ -1201,76 +1531,232 @@ bakiye -
 toplamYatirilan;
 
 
+if(
+!Number.isFinite(
+bakiye
+) ||
+!Number.isFinite(
+toplamGetiri
+)
+){
+
+uyari.textContent =
+"Hesaplama yapılamadı. Girdiğiniz oran ve süre değerlerini kontrol edin.";
+
+sonuclar.style.display =
+"none";
+
+return;
+
+}
+
+
 document
 .getElementById("toplamBirikim")
 .textContent =
-para(bakiye);
+para(
+bakiye
+);
 
 
 document
 .getElementById("toplamGetiri")
 .textContent =
-para(toplamGetiri);
+para(
+toplamGetiri
+);
 
 
 document
 .getElementById("toplamYatirilan")
 .textContent =
-para(toplamYatirilan);
-
-
-document
-.getElementById("baslangicSonuc")
-.textContent =
-para(anapara);
+para(
+toplamYatirilan
+);
 
 
 document
 .getElementById("eklemelerToplami")
 .textContent =
-para(eklemelerToplami);
-
-
-document
-.getElementById("efektifOran")
-.textContent =
-yuzde(
-efektifYillik * 100
+para(
+eklemelerToplami
 );
 
 
 document
 .getElementById("nominalSonuc")
 .textContent =
-yuzde(oran) +
-" / " +
-siklikMetni(siklik);
+yuzde(
+nominalYuzde
+);
+
+
+document
+.getElementById("efektifOran")
+.textContent =
+yuzde(
+efektifYillik *
+100
+);
+
+
+document
+.getElementById("aylikEsdegerSonuc")
+.textContent =
+yuzde(
+aylikEsdeger *
+100
+);
+
+
+document
+.getElementById("siklikSonuc")
+.textContent =
+siklikMetni(
+siklik
+);
 
 
 document
 .getElementById("sureSonuc")
 .textContent =
-sure.toLocaleString("tr-TR") +
+
+new Intl.NumberFormat(
+"tr-TR",
+{
+maximumFractionDigits:2
+}
+).format(
+sure
+) +
+
 (
-sureBirimi === "ay"
-? " ay"
-: " yıl"
+sureBirimi ===
+"ay"
+?
+" ay"
+:
+" yıl"
+);
+
+
+document
+.getElementById("eklemeZamaniSonuc")
+.textContent =
+aylikEkleme ===
+0
+?
+"Ek ödeme yok"
+:
+(
+eklemeZamani ===
+"bas"
+?
+"Ay başında"
+:
+"Ay sonunda"
 );
 
 
 uyari.innerHTML =
 
-"<strong>Yaklaşık sonuç:</strong> Girilen varsayımlara göre " +
+"<strong>Tahmini dönem sonu birikim: " +
 
-"dönem sonunda toplam birikim <strong>" +
+para(
+bakiye
+) +
 
-para(bakiye) +
+"</strong>" +
 
-"</strong>, matematiksel toplam getiri ise <strong>" +
+"<br><br>" +
 
-para(toplamGetiri) +
+"Başlangıç tutarı: <strong>" +
 
-"</strong> olur.";
+para(
+anapara
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Nominal yıllık oran: <strong>" +
+
+yuzde(
+nominalYuzde
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Efektif yıllık oran: <strong>" +
+
+yuzde(
+efektifYillik *
+100
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Eşdeğer aylık oran: <strong>" +
+
+yuzde(
+aylikEsdeger *
+100
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Bileşikleşme sıklığı: <strong>" +
+
+siklikMetni(
+siklik
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Düzenli eklemeler toplamı: <strong>" +
+
+para(
+eklemelerToplami
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Toplam yatırılan para: <strong>" +
+
+para(
+toplamYatirilan
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Toplam matematiksel getiri: <strong>" +
+
+para(
+toplamGetiri
+) +
+
+"</strong>" +
+
+"<br><br>" +
+
+"<small>" +
+
+"Düzenli aylık ekleme varsa hesapta seçilen nominal oran ve bileşikleşme sıklığından türetilen eşdeğer aylık büyüme oranı kullanılır." +
+
+"</small>";
 
 
 sonuclar.style.display =
@@ -1291,10 +1777,11 @@ document
 .getElementById(id)
 .addEventListener(
 "keydown",
-function(e){
+function(event){
 
 if(
-e.key === "Enter"
+event.key ===
+"Enter"
 ){
 
 hesapla();
@@ -1307,7 +1794,9 @@ hesapla();
 });
 
 
-document.getElementById("year").textContent =
+document
+.getElementById("year")
+.textContent =
 new Date().getFullYear();
 
 </script>
