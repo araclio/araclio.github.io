@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>Maaş Zam Hesaplama | Zamlı Maaş Hesapla - Araclio</title>
+<title>Maaş Zam Hesaplama | Yeni Maaş ve Yıllık Gelir Farkı - Araclio</title>
 
 <meta
 name="description"
-content="Maaş zam hesaplama aracı ile mevcut maaşınıza uygulanacak zam oranını, zam tutarını, yeni maaşı ve yıllık gelir farkını ücretsiz hesaplayın."
+content="Maaş zam hesaplama aracı. Mevcut net veya brüt maaşınıza zam oranı uygulayın; yeni maaşı, aylık artışı, 12 aylık farkı ve zam başlangıç ayına göre yıl içi ek geliri hesaplayın."
 >
 
 <meta name="robots" content="index,follow">
@@ -35,12 +35,12 @@ href="https://araclio.com/maas-zam-hesaplama.html"
 
 <meta
 property="og:title"
-content="Maaş Zam Hesaplama | Zamlı Maaş Hesapla"
+content="Maaş Zam Hesaplama | Yeni Maaş ve Yıllık Fark"
 >
 
 <meta
 property="og:description"
-content="Mevcut maaş ve zam oranından yeni maaşı, aylık zam tutarını ve yıllık gelir farkını ücretsiz hesaplayın."
+content="Net veya brüt maaşa zam uygulayın; yeni maaşı, aylık zam tutarını ve yıllık gelir farkını hesaplayın."
 >
 
 <meta
@@ -51,6 +51,12 @@ content="https://araclio.com/maas-zam-hesaplama.html"
 <meta property="og:site_name" content="Araclio">
 
 <style>
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
 
 .result-grid{
 display:grid;
@@ -97,6 +103,16 @@ color:#222;
 line-height:1.8;
 }
 
+.warning-box{
+padding:16px;
+margin:15px 0;
+background:#fff8e1;
+border:1px solid #e7d28b;
+border-radius:10px;
+color:#4d3d00;
+line-height:1.8;
+}
+
 .table-wrap{
 overflow-x:auto;
 margin-top:15px;
@@ -117,6 +133,7 @@ text-align:left;
 
 @media(max-width:650px){
 
+.form-grid,
 .result-grid{
 grid-template-columns:1fr;
 }
@@ -134,7 +151,7 @@ grid-template-columns:1fr;
   "applicationCategory":"FinanceApplication",
   "operatingSystem":"Any",
   "inLanguage":"tr-TR",
-  "description":"Mevcut maaş ve zam oranına göre yeni maaşı, aylık zam tutarını ve yıllık gelir farkını hesaplayan ücretsiz online araç.",
+  "description":"Net veya brüt aylık maaşa zam oranı uygulayarak yeni maaşı, aylık artışı, 12 aylık gelir farkını ve zam başlangıç ayına göre yıl içi ek geliri hesaplayan ücretsiz online araç.",
   "offers":{
     "@type":"Offer",
     "price":"0",
@@ -179,31 +196,39 @@ grid-template-columns:1fr;
       "name":"Maaş zammı nasıl hesaplanır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Maaş zam tutarı mevcut maaşın zam oranıyla çarpılıp 100'e bölünmesiyle bulunur. Yeni maaş, mevcut maaşa zam tutarı eklenerek hesaplanır."
+        "text":"Mevcut maaş zam oranıyla çarpılıp 100'e bölünerek aylık zam tutarı bulunur. Zam tutarı mevcut maaşa eklenerek yeni maaş hesaplanır."
       }
     },
     {
       "@type":"Question",
-      "name":"30.000 TL maaşa yüzde 20 zam gelirse ne kadar olur?",
+      "name":"30.000 TL maaşa yüzde 20 zam gelirse kaç TL olur?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"30.000 TL maaşa yüzde 20 zam uygulanırsa zam tutarı 6.000 TL ve yeni maaş 36.000 TL olur."
+        "text":"30.000 TL maaşa yüzde 20 zam uygulanırsa aylık zam tutarı 6.000 TL ve yeni maaş 36.000 TL olur."
       }
     },
     {
       "@type":"Question",
-      "name":"30.000 TL maaşa yüzde 25 zam gelirse ne kadar olur?",
+      "name":"Yıllık maaş farkı nasıl hesaplanır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"30.000 TL maaşa yüzde 25 zam uygulanırsa zam tutarı 7.500 TL ve yeni maaş 37.500 TL olur."
+        "text":"Yeni maaşın 12 aylık toplamından eski maaşın 12 aylık toplamı çıkarılır. Maaş tüm yıl aynı kalırsa bu değer aylık zam tutarının 12 katına eşittir."
       }
     },
     {
       "@type":"Question",
-      "name":"Maaş zam hesabı net maaş için kullanılabilir mi?",
+      "name":"Zam yıl ortasında başlarsa yıl içi ek gelir nasıl hesaplanır?",
       "acceptedAnswer":{
         "@type":"Answer",
-        "text":"Araç girilen tutara matematiksel yüzde artışı uygular. Bordroda vergi, SGK ve diğer kesintiler bulunduğundan kesin net maaş bordro koşullarına göre farklı olabilir."
+        "text":"Aylık zam tutarı, zamlı maaşın ödeneceği kalan ay sayısıyla çarpılır."
+      }
+    },
+    {
+      "@type":"Question",
+      "name":"Net maaşa yüzde zam uygulamak gerçek bordro netini verir mi?",
+      "acceptedAnswer":{
+        "@type":"Answer",
+        "text":"Hayır. Net maaş alanına girilen tutara yalnızca matematiksel yüzde artışı uygulanır. Brüt maaştan gerçek net maaş hesabında vergi, SGK ve diğer bordro kesintileri dikkate alınmalıdır."
       }
     }
   ]
@@ -230,29 +255,51 @@ Araclio
 
 </header>
 
-
 <main class="wrap">
 
 <section class="hero">
 
 <p class="eyebrow">
-MAAŞ • ZAM • GELİR • YÜZDE
+MAAŞ • ZAM • AYLIK GELİR • YILLIK FARK
 </p>
 
 <h1>Maaş Zam Hesaplama</h1>
 
 <p>
-Mevcut maaşınızı ve zam oranını girerek aylık zam tutarını,
-zamlı yeni maaşınızı, yıllık gelir farkını ve yeni yıllık
-gelirinizi anında hesaplayın.
+Mevcut net veya brüt maaşınıza uygulanacak zam oranından
+yeni aylık maaşı ve zam tutarını hesaplayın. Zammın başladığı
+aya göre yıl içinde oluşacak ek geliri ve 12 aylık maaş farkını da görün.
 </p>
 
 </section>
 
-
 <section class="card">
 
-<h2>Zamlı Maaşını Hesapla</h2>
+<h2>Zamlı Maaşı Hesapla</h2>
+
+<div class="form-grid">
+
+<div>
+
+<label for="maasTuru">
+Maaş Türü
+</label>
+
+<select id="maasTuru">
+
+<option value="net">
+Net Maaş
+</option>
+
+<option value="brut">
+Brüt Maaş
+</option>
+
+</select>
+
+</div>
+
+<div>
 
 <label for="maas">
 Mevcut Aylık Maaş (TL)
@@ -267,6 +314,9 @@ inputmode="decimal"
 placeholder="Örnek: 30000"
 >
 
+</div>
+
+<div>
 
 <label for="oran">
 Zam Oranı (%)
@@ -281,114 +331,146 @@ inputmode="decimal"
 placeholder="Örnek: 25"
 >
 
+</div>
 
-<div class="quick-buttons">
+<div>
 
-<button type="button" onclick="oranSec(10)">
-%10
-</button>
+<label for="baslangicAyi">
+Zamın Başladığı Ay
+</label>
 
-<button type="button" onclick="oranSec(15)">
-%15
-</button>
+<select id="baslangicAyi">
 
-<button type="button" onclick="oranSec(20)">
-%20
-</button>
+<option value="1">Ocak</option>
+<option value="2">Şubat</option>
+<option value="3">Mart</option>
+<option value="4">Nisan</option>
+<option value="5">Mayıs</option>
+<option value="6">Haziran</option>
+<option value="7">Temmuz</option>
+<option value="8">Ağustos</option>
+<option value="9">Eylül</option>
+<option value="10">Ekim</option>
+<option value="11">Kasım</option>
+<option value="12">Aralık</option>
 
-<button type="button" onclick="oranSec(25)">
-%25
-</button>
-
-<button type="button" onclick="oranSec(30)">
-%30
-</button>
-
-<button type="button" onclick="oranSec(40)">
-%40
-</button>
-
-<button type="button" onclick="oranSec(50)">
-%50
-</button>
+</select>
 
 </div>
 
+</div>
+
+<div class="quick-buttons">
+
+<button type="button" onclick="oranSec(10)">%10</button>
+<button type="button" onclick="oranSec(15)">%15</button>
+<button type="button" onclick="oranSec(20)">%20</button>
+<button type="button" onclick="oranSec(25)">%25</button>
+<button type="button" onclick="oranSec(30)">%30</button>
+<button type="button" onclick="oranSec(40)">%40</button>
+<button type="button" onclick="oranSec(50)">%50</button>
+
+</div>
 
 <button type="button" onclick="hesapla()">
 Zamlı Maaşı Hesapla
 </button>
 
-
 <div id="uyari" class="result" aria-live="polite">
-Maaş ve zam oranını girip hesaplama butonuna basın.
+Maaş ve zam oranını girin.
 </div>
-
 
 <div id="sonuclar" class="result-grid" style="display:none;">
 
 <div class="result-box">
 <strong>Yeni Aylık Maaş</strong>
-<span id="yeniMaas" class="big-result">0 TL</span>
+<span id="yeniMaas" class="big-result">-</span>
 </div>
 
 <div class="result-box">
 <strong>Aylık Zam Tutarı</strong>
-<span id="zamTutari">0 TL</span>
+<span id="zamTutari">-</span>
 </div>
 
 <div class="result-box">
-<strong>Eski Yıllık Gelir</strong>
-<span id="eskiYillik">0 TL</span>
+<strong>Eski 12 Aylık Toplam</strong>
+<span id="eskiYillik">-</span>
 </div>
 
 <div class="result-box">
-<strong>Yeni Yıllık Gelir</strong>
-<span id="yeniYillik">0 TL</span>
+<strong>Yeni 12 Aylık Toplam</strong>
+<span id="yeniYillik">-</span>
 </div>
 
 <div class="result-box">
-<strong>Yıllık Gelir Farkı</strong>
-<span id="yillikFark">0 TL</span>
+<strong>12 Aylık Gelir Farkı</strong>
+<span id="yillikFark">-</span>
+</div>
+
+<div class="result-box">
+<strong>Bu Yıl Zamlı Ay Sayısı</strong>
+<span id="zamliAySayisi">-</span>
+</div>
+
+<div class="result-box">
+<strong>Bu Yıl Ek Gelir</strong>
+<span id="yilIciFark" class="big-result">-</span>
 </div>
 
 <div class="result-box">
 <strong>Uygulanan Zam</strong>
-<span id="uygulananOran">%0</span>
+<span id="uygulananOran">-</span>
 </div>
 
 </div>
 
 </section>
-
 
 <section class="card">
 
 <h2>Maaş Zammı Nasıl Hesaplanır?</h2>
 
+<div class="info-box">
+
+<strong>Aylık Zam Tutarı =</strong>
+
+<br><br>
+
+Mevcut Maaş × Zam Oranı ÷ 100
+
+<br><br>
+
+<strong>Yeni Maaş =</strong>
+
+<br><br>
+
+Mevcut Maaş + Zam Tutarı
+
+</div>
+
 <p>
-Maaş zam hesabında önce mevcut maaşın belirli bir yüzdesi
-bulunur. Daha sonra bu tutar mevcut maaşa eklenir.
+Örneğin 30.000 TL aylık maaşa %20 zam uygulanırsa:
 </p>
 
 <div class="info-box">
 
-<strong>
-Zam Tutarı =
-Mevcut Maaş × Zam Oranı ÷ 100
-</strong>
+30.000 × 0,20 =
 
 <br><br>
 
-<strong>
-Yeni Maaş =
-Mevcut Maaş + Zam Tutarı
-</strong>
+<strong>6.000 TL aylık zam</strong>
+
+<br><br>
+
+30.000 + 6.000 =
+
+<br><br>
+
+<strong>36.000 TL yeni aylık maaş</strong>
 
 </div>
 
 </section>
-
 
 <section class="card">
 
@@ -401,8 +483,9 @@ Mevcut Maaş + Zam Tutarı
 <thead>
 <tr>
 <th>Zam Oranı</th>
-<th>Zam Tutarı</th>
+<th>Aylık Zam</th>
 <th>Yeni Maaş</th>
+<th>12 Aylık Fark</th>
 </tr>
 </thead>
 
@@ -412,42 +495,42 @@ Mevcut Maaş + Zam Tutarı
 <td>%10</td>
 <td>3.000 TL</td>
 <td>33.000 TL</td>
+<td>36.000 TL</td>
 </tr>
 
 <tr>
 <td>%15</td>
 <td>4.500 TL</td>
 <td>34.500 TL</td>
+<td>54.000 TL</td>
 </tr>
 
 <tr>
 <td>%20</td>
 <td>6.000 TL</td>
 <td>36.000 TL</td>
+<td>72.000 TL</td>
 </tr>
 
 <tr>
 <td>%25</td>
 <td>7.500 TL</td>
 <td>37.500 TL</td>
+<td>90.000 TL</td>
 </tr>
 
 <tr>
 <td>%30</td>
 <td>9.000 TL</td>
 <td>39.000 TL</td>
-</tr>
-
-<tr>
-<td>%40</td>
-<td>12.000 TL</td>
-<td>42.000 TL</td>
+<td>108.000 TL</td>
 </tr>
 
 <tr>
 <td>%50</td>
 <td>15.000 TL</td>
 <td>45.000 TL</td>
+<td>180.000 TL</td>
 </tr>
 
 </tbody>
@@ -458,72 +541,167 @@ Mevcut Maaş + Zam Tutarı
 
 </section>
 
-
 <section class="card">
 
-<h2>Maaşa Yüzde 10 Zam Nasıl Hesaplanır?</h2>
+<h2>Zam Yıl Ortasında Başlarsa Yıllık Gelir Nasıl Etkilenir?</h2>
 
 <p>
-30.000 TL maaşa yüzde 10 zam uygulanırsa:
+“12 aylık gelir farkı” ile içinde bulunulan takvim yılında
+gerçekleşecek ek gelir aynı şey değildir.
+</p>
+
+<p>
+Örneğin aylık zam tutarı 6.000 TL ve zam Temmuz ayında başlıyorsa
+Temmuz-Aralık arasında 6 zamlı ay vardır.
 </p>
 
 <div class="info-box">
 
-30.000 × 10 ÷ 100 =
-
-<strong>3.000 TL zam</strong>
+<strong>Yıl İçi Ek Gelir =</strong>
 
 <br><br>
 
-Yeni maaş:
+Aylık Zam Tutarı × Zamlı Ay Sayısı
 
-<strong>33.000 TL</strong>
+<br><br>
+
+6.000 × 6 =
+
+<br><br>
+
+<strong>36.000 TL yıl içi ek gelir</strong>
 
 </div>
 
-</section>
+<p>
+Araç, seçtiğiniz başlangıç ayını zamlı maaşın ilk ödendiği ay
+olarak kabul eder.
+</p>
 
+</section>
 
 <section class="card">
 
-<h2>Maaşa Yüzde 20 Zam Nasıl Hesaplanır?</h2>
+<h2>12 Aylık Maaş Farkı Nasıl Hesaplanır?</h2>
+
+<p>
+Maaşın 12 ay boyunca aynı kaldığı varsayımında:
+</p>
 
 <div class="info-box">
 
-30.000 × 20 ÷ 100 =
+<strong>Eski 12 Aylık Gelir =</strong>
 
-<strong>6.000 TL zam</strong>
+<br>
+
+Eski Aylık Maaş × 12
 
 <br><br>
 
-Yeni maaş:
+<strong>Yeni 12 Aylık Gelir =</strong>
 
-<strong>36.000 TL</strong>
+<br>
+
+Yeni Aylık Maaş × 12
+
+<br><br>
+
+<strong>12 Aylık Fark =</strong>
+
+<br>
+
+Aylık Zam Tutarı × 12
 
 </div>
 
-</section>
+<p>
+Bu değer “zammın bu takvim yılında cebinize girecek toplam etkisi”
+değil, eski ve yeni maaşın eşit 12 aylık dönemlerdeki farkıdır.
+</p>
 
+</section>
 
 <section class="card">
 
-<h2>Maaşa Yüzde 25 Zam Nasıl Hesaplanır?</h2>
+<h2>Net Maaş Zammı ile Brüt Maaş Zammı Arasındaki Fark</h2>
+
+<p>
+Bu araç girilen maaşa doğrudan matematiksel yüzde artışı uygular.
+</p>
 
 <div class="info-box">
 
-30.000 × 25 ÷ 100 =
+<strong>Net Maaş seçilirse:</strong>
 
-<strong>7.500 TL zam</strong>
+<br>
+
+Girilen net tutarın üzerine matematiksel zam eklenir.
 
 <br><br>
 
-Yeni maaş:
+<strong>Brüt Maaş seçilirse:</strong>
+
+<br>
+
+Girilen brüt tutarın üzerine matematiksel zam eklenir.
+
+</div>
+
+<div class="warning-box">
+
+Brüt ücretin %20 artması, çalışanın eline geçen gerçek net maaşın da
+her durumda tam %20 artacağı anlamına gelmez.
+
+<br><br>
+
+Gelir vergisi, SGK primi, işsizlik sigortası, vergi istisnaları,
+kümülatif vergi matrahı ve diğer bordro unsurları net sonucu etkileyebilir.
+
+</div>
+
+<p>
+Brütten gerçek tahmini net ücret hesabı için:
+</p>
+
+<p>
+<a href="/brut-net-maas-hesaplama.html">
+Brüt Net Maaş Hesaplama →
+</a>
+</p>
+
+</section>
+
+<section class="card">
+
+<h2>30.000 TL Maaşa %25 Zam Gelirse Ne Olur?</h2>
+
+<div class="info-box">
+
+Mevcut maaş:
+
+<strong>30.000 TL</strong>
+
+<br><br>
+
+Zam:
+
+<strong>%25</strong>
+
+<br><br>
+
+Aylık zam tutarı:
+
+<strong>7.500 TL</strong>
+
+<br><br>
+
+Yeni aylık maaş:
 
 <strong>37.500 TL</strong>
 
 <br><br>
 
-Maaş 12 ay aynı kalırsa yıllık gelir farkı:
+12 aylık fark:
 
 <strong>90.000 TL</strong>
 
@@ -531,190 +709,183 @@ Maaş 12 ay aynı kalırsa yıllık gelir farkı:
 
 </section>
 
-
 <section class="card">
 
-<h2>Maaşa Yüzde 30 Zam Nasıl Hesaplanır?</h2>
+<h2>Maaş Zammı ile Genel Zam Hesabı Aynı mı?</h2>
+
+<p>
+Temel yüzde matematiği aynıdır; ancak bu sayfa maaş özelinde
+aylık ve yıllık gelir etkisini hesaplamak için hazırlanmıştır.
+</p>
 
 <div class="info-box">
 
-30.000 × 30 ÷ 100 =
+<strong>Genel Zam Hesaplama:</strong>
 
-<strong>9.000 TL zam</strong>
+<br>
+
+Herhangi bir fiyat veya tutara zam uygulamak için.
 
 <br><br>
 
-Yeni maaş:
+<strong>Maaş Zam Hesaplama:</strong>
 
-<strong>39.000 TL</strong>
+<br>
 
-</div>
-
-</section>
-
-
-<section class="card">
-
-<h2>Maaşa Yüzde 50 Zam Nasıl Hesaplanır?</h2>
-
-<div class="info-box">
-
-30.000 × 50 ÷ 100 =
-
-<strong>15.000 TL zam</strong>
-
-<br><br>
-
-Yeni maaş:
-
-<strong>45.000 TL</strong>
-
-</div>
-
-</section>
-
-
-<section class="card">
-
-<h2>Yıllık Maaş Farkı Nasıl Hesaplanır?</h2>
-
-<p>
-Aylık zam tutarının 12 ile çarpılması, maaşın 12 ay boyunca
-aynı kaldığı varsayımıyla yaklaşık yıllık gelir farkını verir.
-</p>
-
-<div class="info-box">
-
-<strong>
-Yıllık Fark =
-Aylık Zam Tutarı × 12
-</strong>
+Aylık maaş, 12 aylık gelir farkı ve zamın başladığı aya göre
+takvim yılı içindeki ek geliri görmek için.
 
 </div>
 
 <p>
-Örneğin aylık zam tutarı 7.500 TL ise:
-</p>
-
-<div class="info-box">
-
-7.500 × 12 =
-
-<strong>90.000 TL</strong>
-
-</div>
-
-</section>
-
-
-<section class="card">
-
-<h2>Brüt Maaş ve Net Maaş Zammı Aynı mı?</h2>
-
-<p>
-Bu araç, kullanıcının girdiği maaş tutarına doğrudan yüzde
-artışı uygular.
+Genel fiyat veya tutar hesabı için:
 </p>
 
 <p>
-Girilen tutar net maaşsa matematiksel olarak net tutar üzerinden,
-brüt maaşsa brüt tutar üzerinden zam hesabı yapılır.
-</p>
-
-<p>
-Ancak gerçek bordroda gelir vergisi, SGK primi, işsizlik sigortası
-ve diğer kesintiler bulunabileceği için brüt maaşa uygulanan zam
-oranı net maaşta birebir aynı oranda görünmeyebilir.
-</p>
-
-<p>
-Daha ayrıntılı tahmini bordro hesabı için
-<a href="/brut-net-maas-hesaplama.html">
-Brüt Net Maaş Hesaplama
+<a href="/zam-hesaplama.html">
+Zam Hesaplama →
 </a>
-aracını kullanabilirsiniz.
 </p>
 
 </section>
 
-
 <section class="card">
 
-<h2>Maaş Zammı Hesaplanırken Nelere Dikkat Edilmeli?</h2>
+<h2>Maaş Zammında Prim ve Yan Haklar Dahil mi?</h2>
 
 <p>
-Maaşa uygulanan matematiksel zam oranı ile çalışanın eline geçen
-net tutardaki değişim her zaman aynı olmayabilir.
+Hayır. Araç yalnızca girilen aylık maaş tutarına yüzde artış uygular.
 </p>
 
 <p>
-Bunun nedeni vergi dilimi, SGK kesintileri, ek ödeme,
-prim, ikramiye ve bordrodaki diğer unsurlar olabilir.
+Yemek, yol, prim, ikramiye, fazla mesai, satış primi,
+özel sağlık sigortası veya başka yan haklar otomatik olarak eklenmez.
 </p>
 
-<div class="info-box">
+<div class="warning-box">
 
-<strong>Bu araç yüzde bazlı matematiksel maaş artışını hesaplar.</strong>
-
-<br><br>
-
-Resmî bordro sonucu için işveren bordrosu ve yürürlükteki
-mevzuat esas alınmalıdır.
+İşverenin zam oranını yalnızca çıplak ücrete mi yoksa bazı ek
+ödemelere de mi uyguladığı iş sözleşmesine ve bordro yapısına göre değişebilir.
 
 </div>
 
 </section>
 
+<section class="card">
+
+<h2>Resmî Maaş Zam Oranı Otomatik Kullanılıyor mu?</h2>
+
+<p>
+Hayır. Araç herhangi bir kamu, özel sektör, asgari ücret,
+emekli maaşı veya toplu sözleşme zam oranını otomatik olarak kullanmaz.
+</p>
+
+<p>
+Hesaplama yalnızca sizin girdiğiniz oran üzerinden yapılır.
+</p>
+
+<p>
+Bu nedenle araçta görülen örnek yüzdeler
+<strong>resmî zam oranı değildir.</strong>
+</p>
+
+</section>
 
 <section class="card">
 
 <h2>Sık Sorulan Sorular</h2>
 
-<h3>30.000 TL maaşa yüzde 20 zam ne kadar?</h3>
+<h3>30.000 TL maaşa %20 zam gelirse kaç TL olur?</h3>
 
 <p>
-6.000 TL zam gelir ve yeni maaş
-<strong>36.000 TL</strong>
-olur.
+Aylık zam 6.000 TL, yeni aylık maaş
+<strong>36.000 TL</strong> olur.
 </p>
 
-
-<h3>30.000 TL maaşa yüzde 25 zam ne kadar?</h3>
+<h3>30.000 TL maaşa %25 zam gelirse kaç TL olur?</h3>
 
 <p>
-7.500 TL zam gelir ve yeni maaş
-<strong>37.500 TL</strong>
-olur.
+Aylık zam 7.500 TL, yeni maaş
+<strong>37.500 TL</strong> olur.
 </p>
 
-
-<h3>40.000 TL maaşa yüzde 25 zam gelirse kaç TL olur?</h3>
+<h3>40.000 TL maaşa %25 zam gelirse kaç TL olur?</h3>
 
 <p>
-10.000 TL zam gelir ve yeni maaş
-<strong>50.000 TL</strong>
-olur.
+Aylık zam 10.000 TL, yeni maaş
+<strong>50.000 TL</strong> olur.
 </p>
 
-
-<h3>50.000 TL maaşa yüzde 20 zam gelirse kaç TL olur?</h3>
+<h3>50.000 TL maaşa %20 zam gelirse kaç TL olur?</h3>
 
 <p>
-10.000 TL zam gelir ve yeni maaş
-<strong>60.000 TL</strong>
-olur.
+Aylık zam 10.000 TL, yeni maaş
+<strong>60.000 TL</strong> olur.
 </p>
 
+<h3>Yıllık maaş farkı nasıl hesaplanır?</h3>
+
+<p>
+Aylık zam tutarı 12 ile çarpılarak, maaşın tüm dönem boyunca
+aynı kaldığı varsayımıyla 12 aylık fark hesaplanır.
+</p>
+
+<h3>Zam Temmuz ayında başlarsa kaç aylık fark hesaplanır?</h3>
+
+<p>
+Araç Temmuz ayını da zamlı kabul eder ve Temmuz-Aralık arasındaki
+<strong>6 aylık</strong> ek gelir etkisini hesaplar.
+</p>
+
+<h3>Net maaş seçersem sonuç kesin bordro neti midir?</h3>
+
+<p>
+Hayır. Girilen net tutara yalnızca matematiksel yüzde zam uygulanır.
+Kesin bordro sonucu değildir.
+</p>
+
+<h3>Brüt maaşa zam yaptıktan sonra net maaşı nasıl bulurum?</h3>
+
+<p>
+Zamlı brüt ücretinizi
+<a href="/brut-net-maas-hesaplama.html">Brüt Net Maaş Hesaplama</a>
+aracında kullanabilirsiniz.
+</p>
 
 <h3>Maaş zam hesaplama ücretsiz mi?</h3>
 
 <p>
-Evet. Araclio Maaş Zam Hesaplama aracı ücretsizdir
-ve üyelik gerektirmez.
+Evet. Araclio Maaş Zam Hesaplama aracı ücretsizdir ve üyelik gerektirmez.
 </p>
 
 </section>
 
+<section class="card">
+
+<h2>Bilgilendirme</h2>
+
+<div class="warning-box">
+
+Bu araç matematiksel maaş artış analizi yapar.
+
+<br><br>
+
+Net veya brüt seçimi yalnızca hesaplanan tutarın hangi bazda
+yorumlanacağını belirtir; araç bu sayfada bordro vergisi veya SGK
+hesaplaması yapmaz.
+
+<br><br>
+
+Gerçek bordro, sözleşme, prim, ikramiye, yan haklar ve mevzuata
+göre ödenecek tutar farklı olabilir.
+
+</div>
+
+<p>
+<strong>Son güncelleme: Kasım 2026</strong>
+</p>
+
+</section>
 
 <section class="card">
 
@@ -729,6 +900,12 @@ Brüt Net Maaş Hesaplama →
 <p>
 <a href="/netten-brute-maas-hesaplama.html">
 Netten Brüte Maaş Hesaplama →
+</a>
+</p>
+
+<p>
+<a href="/saatlik-gunluk-maas-hesaplama.html">
+Saatlik ve Günlük Maaş Hesaplama →
 </a>
 </p>
 
@@ -751,35 +928,14 @@ Kıdem Tazminatı Hesaplama →
 </p>
 
 <p>
-<a href="/saatlik-gunluk-aylik-maas.html">
-Saatlik, Günlük ve Aylık Maaş →
+<a href="/zam-hesaplama.html">
+Genel Zam Hesaplama →
 </a>
 </p>
 
 </section>
 
-
-<section class="card">
-
-<h2>Bilgilendirme</h2>
-
-<div class="info-box">
-
-Bu araç matematiksel yüzde hesabı yapar ve genel
-bilgilendirme amacı taşır.
-
-<br><br>
-
-Gerçek bordro, vergi, SGK kesintileri, sözleşme,
-yan haklar ve güncel mevzuata göre elde edilen net maaş
-farklı olabilir.
-
-</div>
-
-</section>
-
 </main>
-
 
 <footer>
 
@@ -815,7 +971,6 @@ Araclio • Ücretsiz Online Araçlar
 
 </footer>
 
-
 <script>
 
 function para(sayi){
@@ -826,7 +981,8 @@ return new Intl.NumberFormat(
 minimumFractionDigits:2,
 maximumFractionDigits:2
 }
-).format(sayi) + " TL";
+).format(sayi) +
+" TL";
 
 }
 
@@ -836,9 +992,11 @@ function oranYaz(sayi){
 return new Intl.NumberFormat(
 "tr-TR",
 {
+minimumFractionDigits:0,
 maximumFractionDigits:2
 }
-).format(sayi);
+).format(sayi) +
+"%";
 
 }
 
@@ -850,12 +1008,14 @@ document
 .value =
 deger;
 
+
 const maas =
 Number(
 document
 .getElementById("maas")
 .value
 );
+
 
 if(
 Number.isFinite(maas) &&
@@ -877,11 +1037,25 @@ document.getElementById("maas");
 const oranInput =
 document.getElementById("oran");
 
+const maasTuru =
+document.getElementById("maasTuru").value;
+
+const baslangicAyi =
+Number(
+document.getElementById("baslangicAyi").value
+);
+
+
 const maas =
-Number(maasInput.value);
+Number(
+maasInput.value
+);
 
 const oran =
-Number(oranInput.value);
+Number(
+oranInput.value
+);
+
 
 const uyari =
 document.getElementById("uyari");
@@ -897,7 +1071,7 @@ maas <= 0
 ){
 
 uyari.textContent =
-"Lütfen sıfırdan büyük geçerli bir maaş girin.";
+"Lütfen sıfırdan büyük geçerli bir aylık maaş girin.";
 
 sonuclar.style.display =
 "none";
@@ -914,7 +1088,7 @@ oran < 0
 ){
 
 uyari.textContent =
-"Lütfen sıfır veya daha büyük geçerli bir zam oranı girin.";
+"Lütfen 0 veya daha büyük geçerli bir zam oranı girin.";
 
 sonuclar.style.display =
 "none";
@@ -925,78 +1099,171 @@ return;
 
 
 const zamTutari =
-maas * oran / 100;
+maas *
+oran /
+100;
 
 
 const yeniMaas =
-maas + zamTutari;
+maas +
+zamTutari;
 
 
 const eskiYillik =
-maas * 12;
+maas *
+12;
 
 
 const yeniYillik =
-yeniMaas * 12;
+yeniMaas *
+12;
 
 
 const yillikFark =
-yeniYillik -
-eskiYillik;
+zamTutari *
+12;
+
+
+const zamliAy =
+13 -
+baslangicAyi;
+
+
+const yilIciFark =
+zamTutari *
+zamliAy;
+
+
+const turAdi =
+maasTuru === "net"
+?
+"net"
+:
+"brüt";
 
 
 document
 .getElementById("yeniMaas")
 .textContent =
-para(yeniMaas);
+para(
+yeniMaas
+);
 
 
 document
 .getElementById("zamTutari")
 .textContent =
-para(zamTutari);
+para(
+zamTutari
+);
 
 
 document
 .getElementById("eskiYillik")
 .textContent =
-para(eskiYillik);
+para(
+eskiYillik
+);
 
 
 document
 .getElementById("yeniYillik")
 .textContent =
-para(yeniYillik);
+para(
+yeniYillik
+);
 
 
 document
 .getElementById("yillikFark")
 .textContent =
-para(yillikFark);
+para(
+yillikFark
+);
+
+
+document
+.getElementById("zamliAySayisi")
+.textContent =
+zamliAy +
+" ay";
+
+
+document
+.getElementById("yilIciFark")
+.textContent =
+para(
+yilIciFark
+);
 
 
 document
 .getElementById("uygulananOran")
 .textContent =
-"%" +
-oranYaz(oran);
+oranYaz(
+oran
+);
 
 
 uyari.innerHTML =
 
-"<strong>Sonuç:</strong> " +
+"<strong>Yeni aylık " +
+turAdi +
+" maaş: " +
 
-para(maas) +
+para(
+yeniMaas
+) +
 
-" maaşa %" +
+"</strong>" +
 
-oranYaz(oran) +
+"<br><br>" +
 
-" zam uygulandığında yeni maaş <strong>" +
+"Mevcut maaş: <strong>" +
 
-para(yeniMaas) +
+para(
+maas
+) +
 
-"</strong> olur.";
+"</strong>" +
+
+"<br>" +
+
+"Zam oranı: <strong>" +
+
+oranYaz(
+oran
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Aylık zam tutarı: <strong>" +
+
+para(
+zamTutari
+) +
+
+"</strong>" +
+
+"<br>" +
+
+"Takvim yılında zamlı ay sayısı: <strong>" +
+
+zamliAy +
+
+" ay</strong>" +
+
+"<br>" +
+
+"Bu yıl oluşacak ek gelir: <strong>" +
+
+para(
+yilIciFark
+) +
+
+"</strong>";
 
 
 sonuclar.style.display =
@@ -1017,8 +1284,39 @@ document
 "keydown",
 function(event){
 
-if(event.key === "Enter"){
+if(
+event.key === "Enter"
+){
+
 hesapla();
+
+}
+
+}
+);
+
+});
+
+
+[
+"maasTuru",
+"baslangicAyi"
+]
+.forEach(function(id){
+
+document
+.getElementById(id)
+.addEventListener(
+"change",
+function(){
+
+if(
+document.getElementById("maas").value !== "" &&
+document.getElementById("oran").value !== ""
+){
+
+hesapla();
+
 }
 
 }
